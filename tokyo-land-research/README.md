@@ -146,10 +146,15 @@
 
 ## HTML版の見方（いつでも見られるリンク）
 
-[`index.html`](./index.html) は全内容を1ページにまとめたブラウザ用ファイル。公開リンクは2通り：
+[`index.html`](./index.html) は全内容を1ページにまとめたブラウザ用ファイル。
+冒頭に「**★ 実際の物件を見る（ライブ検索リンク）**」セクションがあり、SUUMO・健美家・楽待・BIT競売・主税局公売・国有地などの
+**絞り込み済み最新一覧**へワンクリックで飛べる（実物件をその場で閲覧できる）。公開リンクは2通り：
 
 - **即時（このブランチのまま見られる）**：GitHubのraw HTMLプレビュー経由。リンクはPR説明に記載。
-- **恒久URLにしたい場合**：このフォルダをデフォルトブランチに取り込み、GitHub Pages（Settings → Pages）を有効化すると `https://<ユーザー名>.github.io/<リポジトリ>/tokyo-land-research/` で公開できる（設定は手動操作が必要）。
+- **恒久URL（GitHub Pages）**：`.github/workflows/pages.yml` を同梱済み。これが `main` に入る（PRをマージする）と、
+  ワークフローが Pages を自動で有効化（`configure-pages` の `enablement: true`）して公開する。
+  公開先は **`https://bufeks.github.io/Project-Home/`**（`tokyo-land-research/` をサイトのルートとして配信）。
+  自動化が効かない場合は手動でも可：Settings → Pages → Source「GitHub Actions」、または「Deploy from a branch」で `main` を指定。
 
 ---
 

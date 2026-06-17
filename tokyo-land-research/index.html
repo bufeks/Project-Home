@@ -56,6 +56,14 @@
   .kpi{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
   .kpi div{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:.86rem}
   .kpi b{color:var(--accent2);font-size:1.05rem}
+  .btns{display:grid;gap:10px;margin:10px 0}
+  @media(min-width:620px){.btns.c2{grid-template-columns:1fr 1fr}.btns.c3{grid-template-columns:1fr 1fr 1fr}}
+  a.btn{display:block;text-decoration:none;background:var(--panel2);border:1px solid #2f4154;border-radius:11px;
+    padding:11px 14px;color:var(--ink);transition:.15s}
+  a.btn:hover{background:#243247;border-color:var(--accent);transform:translateY(-1px)}
+  a.btn b{display:block;color:#bcd6ff;font-size:.96rem;margin-bottom:2px}
+  a.btn span{display:block;color:var(--muted);font-size:.8rem}
+  a.btn .ext{float:right;color:var(--accent2);font-size:.78rem}
   footer{padding:26px 0 50px;color:var(--muted);font-size:.82rem}
   .toplink{font-size:.8rem;color:var(--muted);text-decoration:none;float:right}
   details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 14px;margin:8px 0}
@@ -80,6 +88,7 @@
 <nav class="toc">
   <div class="wrap">
     <ul>
+      <li><a href="#live">★実物件を見る</a></li>
       <li><a href="#routes">①ルート比較</a></li>
       <li><a href="#why">②なぜ安い</a></li>
       <li><a href="#watch">③定点観測</a></li>
@@ -97,6 +106,44 @@
 </nav>
 
 <main class="wrap">
+
+<section id="live">
+  <h2>★ 実際の物件を見る（ライブ検索リンク） <a class="toplink" href="#live">#</a></h2>
+  <p class="lead">下のボタンから、各サイトの<b>絞り込み済みの最新一覧</b>へ直接ジャンプできます（新しいタブで開きます）。
+  不動産サイトは外部ページへの埋め込み(iframe)を許可していないため、リンクで実物件を開く方式にしています。
+  気になった物件は <code>property_checklist.md</code> に転記してから検討してください。</p>
+
+  <h3>民間ポータル（物件数が多い・初心者向き）</h3>
+  <div class="btns c2">
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/東京２３区　再建築不可　中古　戸建て/"><span class="ext">SUUMO ↗</span><b>23区 再建築不可 中古戸建</b><span>安い理由の典型。実データの抽出元</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/東京２３区　古家付　土地/"><span class="ext">SUUMO ↗</span><b>23区 古家付き土地</b><span>解体費前提の土地値物件</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/旧法　借地権　中古　戸建　２３区/"><span class="ext">SUUMO ↗</span><b>23区 旧法借地権 戸建</b><span>地代・承諾料の構造を学ぶ</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/東京２３区　狭小　中古　戸建て/"><span class="ext">SUUMO ↗</span><b>23区 狭小 中古戸建</b><span>狭小・変形地の設計制約</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.kenbiya.com/pp0/saikenfuka=y/"><span class="ext">健美家 ↗</span><b>再建築不可（収益物件）</b><span>高利回り＝欠陥の対価。約900件超</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/13/"><span class="ext">楽待 ↗</span><b>東京都 収益物件</b><span>独自・非公開物件が多い</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.athome.co.jp/tochi/theme/furuyaari/tokyo/list/"><span class="ext">at home ↗</span><b>東京 古家あり土地</b><span>23区は少なく多摩が安い傾向</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.homes.co.jp/kodate/tokyo/23ku-city/list/"><span class="ext">HOME'S ↗</span><b>23区 中古戸建（条件で絞る）</b><span>こだわり条件で再建築不可/借地権</span></a>
+  </div>
+
+  <h3>公売・競売・公有地（安い理由が強い・学習価値が高い）</h3>
+  <div class="btns c2">
+    <a class="btn" target="_blank" rel="noopener" href="https://www.bit.courts.go.jp/"><span class="ext">BIT ↗</span><b>裁判所 不動産競売</b><span>東京地裁・三点セット。買受可能価額＝基準価額×0.8</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.tax.metro.tokyo.lg.jp/kobai/"><span class="ext">主税局 ↗</span><b>東京都 不動産公売</b><span>都税滞納差押え。不動産は年3回</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.koubai.nta.go.jp/auctionx/public/hp0241.php"><span class="ext">国税庁 ↗</span><b>国税 公売 不動産検索</b><span>東京国税局管内の物件</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://kankocho.jp/"><span class="ext">KSI ↗</span><b>官公庁オークション</b><span>ネット公売・公有財産売却</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://kokuyuzaisan.akiya-athome.jp/"><span class="ext">財務省 ↗</span><b>国有財産 売却情報</b><span>一般競争入札・狭小/変形地</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://lfb.mof.go.jp/kantou/kanzai/mokuji_00001.htm"><span class="ext">関東財務局 ↗</span><b>国有地 公示中物件</b><span>23区lotは不定期・希少</span></a>
+  </div>
+
+  <h3>専門業者（off-market・相場感・教材）</h3>
+  <div class="btns c3">
+    <a class="btn" target="_blank" rel="noopener" href="https://saikenfuka.jp/archives/category/sale/sale_tokyo"><span class="ext">↗</span><b>インク 再建築不可 実売</b><span>23区・1.5M〜6.5M帯</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://uruhome.net/"><span class="ext">↗</span><b>URUHOME</b><span>再建築不可/底地/借地/共有持分の解説</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://albalink.co.jp/realestate/"><span class="ext">↗</span><b>AlbaLink 訳あり買取ナビ</b><span>買取相場・リスク解説</span></a>
+  </div>
+
+  <div class="note">⚠️ 価格・在庫は流動的です。リンク先は「現在の最新一覧」なので、本ページ⑧の実データ表（2026-06-16スナップショット）と見比べて<b>相場の動き</b>を観察してください。個別物件の恒久URLはサイト側のID入替で消えるため、上の検索ボタンをアンカーにたどり直すのが確実です。</div>
+</section>
 
 <section id="routes">
   <h2>① 制度・ルート比較表 <a class="toplink" href="#routes">#</a></h2>
