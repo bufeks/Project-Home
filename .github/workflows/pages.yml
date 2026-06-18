@@ -1,0 +1,47 @@
+name: Deploy GitHub Pages
+
+# tokyo-land-research/ を GitHub Pages として公開する。
+# main にこのワークフローが入ると、push（PRマージ含む）で自動的に
+# Pages を有効化（configure-pages の enablement: true）して公開する。
+# 手動でも Actions タブから実行可能（workflow_dispatch）。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tokyo-land-research/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages (auto-enable)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload site artifact (tokyo-land-research as site root)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: tokyo-land-research
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

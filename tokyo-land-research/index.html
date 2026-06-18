@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>都心の安い土地・訳あり物件 リサーチ｜東京23区</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1d2129; --ink:#e9edf3; --muted:#9aa4b2;
+    --line:#2a2f3a; --accent:#6ea8fe; --accent2:#7ee0c0; --warn:#ffcf6e; --bad:#ff8b8b;
+    --a:#7ee0c0; --b:#9ad0ff; --c:#ffe08a; --d:#ffb37a; --e:#ff8b8b;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  header.hero{background:linear-gradient(160deg,#1a2230,#12151b 60%);border-bottom:1px solid var(--line);padding:42px 0 30px}
+  header.hero h1{margin:0 0 8px;font-size:1.9rem;letter-spacing:.02em}
+  header.hero p{margin:.3rem 0;color:var(--muted)}
+  .pill{display:inline-block;background:#24303f;color:var(--accent);border:1px solid #2f4154;
+    border-radius:999px;padding:2px 11px;font-size:.78rem;margin:4px 6px 0 0}
+  .updated{font-size:.82rem;color:var(--muted);margin-top:10px}
+  nav.toc{position:sticky;top:0;z-index:5;background:rgba(15,17,21,.92);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);padding:10px 0}
+  nav.toc ul{display:flex;flex-wrap:wrap;gap:6px 10px;list-style:none;margin:0;padding:0;font-size:.84rem}
+  nav.toc a{color:var(--muted);text-decoration:none;padding:3px 9px;border-radius:8px;border:1px solid transparent}
+  nav.toc a:hover{color:var(--ink);border-color:var(--line);background:var(--panel)}
+  section{padding:30px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:1.32rem;margin:.2em 0 .6em;padding-left:11px;border-left:4px solid var(--accent)}
+  h3{font-size:1.05rem;margin:1.3em 0 .4em;color:#cfe0ff}
+  p,li{color:#dfe5ee}
+  .lead{color:var(--muted)}
+  .grid{display:grid;gap:14px}
+  @media(min-width:720px){.grid.cols2{grid-template-columns:1fr 1fr}.grid.cols3{grid-template-columns:1fr 1fr 1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .card h3{margin-top:0}
+  .note{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--warn);
+    border-radius:10px;padding:12px 16px;color:#e8ecf3;font-size:.94rem}
+  .note.good{border-left-color:var(--accent2)}
+  .note.bad{border-left-color:var(--bad)}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
+  table{border-collapse:collapse;width:100%;font-size:.86rem;min-width:560px}
+  th,td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  thead th{background:#212732;color:#dfe9f7;position:sticky;top:0;font-weight:600}
+  tbody tr:hover{background:#1b2029}
+  td.num,th.num{text-align:right;white-space:nowrap}
+  a{color:var(--accent)}
+  a:hover{color:#bcd6ff}
+  code{background:#222834;padding:1px 6px;border-radius:6px;font-size:.86em;color:#d8e3f5}
+  .badge{display:inline-block;border-radius:6px;padding:1px 8px;font-weight:700;font-size:.8rem;color:#10141a}
+  .A{background:var(--a)}.B{background:var(--b)}.C{background:var(--c)}.D{background:var(--d)}.E{background:var(--e)}
+  ul.tight{margin:.3em 0;padding-left:1.2em}
+  ul.tight li{margin:.18em 0}
+  .kpi{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+  .kpi div{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:.86rem}
+  .kpi b{color:var(--accent2);font-size:1.05rem}
+  .btns{display:grid;gap:10px;margin:10px 0}
+  @media(min-width:620px){.btns.c2{grid-template-columns:1fr 1fr}.btns.c3{grid-template-columns:1fr 1fr 1fr}}
+  a.btn{display:block;text-decoration:none;background:var(--panel2);border:1px solid #2f4154;border-radius:11px;
+    padding:11px 14px;color:var(--ink);transition:.15s}
+  a.btn:hover{background:#243247;border-color:var(--accent);transform:translateY(-1px)}
+  a.btn b{display:block;color:#bcd6ff;font-size:.96rem;margin-bottom:2px}
+  a.btn span{display:block;color:var(--muted);font-size:.8rem}
+  a.btn .ext{float:right;color:var(--accent2);font-size:.78rem}
+  footer{padding:26px 0 50px;color:var(--muted);font-size:.82rem}
+  .toplink{font-size:.8rem;color:var(--muted);text-decoration:none;float:right}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 14px;margin:8px 0}
+  summary{cursor:pointer;color:#cfe0ff;font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>都心の安い土地・訳あり物件 リサーチ</h1>
+    <p class="lead">東京23区・準都心で、通常流通より安く取得できる可能性のあるルートを調査し、<br>
+      「<b>なぜ安いのか</b>」を理解しながら安全に判断する目を養うための資料。</p>
+    <div>
+      <span class="pill">国有地・公有地</span><span class="pill">公売</span><span class="pill">競売(BIT)</span>
+      <span class="pill">再建築不可</span><span class="pill">借地権</span><span class="pill">古家付き土地</span><span class="pill">狭小・変形地</span>
+    </div>
+    <p class="updated">最終更新：2026-06-16 ／ 目的：すぐ買うことではなく、安い理由を構造で理解し「学ぶ候補」と「触らない候補」を分けること。</p>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <ul>
+      <li><a href="#live">★実物件を見る</a></li>
+      <li><a href="#routes">①ルート比較</a></li>
+      <li><a href="#why">②なぜ安い</a></li>
+      <li><a href="#watch">③定点観測</a></li>
+      <li><a href="#purpose">④目的別</a></li>
+      <li><a href="#risk">⑤リスク</a></li>
+      <li><a href="#judge">⑥リスク判定</a></li>
+      <li><a href="#score">⑦スコア</a></li>
+      <li><a href="#candidates">⑧候補物件</a></li>
+      <li><a href="#samples">⑨学習サンプル</a></li>
+      <li><a href="#flow">⑩専門家確認</a></li>
+      <li><a href="#rules">⑪最終ルール</a></li>
+      <li><a href="#sources">⑫出典</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="live">
+  <h2>★ 実際の物件を見る（ライブ検索リンク） <a class="toplink" href="#live">#</a></h2>
+  <p class="lead">下のボタンから、各サイトの<b>絞り込み済みの最新一覧</b>へ直接ジャンプできます（新しいタブで開きます）。
+  不動産サイトは外部ページへの埋め込み(iframe)を許可していないため、リンクで実物件を開く方式にしています。
+  気になった物件は <code>property_checklist.md</code> に転記してから検討してください。</p>
+
+  <h3>民間ポータル（物件数が多い・初心者向き）</h3>
+  <div class="btns c2">
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/東京２３区　再建築不可　中古　戸建て/"><span class="ext">SUUMO ↗</span><b>23区 再建築不可 中古戸建</b><span>安い理由の典型。実データの抽出元</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/東京２３区　古家付　土地/"><span class="ext">SUUMO ↗</span><b>23区 古家付き土地</b><span>解体費前提の土地値物件</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/旧法　借地権　中古　戸建　２３区/"><span class="ext">SUUMO ↗</span><b>23区 旧法借地権 戸建</b><span>地代・承諾料の構造を学ぶ</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://suumo.jp/b/kodate/kw/東京２３区　狭小　中古　戸建て/"><span class="ext">SUUMO ↗</span><b>23区 狭小 中古戸建</b><span>狭小・変形地の設計制約</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.kenbiya.com/pp0/saikenfuka=y/"><span class="ext">健美家 ↗</span><b>再建築不可（収益物件）</b><span>高利回り＝欠陥の対価。約900件超</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.rakumachi.jp/syuuekibukken/area/prefecture/13/"><span class="ext">楽待 ↗</span><b>東京都 収益物件</b><span>独自・非公開物件が多い</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.athome.co.jp/tochi/theme/furuyaari/tokyo/list/"><span class="ext">at home ↗</span><b>東京 古家あり土地</b><span>23区は少なく多摩が安い傾向</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.homes.co.jp/kodate/tokyo/23ku-city/list/"><span class="ext">HOME'S ↗</span><b>23区 中古戸建（条件で絞る）</b><span>こだわり条件で再建築不可/借地権</span></a>
+  </div>
+
+  <h3>公売・競売・公有地（安い理由が強い・学習価値が高い）</h3>
+  <div class="btns c2">
+    <a class="btn" target="_blank" rel="noopener" href="https://www.bit.courts.go.jp/"><span class="ext">BIT ↗</span><b>裁判所 不動産競売</b><span>東京地裁・三点セット。買受可能価額＝基準価額×0.8</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.tax.metro.tokyo.lg.jp/kobai/"><span class="ext">主税局 ↗</span><b>東京都 不動産公売</b><span>都税滞納差押え。不動産は年3回</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.koubai.nta.go.jp/auctionx/public/hp0241.php"><span class="ext">国税庁 ↗</span><b>国税 公売 不動産検索</b><span>東京国税局管内の物件</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://kankocho.jp/"><span class="ext">KSI ↗</span><b>官公庁オークション</b><span>ネット公売・公有財産売却</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://kokuyuzaisan.akiya-athome.jp/"><span class="ext">財務省 ↗</span><b>国有財産 売却情報</b><span>一般競争入札・狭小/変形地</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://lfb.mof.go.jp/kantou/kanzai/mokuji_00001.htm"><span class="ext">関東財務局 ↗</span><b>国有地 公示中物件</b><span>23区lotは不定期・希少</span></a>
+  </div>
+
+  <h3>専門業者（off-market・相場感・教材）</h3>
+  <div class="btns c3">
+    <a class="btn" target="_blank" rel="noopener" href="https://saikenfuka.jp/archives/category/sale/sale_tokyo"><span class="ext">↗</span><b>インク 再建築不可 実売</b><span>23区・1.5M〜6.5M帯</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://uruhome.net/"><span class="ext">↗</span><b>URUHOME</b><span>再建築不可/底地/借地/共有持分の解説</span></a>
+    <a class="btn" target="_blank" rel="noopener" href="https://albalink.co.jp/realestate/"><span class="ext">↗</span><b>AlbaLink 訳あり買取ナビ</b><span>買取相場・リスク解説</span></a>
+  </div>
+
+  <div class="note">⚠️ 価格・在庫は流動的です。リンク先は「現在の最新一覧」なので、本ページ⑧の実データ表（2026-06-16スナップショット）と見比べて<b>相場の動き</b>を観察してください。個別物件の恒久URLはサイト側のID入替で消えるため、上の検索ボタンをアンカーにたどり直すのが確実です。</div>
+</section>
+
+<section id="routes">
+  <h2>① 制度・ルート比較表 <a class="toplink" href="#routes">#</a></h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>ルート</th><th>安く買える可能性</th><th>都心での現実性</th><th>初心者難易度</th><th>学習価値</th><th>主なリスク</th><th>向いている目的</th></tr></thead>
+    <tbody>
+      <tr><td>国有地売却</td><td>中</td><td>低〜中</td><td>中</td><td>高</td><td>競争・短期納付・融資困難</td><td>保有・特殊用途</td></tr>
+      <tr><td>都有地・区有地売却</td><td>中</td><td>低</td><td>中</td><td>中</td><td>出物少・短期納付</td><td>文化拠点(貸付含む)・保有</td></tr>
+      <tr><td>公売（税滞納）</td><td>高</td><td>中</td><td>高</td><td>高</td><td>情報限定・現金前提・権利複雑</td><td>学習・狭小地</td></tr>
+      <tr><td>競売（裁判所）</td><td>高</td><td>中〜高</td><td>高</td><td>最高</td><td>占有・内覧不可・現金前提</td><td>学習・投資(上級)</td></tr>
+      <tr><td>任意売却</td><td>中</td><td>中</td><td>中</td><td>中</td><td>タイミング・情報非公開</td><td>自宅・投資</td></tr>
+      <tr><td>再建築不可</td><td>高</td><td>高</td><td>中〜高</td><td>高</td><td>建替不可・融資困難・出口狭</td><td>店舗/アトリエ/文化拠点</td></tr>
+      <tr><td>借地権付き</td><td>高</td><td>中</td><td>中〜高</td><td>高</td><td>地代/承諾料・融資困難</td><td>自宅・店舗</td></tr>
+      <tr><td>底地</td><td>中</td><td>低</td><td>高</td><td>高</td><td>低利回り・出口狭</td><td>上級・一体化狙い</td></tr>
+      <tr><td>共有持分</td><td>最高</td><td>低</td><td>最高</td><td>高</td><td>単独利用不可・紛争</td><td>原則回避(教材)</td></tr>
+      <tr><td>古家付き土地</td><td>中</td><td>中</td><td>低〜中</td><td>中</td><td>解体費・セットバック</td><td>自宅・店舗・投資</td></tr>
+      <tr><td>狭小地・変形地</td><td>中</td><td>中〜高</td><td>中</td><td>中</td><td>設計自由度低・出口狭</td><td>店舗/アトリエ</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="why">
+  <h2>② なぜ安いのか／なぜ都心では安くなりにくいのか <a class="toplink" href="#why">#</a></h2>
+  <div class="grid cols2">
+    <div class="card">
+      <h3>安くなる仕組み</h3>
+      <p>欠陥が「最も価値のある権利＝（再）建築して売れる建物を持つ権利」を制限・喪失させるため。</p>
+      <ul class="tight">
+        <li><b>再建築不可</b>：滅失しても建て直せない</li>
+        <li><b>借地権</b>：土地を所有できない（地代・承諾料が続く）</li>
+        <li><b>底地</b>：収益が低い地代のみ</li>
+        <li><b>共有持分</b>：単独では使えず売れない</li>
+        <li>低い評価額 → 固定資産税も低いが融資も付きにくい</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>融資が付きにくい根本理由</h3>
+      <ul class="tight">
+        <li><b>担保価値が低い</b>：銀行が処分しても安くしか売れない</li>
+        <li><b>滅失再建リスク</b>：再建築不可は火災・地震後に建て直せず延滞リスク</li>
+        <li><b>借り手属性</b>：激安物件の買い手は自己資金が薄いことが多い</li>
+      </ul>
+      <p class="lead">→ 住宅ローン不可が多く、現金・ノンバンク・リフォームローンが実態。</p>
+    </div>
+  </div>
+  <div class="note">都心で安くなりにくい理由：土地需要が厚く、欠陥があっても立地プレミアムで価格が下がりきらない（人気区の再建築不可でも割安性が消えることがある）。</div>
+  <h3>必須の基礎概念</h3>
+  <div class="grid cols2">
+    <div class="card"><h3>接道義務（建基法43条1項）</h3><p>敷地は幅員4m以上の建築基準法上の道路に<b>2m以上</b>接する必要。未達は<b>再建築不可</b>。救済の<b>43条但し書き（現43条2項2号許可）</b>は個別審査・再建築のたび再申請で承継保証なし。</p></div>
+    <div class="card"><h3>セットバック（42条2項道路）</h3><p>幅員4m未満の「みなし道路」では中心線から<b>2m後退</b>。後退部分は建築不可・容積率/建ぺい率に算入不可 → 有効宅地が減る。</p></div>
+    <div class="card"><h3>借地権の費用</h3><p>地代（継続）／更新料／<b>譲渡承諾料</b>（借地権価格の約1割目安）／<b>建替承諾料</b>。旧法(1992/8前)は借地人有利、定期借地は更新なし更地返還。</p></div>
+    <div class="card"><h3>私道持分・掘削承諾</h3><p>私道接道はインフラ更新に<b>掘削承諾</b>が必要。持分・承諾がないとリフォーム・融資が詰まる頻出の隠れ瑕疵。</p></div>
+  </div>
+</section>
+
+<section id="watch">
+  <h2>③ 定点観測リスト <a class="toplink" href="#watch">#</a></h2>
+  <p class="lead">公的ルートは落札後の納付期限が短く住宅ローン特約が使えない。<b>現金 or 競売・公売専用ローンの事前内諾</b>が前提。</p>
+
+  <h3>A. 国有地・公有地（安全性高・出物少）</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>サイト</th><th>頻度</th><th>見るべき条件 / 備考</th></tr></thead><tbody>
+    <tr><td><a href="https://kokuyuzaisan.akiya-athome.jp/">国有財産売却情報</a></td><td>月1</td><td>23区の土地・狭小/変形地。一般競争入札の流れ</td></tr>
+    <tr><td><a href="https://pre.akiya-athome.jp/">公的不動産(PRE)</a></td><td>月1</td><td>売却だけでなく貸付・定借も見る</td></tr>
+    <tr><td><a href="https://lfb.mof.go.jp/kantou/kanzai/mokuji_00001.htm">関東財務局 国有地(公示中)</a></td><td>月1〜2</td><td>23区lot・期間入札・入札保証金</td></tr>
+    <tr><td><a href="https://lfb.mof.go.jp/kantou/kokuyuuti/doujibaikyakusaki/list/tokyo.htm">同時売却先募集(東京23区)</a></td><td>月1</td><td>23区の細切れ・隣接地一体取得</td></tr>
+    <tr><td><a href="https://www.zaimu.metro.tokyo.lg.jp/kouyu/nyuusatsu">東京都財務局 公有地入札</a></td><td>月1</td><td>都有地売払い・公募・先着。出物少</td></tr>
+    <tr><td>各区 管財・財政課（区有地）</td><td>月1</td><td>⚠️集約ポータルなし。関心区を個別確認</td></tr>
+    </tbody></table></div>
+
+  <h3>B. 公売（税滞納差押え・情報限定・現金前提）</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>サイト</th><th>頻度</th><th>備考</th></tr></thead><tbody>
+    <tr><td><a href="https://www.tax.metro.tokyo.lg.jp/kobai/">東京都主税局 公売</a></td><td>隔週</td><td>不動産は年3回（郵送期間入札）。2026例: 7月/10月/1〜2月</td></tr>
+    <tr><td><a href="https://www.koubai.nta.go.jp/">国税庁 公売情報</a></td><td>隔週</td><td>東京国税局管内の不動産・期間入札/ネット公売</td></tr>
+    <tr><td><a href="https://kankocho.jp/">KSI官公庁オークション</a></td><td>隔週</td><td>会員登録・保証金。都/自治体が利用</td></tr>
+    </tbody></table></div>
+
+  <h3>C. 裁判所競売（学習価値最大・三点セット）</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>サイト</th><th>頻度</th><th>学ぶべき点</th></tr></thead><tbody>
+    <tr><td><a href="https://www.bit.courts.go.jp/">BIT 不動産競売物件情報</a></td><td>隔週</td><td>東京地裁管轄・23区。三点セット(物件明細書/現況調査報告書/評価書)、占有・残置・滞納</td></tr>
+    <tr><td><a href="https://www.bit.courts.go.jp/words/ka-ko/ka01.html">用語：買受可能価額</a></td><td>随時</td><td><b>買受可能価額＝売却基準価額×0.8</b>／保証金＝売却基準価額の20%</td></tr>
+    </tbody></table></div>
+
+  <h3>D. 民間流通（最も現実的・情報が見やすい）</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>サイト</th><th>頻度</th><th>見るべき条件</th></tr></thead><tbody>
+    <tr><td><a href="https://suumo.jp/b/kodate/kw/東京２３区　再建築不可　中古　戸建て/">SUUMO 23区 再建築不可</a></td><td>隔週</td><td>kwキーワード検索が有効</td></tr>
+    <tr><td><a href="https://suumo.jp/b/kodate/kw/旧法　借地権　中古　戸建　２３区/">SUUMO 旧法借地権 戸建</a></td><td>隔週</td><td>地代・承諾料の構造。23区は薄いが存在</td></tr>
+    <tr><td><a href="https://suumo.jp/b/kodate/kw/東京２３区　古家付　土地/">SUUMO 古家付き土地</a></td><td>隔週</td><td>解体費前提の価格</td></tr>
+    <tr><td><a href="https://www.kenbiya.com/pp0/saikenfuka=y/">健美家 再建築不可(収益)</a></td><td>隔週</td><td>高利回り＝欠陥の対価。約900件超</td></tr>
+    <tr><td><a href="https://www.rakumachi.jp/">楽待</a> / <a href="https://www.athome.co.jp/tochi/theme/furuyaari/tokyo/list/">at home 古家あり</a></td><td>隔週</td><td>独自物件 / 23区は少なく多摩が安い傾向</td></tr>
+    </tbody></table></div>
+
+  <details><summary>E. 専門業者・教材（off-market・相場感・知識）</summary>
+    <ul class="tight">
+      <li><a href="https://saikenfuka.jp/archives/category/sale/sale_tokyo">インクコーポレーション</a>（再建築不可 実売 1.5M〜6.5M）</li>
+      <li><a href="https://uruhome.net/">URUHOME/ドリームプランニング</a>（再建築不可・底地・借地・共有持分の解説が厚い）</li>
+      <li><a href="https://albalink.co.jp/realestate/">AlbaLink 訳あり物件買取ナビ</a>（買取相場・リスク解説）</li>
+      <li><a href="https://www.sansei-l.co.jp/service/">サンセイランディック</a>（底地・借地, 上場・唯一の専業）</li>
+      <li><a href="https://c-realestate.jp/co-ownership/">クランピーリアルエステート</a>（共有持分・弁護士連携）</li>
+      <li><a href="https://ninbai-japan.or.jp/baikyaku-realestate">全国任意売却支援協会</a>（任意売却）</li>
+    </ul>
+  </details>
+</section>
+
+<section id="purpose">
+  <h2>④ 目的別の現実的な買い方 <a class="toplink" href="#purpose">#</a></h2>
+  <div class="grid cols2">
+    <div class="card"><h3>1. 自宅用</h3><p>所有権の古家付き土地／狭小戸建て／(条件次第で)借地権戸建て／再建築可能な小規模土地。</p><p class="lead">再建築不可は慎重。<b>融資可否が最重要</b>。将来売れるか・生活インフラ。</p></div>
+    <div class="card"><h3>2. 小さな店舗用</h3><p>古家付き土地／商店街近くの小規模戸建て／路面の借地権建物／改修可能な再建築不可／定期借地・定期借家。</p><p class="lead">用途地域・飲食許可・保健所・消防・排気/臭気/音・近隣・搬入出。</p></div>
+    <div class="card"><h3>3. アトリエ・作業場用</h3><p>古家／倉庫／工房利用可の戸建て／再建築不可の改修利用／準工業地域周辺。</p><p class="lead">音・匂い・火気・電気容量・換気・搬入出・近隣苦情。</p></div>
+    <div class="card"><h3>4. ギャラリー・文化拠点用</h3><p>古家付き土地／再建築不可／路地奥／借地権戸建て／定期借家／公有地・空き家活用制度。</p><p class="lead">集客動線・近隣・消防避難・イベント可否・<b>収益化の難しさ</b>。</p></div>
+    <div class="card"><h3>5. 投資用</h3><p>再建築可能な古家付き土地／賃貸可能な戸建て／(出口理解のうえ)借地権・狭小／任意売却。</p><p class="lead">利回りで判断しない。<b>出口戦略が最重要</b>。次の買主も融資を使えるか。</p></div>
+    <div class="card"><h3>6. 将来の土地保有用</h3><p>狭小地／隣地買収余地のある土地／低利用地／古家付き／接道改善余地のある土地。</p><p class="lead">保有コスト・固定資産税・すぐ使えないリスク・隣地交渉の不確実性。</p></div>
+  </div>
+</section>
+
+<section id="risk">
+  <h2>⑤ 想定リスク一覧 <a class="toplink" href="#risk">#</a></h2>
+  <div class="grid cols2">
+    <div class="card"><h3>1. 法的・権利関係</h3><ul class="tight"><li>借地権／底地／共有持分のみ</li><li>抵当権・差押え・仮登記・地上権・賃借権</li><li>境界未確定・越境</li><li>私道持分なし・通行/掘削承諾なし</li><li>再建築不可・接道義務未達</li></ul><p class="lead">確認：司法書士・不動産業者・(必要に応じ)弁護士</p></div>
+    <div class="card"><h3>2. 建築・利用</h3><ul class="tight"><li>建替不可・改修のみ</li><li>用途地域で店舗/工房が制限</li><li>建ぺい/容積が低い・防火地域でコスト増</li><li>セットバックで面積減</li><li>解体/造成/擁壁・アスベスト/埋設物/土壌汚染</li></ul><p class="lead">確認：建築士・工務店・解体業者・土地家屋調査士・建築指導課</p></div>
+    <div class="card"><h3>3. 金融・資金調達</h3><ul class="tight"><li>競売/公売は住宅ローン不可</li><li>再建築不可/借地/底地/共有は融資困難</li><li>現金決済・短い納付期限</li><li>借り換え・売却が難しい（出口が狭い）</li></ul><p class="lead">確認：金融機関・不動産業者・税理士・FP</p></div>
+    <div class="card"><h3>4. 公売・競売特有</h3><ul class="tight"><li>内覧不可・占有者・残置物</li><li>滞納・現況と資料の差異</li><li>契約不適合責任を追及しにくい</li><li>プロとの競争で高値掴み</li></ul><p class="lead">確認：競売に強い不動産業者・司法書士・弁護士・建築士</p></div>
+  </div>
+  <div class="note" style="margin-top:14px"><b>近隣・運用リスク：</b>近隣関係・騒音/臭気/人の出入りへの反対・私道承諾・用途と地域の不一致・搬入出・消防避難・保健所許可。<b>「使える土地」と「買える土地」は違う</b>。安くても運用できなければ意味がない。</div>
+</section>
+
+<section id="judge">
+  <h2>⑥ 初心者向けリスク判定（A〜E） <a class="toplink" href="#judge">#</a></h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>判定</th><th>意味</th></tr></thead><tbody>
+    <tr><td><span class="badge A">A</span></td><td>初心者でも検討可能。ただし専門家確認は必須</td></tr>
+    <tr><td><span class="badge B">B</span></td><td>条件次第で検討可能。不動産業者・建築士・司法書士の確認が必要</td></tr>
+    <tr><td><span class="badge C">C</span></td><td>初心者にはやや難しい。学習対象として有効。購入は専門家同伴が前提</td></tr>
+    <tr><td><span class="badge D">D</span></td><td>初心者が購入するには難しい。なぜ難しいかを学ぶ価値はある</td></tr>
+    <tr><td><span class="badge E">E</span></td><td>原則 購入対象外。リスク構造の学習用サンプルとして扱う</td></tr>
+    </tbody></table></div>
+  <div class="note">D/Eは単に除外しない。「なぜD/Eか／最大リスク／確認すべき専門家／何が整えばC/Bに上がるか／教材として何を見るか」を必ず記録する。</div>
+  <div class="grid cols2" style="margin-top:14px">
+    <div class="card"><h3 style="color:#ff9c9c">原則避ける（→D/E）</h3><p class="lead">共有持分のみ／底地のみ／借地複雑／占有者あり／退去交渉要／再建築不可かつ建物劣悪／接道不明／私道持分なし／境界未確定／越境／極端な狭小／融資不可／用途未定／出口なし／内覧不可かつ建物不明／価格以外の魅力なし。</p></div>
+    <div class="card"><h3 style="color:#9ce6c4">比較的扱いやすい（条件次第A/B）</h3><p class="lead">所有権／接道明確／再建築可／解体費が読める古家付き／境界確定／抵当権が決済時抹消／用途地域と用途が一致／融資の可能性／地場業者が介在／建築士に事前相談可／出口複数／安い理由を説明できる。</p></div>
+  </div>
+</section>
+
+<section id="score">
+  <h2>⑦ スコアリング基準 <a class="toplink" href="#score">#</a></h2>
+  <div class="grid cols2">
+    <div class="card"><h3>購入スコア（100点）</h3>
+      <ul class="tight">
+        <li>価格の割安感 …15</li><li>立地 …15</li><li>再建築・改修可能性 …15</li><li>権利関係のシンプルさ …15</li>
+        <li>融資可能性 …10</li><li>想定用途との相性 …10</li><li>出口戦略 …10</li><li>初心者でも扱える安全性 …10</li>
+      </ul>
+      <p class="lead">権利複雑/占有者/共有持分のみ/底地のみ/出口なし/専門家確認不可/安い理由不明/用途不実現/融資不成立 → 点数が高くても「要注意」or「見送り」。</p>
+    </div>
+    <div class="card"><h3>学習スコア（100点）</h3>
+      <ul class="tight">
+        <li>安い理由が明確 …20</li><li>リスク構造が学びやすい …20</li><li>法規・権利の勉強になる …20</li>
+        <li>比較対象として有用 …20</li><li>将来の判断力向上 …20</li>
+      </ul>
+      <p class="lead">購入候補として低評価でも、学習対象として高評価なら残してよい。「買うリスト」と「学ぶリスト」を分けて管理。</p>
+    </div>
+  </div>
+</section>
+
+<section id="candidates">
+  <h2>⑧ 候補物件（実データ＋学習用アーキタイプ） <a class="toplink" href="#candidates">#</a></h2>
+  <div class="note bad"><b>重要：</b>実データは <b>2026-06-16時点のSUUMO検索結果のスナップショット</b>。個別物件URLはID入替で消えるため、検索ページをアンカーに都度たどり直すこと。価格・在庫は流動的で、購入前に必ず現況・権利を再確認。「参考(ARCHETYPE)」は実在URLのない典型例。</div>
+  <div class="kpi">
+    <div>実データ抽出元：<b>SUUMO 23区 再建築不可</b></div>
+    <div>価格帯：<b>980万〜4,180万円</b></div>
+    <div>判定の主流：<b>C〜E（学習中心）</b></div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>所在地</th><th class="num">価格</th><th>面積(土地/建物)</th><th>種別/権利</th><th>安い理由</th><th>判定</th><th>検討可否</th><th>学習ポイント</th></tr></thead>
+    <tbody>
+      <tr><td>江戸川区鹿骨2</td><td class="num">980万</td><td>43.32/54.52㎡</td><td>再建築不可/所有権</td><td>建替不可・改修のみ</td><td><span class="badge D">D</span></td><td>学習用保留</td><td>再建築不可の最典型。接道から逆算</td></tr>
+      <tr><td>足立区谷中3</td><td class="num">1,500万</td><td>55.84/55.62㎡</td><td>再建築不可/所有権</td><td>再建築不可</td><td><span class="badge D">D</span></td><td>学習用保留</td><td>外周区の相場感</td></tr>
+      <tr><td>板橋区東山町</td><td class="num">1,980万</td><td>130.1/105.09㎡</td><td>再建築不可/所有権</td><td>再建不可だが広く坪単価安(約50万/坪)</td><td><span class="badge C">C</span></td><td>専門家確認後</td><td>広い再建築不可は隣地一体化で化ける</td></tr>
+      <tr><td>墨田区京島1</td><td class="num">1,980万</td><td>42.33/42.33㎡</td><td>再建築不可/所有権</td><td>木造密集地域</td><td><span class="badge D">D</span></td><td>学習用保留</td><td>木密の防火・延焼・避難</td></tr>
+      <tr><td>中野区東中野4</td><td class="num">2,180万</td><td>52.02/52.88㎡</td><td>再建築不可/所有権</td><td>駅近だが再建築不可</td><td><span class="badge C">C</span></td><td>専門家確認後</td><td>好立地×再建不可の価格バランス</td></tr>
+      <tr><td>杉並区阿佐谷北4</td><td class="num">2,380万</td><td>54.06/66.91㎡</td><td>再建築不可/所有権</td><td>人気エリアの再建築不可</td><td><span class="badge C">C</span></td><td>要追加調査</td><td>改修費込みの総額で判断する練習</td></tr>
+      <tr><td>荒川区東日暮里6</td><td class="num">2,580万</td><td>71.43/78.66㎡</td><td>再建築不可/所有権</td><td>再建不可だが面積広め</td><td><span class="badge C">C</span></td><td>専門家確認後</td><td>面積のある再建築不可の活用余地</td></tr>
+      <tr><td>新宿区新宿7</td><td class="num">2,780万</td><td>31.04/37.3㎡</td><td>再建築不可・狭小/所有権</td><td>都心駅近だが狭小+再建不可</td><td><span class="badge D">D</span></td><td>学習用保留</td><td>坪単価高(約296万)でも総額は出せる構造</td></tr>
+      <tr><td>世田谷区世田谷1</td><td class="num">4,180万</td><td>45.7/81.58㎡</td><td>再建築不可/所有権</td><td>人気区の再建築不可</td><td><span class="badge C">C</span></td><td>要追加調査</td><td>ブランド立地は欠陥でも下がりきらない</td></tr>
+      <tr><td>荒川区(4丁目)</td><td class="num">4,280万</td><td>要確認</td><td>旧法借地権</td><td>土地を所有しない借地</td><td><span class="badge C">C</span></td><td>専門家確認後</td><td>地代・更新料・譲渡承諾料の費用構造</td></tr>
+      <tr><td>板橋/北/練馬 想定 <span class="lead">(参考)</span></td><td class="num">1,800〜2,500万</td><td>50〜80㎡</td><td>古家付き土地(要SB)</td><td>古家価値ゼロ+セットバック</td><td><span class="badge B">B</span></td><td>要追加調査</td><td>後退で削られる有効面積を計算</td></tr>
+      <tr><td>23区 想定 <span class="lead">(参考/BIT)</span></td><td class="num">基準価額1,000〜3,000万</td><td>40〜70㎡</td><td>競売戸建</td><td>占有・内覧不可等を織込み</td><td><span class="badge E">E</span></td><td>学習用保留</td><td>三点セット・買受可能価額(×0.8)</td></tr>
+      <tr><td>23区 想定 <span class="lead">(参考)</span></td><td class="num">数百〜2,000万</td><td>11〜50㎡</td><td>公売(土地/持分等)</td><td>税滞納差押え・情報限定</td><td><span class="badge E">E</span></td><td>学習用保留</td><td>公売と競売の違い・見積価額の根拠</td></tr>
+      <tr><td>23区 想定 <span class="lead">(参考)</span></td><td class="num">数百万〜</td><td>持分のみ</td><td>共有持分</td><td>単独利用・売却不可</td><td><span class="badge E">E</span></td><td>見送り</td><td>共有持分は「揉める権利」</td></tr>
+      <tr><td>23区 想定 <span class="lead">(参考)</span></td><td class="num">収益還元次第</td><td>—</td><td>底地</td><td>低利回り・流動性低</td><td><span class="badge E">E</span></td><td>見送り</td><td>底地と借地は表裏一体</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">実データの一覧アンカー：<a href="https://suumo.jp/b/kodate/kw/東京２３区　再建築不可　中古　戸建て/">SUUMO 23区 再建築不可 中古戸建</a> ／ <a href="https://suumo.jp/b/kodate/kw/旧法　借地権　中古　戸建　２３区/">SUUMO 旧法借地権 戸建 23区</a>（全項目版は <code>candidates.csv</code>）。</p>
+</section>
+
+<section id="samples">
+  <h2>⑨ 学習用サンプル（買わずに力をつける） <a class="toplink" href="#samples">#</a></h2>
+  <p class="lead">購入候補としてD/Eでも、安い理由とリスク構造を学ぶ教材として残す。各サンプルは「なぜ安い／どこが危ない／どの資料で分かる／専門家の着眼点／どんな人なら買えるか／何が整えば検討対象に上がるか」を整理。</p>
+  <div class="grid cols2">
+    <div class="card"><h3>再建築不可</h3><p class="lead">接道義務未達で建替不可。価格より先に<b>接道</b>を見る癖を。43条但し書き or 隣地一体化で改善余地。</p></div>
+    <div class="card"><h3>借地権</h3><p class="lead">土地は地主のもの。地代・更新料・譲渡承諾料が続く。旧法/普通/定期の別と残存期間・承諾の取りやすさを総コストで。</p></div>
+    <div class="card"><h3>底地</h3><p class="lead">借地人がいて自由に使えない。完全所有権化(借地権買取/借地人へ売却)ができないと出口が極端に狭い。</p></div>
+    <div class="card"><h3>共有持分のみ（原則回避）</h3><p class="lead">単独で使えず売れず、分割請求は訴訟化。統合できる資力・交渉力がある人のみ。</p></div>
+    <div class="card"><h3>古家付き土地（B寄り）</h3><p class="lead">解体費・セットバック減・インフラ更新を入れて割安性が残るか。接道・境界が明確なら入口になりうる。</p></div>
+    <div class="card"><h3>競売 / 公売</h3><p class="lead">BITの三点セットを月に数件、買わずに精読するだけでリスク構造が体系的に学べる。学習価値最大。</p></div>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>⑩ 専門家確認フロー <a class="toplink" href="#flow">#</a></h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>順</th><th>専門家</th><th>確認内容</th></tr></thead><tbody>
+    <tr><td>1</td><td>不動産業者</td><td>周辺相場・なぜ安いか・再建築可否・接道・私道持分・出口・融資可能性・成約事例・店舗/アトリエ利用の現実性</td></tr>
+    <tr><td>2</td><td>建築士</td><td>建築可能ボリューム・改修可能性・耐震・老朽度・解体/改修費概算・用途可否・消防避難・法規ボトルネック</td></tr>
+    <tr><td>3</td><td>司法書士</td><td>登記簿・所有者・抵当権/差押え/仮登記・借地権/地上権/地役権・共有持分・決済時に抹消/残る権利</td></tr>
+    <tr><td>4</td><td>金融機関</td><td>融資可否・担保評価・自己資金・住宅ローン/事業用・決済スケジュール・公売競売/借地/再建築不可への融資</td></tr>
+    <tr><td>5</td><td>行政</td><td>建築指導課/道路課/都市計画課/保健所/消防署：接道・道路種別・再建築可否・用途地域・店舗飲食可否・消防避難</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="rules">
+  <h2>⑪ 最終判断ルール・撤退条件 <a class="toplink" href="#rules">#</a></h2>
+  <div class="note good"><b>「買い」と判定する5条件（すべて必須）：</b>
+    ①安い理由を言語化できる ②リスクを専門家に確認できる ③買った後の使い道がある ④出口が少なくとも1つある ⑤諸費用を含めても割安性が残る。
+    1つでも欠ければ「見送り」または「要追加調査」。</div>
+  <div class="note bad" style="margin-top:12px"><b>撤退条件（いずれかに該当で原則中止）：</b>
+    再建築可否/接道/境界が確認できない・融資も現金も難しい・解体改修込みで割安でない・用途が実現できない・占有者/共有者との交渉が必要・権利関係を説明されても理解できない・出口戦略がない・安い理由が説明できない・価格だけで欲しくなっている・専門家確認なしで入札申込しようとしている。
+    <br>→ 撤退時も学習サンプルとして「撤退理由・主要リスク・追加確認で再検討できるか・次回の注意点」を記録する。</div>
+</section>
+
+<section id="sources">
+  <h2>⑫ 出典・免責 <a class="toplink" href="#sources">#</a></h2>
+  <p class="lead">調査日 2026-06-16。主要な一次情報URLは ③定点観測 と <code>notes/sources.md</code> に記載。制度の要点：</p>
+  <ul class="tight">
+    <li>接道義務＝建基法43条1項（幅員4m道路に2m接道）／救済は43条2項2号許可</li>
+    <li>セットバック＝42条2項道路で中心線から2m後退（建築不可・容積不算入）</li>
+    <li>競売：買受可能価額＝売却基準価額×0.8／保証金＝20%／納付期限 約1か月</li>
+    <li>公売：内覧不可原則・契約不適合責任なし・納付期限 数日〜3週間</li>
+  </ul>
+  <div class="note">本資料は学習・比較・検討支援を目的とした調査メモであり、投資勧誘・法務/税務/建築の専門助言ではない。取得判断の前に必ず不動産業者・建築士・司法書士・金融機関・行政の確認を行うこと。URL・価格・制度は2026年6月時点で変動する。</div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  都心の安い土地・訳あり物件 リサーチ ／ 関連ファイル：README.md・watchlist.md・property_checklist.md・risk_guide.md・scoring_criteria.md・candidates.csv・learning_samples.md ／ 最終更新 2026-06-16
+</footer>
+
+</body>
+</html>
