@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-18T17:08:19.788322+09:00",
-  "count": 114,
+  "updated": "2026-06-19T07:52:56.140590+09:00",
+  "count": 115,
   "rows": [
     {
       "id": "21023414",
@@ -1789,6 +1789,28 @@
       "comment": "相場比5.13倍（割安） / 駅徒歩21分 / 出口C / 再建築不可→流動性難"
     },
     {
+      "id": "21045845",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "世田谷区",
+      "loc": "世田谷区世田谷１",
+      "price": 4180,
+      "land": 45.7,
+      "bld": 81.58,
+      "plan": "3K",
+      "walk": 14,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_21045845/",
+      "tags": [
+        "再建築不可"
+      ],
+      "tier": "A",
+      "tsubo": 302,
+      "ratio": 1.32,
+      "score": 44,
+      "grade": "低",
+      "comment": "相場比1.32倍（割安） / 駅徒歩14分 / 出口A / 再建築不可→流動性難"
+    },
+    {
       "id": "77169370",
       "source": "SUUMO土地",
       "kind": "土地",
@@ -1955,6 +1977,26 @@
       "comment": "相場比0.79倍（相場並〜割高） / 駅徒歩7分 / 出口B"
     },
     {
+      "id": "21002138",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "板橋区",
+      "loc": "板橋区弥生町",
+      "price": 3980,
+      "land": 29.25,
+      "bld": 67.98,
+      "plan": "3LDK",
+      "walk": 7,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_itabashi/nc_21002138/",
+      "tags": [],
+      "tier": "B",
+      "tsubo": 450,
+      "ratio": 0.64,
+      "score": 39,
+      "grade": "低",
+      "comment": "相場比0.64倍（相場並〜割高） / 駅徒歩7分 / 出口B"
+    },
+    {
       "id": "21033292",
       "source": "SUUMO戸建",
       "kind": "戸建",
@@ -2097,6 +2139,26 @@
       "comment": "相場比0.51倍（相場並〜割高） / 駅徒歩8分 / 出口C"
     },
     {
+      "id": "20383137",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "練馬区",
+      "loc": "練馬区貫井５",
+      "price": 2980,
+      "land": 34.89,
+      "bld": 39.66,
+      "plan": "1LDK",
+      "walk": 12,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_nerima/nc_20383137/",
+      "tags": [],
+      "tier": "C",
+      "tsubo": 282,
+      "ratio": 0.96,
+      "score": 34,
+      "grade": "低",
+      "comment": "相場比0.96倍（相場並〜割高） / 駅徒歩12分 / 出口C"
+    },
+    {
       "id": "20723776",
       "source": "SUUMO戸建",
       "kind": "戸建",
@@ -2217,48 +2279,6 @@
       "score": 32,
       "grade": "低",
       "comment": "相場比0.89倍（相場並〜割高） / 駅徒歩14分 / 出口C"
-    },
-    {
-      "id": "20913209",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "葛飾区",
-      "loc": "葛飾区立石２",
-      "price": 5100,
-      "land": 36.13,
-      "bld": 68.31,
-      "plan": "2LDK",
-      "walk": 8,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_20913209/",
-      "tags": [],
-      "tier": "C",
-      "tsubo": 467,
-      "ratio": 0.47,
-      "score": 31,
-      "grade": "低",
-      "comment": "相場比0.47倍（相場並〜割高） / 駅徒歩8分 / 出口C"
-    },
-    {
-      "id": "21045845",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "世田谷区",
-      "loc": "世田谷区世田谷１",
-      "price": 4180,
-      "land": null,
-      "bld": null,
-      "plan": "",
-      "walk": 14,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_21045845/",
-      "tags": [
-        "再建築不可"
-      ],
-      "tier": "A",
-      "tsubo": null,
-      "ratio": null,
-      "score": 27,
-      "grade": "低",
-      "comment": "駅徒歩14分 / 出口A / 再建築不可→流動性難"
     },
     {
       "id": "20255979",
