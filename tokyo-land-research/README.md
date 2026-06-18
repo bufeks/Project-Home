@@ -22,7 +22,13 @@
 | [candidates.csv](./candidates.csv) | 候補物件一覧（実データ＋学習用アーキタイプ） |
 | [learning_samples.md](./learning_samples.md) | 学習用サンプル（D/Eでも教材として残す物件） |
 | [index.html](./index.html) | 全内容を1ページにまとめたブラウザ閲覧用HTML |
+| [listings.html](./listings.html) | **最新物件一覧（毎日自動更新）**。SUUMOから23区の再建築不可・借地権・古家付きを取得し、区/種別/価格で絞り込み・並べ替え |
+| scripts/fetch_listings.py | listings.html / data/listings.json を生成するスクレイパ |
+| data/listings.json | 最新物件データ（自動更新の生データ） |
 | notes/ | 調査メモ・出典 |
+
+> 🔄 **最新物件一覧の自動更新**：`.github/workflows/update-listings.yml` が毎日 SUUMO を取得して `listings.html` を再生成・コミットします（GitHub Actions）。
+> Pages公開後は `https://bufeks.github.io/Project-Home/listings.html` で常に最新が見られます。
 
 > ⚠️ candidates.csv の実データは **2026-06-16時点のSUUMO検索結果のスナップショット**。
 > 個別物件URLはID入替で消えるため、検索ページURLをアンカーにして都度たどり直すこと。価格・在庫は流動的。

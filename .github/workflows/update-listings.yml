@@ -1,0 +1,44 @@
+name: Update listings
+
+# SUUMOから東京23区の訳あり中古戸建/古家付き土地の最新一覧を毎日取得し、
+# tokyo-land-research/listings.html と data/listings.json を再生成してコミットする。
+# 変更があるときだけコミットする。手動実行(workflow_dispatch)も可。
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 06:00 JST 毎日
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-listings
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch latest listings
+        run: python3 tokyo-land-research/scripts/fetch_listings.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain tokyo-land-research/listings.html tokyo-land-research/data)" ]; then
+            git add tokyo-land-research/listings.html tokyo-land-research/data/listings.json
+            git commit -m "chore: update listings ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No changes."
+          fi
