@@ -1,19 +1,7 @@
 {
-  "updated": "2026-06-18T13:43:04.491425+09:00",
+  "updated": "2026-06-18T13:57:54.879091+09:00",
   "count": 40,
   "rows": [
-    {
-      "id": "20983917",
-      "category": "古家付き",
-      "ward": "豊島区",
-      "loc": "豊島区西池袋２",
-      "price": 800,
-      "land": "68.19㎡",
-      "bld": "",
-      "plan": "",
-      "station": "ＪＲ山手線「目白」歩7分",
-      "url": "https://suumo.jp/tochi/tokyo/sc_toshima/nc_20983917/"
-    },
     {
       "id": "21041627",
       "category": "再建築不可",
@@ -39,18 +27,6 @@
       "url": "https://suumo.jp/chukoikkodate/tokyo/sc_nerima/nc_20058868/"
     },
     {
-      "id": "20826565",
-      "category": "古家付き",
-      "ward": "目黒区",
-      "loc": "目黒区八雲３",
-      "price": 1000,
-      "land": "132.03㎡",
-      "bld": "",
-      "plan": "",
-      "station": "東急東横線「都立大学」歩15分",
-      "url": "https://suumo.jp/tochi/tokyo/sc_meguro/nc_20826565/"
-    },
-    {
       "id": "20919329",
       "category": "再建築不可",
       "ward": "足立区",
@@ -73,18 +49,6 @@
       "plan": "5DK",
       "station": "西武池袋線「保谷」歩15分",
       "url": "https://suumo.jp/chukoikkodate/tokyo/sc_nerima/nc_79221884/"
-    },
-    {
-      "id": "20983993",
-      "category": "古家付き",
-      "ward": "杉並区",
-      "loc": "杉並区高井戸東２",
-      "price": 1900,
-      "land": "247.93㎡",
-      "bld": "",
-      "plan": "",
-      "station": "京王井の頭線「高井戸」歩6分",
-      "url": "https://suumo.jp/tochi/tokyo/sc_suginami/nc_20983993/"
     },
     {
       "id": "78838664",
@@ -243,30 +207,6 @@
       "url": "https://suumo.jp/tochi/tokyo/sc_itabashi/nc_20600796/"
     },
     {
-      "id": "21062814",
-      "category": "再建築不可",
-      "ward": "千代田区",
-      "loc": "千代田区岩本町２",
-      "price": 3000,
-      "land": "69.75㎡",
-      "bld": "",
-      "plan": "5K",
-      "station": "都営新宿線「岩本町」歩4分",
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_chiyoda/nc_21062814/"
-    },
-    {
-      "id": "73772402",
-      "category": "古家付き",
-      "ward": "板橋区",
-      "loc": "板橋区前野町６",
-      "price": 3000,
-      "land": "227.1㎡",
-      "bld": "",
-      "plan": "",
-      "station": "東武東上線「上板橋」歩16分",
-      "url": "https://suumo.jp/tochi/tokyo/sc_itabashi/nc_73772402/"
-    },
-    {
       "id": "20177779",
       "category": "再建築不可",
       "ward": "中野区",
@@ -313,18 +253,6 @@
       "plan": "4LDK",
       "station": "西武有楽町線「新桜台」歩5分",
       "url": "https://suumo.jp/chukoikkodate/tokyo/sc_nerima/nc_20654227/"
-    },
-    {
-      "id": "79147265",
-      "category": "借地権",
-      "ward": "新宿区",
-      "loc": "新宿区下落合４-20-24付近",
-      "price": 3980,
-      "land": "105.87㎡",
-      "bld": "",
-      "plan": "4LDK",
-      "station": "ＪＲ山手線「目白」歩11分",
-      "url": "https://suumo.jp/ikkodate/tokyo/sc_shinjuku/nc_79147265/"
     },
     {
       "id": "21045845",
@@ -387,18 +315,6 @@
       "url": "https://suumo.jp/tochi/tokyo/sc_itabashi/nc_20779939/"
     },
     {
-      "id": "78915965",
-      "category": "古家付き",
-      "ward": "渋谷区",
-      "loc": "渋谷区神宮前２",
-      "price": 6000,
-      "land": "59.5㎡",
-      "bld": "",
-      "plan": "",
-      "station": "東京メトロ副都心線「北参道」歩9分",
-      "url": "https://suumo.jp/tochi/tokyo/sc_shibuya/nc_78915965/"
-    },
-    {
       "id": "77169370",
       "category": "古家付き",
       "ward": "江戸川区",
@@ -421,18 +337,6 @@
       "plan": "",
       "station": "ＪＲ京浜東北線「大森」歩7分",
       "url": "https://suumo.jp/tochi/tokyo/sc_ota/nc_21071056/"
-    },
-    {
-      "id": "21077262",
-      "category": "古家付き",
-      "ward": "練馬区",
-      "loc": "練馬区早宮１",
-      "price": 6500,
-      "land": "171.17㎡",
-      "bld": "",
-      "plan": "",
-      "station": "東京メトロ副都心線「氷川台」歩4分",
-      "url": "https://suumo.jp/tochi/tokyo/sc_nerima/nc_21077262/"
     },
     {
       "id": "20406265",
@@ -481,6 +385,102 @@
       "plan": "",
       "station": "東武東上線「下板橋」歩6分",
       "url": "https://suumo.jp/tochi/tokyo/sc_toshima/nc_20147679/"
+    },
+    {
+      "id": "20983917",
+      "category": "古家付き",
+      "ward": "豊島区",
+      "loc": "豊島区西池袋２",
+      "price": 10800,
+      "land": "68.19㎡",
+      "bld": "",
+      "plan": "",
+      "station": "ＪＲ山手線「目白」歩7分",
+      "url": "https://suumo.jp/tochi/tokyo/sc_toshima/nc_20983917/"
+    },
+    {
+      "id": "20983993",
+      "category": "古家付き",
+      "ward": "杉並区",
+      "loc": "杉並区高井戸東２",
+      "price": 11900,
+      "land": "247.93㎡",
+      "bld": "",
+      "plan": "",
+      "station": "京王井の頭線「高井戸」歩6分",
+      "url": "https://suumo.jp/tochi/tokyo/sc_suginami/nc_20983993/"
+    },
+    {
+      "id": "21062814",
+      "category": "再建築不可",
+      "ward": "千代田区",
+      "loc": "千代田区岩本町２",
+      "price": 13000,
+      "land": "69.75㎡",
+      "bld": "",
+      "plan": "5K",
+      "station": "都営新宿線「岩本町」歩4分",
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_chiyoda/nc_21062814/"
+    },
+    {
+      "id": "73772402",
+      "category": "古家付き",
+      "ward": "板橋区",
+      "loc": "板橋区前野町６",
+      "price": 13000,
+      "land": "227.1㎡",
+      "bld": "",
+      "plan": "",
+      "station": "東武東上線「上板橋」歩16分",
+      "url": "https://suumo.jp/tochi/tokyo/sc_itabashi/nc_73772402/"
+    },
+    {
+      "id": "79147265",
+      "category": "借地権",
+      "ward": "新宿区",
+      "loc": "新宿区下落合４-20-24付近",
+      "price": 13980,
+      "land": "105.87㎡",
+      "bld": "",
+      "plan": "4LDK",
+      "station": "ＪＲ山手線「目白」歩11分",
+      "url": "https://suumo.jp/ikkodate/tokyo/sc_shinjuku/nc_79147265/"
+    },
+    {
+      "id": "78915965",
+      "category": "古家付き",
+      "ward": "渋谷区",
+      "loc": "渋谷区神宮前２",
+      "price": 16000,
+      "land": "59.5㎡",
+      "bld": "",
+      "plan": "",
+      "station": "東京メトロ副都心線「北参道」歩9分",
+      "url": "https://suumo.jp/tochi/tokyo/sc_shibuya/nc_78915965/"
+    },
+    {
+      "id": "21077262",
+      "category": "古家付き",
+      "ward": "練馬区",
+      "loc": "練馬区早宮１",
+      "price": 16500,
+      "land": "171.17㎡",
+      "bld": "",
+      "plan": "",
+      "station": "東京メトロ副都心線「氷川台」歩4分",
+      "url": "https://suumo.jp/tochi/tokyo/sc_nerima/nc_21077262/"
+    },
+    {
+      "id": "20826565",
+      "category": "古家付き",
+      "ward": "目黒区",
+      "loc": "目黒区八雲３",
+      "price": 21000,
+      "land": "132.03㎡",
+      "bld": "",
+      "plan": "",
+      "station": "東急東横線「都立大学」歩15分",
+      "url": "https://suumo.jp/tochi/tokyo/sc_meguro/nc_20826565/"
     }
   ]
 }

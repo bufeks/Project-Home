@@ -50,6 +50,27 @@ LINK_RE = re.compile(
     r'href="(https://suumo\.jp/(?:chukoikkodate|ikkodate|tochi)/[^"]+/nc_(\d+)/)[^"]*"'
     r'\s+class="cassette-title')
 
+# 「1億800万円」「2億」「4180万円」等を 万円単位の整数に変換する
+PRICE_RE = re.compile(r"販売価格\s*(?:([0-9]+)\s*億)?\s*([0-9,]+)?\s*万?円")
+
+
+def parse_price(t):
+    m = PRICE_RE.search(t)
+    if not m or (m.group(1) is None and m.group(2) is None):
+        return None
+    oku = int(m.group(1)) if m.group(1) else 0
+    man = int(m.group(2).replace(",", "")) if m.group(2) else 0
+    val = oku * 10000 + man
+    return val or None
+
+
+def fmt_price(man):
+    """万円単位の整数を「1億800万円」「4180万円」表記に。"""
+    if man >= 10000:
+        oku, rest = divmod(man, 10000)
+        return f"{oku}億{rest:,}万円" if rest else f"{oku}億円"
+    return f"{man:,}万円"
+
 
 def parse(htmltext, category):
     """SUUMO /b/kodate/kw/ の cassette レイアウトを解析。"""
@@ -59,9 +80,9 @@ def parse(htmltext, category):
         if nid in out:
             continue
         t = text(htmltext[m.start():m.start() + 3000])   # 1物件ぶんの窓
-        mp = re.search(r"販売価格\s*([0-9,]+)万円", t) or re.search(r"([0-9,]+)万円", t)
+        price = parse_price(t)
         ma = re.search(r"所在地\s*東京都\s*([^\s]+?[区市][^\s]*)", t)
-        if not (mp and ma):
+        if not (price and ma):
             continue
         loc = ma.group(1)
         ward = next((w for w in WARDS if loc.startswith(w)), None)
@@ -73,7 +94,7 @@ def parse(htmltext, category):
         plan = re.search(r"間取り\s*(\d+[SLDK]+)", t)
         out[nid] = dict(
             id=nid, category=category, ward=ward, loc=loc,
-            price=int(mp.group(1).replace(",", "")),
+            price=price,
             land=(land.group(1) + "㎡") if land else "",
             bld=(bld.group(1) + "㎡") if bld else "",
             plan=plan.group(1) if plan else "",
@@ -127,7 +148,7 @@ def render(rows, errors):
         rowhtml.append(
             f'<tr data-ward="{r["ward"]}" data-cat="{r["category"]}" data-price="{r["price"]}">'
             f'<td>{r["ward"]}</td><td>{H.escape(r["loc"])}</td>'
-            f'<td class="num">{r["price"]:,}万円</td>'
+            f'<td class="num">{fmt_price(r["price"])}</td>'
             f'<td>{r["land"]}</td><td>{r["bld"]}</td>'
             f'<td>{H.escape(r["plan"])}</td>'
             f'<td class="cat">{H.escape(r["category"])}</td>'
