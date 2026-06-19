@@ -51,6 +51,85 @@ WARD_TSUBO = {
     "板橋区":290,"練馬区":270,"足立区":220,"葛飾区":220,"江戸川区":240,
 }
 
+# 区ごとの「都市開発・再開発の将来性」★0-3（出口の“上振れ”期待の目安）。
+# 住宅資産価値に効く駅前/沿線再開発を中心に評価（2026年時点の調査ベース。詳細・出典は notes/redevelopment.md）。
+# ※ 中野は新北口(サンプラザ跡)が事業費高騰で計画見直し・一旦中止のため控えめ評価。
+WARD_DEV = {
+    "千代田区": (3, "大手町・常盤橋（TOKYO TORCH／Torch Tower 2028頃）、神田・神保町。都心中枢で更新が活発"),
+    "中央区":   (3, "日本橋（首都高地下化・室町/一丁目）、八重洲、月島・勝どき・晴海（HARUMI FLAG）、築地市場跡地"),
+    "港区":     (3, "麻布台ヒルズ、品川・高輪ゲートウェイシティ（2025-26）、芝浦・浜松町。最も活発"),
+    "渋谷区":   (3, "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）"),
+    "新宿区":   (3, "新宿駅西口（小田急・メトロ 2029頃）、西新宿の再編、歌舞伎町"),
+    "品川区":   (3, "大崎・五反田、武蔵小山（駅前進行）、大井町（広町地区）、西小山"),
+    "豊島区":   (3, "池袋駅周辺（西口地区再開発・公園整備, 2030年代）、ハレザ池袋"),
+    "江東区":   (2, "豊洲・有明など湾岸の継続開発、東陽町、亀戸"),
+    "文京区":   (2, "後楽園・春日（文京ガーデン）、護国寺"),
+    "台東区":   (2, "上野駅周辺、浅草。観光・商業の更新"),
+    "墨田区":   (2, "錦糸町・押上（スカイツリー周辺）"),
+    "目黒区":   (2, "目黒駅前、学芸大学、自由が丘一丁目"),
+    "世田谷区": (2, "下北沢（小田急地下化跡『下北線路街』）、三軒茶屋（三茶のミライ）、二子玉川"),
+    "大田区":   (2, "蒲田駅周辺グランドデザイン、大森、羽田イノベーションシティ"),
+    "北区":     (2, "十条駅西口市街地再開発（タワマン, 2027頃）＋補助73号線、赤羽・王子"),
+    "足立区":   (2, "北千住駅東口周辺、西新井、綾瀬。北千住は商業集積が強い"),
+    "荒川区":   (2, "西日暮里駅前地区再開発、南千住"),
+    "板橋区":   (2, "大山駅（クロスポイント・ハッピーロード・補助26号線・連続立体交差）、上板橋南口、板橋駅前"),
+    "葛飾区":   (2, "京成立石駅前（36階タワマン＋区役所, 進行中）、金町、新小岩"),
+    "江戸川区": (2, "JR小岩駅 南北の市街地再開発（タワマン 2026-27竣工）、平井"),
+    "中野区":   (1, "中野駅新北口（サンプラザ跡）は事業費高騰で計画見直し・一旦中止。新区役所は開庁済"),
+    "杉並区":   (1, "荻窪・阿佐ヶ谷・西荻窪の小規模更新が中心"),
+    "練馬区":   (1, "大泉学園・石神井公園・練馬駅前の駅前整備"),
+}
+DEV_BONUS = {3: 4, 2: 2, 1: 1, 0: 0}   # 将来性スコア加点（最大+4。控えめに）
+
+# 地区(丁目)レベルの将来性スポット。住所(loc)の前方一致で判定。住所の細かさを活かし、
+# 「今は割安・古家密集だが、再開発の波が来る前夜」のエリアを拾う。
+#   kind="再開発": 駅前再開発の直撃/近接（進行中の市街地再開発など）
+#   kind="波":     木造住宅密集＝東京都『不燃化特区』等。今安い＋将来の建替/更新ポテンシャル
+# (住所prefix, ラベル, kind, ★0-3, メモ)  ※随時追記して充実させる。出典 notes/redevelopment.md
+DEV_SPOTS = [
+    # --- 再開発 直撃/近接（進行中） ---
+    ("新宿区西新宿", "西新宿五丁目", "再開発", 3, "西新宿五丁目中央南/中央北で市街地再開発（木造密集→住宅約470戸ほか）。新宿至近で出口◎"),
+    ("品川区小山",   "武蔵小山",   "再開発", 3, "武蔵小山駅前のタワマン再開発が連続。商店街×再開発で資産性が上昇"),
+    ("品川区西小山", "西小山",     "再開発", 2, "西小山駅前の再開発。武蔵小山に次ぐ更新エリア"),
+    ("葛飾区立石",   "京成立石",   "再開発", 3, "立石駅前で36階タワマン＋新区役所が進行中。葛飾の中心が刷新"),
+    ("江戸川区南小岩","南小岩",     "再開発", 3, "JR小岩駅 南北の市街地再開発でタワマン2026-27竣工。南小岩七・八丁目は不燃化特区"),
+    ("北区十条",     "十条",       "再開発", 3, "十条駅西口で高層タワマン再開発＋補助73号線。十条駅周辺は不燃化特区"),
+    ("板橋区大山町", "大山",       "再開発", 3, "大山駅クロスポイント等の再開発＋補助26号線＋連続立体交差。木密の刷新が進む"),
+    ("中野区中野",   "中野駅",     "再開発", 1, "中野駅新北口(サンプラザ跡)は事業費高騰で計画見直し中。再始動なら大化けも現時点は不透明"),
+    # --- 波の前夜（不燃化特区・木造密集＝今割安・将来更新） ---
+    ("新宿区北新宿", "北新宿(西口北側)", "波", 2, "西新宿再開発の北側。木造住宅が密集し今は割安、将来の更新余地"),
+    ("新宿区百人町", "百人町(大久保)",   "波", 2, "大久保駅周辺の密集市街地。更新ポテンシャル"),
+    ("品川区戸越",   "戸越",       "波", 2, "戸越二・四・五・六丁目は不燃化特区（木密）。戸越銀座人気で実需厚い"),
+    ("品川区豊町",   "豊町",       "波", 2, "豊町ほか不燃化特区。武蔵小山・西小山に近接"),
+    ("品川区西大井", "西大井",     "波", 2, "西大井の不燃化特区。大井町再開発の波及"),
+    ("世田谷区太子堂","太子堂",     "波", 2, "太子堂・若林は不燃化特区。三軒茶屋再開発に近接"),
+    ("世田谷区若林", "若林",       "波", 2, "若林は不燃化特区。三軒茶屋至近"),
+    ("世田谷区北沢", "北沢",       "波", 2, "北沢三・四/五丁目は不燃化特区。下北沢再開発に近接"),
+    ("荒川区町屋",   "町屋",       "波", 2, "町屋・尾久は不燃化特区（木密）"),
+    ("荒川区荒川",   "荒川",       "波", 2, "荒川・南千住の不燃化特区"),
+    ("荒川区東尾久", "尾久",       "波", 2, "尾久の不燃化特区（木密）"),
+    ("墨田区京島",   "京島",       "波", 2, "京島周辺は不燃化特区（木密の代表格）。押上・スカイツリー至近"),
+    ("豊島区東池袋", "東池袋",     "波", 2, "東池袋四・五丁目は不燃化特区。池袋再開発に近接"),
+    ("豊島区南池袋", "南池袋",     "波", 2, "雑司が谷・南池袋の不燃化特区。池袋至近"),
+    ("豊島区雑司が谷","雑司が谷",   "波", 2, "雑司が谷の不燃化特区"),
+    ("大田区大森中", "大森中",     "波", 2, "大森中地区は不燃化特区（木密）"),
+    ("大田区東蒲田", "東蒲田",     "波", 2, "東蒲田は不燃化特区。蒲田再開発に近接"),
+    ("足立区西新井", "西新井",     "波", 2, "西新井駅西口周辺は不燃化特区。駅前更新が進む"),
+    ("中野区大和町", "大和町",     "波", 2, "大和町は不燃化特区（木密）。中野・高円寺至近"),
+    ("文京区大塚",   "大塚",       "波", 2, "大塚五・六丁目は不燃化特区。文京の希少な割安余地"),
+    ("杉並区方南",   "方南町",     "波", 2, "方南一丁目は不燃化特区。丸ノ内線方南町"),
+    ("江東区北砂",   "北砂",       "波", 2, "北砂三・四・五丁目は不燃化特区（木密）"),
+    ("板橋区大谷口", "大谷口",     "波", 2, "大谷口一丁目周辺は不燃化特区（木密）"),
+    ("葛飾区四つ木", "四つ木",     "波", 2, "四つ木は不燃化特区。立石再開発に近接"),
+    ("葛飾区東四つ木","東四つ木",   "波", 2, "東四つ木は不燃化特区"),
+    ("葛飾区堀切",   "堀切",       "波", 2, "堀切の不燃化特区"),
+    ("台東区谷中",   "谷中",       "波", 2, "谷中二・三・五丁目は不燃化特区。人気エリアで実需厚い"),
+    ("目黒区目黒本町","目黒本町",   "波", 2, "目黒本町五・六丁目ほか不燃化特区。学芸大学至近"),
+    ("目黒区原町",   "原町",       "波", 2, "原町一丁目は不燃化特区"),
+    ("目黒区洗足",   "洗足",       "波", 2, "洗足一丁目は不燃化特区"),
+    ("江戸川区平井", "平井",       "波", 2, "平井二丁目付近は不燃化特区"),
+]
+
 # 通常物件（母集団）: SUUMO 中古戸建 23区・価格安い順
 AREA_URL = "https://suumo.jp/jj/bukken/ichiran/JJ012FC001/"
 AREA_PAGES = 3
@@ -268,6 +347,23 @@ def enrich(r):
         score -= 12
     if "古家付き" in r["tags"]:
         score -= 2
+
+    # 都市開発・将来性（区レベル＋地区スポット）。出口の“上振れ”を控えめに加点。
+    ward_stars, ward_note = WARD_DEV.get(ward, (0, ""))
+    spot = next((s for s in DEV_SPOTS if r["loc"].startswith(s[0])), None)
+    slabel, skind, snote, sstars = ("", "", "", 0)
+    if spot:
+        _, slabel, skind, sstars, snote = spot
+    dev_stars = max(ward_stars, sstars)
+    r["dev"] = dev_stars
+    r["dev_ward_note"] = ward_note
+    r["spot"] = slabel
+    r["spot_kind"] = skind
+    r["spot_note"] = snote
+    score += DEV_BONUS[dev_stars]
+    if skind == "波" and ratio and ratio >= 1.1:
+        score += 1                        # 割安×“波の前夜”は本命候補として微加点
+
     r["score"] = max(0, min(100, score))
     r["grade"] = ("高" if r["score"] >= 78 else "中高" if r["score"] >= 62
                   else "中" if r["score"] >= 48 else "低")
@@ -278,6 +374,8 @@ def enrich(r):
     if w is not None:
         bits.append(f"駅徒歩{w}分")
     bits.append(f"出口{tier}")
+    if dev_stars >= 2:
+        bits.append((f"{slabel}・" if slabel else "") + f"将来性{'★' * dev_stars}")
     if "再建築不可" in r["tags"]:
         bits.append("再建築不可→流動性難")
     if "借地権" in r["tags"]:
@@ -330,19 +428,36 @@ def render(rows, errors):
         else:
             fill, rcol = 0, "#2a2f3a"
         risky = ("再建築不可" in r["tags"]) or ("借地権" in r["tags"])
+        dev = r.get("dev", 0)
+        stars = "★" * dev + "☆" * (3 - dev)
+        spot_kind = r.get("spot_kind", "")
         badges = []
         if r["score"] >= 78:
             badges.append('<span class="bdg b-top">★高評価</span>')
         if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
             badges.append('<span class="bdg b-gem">💎穴場候補</span>')
+        if spot_kind == "波":
+            badges.append('<span class="bdg b-wave">🌊波の前夜</span>')
+        elif spot_kind == "再開発" and dev >= 2:
+            badges.append('<span class="bdg b-dev">🏗再開発エリア</span>')
+        elif dev >= 3:
+            badges.append('<span class="bdg b-dev">🏗再開発活発</span>')
         if risky:
             badges.append('<span class="bdg b-warn">⚠落とし穴</span>')
         badges_s = "".join(badges)
+        spotfact = (" " + H.escape(r["spot"])) if r.get("spot") else ""
+        if r.get("spot_note"):
+            _ic = "🌊" if spot_kind == "波" else "🏗"
+            _ncls = "n-wave" if spot_kind == "波" else "n-dev"
+            devnote = f'<div class="devnote {_ncls}">{_ic} {H.escape(r["spot_note"])}</div>'
+        else:
+            devnote = ""
         cards.append(
             f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
-            f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}">'
+            f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}" '
+            f'data-dev="{dev}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -357,8 +472,9 @@ def render(rows, errors):
             f'<div class="f"><span>駅徒歩</span><b>{walk_s}</b></div>'
             f'<div class="f"><span>面積 / 間取</span><b>{area_s}</b></div>'
             f'<div class="f"><span>出口の堅さ</span><b>{r["tier"]}ティア</b></div>'
-            f'<div class="f"><span>評価</span><b class="grade {gcolor(r["grade"])}">{r["grade"]}</b></div>'
+            f'<div class="f"><span>将来性(再開発)</span><b class="dev d{dev}">{stars}{spotfact}</b></div>'
             f'</div>'
+            f'{devnote}'
             f'{f"<div class=tags>{tags}</div>" if tags else ""}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMOで詳細を見る ↗</a>'
@@ -380,13 +496,37 @@ def render(rows, errors):
             f'<div class="mws">{cells}</div></div>')
     market = "".join(mt)
 
+    # 学び②：区別「都市開発・将来性」マップ（★高い順）
+    dm = []
+    for st in (3, 2, 1):
+        for w in [w for w in WARDS if WARD_DEV.get(w, (0, ""))[0] == st]:
+            note = WARD_DEV[w][1]
+            dm.append(
+                f'<div class="dvw"><span class="devb d{st}">{"★" * st}</span>'
+                f'<b>{w}</b><small>{cnt.get(w,0)}件</small>'
+                f'<span class="dvn">{H.escape(note)}</span></div>')
+    devmap = "".join(dm)
+
+    # 学び③：波の前夜エリア（地区スポット＝再開発直撃／不燃化特区・木密）
+    spot_cnt = Counter(r["spot"] for r in rows if r.get("spot"))
+    sm = []
+    for pref, label, kind, st, note in DEV_SPOTS:
+        ic = "🌊" if kind == "波" else "🏗"
+        c = spot_cnt.get(label, 0)
+        sm.append(
+            f'<div class="spt {"s-wave" if kind == "波" else "s-dev"}">'
+            f'<b>{ic} {H.escape(label)}</b><span class="dvn">{H.escape(note)}</span>'
+            f'<small>{("掲載" + str(c) + "件") if c else "現在は該当物件なし"}</small></div>')
+    spotmap = "".join(sm)
+
     curated = "".join(
         f'<a class="cu" href="{u}" target="_blank" rel="noopener"><b>{H.escape(n)} ↗</b>'
         f'<span>{H.escape(d)}</span></a>' for n, u, d in CURATED)
     err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(errors)) + "</p>") if errors else ""
 
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
-                           ward_opts=ward_opts, curated=curated, err=err, market=market)
+                           ward_opts=ward_opts, curated=curated, err=err, market=market,
+                           devmap=devmap, spotmap=spotmap)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -435,6 +575,12 @@ TEMPLATE = """<!DOCTYPE html>
   .b-top{{background:#1f3d33;color:#7ee0c0;border:1px solid #2f5d4d}}
   .b-gem{{background:#1c2f49;color:#9ad0ff;border:1px solid #2e4a6e}}
   .b-warn{{background:#3a2530;color:#ff9db0;border:1px solid #5a3a45}}
+  .b-wave{{background:#13303a;color:#67d6e6;border:1px solid #245863}}
+  .b-dev{{background:#2e2940;color:#c4a8ff;border:1px solid #463a66}}
+  .dev.d3{{color:#67d6e6}}.dev.d2{{color:#9ad0ff}}.dev.d1{{color:#9aa4b2}}.dev.d0{{color:#5a6472}}
+  .devnote{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45}}
+  .devnote.n-wave{{background:#10262e;border:1px solid #245863;color:#bfe7ee}}
+  .devnote.n-dev{{background:#241f33;border:1px solid #463a66;color:#ddd0ff}}
   .facts{{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding:12px 16px}}
   .f{{font-size:.82rem}}
   .f span{{display:block;color:var(--muted);font-size:.7rem}}
@@ -467,6 +613,20 @@ TEMPLATE = """<!DOCTYPE html>
   .mw{{background:#171b22;border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:.8rem}}
   .mw b{{display:block;color:#bcd6ff}}
   .mw small{{color:var(--muted);font-size:.7rem}}
+  /* 将来性マップ */
+  .dvw{{display:grid;grid-template-columns:auto auto auto 1fr;align-items:center;gap:8px;padding:7px 0;border-top:1px solid var(--line)}}
+  .dvw:first-child{{border-top:none}}
+  .devb{{font-weight:800;border-radius:6px;padding:2px 7px;color:#10141a;font-size:.8rem}}
+  .devb.d3{{background:#67d6e6}}.devb.d2{{background:#9ad0ff}}.devb.d1{{background:#c9d1da}}
+  .dvw b{{min-width:64px}}.dvw small{{color:var(--muted);font-size:.72rem;min-width:34px}}
+  .dvn{{color:#cdd6e2;font-size:.8rem}}
+  .spt{{padding:9px 11px;border-radius:10px;margin:6px 0;border:1px solid var(--line)}}
+  .spt.s-wave{{background:#10262e;border-color:#245863}}
+  .spt.s-dev{{background:#241f33;border-color:#463a66}}
+  .spt b{{display:block;margin-bottom:2px}}
+  .spt small{{display:block;color:var(--muted);font-size:.72rem;margin-top:3px}}
+  .spotgrid{{display:grid;gap:6px}}
+  @media(min-width:720px){{.spotgrid{{grid-template-columns:1fr 1fr}}}}
   .note{{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--accent2);border-radius:10px;padding:10px 14px;font-size:.84rem;color:#dfe5ee;margin:14px 0}}
   .cu{{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 14px;margin:8px 0;color:var(--ink)}}
   .cu:hover{{border-color:var(--accent);background:#1c2330}}
@@ -483,10 +643,11 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="土地">土地</option></select></span>
-  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" style="width:110px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
+  <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <span class="pill" id="shown"></span>
 </div>
 
@@ -501,6 +662,20 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="dbody">
 <p class="lead">「相場比＝この相場坪単価 ÷ 物件の実坪単価」。<b>相場比が高い＝割安</b>。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
 {market}
+</div></details>
+
+<details><summary>🏗 都市開発・将来性マップ — 区ごとの再開発の勢い（★高い順）</summary>
+<div class="dbody">
+<p class="lead">再開発が活発な区＝将来の“出口の上振れ”が期待できる。スコアにも控えめに反映（★3で+4点ほど）。<b>★は2026年時点の調査ベースの目安</b>。</p>
+{devmap}
+</div></details>
+
+<details open><summary>🌊 波が来る前夜エリア — 今は割安、これから更新が進む地区</summary>
+<div class="dbody">
+<p class="lead">住所（丁目）単位で、<b>🏗再開発が直撃／近接する地区</b>と、<b>🌊木造住宅が密集し東京都『不燃化特区』等で更新が進む地区</b>を判定。
+「今は古家が多く割安だが、これから波が来る」エリアを拾う（例：新宿西口北側の<b>北新宿</b>＝西新宿再開発の波及）。物件カードにも該当メモを表示します。</p>
+<div class="spotgrid">{spotmap}</div>
+<p class="lead" style="margin-top:10px">出典：東京都都市整備局「不燃化特区」各区の取組／各区・東京都の市街地再開発事業ページ。具体の進捗・範囲は必ず公式で確認を。</p>
 </div></details>
 
 <details><summary>💎 穴場の見つけ方 — スコアの読み方と優先条件</summary>
@@ -536,9 +711,9 @@ TEMPLATE = """<!DOCTYPE html>
 <script>
 const grid=document.getElementById('grid'), cards=[...grid.children];
 const el=id=>document.getElementById(id);
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev');
 function apply(){{
-  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,sk=fsort.value;
+  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,dv=fdev.checked,sk=fsort.value;
   let n=0;
   for(const c of cards){{
     const d=c.dataset; let ok=true;
@@ -547,14 +722,17 @@ function apply(){{
     if(mx&&parseInt(d.price,10)>mx)ok=false;
     if(ms&&parseInt(d.score,10)<ms)ok=false;
     if(ex&&/(再建築不可|借地権)/.test(d.tags))ok=false;
+    if(dv&&parseInt(d.dev,10)<2)ok=false;
     c.style.display=ok?'':'none'; if(ok)n++;
   }}
   const dir=(sk==='price'||sk==='walk')?1:-1;
-  [...cards].sort((a,b)=>(parseFloat(a.dataset[sk])-parseFloat(b.dataset[sk]))*dir)
-            .forEach(c=>grid.appendChild(c));
+  [...cards].sort((a,b)=>{{
+    const p=(parseFloat(a.dataset[sk])-parseFloat(b.dataset[sk]))*dir;
+    return p!==0?p:(parseFloat(b.dataset.score)-parseFloat(a.dataset.score));
+  }}).forEach(c=>grid.appendChild(c));
   el('shown').textContent=n+' 件';
 }}
-[fward,fkind,fsort,fmax,fscore,fexcl].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fsort,fmax,fscore,fexcl,fdev].forEach(e=>e.addEventListener('input',apply));
 apply();
 </script>
 </div></body></html>"""
