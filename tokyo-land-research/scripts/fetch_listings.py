@@ -383,12 +383,13 @@ def enrich(r):
     r["grade"] = ("高" if r["score"] >= 78 else "中高" if r["score"] >= 62
                   else "中" if r["score"] >= 48 else "低")
 
-    # あなたの追跡リスト：住所がウォッチ対象エリアに一致したら⭐
+    # あなたの追跡リスト：住所がウォッチ対象エリアに一致したら⭐（matchは文字列/リスト両対応）
     watch = ""
     for a in WATCHLIST.get("areas", []):
         m = a.get("match")
-        if m and m in r["loc"]:
-            watch = a.get("label") or m
+        toks = m if isinstance(m, list) else ([m] if m else [])
+        if any(t and t in r["loc"] for t in toks):
+            watch = a.get("label") or (toks[0] if toks else "")
             break
     r["watch"] = watch
 
@@ -594,12 +595,15 @@ def render(rows, errors):
     if areas:
         items = ""
         for a in areas:
-            label = H.escape(a.get("label") or a.get("match", ""))
+            m = a.get("match")
+            toks = m if isinstance(m, list) else ([m] if m else [])
+            m0 = toks[0] if toks else ""
+            label = H.escape(a.get("label") or m0)
             note = H.escape(a.get("note", ""))
-            key = a.get("label") or a.get("match", "")
+            key = a.get("label") or m0
             c = watch_cnt.get(key, 0)
             gm = ("https://www.google.com/maps/search/?api=1&query="
-                  + urllib.parse.quote("東京都" + (a.get("match") or key)))
+                  + urllib.parse.quote("東京都" + m0))
             items += (f'<div class="wli"><b>⭐ {label}</b>{(" — " + note) if note else ""}'
                       f'<span class="wc">{("この一覧に" + str(c) + "件") if c else "現在は該当なし"}</span>'
                       f'<a href="{gm}" target="_blank" rel="noopener">🗺地図</a></div>')
