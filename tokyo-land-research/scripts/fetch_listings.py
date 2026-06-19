@@ -370,7 +370,10 @@ def enrich(r):
 
     bits = []
     if r["ratio"]:
-        bits.append(f"相場比{r['ratio']}倍" + ("（割安）" if r["ratio"] >= 1.1 else "（相場並〜割高）"))
+        if r["ratio"] >= 1:
+            bits.append(f"相場より約{round((1 - 1 / r['ratio']) * 100)}%安い（相場比{r['ratio']}倍）")
+        else:
+            bits.append(f"相場より約{round((1 / r['ratio'] - 1) * 100)}%高い（相場比{r['ratio']}倍）")
     if w is not None:
         bits.append(f"駅徒歩{w}分")
     bits.append(f"出口{tier}")
@@ -406,6 +409,7 @@ def render(rows, errors):
     cnt = Counter(r["ward"] for r in rows)
 
     cards = []
+    trs = []
     for r in rows:
         tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"])
         area = []
@@ -418,6 +422,16 @@ def render(rows, errors):
         area_s = " ".join(area) or "—"
         ratio = r["ratio"]
         ratio_s = f'{ratio}倍' if ratio else "—"
+        # 分かりやすい言い換え：相場より何%安い/高い（坪単価ベース）
+        if ratio:
+            if ratio >= 1:
+                cheap_s = f"相場より{round((1 - 1 / ratio) * 100)}%安い"
+                cheap_short = f"{round((1 - 1 / ratio) * 100)}%安"
+            else:
+                cheap_s = f"相場より{round((1 / ratio - 1) * 100)}%高い"
+                cheap_short = f"{round((1 / ratio - 1) * 100)}%高"
+        else:
+            cheap_s = cheap_short = "—"
         walk = r["walk"]
         walk_s = f'{walk}分' if walk is not None else "—"
         tsubo_s = f'{r["tsubo"]}万/坪' if r["tsubo"] else "—"
@@ -427,6 +441,8 @@ def render(rows, errors):
             rcol = "#3fbf8f" if ratio >= 1.1 else "#e6b13c" if ratio >= 1.0 else "#e06a82"
         else:
             fill, rcol = 0, "#2a2f3a"
+        gmap = ("https://www.google.com/maps/search/?api=1&query="
+                + urllib.parse.quote("東京都" + r["loc"]))
         risky = ("再建築不可" in r["tags"]) or ("借地権" in r["tags"])
         dev = r.get("dev", 0)
         stars = "★" * dev + "☆" * (3 - dev)
@@ -466,7 +482,7 @@ def render(rows, errors):
             f'</div>'
             f'{f"<div class=bd>{badges_s}</div>" if badges_s else ""}'
             f'<div class="facts">'
-            f'<div class="f"><span>相場比</span><b>{ratio_s}</b>'
+            f'<div class="f"><span>割安度（相場比{ratio_s}）</span><b style="color:{rcol}">{cheap_s}</b>'
             f'<div class="rbar"><i style="width:{fill}%;background:{rcol}"></i></div></div>'
             f'<div class="f"><span>坪単価</span><b>{tsubo_s}</b></div>'
             f'<div class="f"><span>駅徒歩</span><b>{walk_s}</b></div>'
@@ -477,8 +493,31 @@ def render(rows, errors):
             f'{devnote}'
             f'{f"<div class=tags>{tags}</div>" if tags else ""}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
-            f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMOで詳細を見る ↗</a>'
+            f'<div class="viewrow">'
+            f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMO ↗</a>'
+            f'<a class="view vmap" href="{gmap}" target="_blank" rel="noopener">🗺 地図で見る</a>'
+            f'</div>'
             f'</article>')
+
+        # 比較用の表行（同じデータ属性。フィルタ/並び替えはカードと共通）
+        dev_ic = "🌊" if spot_kind == "波" else ("🏗" if spot_kind == "再開発" else "")
+        trs.append(
+            f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
+            f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
+            f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
+            f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}">'
+            f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
+            f'<td class="tloc"><a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
+            f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
+            f'{(" " + tags) if tags else ""}</td>'
+            f'<td class="num pr">{fmt_price(r["price"])}</td>'
+            f'<td class="num"><span style="color:{rcol};font-weight:700" title="相場比{ratio_s}">{cheap_short}</span></td>'
+            f'<td class="num">{tsubo_s}</td>'
+            f'<td class="num">{walk_s}</td>'
+            f'<td class="tarea">{area_s}</td>'
+            f'<td class="dev d{dev}">{dev_ic}{("★" * dev) if dev else "—"}</td>'
+            f'<td class="num"><span class="sc {gcolor(r["grade"])}">{r["score"]}</span></td>'
+            f'</tr>')
 
     ward_opts = "".join(f'<option value="{w}">{w}（{cnt.get(w,0)}）</option>' for w in wards)
 
@@ -525,8 +564,8 @@ def render(rows, errors):
     err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(errors)) + "</p>") if errors else ""
 
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
-                           ward_opts=ward_opts, curated=curated, err=err, market=market,
-                           devmap=devmap, spotmap=spotmap)
+                           rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
+                           err=err, market=market, devmap=devmap, spotmap=spotmap)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -594,8 +633,35 @@ TEMPLATE = """<!DOCTYPE html>
   .grade{{display:inline-block;border-radius:6px;padding:0 8px;color:#10141a}}
   .g-hi{{background:#7ee0c0}}.g-mh{{background:#9ad0ff}}.g-mid{{background:#ffe08a}}.g-lo{{background:#c9d1da}}
   .cmt{{color:var(--muted);font-size:.78rem;padding:4px 16px 12px}}
-  .view{{margin-top:auto;display:block;text-align:center;text-decoration:none;background:#212a37;color:#bcd6ff;border-top:1px solid var(--line);padding:10px;font-size:.85rem;font-weight:700}}
+  .viewrow{{margin-top:auto;display:flex;border-top:1px solid var(--line)}}
+  .view{{flex:1;text-align:center;text-decoration:none;background:#212a37;color:#bcd6ff;padding:10px;font-size:.85rem;font-weight:700}}
   .view:hover{{background:#27313f}}
+  .view.vmap{{border-left:1px solid var(--line);color:#9ce0c2}}
+  .mp{{text-decoration:none;font-size:.95rem}}.mp:hover{{filter:brightness(1.3)}}
+  /* ---- 表（比較）ビュー＆ビュー切替 ---- */
+  .seg{{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}}
+  .seg button{{background:var(--panel2);color:var(--muted);border:0;padding:7px 13px;font-size:.85rem;cursor:pointer}}
+  .seg button.on{{background:var(--accent);color:#0d1116;font-weight:700}}
+  .hidden{{display:none!important}}
+  .tblwrap{{overflow-x:auto;border:1px solid var(--line);border-radius:14px}}
+  table{{border-collapse:collapse;width:100%;font-size:.85rem;min-width:760px}}
+  thead th{{position:sticky;top:60px;background:#212732;text-align:left;padding:9px 10px;cursor:pointer;white-space:nowrap;user-select:none;border-bottom:1px solid var(--line);z-index:1}}
+  thead th.num{{text-align:right}}
+  thead th:hover{{color:#bcd6ff}}
+  tbody td{{padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:top}}
+  tbody tr:hover{{background:#1b2029}}
+  td.num{{text-align:right;font-variant-numeric:tabular-nums}}
+  td.tw{{font-weight:600}}
+  td.pr{{font-weight:800;font-size:.95rem}}
+  td.tloc{{white-space:normal;min-width:160px}}
+  td.tloc a{{color:#e9edf3;text-decoration:none}}
+  td.tloc a:hover{{color:var(--accent);text-decoration:underline}}
+  td.tarea{{color:var(--muted);font-size:.77rem}}
+  td.dev{{font-weight:700;font-size:.78rem}}
+  td.dev.d3{{color:#67d6e6}}td.dev.d2{{color:#9ad0ff}}td.dev.d1,td.dev.d0{{color:#6b7480}}
+  .sc{{display:inline-block;min-width:30px;text-align:center;border-radius:6px;padding:1px 6px;font-weight:800;color:#10141a}}
+  .sc.g-hi{{background:#7ee0c0}}.sc.g-mh{{background:#9ad0ff}}.sc.g-mid{{background:#ffe08a}}.sc.g-lo{{background:#c9d1da}}
+  td .tag{{font-size:.68rem;padding:0 6px;margin:2px 3px 0 0}}
   /* ---- 学び（details） ---- */
   details{{background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}}
   details>summary{{cursor:pointer;list-style:none;padding:12px 16px;font-weight:700;font-size:.95rem;background:#1b2029}}
@@ -648,10 +714,23 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
+  <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
 </div>
 
-<div class="cards" id="grid">
+<div class="tblwrap" id="tblwrap">
+<table>
+<thead><tr>
+<th data-k="ward">区</th><th>所在地・地図・タグ</th>
+<th class="num" data-k="price">価格 ⇅</th><th class="num" data-k="ratio">割安度 ⇅</th>
+<th class="num">坪単価</th><th class="num" data-k="walk">駅徒歩 ⇅</th>
+<th>面積</th><th data-k="dev">将来性 ⇅</th><th class="num" data-k="score">スコア ⇅</th>
+</tr></thead>
+<tbody id="tbody">
+{rows}
+</tbody></table></div>
+
+<div class="cards hidden" id="grid">
 {cards}
 </div>
 {err}
@@ -660,7 +739,7 @@ TEMPLATE = """<!DOCTYPE html>
 
 <details open><summary>📊 相場早見表 — 区ごとの中古戸建 相場坪単価＆出口ティア</summary>
 <div class="dbody">
-<p class="lead">「相場比＝この相場坪単価 ÷ 物件の実坪単価」。<b>相場比が高い＝割安</b>。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
+<p class="lead"><b>相場比＝区の相場坪単価 ÷ この物件の坪単価</b>。1.0＝相場どおり、1.2＝相場より約17%安い、2.0＝相場の半額。<b>数字が大きいほど割安</b>（カードでは「相場より◯%安い」と表示）。ただし2倍超の“激安”は再建築不可・借地・狭小など理由ありのサイン。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
 {market}
 </div></details>
 
@@ -709,30 +788,42 @@ TEMPLATE = """<!DOCTYPE html>
 購入判断の前に、再建築可否・接道・境界・用途地域・融資・出口を必ず現地と専門家（不動産業者/建築士/司法書士/金融機関）で確認してください。</div>
 
 <script>
-const grid=document.getElementById('grid'), cards=[...grid.children];
 const el=id=>document.getElementById(id);
+const grid=el('grid'), cards=[...grid.children];
+const tbody=el('tbody'), trs=[...tbody.children];
 const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev');
-function apply(){{
-  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,dv=fdev.checked,sk=fsort.value;
+function pass(d,w,k,mx,ms,ex,dv){{
+  if(w&&d.ward!==w)return false;
+  if(k&&d.kind!==k)return false;
+  if(mx&&parseInt(d.price,10)>mx)return false;
+  if(ms&&parseInt(d.score,10)<ms)return false;
+  if(ex&&/(再建築不可|借地権)/.test(d.tags))return false;
+  if(dv&&parseInt(d.dev,10)<2)return false;
+  return true;
+}}
+function run(items,parent,w,k,mx,ms,ex,dv,sk,dir){{
   let n=0;
-  for(const c of cards){{
-    const d=c.dataset; let ok=true;
-    if(w&&d.ward!==w)ok=false;
-    if(k&&d.kind!==k)ok=false;
-    if(mx&&parseInt(d.price,10)>mx)ok=false;
-    if(ms&&parseInt(d.score,10)<ms)ok=false;
-    if(ex&&/(再建築不可|借地権)/.test(d.tags))ok=false;
-    if(dv&&parseInt(d.dev,10)<2)ok=false;
-    c.style.display=ok?'':'none'; if(ok)n++;
-  }}
-  const dir=(sk==='price'||sk==='walk')?1:-1;
-  [...cards].sort((a,b)=>{{
+  for(const c of items){{const ok=pass(c.dataset,w,k,mx,ms,ex,dv);c.style.display=ok?'':'none';if(ok)n++;}}
+  [...items].sort((a,b)=>{{
     const p=(parseFloat(a.dataset[sk])-parseFloat(b.dataset[sk]))*dir;
     return p!==0?p:(parseFloat(b.dataset.score)-parseFloat(a.dataset.score));
-  }}).forEach(c=>grid.appendChild(c));
+  }}).forEach(c=>parent.appendChild(c));
+  return n;
+}}
+function apply(){{
+  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,dv=fdev.checked,sk=fsort.value;
+  const dir=(sk==='price'||sk==='walk')?1:-1;
+  run(cards,grid,w,k,mx,ms,ex,dv,sk,dir);
+  const n=run(trs,tbody,w,k,mx,ms,ex,dv,sk,dir);
   el('shown').textContent=n+' 件';
 }}
 [fward,fkind,fsort,fmax,fscore,fexcl,fdev].forEach(e=>e.addEventListener('input',apply));
+document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
+  const k=th.dataset.k; if(k==='ward')return; fsort.value=k; apply();
+}}));
+const vT=el('vTable'),vC=el('vCard');
+vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
+vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
 apply();
 </script>
 </div></body></html>"""
