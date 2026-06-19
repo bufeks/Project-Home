@@ -874,37 +874,35 @@ const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
 const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch');
-function pass(d,w,k,mx,ms,ex,dv,wt){{
-  if(w&&d.ward!==w)return false;
-  if(k&&d.kind!==k)return false;
-  if(mx&&parseInt(d.price,10)>mx)return false;
-  if(ms&&parseInt(d.score,10)<ms)return false;
-  if(ex&&/(再建築不可|借地権)/.test(d.tags))return false;
-  if(dv&&parseInt(d.dev,10)<2)return false;
-  if(wt&&d.watch!=='1')return false;
+let sortK='score', sortAsc=false;
+const defAsc=k=>(k==='price'||k==='walk');   // 価格・駅徒歩は小さい順、その他は大きい順を既定に
+function pass(d){{
+  if(fward.value&&d.ward!==fward.value)return false;
+  if(fkind.value&&d.kind!==fkind.value)return false;
+  const mx=parseInt(fmax.value||'0',10); if(mx&&parseInt(d.price,10)>mx)return false;
+  const ms=parseInt(fscore.value||'0',10); if(ms&&parseInt(d.score,10)<ms)return false;
+  if(fexcl.checked&&/(再建築不可|借地権)/.test(d.tags))return false;
+  if(fdev.checked&&parseInt(d.dev,10)<2)return false;
+  if(fwatch.checked&&d.watch!=='1')return false;
   return true;
 }}
-function run(items,parent,w,k,mx,ms,ex,dv,wt,sk,dir){{
+function run(items,parent){{
   let n=0;
-  for(const c of items){{const ok=pass(c.dataset,w,k,mx,ms,ex,dv,wt);c.style.display=ok?'':'none';if(ok)n++;}}
+  for(const c of items){{const ok=pass(c.dataset);c.style.display=ok?'':'none';if(ok)n++;}}
+  const dir=sortAsc?1:-1;
   [...items].sort((a,b)=>{{
-    const wp=(parseInt(b.dataset.watch,10)||0)-(parseInt(a.dataset.watch,10)||0);
-    if(wp!==0)return wp;
-    const p=(parseFloat(a.dataset[sk])-parseFloat(b.dataset[sk]))*dir;
+    const p=(parseFloat(a.dataset[sortK])-parseFloat(b.dataset[sortK]))*dir;
     return p!==0?p:(parseFloat(b.dataset.score)-parseFloat(a.dataset.score));
   }}).forEach(c=>parent.appendChild(c));
   return n;
 }}
-function apply(){{
-  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,dv=fdev.checked,wt=fwatch.checked,sk=fsort.value;
-  const dir=(sk==='price'||sk==='walk')?1:-1;
-  run(cards,grid,w,k,mx,ms,ex,dv,wt,sk,dir);
-  const n=run(trs,tbody,w,k,mx,ms,ex,dv,wt,sk,dir);
-  el('shown').textContent=n+' 件';
-}}
-[fward,fkind,fsort,fmax,fscore,fexcl,fdev,fwatch].forEach(e=>e.addEventListener('input',apply));
+function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
+[fward,fkind,fmax,fscore,fexcl,fdev,fwatch].forEach(e=>e.addEventListener('input',apply));
+fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
-  const k=th.dataset.k; if(k==='ward')return; fsort.value=k; apply();
+  const k=th.dataset.k; if(k==='ward')return;
+  if(k===sortK)sortAsc=!sortAsc; else {{sortK=k;sortAsc=defAsc(k);}}
+  fsort.value=k; apply();
 }}));
 const vT=el('vTable'),vC=el('vCard');
 vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
