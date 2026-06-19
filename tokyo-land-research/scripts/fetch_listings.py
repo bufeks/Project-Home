@@ -654,7 +654,7 @@ TEMPLATE = """<!DOCTYPE html>
   a{{color:var(--accent)}}
   .lead{{color:var(--muted);font-size:.9rem}}
   /* ---- フィルタバー ---- */
-  .bar{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin:12px 0;position:sticky;top:0;z-index:5}}
+  .bar{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin:12px 0}}
   select,input{{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem}}
   .bar label{{font-size:.8rem;color:var(--muted);margin-right:4px}}
   .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#dfe5ee}}
@@ -723,7 +723,7 @@ TEMPLATE = """<!DOCTYPE html>
   .hidden{{display:none!important}}
   .tblwrap{{overflow-x:auto;border:1px solid var(--line);border-radius:14px}}
   table{{border-collapse:collapse;width:100%;font-size:.85rem;min-width:760px}}
-  thead th{{position:sticky;top:60px;background:#212732;text-align:left;padding:9px 10px;cursor:pointer;white-space:nowrap;user-select:none;border-bottom:1px solid var(--line);z-index:1}}
+  thead th{{position:sticky;top:0;background:#212732;text-align:left;padding:9px 10px;cursor:pointer;white-space:nowrap;user-select:none;border-bottom:1px solid var(--line);z-index:1}}
   thead th.num{{text-align:right}}
   thead th:hover{{color:#bcd6ff}}
   tbody td{{padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:top}}
