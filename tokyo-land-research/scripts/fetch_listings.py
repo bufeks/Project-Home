@@ -24,6 +24,21 @@ ROOT = HERE.parent
 DATA = ROOT / "data"
 DATA.mkdir(exist_ok=True)
 
+
+def load_watchlist():
+    """あなた専用の追跡リスト（住みたいエリア・気になるマンション・好きな町）。"""
+    p = ROOT / "watchlist.json"
+    if p.exists():
+        try:
+            d = json.loads(p.read_text(encoding="utf-8"))
+            return {"areas": d.get("areas", []), "buildings": d.get("buildings", [])}
+        except Exception:
+            pass
+    return {"areas": [], "buildings": []}
+
+
+WATCHLIST = load_watchlist()
+
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
@@ -368,6 +383,15 @@ def enrich(r):
     r["grade"] = ("高" if r["score"] >= 78 else "中高" if r["score"] >= 62
                   else "中" if r["score"] >= 48 else "低")
 
+    # あなたの追跡リスト：住所がウォッチ対象エリアに一致したら⭐
+    watch = ""
+    for a in WATCHLIST.get("areas", []):
+        m = a.get("match")
+        if m and m in r["loc"]:
+            watch = a.get("label") or m
+            break
+    r["watch"] = watch
+
     bits = []
     if r["ratio"]:
         if r["ratio"] >= 1:
@@ -447,7 +471,10 @@ def render(rows, errors):
         dev = r.get("dev", 0)
         stars = "★" * dev + "☆" * (3 - dev)
         spot_kind = r.get("spot_kind", "")
+        watch = r.get("watch", "")
         badges = []
+        if watch:
+            badges.append(f'<span class="bdg b-watch">⭐ {H.escape(watch)}</span>')
         if r["score"] >= 78:
             badges.append('<span class="bdg b-top">★高評価</span>')
         if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
@@ -473,7 +500,7 @@ def render(rows, errors):
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
             f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}" '
-            f'data-dev="{dev}">'
+            f'data-dev="{dev}" data-watch="{1 if watch else 0}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -505,9 +532,10 @@ def render(rows, errors):
             f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
-            f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}">'
+            f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
-            f'<td class="tloc"><a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
+            f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
+            f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
             f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
             f'{(" " + tags) if tags else ""}</td>'
             f'<td class="num pr">{fmt_price(r["price"])}</td>'
@@ -558,6 +586,44 @@ def render(rows, errors):
             f'<small>{("掲載" + str(c) + "件") if c else "現在は該当物件なし"}</small></div>')
     spotmap = "".join(sm)
 
+    # あなたの追跡リスト（住みたいエリア・好きな町／気になるマンション）
+    areas = WATCHLIST.get("areas", [])
+    buildings = WATCHLIST.get("buildings", [])
+    watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
+    wparts = []
+    if areas:
+        items = ""
+        for a in areas:
+            label = H.escape(a.get("label") or a.get("match", ""))
+            note = H.escape(a.get("note", ""))
+            key = a.get("label") or a.get("match", "")
+            c = watch_cnt.get(key, 0)
+            gm = ("https://www.google.com/maps/search/?api=1&query="
+                  + urllib.parse.quote("東京都" + (a.get("match") or key)))
+            items += (f'<div class="wli"><b>⭐ {label}</b>{(" — " + note) if note else ""}'
+                      f'<span class="wc">{("この一覧に" + str(c) + "件") if c else "現在は該当なし"}</span>'
+                      f'<a href="{gm}" target="_blank" rel="noopener">🗺地図</a></div>')
+        wparts.append('<div class="wsub">住みたいエリア・好きな町</div>' + items)
+    if buildings:
+        items = ""
+        for b in buildings:
+            name, area = b.get("name", ""), b.get("area", "")
+            note = H.escape(b.get("note", ""))
+            gm = ("https://www.google.com/maps/search/?api=1&query="
+                  + urllib.parse.quote((name + " " + area).strip()))
+            gs = "https://www.google.com/search?q=" + urllib.parse.quote(name + " 中古マンション SUUMO")
+            items += (f'<div class="wli"><b>🏢 {H.escape(name)}</b>'
+                      f'{(" (" + H.escape(area) + ")") if area else ""}{(" — " + note) if note else ""}'
+                      f'<a href="{gm}" target="_blank" rel="noopener">🗺地図</a>'
+                      f'<a href="{gs}" target="_blank" rel="noopener">🔎検索</a></div>')
+        wparts.append('<div class="wsub">気になるマンション・物件</div>'
+                      '<p class="lead">※中古マンションは本一覧（戸建/土地）に出ないため、検索・地図リンクで追跡します。</p>'
+                      + items)
+    watch_html = "".join(wparts) if wparts else (
+        '<p class="lead">まだ登録がありません。「○○に住みたい」「△△マンションが気になる」'
+        '「□□の町が好き」と言ってくれれば、ここに追加して<b>毎日の自動更新で継続追跡</b>します'
+        '（該当物件は一覧で⭐表示・「⭐ウォッチのみ」で抽出可）。</p>')
+
     curated = "".join(
         f'<a class="cu" href="{u}" target="_blank" rel="noopener"><b>{H.escape(n)} ↗</b>'
         f'<span>{H.escape(d)}</span></a>' for n, u, d in CURATED)
@@ -565,7 +631,8 @@ def render(rows, errors):
 
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
-                           err=err, market=market, devmap=devmap, spotmap=spotmap)
+                           err=err, market=market, devmap=devmap, spotmap=spotmap,
+                           watch=watch_html)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -616,6 +683,13 @@ TEMPLATE = """<!DOCTYPE html>
   .b-warn{{background:#3a2530;color:#ff9db0;border:1px solid #5a3a45}}
   .b-wave{{background:#13303a;color:#67d6e6;border:1px solid #245863}}
   .b-dev{{background:#2e2940;color:#c4a8ff;border:1px solid #463a66}}
+  .b-watch{{background:#3a3416;color:#ffe08a;border:1px solid #6a5d23}}
+  /* 追跡リスト */
+  .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#ffe08a}}
+  .wli{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 10px;margin:5px 0;background:#171b22;border:1px solid var(--line);border-radius:9px;font-size:.85rem}}
+  .wli b{{color:#e9edf3}}
+  .wc{{color:var(--accent);font-size:.78rem;background:#1c2533;border:1px solid #2f4154;border-radius:999px;padding:1px 9px}}
+  .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
   .dev.d3{{color:#67d6e6}}.dev.d2{{color:#9ad0ff}}.dev.d1{{color:#9aa4b2}}.dev.d0{{color:#5a6472}}
   .devnote{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45}}
   .devnote.n-wave{{background:#10262e;border:1px solid #245863;color:#bfe7ee}}
@@ -706,6 +780,9 @@ TEMPLATE = """<!DOCTYPE html>
 再建築不可・借地権などは“注意タグ”として減点表示（主役にしない）。<br>
 出典：SUUMO（中古戸建を価格安い順で取得＋種別タグ付与）／<b>最終更新：{stamp}</b>／<b>{count}</b>件／毎日自動更新</p>
 
+<details open><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
+<div class="dbody">{watch}</div></details>
+
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="土地">土地</option></select></span>
@@ -714,6 +791,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
+  <label class="ck"><input type="checkbox" id="fwatch"> ⭐ウォッチのみ</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
 </div>
@@ -791,33 +869,36 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev');
-function pass(d,w,k,mx,ms,ex,dv){{
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch');
+function pass(d,w,k,mx,ms,ex,dv,wt){{
   if(w&&d.ward!==w)return false;
   if(k&&d.kind!==k)return false;
   if(mx&&parseInt(d.price,10)>mx)return false;
   if(ms&&parseInt(d.score,10)<ms)return false;
   if(ex&&/(再建築不可|借地権)/.test(d.tags))return false;
   if(dv&&parseInt(d.dev,10)<2)return false;
+  if(wt&&d.watch!=='1')return false;
   return true;
 }}
-function run(items,parent,w,k,mx,ms,ex,dv,sk,dir){{
+function run(items,parent,w,k,mx,ms,ex,dv,wt,sk,dir){{
   let n=0;
-  for(const c of items){{const ok=pass(c.dataset,w,k,mx,ms,ex,dv);c.style.display=ok?'':'none';if(ok)n++;}}
+  for(const c of items){{const ok=pass(c.dataset,w,k,mx,ms,ex,dv,wt);c.style.display=ok?'':'none';if(ok)n++;}}
   [...items].sort((a,b)=>{{
+    const wp=(parseInt(b.dataset.watch,10)||0)-(parseInt(a.dataset.watch,10)||0);
+    if(wp!==0)return wp;
     const p=(parseFloat(a.dataset[sk])-parseFloat(b.dataset[sk]))*dir;
     return p!==0?p:(parseFloat(b.dataset.score)-parseFloat(a.dataset.score));
   }}).forEach(c=>parent.appendChild(c));
   return n;
 }}
 function apply(){{
-  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,dv=fdev.checked,sk=fsort.value;
+  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,dv=fdev.checked,wt=fwatch.checked,sk=fsort.value;
   const dir=(sk==='price'||sk==='walk')?1:-1;
-  run(cards,grid,w,k,mx,ms,ex,dv,sk,dir);
-  const n=run(trs,tbody,w,k,mx,ms,ex,dv,sk,dir);
+  run(cards,grid,w,k,mx,ms,ex,dv,wt,sk,dir);
+  const n=run(trs,tbody,w,k,mx,ms,ex,dv,wt,sk,dir);
   el('shown').textContent=n+' 件';
 }}
-[fward,fkind,fsort,fmax,fscore,fexcl,fdev].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fsort,fmax,fscore,fexcl,fdev,fwatch].forEach(e=>e.addEventListener('input',apply));
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return; fsort.value=k; apply();
 }}));
