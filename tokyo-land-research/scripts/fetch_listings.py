@@ -304,7 +304,10 @@ def render(rows, errors):
     def gcolor(g):
         return {"高": "g-hi", "中高": "g-mh", "中": "g-mid", "低": "g-lo"}[g]
 
-    trs = []
+    from collections import Counter
+    cnt = Counter(r["ward"] for r in rows)
+
+    cards = []
     for r in rows:
         tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"])
         area = []
@@ -312,29 +315,78 @@ def render(rows, errors):
             area.append(f'土{r["land"]:.0f}㎡')
         if r["bld"]:
             area.append(f'建{r["bld"]:.0f}㎡')
-        ratio = f'{r["ratio"]}倍' if r["ratio"] else "—"
-        walk = f'{r["walk"]}分' if r["walk"] is not None else "—"
-        tsubo = f'{r["tsubo"]}万/坪' if r["tsubo"] else "—"
-        trs.append(
-            f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
-            f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}">'
-            f'<td><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
-            f'<td>{H.escape(r["loc"])}{(" "+tags) if tags else ""}</td>'
-            f'<td class="num">{fmt_price(r["price"])}</td>'
-            f'<td class="num">{tsubo}</td><td class="num">{ratio}</td>'
-            f'<td class="num">{walk}</td><td>{" ".join(area) or "—"}</td>'
-            f'<td><span class="grade {gcolor(r["grade"])}">{r["score"]}・{r["grade"]}</span></td>'
-            f'<td class="cmt">{H.escape(r["comment"])}</td>'
-            f'<td><a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a></td></tr>')
+        if r["plan"]:
+            area.append(H.escape(r["plan"]))
+        area_s = " ".join(area) or "—"
+        ratio = r["ratio"]
+        ratio_s = f'{ratio}倍' if ratio else "—"
+        walk = r["walk"]
+        walk_s = f'{walk}分' if walk is not None else "—"
+        tsubo_s = f'{r["tsubo"]}万/坪' if r["tsubo"] else "—"
+        # 相場比バー（0.8→0%, 1.8→100%）。1.1以上=割安(緑)/1.0-1.1=並(黄)/未満=割高(赤)
+        if ratio:
+            fill = max(4, min(100, round((ratio - 0.8) / 1.0 * 100)))
+            rcol = "#3fbf8f" if ratio >= 1.1 else "#e6b13c" if ratio >= 1.0 else "#e06a82"
+        else:
+            fill, rcol = 0, "#2a2f3a"
+        risky = ("再建築不可" in r["tags"]) or ("借地権" in r["tags"])
+        badges = []
+        if r["score"] >= 78:
+            badges.append('<span class="bdg b-top">★高評価</span>')
+        if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
+            badges.append('<span class="bdg b-gem">💎穴場候補</span>')
+        if risky:
+            badges.append('<span class="bdg b-warn">⚠落とし穴</span>')
+        badges_s = "".join(badges)
+        cards.append(
+            f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
+            f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
+            f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
+            f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}">'
+            f'<div class="ctop t{r["tier"]}">'
+            f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
+            f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
+            f'{H.escape(r["loc"])}<span class="kindchip">{r["kind"]}</span></div></div>'
+            f'<div class="ring" style="--p:{r["score"]}"><b>{r["score"]}</b><small>資産</small></div>'
+            f'</div>'
+            f'{f"<div class=bd>{badges_s}</div>" if badges_s else ""}'
+            f'<div class="facts">'
+            f'<div class="f"><span>相場比</span><b>{ratio_s}</b>'
+            f'<div class="rbar"><i style="width:{fill}%;background:{rcol}"></i></div></div>'
+            f'<div class="f"><span>坪単価</span><b>{tsubo_s}</b></div>'
+            f'<div class="f"><span>駅徒歩</span><b>{walk_s}</b></div>'
+            f'<div class="f"><span>面積 / 間取</span><b>{area_s}</b></div>'
+            f'<div class="f"><span>出口の堅さ</span><b>{r["tier"]}ティア</b></div>'
+            f'<div class="f"><span>評価</span><b class="grade {gcolor(r["grade"])}">{r["grade"]}</b></div>'
+            f'</div>'
+            f'{f"<div class=tags>{tags}</div>" if tags else ""}'
+            f'<div class="cmt">{H.escape(r["comment"])}</div>'
+            f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMOで詳細を見る ↗</a>'
+            f'</article>')
 
-    ward_opts = "".join(f'<option value="{w}">{w}</option>' for w in wards)
+    ward_opts = "".join(f'<option value="{w}">{w}（{cnt.get(w,0)}）</option>' for w in wards)
+
+    # 学び①：ティア別「区の相場坪単価」早見表
+    mt = []
+    for tier in ["S", "A", "B", "C"]:
+        ws = [w for w in WARDS if TIER.get(w, "C") == tier]
+        cells = "".join(
+            f'<div class="mw"><span class="tier t{tier}">{tier}</span>{w}'
+            f'<b>{WARD_TSUBO.get(w,"—")}万/坪</b><small>{cnt.get(w,0)}件</small></div>'
+            for w in ws)
+        mt.append(
+            f'<div class="mrow"><div class="mlabel t{tier}">{tier}'
+            f'<small>{H.escape(TIER_MEMO[tier])}</small></div>'
+            f'<div class="mws">{cells}</div></div>')
+    market = "".join(mt)
+
     curated = "".join(
         f'<a class="cu" href="{u}" target="_blank" rel="noopener"><b>{H.escape(n)} ↗</b>'
         f'<span>{H.escape(d)}</span></a>' for n, u, d in CURATED)
     err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(errors)) + "</p>") if errors else ""
 
-    return TEMPLATE.format(stamp=stamp, count=len(rows), rows="\n".join(trs),
-                           ward_opts=ward_opts, curated=curated, err=err)
+    return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
+                           ward_opts=ward_opts, curated=curated, err=err, market=market)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -342,39 +394,85 @@ TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>都心 割安×資産性スクリーナー（東京23区・売却益狙い）</title>
 <style>
-  :root{{--bg:#0f1115;--panel:#171a21;--panel2:#1d2129;--ink:#e9edf3;--muted:#9aa4b2;--line:#2a2f3a;--accent:#6ea8fe;--accent2:#7ee0c0}}
+  :root{{--bg:#0f1115;--panel:#171a21;--panel2:#1d2129;--card:#191d25;--ink:#e9edf3;--muted:#9aa4b2;--line:#2a2f3a;--accent:#6ea8fe;--accent2:#7ee0c0}}
   *{{box-sizing:border-box}}
-  body{{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.6}}
+  body{{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.55}}
   .wrap{{max-width:1180px;margin:0 auto;padding:18px}}
   h1{{font-size:1.45rem;margin:.2em 0}}
-  h2{{font-size:1.05rem;margin:1.4em 0 .5em;border-left:4px solid var(--accent);padding-left:10px}}
+  h2{{font-size:1.08rem;margin:1.2em 0 .5em;border-left:4px solid var(--accent);padding-left:10px}}
   .meta{{color:var(--muted);font-size:.85rem;margin-bottom:12px}}
   a{{color:var(--accent)}}
   .lead{{color:var(--muted);font-size:.9rem}}
-  .bar{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0}}
-  select,input{{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:.9rem}}
+  /* ---- フィルタバー ---- */
+  .bar{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin:12px 0;position:sticky;top:0;z-index:5}}
+  select,input{{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem}}
   .bar label{{font-size:.8rem;color:var(--muted);margin-right:4px}}
   .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#dfe5ee}}
-  .tablewrap{{overflow-x:auto;border:1px solid var(--line);border-radius:12px}}
-  table{{border-collapse:collapse;width:100%;font-size:.85rem;min-width:920px}}
-  th,td{{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}}
-  thead th{{background:#212732;position:sticky;top:0;cursor:pointer;user-select:none}}
-  thead th:hover{{color:#bcd6ff}}
-  td.num,th.num{{text-align:right}}
-  td.cmt{{color:var(--muted);font-size:.78rem;white-space:normal;min-width:200px}}
-  tbody tr:hover{{background:#1b2029}}
-  .tier{{display:inline-block;width:18px;text-align:center;border-radius:5px;margin-right:6px;font-weight:700;font-size:.78rem;color:#10141a}}
+  .pill{{display:inline-block;background:#24303f;color:var(--accent);border:1px solid #2f4154;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
+  /* ---- カードグリッド ---- */
+  .cards{{display:grid;gap:14px;grid-template-columns:1fr}}
+  @media(min-width:640px){{.cards{{grid-template-columns:1fr 1fr}}}}
+  @media(min-width:980px){{.cards{{grid-template-columns:1fr 1fr 1fr}}}}
+  .card{{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s,border-color .12s,box-shadow .12s}}
+  .card:hover{{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.35)}}
+  .ctop{{position:relative;padding:14px 16px 12px;background:linear-gradient(135deg,#222936,#171b22)}}
+  .ctop.tS{{background:linear-gradient(135deg,#163a31,#171b22)}}
+  .ctop.tA{{background:linear-gradient(135deg,#19324a,#171b22)}}
+  .ctop.tB{{background:linear-gradient(135deg,#3a341a,#171b22)}}
+  .ctop.tC{{background:linear-gradient(135deg,#2a2f38,#171b22)}}
+  .ci{{padding-right:64px}}
+  .price{{font-size:1.5rem;font-weight:800;letter-spacing:.2px}}
+  .loc{{font-size:.84rem;color:#cdd6e2;margin-top:3px}}
+  .kindchip{{display:inline-block;background:#2b3543;color:#bcd6ff;border-radius:6px;padding:0 7px;font-size:.72rem;margin-left:6px}}
+  .ring{{position:absolute;top:12px;right:14px;width:54px;height:54px;border-radius:50%;
+        background:conic-gradient(var(--accent) calc(var(--p)*1%),#2a2f3a 0);
+        display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}}
+  .ring::before{{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--card)}}
+  .ring b{{position:relative;font-size:1.05rem;line-height:1}}
+  .ring small{{position:relative;font-size:.55rem;color:var(--muted)}}
+  .bd{{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px 0}}
+  .bdg{{font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 9px}}
+  .b-top{{background:#1f3d33;color:#7ee0c0;border:1px solid #2f5d4d}}
+  .b-gem{{background:#1c2f49;color:#9ad0ff;border:1px solid #2e4a6e}}
+  .b-warn{{background:#3a2530;color:#ff9db0;border:1px solid #5a3a45}}
+  .facts{{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding:12px 16px}}
+  .f{{font-size:.82rem}}
+  .f span{{display:block;color:var(--muted);font-size:.7rem}}
+  .f b{{font-weight:700}}
+  .rbar{{height:6px;border-radius:999px;background:#2a2f3a;margin-top:4px;overflow:hidden}}
+  .rbar i{{display:block;height:100%}}
+  .tier{{display:inline-block;min-width:17px;text-align:center;border-radius:5px;margin-right:5px;font-weight:700;font-size:.74rem;color:#10141a}}
   .tS{{background:#7ee0c0}}.tA{{background:#9ad0ff}}.tB{{background:#ffe08a}}.tC{{background:#c9d1da}}
-  .tag{{display:inline-block;background:#3a2530;color:#ff9db0;border:1px solid #5a3a45;border-radius:999px;padding:0 7px;font-size:.72rem;margin-left:4px}}
-  .grade{{display:inline-block;border-radius:6px;padding:1px 8px;font-weight:700;color:#10141a}}
+  .tags{{padding:0 16px}}
+  .tag{{display:inline-block;background:#3a2530;color:#ff9db0;border:1px solid #5a3a45;border-radius:999px;padding:0 8px;font-size:.72rem;margin:0 4px 4px 0}}
+  .grade{{display:inline-block;border-radius:6px;padding:0 8px;color:#10141a}}
   .g-hi{{background:#7ee0c0}}.g-mh{{background:#9ad0ff}}.g-mid{{background:#ffe08a}}.g-lo{{background:#c9d1da}}
+  .cmt{{color:var(--muted);font-size:.78rem;padding:4px 16px 12px}}
+  .view{{margin-top:auto;display:block;text-align:center;text-decoration:none;background:#212a37;color:#bcd6ff;border-top:1px solid var(--line);padding:10px;font-size:.85rem;font-weight:700}}
+  .view:hover{{background:#27313f}}
+  /* ---- 学び（details） ---- */
+  details{{background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}}
+  details>summary{{cursor:pointer;list-style:none;padding:12px 16px;font-weight:700;font-size:.95rem;background:#1b2029}}
+  details>summary::-webkit-details-marker{{display:none}}
+  details>summary::before{{content:"▸ ";color:var(--accent)}}
+  details[open]>summary::before{{content:"▾ "}}
+  .dbody{{padding:12px 16px;font-size:.85rem;color:#dfe5ee}}
+  .dbody li{{margin:4px 0}}
+  /* 相場早見 */
+  .mrow{{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line)}}
+  .mrow:first-child{{border-top:none}}
+  .mlabel{{font-weight:800;font-size:1.05rem;color:#10141a;border-radius:8px;padding:8px 10px;height:fit-content}}
+  .mlabel small{{display:block;font-weight:500;font-size:.66rem;color:#0d1116;opacity:.85;margin-top:3px}}
+  .mws{{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}}
+  .mw{{background:#171b22;border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:.8rem}}
+  .mw b{{display:block;color:#bcd6ff}}
+  .mw small{{color:var(--muted);font-size:.7rem}}
   .note{{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--accent2);border-radius:10px;padding:10px 14px;font-size:.84rem;color:#dfe5ee;margin:14px 0}}
   .cu{{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 14px;margin:8px 0;color:var(--ink)}}
   .cu:hover{{border-color:var(--accent);background:#1c2330}}
   .cu b{{color:#bcd6ff}}.cu span{{display:block;color:var(--muted);font-size:.8rem}}
   .grid{{display:grid;gap:8px}}
   @media(min-width:720px){{.grid{{grid-template-columns:1fr 1fr}}}}
-  .pill{{display:inline-block;background:#24303f;color:var(--accent);border:1px solid #2f4154;border-radius:999px;padding:1px 10px;font-size:.78rem;margin-right:6px}}
 </style></head><body><div class="wrap">
 <p><a href="./index.html">← まとめ(index.html)へ戻る</a></p>
 <h1>都心 割安×資産性スクリーナー — 東京23区（売却益狙い）</h1>
@@ -385,70 +483,78 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="土地">土地</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" style="width:110px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <span class="pill" id="shown"></span>
 </div>
 
-<div class="tablewrap"><table id="t">
-<thead><tr>
-<th data-k="ward">区(出口)</th><th data-k="loc">所在地・タグ</th><th data-k="price" class="num">価格</th>
-<th data-k="tsubo" class="num">坪単価</th><th data-k="ratio" class="num">相場比</th>
-<th data-k="walk" class="num">駅徒歩</th><th data-k="area">面積</th>
-<th data-k="score">資産スコア ▼</th><th data-k="cmt">コメント</th><th>リンク</th>
-</tr></thead>
-<tbody>
-{rows}
-</tbody></table></div>
+<div class="cards" id="grid">
+{cards}
+</div>
 {err}
 
-<div class="note"><b>資産スコア（0-100）の考え方</b>：割安度（区の相場坪単価との比, 最大40）＋駅近（最大25）＋出口の堅さ＝エリアティア（最大25）＋規模（最大10）。
-再建築不可 −20・借地権 −12・古家付き −2 を減点。<b>あくまで簡易な目安</b>で、相場坪単価・ティアはエリア平均の概算です。
-「割安に買って売却益」を狙うなら、スコア上位×相場比1.1倍以上×駅近×出口S/Aを優先し、再建築不可・借地は原則除外（上のチェックで除外可）。</div>
+<h2>学び（相場・穴場・落とし穴）</h2>
+
+<details open><summary>📊 相場早見表 — 区ごとの中古戸建 相場坪単価＆出口ティア</summary>
+<div class="dbody">
+<p class="lead">「相場比＝この相場坪単価 ÷ 物件の実坪単価」。<b>相場比が高い＝割安</b>。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
+{market}
+</div></details>
+
+<details><summary>💎 穴場の見つけ方 — スコアの読み方と優先条件</summary>
+<div class="dbody">
+<p><b>資産スコア（0-100）</b>＝ 割安度（相場坪単価との比, 最大40）＋ 駅近（最大25）＋ 出口の堅さ＝ティア（最大25）＋ 規模（最大10）。再建築不可 −20／借地権 −12／古家付き −2 を減点。</p>
+<ul>
+<li><b>💎穴場候補</b>バッジ＝「相場比1.3倍以上 × 駅徒歩7分以内 × 注意タグ無し」。割安なのに出口・利便が確保できている本命ゾーン。</li>
+<li><b>★高評価</b>バッジ＝スコア78以上。割安×駅近×出口の総合点が高い。</li>
+<li>売却益を狙うなら <b>相場比1.1倍以上 × 駅近 × 出口S/A</b> を優先。価格の安さだけで選ばない（安い＝出口が弱い/訳ありのことが多い）。</li>
+<li>「価格が安い順」で並べて掘るより、「割安(相場比)順」で並べると“相対的に得な物件”が上に来る。</li>
+</ul>
+</div></details>
+
+<details><summary>⚠️ 落とし穴 — 安い物件に潜むリスク（タグの意味）</summary>
+<div class="dbody">
+<ul>
+<li><b>再建築不可</b>（−20）：接道義務（幅員4m道路に2m以上接道）未達。今の建物を壊すと建て直せない＝<b>住宅ローンが付きにくく出口が極端に狭い</b>。現金/リフォーム前提の上級者向け。</li>
+<li><b>借地権</b>（−12）：土地は借り物。地代・更新料・譲渡承諾料が発生し、<b>融資・売却に地主の承諾が要る</b>。旧法借地権は借地人有利だが流動性は低い。</li>
+<li><b>古家付き土地</b>（−2）：解体費（木造で150〜250万円目安）と滅失登記が必要。実質の取得コストは表示価格＋解体費で見る。</li>
+<li><b>セットバック</b>：42条2項道路に接する敷地は中心線から2m後退が必要。後退部分は建築・容積に算入不可＝<b>使える面積が減る</b>。</li>
+<li><b>私道・掘削承諾</b>：私道接道はインフラ更新時に掘削承諾が必要。無いと<b>リフォーム・建替・融資が詰まる</b>頻出の隠れ瑕疵。</li>
+<li>共通：<b>内見・現地・登記簿・公図・接道</b>を必ず確認。安さには理由がある前提で“理由を割り出して納得できる割安”だけ狙う。詳しい判断手順は <a href="./index.html">index.html</a> のチェックリスト/リスク判定へ。</li>
+</ul>
+</div></details>
 
 <h2>他サイト（キュレーション・リンク）</h2>
 <p class="lead">cowcamo・HOME'S・at home・楽待・健美家は、SPAやアクセス制限のため自動一覧に統合できません。最新は各公式でご確認ください（cowcamoはリノベ・デザイン重視で“脱ゲテモノ”に好相性）。</p>
 <div class="grid">{curated}</div>
 
 <div class="note">⚠️ 価格・在庫・相場は変動します。本スクリーナーはSUUMOからの自動取得スナップショット＋簡易スコアです。
-購入判断の前に、再建築可否・接道・境界・用途地域・融資・出口を必ず現地と専門家（不動産業者/建築士/司法書士/金融機関）で確認してください。
-判断手順は <a href="./index.html">index.html</a> のチェックリスト/リスク判定を参照。</div>
+購入判断の前に、再建築可否・接道・境界・用途地域・融資・出口を必ず現地と専門家（不動産業者/建築士/司法書士/金融機関）で確認してください。</div>
 
 <script>
-const tb=document.querySelector('#t tbody'), rows=[...tb.rows];
+const grid=document.getElementById('grid'), cards=[...grid.children];
 const el=id=>document.getElementById(id);
-const fward=el('fward'),fkind=el('fkind'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl');
 function apply(){{
-  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked;let n=0;
-  for(const r of rows){{
-    let ok=true;
-    if(w&&r.dataset.ward!==w)ok=false;
-    if(k&&r.dataset.kind!==k)ok=false;
-    if(mx&&parseInt(r.dataset.price,10)>mx)ok=false;
-    if(ms&&parseInt(r.dataset.score,10)<ms)ok=false;
-    if(ex&&/(再建築不可|借地権)/.test(r.dataset.tags))ok=false;
-    r.style.display=ok?'':'none'; if(ok)n++;
+  const w=fward.value,k=fkind.value,mx=parseInt(fmax.value||'0',10),ms=parseInt(fscore.value||'0',10),ex=fexcl.checked,sk=fsort.value;
+  let n=0;
+  for(const c of cards){{
+    const d=c.dataset; let ok=true;
+    if(w&&d.ward!==w)ok=false;
+    if(k&&d.kind!==k)ok=false;
+    if(mx&&parseInt(d.price,10)>mx)ok=false;
+    if(ms&&parseInt(d.score,10)<ms)ok=false;
+    if(ex&&/(再建築不可|借地権)/.test(d.tags))ok=false;
+    c.style.display=ok?'':'none'; if(ok)n++;
   }}
-  el('shown').textContent=n+' 件表示';
+  const dir=(sk==='price'||sk==='walk')?1:-1;
+  [...cards].sort((a,b)=>(parseFloat(a.dataset[sk])-parseFloat(b.dataset[sk]))*dir)
+            .forEach(c=>grid.appendChild(c));
+  el('shown').textContent=n+' 件';
 }}
-[fward,fkind,fmax,fscore,fexcl].forEach(e=>e.addEventListener('input',apply));
-let asc={{}};
-const order=['ward','loc','price','tsubo','ratio','walk','area','score','cmt'];
-document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
-  const k=th.dataset.k; asc[k]=!asc[k];
-  const num=['price','tsubo','ratio','walk','score'].includes(k);
-  const ci=order.indexOf(k)+1;
-  rows.sort((a,b)=>{{
-    let x,y;
-    if(k==='score'){{x=+a.dataset.score;y=+b.dataset.score;}}
-    else if(k==='price'){{x=+a.dataset.price;y=+b.dataset.price;}}
-    else if(num){{x=parseFloat(a.cells[ci-1].textContent)||0;y=parseFloat(b.cells[ci-1].textContent)||0;}}
-    else{{x=a.cells[ci-1].textContent;y=b.cells[ci-1].textContent;}}
-    return (x>y?1:x<y?-1:0)*(asc[k]?1:-1);
-  }});
-  rows.forEach(r=>tb.appendChild(r));
-}}));
+[fward,fkind,fsort,fmax,fscore,fexcl].forEach(e=>e.addEventListener('input',apply));
 apply();
 </script>
 </div></body></html>"""
