@@ -436,6 +436,12 @@ def collect():
         time.sleep(1.3)
 
     rows = list(merged.values())
+    # 重複名寄せ（E）：同一物件が別ID/別業者で重複することがある。住所+種別+価格+面積で寄せる
+    uniq = {}
+    for r in rows:
+        key = (r["kind"], r["loc"], r["price"], r.get("land"), r.get("bld"))
+        uniq.setdefault(key, r)
+    rows = list(uniq.values())
     for r in rows:
         enrich(r)
     rows.sort(key=lambda x: (-x["score"], x["price"]))
@@ -510,6 +516,24 @@ def detail_fields(html):
     return f
 
 
+def gsi_elevation(addr):
+    """国土地理院API（無料・鍵不要）で住所→標高(m)。失敗時はNone。"""
+    try:
+        q = urllib.parse.quote(addr)
+        g = json.loads(urllib.request.urlopen(
+            "https://msearch.gsi.go.jp/address-search/AddressSearch?q=" + q, timeout=15).read())
+        if not g:
+            return None
+        lon, lat = g[0]["geometry"]["coordinates"]
+        e = json.loads(urllib.request.urlopen(
+            "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php"
+            f"?lon={lon}&lat={lat}&outtype=JSON", timeout=15).read())
+        el = e.get("elevation")
+        return float(el) if isinstance(el, (int, float)) else None
+    except Exception:
+        return None
+
+
 def apply_detail(r, html):
     """詳細ページから“現地シグナル”を抽出して r['onsite'] に格納（必要なら是正タグも付与）。"""
     f = detail_fields(html)
@@ -548,6 +572,12 @@ def apply_detail(r, html):
             notes.append("修繕積立金が低め（将来の値上げ・一時金リスク）")
         if re.match(r"^1階(?!\d)", g("所在階").lstrip()):
             notes.append("1階住戸（防犯・眺望でマイナス、専用庭の利点も）")
+    # 標高（C）：低地は浸水・液状化リスクの目安（国土地理院API）
+    el = gsi_elevation("東京都" + r["loc"])
+    if el is not None:
+        r["elev"] = round(el, 1)
+        if el < 5:
+            notes.append(f"標高約{r['elev']}m＝低地（浸水・液状化の可能性、ハザードマップ要確認）")
     # 重複除去・最大4件
     seen, uniq = set(), []
     for n in notes:
@@ -563,17 +593,32 @@ def enrich(r):
     tier = TIER.get(ward, "C")
     r["tier"] = tier
     is_ms = r["kind"] == "マンション"
+    wk = r["walk"]
     if is_ms:
         size = r.get("bld")                       # 専有面積㎡
         unit = (r["price"] / size) if size else None      # 万円/㎡
         med = WARD_MS_M2.get(ward)
         r["unit_disp"] = f"{round(unit)}万/㎡" if unit else "—"
+        # 実需/投資の別（D）：狭小・ワンルーム系は投資、それ以外は実需
+        r["use"] = "投資" if ((size and size < 30) or r.get("plan") in
+                              ("1R", "1K", "1DK", "ワンルーム")) else "実需"
     else:
         unit = tsubo_unit(r["price"], r["land"])          # 万円/坪
         size = r["land"]
         med = WARD_TSUBO.get(ward)
         r["unit_disp"] = f"{round(unit)}万/坪" if unit else "—"
+        r["use"] = "実需"
     r["tsubo"] = round(unit) if unit else None
+    # 相場ベンチマークの補正：駅距離(B)＋マンションは築年(D)で“同条件比”に近づける
+    if med:
+        wf = (1.15 if (wk is not None and wk <= 3) else 1.06 if (wk is not None and wk <= 7)
+              else 1.0 if (wk is None or wk <= 10) else 0.9 if wk <= 15 else 0.82)
+        med *= wf
+        if is_ms and r.get("year"):
+            age = 2026 - r["year"]
+            af = (1.12 if age <= 5 else 1.04 if age <= 15 else 1.0 if age <= 25
+                  else 0.9 if age <= 35 else 0.8 if age <= 45 else 0.72)
+            med *= af
     ratio = (med / unit) if (unit and med) else None
     r["ratio"] = round(ratio, 2) if ratio else None
 
@@ -789,7 +834,7 @@ def render(rows, errors):
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
             f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}" '
             f'data-dev="{dev}" data-watch="{1 if watch else 0}" '
-            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}">'
+            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -823,7 +868,7 @@ def render(rows, errors):
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
             f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}" '
-            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}">'
+            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{("<b class=mn>" + H.escape(r["name"]) + "</b> ") if (is_ms and r.get("name")) else ""}'
@@ -939,7 +984,7 @@ TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>都心 割安×資産性スクリーナー（東京23区・売却益狙い）</title>
 <style>
-  :root{{--bg:#0f1115;--panel:#171a21;--panel2:#1d2129;--card:#191d25;--ink:#e9edf3;--muted:#9aa4b2;--line:#2a2f3a;--accent:#6ea8fe;--accent2:#7ee0c0}}
+  :root{{--bg:#f5f7fa;--panel:#ffffff;--panel2:#eef2f7;--card:#ffffff;--ink:#1b2430;--muted:#5d6b7a;--line:#dce3ec;--accent:#2563eb;--accent2:#0f9d6b}}
   *{{box-sizing:border-box}}
   body{{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.55}}
   .wrap{{max-width:1180px;margin:0 auto;padding:18px}}
@@ -952,104 +997,104 @@ TEMPLATE = """<!DOCTYPE html>
   .bar{{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin:12px 0}}
   select,input{{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem}}
   .bar label{{font-size:.8rem;color:var(--muted);margin-right:4px}}
-  .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#dfe5ee}}
-  .pill{{display:inline-block;background:#24303f;color:var(--accent);border:1px solid #2f4154;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
+  .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#2c3744}}
+  .pill{{display:inline-block;background:#e7eefb;color:var(--accent);border:1px solid #c8d8f7;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
   /* ---- カードグリッド ---- */
   .cards{{display:grid;gap:14px;grid-template-columns:1fr}}
   @media(min-width:640px){{.cards{{grid-template-columns:1fr 1fr}}}}
   @media(min-width:980px){{.cards{{grid-template-columns:1fr 1fr 1fr}}}}
   .card{{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s,border-color .12s,box-shadow .12s}}
-  .card:hover{{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.35)}}
-  .ctop{{position:relative;padding:14px 16px 12px;background:linear-gradient(135deg,#222936,#171b22)}}
-  .ctop.tS{{background:linear-gradient(135deg,#163a31,#171b22)}}
-  .ctop.tA{{background:linear-gradient(135deg,#19324a,#171b22)}}
-  .ctop.tB{{background:linear-gradient(135deg,#3a341a,#171b22)}}
-  .ctop.tC{{background:linear-gradient(135deg,#2a2f38,#171b22)}}
+  .card:hover{{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 22px rgba(30,50,90,.13)}}
+  .ctop{{position:relative;padding:14px 16px 12px;background:linear-gradient(135deg,#f3f6fb,#ffffff)}}
+  .ctop.tS{{background:linear-gradient(135deg,#e6f6ef,#ffffff)}}
+  .ctop.tA{{background:linear-gradient(135deg,#e7f0fd,#ffffff)}}
+  .ctop.tB{{background:linear-gradient(135deg,#fbf3df,#ffffff)}}
+  .ctop.tC{{background:linear-gradient(135deg,#eef1f5,#ffffff)}}
   .ci{{padding-right:64px}}
   .price{{font-size:1.5rem;font-weight:800;letter-spacing:.2px}}
-  .loc{{font-size:.84rem;color:#cdd6e2;margin-top:3px}}
-  .kindchip{{display:inline-block;background:#2b3543;color:#bcd6ff;border-radius:6px;padding:0 7px;font-size:.72rem;margin-left:6px}}
-  .mn{{color:#ffd9a0;font-weight:700}}
+  .loc{{font-size:.84rem;color:#46505d;margin-top:3px}}
+  .kindchip{{display:inline-block;background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem;margin-left:6px}}
+  .mn{{color:#a25e00;font-weight:700}}
   .ring{{position:absolute;top:12px;right:14px;width:54px;height:54px;border-radius:50%;
-        background:conic-gradient(var(--accent) calc(var(--p)*1%),#2a2f3a 0);
-        display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}}
+        background:conic-gradient(var(--accent) calc(var(--p)*1%),#e1e6ee 0);
+        display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink)}}
   .ring::before{{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--card)}}
   .ring b{{position:relative;font-size:1.05rem;line-height:1}}
   .ring small{{position:relative;font-size:.55rem;color:var(--muted)}}
   .bd{{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px 0}}
   .bdg{{font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 9px}}
-  .b-top{{background:#1f3d33;color:#7ee0c0;border:1px solid #2f5d4d}}
-  .b-gem{{background:#1c2f49;color:#9ad0ff;border:1px solid #2e4a6e}}
-  .b-warn{{background:#3a2530;color:#ff9db0;border:1px solid #5a3a45}}
-  .b-wave{{background:#13303a;color:#67d6e6;border:1px solid #245863}}
-  .b-dev{{background:#2e2940;color:#c4a8ff;border:1px solid #463a66}}
-  .b-rail{{background:#15321f;color:#86e0a3;border:1px solid #2c5d3c}}
-  .b-onsite{{background:#2a2233;color:#e6b3ff;border:1px solid #54426a}}
-  .b-drop{{background:#3a1f24;color:#ff9aa6;border:1px solid #6a3540}}
-  .b-stale{{background:#33301c;color:#e6d48a;border:1px solid #5e592c}}
-  .t-drop{{color:#ff9aa6;font-weight:700;font-size:.72rem}}
-  .t-stale{{color:#e6d48a;font-weight:700;font-size:.72rem}}
-  .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#1a1f17;border:1px solid #3a3f2a;color:#dfe6cf}}
-  .b-watch{{background:#3a3416;color:#ffe08a;border:1px solid #6a5d23}}
+  .b-top{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
+  .b-gem{{background:#e4eefe;color:#1d5fd6;border:1px solid #c2d8fb}}
+  .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
+  .b-wave{{background:#e0f3f8;color:#0e7d92;border:1px solid #bce4ee}}
+  .b-dev{{background:#efe9fb;color:#6b46c1;border:1px solid #d8c9f3}}
+  .b-rail{{background:#e4f5ea;color:#1d7a45;border:1px solid #c0e6cd}}
+  .b-onsite{{background:#f3e9fb;color:#8a3fc0;border:1px solid #e0c9f3}}
+  .b-drop{{background:#fde7ea;color:#c8324a;border:1px solid #f4c2cb}}
+  .b-stale{{background:#fbf2d6;color:#8a6d10;border:1px solid #ecdc9a}}
+  .t-drop{{color:#c8324a;font-weight:700;font-size:.72rem}}
+  .t-stale{{color:#8a6d10;font-weight:700;font-size:.72rem}}
+  .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
+  .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
-  .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#ffe08a}}
-  .wli{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 10px;margin:5px 0;background:#171b22;border:1px solid var(--line);border-radius:9px;font-size:.85rem}}
-  .wli b{{color:#e9edf3}}
-  .wc{{color:var(--accent);font-size:.78rem;background:#1c2533;border:1px solid #2f4154;border-radius:999px;padding:1px 9px}}
+  .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#a07b00}}
+  .wli{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 10px;margin:5px 0;background:#f7f9fc;border:1px solid var(--line);border-radius:9px;font-size:.85rem}}
+  .wli b{{color:var(--ink)}}
+  .wc{{color:var(--accent);font-size:.78rem;background:#e7eefb;border:1px solid #c8d8f7;border-radius:999px;padding:1px 9px}}
   .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
-  .dev.d3{{color:#67d6e6}}.dev.d2{{color:#9ad0ff}}.dev.d1{{color:#9aa4b2}}.dev.d0{{color:#5a6472}}
+  .dev.d3{{color:#0e7d92}}.dev.d2{{color:#1d5fd6}}.dev.d1{{color:#5d6b7a}}.dev.d0{{color:#9aa4b2}}
   .devnote{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45}}
-  .devnote.n-wave{{background:#10262e;border:1px solid #245863;color:#bfe7ee}}
-  .devnote.n-dev{{background:#241f33;border:1px solid #463a66;color:#ddd0ff}}
+  .devnote.n-wave{{background:#e6f4f8;border:1px solid #bce0ea;color:#185f70}}
+  .devnote.n-dev{{background:#f2ecfb;border:1px solid #ddccf3;color:#5a3f8a}}
   .facts{{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding:12px 16px}}
   .f{{font-size:.82rem}}
   .f span{{display:block;color:var(--muted);font-size:.7rem}}
   .f b{{font-weight:700}}
-  .rbar{{height:6px;border-radius:999px;background:#2a2f3a;margin-top:4px;overflow:hidden}}
+  .rbar{{height:6px;border-radius:999px;background:#e6eaf0;margin-top:4px;overflow:hidden}}
   .rbar i{{display:block;height:100%}}
   .tier{{display:inline-block;min-width:17px;text-align:center;border-radius:5px;margin-right:5px;font-weight:700;font-size:.74rem;color:#10141a}}
   .tS{{background:#7ee0c0}}.tA{{background:#9ad0ff}}.tB{{background:#ffe08a}}.tC{{background:#c9d1da}}
   .tags{{padding:0 16px}}
-  .tag{{display:inline-block;background:#3a2530;color:#ff9db0;border:1px solid #5a3a45;border-radius:999px;padding:0 8px;font-size:.72rem;margin:0 4px 4px 0}}
+  .tag{{display:inline-block;background:#fde8ec;color:#b23a52;border:1px solid #f3c8d1;border-radius:999px;padding:0 8px;font-size:.72rem;margin:0 4px 4px 0}}
   .grade{{display:inline-block;border-radius:6px;padding:0 8px;color:#10141a}}
   .g-hi{{background:#7ee0c0}}.g-mh{{background:#9ad0ff}}.g-mid{{background:#ffe08a}}.g-lo{{background:#c9d1da}}
   .cmt{{color:var(--muted);font-size:.78rem;padding:4px 16px 12px}}
   .viewrow{{margin-top:auto;display:flex;border-top:1px solid var(--line)}}
-  .view{{flex:1;text-align:center;text-decoration:none;background:#212a37;color:#bcd6ff;padding:10px;font-size:.85rem;font-weight:700}}
-  .view:hover{{background:#27313f}}
-  .view.vmap{{border-left:1px solid var(--line);color:#9ce0c2}}
-  .mp{{text-decoration:none;font-size:.95rem}}.mp:hover{{filter:brightness(1.3)}}
+  .view{{flex:1;text-align:center;text-decoration:none;background:#eef3fb;color:#2563eb;padding:10px;font-size:.85rem;font-weight:700}}
+  .view:hover{{background:#e2ebfb}}
+  .view.vmap{{border-left:1px solid var(--line);color:#0f9d6b}}
+  .mp{{text-decoration:none;font-size:.95rem}}.mp:hover{{filter:brightness(1.1)}}
   /* ---- 表（比較）ビュー＆ビュー切替 ---- */
   .seg{{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}}
   .seg button{{background:var(--panel2);color:var(--muted);border:0;padding:7px 13px;font-size:.85rem;cursor:pointer}}
-  .seg button.on{{background:var(--accent);color:#0d1116;font-weight:700}}
+  .seg button.on{{background:var(--accent);color:#ffffff;font-weight:700}}
   .hidden{{display:none!important}}
   .tblwrap{{overflow-x:auto;border:1px solid var(--line);border-radius:14px}}
   table{{border-collapse:collapse;width:100%;font-size:.85rem;min-width:760px}}
-  thead th{{position:sticky;top:0;background:#212732;text-align:left;padding:9px 10px;cursor:pointer;white-space:nowrap;user-select:none;border-bottom:1px solid var(--line);z-index:1}}
+  thead th{{position:sticky;top:0;background:#eef2f7;text-align:left;padding:9px 10px;cursor:pointer;white-space:nowrap;user-select:none;border-bottom:1px solid var(--line);z-index:1}}
   thead th.num{{text-align:right}}
-  thead th:hover{{color:#bcd6ff}}
+  thead th:hover{{color:var(--accent)}}
   tbody td{{padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:top}}
-  tbody tr:hover{{background:#1b2029}}
+  tbody tr:hover{{background:#f1f5fb}}
   td.num{{text-align:right;font-variant-numeric:tabular-nums}}
   td.tw{{font-weight:600}}
   td.pr{{font-weight:800;font-size:.95rem}}
   td.tloc{{white-space:normal;min-width:160px}}
-  td.tloc a{{color:#e9edf3;text-decoration:none}}
+  td.tloc a{{color:var(--ink);text-decoration:none}}
   td.tloc a:hover{{color:var(--accent);text-decoration:underline}}
   td.tarea{{color:var(--muted);font-size:.77rem}}
   td.dev{{font-weight:700;font-size:.78rem}}
-  td.dev.d3{{color:#67d6e6}}td.dev.d2{{color:#9ad0ff}}td.dev.d1,td.dev.d0{{color:#6b7480}}
+  td.dev.d3{{color:#0e7d92}}td.dev.d2{{color:#1d5fd6}}td.dev.d1,td.dev.d0{{color:#7a8694}}
   .sc{{display:inline-block;min-width:30px;text-align:center;border-radius:6px;padding:1px 6px;font-weight:800;color:#10141a}}
   .sc.g-hi{{background:#7ee0c0}}.sc.g-mh{{background:#9ad0ff}}.sc.g-mid{{background:#ffe08a}}.sc.g-lo{{background:#c9d1da}}
   td .tag{{font-size:.68rem;padding:0 6px;margin:2px 3px 0 0}}
   /* ---- 学び（details） ---- */
   details{{background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}}
-  details>summary{{cursor:pointer;list-style:none;padding:12px 16px;font-weight:700;font-size:.95rem;background:#1b2029}}
+  details>summary{{cursor:pointer;list-style:none;padding:12px 16px;font-weight:700;font-size:.95rem;background:#e9eef4}}
   details>summary::-webkit-details-marker{{display:none}}
   details>summary::before{{content:"▸ ";color:var(--accent)}}
   details[open]>summary::before{{content:"▾ "}}
-  .dbody{{padding:12px 16px;font-size:.85rem;color:#dfe5ee}}
+  .dbody{{padding:12px 16px;font-size:.85rem;color:#2c3744}}
   .dbody li{{margin:4px 0}}
   /* 相場早見 */
   .mrow{{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line)}}
@@ -1057,8 +1102,8 @@ TEMPLATE = """<!DOCTYPE html>
   .mlabel{{font-weight:800;font-size:1.05rem;color:#10141a;border-radius:8px;padding:8px 10px;height:fit-content}}
   .mlabel small{{display:block;font-weight:500;font-size:.66rem;color:#0d1116;opacity:.85;margin-top:3px}}
   .mws{{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}}
-  .mw{{background:#171b22;border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:.8rem}}
-  .mw b{{display:block;color:#bcd6ff}}
+  .mw{{background:#f4f7fb;border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:.8rem}}
+  .mw b{{display:block;color:#2563eb}}
   .mw small{{color:var(--muted);font-size:.7rem}}
   /* 将来性マップ */
   .dvw{{display:grid;grid-template-columns:auto auto auto 1fr;align-items:center;gap:8px;padding:7px 0;border-top:1px solid var(--line)}}
@@ -1066,18 +1111,18 @@ TEMPLATE = """<!DOCTYPE html>
   .devb{{font-weight:800;border-radius:6px;padding:2px 7px;color:#10141a;font-size:.8rem}}
   .devb.d3{{background:#67d6e6}}.devb.d2{{background:#9ad0ff}}.devb.d1{{background:#c9d1da}}
   .dvw b{{min-width:64px}}.dvw small{{color:var(--muted);font-size:.72rem;min-width:34px}}
-  .dvn{{color:#cdd6e2;font-size:.8rem}}
+  .dvn{{color:#46505d;font-size:.8rem}}
   .spt{{padding:9px 11px;border-radius:10px;margin:6px 0;border:1px solid var(--line)}}
-  .spt.s-wave{{background:#10262e;border-color:#245863}}
-  .spt.s-dev{{background:#241f33;border-color:#463a66}}
+  .spt.s-wave{{background:#e9f5f8;border-color:#c4e2ea}}
+  .spt.s-dev{{background:#f2ecfb;border-color:#ddccf3}}
   .spt b{{display:block;margin-bottom:2px}}
   .spt small{{display:block;color:var(--muted);font-size:.72rem;margin-top:3px}}
   .spotgrid{{display:grid;gap:6px}}
   @media(min-width:720px){{.spotgrid{{grid-template-columns:1fr 1fr}}}}
-  .note{{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--accent2);border-radius:10px;padding:10px 14px;font-size:.84rem;color:#dfe5ee;margin:14px 0}}
+  .note{{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--accent2);border-radius:10px;padding:10px 14px;font-size:.84rem;color:#2c3744;margin:14px 0}}
   .cu{{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 14px;margin:8px 0;color:var(--ink)}}
-  .cu:hover{{border-color:var(--accent);background:#1c2330}}
-  .cu b{{color:#bcd6ff}}.cu span{{display:block;color:var(--muted);font-size:.8rem}}
+  .cu:hover{{border-color:var(--accent);background:#f0f5fd}}
+  .cu b{{color:#2563eb}}.cu span{{display:block;color:var(--muted);font-size:.8rem}}
   .grid{{display:grid;gap:8px}}
   @media(min-width:720px){{.grid{{grid-template-columns:1fr 1fr}}}}
 </style></head><body><div class="wrap">
@@ -1100,6 +1145,7 @@ TEMPLATE = """<!DOCTYPE html>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <label class="ck"><input type="checkbox" id="fwatch"> ⭐ウォッチのみ</label>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
+  <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
 </div>
@@ -1190,7 +1236,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch'),fdrop=el('fdrop');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch'),fdrop=el('fdrop'),fjisu=el('fjisu');
 let sortK='score', sortAsc=false;
 const defAsc=k=>(k==='price'||k==='walk');   // 価格・駅徒歩は小さい順、その他は大きい順を既定に
 function pass(d){{
@@ -1202,6 +1248,7 @@ function pass(d){{
   if(fdev.checked&&parseInt(d.dev,10)<2)return false;
   if(fwatch.checked&&d.watch!=='1')return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
+  if(fjisu.checked&&d.use!=='実需')return false;
   return true;
 }}
 function run(items,parent){{
@@ -1215,7 +1262,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fexcl,fdev,fwatch,fdrop].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fexcl,fdev,fwatch,fdrop,fjisu].forEach(e=>e.addEventListener('input',apply));
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return;
