@@ -172,6 +172,8 @@ AREA_PAGES = 3
 # 中古マンション 23区・価格安い順
 MS_URL = "https://suumo.jp/jj/bukken/ichiran/JJ010FJ001/"
 MS_PAGES = 3
+# 詳細ページから現地シグナルを取得する上位件数（重いので限定）＋ウォッチ該当は別途必ず取得
+DETAIL_TOPN = 40
 # 種別・注意タグ付与: SUUMO /b/kodate/kw/（解決可能な組合せのみ）
 KW_BASE = "https://suumo.jp/b/kodate/kw/"
 KW_SOURCES = [
@@ -388,6 +390,22 @@ def collect():
     for r in rows:
         enrich(r)
     rows.sort(key=lambda x: (-x["score"], x["price"]))
+
+    # 上位＋ウォッチ該当のみ詳細ページを取得し“現地シグナル”を付与（重いので限定）
+    targets = list(rows[:DETAIL_TOPN])
+    seen_ids = {r["id"] for r in targets}
+    for r in rows[DETAIL_TOPN:]:
+        if r.get("watch") and r["id"] not in seen_ids:
+            targets.append(r)
+            seen_ids.add(r["id"])
+    for r in targets:
+        try:
+            apply_detail(r, fetch(r["url"]))
+            enrich(r)                       # 是正タグ・現地シグナルを反映して再採点
+        except Exception as e:
+            errors.append(f"detail {r['id']}: {e}")
+        time.sleep(0.7)
+    rows.sort(key=lambda x: (-x["score"], x["price"]))
     return rows, errors
 
 
@@ -426,7 +444,69 @@ def infer_reason(r):
             rs.append("目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）")
         else:
             rs.append("価格は相場相応。立地・築年・管理状態で比較するゾーン")
-    return " / ".join(rs[:3])
+    return rs[:3]
+
+
+def detail_fields(html):
+    """SUUMO詳細ページの th/td・dt/dd を label→value 辞書に。"""
+    f = {}
+    for m in re.finditer(r"<th[^>]*>(.*?)</th>\s*<td[^>]*>(.*?)</td>", html, re.S):
+        k, v = text(m.group(1)), text(m.group(2))
+        if k and v and k not in f:
+            f[k] = v
+    for m in re.finditer(r"<dt[^>]*>(.*?)</dt>\s*<dd[^>]*>(.*?)</dd>", html, re.S):
+        k, v = text(m.group(1)), text(m.group(2))
+        if k and v and k not in f:
+            f[k] = v
+    return f
+
+
+def apply_detail(r, html):
+    """詳細ページから“現地シグナル”を抽出して r['onsite'] に格納（必要なら是正タグも付与）。"""
+    f = detail_fields(html)
+
+    def g(*keys):
+        for k, v in f.items():
+            if any(key in k for key in keys):
+                return v
+        return ""
+
+    notes = []
+    yoto = g("用途地域")
+    if any(x in yoto for x in ["商業", "近隣商業", "準工業", "工業"]):
+        notes.append(f"用途地域:{yoto}（店舗・交通量で住環境はやや劣るが容積に余裕）")
+    kenri, chidai = g("土地の権利"), g("諸費用")
+    if r["kind"] != "マンション" and ("借地" in kenri or "賃借" in kenri or "地代" in chidai):
+        if "借地権" not in r["tags"]:
+            r["tags"].append("借地権")
+        notes.append("借地（土地は借り物・地代/承諾料が必要）")
+    road = g("私道負担", "前面道路", "道路")
+    if road:
+        if "私道" in road and not road.lstrip().startswith("無"):
+            notes.append("私道負担/私道接道（掘削承諾・整備費・融資に注意）")
+        mw = re.search(r"([0-9.]+)\s*[ｍm]", road)
+        if mw and float(mw.group(1)) < 4:
+            notes.append(f"前面道路 約{mw.group(1)}m（4m未満＝セットバック/再建築の制約に注意）")
+    if r["kind"] == "マンション":
+        muki = g("向き")
+        if muki and any(x in muki for x in ["北", "西"]):
+            notes.append(f"{muki}向き（採光面でマイナス材）")
+        mt = re.search(r"(\d+)\s*戸", g("総戸数"))
+        if mt and int(mt.group(1)) < 20:
+            notes.append(f"総戸数{mt.group(1)}戸の小規模（管理コスト割高・流動性やや低）")
+        ms = re.search(r"([0-9,]+)\s*円", g("修繕積立金"))
+        if ms and int(ms.group(1).replace(",", "")) < 5000:
+            notes.append("修繕積立金が低め（将来の値上げ・一時金リスク）")
+        if re.match(r"^1階(?!\d)", g("所在階").lstrip()):
+            notes.append("1階住戸（防犯・眺望でマイナス、専用庭の利点も）")
+    # 重複除去・最大4件
+    seen, uniq = set(), []
+    for n in notes:
+        if n not in seen:
+            seen.add(n)
+            uniq.append(n)
+    r["onsite"] = uniq[:4]
+    r["detailed"] = True
 
 
 def enrich(r):
@@ -540,7 +620,7 @@ def enrich(r):
     if "旧耐震" in r["tags"]:
         bits.append("旧耐震(1981以前)→融資/出口に注意")
     r["comment"] = " / ".join(bits)
-    r["reason"] = infer_reason(r)
+    r["reason"] = " / ".join(((r.get("onsite") or []) + infer_reason(r))[:4])
 
 
 # ------- HTML 出力 -------
@@ -635,6 +715,8 @@ def render(rows, errors):
             badges.append('<span class="bdg b-dev">🏗再開発活発</span>')
         if risky:
             badges.append('<span class="bdg b-warn">⚠落とし穴</span>')
+        if r.get("detailed"):
+            badges.append('<span class="bdg b-onsite">🏠現地反映</span>')
         badges_s = "".join(badges)
         spotfact = (" " + H.escape(r["spot"])) if r.get("spot") else ""
         if r.get("spot_note"):
@@ -842,6 +924,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-wave{{background:#13303a;color:#67d6e6;border:1px solid #245863}}
   .b-dev{{background:#2e2940;color:#c4a8ff;border:1px solid #463a66}}
   .b-rail{{background:#15321f;color:#86e0a3;border:1px solid #2c5d3c}}
+  .b-onsite{{background:#2a2233;color:#e6b3ff;border:1px solid #54426a}}
   .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#1a1f17;border:1px solid #3a3f2a;color:#dfe6cf}}
   .b-watch{{background:#3a3416;color:#ffe08a;border:1px solid #6a5d23}}
   /* 追跡リスト */
