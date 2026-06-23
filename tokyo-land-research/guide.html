@@ -6,8 +6,8 @@
 <title>都心の安い土地・訳あり物件 リサーチ｜東京23区</title>
 <style>
   :root{
-    --bg:#0f1115; --panel:#171a21; --panel2:#1d2129; --ink:#e9edf3; --muted:#9aa4b2;
-    --line:#2a2f3a; --accent:#6ea8fe; --accent2:#7ee0c0; --warn:#ffcf6e; --bad:#ff8b8b;
+    --bg:#f5f7fa; --panel:#ffffff; --panel2:#eef2f7; --ink:#1b2430; --muted:#5d6b7a;
+    --line:#dce3ec; --accent:#2563eb; --accent2:#0f9d6b; --warn:#c98a00; --bad:#d6455a;
     --a:#7ee0c0; --b:#9ad0ff; --c:#ffe08a; --d:#ffb37a; --e:#ff8b8b;
   }
   *{box-sizing:border-box}
@@ -16,39 +16,39 @@
     font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
     line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
   .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
-  header.hero{background:linear-gradient(160deg,#1a2230,#12151b 60%);border-bottom:1px solid var(--line);padding:42px 0 30px}
+  header.hero{background:linear-gradient(160deg,#eaf1fb,#f5f7fa 60%);border-bottom:1px solid var(--line);padding:42px 0 30px}
   header.hero h1{margin:0 0 8px;font-size:1.9rem;letter-spacing:.02em}
   header.hero p{margin:.3rem 0;color:var(--muted)}
-  .pill{display:inline-block;background:#24303f;color:var(--accent);border:1px solid #2f4154;
+  .pill{display:inline-block;background:#e7eefb;color:var(--accent);border:1px solid #c8d8f7;
     border-radius:999px;padding:2px 11px;font-size:.78rem;margin:4px 6px 0 0}
   .updated{font-size:.82rem;color:var(--muted);margin-top:10px}
-  nav.toc{position:sticky;top:0;z-index:5;background:rgba(15,17,21,.92);backdrop-filter:blur(6px);
+  nav.toc{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);padding:10px 0}
   nav.toc ul{display:flex;flex-wrap:wrap;gap:6px 10px;list-style:none;margin:0;padding:0;font-size:.84rem}
   nav.toc a{color:var(--muted);text-decoration:none;padding:3px 9px;border-radius:8px;border:1px solid transparent}
   nav.toc a:hover{color:var(--ink);border-color:var(--line);background:var(--panel)}
   section{padding:30px 0;border-bottom:1px solid var(--line)}
   h2{font-size:1.32rem;margin:.2em 0 .6em;padding-left:11px;border-left:4px solid var(--accent)}
-  h3{font-size:1.05rem;margin:1.3em 0 .4em;color:#cfe0ff}
-  p,li{color:#dfe5ee}
+  h3{font-size:1.05rem;margin:1.3em 0 .4em;color:#1d3a6b}
+  p,li{color:#2c3744}
   .lead{color:var(--muted)}
   .grid{display:grid;gap:14px}
   @media(min-width:720px){.grid.cols2{grid-template-columns:1fr 1fr}.grid.cols3{grid-template-columns:1fr 1fr 1fr}}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
   .card h3{margin-top:0}
   .note{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--warn);
-    border-radius:10px;padding:12px 16px;color:#e8ecf3;font-size:.94rem}
+    border-radius:10px;padding:12px 16px;color:#2c3744;font-size:.94rem}
   .note.good{border-left-color:var(--accent2)}
   .note.bad{border-left-color:var(--bad)}
   .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0}
   table{border-collapse:collapse;width:100%;font-size:.86rem;min-width:560px}
   th,td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  thead th{background:#212732;color:#dfe9f7;position:sticky;top:0;font-weight:600}
-  tbody tr:hover{background:#1b2029}
+  thead th{background:#eef2f7;color:#1b2430;position:sticky;top:0;font-weight:600}
+  tbody tr:hover{background:#f1f5fb}
   td.num,th.num{text-align:right;white-space:nowrap}
   a{color:var(--accent)}
-  a:hover{color:#bcd6ff}
-  code{background:#222834;padding:1px 6px;border-radius:6px;font-size:.86em;color:#d8e3f5}
+  a:hover{color:#1d4ed8}
+  code{background:#eef2f7;padding:1px 6px;border-radius:6px;font-size:.86em;color:#1b3a6b}
   .badge{display:inline-block;border-radius:6px;padding:1px 8px;font-weight:700;font-size:.8rem;color:#10141a}
   .A{background:var(--a)}.B{background:var(--b)}.C{background:var(--c)}.D{background:var(--d)}.E{background:var(--e)}
   ul.tight{margin:.3em 0;padding-left:1.2em}
@@ -58,16 +58,16 @@
   .kpi b{color:var(--accent2);font-size:1.05rem}
   .btns{display:grid;gap:10px;margin:10px 0}
   @media(min-width:620px){.btns.c2{grid-template-columns:1fr 1fr}.btns.c3{grid-template-columns:1fr 1fr 1fr}}
-  a.btn{display:block;text-decoration:none;background:var(--panel2);border:1px solid #2f4154;border-radius:11px;
+  a.btn{display:block;text-decoration:none;background:var(--panel2);border:1px solid var(--line);border-radius:11px;
     padding:11px 14px;color:var(--ink);transition:.15s}
-  a.btn:hover{background:#243247;border-color:var(--accent);transform:translateY(-1px)}
-  a.btn b{display:block;color:#bcd6ff;font-size:.96rem;margin-bottom:2px}
+  a.btn:hover{background:#e8f0fe;border-color:var(--accent);transform:translateY(-1px)}
+  a.btn b{display:block;color:#2563eb;font-size:.96rem;margin-bottom:2px}
   a.btn span{display:block;color:var(--muted);font-size:.8rem}
   a.btn .ext{float:right;color:var(--accent2);font-size:.78rem}
   footer{padding:26px 0 50px;color:var(--muted);font-size:.82rem}
   .toplink{font-size:.8rem;color:var(--muted);text-decoration:none;float:right}
   details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 14px;margin:8px 0}
-  summary{cursor:pointer;color:#cfe0ff;font-weight:600}
+  summary{cursor:pointer;color:#1d3a6b;font-weight:600}
 </style>
 </head>
 <body>
@@ -109,9 +109,9 @@
 
 <section id="live">
   <h2>★ 実際の物件を見る（最新一覧＋ライブ検索） <a class="toplink" href="#live">#</a></h2>
-  <a class="btn" href="./listings.html" style="border-color:var(--accent2);background:#1c2b27;margin:6px 0 14px">
+  <a class="btn" href="./listings.html" style="border-color:var(--accent2);background:#e8f6ef;margin:6px 0 14px">
     <span class="ext">毎日自動更新 ↗</span>
-    <b style="color:#9ce6c4;font-size:1.05rem">📊 都心 割安×資産性スクリーナー（東京23区・売却益狙い）を開く</b>
+    <b style="color:#0b7a55;font-size:1.05rem">📊 都心 割安×資産性スクリーナー（東京23区・売却益狙い）を開く</b>
     <span>SUUMOから23区の中古戸建・土地を取得し、<b>割安度（相場比）×駅近×出口の堅さ</b>で「資産スコア」を付けて並べた一覧。再建築不可・借地は注意タグとして減点表示。区・価格・スコアで絞り込み可。cowcamo等は同ページ下部にリンク併設。</span>
   </a>
   <p class="lead">上の<b>一覧表</b>はこのサイト内で最新物件をまとめて見られます。さらに下のボタンから、各サイトの<b>絞り込み済みの最新一覧</b>へ直接ジャンプできます（新しいタブで開きます）。
@@ -294,7 +294,7 @@
   <div class="note">D/Eは単に除外しない。「なぜD/Eか／最大リスク／確認すべき専門家／何が整えばC/Bに上がるか／教材として何を見るか」を必ず記録する。</div>
   <div class="grid cols2" style="margin-top:14px">
     <div class="card"><h3 style="color:#ff9c9c">原則避ける（→D/E）</h3><p class="lead">共有持分のみ／底地のみ／借地複雑／占有者あり／退去交渉要／再建築不可かつ建物劣悪／接道不明／私道持分なし／境界未確定／越境／極端な狭小／融資不可／用途未定／出口なし／内覧不可かつ建物不明／価格以外の魅力なし。</p></div>
-    <div class="card"><h3 style="color:#9ce6c4">比較的扱いやすい（条件次第A/B）</h3><p class="lead">所有権／接道明確／再建築可／解体費が読める古家付き／境界確定／抵当権が決済時抹消／用途地域と用途が一致／融資の可能性／地場業者が介在／建築士に事前相談可／出口複数／安い理由を説明できる。</p></div>
+    <div class="card"><h3 style="color:#0b7a55">比較的扱いやすい（条件次第A/B）</h3><p class="lead">所有権／接道明確／再建築可／解体費が読める古家付き／境界確定／抵当権が決済時抹消／用途地域と用途が一致／融資の可能性／地場業者が介在／建築士に事前相談可／出口複数／安い理由を説明できる。</p></div>
   </div>
 </section>
 
