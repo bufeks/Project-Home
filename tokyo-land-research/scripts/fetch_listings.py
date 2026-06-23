@@ -387,6 +387,38 @@ def parse_cassette(htmltext, kind):
     return list(rows.values())
 
 
+def watchlist_search():
+    """ウォッチ対象（住みたいエリア/マンション）の“区”を能動的に深掘り取得して優先的に拾う。"""
+    rows, wards = [], set()
+    for a in WATCHLIST.get("areas", []):
+        m = a.get("match")
+        for t in (m if isinstance(m, list) else [m] if m else []):
+            w = ward_of(t)
+            if w:
+                wards.add(w)
+    for b in WATCHLIST.get("buildings", []):
+        w = ward_of(b.get("area", ""))
+        if w:
+            wards.add(w)
+    for w in wards:
+        code = WARD_CODES[WARDS.index(w)]
+        for pn in range(1, 5):           # 中古マンション 深掘り（売り物件を拾う）
+            q = [("ar", "030"), ("bs", "011"), ("ta", "13"), ("sc", code), ("po", "1"), ("pn", str(pn))]
+            try:
+                rows += parse_mansion(fetch(MS_URL + "?" + urllib.parse.urlencode(q)))
+            except Exception:
+                pass
+            time.sleep(1.0)
+        for pn in range(1, 3):           # 中古戸建
+            q = [("ar", "030"), ("bs", "021"), ("ta", "13"), ("sc", code), ("po", "1"), ("pn", str(pn))]
+            try:
+                rows += parse_area(fetch(AREA_URL + "?" + urllib.parse.urlencode(q)))
+            except Exception:
+                pass
+            time.sleep(1.0)
+    return rows
+
+
 def collect():
     merged, errors = {}, []
 
@@ -434,6 +466,12 @@ def collect():
         except Exception as e:
             errors.append(f"{_cat}: {e}")
         time.sleep(1.3)
+
+    # 0) ウォッチ優先探索（住みたいエリア/マンションの区を深掘り）
+    try:
+        add(watchlist_search())
+    except Exception as e:
+        errors.append(f"watch: {e}")
 
     rows = list(merged.values())
     # 重複名寄せ（E）：同一物件が別ID/別業者で重複することがある。住所+種別+価格+面積で寄せる
@@ -932,6 +970,21 @@ def render(rows, errors):
     buildings = WATCHLIST.get("buildings", [])
     watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
     wparts = []
+    # ⭐速報：ウォッチ該当の“今出ている売り物件”（スコア等のルール無視で全掲載）
+    hits = [r for r in rows if r.get("watch")]
+    if hits:
+        hi = ""
+        for r in hits:
+            nm = (H.escape(r["name"]) + "・") if r.get("name") else ""
+            gm = ("https://www.google.com/maps/search/?api=1&query="
+                  + urllib.parse.quote("東京都" + r["loc"]))
+            hi += (f'<div class="hit"><b>⭐ {H.escape(r["watch"])}</b> '
+                   f'<span class="hk">{r["kind"]}</span> {nm}{H.escape(r["loc"])}'
+                   f'<span class="hp">{fmt_price(r["price"])}</span>'
+                   f'<span class="hs">スコア{r["score"]}</span>'
+                   f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a>'
+                   f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
+        wparts.append(f'<div class="wsub">🚨 速報：ウォッチ該当の売り物件 {len(hits)}件（条件無視で全掲載）</div>{hi}')
     if areas:
         items = ""
         for a in areas:
@@ -1042,6 +1095,10 @@ TEMPLATE = """<!DOCTYPE html>
   .wli b{{color:var(--ink)}}
   .wc{{color:var(--accent);font-size:.78rem;background:#e7eefb;border:1px solid #c8d8f7;border-radius:999px;padding:1px 9px}}
   .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
+  .hit{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}}
+  .hit .hk{{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}}
+  .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
+  .hit a{{text-decoration:none;font-weight:700}}.hit a+a{{margin-left:2px}}
   .dev.d3{{color:#0e7d92}}.dev.d2{{color:#1d5fd6}}.dev.d1{{color:#5d6b7a}}.dev.d0{{color:#9aa4b2}}
   .devnote{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45}}
   .devnote.n-wave{{background:#e6f4f8;border:1px solid #bce0ea;color:#185f70}}
@@ -1126,7 +1183,7 @@ TEMPLATE = """<!DOCTYPE html>
   .grid{{display:grid;gap:8px}}
   @media(min-width:720px){{.grid{{grid-template-columns:1fr 1fr}}}}
 </style></head><body><div class="wrap">
-<p><a href="./index.html">← まとめ(index.html)へ戻る</a></p>
+<p><a href="./guide.html">← 調査ガイドへ</a></p>
 <h1>都心 割安×資産性スクリーナー — 東京23区（売却益狙い）</h1>
 <p class="meta">コンセプト：<b>都心〜準都心で「相場より割安・駅近・出口が堅い」物件</b>を、売却益ポテンシャルの目安スコアで並べた一覧。
 再建築不可・借地権などは“注意タグ”として減点表示（主役にしない）。<br>
@@ -1221,7 +1278,7 @@ TEMPLATE = """<!DOCTYPE html>
 <li><b>古家付き土地</b>（−2）：解体費（木造で150〜250万円目安）と滅失登記が必要。実質の取得コストは表示価格＋解体費で見る。</li>
 <li><b>セットバック</b>：42条2項道路に接する敷地は中心線から2m後退が必要。後退部分は建築・容積に算入不可＝<b>使える面積が減る</b>。</li>
 <li><b>私道・掘削承諾</b>：私道接道はインフラ更新時に掘削承諾が必要。無いと<b>リフォーム・建替・融資が詰まる</b>頻出の隠れ瑕疵。</li>
-<li>共通：<b>内見・現地・登記簿・公図・接道</b>を必ず確認。安さには理由がある前提で“理由を割り出して納得できる割安”だけ狙う。詳しい判断手順は <a href="./index.html">index.html</a> のチェックリスト/リスク判定へ。</li>
+<li>共通：<b>内見・現地・登記簿・公図・接道</b>を必ず確認。安さには理由がある前提で“理由を割り出して納得できる割安”だけ狙う。詳しい判断手順は <a href="./guide.html">調査ガイド</a> のチェックリスト/リスク判定へ。</li>
 </ul>
 </div></details>
 
