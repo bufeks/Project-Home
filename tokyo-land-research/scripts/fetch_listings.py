@@ -65,6 +65,13 @@ WARD_TSUBO = {
     "渋谷区":800,"中野区":400,"杉並区":360,"豊島区":400,"北区":320,"荒川区":320,
     "板橋区":290,"練馬区":270,"足立区":220,"葛飾区":220,"江戸川区":240,
 }
+# 中古マンションのざっくり相場（万円/㎡・専有面積ベース・目安）。マンションの割安判定基準。
+WARD_MS_M2 = {
+    "千代田区":175,"中央区":155,"港区":200,"新宿区":130,"文京区":135,"台東区":115,
+    "墨田区":100,"江東区":105,"品川区":125,"目黒区":150,"大田区":95,"世田谷区":115,
+    "渋谷区":190,"中野区":110,"杉並区":100,"豊島区":115,"北区":90,"荒川区":92,
+    "板橋区":82,"練馬区":78,"足立区":68,"葛飾区":68,"江戸川区":72,
+}
 
 # 区ごとの「都市開発・再開発の将来性」★0-3（出口の“上振れ”期待の目安）。
 # 住宅資産価値に効く駅前/沿線再開発を中心に評価（2026年時点の調査ベース。詳細・出典は notes/redevelopment.md）。
@@ -148,6 +155,9 @@ DEV_SPOTS = [
 # 通常物件（母集団）: SUUMO 中古戸建 23区・価格安い順
 AREA_URL = "https://suumo.jp/jj/bukken/ichiran/JJ012FC001/"
 AREA_PAGES = 3
+# 中古マンション 23区・価格安い順
+MS_URL = "https://suumo.jp/jj/bukken/ichiran/JJ010FJ001/"
+MS_PAGES = 3
 # 種別・注意タグ付与: SUUMO /b/kodate/kw/（解決可能な組合せのみ）
 KW_BASE = "https://suumo.jp/b/kodate/kw/"
 KW_SOURCES = [
@@ -242,6 +252,41 @@ def parse_area(htmltext):
     return list(rows.values())
 
 
+def parse_mansion(htmltext):
+    """SUUMO 中古マンション一覧（property_unit レイアウト）。専有面積・物件名・築年も取得。"""
+    rows = {}
+    for b in htmltext.split('class="property_unit')[1:]:
+        ml = re.search(r'href="(/ms/chuko/[^"]+/nc_(\d+)/)"', b)
+        if not ml or "万円" not in b:
+            continue
+        nid = ml.group(2)
+        if nid in rows:
+            continue
+        t = text(b[:3000])
+        price = max_price(t)
+        ma = re.search(r"所在地\s*東京都\s*([^\s]+?区[^\s]*)", t)
+        if not (price and ma):
+            continue
+        ward = ward_of(ma.group(1))
+        if not ward:
+            continue
+        senyu = re.search(r"専有面積\s*([0-9.]+)", t)
+        plan = re.search(r"間取り\s*(\d+[SLDK]+)", t)
+        walk = re.search(r"徒歩\s*(\d+)分", t)
+        name = re.search(r"物件名\s*(.+?)\s*販売価格", t)
+        year = re.search(r"築年月\s*(\d{4})年", t)
+        r = base_row(
+            nid, "SUUMOマンション", "マンション", ward, ma.group(1), price,
+            None, float(senyu.group(1)) if senyu else None,
+            plan.group(1) if plan else "",
+            int(walk.group(1)) if walk else None,
+            "https://suumo.jp" + ml.group(1))
+        r["name"] = name.group(1).strip() if name else ""
+        r["year"] = int(year.group(1)) if year else None
+        rows[nid] = r
+    return list(rows.values())
+
+
 CASS_LINK = re.compile(
     r'href="(https://suumo\.jp/(?:chukoikkodate|ikkodate|tochi)/[^"]+/nc_(\d+)/)[^"]*"'
     r'\s+class="cassette-title')
@@ -305,6 +350,17 @@ def collect():
             errors.append(f"area p{pn}: {e}")
         time.sleep(1.3)
 
+    # 1b) 中古マンション（専有㎡単価で評価）
+    for pn in range(1, MS_PAGES + 1):
+        q = [("ar", "030"), ("bs", "011"), ("ta", "13")] + \
+            [("sc", w) for w in WARD_CODES] + [("po", "1"), ("pn", str(pn))]
+        url = MS_URL + "?" + urllib.parse.urlencode(q)
+        try:
+            add(parse_mansion(fetch(url)))
+        except Exception as e:
+            errors.append(f"mansion p{pn}: {e}")
+        time.sleep(1.3)
+
     # 2) 種別・注意タグ
     for _cat, kw, tag in KW_SOURCES:
         url = KW_BASE + urllib.parse.quote(kw) + "/"
@@ -331,10 +387,19 @@ def enrich(r):
     ward = r["ward"]
     tier = TIER.get(ward, "C")
     r["tier"] = tier
-    tp = tsubo_unit(r["price"], r["land"])
-    r["tsubo"] = round(tp) if tp else None
-    med = WARD_TSUBO.get(ward)
-    ratio = (med / tp) if (tp and med) else None
+    is_ms = r["kind"] == "マンション"
+    if is_ms:
+        size = r.get("bld")                       # 専有面積㎡
+        unit = (r["price"] / size) if size else None      # 万円/㎡
+        med = WARD_MS_M2.get(ward)
+        r["unit_disp"] = f"{round(unit)}万/㎡" if unit else "—"
+    else:
+        unit = tsubo_unit(r["price"], r["land"])          # 万円/坪
+        size = r["land"]
+        med = WARD_TSUBO.get(ward)
+        r["unit_disp"] = f"{round(unit)}万/坪" if unit else "—"
+    r["tsubo"] = round(unit) if unit else None
+    ratio = (med / unit) if (unit and med) else None
     r["ratio"] = round(ratio, 2) if ratio else None
 
     # 割安度 (0-40)
@@ -350,10 +415,13 @@ def enrich(r):
            else 14 if w <= 10 else 9 if w <= 15 else 5)
     # 出口（エリアティア, 0-25）
     s_t = {"S": 25, "A": 19, "B": 13, "C": 9}[tier]
-    # 規模 (0-10)
-    land = r["land"]
-    s_s = (4 if land is None else 10 if land >= 60 else 8 if land >= 40
-           else 5 if land >= 25 else 3 if land >= 15 else 2)
+    # 規模 (0-10)。マンションは専有面積、戸建/土地は土地面積で評価。
+    if is_ms:
+        s_s = (4 if size is None else 10 if size >= 70 else 8 if size >= 55
+               else 5 if size >= 40 else 3 if size >= 25 else 2)
+    else:
+        s_s = (4 if size is None else 10 if size >= 60 else 8 if size >= 40
+               else 5 if size >= 25 else 3 if size >= 15 else 2)
     score = s_w + s_e + s_t + s_s
     # 注意タグの減点（資産性・流動性を下げる）
     if "再建築不可" in r["tags"]:
@@ -362,6 +430,14 @@ def enrich(r):
         score -= 12
     if "古家付き" in r["tags"]:
         score -= 2
+    # マンションの築年（1981以前＝旧耐震は資産性・融資・出口に大きく影響）
+    if is_ms and r.get("year"):
+        if r["year"] <= 1981:
+            if "旧耐震" not in r["tags"]:
+                r["tags"].append("旧耐震")
+            score -= 14
+        elif r["year"] <= 2000:
+            score -= 4
 
     # 都市開発・将来性（区レベル＋地区スポット）。出口の“上振れ”を控えめに加点。
     ward_stars, ward_note = WARD_DEV.get(ward, (0, ""))
@@ -391,6 +467,13 @@ def enrich(r):
         if any(t and t in r["loc"] for t in toks):
             watch = a.get("label") or (toks[0] if toks else "")
             break
+    # マンションは物件名がウォッチ登録マンションに一致しても⭐
+    if not watch and is_ms and r.get("name"):
+        for b in WATCHLIST.get("buildings", []):
+            nm = b.get("name", "")
+            if nm and nm in r["name"]:
+                watch = nm
+                break
     r["watch"] = watch
 
     bits = []
@@ -408,6 +491,8 @@ def enrich(r):
         bits.append("再建築不可→流動性難")
     if "借地権" in r["tags"]:
         bits.append("借地→融資/出口難")
+    if "旧耐震" in r["tags"]:
+        bits.append("旧耐震(1981以前)→融資/出口に注意")
     r["comment"] = " / ".join(bits)
 
 
@@ -437,14 +522,27 @@ def render(rows, errors):
     trs = []
     for r in rows:
         tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"])
+        is_ms = r["kind"] == "マンション"
         area = []
-        if r["land"]:
-            area.append(f'土{r["land"]:.0f}㎡')
-        if r["bld"]:
-            area.append(f'建{r["bld"]:.0f}㎡')
-        if r["plan"]:
-            area.append(H.escape(r["plan"]))
+        if is_ms:
+            if r.get("bld"):
+                area.append(f'専有{r["bld"]:.0f}㎡')
+            if r["plan"]:
+                area.append(H.escape(r["plan"]))
+            if r.get("year"):
+                area.append(f'{r["year"]}年築')
+        else:
+            if r["land"]:
+                area.append(f'土{r["land"]:.0f}㎡')
+            if r["bld"]:
+                area.append(f'建{r["bld"]:.0f}㎡')
+            if r["plan"]:
+                area.append(H.escape(r["plan"]))
         area_s = " ".join(area) or "—"
+        unit_s = r.get("unit_disp", "—")
+        unit_label = "㎡単価" if is_ms else "坪単価"
+        name_html = (f'<span class="mn">{H.escape(r["name"])}</span> '
+                     if is_ms and r.get("name") else "")
         ratio = r["ratio"]
         ratio_s = f'{ratio}倍' if ratio else "—"
         # 分かりやすい言い換え：相場より何%安い/高い（坪単価ベース）
@@ -505,14 +603,14 @@ def render(rows, errors):
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
-            f'{H.escape(r["loc"])}<span class="kindchip">{r["kind"]}</span></div></div>'
+            f'{name_html}{H.escape(r["loc"])}<span class="kindchip">{r["kind"]}</span></div></div>'
             f'<div class="ring" style="--p:{r["score"]}"><b>{r["score"]}</b><small>資産</small></div>'
             f'</div>'
             f'{f"<div class=bd>{badges_s}</div>" if badges_s else ""}'
             f'<div class="facts">'
             f'<div class="f"><span>割安度（相場比{ratio_s}）</span><b style="color:{rcol}">{cheap_s}</b>'
             f'<div class="rbar"><i style="width:{fill}%;background:{rcol}"></i></div></div>'
-            f'<div class="f"><span>坪単価</span><b>{tsubo_s}</b></div>'
+            f'<div class="f"><span>{unit_label}</span><b>{unit_s}</b></div>'
             f'<div class="f"><span>駅徒歩</span><b>{walk_s}</b></div>'
             f'<div class="f"><span>面積 / 間取</span><b>{area_s}</b></div>'
             f'<div class="f"><span>出口の堅さ</span><b>{r["tier"]}ティア</b></div>'
@@ -536,12 +634,14 @@ def render(rows, errors):
             f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
+            f'{("<b class=mn>" + H.escape(r["name"]) + "</b> ") if (is_ms and r.get("name")) else ""}'
             f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
             f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
+            f'<span class="kindchip">{r["kind"]}</span>'
             f'{(" " + tags) if tags else ""}</td>'
             f'<td class="num pr">{fmt_price(r["price"])}</td>'
             f'<td class="num"><span style="color:{rcol};font-weight:700" title="相場比{ratio_s}">{cheap_short}</span></td>'
-            f'<td class="num">{tsubo_s}</td>'
+            f'<td class="num">{unit_s}</td>'
             f'<td class="num">{walk_s}</td>'
             f'<td class="tarea">{area_s}</td>'
             f'<td class="dev d{dev}">{dev_ic}{("★" * dev) if dev else "—"}</td>'
@@ -674,6 +774,7 @@ TEMPLATE = """<!DOCTYPE html>
   .price{{font-size:1.5rem;font-weight:800;letter-spacing:.2px}}
   .loc{{font-size:.84rem;color:#cdd6e2;margin-top:3px}}
   .kindchip{{display:inline-block;background:#2b3543;color:#bcd6ff;border-radius:6px;padding:0 7px;font-size:.72rem;margin-left:6px}}
+  .mn{{color:#ffd9a0;font-weight:700}}
   .ring{{position:absolute;top:12px;right:14px;width:54px;height:54px;border-radius:50%;
         background:conic-gradient(var(--accent) calc(var(--p)*1%),#2a2f3a 0);
         display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}}
@@ -789,7 +890,7 @@ TEMPLATE = """<!DOCTYPE html>
 
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
-  <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="土地">土地</option></select></span>
+  <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
   <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" style="width:110px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
