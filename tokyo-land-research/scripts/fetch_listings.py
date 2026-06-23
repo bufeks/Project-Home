@@ -38,6 +38,55 @@ def load_watchlist():
 
 
 WATCHLIST = load_watchlist()
+HISTORY = DATA / "history.json"
+
+
+def update_history(rows):
+    """毎日の価格を蓄積し、各物件に観測日数(days)・値下げ(drop)を付与。
+    ※first_seenは“当ツールが最初に観測した日”（SUUMOの掲載開始日ではない）。日が経つほど精度が上がる。"""
+    try:
+        hist = json.loads(HISTORY.read_text(encoding="utf-8")) if HISTORY.exists() else {}
+    except Exception:
+        hist = {}
+    today = datetime.date.today()
+    tstr = today.isoformat()
+    for r in rows:
+        hid, p = r["id"], r["price"]
+        h = hist.get(hid)
+        if h is None:
+            h = {"first_seen": tstr, "first_price": p, "last_price": p,
+                 "last_change": tstr, "min_price": p}
+            hist[hid] = h
+        else:
+            prev = h.get("last_price", p)
+            if p != prev:
+                h["last_change"] = tstr
+            h["last_price"] = p
+            if p < h.get("min_price", p):
+                h["min_price"] = p
+        h["last_seen"] = tstr
+        try:
+            r["days"] = (today - datetime.date.fromisoformat(h["first_seen"])).days
+        except Exception:
+            r["days"] = 0
+        fp = h.get("first_price", p)
+        r["first_price"] = fp
+        r["drop"] = max(0, fp - p)
+        r["drop_pct"] = round(r["drop"] / fp * 100) if fp else 0
+        mnotes = []
+        if r["drop"] > 0:
+            mnotes.append(f"掲載後 {fp:,}→{p:,}万円（-{r['drop']:,}万・-{r['drop_pct']}%）値下げ＝指値余地/売り急ぎの可能性")
+        if r["days"] >= 30:
+            mnotes.append(f"観測{r['days']}日の滞留＝買い手がついていない（指値の余地）")
+        if mnotes:
+            base = r.get("reason", "")
+            r["reason"] = " / ".join(mnotes + ([base] if base else []))
+    cutoff = (today - datetime.timedelta(days=45)).isoformat()
+    hist = {k: v for k, v in hist.items() if v.get("last_seen", "0") >= cutoff}
+    try:
+        HISTORY.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+    except Exception:
+        pass
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
@@ -698,9 +747,16 @@ def render(rows, errors):
         stars = "★" * dev + "☆" * (3 - dev)
         spot_kind = r.get("spot_kind", "")
         watch = r.get("watch", "")
+        drop = r.get("drop", 0)
+        days = r.get("days", 0)
+        dp = r.get("drop_pct", 0)
         badges = []
         if watch:
             badges.append(f'<span class="bdg b-watch">⭐ {H.escape(watch)}</span>')
+        if drop > 0:
+            badges.append(f'<span class="bdg b-drop">📉値下げ -{r.get("drop_pct", 0)}%</span>')
+        if days >= 30:
+            badges.append(f'<span class="bdg b-stale">⏳滞留{days}日</span>')
         if r["score"] >= 78:
             badges.append('<span class="bdg b-top">★高評価</span>')
         if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
@@ -732,7 +788,8 @@ def render(rows, errors):
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
             f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}" '
-            f'data-dev="{dev}" data-watch="{1 if watch else 0}">'
+            f'data-dev="{dev}" data-watch="{1 if watch else 0}" '
+            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -765,13 +822,16 @@ def render(rows, errors):
             f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
-            f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}">'
+            f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}" '
+            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{("<b class=mn>" + H.escape(r["name"]) + "</b> ") if (is_ms and r.get("name")) else ""}'
             f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
             f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
             f'<span class="kindchip">{r["kind"]}</span>'
+            f'{(f" <span class=t-drop>📉-{dp}%</span>") if drop > 0 else ""}'
+            f'{(f" <span class=t-stale>⏳{days}d</span>") if days >= 30 else ""}'
             f'{(" " + tags) if tags else ""}</td>'
             f'<td class="num pr" title="🔎見立て(推定): {H.escape(r.get("reason", ""))}">{fmt_price(r["price"])}</td>'
             f'<td class="num"><span style="color:{rcol};font-weight:700" title="相場比{ratio_s}">{cheap_short}</span></td>'
@@ -925,6 +985,10 @@ TEMPLATE = """<!DOCTYPE html>
   .b-dev{{background:#2e2940;color:#c4a8ff;border:1px solid #463a66}}
   .b-rail{{background:#15321f;color:#86e0a3;border:1px solid #2c5d3c}}
   .b-onsite{{background:#2a2233;color:#e6b3ff;border:1px solid #54426a}}
+  .b-drop{{background:#3a1f24;color:#ff9aa6;border:1px solid #6a3540}}
+  .b-stale{{background:#33301c;color:#e6d48a;border:1px solid #5e592c}}
+  .t-drop{{color:#ff9aa6;font-weight:700;font-size:.72rem}}
+  .t-stale{{color:#e6d48a;font-weight:700;font-size:.72rem}}
   .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#1a1f17;border:1px solid #3a3f2a;color:#dfe6cf}}
   .b-watch{{background:#3a3416;color:#ffe08a;border:1px solid #6a5d23}}
   /* 追跡リスト */
@@ -1029,12 +1093,13 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
-  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" style="width:110px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <label class="ck"><input type="checkbox" id="fwatch"> ⭐ウォッチのみ</label>
+  <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
 </div>
@@ -1086,8 +1151,9 @@ TEMPLATE = """<!DOCTYPE html>
 <li><b>再建築不可／借地／旧耐震／古家</b>：安さの主因が明確。出口（売却・融資）の制約をコストとして織り込む。</li>
 <li><b>駅遠・狭小・極小ワンルーム</b>：実需が薄く価格が出にくい。賃貸・転売の出口を具体に描けるかが鍵。</li>
 <li><b>難が見当たらず割安</b>：指値・設備更新で“詰める”領域。掲載が長い物件は値下げ余地があることも（＝大家が売り急ぐ／こだわらないサイン）。</li>
+<li><b>📉値下げ／⏳滞留バッジ</b>：当ツールが毎日価格を記録し、<b>値下げ額・観測日数</b>を自動算出。値下げ＝指値が通りやすい・売り急ぎのサイン、滞留が長い＝買い手不在で交渉余地。<b>「値下げ率順」「滞留日数順」で並べ替え可能</b>。</li>
 </ul>
-<p class="lead">※「大家が売り急いでいるか」等は非公開情報。掲載期間・価格改定・周辺施設の取得は次段（物件詳細ページ）で精度を上げていきます。</p>
+<p class="lead">※観測日数は「当ツールが最初に見た日」起点（SUUMOの掲載開始日ではない）。日が経つほど精度が上がります。「大家が売り急いでいるか」の最良の代理指標です。</p>
 </div></details>
 
 <details><summary>💎 穴場の見つけ方 — スコアの読み方と優先条件</summary>
@@ -1124,7 +1190,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch'),fdrop=el('fdrop');
 let sortK='score', sortAsc=false;
 const defAsc=k=>(k==='price'||k==='walk');   // 価格・駅徒歩は小さい順、その他は大きい順を既定に
 function pass(d){{
@@ -1135,6 +1201,7 @@ function pass(d){{
   if(fexcl.checked&&/(再建築不可|借地権)/.test(d.tags))return false;
   if(fdev.checked&&parseInt(d.dev,10)<2)return false;
   if(fwatch.checked&&d.watch!=='1')return false;
+  if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   return true;
 }}
 function run(items,parent){{
@@ -1148,7 +1215,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fexcl,fdev,fwatch].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fexcl,fdev,fwatch,fdrop].forEach(e=>e.addEventListener('input',apply));
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return;
@@ -1165,6 +1232,8 @@ apply();
 
 def main():
     rows, errors = collect()
+    update_history(rows)          # 観測日数・値下げを付与（毎日の蓄積）
+    rows.sort(key=lambda x: (-x["score"], x["price"]))
     (DATA / "listings.json").write_text(json.dumps(
         {"updated": datetime.datetime.now(
             datetime.timezone(datetime.timedelta(hours=9))).isoformat(),

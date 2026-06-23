@@ -36,7 +36,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain tokyo-land-research/listings.html tokyo-land-research/data)" ]; then
-            git add tokyo-land-research/listings.html tokyo-land-research/data/listings.json
+            git add tokyo-land-research/listings.html tokyo-land-research/data
             git commit -m "chore: update listings ($(date -u +%Y-%m-%d))"
             git push
           else
