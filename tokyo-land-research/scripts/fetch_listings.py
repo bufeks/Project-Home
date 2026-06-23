@@ -150,6 +150,20 @@ DEV_SPOTS = [
     ("目黒区原町",   "原町",       "波", 2, "原町一丁目は不燃化特区"),
     ("目黒区洗足",   "洗足",       "波", 2, "洗足一丁目は不燃化特区"),
     ("江戸川区平井", "平井",       "波", 2, "平井二丁目付近は不燃化特区"),
+    # --- 鉄道計画（新駅・延伸＝沿線の地価上昇期待） ---
+    ("江東区枝川",   "枝川（有楽町線延伸）",   "鉄道", 2, "有楽町線 豊洲〜住吉 延伸（事業中）の沿線。新駅構想で利便・地価の上昇期待"),
+    ("江東区東陽",   "東陽町（有楽町線延伸）", "鉄道", 2, "有楽町線延伸ルート。乗換新設で都心アクセス向上期待"),
+    ("江東区千石",   "千石（有楽町線延伸）",   "鉄道", 2, "有楽町線 豊洲〜住吉 延伸の沿線"),
+    ("江東区住吉",   "住吉（有楽町線延伸）",   "鉄道", 2, "有楽町線延伸の接続駅。半蔵門線との乗換利便が向上"),
+    ("港区高輪",     "高輪（南北線品川延伸）", "鉄道", 3, "南北線 白金高輪〜品川 延伸＋高輪ゲートウェイ。資産性の上昇期待"),
+    ("港区港南",     "港南（品川・リニア）",   "鉄道", 3, "品川駅周辺再開発・リニア始発。将来性は最上位級"),
+    ("中央区晴海",   "晴海（臨海地下鉄）",     "鉄道", 2, "都心部・臨海地下鉄 新駅構想。HARUMI FLAGの足回り改善期待"),
+    ("中央区勝どき", "勝どき（臨海地下鉄）",   "鉄道", 2, "臨海地下鉄ルート。湾岸の交通改善期待"),
+    ("江東区有明",   "有明（臨海地下鉄）",     "鉄道", 2, "都心部・臨海地下鉄の新駅構想エリア"),
+    ("練馬区大泉町", "大泉町（大江戸線延伸）", "鉄道", 2, "大江戸線 光が丘〜大泉学園町 延伸の新駅構想"),
+    ("練馬区土支田", "土支田（大江戸線延伸）", "鉄道", 2, "大江戸線延伸の新駅構想エリア"),
+    ("大田区西蒲田", "西蒲田（蒲蒲線）",       "鉄道", 2, "新空港線(蒲蒲線)で蒲田〜京急蒲田接続構想。空港アクセス向上"),
+    ("大田区東矢口", "矢口（蒲蒲線沿線）",     "鉄道", 2, "蒲蒲線・蒲田再開発の波及エリア"),
 ]
 
 # 通常物件（母集団）: SUUMO 中古戸建 23区・価格安い順
@@ -383,6 +397,38 @@ def tsubo_unit(price, land):
     return price / (land / 3.30578)          # 万円/坪
 
 
+def infer_reason(r):
+    """現地不動産屋的な“安い理由の推定”。手持ちシグナルからの推定（断定しない）。"""
+    tags = r["tags"]
+    ratio = r["ratio"]
+    w = r["walk"]
+    rs = []
+    if "再建築不可" in tags:
+        rs.append("再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い")
+    if "借地権" in tags:
+        rs.append("借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映")
+    if r["kind"] == "マンション" and "旧耐震" in tags:
+        rs.append("旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須")
+    if "古家付き" in tags:
+        rs.append("古家付き土地。解体費（木造150〜250万円目安）込みで実質コストを見る")
+    if w is not None and w >= 15:
+        rs.append(f"駅徒歩{w}分の駅遠が割安の一因")
+    if r["kind"] == "マンション":
+        if r.get("bld") and r["bld"] < 25:
+            rs.append("専有が狭い投資ワンルーム系で実需は付きにくい")
+    else:
+        if r.get("land") and r["land"] < 40:
+            rs.append("土地が狭小で接道・建築プランに制約が出やすい")
+    if ratio and ratio >= 1.8 and not rs:
+        rs.append("相場比が極端に高い＝まだ見えていない難（接道・間口・方位・嫌悪施設など）の可能性。現地確認必須")
+    if not rs:
+        if ratio and ratio >= 1.1:
+            rs.append("目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）")
+        else:
+            rs.append("価格は相場相応。立地・築年・管理状態で比較するゾーン")
+    return " / ".join(rs[:3])
+
+
 def enrich(r):
     ward = r["ward"]
     tier = TIER.get(ward, "C")
@@ -494,6 +540,7 @@ def enrich(r):
     if "旧耐震" in r["tags"]:
         bits.append("旧耐震(1981以前)→融資/出口に注意")
     r["comment"] = " / ".join(bits)
+    r["reason"] = infer_reason(r)
 
 
 # ------- HTML 出力 -------
@@ -578,7 +625,9 @@ def render(rows, errors):
             badges.append('<span class="bdg b-top">★高評価</span>')
         if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
             badges.append('<span class="bdg b-gem">💎穴場候補</span>')
-        if spot_kind == "波":
+        if spot_kind == "鉄道":
+            badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
+        elif spot_kind == "波":
             badges.append('<span class="bdg b-wave">🌊波の前夜</span>')
         elif spot_kind == "再開発" and dev >= 2:
             badges.append('<span class="bdg b-dev">🏗再開発エリア</span>')
@@ -589,11 +638,13 @@ def render(rows, errors):
         badges_s = "".join(badges)
         spotfact = (" " + H.escape(r["spot"])) if r.get("spot") else ""
         if r.get("spot_note"):
-            _ic = "🌊" if spot_kind == "波" else "🏗"
-            _ncls = "n-wave" if spot_kind == "波" else "n-dev"
+            _ic = {"波": "🌊", "鉄道": "🚇"}.get(spot_kind, "🏗")
+            _ncls = "n-wave" if spot_kind in ("波", "鉄道") else "n-dev"
             devnote = f'<div class="devnote {_ncls}">{_ic} {H.escape(r["spot_note"])}</div>'
         else:
             devnote = ""
+        reason_html = (f'<div class="reason">🔎 見立て(推定)：{H.escape(r.get("reason", ""))}</div>'
+                       if r.get("reason") else "")
         cards.append(
             f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
@@ -618,6 +669,7 @@ def render(rows, errors):
             f'</div>'
             f'{devnote}'
             f'{f"<div class=tags>{tags}</div>" if tags else ""}'
+            f'{reason_html}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<div class="viewrow">'
             f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMO ↗</a>'
@@ -626,7 +678,7 @@ def render(rows, errors):
             f'</article>')
 
         # 比較用の表行（同じデータ属性。フィルタ/並び替えはカードと共通）
-        dev_ic = "🌊" if spot_kind == "波" else ("🏗" if spot_kind == "再開発" else "")
+        dev_ic = {"波": "🌊", "鉄道": "🚇", "再開発": "🏗"}.get(spot_kind, "")
         trs.append(
             f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
@@ -639,7 +691,7 @@ def render(rows, errors):
             f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
             f'<span class="kindchip">{r["kind"]}</span>'
             f'{(" " + tags) if tags else ""}</td>'
-            f'<td class="num pr">{fmt_price(r["price"])}</td>'
+            f'<td class="num pr" title="🔎見立て(推定): {H.escape(r.get("reason", ""))}">{fmt_price(r["price"])}</td>'
             f'<td class="num"><span style="color:{rcol};font-weight:700" title="相場比{ratio_s}">{cheap_short}</span></td>'
             f'<td class="num">{unit_s}</td>'
             f'<td class="num">{walk_s}</td>'
@@ -679,10 +731,11 @@ def render(rows, errors):
     spot_cnt = Counter(r["spot"] for r in rows if r.get("spot"))
     sm = []
     for pref, label, kind, st, note in DEV_SPOTS:
-        ic = "🌊" if kind == "波" else "🏗"
+        ic = {"波": "🌊", "鉄道": "🚇"}.get(kind, "🏗")
+        scls = "s-wave" if kind in ("波", "鉄道") else "s-dev"
         c = spot_cnt.get(label, 0)
         sm.append(
-            f'<div class="spt {"s-wave" if kind == "波" else "s-dev"}">'
+            f'<div class="spt {scls}">'
             f'<b>{ic} {H.escape(label)}</b><span class="dvn">{H.escape(note)}</span>'
             f'<small>{("掲載" + str(c) + "件") if c else "現在は該当物件なし"}</small></div>')
     spotmap = "".join(sm)
@@ -788,6 +841,8 @@ TEMPLATE = """<!DOCTYPE html>
   .b-warn{{background:#3a2530;color:#ff9db0;border:1px solid #5a3a45}}
   .b-wave{{background:#13303a;color:#67d6e6;border:1px solid #245863}}
   .b-dev{{background:#2e2940;color:#c4a8ff;border:1px solid #463a66}}
+  .b-rail{{background:#15321f;color:#86e0a3;border:1px solid #2c5d3c}}
+  .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#1a1f17;border:1px solid #3a3f2a;color:#dfe6cf}}
   .b-watch{{background:#3a3416;color:#ffe08a;border:1px solid #6a5d23}}
   /* 追跡リスト */
   .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#ffe08a}}
@@ -934,10 +989,22 @@ TEMPLATE = """<!DOCTYPE html>
 
 <details open><summary>🌊 波が来る前夜エリア — 今は割安、これから更新が進む地区</summary>
 <div class="dbody">
-<p class="lead">住所（丁目）単位で、<b>🏗再開発が直撃／近接する地区</b>と、<b>🌊木造住宅が密集し東京都『不燃化特区』等で更新が進む地区</b>を判定。
-「今は古家が多く割安だが、これから波が来る」エリアを拾う（例：新宿西口北側の<b>北新宿</b>＝西新宿再開発の波及）。物件カードにも該当メモを表示します。</p>
+<p class="lead">住所（丁目）単位で、<b>🏗再開発が直撃／近接</b>・<b>🚇新駅/延伸の沿線</b>・<b>🌊木造住宅が密集し東京都『不燃化特区』等で更新が進む地区</b>を判定。
+「今は古家が多く割安だが、これから波が来る」エリアを拾う（例：新宿西口北側の<b>北新宿</b>＝西新宿再開発の波及／<b>港区港南・高輪</b>＝南北線品川延伸）。物件カードにも該当メモを表示します。</p>
 <div class="spotgrid">{spotmap}</div>
-<p class="lead" style="margin-top:10px">出典：東京都都市整備局「不燃化特区」各区の取組／各区・東京都の市街地再開発事業ページ。具体の進捗・範囲は必ず公式で確認を。</p>
+<p class="lead" style="margin-top:10px">出典：東京都都市整備局「不燃化特区」各区の取組／各区・東京都の市街地再開発／鉄道各社・国交省の延伸事業。<b>🚇鉄道計画は構想〜事業中で時期未確定のものを含む</b>。具体の進捗・範囲は必ず公式で確認を。</p>
+</div></details>
+
+<details><summary>🔎 安い理由の読み方 — 「現地の見立て（推定）」の使い方</summary>
+<div class="dbody">
+<p class="lead">各カードの<b>🔎見立て(推定)</b>は、手持ちデータ（相場比・タグ・築年・駅距離・規模）から「<b>この安さの主因は何か</b>」を推定したもの。<b>断定ではなく現地確認の出発点</b>。表ビューでは価格セルにカーソルを当てると表示。</p>
+<ul>
+<li><b>相場比が極端（1.8倍超）</b>：まだ見えていない難（接道・間口・方位・嫌悪施設＝隣に飲食店/線路際 等）の可能性。安さには必ず理由がある前提で現地へ。</li>
+<li><b>再建築不可／借地／旧耐震／古家</b>：安さの主因が明確。出口（売却・融資）の制約をコストとして織り込む。</li>
+<li><b>駅遠・狭小・極小ワンルーム</b>：実需が薄く価格が出にくい。賃貸・転売の出口を具体に描けるかが鍵。</li>
+<li><b>難が見当たらず割安</b>：指値・設備更新で“詰める”領域。掲載が長い物件は値下げ余地があることも（＝大家が売り急ぐ／こだわらないサイン）。</li>
+</ul>
+<p class="lead">※「大家が売り急いでいるか」等は非公開情報。掲載期間・価格改定・周辺施設の取得は次段（物件詳細ページ）で精度を上げていきます。</p>
 </div></details>
 
 <details><summary>💎 穴場の見つけ方 — スコアの読み方と優先条件</summary>
