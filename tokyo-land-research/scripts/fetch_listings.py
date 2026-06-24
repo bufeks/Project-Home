@@ -510,6 +510,11 @@ def tsubo_unit(price, land):
     return price / (land / 3.30578)          # 万円/坪
 
 
+def n_rooms(plan):
+    m = re.match(r"(\d+)", plan or "")
+    return int(m.group(1)) if m else 0
+
+
 def infer_reason(r):
     """現地不動産屋的な“安い理由の推定”。手持ちシグナルからの推定（断定しない）。"""
     tags = r["tags"]
@@ -877,7 +882,9 @@ def render(rows, errors):
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
             f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}" '
             f'data-dev="{dev}" data-watch="{1 if watch else 0}" '
-            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}">'
+            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
+            f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
+            f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -911,7 +918,9 @@ def render(rows, errors):
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
             f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}" '
-            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}">'
+            f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
+            f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
+            f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
@@ -1137,6 +1146,7 @@ TEMPLATE = """<!DOCTYPE html>
   .seg{{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}}
   .seg button{{background:var(--panel2);color:var(--muted);border:0;padding:7px 13px;font-size:.85rem;cursor:pointer}}
   .seg button.on{{background:var(--accent);color:#ffffff;font-weight:700}}
+  .seg-preset button.on{{background:#7c3aed;color:#fff}}
   .hidden{{display:none!important}}
   .tblwrap{{overflow-x:auto;border:1px solid var(--line);border-radius:14px}}
   table{{border-collapse:collapse;width:100%;font-size:.85rem;min-width:760px}}
@@ -1213,6 +1223,7 @@ TEMPLATE = """<!DOCTYPE html>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
+  <span class="seg seg-preset"><button type="button" id="pNone" class="on">条件なし</button><button type="button" id="pAsset">💎資産価値</button><button type="button" id="pFamily">👨‍👩‍👧ファミリー</button><button type="button" id="pLive">🏠住める</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
@@ -1309,6 +1320,29 @@ const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
 const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
+let presetMode='none';// none | asset | family | live （プリセット）
+const RISKY=/(再建築不可|借地権|旧耐震)/;
+function preset(d){{
+  if(presetMode==='asset'){{
+    if(!(d.tier==='S'||d.tier==='A'))return false;
+    if(parseInt(d.walk,10)>7)return false;
+    if(RISKY.test(d.tags))return false;
+    if(parseFloat(d.ratio||'0')<1.1)return false;
+    if(d.kind==='土地')return false;
+    if(d.kind==='マンション'&&(parseFloat(d.area||'0')<45||parseInt(d.year||'0')<1990))return false;
+  }}
+  if(presetMode==='family'){{
+    if(RISKY.test(d.tags))return false;
+    const ok=(d.kind==='マンション'&&parseFloat(d.area||'0')>=60&&parseInt(d.rooms||'0')>=2)||(d.kind==='戸建'&&parseInt(d.rooms||'0')>=3);
+    if(!ok)return false;
+  }}
+  if(presetMode==='live'){{
+    if(RISKY.test(d.tags))return false;
+    if(d.kind==='土地')return false;
+    if(d.kind==='マンション'&&parseFloat(d.area||'0')<45)return false;
+  }}
+  return true;
+}}
 let sortK='score', sortAsc=false;
 const defAsc=k=>(k==='price'||k==='walk');   // 価格・駅徒歩は小さい順、その他は大きい順を既定に
 function pass(d){{
@@ -1320,6 +1354,7 @@ function pass(d){{
   if(fdev.checked&&parseInt(d.dev,10)<2)return false;
   if(areaMode==='watch'&&d.watch!=='1')return false;
   if(areaMode==='other'&&d.watch==='1')return false;
+  if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(fjisu.checked&&d.use!=='実需')return false;
   return true;
@@ -1339,6 +1374,10 @@ function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
+{{const P={{none:el('pNone'),asset:el('pAsset'),family:el('pFamily'),live:el('pLive')}};
+ function setP(m){{presetMode=m;Object.values(P).forEach(x=>x.classList.remove('on'));P[m].classList.add('on');apply();}}
+ P.none.addEventListener('click',()=>setP('none'));P.asset.addEventListener('click',()=>setP('asset'));
+ P.family.addEventListener('click',()=>setP('family'));P.live.addEventListener('click',()=>setP('live'));}}
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return;
