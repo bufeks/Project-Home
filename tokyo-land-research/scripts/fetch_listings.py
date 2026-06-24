@@ -879,19 +879,8 @@ def render(rows, errors):
             devnote = ""
         reason_html = (f'<div class="reason">🔎 見立て(推定)：{H.escape(r.get("reason", ""))}</div>'
                        if r.get("reason") else "")
-        # 実質コスト目安：マンションはフルリノベ(専有㎡×ティア別単価)、古家付きは解体(土地面積連動)を上乗せ
-        if is_ms and r.get("bld"):
-            _rate = {"S": 22, "A": 20, "B": 18, "C": 16}.get(r["tier"], 18)  # 高グレード区ほど仕様UP
-            _reno = round(r["bld"] * _rate)
-            cost_html = (f'<div class="cost">💰 フルリノベ込 目安 <b>約{r["price"] + _reno:,}万</b>'
-                         f'（+リノベ約{_reno:,}万 ＝{_rate}万/㎡）</div>')
-        elif "古家付き" in r["tags"]:
-            _base = r.get("land") or r.get("bld") or 0       # 土地面積優先で解体費を連動
-            _demo = max(120, round(_base * 1.5)) if _base else 200   # 木造解体 約4.5万/坪＋狭小割増
-            cost_html = (f'<div class="cost">💰 解体込 目安 <b>約{r["price"] + _demo:,}万</b>'
-                         f'（+解体約{_demo:,}万）</div>')
-        else:
-            cost_html = ""
+        # 実質コストはJS側で計算（フル/簡易リノベ切替・総額並べ替えに対応）。空なら非表示
+        cost_html = '<div class="cost"></div>'
         cards.append(
             f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
@@ -900,7 +889,8 @@ def render(rows, errors):
             f'data-dev="{dev}" data-watch="{1 if watch else 0}" '
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
-            f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}">'
+            f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -937,7 +927,8 @@ def render(rows, errors):
             f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}" '
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
-            f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}">'
+            f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
@@ -1126,7 +1117,7 @@ TEMPLATE = """<!DOCTYPE html>
   .t-drop{{color:#c8324a;font-weight:700;font-size:.72rem}}
   .t-stale{{color:#8a6d10;font-weight:700;font-size:.72rem}}
   .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
-  .cost{{margin:0 16px 10px;padding:7px 10px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b}}
+  .cost{{margin:0 16px 10px;padding:7px 10px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b}}.cost:empty{{display:none}}
   .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
   .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#a07b00}}
@@ -1165,6 +1156,7 @@ TEMPLATE = """<!DOCTYPE html>
   .seg button{{background:var(--panel2);color:var(--muted);border:0;padding:7px 13px;font-size:.85rem;cursor:pointer}}
   .seg button.on{{background:var(--accent);color:#ffffff;font-weight:700}}
   .seg-preset button.on{{background:#7c3aed;color:#fff}}
+  .seg-reno button.on{{background:#0f9d6b;color:#fff}}
   .hidden{{display:none!important}}
   .tblwrap{{overflow-x:auto;border:1px solid var(--line);border-radius:14px}}
   table{{border-collapse:collapse;width:100%;font-size:.85rem;min-width:760px}}
@@ -1235,7 +1227,8 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
-  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
+  <span class="seg seg-reno"><button type="button" id="gFull" class="on">フルリノベ</button><button type="button" id="gSimple">簡易リノベ</button></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"><span class="bnote">💰予算上限で初期表示中（変更可）</span></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
@@ -1338,14 +1331,37 @@ const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
 const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
-let presetMode='none';// none | asset | family | live （プリセット）
+let presetMode='none';// none | asset | family | live | reno （プリセット）
+let renoGrade='full'; // full | simple （リノベ単価）
 const RISKY=/(再建築不可|借地権|旧耐震)/;
+const RRATE={{S:22,A:20,B:18,C:16}};
+function calcExtra(d){{
+  if(d.kind==='マンション'&&parseFloat(d.area||'0')>0){{
+    const rate=(renoGrade==='simple')?9:(RRATE[d.tier]||18);
+    return {{extra:Math.round(parseFloat(d.area)*rate),lab:'リノベ',rate:rate}};
+  }}
+  if(d.furuya==='1'){{
+    const land=parseFloat(d.land||'0')||parseFloat(d.area||'0')||0;
+    return {{extra:land?Math.max(120,Math.round(land*1.5)):200,lab:'解体'}};
+  }}
+  return {{extra:0}};
+}}
+function computeCosts(){{
+  for(const c of cards){{
+    const d=c.dataset,e=calcExtra(d);
+    d.total=(parseInt(d.price,10)||0)+e.extra;
+    const box=c.querySelector('.cost');
+    if(box) box.textContent = e.extra ?
+      `💰 ${{e.lab==='リノベ'?'リノベ込':'解体込'}} 目安 約${{d.total.toLocaleString()}}万（+${{e.lab}}約${{e.extra.toLocaleString()}}万${{e.rate?` ＝${{e.rate}}万/㎡`:''}}）` : '';
+  }}
+  for(const t of trs){{const d=t.dataset;d.total=(parseInt(d.price,10)||0)+calcExtra(d).extra;}}
+}}
 function preset(d){{
   if(presetMode==='asset'){{
     if(!(d.tier==='S'||d.tier==='A'))return false;
     if(parseInt(d.walk,10)>7)return false;
     if(RISKY.test(d.tags))return false;
-    if(parseFloat(d.ratio||'0')<1.05)return false;
+    if(parseFloat(d.ratio||'0')<1.0)return false;
     if(d.kind==='土地')return false;
     if(d.kind==='マンション'&&(parseFloat(d.area||'0')<45||parseInt(d.year||'0')<1990))return false;
   }}
@@ -1367,7 +1383,7 @@ function preset(d){{
   return true;
 }}
 let sortK='score', sortAsc=false;
-const defAsc=k=>(k==='price'||k==='walk');   // 価格・駅徒歩は小さい順、その他は大きい順を既定に
+const defAsc=k=>(k==='price'||k==='walk'||k==='total');   // 価格・総額・駅徒歩は小さい順、その他は大きい順を既定に
 function pass(d){{
   if(fward.value&&d.ward!==fward.value)return false;
   if(fkind.value&&d.kind!==fkind.value)return false;
@@ -1402,6 +1418,9 @@ function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';
  P.none.addEventListener('click',()=>setP('none'));P.asset.addEventListener('click',()=>setP('asset'));
  P.reno.addEventListener('click',()=>setP('reno'));
  P.family.addEventListener('click',()=>setP('family'));P.live.addEventListener('click',()=>setP('live'));}}
+{{const F=el('gFull'),S=el('gSimple');
+ function setG(g,b){{renoGrade=g;F.classList.remove('on');S.classList.remove('on');b.classList.add('on');computeCosts();apply();}}
+ F.addEventListener('click',()=>setG('full',F));S.addEventListener('click',()=>setG('simple',S));}}
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return;
@@ -1411,7 +1430,7 @@ document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('c
 const vT=el('vTable'),vC=el('vCard');
 vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
 vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
-apply();
+computeCosts();apply();
 </script>
 </div></body></html>"""
 
