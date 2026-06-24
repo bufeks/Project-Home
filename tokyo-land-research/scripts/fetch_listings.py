@@ -1223,7 +1223,7 @@ TEMPLATE = """<!DOCTYPE html>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
-  <span class="seg seg-preset"><button type="button" id="pNone" class="on">条件なし</button><button type="button" id="pAsset">💎資産価値</button><button type="button" id="pFamily">👨‍👩‍👧ファミリー</button><button type="button" id="pLive">🏠住める</button></span>
+  <span class="seg seg-preset"><button type="button" id="pNone" class="on">条件なし</button><button type="button" id="pAsset">💎資産価値</button><button type="button" id="pReno">🔨建替/リノベ</button><button type="button" id="pFamily">👨‍👩‍👧ファミリー</button><button type="button" id="pLive">🏠住める</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
@@ -1341,6 +1341,11 @@ function preset(d){{
     if(d.kind==='土地')return false;
     if(d.kind==='マンション'&&parseFloat(d.area||'0')<45)return false;
   }}
+  if(presetMode==='reno'){{
+    // 再建築可の戸建/土地（古家・築古OK）＋ 新耐震マンション（リノベ向き）。再建築不可・借地は除外
+    if(/(再建築不可|借地権)/.test(d.tags))return false;
+    if(d.kind==='マンション'&&(parseInt(d.year||'0',10)<1982||/旧耐震/.test(d.tags)||parseFloat(d.area||'0')<45))return false;
+  }}
   return true;
 }}
 let sortK='score', sortAsc=false;
@@ -1374,9 +1379,10 @@ function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
-{{const P={{none:el('pNone'),asset:el('pAsset'),family:el('pFamily'),live:el('pLive')}};
+{{const P={{none:el('pNone'),asset:el('pAsset'),reno:el('pReno'),family:el('pFamily'),live:el('pLive')}};
  function setP(m){{presetMode=m;Object.values(P).forEach(x=>x.classList.remove('on'));P[m].classList.add('on');apply();}}
  P.none.addEventListener('click',()=>setP('none'));P.asset.addEventListener('click',()=>setP('asset'));
+ P.reno.addEventListener('click',()=>setP('reno'));
  P.family.addEventListener('click',()=>setP('family'));P.live.addEventListener('click',()=>setP('live'));}}
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
