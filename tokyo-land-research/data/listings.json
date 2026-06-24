@@ -36,7 +36,8 @@
       "days": 1,
       "first_price": 8280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20841828",
@@ -72,7 +73,8 @@
       "days": 1,
       "first_price": 8680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20863877",
@@ -108,7 +110,8 @@
       "days": 1,
       "first_price": 9800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20715426",
@@ -150,7 +153,8 @@
       "days": 1,
       "first_price": 26000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20551064",
@@ -188,7 +192,8 @@
       "days": 1,
       "first_price": 4980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20567017",
@@ -227,7 +232,8 @@
       "days": 1,
       "first_price": 7000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21041334",
@@ -265,7 +271,8 @@
       "days": 1,
       "first_price": 3980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20799989",
@@ -306,7 +313,8 @@
       "days": 1,
       "first_price": 5580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20043614",
@@ -342,7 +350,8 @@
       "days": 1,
       "first_price": 4800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20964406",
@@ -378,7 +387,8 @@
       "days": 1,
       "first_price": 6290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78323790",
@@ -416,7 +426,8 @@
       "days": 1,
       "first_price": 8980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20542091",
@@ -452,7 +463,8 @@
       "days": 1,
       "first_price": 8980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20623893",
@@ -490,7 +502,8 @@
       "days": 1,
       "first_price": 11480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21078303",
@@ -526,7 +539,8 @@
       "days": 1,
       "first_price": 3890,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20416461",
@@ -567,7 +581,8 @@
       "days": 1,
       "first_price": 7890,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20597678",
@@ -605,7 +620,8 @@
       "days": 1,
       "first_price": 3780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20470901",
@@ -645,7 +661,8 @@
       "days": 1,
       "first_price": 7200,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21075500",
@@ -686,7 +703,8 @@
       "days": 1,
       "first_price": 12000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20223972",
@@ -727,7 +745,8 @@
       "days": 1,
       "first_price": 12900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20325073",
@@ -763,7 +782,8 @@
       "days": 1,
       "first_price": 16480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20537114",
@@ -799,7 +819,8 @@
       "days": 1,
       "first_price": 28000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20649579",
@@ -837,7 +858,8 @@
       "days": 1,
       "first_price": 28000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20640098",
@@ -877,7 +899,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20604146",
@@ -918,7 +941,8 @@
       "days": 1,
       "first_price": 5980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79202565",
@@ -958,7 +982,8 @@
       "days": 1,
       "first_price": 3980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20115653",
@@ -1000,7 +1025,8 @@
       "days": 1,
       "first_price": 4280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20014653",
@@ -1043,7 +1069,8 @@
       "days": 1,
       "first_price": 6698,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20666289",
@@ -1083,7 +1110,8 @@
       "days": 1,
       "first_price": 7200,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20453145",
@@ -1124,7 +1152,8 @@
       "days": 1,
       "first_price": 11980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20355078",
@@ -1167,7 +1196,8 @@
       "days": 1,
       "first_price": 3480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78705551",
@@ -1208,7 +1238,8 @@
       "days": 1,
       "first_price": 7750,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20921212",
@@ -1249,7 +1280,8 @@
       "days": 1,
       "first_price": 12000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20865006",
@@ -1284,7 +1316,8 @@
       "days": 1,
       "first_price": 1530,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21122129",
@@ -1317,7 +1350,8 @@
       "days": 1,
       "first_price": 7980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20800294",
@@ -1352,7 +1386,8 @@
       "days": 1,
       "first_price": 8250,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20147679",
@@ -1387,7 +1422,8 @@
       "days": 1,
       "first_price": 9980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20633322",
@@ -1428,7 +1464,8 @@
       "days": 1,
       "first_price": 2580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21111017",
@@ -1463,7 +1500,8 @@
       "days": 1,
       "first_price": 5980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20642739",
@@ -1504,7 +1542,8 @@
       "days": 1,
       "first_price": 5980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20913284",
@@ -1537,7 +1576,8 @@
       "days": 1,
       "first_price": 5998,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20798652",
@@ -1570,7 +1610,8 @@
       "days": 1,
       "first_price": 14980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20016273",
@@ -1603,7 +1644,8 @@
       "days": 1,
       "first_price": 2450,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "77434800",
@@ -1636,7 +1678,8 @@
       "days": 1,
       "first_price": 3980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21062814",
@@ -1671,7 +1714,8 @@
       "days": 1,
       "first_price": 13000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20998425",
@@ -1704,7 +1748,8 @@
       "days": 1,
       "first_price": 25000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78993826",
@@ -1737,7 +1782,8 @@
       "days": 1,
       "first_price": 1850,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78465110",
@@ -1778,7 +1824,8 @@
       "days": 1,
       "first_price": 3980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20135460",
@@ -1811,7 +1858,8 @@
       "days": 1,
       "first_price": 4390,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20550767",
@@ -1853,7 +1901,8 @@
       "days": 1,
       "first_price": 5199,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20779510",
@@ -1888,7 +1937,8 @@
       "days": 1,
       "first_price": 5800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "77910692",
@@ -1926,7 +1976,8 @@
       "days": 1,
       "first_price": 7990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20612419",
@@ -1962,7 +2013,8 @@
       "days": 1,
       "first_price": 8900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78804328",
@@ -2002,7 +2054,8 @@
       "days": 1,
       "first_price": 9980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20800341",
@@ -2044,7 +2097,8 @@
       "days": 1,
       "first_price": 14800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20722723",
@@ -2079,7 +2133,8 @@
       "days": 1,
       "first_price": 7200,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20937933",
@@ -2116,7 +2171,8 @@
       "days": 1,
       "first_price": 12980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20933882",
@@ -2149,7 +2205,8 @@
       "days": 1,
       "first_price": 1980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "77143949",
@@ -2186,7 +2243,8 @@
       "days": 1,
       "first_price": 2090,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21010913",
@@ -2223,7 +2281,8 @@
       "days": 1,
       "first_price": 3780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78209023",
@@ -2258,7 +2317,8 @@
       "days": 1,
       "first_price": 10680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "77374425",
@@ -2291,7 +2351,8 @@
       "days": 1,
       "first_price": 18880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21003380",
@@ -2326,7 +2387,8 @@
       "days": 1,
       "first_price": 2680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20704676",
@@ -2359,7 +2421,8 @@
       "days": 1,
       "first_price": 3080,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21064105",
@@ -2400,7 +2463,8 @@
       "days": 1,
       "first_price": 13800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20759587",
@@ -2433,7 +2497,8 @@
       "days": 1,
       "first_price": 18800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20197336",
@@ -2468,7 +2533,8 @@
       "days": 1,
       "first_price": 2999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20992964",
@@ -2503,7 +2569,8 @@
       "days": 1,
       "first_price": 8178,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20590288",
@@ -2538,7 +2605,8 @@
       "days": 1,
       "first_price": 8480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79061556",
@@ -2573,7 +2641,8 @@
       "days": 1,
       "first_price": 9480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21034858",
@@ -2608,7 +2677,8 @@
       "days": 1,
       "first_price": 2600,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21050907",
@@ -2641,7 +2711,8 @@
       "days": 1,
       "first_price": 3780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20940696",
@@ -2674,7 +2745,8 @@
       "days": 1,
       "first_price": 3980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20672447",
@@ -2707,7 +2779,8 @@
       "days": 1,
       "first_price": 5190,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78907749",
@@ -2748,7 +2821,8 @@
       "days": 1,
       "first_price": 7680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79141006",
@@ -2789,7 +2863,8 @@
       "days": 1,
       "first_price": 9480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20559231",
@@ -2830,7 +2905,8 @@
       "days": 1,
       "first_price": 9480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20855725",
@@ -2865,7 +2941,8 @@
       "days": 1,
       "first_price": 11100,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20926912",
@@ -2898,7 +2975,8 @@
       "days": 1,
       "first_price": 11500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20967345",
@@ -2931,7 +3009,8 @@
       "days": 1,
       "first_price": 3900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21062484",
@@ -2968,7 +3047,8 @@
       "days": 1,
       "first_price": 5480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20862205",
@@ -3008,7 +3088,8 @@
       "days": 1,
       "first_price": 7700,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20692887",
@@ -3041,7 +3122,8 @@
       "days": 1,
       "first_price": 46800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20483952",
@@ -3078,7 +3160,8 @@
       "days": 1,
       "first_price": 2480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20649705",
@@ -3113,7 +3196,8 @@
       "days": 1,
       "first_price": 10980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78674406",
@@ -3150,7 +3234,8 @@
       "days": 1,
       "first_price": 2250,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20905295",
@@ -3183,7 +3268,8 @@
       "days": 1,
       "first_price": 2780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20905265",
@@ -3216,7 +3302,8 @@
       "days": 1,
       "first_price": 3420,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21039603",
@@ -3249,7 +3336,8 @@
       "days": 1,
       "first_price": 3680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20049224",
@@ -3291,7 +3379,8 @@
       "days": 1,
       "first_price": 4499,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79224832",
@@ -3333,7 +3422,8 @@
       "days": 1,
       "first_price": 4799,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79210878",
@@ -3368,7 +3458,8 @@
       "days": 1,
       "first_price": 6280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20950545",
@@ -3403,7 +3494,8 @@
       "days": 1,
       "first_price": 6420,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20578973",
@@ -3436,7 +3528,8 @@
       "days": 1,
       "first_price": 7980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79208669",
@@ -3473,7 +3566,8 @@
       "days": 1,
       "first_price": 7990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20600796",
@@ -3508,7 +3602,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21026397",
@@ -3550,7 +3645,8 @@
       "days": 1,
       "first_price": 3600,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20637022",
@@ -3587,7 +3683,8 @@
       "days": 1,
       "first_price": 4280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20657665",
@@ -3624,7 +3721,8 @@
       "days": 1,
       "first_price": 5280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20428186",
@@ -3659,7 +3757,8 @@
       "days": 1,
       "first_price": 7780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21032439",
@@ -3692,7 +3791,8 @@
       "days": 1,
       "first_price": 7899,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20868666",
@@ -3725,7 +3825,8 @@
       "days": 1,
       "first_price": 8500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20179705",
@@ -3758,7 +3859,8 @@
       "days": 1,
       "first_price": 15800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20718984",
@@ -3791,7 +3893,8 @@
       "days": 1,
       "first_price": 39800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78838664",
@@ -3826,7 +3929,8 @@
       "days": 1,
       "first_price": 1980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20835915",
@@ -3863,7 +3967,8 @@
       "days": 1,
       "first_price": 7180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21036563",
@@ -3900,7 +4005,8 @@
       "days": 1,
       "first_price": 7790,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20776504",
@@ -3933,7 +4039,8 @@
       "days": 1,
       "first_price": 9280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20870577",
@@ -3968,7 +4075,8 @@
       "days": 1,
       "first_price": 16000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20042303",
@@ -4003,7 +4111,8 @@
       "days": 1,
       "first_price": 2780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21018139",
@@ -4040,7 +4149,8 @@
       "days": 1,
       "first_price": 4180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20014649",
@@ -4077,7 +4187,8 @@
       "days": 1,
       "first_price": 4880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20969129",
@@ -4114,7 +4225,8 @@
       "days": 1,
       "first_price": 6280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20391355",
@@ -4147,7 +4259,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78328229",
@@ -4182,7 +4295,8 @@
       "days": 1,
       "first_price": 8580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20846318",
@@ -4217,7 +4331,8 @@
       "days": 1,
       "first_price": 9990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20512112",
@@ -4252,7 +4367,8 @@
       "days": 1,
       "first_price": 10500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20960261",
@@ -4287,7 +4403,8 @@
       "days": 1,
       "first_price": 13900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78419001",
@@ -4326,7 +4443,8 @@
       "days": 1,
       "first_price": 14800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78504111",
@@ -4359,7 +4477,8 @@
       "days": 1,
       "first_price": 19800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20780272",
@@ -4392,7 +4511,8 @@
       "days": 1,
       "first_price": 24500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20283329",
@@ -4429,7 +4549,8 @@
       "days": 1,
       "first_price": 2000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20949529",
@@ -4464,7 +4585,8 @@
       "days": 1,
       "first_price": 2650,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20898216",
@@ -4499,7 +4621,8 @@
       "days": 1,
       "first_price": 3150,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20177779",
@@ -4534,7 +4657,8 @@
       "days": 1,
       "first_price": 3150,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79161848",
@@ -4567,7 +4691,8 @@
       "days": 1,
       "first_price": 4750,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20251382",
@@ -4602,7 +4727,8 @@
       "days": 1,
       "first_price": 7680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20631472",
@@ -4637,7 +4763,8 @@
       "days": 1,
       "first_price": 8190,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20775263",
@@ -4672,7 +4799,8 @@
       "days": 1,
       "first_price": 12980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20877455",
@@ -4709,7 +4837,8 @@
       "days": 1,
       "first_price": 1680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20193171",
@@ -4744,7 +4873,8 @@
       "days": 1,
       "first_price": 1680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79208805",
@@ -4781,7 +4911,8 @@
       "days": 1,
       "first_price": 6290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20392396",
@@ -4814,7 +4945,8 @@
       "days": 1,
       "first_price": 29800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20460626",
@@ -4849,7 +4981,8 @@
       "days": 1,
       "first_price": 2300,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79111549",
@@ -4884,7 +5017,8 @@
       "days": 1,
       "first_price": 2580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20864508",
@@ -4917,7 +5051,8 @@
       "days": 1,
       "first_price": 3500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21056703",
@@ -4952,7 +5087,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20777764",
@@ -4992,7 +5128,8 @@
       "days": 1,
       "first_price": 4980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20657217",
@@ -5029,7 +5166,8 @@
       "days": 1,
       "first_price": 6999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20927759",
@@ -5064,7 +5202,8 @@
       "days": 1,
       "first_price": 8980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20456645",
@@ -5099,7 +5238,8 @@
       "days": 1,
       "first_price": 9980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21090982",
@@ -5132,7 +5272,8 @@
       "days": 1,
       "first_price": 12300,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20699024",
@@ -5167,7 +5308,8 @@
       "days": 1,
       "first_price": 12900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20732341",
@@ -5200,7 +5342,8 @@
       "days": 1,
       "first_price": 13900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20887760",
@@ -5233,7 +5376,8 @@
       "days": 1,
       "first_price": 27500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20976777",
@@ -5268,7 +5412,8 @@
       "days": 1,
       "first_price": 1680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20721040",
@@ -5303,7 +5448,8 @@
       "days": 1,
       "first_price": 2480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21077210",
@@ -5338,7 +5484,8 @@
       "days": 1,
       "first_price": 2490,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "76290616",
@@ -5371,7 +5518,8 @@
       "days": 1,
       "first_price": 3680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21018971",
@@ -5406,7 +5554,8 @@
       "days": 1,
       "first_price": 4999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20239148",
@@ -5439,7 +5588,8 @@
       "days": 1,
       "first_price": 7999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21059100",
@@ -5472,7 +5622,8 @@
       "days": 1,
       "first_price": 8000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21039755",
@@ -5505,7 +5656,8 @@
       "days": 1,
       "first_price": 9900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20916129",
@@ -5542,7 +5694,8 @@
       "days": 1,
       "first_price": 3100,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79095575",
@@ -5579,7 +5732,8 @@
       "days": 1,
       "first_price": 4980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20960363",
@@ -5616,7 +5770,8 @@
       "days": 1,
       "first_price": 5280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21056058",
@@ -5649,7 +5804,8 @@
       "days": 1,
       "first_price": 7780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21048437",
@@ -5682,7 +5838,8 @@
       "days": 1,
       "first_price": 7980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20871351",
@@ -5717,7 +5874,8 @@
       "days": 1,
       "first_price": 8280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20289435",
@@ -5750,7 +5908,8 @@
       "days": 1,
       "first_price": 8780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20674659",
@@ -5783,7 +5942,8 @@
       "days": 1,
       "first_price": 9280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20828233",
@@ -5816,7 +5976,8 @@
       "days": 1,
       "first_price": 9400,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21087548",
@@ -5849,7 +6010,8 @@
       "days": 1,
       "first_price": 15800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20562808",
@@ -5882,7 +6044,8 @@
       "days": 1,
       "first_price": 2800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20828576",
@@ -5917,7 +6080,8 @@
       "days": 1,
       "first_price": 3180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20320415",
@@ -5954,7 +6118,8 @@
       "days": 1,
       "first_price": 3190,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79154560",
@@ -5991,7 +6156,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "73772402",
@@ -6026,7 +6192,8 @@
       "days": 1,
       "first_price": 13000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20986747",
@@ -6059,7 +6226,8 @@
       "days": 1,
       "first_price": 22000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21087425",
@@ -6096,7 +6264,8 @@
       "days": 1,
       "first_price": 2680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20613017",
@@ -6131,7 +6300,8 @@
       "days": 1,
       "first_price": 6680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20983917",
@@ -6166,7 +6336,8 @@
       "days": 1,
       "first_price": 10800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78915965",
@@ -6201,7 +6372,8 @@
       "days": 1,
       "first_price": 16000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21076121",
@@ -6234,7 +6406,8 @@
       "days": 1,
       "first_price": 16900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79235046",
@@ -6267,7 +6440,8 @@
       "days": 1,
       "first_price": 3080,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21126031",
@@ -6302,7 +6476,8 @@
       "days": 1,
       "first_price": 3780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20774750",
@@ -6335,7 +6510,8 @@
       "days": 1,
       "first_price": 4780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20499528",
@@ -6372,7 +6548,8 @@
       "days": 1,
       "first_price": 4790,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20827522",
@@ -6405,7 +6582,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20664948",
@@ -6440,7 +6618,8 @@
       "days": 1,
       "first_price": 8780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79081005",
@@ -6475,7 +6654,8 @@
       "days": 1,
       "first_price": 9950,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20962875",
@@ -6512,7 +6692,8 @@
       "days": 1,
       "first_price": 12000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78483844",
@@ -6545,7 +6726,8 @@
       "days": 1,
       "first_price": 15800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20852911",
@@ -6578,7 +6760,8 @@
       "days": 1,
       "first_price": 17800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20919329",
@@ -6613,7 +6796,8 @@
       "days": 1,
       "first_price": 1500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20964283",
@@ -6648,7 +6832,8 @@
       "days": 1,
       "first_price": 3480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20527703",
@@ -6683,7 +6868,8 @@
       "days": 1,
       "first_price": 5680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20945625",
@@ -6716,7 +6902,8 @@
       "days": 1,
       "first_price": 6280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20936130",
@@ -6753,7 +6940,8 @@
       "days": 1,
       "first_price": 6390,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21045742",
@@ -6786,7 +6974,8 @@
       "days": 1,
       "first_price": 7780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21065135",
@@ -6819,7 +7008,8 @@
       "days": 1,
       "first_price": 8000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20543880",
@@ -6854,7 +7044,8 @@
       "days": 1,
       "first_price": 8580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79153115",
@@ -6887,7 +7078,8 @@
       "days": 1,
       "first_price": 9280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79013312",
@@ -6922,7 +7114,8 @@
       "days": 1,
       "first_price": 11690,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20799559",
@@ -6957,7 +7150,8 @@
       "days": 1,
       "first_price": 2280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20799236",
@@ -6994,7 +7188,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21017617",
@@ -7029,7 +7224,8 @@
       "days": 1,
       "first_price": 3100,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21059337",
@@ -7066,7 +7262,8 @@
       "days": 1,
       "first_price": 3380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20559664",
@@ -7099,7 +7296,8 @@
       "days": 1,
       "first_price": 3990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20693467",
@@ -7132,7 +7330,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20767460",
@@ -7165,7 +7364,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20531721",
@@ -7200,7 +7400,8 @@
       "days": 1,
       "first_price": 7790,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20943977",
@@ -7233,7 +7434,8 @@
       "days": 1,
       "first_price": 9800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79209372",
@@ -7266,7 +7468,8 @@
       "days": 1,
       "first_price": 17000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20756550",
@@ -7299,7 +7502,8 @@
       "days": 1,
       "first_price": 19800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20184588",
@@ -7334,7 +7538,8 @@
       "days": 1,
       "first_price": 2380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20701311",
@@ -7371,7 +7576,8 @@
       "days": 1,
       "first_price": 2799,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20194033",
@@ -7408,7 +7614,8 @@
       "days": 1,
       "first_price": 4490,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20597745",
@@ -7443,7 +7650,8 @@
       "days": 1,
       "first_price": 5490,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21029823",
@@ -7480,7 +7688,8 @@
       "days": 1,
       "first_price": 5499,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21043176",
@@ -7517,7 +7726,8 @@
       "days": 1,
       "first_price": 6480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20602623",
@@ -7550,7 +7760,8 @@
       "days": 1,
       "first_price": 9980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20892243",
@@ -7585,7 +7796,8 @@
       "days": 1,
       "first_price": 11000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20805699",
@@ -7620,7 +7832,8 @@
       "days": 1,
       "first_price": 11290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78689990",
@@ -7655,7 +7868,8 @@
       "days": 1,
       "first_price": 12800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20710388",
@@ -7692,7 +7906,8 @@
       "days": 1,
       "first_price": 12900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20510018",
@@ -7727,7 +7942,8 @@
       "days": 1,
       "first_price": 12999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21074366",
@@ -7760,7 +7976,8 @@
       "days": 1,
       "first_price": 49800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21087426",
@@ -7797,7 +8014,8 @@
       "days": 1,
       "first_price": 1480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20355672",
@@ -7834,7 +8052,8 @@
       "days": 1,
       "first_price": 2810,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20900850",
@@ -7871,7 +8090,8 @@
       "days": 1,
       "first_price": 4980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20691214",
@@ -7906,7 +8126,8 @@
       "days": 1,
       "first_price": 6699,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21035401",
@@ -7941,7 +8162,8 @@
       "days": 1,
       "first_price": 11880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20882466",
@@ -7977,7 +8199,8 @@
       "days": 1,
       "first_price": 12480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20879260",
@@ -8012,7 +8235,8 @@
       "days": 1,
       "first_price": 12800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20753371",
@@ -8047,7 +8271,8 @@
       "days": 1,
       "first_price": 13699,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20765865",
@@ -8080,7 +8305,8 @@
       "days": 1,
       "first_price": 13800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20596573",
@@ -8115,7 +8341,8 @@
       "days": 1,
       "first_price": 14980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79221884",
@@ -8150,7 +8377,8 @@
       "days": 1,
       "first_price": 1450,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20848053",
@@ -8185,7 +8413,8 @@
       "days": 1,
       "first_price": 1980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "77400170",
@@ -8222,7 +8451,8 @@
       "days": 1,
       "first_price": 2290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20221598",
@@ -8257,7 +8487,8 @@
       "days": 1,
       "first_price": 5999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20982558",
@@ -8294,7 +8525,8 @@
       "days": 1,
       "first_price": 6690,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20128483",
@@ -8329,7 +8561,8 @@
       "days": 1,
       "first_price": 6699,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78284256",
@@ -8362,7 +8595,8 @@
       "days": 1,
       "first_price": 9480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20628611",
@@ -8395,7 +8629,8 @@
       "days": 1,
       "first_price": 13180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21010176",
@@ -8428,7 +8663,8 @@
       "days": 1,
       "first_price": 2680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78255982",
@@ -8461,7 +8697,8 @@
       "days": 1,
       "first_price": 3780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20596697",
@@ -8494,7 +8731,8 @@
       "days": 1,
       "first_price": 4700,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20773578",
@@ -8527,7 +8765,8 @@
       "days": 1,
       "first_price": 5980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20406265",
@@ -8562,7 +8801,8 @@
       "days": 1,
       "first_price": 8380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21033193",
@@ -8595,7 +8835,8 @@
       "days": 1,
       "first_price": 9380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21036294",
@@ -8628,7 +8869,8 @@
       "days": 1,
       "first_price": 9980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20151841",
@@ -8663,7 +8905,8 @@
       "days": 1,
       "first_price": 11300,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20637028",
@@ -8698,7 +8941,8 @@
       "days": 1,
       "first_price": 11300,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20086461",
@@ -8734,7 +8978,8 @@
       "days": 1,
       "first_price": 15980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20839246",
@@ -8767,7 +9012,8 @@
       "days": 1,
       "first_price": 21980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20881161",
@@ -8800,7 +9046,8 @@
       "days": 1,
       "first_price": 23800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20811331",
@@ -8833,7 +9080,8 @@
       "days": 1,
       "first_price": 33800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20803675",
@@ -8866,7 +9114,8 @@
       "days": 1,
       "first_price": 59800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79092813",
@@ -8899,7 +9148,8 @@
       "days": 1,
       "first_price": 79990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20084046",
@@ -8932,7 +9182,8 @@
       "days": 1,
       "first_price": 1760,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20746219",
@@ -8965,7 +9216,8 @@
       "days": 1,
       "first_price": 3880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78517875",
@@ -8998,7 +9250,8 @@
       "days": 1,
       "first_price": 5600,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20295578",
@@ -9035,7 +9288,8 @@
       "days": 1,
       "first_price": 5780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20579214",
@@ -9072,7 +9326,8 @@
       "days": 1,
       "first_price": 5780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20398184",
@@ -9107,7 +9362,8 @@
       "days": 1,
       "first_price": 5800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20265825",
@@ -9142,7 +9398,8 @@
       "days": 1,
       "first_price": 7700,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20904272",
@@ -9175,7 +9432,8 @@
       "days": 1,
       "first_price": 7899,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21062869",
@@ -9210,7 +9468,8 @@
       "days": 1,
       "first_price": 7980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20521628",
@@ -9245,7 +9504,8 @@
       "days": 1,
       "first_price": 8480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21078281",
@@ -9280,7 +9540,8 @@
       "days": 1,
       "first_price": 8780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21026522",
@@ -9315,7 +9576,8 @@
       "days": 1,
       "first_price": 8980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20051736",
@@ -9350,7 +9612,8 @@
       "days": 1,
       "first_price": 9880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21071325",
@@ -9387,7 +9650,8 @@
       "days": 1,
       "first_price": 11990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20327004",
@@ -9422,7 +9686,8 @@
       "days": 1,
       "first_price": 12980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20953601",
@@ -9459,7 +9724,8 @@
       "days": 1,
       "first_price": 2480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20985297",
@@ -9494,7 +9760,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20978616",
@@ -9529,7 +9796,8 @@
       "days": 1,
       "first_price": 5480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20938002",
@@ -9566,7 +9834,8 @@
       "days": 1,
       "first_price": 5980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20692270",
@@ -9601,7 +9870,8 @@
       "days": 1,
       "first_price": 6680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78915011",
@@ -9636,7 +9906,8 @@
       "days": 1,
       "first_price": 8180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20691054",
@@ -9669,7 +9940,8 @@
       "days": 1,
       "first_price": 10800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20584556",
@@ -9704,7 +9976,8 @@
       "days": 1,
       "first_price": 12000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21056284",
@@ -9739,7 +10012,8 @@
       "days": 1,
       "first_price": 12000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21005123",
@@ -9772,7 +10046,8 @@
       "days": 1,
       "first_price": 13500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21046691",
@@ -9807,7 +10082,8 @@
       "days": 1,
       "first_price": 13800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21028472",
@@ -9842,7 +10118,8 @@
       "days": 1,
       "first_price": 13800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "77443977",
@@ -9877,7 +10154,8 @@
       "days": 1,
       "first_price": 14000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20962933",
@@ -9912,7 +10190,8 @@
       "days": 1,
       "first_price": 14590,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78435225",
@@ -9947,7 +10226,8 @@
       "days": 1,
       "first_price": 14980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20948528",
@@ -9980,7 +10260,8 @@
       "days": 1,
       "first_price": 15780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21077262",
@@ -10015,7 +10296,8 @@
       "days": 1,
       "first_price": 16500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20058868",
@@ -10050,7 +10332,8 @@
       "days": 1,
       "first_price": 980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21051305",
@@ -10087,7 +10370,8 @@
       "days": 1,
       "first_price": 2680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20482455",
@@ -10122,7 +10406,8 @@
       "days": 1,
       "first_price": 2950,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20605981",
@@ -10159,7 +10444,8 @@
       "days": 1,
       "first_price": 4980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21071056",
@@ -10194,7 +10480,8 @@
       "days": 1,
       "first_price": 6480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20659139",
@@ -10229,7 +10516,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79001557",
@@ -10264,7 +10552,8 @@
       "days": 1,
       "first_price": 8990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20638676",
@@ -10299,7 +10588,8 @@
       "days": 1,
       "first_price": 8990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20877480",
@@ -10336,7 +10626,8 @@
       "days": 1,
       "first_price": 9980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21087402",
@@ -10373,7 +10664,8 @@
       "days": 1,
       "first_price": 12800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "77643795",
@@ -10406,7 +10698,8 @@
       "days": 1,
       "first_price": 21000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21041627",
@@ -10441,7 +10734,8 @@
       "days": 1,
       "first_price": 980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78898846",
@@ -10474,7 +10768,8 @@
       "days": 1,
       "first_price": 3580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20993647",
@@ -10509,7 +10804,8 @@
       "days": 1,
       "first_price": 7990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20912604",
@@ -10542,7 +10838,8 @@
       "days": 1,
       "first_price": 8380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20302543",
@@ -10575,7 +10872,8 @@
       "days": 1,
       "first_price": 9180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20826565",
@@ -10615,7 +10913,8 @@
       "days": 1,
       "first_price": 21000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20127183",
@@ -10648,7 +10947,8 @@
       "days": 1,
       "first_price": 56800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20955440",
@@ -10685,7 +10985,8 @@
       "days": 1,
       "first_price": 2480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20372302",
@@ -10720,7 +11021,8 @@
       "days": 1,
       "first_price": 2599,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20953500",
@@ -10755,7 +11057,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20493889",
@@ -10792,7 +11095,8 @@
       "days": 1,
       "first_price": 3298,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20331123",
@@ -10827,7 +11131,8 @@
       "days": 1,
       "first_price": 3680,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20289488",
@@ -10864,7 +11169,8 @@
       "days": 1,
       "first_price": 4180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20584898",
@@ -10897,7 +11203,8 @@
       "days": 1,
       "first_price": 4280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20753673",
@@ -10934,7 +11241,8 @@
       "days": 1,
       "first_price": 4398,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20785920",
@@ -10967,7 +11275,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21066526",
@@ -11000,7 +11309,8 @@
       "days": 1,
       "first_price": 4699,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79071227",
@@ -11037,7 +11347,8 @@
       "days": 1,
       "first_price": 4799,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20683509",
@@ -11074,7 +11385,8 @@
       "days": 1,
       "first_price": 5380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20996926",
@@ -11109,7 +11421,8 @@
       "days": 1,
       "first_price": 5580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20109761",
@@ -11146,7 +11459,8 @@
       "days": 1,
       "first_price": 5780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20834543",
@@ -11181,7 +11495,8 @@
       "days": 1,
       "first_price": 7180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20614753",
@@ -11216,7 +11531,8 @@
       "days": 1,
       "first_price": 7598,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20476798",
@@ -11251,7 +11567,8 @@
       "days": 1,
       "first_price": 7880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21046692",
@@ -11288,7 +11605,8 @@
       "days": 1,
       "first_price": 8390,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21035949",
@@ -11321,7 +11639,8 @@
       "days": 1,
       "first_price": 9498,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78205879",
@@ -11354,7 +11673,8 @@
       "days": 1,
       "first_price": 9498,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20174744",
@@ -11389,7 +11709,8 @@
       "days": 1,
       "first_price": 13380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20895562",
@@ -11424,7 +11745,8 @@
       "days": 1,
       "first_price": 14490,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21071549",
@@ -11459,7 +11781,8 @@
       "days": 1,
       "first_price": 14900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20421493",
@@ -11494,7 +11817,8 @@
       "days": 1,
       "first_price": 14900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "72070994",
@@ -11527,7 +11851,8 @@
       "days": 1,
       "first_price": 17900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21077762",
@@ -11560,7 +11885,8 @@
       "days": 1,
       "first_price": 19500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "78640141",
@@ -11593,7 +11919,8 @@
       "days": 1,
       "first_price": 27900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20183687",
@@ -11626,7 +11953,8 @@
       "days": 1,
       "first_price": 42400,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20161975",
@@ -11661,7 +11989,8 @@
       "days": 1,
       "first_price": 3990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20440702",
@@ -11696,7 +12025,8 @@
       "days": 1,
       "first_price": 7980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20988568",
@@ -11729,7 +12059,8 @@
       "days": 1,
       "first_price": 9480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20120055",
@@ -11766,7 +12097,8 @@
       "days": 1,
       "first_price": 11980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20987373",
@@ -11801,7 +12133,8 @@
       "days": 1,
       "first_price": 13480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21015068",
@@ -11836,7 +12169,8 @@
       "days": 1,
       "first_price": 13480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20558847",
@@ -11869,7 +12203,8 @@
       "days": 1,
       "first_price": 48000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20686791",
@@ -11906,7 +12241,8 @@
       "days": 1,
       "first_price": 3080,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21036161",
@@ -11939,7 +12275,8 @@
       "days": 1,
       "first_price": 3980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20683422",
@@ -11981,7 +12318,8 @@
       "days": 1,
       "first_price": 5499,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20779939",
@@ -12016,7 +12354,8 @@
       "days": 1,
       "first_price": 5980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20483256",
@@ -12049,7 +12388,8 @@
       "days": 1,
       "first_price": 9580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20475364",
@@ -12082,7 +12422,8 @@
       "days": 1,
       "first_price": 11500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20459488",
@@ -12117,7 +12458,8 @@
       "days": 1,
       "first_price": 11800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20177011",
@@ -12154,7 +12496,8 @@
       "days": 1,
       "first_price": 4999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20042952",
@@ -12191,7 +12534,8 @@
       "days": 1,
       "first_price": 5480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20777723",
@@ -12224,7 +12568,8 @@
       "days": 1,
       "first_price": 5900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20870506",
@@ -12259,7 +12604,8 @@
       "days": 1,
       "first_price": 6280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20996638",
@@ -12294,7 +12640,8 @@
       "days": 1,
       "first_price": 6780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20381380",
@@ -12327,7 +12674,8 @@
       "days": 1,
       "first_price": 7499,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20968102",
@@ -12360,7 +12708,8 @@
       "days": 1,
       "first_price": 8200,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20656523",
@@ -12393,7 +12742,8 @@
       "days": 1,
       "first_price": 9780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20536481",
@@ -12430,7 +12780,8 @@
       "days": 1,
       "first_price": 10480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20845716",
@@ -12465,7 +12816,8 @@
       "days": 1,
       "first_price": 3290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20509597",
@@ -12500,7 +12852,8 @@
       "days": 1,
       "first_price": 10999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20630015",
@@ -12535,7 +12888,8 @@
       "days": 1,
       "first_price": 14000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20723811",
@@ -12568,7 +12922,8 @@
       "days": 1,
       "first_price": 4280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20967751",
@@ -12603,7 +12958,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20957393",
@@ -12638,7 +12994,8 @@
       "days": 1,
       "first_price": 7950,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21064655",
@@ -12671,7 +13028,8 @@
       "days": 1,
       "first_price": 3999,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79225769",
@@ -12708,7 +13066,8 @@
       "days": 1,
       "first_price": 5280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20877301",
@@ -12743,7 +13102,8 @@
       "days": 1,
       "first_price": 5790,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78268504",
@@ -12776,7 +13136,8 @@
       "days": 1,
       "first_price": 6399,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20931680",
@@ -12809,7 +13170,8 @@
       "days": 1,
       "first_price": 7099,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21010108",
@@ -12842,7 +13204,8 @@
       "days": 1,
       "first_price": 8580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20536472",
@@ -12877,7 +13240,8 @@
       "days": 1,
       "first_price": 13490,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20039197",
@@ -12910,7 +13274,8 @@
       "days": 1,
       "first_price": 15900,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20659152",
@@ -12943,7 +13308,8 @@
       "days": 1,
       "first_price": 4300,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20339558",
@@ -12976,7 +13342,8 @@
       "days": 1,
       "first_price": 4380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21036481",
@@ -13009,7 +13376,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21033292",
@@ -13042,7 +13410,8 @@
       "days": 1,
       "first_price": 4790,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78950844",
@@ -13077,7 +13446,8 @@
       "days": 1,
       "first_price": 5399,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20793003",
@@ -13112,7 +13482,8 @@
       "days": 1,
       "first_price": 5800,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20413035",
@@ -13147,7 +13518,8 @@
       "days": 1,
       "first_price": 8580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79094566",
@@ -13184,7 +13556,8 @@
       "days": 1,
       "first_price": 2000,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "21005654",
@@ -13219,7 +13592,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "77169370",
@@ -13254,7 +13628,8 @@
       "days": 1,
       "first_price": 6280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20965651",
@@ -13289,7 +13664,8 @@
       "days": 1,
       "first_price": 3280,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21028316",
@@ -13322,7 +13698,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20340248",
@@ -13359,7 +13736,8 @@
       "days": 1,
       "first_price": 13880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "79225874",
@@ -13396,7 +13774,8 @@
       "days": 1,
       "first_price": 5099,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20973390",
@@ -13433,7 +13812,8 @@
       "days": 1,
       "first_price": 5480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78781798",
@@ -13468,7 +13848,8 @@
       "days": 1,
       "first_price": 6899,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20851627",
@@ -13505,7 +13886,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20699004",
@@ -13542,7 +13924,8 @@
       "days": 1,
       "first_price": 8290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "79196514",
@@ -13579,7 +13962,8 @@
       "days": 1,
       "first_price": 12980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20723776",
@@ -13612,7 +13996,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78154548",
@@ -13647,7 +14032,8 @@
       "days": 1,
       "first_price": 3180,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20981552",
@@ -13684,7 +14070,8 @@
       "days": 1,
       "first_price": 3890,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20996757",
@@ -13717,7 +14104,8 @@
       "days": 1,
       "first_price": 4580,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20799839",
@@ -13750,7 +14138,8 @@
       "days": 1,
       "first_price": 4980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20383137",
@@ -13783,7 +14172,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20765463",
@@ -13820,7 +14210,8 @@
       "days": 1,
       "first_price": 2080,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "78770523",
@@ -13855,7 +14246,8 @@
       "days": 1,
       "first_price": 2980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20337595",
@@ -13892,7 +14284,8 @@
       "days": 1,
       "first_price": 8799,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20743830",
@@ -13925,7 +14318,8 @@
       "days": 1,
       "first_price": 4480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "75391318",
@@ -13958,7 +14352,8 @@
       "days": 1,
       "first_price": 4500,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "21029183",
@@ -13991,7 +14386,8 @@
       "days": 1,
       "first_price": 4780,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20305087",
@@ -14028,7 +14424,8 @@
       "days": 1,
       "first_price": 5880,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20549356",
@@ -14065,7 +14462,8 @@
       "days": 1,
       "first_price": 8290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20589579",
@@ -14102,7 +14500,8 @@
       "days": 1,
       "first_price": 9480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20703566",
@@ -14137,7 +14536,8 @@
       "days": 1,
       "first_price": 3299,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20778039",
@@ -14174,7 +14574,8 @@
       "days": 1,
       "first_price": 6980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20785838",
@@ -14211,7 +14612,8 @@
       "days": 1,
       "first_price": 3290,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20580830",
@@ -14248,7 +14650,8 @@
       "days": 1,
       "first_price": 3990,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20013953",
@@ -14281,7 +14684,8 @@
       "days": 1,
       "first_price": 1980,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20255979",
@@ -14316,7 +14720,8 @@
       "days": 1,
       "first_price": 5380,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20800349",
@@ -14353,7 +14758,8 @@
       "days": 1,
       "first_price": 5480,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     },
     {
       "id": "20536151",
@@ -14390,7 +14796,8 @@
       "days": 1,
       "first_price": 5899,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20705314",
@@ -14427,7 +14834,8 @@
       "days": 1,
       "first_price": 4699,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20922333",
@@ -14464,7 +14872,8 @@
       "days": 1,
       "first_price": 4490,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": "area"
     },
     {
       "id": "20869403",
@@ -14501,7 +14910,8 @@
       "days": 1,
       "first_price": 1930,
       "drop": 0,
-      "drop_pct": 0
+      "drop_pct": 0,
+      "watch_kind": ""
     }
   ]
 }

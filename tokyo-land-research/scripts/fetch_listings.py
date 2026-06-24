@@ -720,21 +720,24 @@ def enrich(r):
                   else "中" if r["score"] >= 48 else "低")
 
     # あなたの追跡リスト：住所がウォッチ対象エリアに一致したら⭐（matchは文字列/リスト両対応）
-    watch = ""
+    watch, watch_kind = "", ""
     for a in WATCHLIST.get("areas", []):
         m = a.get("match")
         toks = m if isinstance(m, list) else ([m] if m else [])
         if any(t and t in r["loc"] for t in toks):
             watch = a.get("label") or (toks[0] if toks else "")
+            watch_kind = "area"
             break
-    # マンションは物件名がウォッチ登録マンションに一致しても⭐
-    if not watch and is_ms and r.get("name"):
+    # マンションは物件名がウォッチ登録マンションに一致したら⭐（建物＝無条件で速報）
+    if is_ms and r.get("name"):
         for b in WATCHLIST.get("buildings", []):
             nm = b.get("name", "")
             if nm and nm in r["name"]:
                 watch = nm
+                watch_kind = "building"   # 建物一致はエリア一致より優先（無条件速報）
                 break
     r["watch"] = watch
+    r["watch_kind"] = watch_kind
 
     bits = []
     if r["ratio"]:
@@ -972,25 +975,26 @@ def render(rows, errors):
     buildings = WATCHLIST.get("buildings", [])
     watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
     wparts = []
-    # ⭐速報：ウォッチ該当の“今出ている売り物件”（スコア等のルール無視で全掲載）
-    hits = [r for r in rows if r.get("watch")]            # rowsはスコア降順
-    if hits:
-        CAP = 60
-        hi = ""
-        for r in hits[:CAP]:
-            nm = (H.escape(r["name"]) + "・") if r.get("name") else ""
-            gm = ("https://www.google.com/maps/search/?api=1&query="
-                  + urllib.parse.quote("東京都" + r["loc"]))
-            hi += (f'<div class="hit"><b>⭐ {H.escape(r["watch"])}</b> '
-                   f'<span class="hk">{r["kind"]}</span> {nm}{H.escape(r["loc"])}'
-                   f'<span class="hp">{fmt_price(r["price"])}</span>'
-                   f'<span class="hs">スコア{r["score"]}</span>'
-                   f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a>'
-                   f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
-        more = (f'<div class="lead" style="margin-top:6px">…ほか {len(hits) - CAP} 件。'
-                f'すべては一覧で「⭐ウォッチのみ」で確認できます。</div>') if len(hits) > CAP else ""
-        wparts.append(f'<div class="wsub">🚨 速報：ウォッチ該当の売り物件 {len(hits)}件'
-                      f'（スコア上位{min(CAP, len(hits))}件を表示・条件無視）</div>{hi}{more}')
+    # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
+    # 住みたいエリアは無条件表示しない（⭐タグと「注目エリア」タブで条件付きで見る）。
+    hits = [r for r in rows if r.get("watch_kind") == "building"]   # rowsはスコア降順
+    if buildings:
+        if hits:
+            hi = ""
+            for r in hits:
+                nm = (H.escape(r["name"]) + "・") if r.get("name") else ""
+                gm = ("https://www.google.com/maps/search/?api=1&query="
+                      + urllib.parse.quote("東京都" + r["loc"]))
+                hi += (f'<div class="hit"><b>🏢 {H.escape(r["watch"])}</b> '
+                       f'<span class="hk">{r["kind"]}</span> {nm}{H.escape(r["loc"])}'
+                       f'<span class="hp">{fmt_price(r["price"])}</span>'
+                       f'<span class="hs">スコア{r["score"]}</span>'
+                       f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a>'
+                       f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
+            wparts.append(f'<div class="wsub">🚨 速報：気になるマンションの売り物件 {len(hits)}件（条件無視で全掲載）</div>{hi}')
+        else:
+            wparts.append('<div class="wsub">🚨 気になるマンション速報</div>'
+                          '<p class="lead">現在、登録マンションの売り出しは見つかっていません（毎日チェック中）。</p>')
     if areas:
         items = ""
         for a in areas:
