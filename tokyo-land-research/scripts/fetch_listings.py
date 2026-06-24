@@ -605,6 +605,9 @@ def apply_detail(r, html):
         mw = re.search(r"([0-9.]+)\s*[ｍm]", road)
         if mw and float(mw.group(1)) < 4:
             notes.append(f"前面道路 約{mw.group(1)}m（4m未満＝セットバック/再建築の制約に注意）")
+        elif (r["kind"] != "マンション" and "再建築不可" not in r["tags"]
+              and mw and float(mw.group(1)) >= 4 and "私道" not in road):
+            notes.append(f"接道良好（前面道路 約{mw.group(1)}m・公道想定）＝再建築の見込み（最終は役所で確認）")
     if r["kind"] == "マンション":
         muki = g("向き")
         if muki and any(x in muki for x in ["北", "西"]):
@@ -876,6 +879,16 @@ def render(rows, errors):
             devnote = ""
         reason_html = (f'<div class="reason">🔎 見立て(推定)：{H.escape(r.get("reason", ""))}</div>'
                        if r.get("reason") else "")
+        # 実質コスト目安：マンションはフルリノベ(専有㎡×18万)、古家付きは解体(約200万)を上乗せ
+        if is_ms and r.get("bld"):
+            _reno = round(r["bld"] * 18)
+            cost_html = (f'<div class="cost">💰 フルリノベ込 目安 <b>約{r["price"] + _reno:,}万</b>'
+                         f'（+リノベ約{_reno:,}万）</div>')
+        elif "古家付き" in r["tags"]:
+            cost_html = (f'<div class="cost">💰 解体込 目安 <b>約{r["price"] + 200:,}万</b>'
+                         f'（+解体約200万）</div>')
+        else:
+            cost_html = ""
         cards.append(
             f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
@@ -904,6 +917,7 @@ def render(rows, errors):
             f'{devnote}'
             f'{f"<div class=tags>{tags}</div>" if tags else ""}'
             f'{reason_html}'
+            f'{cost_html}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<div class="viewrow">'
             f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMO ↗</a>'
@@ -1109,6 +1123,7 @@ TEMPLATE = """<!DOCTYPE html>
   .t-drop{{color:#c8324a;font-weight:700;font-size:.72rem}}
   .t-stale{{color:#8a6d10;font-weight:700;font-size:.72rem}}
   .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
+  .cost{{margin:0 16px 10px;padding:7px 10px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b}}
   .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
   .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#a07b00}}
@@ -1327,7 +1342,7 @@ function preset(d){{
     if(!(d.tier==='S'||d.tier==='A'))return false;
     if(parseInt(d.walk,10)>7)return false;
     if(RISKY.test(d.tags))return false;
-    if(parseFloat(d.ratio||'0')<1.1)return false;
+    if(parseFloat(d.ratio||'0')<1.05)return false;
     if(d.kind==='土地')return false;
     if(d.kind==='マンション'&&(parseFloat(d.area||'0')<45||parseInt(d.year||'0')<1990))return false;
   }}
