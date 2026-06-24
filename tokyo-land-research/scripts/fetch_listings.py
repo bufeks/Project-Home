@@ -31,10 +31,11 @@ def load_watchlist():
     if p.exists():
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
-            return {"areas": d.get("areas", []), "buildings": d.get("buildings", [])}
+            return {"areas": d.get("areas", []), "buildings": d.get("buildings", []),
+                    "budget_man": d.get("budget_man")}
         except Exception:
             pass
-    return {"areas": [], "buildings": []}
+    return {"areas": [], "buildings": [], "budget_man": None}
 
 
 WATCHLIST = load_watchlist()
@@ -1031,10 +1032,11 @@ def render(rows, errors):
         f'<span>{H.escape(d)}</span></a>' for n, u, d in CURATED)
     err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(errors)) + "</p>") if errors else ""
 
+    budget = WATCHLIST.get("budget_man") or ""
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
-                           watch=watch_html)
+                           watch=watch_html, budget=budget)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1056,6 +1058,7 @@ TEMPLATE = """<!DOCTYPE html>
   select,input{{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:.9rem}}
   .bar label{{font-size:.8rem;color:var(--muted);margin-right:4px}}
   .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#2c3744}}
+  .bnote{{font-size:.72rem;color:var(--muted);margin-left:6px}}
   .pill{{display:inline-block;background:#e7eefb;color:var(--accent);border:1px solid #c8d8f7;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
   /* ---- カードグリッド ---- */
   .cards{{display:grid;gap:14px;grid-template-columns:1fr}}
@@ -1201,7 +1204,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
   <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
-  <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" style="width:110px"></span>
+  <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"><span class="bnote">💰予算上限で初期表示中（変更可）</span></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
