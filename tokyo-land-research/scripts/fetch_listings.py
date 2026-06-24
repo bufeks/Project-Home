@@ -879,14 +879,17 @@ def render(rows, errors):
             devnote = ""
         reason_html = (f'<div class="reason">🔎 見立て(推定)：{H.escape(r.get("reason", ""))}</div>'
                        if r.get("reason") else "")
-        # 実質コスト目安：マンションはフルリノベ(専有㎡×18万)、古家付きは解体(約200万)を上乗せ
+        # 実質コスト目安：マンションはフルリノベ(専有㎡×ティア別単価)、古家付きは解体(土地面積連動)を上乗せ
         if is_ms and r.get("bld"):
-            _reno = round(r["bld"] * 18)
+            _rate = {"S": 22, "A": 20, "B": 18, "C": 16}.get(r["tier"], 18)  # 高グレード区ほど仕様UP
+            _reno = round(r["bld"] * _rate)
             cost_html = (f'<div class="cost">💰 フルリノベ込 目安 <b>約{r["price"] + _reno:,}万</b>'
-                         f'（+リノベ約{_reno:,}万）</div>')
+                         f'（+リノベ約{_reno:,}万 ＝{_rate}万/㎡）</div>')
         elif "古家付き" in r["tags"]:
-            cost_html = (f'<div class="cost">💰 解体込 目安 <b>約{r["price"] + 200:,}万</b>'
-                         f'（+解体約200万）</div>')
+            _base = r.get("land") or r.get("bld") or 0       # 土地面積優先で解体費を連動
+            _demo = max(120, round(_base * 1.5)) if _base else 200   # 木造解体 約4.5万/坪＋狭小割増
+            cost_html = (f'<div class="cost">💰 解体込 目安 <b>約{r["price"] + _demo:,}万</b>'
+                         f'（+解体約{_demo:,}万）</div>')
         else:
             cost_html = ""
         cards.append(
