@@ -491,6 +491,7 @@ def collect():
         if r.get("watch") and r["id"] not in seen_ids:
             targets.append(r)
             seen_ids.add(r["id"])
+    targets = targets[:90]              # 実行時間を抑える上限（速報は詳細不要なので影響なし）
     for r in targets:
         try:
             apply_detail(r, fetch(r["url"]))
@@ -971,10 +972,11 @@ def render(rows, errors):
     watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
     wparts = []
     # ⭐速報：ウォッチ該当の“今出ている売り物件”（スコア等のルール無視で全掲載）
-    hits = [r for r in rows if r.get("watch")]
+    hits = [r for r in rows if r.get("watch")]            # rowsはスコア降順
     if hits:
+        CAP = 60
         hi = ""
-        for r in hits:
+        for r in hits[:CAP]:
             nm = (H.escape(r["name"]) + "・") if r.get("name") else ""
             gm = ("https://www.google.com/maps/search/?api=1&query="
                   + urllib.parse.quote("東京都" + r["loc"]))
@@ -984,7 +986,10 @@ def render(rows, errors):
                    f'<span class="hs">スコア{r["score"]}</span>'
                    f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a>'
                    f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
-        wparts.append(f'<div class="wsub">🚨 速報：ウォッチ該当の売り物件 {len(hits)}件（条件無視で全掲載）</div>{hi}')
+        more = (f'<div class="lead" style="margin-top:6px">…ほか {len(hits) - CAP} 件。'
+                f'すべては一覧で「⭐ウォッチのみ」で確認できます。</div>') if len(hits) > CAP else ""
+        wparts.append(f'<div class="wsub">🚨 速報：ウォッチ該当の売り物件 {len(hits)}件'
+                      f'（スコア上位{min(CAP, len(hits))}件を表示・条件無視）</div>{hi}{more}')
     if areas:
         items = ""
         for a in areas:
@@ -1200,7 +1205,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
-  <label class="ck"><input type="checkbox" id="fwatch"> ⭐ウォッチのみ</label>
+  <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
@@ -1293,7 +1298,8 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fwatch=el('fwatch'),fdrop=el('fdrop'),fjisu=el('fjisu');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu');
+let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let sortK='score', sortAsc=false;
 const defAsc=k=>(k==='price'||k==='walk');   // 価格・駅徒歩は小さい順、その他は大きい順を既定に
 function pass(d){{
@@ -1303,7 +1309,8 @@ function pass(d){{
   const ms=parseInt(fscore.value||'0',10); if(ms&&parseInt(d.score,10)<ms)return false;
   if(fexcl.checked&&/(再建築不可|借地権)/.test(d.tags))return false;
   if(fdev.checked&&parseInt(d.dev,10)<2)return false;
-  if(fwatch.checked&&d.watch!=='1')return false;
+  if(areaMode==='watch'&&d.watch!=='1')return false;
+  if(areaMode==='other'&&d.watch==='1')return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(fjisu.checked&&d.use!=='実需')return false;
   return true;
@@ -1319,7 +1326,10 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fexcl,fdev,fwatch,fdrop,fjisu].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fexcl,fdev,fdrop,fjisu].forEach(e=>e.addEventListener('input',apply));
+{{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
+ function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
+ A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return;
