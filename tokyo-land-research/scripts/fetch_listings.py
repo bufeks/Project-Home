@@ -802,7 +802,7 @@ def render(rows, errors):
         area_s = " ".join(area) or "—"
         unit_s = r.get("unit_disp", "—")
         unit_label = "㎡単価" if is_ms else "坪単価"
-        name_html = (f'<span class="mn">{H.escape(r["name"])}</span> '
+        name_html = (f'<a class="mn" href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["name"])}</a> '
                      if is_ms and r.get("name") else "")
         ratio = r["ratio"]
         ratio_s = f'{ratio}倍' if ratio else "—"
@@ -911,7 +911,7 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
-            f'{("<b class=mn>" + H.escape(r["name"]) + "</b> ") if (is_ms and r.get("name")) else ""}'
+            f'{name_html}'
             f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
             f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
             f'<span class="kindchip">{r["kind"]}</span>'
@@ -1075,7 +1075,7 @@ TEMPLATE = """<!DOCTYPE html>
   .price{{font-size:1.5rem;font-weight:800;letter-spacing:.2px}}
   .loc{{font-size:.84rem;color:#46505d;margin-top:3px}}
   .kindchip{{display:inline-block;background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem;margin-left:6px}}
-  .mn{{color:#a25e00;font-weight:700}}
+  .mn{{color:#a25e00;font-weight:700;text-decoration:none}}.mn:hover{{text-decoration:underline}}
   .ring{{position:absolute;top:12px;right:14px;width:54px;height:54px;border-radius:50%;
         background:conic-gradient(var(--accent) calc(var(--p)*1%),#e1e6ee 0);
         display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink)}}
@@ -1290,9 +1290,11 @@ TEMPLATE = """<!DOCTYPE html>
 </ul>
 </div></details>
 
-<h2>他サイト（キュレーション・リンク）</h2>
+<details><summary>🔗 他サイト（キュレーション・リンク）</summary>
+<div class="dbody">
 <p class="lead">cowcamo・HOME'S・at home・楽待・健美家は、SPAやアクセス制限のため自動一覧に統合できません。最新は各公式でご確認ください（cowcamoはリノベ・デザイン重視で“脱ゲテモノ”に好相性）。</p>
 <div class="grid">{curated}</div>
+</div></details>
 
 <div class="note">⚠️ 価格・在庫・相場は変動します。本スクリーナーはSUUMOからの自動取得スナップショット＋簡易スコアです。
 購入判断の前に、再建築可否・接道・境界・用途地域・融資・出口を必ず現地と専門家（不動産業者/建築士/司法書士/金融機関）で確認してください。</div>
