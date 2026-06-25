@@ -909,6 +909,7 @@ def render(rows, errors):
         unit_label = "㎡単価" if is_ms else "坪単価"
         name_html = (f'<a class="mn" href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["name"])}</a> '
                      if is_ms and r.get("name") else "")
+        loc_short = r["loc"][len(r["ward"]):] if r["loc"].startswith(r["ward"]) else r["loc"]
         ratio = r["ratio"]
         ratio_s = f'{ratio}倍' if ratio else "—"
         # 分かりやすい言い換え：相場より何%安い/高い（坪単価ベース）
@@ -1029,7 +1030,7 @@ def render(rows, errors):
             f'<td class="tw"><button class="mark mk-t" data-id="{r["id"]}" type="button">☆</button><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
-            f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
+            f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(loc_short)}</a> '
             f'<a class="mp" href="{gmap}" target="_blank" rel="noopener" title="Googleマップで開く">🗺</a>'
             f'<span class="kindchip">{r["kind"]}</span>'
             f'{(f" <span class=t-drop>📉-{dp}%</span>") if drop > 0 else ""}'
