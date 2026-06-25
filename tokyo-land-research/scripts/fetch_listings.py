@@ -1340,7 +1340,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
   <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・訳あり/旧耐震を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋新耐震マンション＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="3LDK+/専有60㎡+ or 戸建3室+・訳あり/旧耐震を除く＝家族向け">👨‍👩‍👧ファミリー</button><button type="button" id="pLive" title="再建築不可・借地・旧耐震・極小を除いた“ふつうに住める”物件">🏠地雷除外</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
-  <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
+  <label class="ck"><input type="checkbox" id="fjisu"> 投資ワンルームも表示</label>
   <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
   <label class="ck"><input type="checkbox" id="fwaru"> ⚠️訳あり(再建築不可/借地/旧耐震)も表示</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
@@ -1500,7 +1500,7 @@ function pass(d){{
   if(areaMode==='other'&&d.watch==='1')return false;
   if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
-  if(fjisu.checked&&d.use!=='実需')return false;
+  if(!fjisu.checked&&d.use==='投資')return false;
   if(fshin.checked&&d.shin!=='1')return false;
   if(!fwaru.checked&&/(再建築不可|借地権|旧耐震)/.test(d.tags))return false;
   const ma=parseFloat(fminarea.value||'0'); if(ma){{const sz=d.kind==='土地'?(parseFloat(d.land)||0):(parseFloat(d.area)||0); if(sz>0&&sz<ma)return false;}}
