@@ -1014,6 +1014,8 @@ def render(rows, errors):
     # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
     # 住みたいエリアは無条件表示しない（⭐タグと「注目エリア」タブで条件付きで見る）。
     hits = [r for r in rows if r.get("watch_kind") == "building"]   # rowsはスコア降順
+    # 気になるマンション速報に新着(売り物件)がある時だけ追跡リストを開く。他トグルは初期クローズ
+    watch_open = " open" if hits else ""
     if buildings:
         if hits:
             hi = ""
@@ -1077,7 +1079,8 @@ def render(rows, errors):
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
-                           watch=watch_html, budget=budget, minarea=minarea)
+                           watch=watch_html, budget=budget, minarea=minarea,
+                           watch_open=watch_open)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1242,7 +1245,7 @@ TEMPLATE = """<!DOCTYPE html>
 再建築不可・借地権などは“注意タグ”として減点表示（主役にしない）。<br>
 出典：SUUMO（中古戸建を価格安い順で取得＋種別タグ付与）／<b>最終更新：{stamp}</b>／<b>{count}</b>件／毎日自動更新</p>
 
-<details open><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
+<details{watch_open}><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
 <div class="dbody">{watch}</div></details>
 
 <div class="bar">
@@ -1282,7 +1285,7 @@ TEMPLATE = """<!DOCTYPE html>
 
 <h2>学び（相場・穴場・落とし穴）</h2>
 
-<details open><summary>📊 相場早見表 — 区ごとの中古戸建 相場坪単価＆出口ティア</summary>
+<details><summary>📊 相場早見表 — 区ごとの中古戸建 相場坪単価＆出口ティア</summary>
 <div class="dbody">
 <p class="lead"><b>相場比＝区の相場坪単価 ÷ この物件の坪単価</b>。1.0＝相場どおり、1.2＝相場より約17%安い、2.0＝相場の半額。<b>数字が大きいほど割安</b>（カードでは「相場より◯%安い」と表示）。ただし2倍超の“激安”は再建築不可・借地・狭小など理由ありのサイン。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
 {market}
@@ -1294,7 +1297,7 @@ TEMPLATE = """<!DOCTYPE html>
 {devmap}
 </div></details>
 
-<details open><summary>🌊 波が来る前夜エリア — 今は割安、これから更新が進む地区</summary>
+<details><summary>🌊 波が来る前夜エリア — 今は割安、これから更新が進む地区</summary>
 <div class="dbody">
 <p class="lead">住所（丁目）単位で、<b>🏗再開発が直撃／近接</b>・<b>🚇新駅/延伸の沿線</b>・<b>🌊木造住宅が密集し東京都『不燃化特区』等で更新が進む地区</b>を判定。
 「今は古家が多く割安だが、これから波が来る」エリアを拾う（例：新宿西口北側の<b>北新宿</b>＝西新宿再開発の波及／<b>港区港南・高輪</b>＝南北線品川延伸）。物件カードにも該当メモを表示します。</p>
