@@ -1010,7 +1010,7 @@ def render(rows, errors):
             f'{cost_html}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<div class="viewrow">'
-            f'<button class="view mark" data-id="{r["id"]}" type="button">☆気になる</button>'
+            f'<button class="view mark" data-id="{r["id"]}" type="button">📌気になる</button>'
             f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMO ↗</a>'
             f'<a class="view vmap" href="{gmap}" target="_blank" rel="noopener">🗺 地図で見る</a>'
             f'</div>'
@@ -1027,7 +1027,7 @@ def render(rows, errors):
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
             f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}">'
-            f'<td class="tw"><button class="mark mk-t" data-id="{r["id"]}" type="button">☆</button><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
+            f'<td class="tw"><button class="mark mk-t" data-id="{r["id"]}" type="button">📌</button><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
             f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(loc_short)}</a> '
@@ -1182,10 +1182,10 @@ TEMPLATE = """<!DOCTYPE html>
   .bar label{{font-size:.8rem;color:var(--muted);margin-right:4px}}
   .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#2c3744}}
   .bnote{{font-size:.72rem;color:var(--muted);margin-left:6px}}
-  .view.mark{{color:#a9742a;background:#fff7e6;border:0;cursor:pointer}}
-  .view.mark.on{{background:#ffe6ad;color:#8a5a00}}
-  .mark.mk-t{{background:none;border:0;cursor:pointer;font-size:.95rem;color:#c9b07a;padding:0 5px 0 0}}
-  .mark.mk-t.on{{color:#e8a400}}
+  .view.mark{{color:#8a93a3;background:#f1f3f6;border:0;cursor:pointer;opacity:.85}}
+  .view.mark.on{{background:#ffe6ad;color:#8a5a00;opacity:1;font-weight:800}}
+  .mark.mk-t{{background:none;border:0;cursor:pointer;font-size:.95rem;padding:0 5px 0 0;opacity:.3;filter:grayscale(1)}}
+  .mark.mk-t.on{{opacity:1;filter:none}}
   .pill{{display:inline-block;background:#e7eefb;color:var(--accent);border:1px solid #c8d8f7;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
   /* ---- カードグリッド ---- */
   .cards{{display:grid;gap:10px;grid-template-columns:1fr}}
@@ -1548,7 +1548,7 @@ const vT=el('vTable'),vC=el('vCard');
 vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
 vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
 let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
-function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?(on?'★':'☆'):(on?'★気になる':'☆気になる');}});}}
+function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();apply();}});
 renderMarks();
 computeCosts();apply();
