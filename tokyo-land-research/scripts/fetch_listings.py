@@ -1343,7 +1343,6 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"><span class="bnote">💰予算上限で初期表示中（変更可）</span></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
-  <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
   <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・訳あり/旧耐震を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋新耐震マンション＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="3LDK+/専有60㎡+ or 戸建3室+・訳あり/旧耐震を除く＝家族向け">👨‍👩‍👧ファミリー</button><button type="button" id="pLive" title="再建築不可・借地・旧耐震・極小を除いた“ふつうに住める”物件">🏠地雷除外</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
@@ -1442,7 +1441,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdrop=el('fdrop'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
@@ -1502,7 +1501,6 @@ function pass(d){{
   if(fkind.value&&d.kind!==fkind.value)return false;
   const mx=parseInt(fmax.value||'0',10); if(mx&&parseInt(d.price,10)>mx)return false;
   const ms=parseInt(fscore.value||'0',10); if(ms&&parseInt(d.score,10)<ms)return false;
-  if(fdev.checked&&parseInt(d.dev,10)<2)return false;
   if(areaMode==='watch'&&d.watch!=='1')return false;
   if(areaMode==='other'&&d.watch==='1')return false;
   if(presetMode!=='none'&&!preset(d))return false;
@@ -1525,7 +1523,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fdev,fdrop,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdrop,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
