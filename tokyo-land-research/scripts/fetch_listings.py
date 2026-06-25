@@ -1340,7 +1340,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
   <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span class="seg seg-reno"><button type="button" id="gFull" class="on">フルリノベ</button><button type="button" id="gSimple">簡易リノベ</button></span>
-  <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"><span class="bnote">💰予算上限で初期表示中（変更可）</span></span>
+  <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
