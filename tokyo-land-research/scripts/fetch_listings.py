@@ -32,10 +32,10 @@ def load_watchlist():
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
             return {"areas": d.get("areas", []), "buildings": d.get("buildings", []),
-                    "budget_man": d.get("budget_man")}
+                    "budget_man": d.get("budget_man"), "min_area_m2": d.get("min_area_m2")}
         except Exception:
             pass
-    return {"areas": [], "buildings": [], "budget_man": None}
+    return {"areas": [], "buildings": [], "budget_man": None, "min_area_m2": None}
 
 
 WATCHLIST = load_watchlist()
@@ -1073,10 +1073,11 @@ def render(rows, errors):
     err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(errors)) + "</p>") if errors else ""
 
     budget = WATCHLIST.get("budget_man") or ""
+    minarea = WATCHLIST.get("min_area_m2") or ""
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
-                           watch=watch_html, budget=budget)
+                           watch=watch_html, budget=budget, minarea=minarea)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1249,6 +1250,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span class="seg seg-reno"><button type="button" id="gFull" class="on">フルリノベ</button><button type="button" id="gSimple">簡易リノベ</button></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"><span class="bnote">💰予算上限で初期表示中（変更可）</span></span>
+  <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
@@ -1348,7 +1350,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
@@ -1415,6 +1417,7 @@ function pass(d){{
   if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(fjisu.checked&&d.use!=='実需')return false;
+  const ma=parseFloat(fminarea.value||'0'); if(ma){{const sz=d.kind==='土地'?(parseFloat(d.land)||0):(parseFloat(d.area)||0); if(sz>0&&sz<ma)return false;}}
   return true;
 }}
 function run(items,parent){{
@@ -1428,7 +1431,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fexcl,fdev,fdrop,fjisu].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fexcl,fdev,fdrop,fjisu,fminarea].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
