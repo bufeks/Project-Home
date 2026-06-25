@@ -1137,7 +1137,8 @@ TEMPLATE = """<!DOCTYPE html>
   .t-drop{{color:#c8324a;font-weight:700;font-size:.72rem}}
   .t-stale{{color:#8a6d10;font-weight:700;font-size:.72rem}}
   .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
-  .cost{{margin:0 16px 10px;padding:7px 10px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b}}.cost:empty{{display:none}}
+  .cost{{margin:0 16px 10px;padding:7px 10px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b;font-size:.86rem}}.cost:empty{{display:none}}
+  .brk{{color:#7e8aa0;font-size:.7rem}}
   .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
   .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#a07b00}}
@@ -1372,8 +1373,8 @@ function computeCosts(){{
     const d=c.dataset,e=calcExtra(d);
     d.total=(parseInt(d.price,10)||0)+e.extra;
     const box=c.querySelector('.cost');
-    if(box) box.textContent = e.extra ?
-      `💰 ${{e.lab==='リノベ'?'リノベ込':'解体込'}} 目安 約${{d.total.toLocaleString()}}万（+${{e.lab}}約${{e.extra.toLocaleString()}}万${{e.rate?` ＝${{e.rate}}万/㎡`:''}}）` : '';
+    if(box) box.innerHTML = e.extra ?
+      `💰 実質目安 <b>約${{d.total.toLocaleString()}}万</b><span class="brk"> ＝ 買値${{(parseInt(d.price,10)||0).toLocaleString()}} ＋ ${{e.lab}}${{e.extra.toLocaleString()}}${{e.rate?`(${{e.rate}}万/㎡)`:''}}</span>` : '';
   }}
   for(const t of trs){{const d=t.dataset;d.total=(parseInt(d.price,10)||0)+calcExtra(d).extra;}}
 }}
