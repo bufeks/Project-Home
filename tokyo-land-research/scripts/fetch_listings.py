@@ -1342,6 +1342,7 @@ TEMPLATE = """<!DOCTYPE html>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
   <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
+  <label class="ck"><input type="checkbox" id="fwaru"> ⚠️訳あり(再建築不可/借地/旧耐震)も表示</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
 </div>
@@ -1434,7 +1435,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea'),fshin=el('fshin');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
@@ -1501,6 +1502,7 @@ function pass(d){{
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(fjisu.checked&&d.use!=='実需')return false;
   if(fshin.checked&&d.shin!=='1')return false;
+  if(!fwaru.checked&&/(再建築不可|借地権|旧耐震)/.test(d.tags))return false;
   const ma=parseFloat(fminarea.value||'0'); if(ma){{const sz=d.kind==='土地'?(parseFloat(d.land)||0):(parseFloat(d.area)||0); if(sz>0&&sz<ma)return false;}}
   return true;
 }}
@@ -1515,7 +1517,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea,fshin].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea,fshin,fwaru].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
