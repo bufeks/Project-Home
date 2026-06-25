@@ -102,6 +102,7 @@ TIER = {w: "S" for w in ["千代田区","中央区","港区","渋谷区"]}
 TIER.update({w: "A" for w in ["新宿区","文京区","目黒区","品川区","世田谷区","台東区","豊島区","中野区"]})
 TIER.update({w: "B" for w in ["杉並区","墨田区","江東区","大田区","北区","荒川区","板橋区"]})
 TIER.update({w: "C" for w in ["練馬区","足立区","葛飾区","江戸川区"]})
+TIERN = {"S": 4, "A": 3, "B": 2, "C": 1}
 TIER_MEMO = {
     "S": "都心中枢。希少性・流動性が高く下値が堅い＝売却益の出口が最も堅い",
     "A": "人気住宅地・準都心。実需が厚く資産性が安定。再開発で上振れも",
@@ -985,7 +986,7 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
-            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}">'
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -1008,6 +1009,7 @@ def render(rows, errors):
             f'{cost_html}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<div class="viewrow">'
+            f'<button class="view mark" data-id="{r["id"]}" type="button">☆気になる</button>'
             f'<a class="view" href="{r["url"]}" target="_blank" rel="noopener">SUUMO ↗</a>'
             f'<a class="view vmap" href="{gmap}" target="_blank" rel="noopener">🗺 地図で見る</a>'
             f'</div>'
@@ -1023,8 +1025,8 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
-            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}">'
-            f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}">'
+            f'<td class="tw"><button class="mark mk-t" data-id="{r["id"]}" type="button">☆</button><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
             f'<a href="{r["url"]}" target="_blank" rel="noopener">{H.escape(r["loc"])}</a> '
@@ -1179,6 +1181,10 @@ TEMPLATE = """<!DOCTYPE html>
   .bar label{{font-size:.8rem;color:var(--muted);margin-right:4px}}
   .ck{{display:flex;align-items:center;gap:6px;font-size:.84rem;color:#2c3744}}
   .bnote{{font-size:.72rem;color:var(--muted);margin-left:6px}}
+  .view.mark{{color:#a9742a;background:#fff7e6;border:0;cursor:pointer}}
+  .view.mark.on{{background:#ffe6ad;color:#8a5a00}}
+  .mark.mk-t{{background:none;border:0;cursor:pointer;font-size:.95rem;color:#c9b07a;padding:0 5px 0 0}}
+  .mark.mk-t.on{{color:#e8a400}}
   .pill{{display:inline-block;background:#e7eefb;color:var(--accent);border:1px solid #c8d8f7;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
   /* ---- カードグリッド ---- */
   .cards{{display:grid;gap:10px;grid-template-columns:1fr}}
@@ -1342,6 +1348,7 @@ TEMPLATE = """<!DOCTYPE html>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 投資ワンルームも表示</label>
   <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
+  <label class="ck"><input type="checkbox" id="fmark"> 📌気になるのみ</label>
   <label class="ck"><input type="checkbox" id="fwaru"> ⚠️訳あり(再建築不可/借地/旧耐震)も表示</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
@@ -1435,7 +1442,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
@@ -1503,6 +1510,7 @@ function pass(d){{
   if(!fjisu.checked&&d.use==='投資')return false;
   if(fshin.checked&&d.shin!=='1')return false;
   if(!fwaru.checked&&/(再建築不可|借地権|旧耐震)/.test(d.tags))return false;
+  if(fmark.checked&&!marks.has(d.id))return false;
   const ma=parseFloat(fminarea.value||'0'); if(ma){{const sz=d.kind==='土地'?(parseFloat(d.land)||0):(parseFloat(d.area)||0); if(sz>0&&sz<ma)return false;}}
   return true;
 }}
@@ -1517,7 +1525,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea,fshin,fwaru].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
@@ -1538,6 +1546,10 @@ document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('c
 const vT=el('vTable'),vC=el('vCard');
 vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
 vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
+let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
+function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?(on?'★':'☆'):(on?'★気になる':'☆気になる');}});}}
+document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();apply();}});
+renderMarks();
 computeCosts();apply();
 </script>
 </div></body></html>"""
