@@ -222,6 +222,9 @@ AREA_PAGES = 3
 # 中古マンション 23区・価格安い順
 MS_URL = "https://suumo.jp/jj/bukken/ichiran/JJ010FJ001/"
 MS_PAGES = 3
+# 新築一戸建て（未完成・建築中含む）bs=020
+SHINCHIKU_URL = "https://suumo.jp/jj/bukken/ichiran/JJ012FC001/"
+SHINCHIKU_PAGES = 2
 # 詳細ページから現地シグナルを取得する上位件数（重いので限定）＋ウォッチ該当は別途必ず取得
 DETAIL_TOPN = 40
 # 種別・注意タグ付与: SUUMO /b/kodate/kw/（解決可能な組合せのみ）
@@ -355,6 +358,43 @@ def parse_mansion(htmltext):
     return list(rows.values())
 
 
+def parse_shinchiku(htmltext):
+    """SUUMO 新築一戸建て（bs=020・未完成/建築中含む）。/ikkodate/ リンク。"""
+    rows = {}
+    for b in htmltext.split('class="property_unit')[1:]:
+        ml = re.search(r'href="(/ikkodate/[^"]+/nc_(\d+)/)"', b)
+        if not ml or "万円" not in b:
+            continue
+        nid = ml.group(2)
+        if nid in rows:
+            continue
+        t = text(b)
+        price = max_price(t)
+        ma = re.search(r"東京都\s*([^\s]+?区[^\s]*)", t)
+        if not (price and ma):
+            continue
+        ward = ward_of(ma.group(1))
+        if not ward:
+            continue
+        land = re.search(r"土地面積\s*([0-9.]+)", t)
+        bld = re.search(r"建物面積\s*([0-9.]+)", t)
+        walk = re.search(r"「[^」]+」[^\s]*?歩\s*(\d+)分", t)
+        plan = re.search(r"\b(\d+[SLDK]+)\b", t)
+        comp = re.search(r"(未完成|建築中|完成済|即入居可|[0-9]{4}年[0-9]{1,2}月(?:完成|築|下旬|上旬|中旬)?)", t)
+        row = base_row(
+            nid, "SUUMO新築戸建", "戸建", ward, ma.group(1), price,
+            float(land.group(1)) if land else None,
+            float(bld.group(1)) if bld else None,
+            plan.group(1) if plan else "",
+            int(walk.group(1)) if walk else None,
+            "https://suumo.jp" + ml.group(1))
+        row["tags"] = ["新築"]
+        row["struct"] = struct_of(t) or "木造"
+        row["comp"] = comp.group(1) if comp else ""
+        rows[nid] = row
+    return list(rows.values())
+
+
 CASS_LINK = re.compile(
     r'href="(https://suumo\.jp/(?:chukoikkodate|ikkodate|tochi)/[^"]+/nc_(\d+)/)[^"]*"'
     r'\s+class="cassette-title')
@@ -462,6 +502,16 @@ def collect():
             errors.append(f"mansion p{pn}: {e}")
         time.sleep(1.3)
 
+    # 1c) 新築一戸建て（未完成・建築中含む）
+    for pn in range(1, SHINCHIKU_PAGES + 1):
+        q = [("ar", "030"), ("bs", "020"), ("ta", "13")] + \
+            [("sc", w) for w in WARD_CODES] + [("po", "1"), ("pn", str(pn))]
+        try:
+            add(parse_shinchiku(fetch(SHINCHIKU_URL + "?" + urllib.parse.urlencode(q))))
+        except Exception as e:
+            errors.append(f"shinchiku p{pn}: {e}")
+        time.sleep(1.3)
+
     # 2) 種別・注意タグ
     for _cat, kw, tag in KW_SOURCES:
         url = KW_BASE + urllib.parse.quote(kw) + "/"
@@ -507,7 +557,7 @@ def collect():
     # 戸建/土地は「再建築不可/借地」が一覧カードに出ず取りこぼすため、全件を詳細で軽量チェック
     # （標高APIはスキップして高速化。既に詳細取得済み or 既タグのものは除く）
     for r in rows:
-        if (r["kind"] in ("戸建", "土地") and not r.get("detailed")
+        if (r["kind"] in ("戸建", "土地") and not r.get("detailed") and "新築" not in r["tags"]
                 and not (set(r["tags"]) & {"再建築不可", "借地権"})):
             try:
                 apply_detail(r, fetch(r["url"]), with_elev=False)
@@ -834,7 +884,7 @@ def render(rows, errors):
     cards = []
     trs = []
     for r in rows:
-        tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"])
+        tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"] if t != "新築")
         is_ms = r["kind"] == "マンション"
         area = []
         if is_ms:
@@ -890,6 +940,8 @@ def render(rows, errors):
         days = r.get("days", 0)
         dp = r.get("drop_pct", 0)
         badges = []
+        if "新築" in r["tags"]:
+            badges.append(f'<span class="bdg b-new">🆕新築{("・"+H.escape(r["comp"])) if r.get("comp") else ""}</span>')
         if watch:
             badges.append(f'<span class="bdg b-watch">⭐ {H.escape(watch)}</span>')
         if drop > 0:
@@ -933,7 +985,7 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
-            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}">'
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -971,7 +1023,7 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
-            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}">'
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}">'
             f'<td class="tw"><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
@@ -1289,6 +1341,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・訳あり/旧耐震を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋新耐震マンション＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="3LDK+/専有60㎡+ or 戸建3室+・訳あり/旧耐震を除く＝家族向け">👨‍👩‍👧ファミリー</button><button type="button" id="pLive" title="再建築不可・借地・旧耐震・極小を除いた“ふつうに住める”物件">🏠地雷除外</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
+  <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
   <span class="pill" id="shown"></span>
 </div>
@@ -1381,7 +1434,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea'),fshin=el('fshin');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
@@ -1447,6 +1500,7 @@ function pass(d){{
   if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(fjisu.checked&&d.use!=='実需')return false;
+  if(fshin.checked&&d.shin!=='1')return false;
   const ma=parseFloat(fminarea.value||'0'); if(ma){{const sz=d.kind==='土地'?(parseFloat(d.land)||0):(parseFloat(d.area)||0); if(sz>0&&sz<ma)return false;}}
   return true;
 }}
@@ -1461,7 +1515,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea,fshin].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
