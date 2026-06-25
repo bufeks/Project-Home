@@ -500,6 +500,18 @@ def collect():
         except Exception as e:
             errors.append(f"detail {r['id']}: {e}")
         time.sleep(0.7)
+
+    # 戸建/土地は「再建築不可/借地」が一覧カードに出ず取りこぼすため、全件を詳細で軽量チェック
+    # （標高APIはスキップして高速化。既に詳細取得済み or 既タグのものは除く）
+    for r in rows:
+        if (r["kind"] in ("戸建", "土地") and not r.get("detailed")
+                and not (set(r["tags"]) & {"再建築不可", "借地権"})):
+            try:
+                apply_detail(r, fetch(r["url"]), with_elev=False)
+                enrich(r)
+            except Exception as e:
+                errors.append(f"risk {r['id']}: {e}")
+            time.sleep(0.5)
     rows.sort(key=lambda x: (-x["score"], x["price"]))
     return rows, errors
 
@@ -579,7 +591,7 @@ def gsi_elevation(addr):
         return None
 
 
-def apply_detail(r, html):
+def apply_detail(r, html, with_elev=True):
     """詳細ページから“現地シグナル”を抽出して r['onsite'] に格納（必要なら是正タグも付与）。"""
     f = detail_fields(html)
 
@@ -590,6 +602,12 @@ def apply_detail(r, html):
         return ""
 
     notes = []
+    # 再建築不可（その他制限事項に明記されるが一覧カードには出ない＝取りこぼし是正）
+    seigen = g("制限事項")
+    if "再建築不可" in seigen or "再建築不可" in g("備考"):
+        if "再建築不可" not in r["tags"]:
+            r["tags"].append("再建築不可")
+        notes.append("再建築不可（建て替え不可）＝出口が極端に狭い。現金/リフォーム前提")
     yoto = g("用途地域")
     if any(x in yoto for x in ["商業", "近隣商業", "準工業", "工業"]):
         notes.append(f"用途地域:{yoto}（店舗・交通量で住環境はやや劣るが容積に余裕）")
@@ -621,11 +639,12 @@ def apply_detail(r, html):
         if re.match(r"^1階(?!\d)", g("所在階").lstrip()):
             notes.append("1階住戸（防犯・眺望でマイナス、専用庭の利点も）")
     # 標高（C）：低地は浸水・液状化リスクの目安（国土地理院API）
-    el = gsi_elevation("東京都" + r["loc"])
-    if el is not None:
-        r["elev"] = round(el, 1)
-        if el < 5:
-            notes.append(f"標高約{r['elev']}m＝低地（浸水・液状化の可能性、ハザードマップ要確認）")
+    if with_elev:
+        el = gsi_elevation("東京都" + r["loc"])
+        if el is not None:
+            r["elev"] = round(el, 1)
+            if el < 5:
+                notes.append(f"標高約{r['elev']}m＝低地（浸水・液状化の可能性、ハザードマップ要確認）")
     # 重複除去・最大4件
     seen, uniq = set(), []
     for n in notes:
