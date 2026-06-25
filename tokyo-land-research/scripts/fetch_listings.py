@@ -315,6 +315,7 @@ def parse_area(htmltext):
             plan.group(1) if plan else "",
             int(walk.group(1)) if walk else None,
             "https://suumo.jp" + ml.group(1))
+        rows[nid]["struct"] = struct_of(t)
     return list(rows.values())
 
 
@@ -349,6 +350,7 @@ def parse_mansion(htmltext):
             "https://suumo.jp" + ml.group(1))
         r["name"] = name.group(1).strip() if name else ""
         r["year"] = int(year.group(1)) if year else None
+        r["struct"] = struct_of(t)
         rows[nid] = r
     return list(rows.values())
 
@@ -385,6 +387,7 @@ def parse_cassette(htmltext, kind):
             plan.group(1) if plan else "",
             int(walk.group(1)) if walk else None,
             m.group(1))
+        rows[nid]["struct"] = struct_of(t)
     return list(rows.values())
 
 
@@ -527,6 +530,23 @@ def n_rooms(plan):
     return int(m.group(1)) if m else 0
 
 
+def struct_of(t):
+    """構造（木造/鉄骨/RC/SRC）をテキストから判定。"""
+    if not t:
+        return ""
+    if re.search(r"鉄骨鉄筋|ＳＲＣ|SRC", t):
+        return "SRC"
+    if re.search(r"鉄筋|ＲＣ|RC", t):
+        return "RC"
+    if re.search(r"軽量鉄骨", t):
+        return "軽量鉄骨"
+    if re.search(r"鉄骨|Ｓ造", t):
+        return "鉄骨"
+    if re.search(r"木造|木質", t):
+        return "木造"
+    return ""
+
+
 def infer_reason(r):
     """現地不動産屋的な“安い理由の推定”。手持ちシグナルからの推定（断定しない）。"""
     tags = r["tags"]
@@ -602,6 +622,8 @@ def apply_detail(r, html, with_elev=True):
         return ""
 
     notes = []
+    if not r.get("struct"):
+        r["struct"] = struct_of(g("構造"))
     # 再建築不可（その他制限事項に明記されるが一覧カードには出ない＝取りこぼし是正）
     seigen = g("制限事項")
     if "再建築不可" in seigen or "再建築不可" in g("備考"):
@@ -829,6 +851,8 @@ def render(rows, errors):
                 area.append(f'建{r["bld"]:.0f}㎡')
             if r["plan"]:
                 area.append(H.escape(r["plan"]))
+        if r.get("struct"):
+            area.append(f'<span class="st">{H.escape(r["struct"])}</span>')
         area_s = " ".join(area) or "—"
         unit_s = r.get("unit_disp", "—")
         unit_label = "㎡単価" if is_ms else "坪単価"
@@ -1105,28 +1129,29 @@ TEMPLATE = """<!DOCTYPE html>
   .bnote{{font-size:.72rem;color:var(--muted);margin-left:6px}}
   .pill{{display:inline-block;background:#e7eefb;color:var(--accent);border:1px solid #c8d8f7;border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700}}
   /* ---- カードグリッド ---- */
-  .cards{{display:grid;gap:14px;grid-template-columns:1fr}}
+  .cards{{display:grid;gap:10px;grid-template-columns:1fr}}
   @media(min-width:640px){{.cards{{grid-template-columns:1fr 1fr}}}}
   @media(min-width:980px){{.cards{{grid-template-columns:1fr 1fr 1fr}}}}
   .card{{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s,border-color .12s,box-shadow .12s}}
   .card:hover{{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 22px rgba(30,50,90,.13)}}
-  .ctop{{position:relative;padding:14px 16px 12px;background:linear-gradient(135deg,#f3f6fb,#ffffff)}}
+  .ctop{{position:relative;padding:9px 12px 7px;background:linear-gradient(135deg,#f3f6fb,#ffffff)}}
   .ctop.tS{{background:linear-gradient(135deg,#e6f6ef,#ffffff)}}
   .ctop.tA{{background:linear-gradient(135deg,#e7f0fd,#ffffff)}}
   .ctop.tB{{background:linear-gradient(135deg,#fbf3df,#ffffff)}}
   .ctop.tC{{background:linear-gradient(135deg,#eef1f5,#ffffff)}}
-  .ci{{padding-right:64px}}
-  .price{{font-size:1.5rem;font-weight:800;letter-spacing:.2px}}
-  .loc{{font-size:.84rem;color:#46505d;margin-top:3px}}
+  .ci{{padding-right:52px}}
+  .price{{font-size:1.3rem;font-weight:800;letter-spacing:.2px}}
+  .loc{{font-size:.8rem;color:#46505d;margin-top:2px}}
   .kindchip{{display:inline-block;background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem;margin-left:6px}}
-  .mn{{color:#a25e00;font-weight:700;text-decoration:none}}.mn:hover{{text-decoration:underline}}
-  .ring{{position:absolute;top:12px;right:14px;width:54px;height:54px;border-radius:50%;
+  .mn{{color:#a25e00;font-weight:700;text-decoration:none}}
+  .st{{display:inline-block;background:#e8eef0;color:#3a4a52;border-radius:5px;padding:0 6px;font-size:.68rem;font-weight:700}}.mn:hover{{text-decoration:underline}}
+  .ring{{position:absolute;top:12px;right:14px;width:44px;height:44px;border-radius:50%;
         background:conic-gradient(var(--accent) calc(var(--p)*1%),#e1e6ee 0);
         display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink)}}
   .ring::before{{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--card)}}
-  .ring b{{position:relative;font-size:1.05rem;line-height:1}}
+  .ring b{{position:relative;font-size:.92rem;line-height:1}}
   .ring small{{position:relative;font-size:.55rem;color:var(--muted)}}
-  .bd{{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px 0}}
+  .bd{{display:flex;flex-wrap:wrap;gap:5px;padding:6px 12px 0}}
   .bdg{{font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 9px}}
   .b-top{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
   .b-gem{{background:#e4eefe;color:#1d5fd6;border:1px solid #c2d8fb}}
@@ -1139,8 +1164,8 @@ TEMPLATE = """<!DOCTYPE html>
   .b-stale{{background:#fbf2d6;color:#8a6d10;border:1px solid #ecdc9a}}
   .t-drop{{color:#c8324a;font-weight:700;font-size:.72rem}}
   .t-stale{{color:#8a6d10;font-weight:700;font-size:.72rem}}
-  .reason{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
-  .cost{{margin:0 16px 10px;padding:7px 10px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b;font-size:.86rem}}.cost:empty{{display:none}}
+  .reason{{margin:0 12px 7px;padding:6px 9px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
+  .cost{{margin:0 12px 7px;padding:6px 9px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b;font-size:.86rem}}.cost:empty{{display:none}}
   .brk{{color:#7e8aa0;font-size:.7rem}}
   .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
@@ -1154,24 +1179,24 @@ TEMPLATE = """<!DOCTYPE html>
   .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
   .hit a{{text-decoration:none;font-weight:700}}.hit a+a{{margin-left:2px}}
   .dev.d3{{color:#0e7d92}}.dev.d2{{color:#1d5fd6}}.dev.d1{{color:#5d6b7a}}.dev.d0{{color:#9aa4b2}}
-  .devnote{{margin:0 16px 10px;padding:8px 10px;border-radius:9px;font-size:.78rem;line-height:1.45}}
+  .devnote{{margin:0 12px 7px;padding:6px 9px;border-radius:9px;font-size:.78rem;line-height:1.45}}
   .devnote.n-wave{{background:#e6f4f8;border:1px solid #bce0ea;color:#185f70}}
   .devnote.n-dev{{background:#f2ecfb;border:1px solid #ddccf3;color:#5a3f8a}}
-  .facts{{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding:12px 16px}}
-  .f{{font-size:.82rem}}
-  .f span{{display:block;color:var(--muted);font-size:.7rem}}
+  .facts{{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;padding:7px 12px}}
+  .f{{font-size:.78rem}}
+  .f span{{display:block;color:var(--muted);font-size:.66rem}}
   .f b{{font-weight:700}}
   .rbar{{height:6px;border-radius:999px;background:#e6eaf0;margin-top:4px;overflow:hidden}}
   .rbar i{{display:block;height:100%}}
   .tier{{display:inline-block;min-width:17px;text-align:center;border-radius:5px;margin-right:5px;font-weight:700;font-size:.74rem;color:#10141a}}
   .tS{{background:#7ee0c0}}.tA{{background:#9ad0ff}}.tB{{background:#ffe08a}}.tC{{background:#c9d1da}}
-  .tags{{padding:0 16px}}
+  .tags{{padding:0 12px}}
   .tag{{display:inline-block;background:#fde8ec;color:#b23a52;border:1px solid #f3c8d1;border-radius:999px;padding:0 8px;font-size:.72rem;margin:0 4px 4px 0}}
   .grade{{display:inline-block;border-radius:6px;padding:0 8px;color:#10141a}}
   .g-hi{{background:#7ee0c0}}.g-mh{{background:#9ad0ff}}.g-mid{{background:#ffe08a}}.g-lo{{background:#c9d1da}}
-  .cmt{{color:var(--muted);font-size:.78rem;padding:4px 16px 12px}}
+  .cmt{{color:var(--muted);font-size:.74rem;padding:2px 12px 8px}}
   .viewrow{{margin-top:auto;display:flex;border-top:1px solid var(--line)}}
-  .view{{flex:1;text-align:center;text-decoration:none;background:#eef3fb;color:#2563eb;padding:10px;font-size:.85rem;font-weight:700}}
+  .view{{flex:1;text-align:center;text-decoration:none;background:#eef3fb;color:#2563eb;padding:7px;font-size:.82rem;font-weight:700}}
   .view:hover{{background:#e2ebfb}}
   .view.vmap{{border-left:1px solid var(--line);color:#0f9d6b}}
   .mp{{text-decoration:none;font-size:.95rem}}.mp:hover{{filter:brightness(1.1)}}
@@ -1240,10 +1265,13 @@ TEMPLATE = """<!DOCTYPE html>
   @media(min-width:720px){{.grid{{grid-template-columns:1fr 1fr}}}}
 </style></head><body><div class="wrap">
 <p><a href="./guide.html">← 調査ガイドへ</a></p>
-<h1>都心 割安×資産性スクリーナー — 東京23区（売却益狙い）</h1>
-<p class="meta">コンセプト：<b>都心〜準都心で「相場より割安・駅近・出口が堅い」物件</b>を、売却益ポテンシャルの目安スコアで並べた一覧。
-再建築不可・借地権などは“注意タグ”として減点表示（主役にしない）。<br>
-出典：SUUMO（中古戸建を価格安い順で取得＋種別タグ付与）／<b>最終更新：{stamp}</b>／<b>{count}</b>件／毎日自動更新</p>
+<h1>都心 割安×資産性スクリーナー — 東京23区</h1>
+<p class="meta">コンセプト：<b>「手放す前提＝資産価値が落ちない物件」</b>を、SUUMOの中古戸建・マンション・土地から自動収集。
+<b>割安度（相場比）×将来性（再開発/不燃化/鉄道延伸）×現地解像度（用途地域・接道・標高・再建築可否）</b>を採点し、
+詳細ページから<b>再建築不可・借地・旧耐震を是正タグ付け</b>。リノベ/解体費込みの<b>実質目安</b>でも比較できる。<br>
+上部の<b>プリセット（💎資産価値／🔨建替・リノベ／👨‍👩‍👧ファミリー／🏠地雷除外）</b>と<b>注目エリアタブ</b>で目的別に一発で絞り込み。
+予算上限・面積下限は初期適用済み（変更可）。<br>
+出典：SUUMO（毎日自動取得）／<b>最終更新：{stamp}</b>／<b>{count}</b>件／毎日自動更新。<b>あくまで目安。購入判断前に現地・専門家確認を。</b></p>
 
 <details{watch_open}><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
 <div class="dbody">{watch}</div></details>
@@ -1256,10 +1284,9 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"><span class="bnote">💰予算上限で初期表示中（変更可）</span></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
-  <label class="ck"><input type="checkbox" id="fexcl"> 再建築不可・借地を除く</label>
   <label class="ck"><input type="checkbox" id="fdev"> 将来性★2以上のみ</label>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
-  <span class="seg seg-preset"><button type="button" id="pNone" class="on">条件なし</button><button type="button" id="pAsset">💎資産価値</button><button type="button" id="pReno">🔨建替/リノベ</button><button type="button" id="pFamily">👨‍👩‍👧ファミリー</button><button type="button" id="pLive">🏠住める</button></span>
+  <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・訳あり/旧耐震を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋新耐震マンション＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="3LDK+/専有60㎡+ or 戸建3室+・訳あり/旧耐震を除く＝家族向け">👨‍👩‍👧ファミリー</button><button type="button" id="pLive" title="再建築不可・借地・旧耐震・極小を除いた“ふつうに住める”物件">🏠地雷除外</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fjisu"> 実需のみ(投資ワンルーム除く)</label>
   <span class="seg"><button id="vTable" class="on" type="button">表で比較</button><button id="vCard" type="button">カード</button></span>
@@ -1354,7 +1381,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fexcl=el('fexcl'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdev=el('fdev'),fdrop=el('fdrop'),fjisu=el('fjisu'),fminarea=el('fminarea');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
@@ -1414,7 +1441,6 @@ function pass(d){{
   if(fkind.value&&d.kind!==fkind.value)return false;
   const mx=parseInt(fmax.value||'0',10); if(mx&&parseInt(d.price,10)>mx)return false;
   const ms=parseInt(fscore.value||'0',10); if(ms&&parseInt(d.score,10)<ms)return false;
-  if(fexcl.checked&&/(再建築不可|借地権)/.test(d.tags))return false;
   if(fdev.checked&&parseInt(d.dev,10)<2)return false;
   if(areaMode==='watch'&&d.watch!=='1')return false;
   if(areaMode==='other'&&d.watch==='1')return false;
@@ -1435,7 +1461,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fexcl,fdev,fdrop,fjisu,fminarea].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdev,fdrop,fjisu,fminarea].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
