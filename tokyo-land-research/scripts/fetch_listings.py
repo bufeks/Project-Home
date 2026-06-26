@@ -1226,6 +1226,10 @@ TEMPLATE = """<!DOCTYPE html>
   .reason{{margin:0 12px 7px;padding:6px 9px;border-radius:9px;font-size:.78rem;line-height:1.45;background:#f4f8ec;border:1px solid #dbe6c4;color:#4a5a2e}}
   .cost{{margin:0 12px 7px;padding:6px 9px;border-radius:9px;font-size:.78rem;background:#eef3fb;border:1px solid #cfddf3;color:#274472}}.cost b{{color:#1b3a6b;font-size:.86rem}}.cost:empty{{display:none}}
   .brk{{color:#7e8aa0;font-size:.7rem}}
+  .tblwrap-g{{overflow-x:auto}}
+  table.kobai{{border-collapse:collapse;width:100%;font-size:.82rem;min-width:420px}}
+  table.kobai th,table.kobai td{{border:1px solid var(--line);padding:6px 8px;text-align:center}}
+  table.kobai thead th{{background:#eef2f7}}
   .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
   .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#a07b00}}
@@ -1428,6 +1432,20 @@ TEMPLATE = """<!DOCTYPE html>
 </ul>
 </div></details>
 
+<details><summary>📅 公売スケジュール（年3回）— <span id="kobaiNext">次回を計算中…</span></summary>
+<div class="dbody">
+<p class="lead">税滞納差押えの<b>公売</b>（現金前提・内覧不可・契約不適合責任なし）は年3回。<b>事前に知るなら公式メルマガ登録が確実</b>。下は東京都主税局の例年パターン（日付は目安。最終は公式で確認）。</p>
+<div class="tblwrap-g"><table class="kobai">
+<thead><tr><th>回</th><th>公告</th><th>入札期間</th><th>開札</th><th>代金納付</th></tr></thead>
+<tbody>
+<tr><td>第1回</td><td>6/12頃</td><td><b>7/10〜7/17頃</b></td><td>7/22頃</td><td>8/12頃</td></tr>
+<tr><td>第2回</td><td>9/25頃</td><td><b>10/16〜10/23頃</b></td><td>10/27頃</td><td>11月中</td></tr>
+<tr><td>第3回</td><td>1月中</td><td><b>1月末〜2月初</b></td><td>2月初</td><td>3月初</td></tr>
+</tbody></table></div>
+<p class="lead" style="margin-top:8px">・東京都主税局 郵送公売：<a href="https://www.tax.metro.tokyo.lg.jp/kobai/mail" target="_blank" rel="noopener">公式↗</a>（メルマガ登録で実施通知）<br>・国税庁 公売（東京国税局）：<a href="https://www.koubai.nta.go.jp/" target="_blank" rel="noopener">公式↗</a> ／ 今後の日程：<a href="https://www.koubai.nta.go.jp/auctionx/public/hp_sh_001.php" target="_blank" rel="noopener">日程↗</a><br>・裁判所 競売（BIT・随時/期間入札）：<a href="https://www.bit.courts.go.jp/" target="_blank" rel="noopener">BIT↗</a></p>
+<p class="lead">⚠️ 公売・競売はローン特約が使えず<b>現金または専用ローンの事前内諾が前提</b>。本スクリーナーの売り物件（SUUMO）とは別ルートです。</p>
+</div></details>
+
 <details><summary>🔗 他サイト（キュレーション・リンク）</summary>
 <div class="dbody">
 <p class="lead">cowcamo・HOME'S・at home・楽待・健美家は、SPAやアクセス制限のため自動一覧に統合できません。最新は各公式でご確認ください（cowcamoはリノベ・デザイン重視で“脱ゲテモノ”に好相性）。</p>
@@ -1548,6 +1566,7 @@ let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
 function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();apply();}});
 renderMarks();
+(function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
 computeCosts();apply();
 </script>
 </div></body></html>"""
