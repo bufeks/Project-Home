@@ -18,6 +18,17 @@
 スコア・相場は簡易な“目安”。実際の売買判断前に必ず現地・専門家確認を。
 """
 import json, re, sys, time, gzip, html as H, urllib.parse, urllib.request, datetime, pathlib
+import unicodedata
+
+
+def norm_name(s):
+    """マンション名の表記揺れを吸収（全半角・空白・ヶケ・ウエ/ウェ・記号・長音）。"""
+    s = unicodedata.normalize("NFKC", s or "")
+    for a, b in [(" ", ""), ("　", ""), ("・", ""), ("ヶ", "ケ"), ("ｹ", "ケ"),
+                 ("ウェ", "ウエ"), ("ヴ", "ブ"), ("－", "-"), ("ー", "")]:
+        s = s.replace(a, b)
+    return s.lower()
+
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -832,7 +843,7 @@ def enrich(r):
     if is_ms and r.get("name"):
         for b in WATCHLIST.get("buildings", []):
             nm = b.get("name", "")
-            if nm and nm in r["name"]:
+            if nm and norm_name(nm) in norm_name(r["name"]):
                 watch = nm
                 watch_kind = "building"   # 建物一致はエリア一致より優先（無条件速報）
                 break
@@ -1137,11 +1148,14 @@ def render(rows, errors):
             gm = ("https://www.google.com/maps/search/?api=1&query="
                   + urllib.parse.quote((name + " " + area).strip()))
             gs = "https://www.google.com/search?q=" + urllib.parse.quote(name + " 中古マンション SUUMO")
+            burl = b.get("url", "")
+            burl_link = f'<a href="{burl}" target="_blank" rel="noopener">🏢SUUMO建物</a>' if burl else ""
+            ref_html = f'<span class="bref">{ref}</span>' if ref else ""
             items += (f'<div class="wli"><b>🏢 {H.escape(name)}</b>'
                       f'{(" (" + H.escape(area) + ")") if area else ""}{(" — " + note) if note else ""}'
                       f'<a href="{gm}" target="_blank" rel="noopener">🗺地図</a>'
                       f'<a href="{gs}" target="_blank" rel="noopener">🔎検索</a>'
-                      f'{f"<span class=bref>{ref}</span>" if ref else ""}</div>')
+                      f'{burl_link}{ref_html}</div>')
         wparts.append('<div class="wsub">気になるマンション・物件</div>'
                       '<p class="lead">※中古マンションは本一覧（戸建/土地）に出ないため、検索・地図リンクで追跡します。</p>'
                       + items)
@@ -1346,7 +1360,6 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
   <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
-  <span class="seg seg-reno"><button type="button" id="gFull" class="on">フルリノベ</button><button type="button" id="gSimple">簡易リノベ</button></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
@@ -1553,9 +1566,6 @@ function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';
  P.none.addEventListener('click',()=>setP('none'));P.asset.addEventListener('click',()=>setP('asset'));
  P.reno.addEventListener('click',()=>setP('reno'));
  P.family.addEventListener('click',()=>setP('family'));P.live.addEventListener('click',()=>setP('live'));}}
-{{const F=el('gFull'),S=el('gSimple');
- function setG(g,b){{renoGrade=g;F.classList.remove('on');S.classList.remove('on');b.classList.add('on');computeCosts();apply();}}
- F.addEventListener('click',()=>setG('full',F));S.addEventListener('click',()=>setG('simple',S));}}
 fsort.addEventListener('change',()=>{{sortK=fsort.value;sortAsc=defAsc(sortK);apply();}});
 document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('click',()=>{{
   const k=th.dataset.k; if(k==='ward')return;
