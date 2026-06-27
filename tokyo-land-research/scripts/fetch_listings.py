@@ -1133,13 +1133,15 @@ def render(rows, errors):
         for b in buildings:
             name, area = b.get("name", ""), b.get("area", "")
             note = H.escape(b.get("note", ""))
+            ref = H.escape(b.get("ref", ""))
             gm = ("https://www.google.com/maps/search/?api=1&query="
                   + urllib.parse.quote((name + " " + area).strip()))
             gs = "https://www.google.com/search?q=" + urllib.parse.quote(name + " 中古マンション SUUMO")
             items += (f'<div class="wli"><b>🏢 {H.escape(name)}</b>'
                       f'{(" (" + H.escape(area) + ")") if area else ""}{(" — " + note) if note else ""}'
                       f'<a href="{gm}" target="_blank" rel="noopener">🗺地図</a>'
-                      f'<a href="{gs}" target="_blank" rel="noopener">🔎検索</a></div>')
+                      f'<a href="{gs}" target="_blank" rel="noopener">🔎検索</a>'
+                      f'{f"<span class=bref>{ref}</span>" if ref else ""}</div>')
         wparts.append('<div class="wsub">気になるマンション・物件</div>'
                       '<p class="lead">※中古マンションは本一覧（戸建/土地）に出ないため、検索・地図リンクで追跡します。</p>'
                       + items)
@@ -1237,6 +1239,7 @@ TEMPLATE = """<!DOCTYPE html>
   .wli b{{color:var(--ink)}}
   .wc{{color:var(--accent);font-size:.78rem;background:#e7eefb;border:1px solid #c8d8f7;border-radius:999px;padding:1px 9px}}
   .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
+  .bref{{flex-basis:100%;color:#5d6b7a;font-size:.76rem;margin-top:2px}}
   .hit{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}}
   .hit .hk{{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}}
   .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
