@@ -43,10 +43,11 @@ def load_watchlist():
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
             return {"areas": d.get("areas", []), "buildings": d.get("buildings", []),
-                    "budget_man": d.get("budget_man"), "min_area_m2": d.get("min_area_m2")}
+                    "budget_man": d.get("budget_man"), "min_area_m2": d.get("min_area_m2"),
+                    "pins": d.get("pins", [])}
         except Exception:
             pass
-    return {"areas": [], "buildings": [], "budget_man": None, "min_area_m2": None}
+    return {"areas": [], "buildings": [], "budget_man": None, "min_area_m2": None, "pins": []}
 
 
 WATCHLIST = load_watchlist()
@@ -1100,7 +1101,22 @@ def render(rows, errors):
     areas = WATCHLIST.get("areas", [])
     buildings = WATCHLIST.get("buildings", [])
     watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
+    pins = WATCHLIST.get("pins", [])
     wparts = []
+    # 📌 気になる物件（保存済み・全端末で記録）
+    if pins:
+        pi = ""
+        for pn in pins:
+            spec = H.escape(pn.get("spec", ""))
+            note = H.escape(pn.get("note", ""))
+            url = pn.get("url", "")
+            gm = "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(pn.get("name", ""))
+            pi += (f'<div class="hit"><b>📌 {H.escape(pn.get("name", ""))}</b>'
+                   f'<span class="hs">{spec}</span>'
+                   f'<a href="{url}" target="_blank" rel="noopener">SUUMO↗</a>'
+                   f'<a href="{gm}" target="_blank" rel="noopener">🗺</a>'
+                   f'{f"<span class=bref>{note}</span>" if note else ""}</div>')
+        wparts.append(f'<div class="wsub">📌 気になる物件（保存済み {len(pins)}件）</div>{pi}')
     # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
     # 住みたいエリアは無条件表示しない（⭐タグと「注目エリア」タブで条件付きで見る）。
     hits = [r for r in rows if r.get("watch_kind") == "building"]   # rowsはスコア降順
@@ -1171,11 +1187,12 @@ def render(rows, errors):
 
     budget = WATCHLIST.get("budget_man") or ""
     minarea = WATCHLIST.get("min_area_m2") or ""
+    pin_ids = json.dumps([p.get("id", "") for p in pins if p.get("id")], ensure_ascii=False)
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
                            watch=watch_html, budget=budget, minarea=minarea,
-                           watch_open=watch_open)
+                           watch_open=watch_open, pinids=pin_ids)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1575,7 +1592,7 @@ document.querySelectorAll('thead th[data-k]').forEach(th=>th.addEventListener('c
 const vT=el('vTable'),vC=el('vCard');
 vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
 vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
-let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
+let marks=new Set([].concat(JSON.parse(localStorage.getItem('marks')||'[]'),{pinids}));
 function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();apply();}});
 renderMarks();
