@@ -865,6 +865,15 @@ def zoning_of(lat, lon):
     return best
 
 
+def pop_mesh(lat, lon):
+    """250mメッシュ将来推計人口（XKT013・社人研）。2025→2050総人口増減%と2050高齢化率を返す。"""
+    for ft in reinfolib_gis("XKT013", lat, lon, 13):
+        n0, n1 = ft.get("PT00_2025"), ft.get("PT00_2050")
+        if n0 and n1 and n0 > 0:
+            return {"chg": round((n1 / n0 - 1) * 100, 1), "aging": ft.get("RTD_2050")}
+    return None
+
+
 def apply_detail(r, html, with_elev=True):
     """詳細ページから“現地シグナル”を抽出して r['onsite'] に格納（必要なら是正タグも付与）。"""
     f = detail_fields(html)
@@ -954,6 +963,14 @@ def apply_detail(r, html, with_elev=True):
                 r["zoning"], r["far"], r["bcr"] = z["use_area"], z["far"], z["bcr"]
                 _fa = f"・容積{z['far']}%/建ぺい{z['bcr']}%" if z["far"] else ""
                 notes.append(f"用途地域：{z['use_area']}{_fa}（国交省・都市計画）")
+                time.sleep(0.25)
+            # 将来推計人口（250mメッシュ・社人研）：将来需要＝値持ちの最良シグナル
+            pop = pop_mesh(lat, lon)
+            if pop:
+                r["pop_chg"] = pop["chg"]
+                tr = "増加" if pop["chg"] >= 2 else "ほぼ横ばい" if pop["chg"] >= -3 else "減少"
+                ag = f"・2050高齢化率{round(pop['aging'] * 100)}%" if pop.get("aging") else ""
+                notes.append(f"将来人口(社人研・地点250m) 2025→2050 {pop['chg']:+.0f}%＝{tr}{ag}")
                 time.sleep(0.25)
     # 建替え余地（戦略③）：容積率×土地面積で建てられる延床を概算。API容積率優先・無ければSUUMO抽出。
     if r["kind"] in ("戸建", "土地") and r.get("land"):
@@ -1273,6 +1290,8 @@ def render(rows, errors):
             badges.append('<span class="bdg b-urgent">🏃売り急ぎ?（指値余地）</span>')
         if (r.get("cagr") or 0) >= 5:
             badges.append(f'<span class="bdg b-cagr">📈値上がりエリア +{r["cagr"]}%/年</span>')
+        if r.get("pop_chg") is not None and r["pop_chg"] <= -8:
+            badges.append(f'<span class="bdg b-warn">📉将来人口減 {r["pop_chg"]:+.0f}%(→2050)</span>')
         if spot_kind == "鉄道":
             badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
         elif spot_kind == "波":
