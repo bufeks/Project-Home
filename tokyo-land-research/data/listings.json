@@ -40,7 +40,9 @@
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 8748,
+      "resale_net": 2792
     },
     {
       "id": "20657665",
@@ -80,7 +82,9 @@
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 8692,
+      "resale_net": 2738
     },
     {
       "id": "79154560",
@@ -120,7 +124,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 10494,
+      "resale_net": 2658
     },
     {
       "id": "20715426",
@@ -165,7 +171,9 @@
       "first_price": 26000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 58408,
+      "resale_net": 28544
     },
     {
       "id": "21094608",
@@ -206,7 +214,9 @@
       "first_price": 28000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 46439,
+      "resale_net": 14854
     },
     {
       "id": "20962875",
@@ -246,7 +256,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 18021,
+      "resale_net": 4550
     },
     {
       "id": "20937933",
@@ -291,7 +303,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 19871,
+      "resale_net": 5287
     },
     {
       "id": "20537114",
@@ -332,7 +346,9 @@
       "first_price": 28000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 43222,
+      "resale_net": 11749
     },
     {
       "id": "79208669",
@@ -378,7 +394,9 @@
       "first_price": 7990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 13963,
+      "resale_net": 4925
     },
     {
       "id": "20841828",
@@ -419,7 +437,9 @@
       "first_price": 8680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12300,
+      "resale_net": 2582
     },
     {
       "id": "21096129",
@@ -460,7 +480,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13991,
+      "resale_net": 2823
     },
     {
       "id": "20049224",
@@ -505,7 +527,9 @@
       "first_price": 4499,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 9502,
+      "resale_net": 4356
     },
     {
       "id": "20499528",
@@ -545,7 +569,9 @@
       "first_price": 4790,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 7900,
+      "resale_net": 2498
     },
     {
       "id": "20863877",
@@ -586,7 +612,9 @@
       "first_price": 9800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 19535,
+      "resale_net": 8365
     },
     {
       "id": "21118055",
@@ -627,7 +655,9 @@
       "first_price": 9000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 15587,
+      "resale_net": 5411
     },
     {
       "id": "20295578",
@@ -667,7 +697,9 @@
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 8748,
+      "resale_net": 2257
     },
     {
       "id": "20579214",
@@ -707,7 +739,9 @@
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 8748,
+      "resale_net": 2257
     },
     {
       "id": "20990507",
@@ -752,7 +786,9 @@
       "first_price": 14800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 19759,
+      "resale_net": 3231
     },
     {
       "id": "20416461",
@@ -797,7 +833,9 @@
       "first_price": 7890,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 18511,
+      "resale_net": 9421
     },
     {
       "id": "20846318",
@@ -835,7 +873,9 @@
       "first_price": 9990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 12661,
+      "resale_net": 1529
     },
     {
       "id": "79202565",
@@ -878,7 +918,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6331,
+      "resale_net": 1851
     },
     {
       "id": "77481832",
@@ -919,7 +961,9 @@
       "first_price": 4500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6945,
+      "resale_net": 1887
     },
     {
       "id": "79095575",
@@ -959,7 +1003,9 @@
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 6988,
+      "resale_net": 1415
     },
     {
       "id": "20014653",
@@ -1005,7 +1051,9 @@
       "first_price": 6698,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10093,
+      "resale_net": 2573
     },
     {
       "id": "21087402",
@@ -1045,7 +1093,9 @@
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 17063,
+      "resale_net": 2770
     },
     {
       "id": "20799989",
@@ -1089,7 +1139,9 @@
       "first_price": 5580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7888,
+      "resale_net": 1641
     },
     {
       "id": "79050228",
@@ -1127,7 +1179,9 @@
       "first_price": 10980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 24826,
+      "resale_net": 12208
     },
     {
       "id": "20771979",
@@ -1168,7 +1222,9 @@
       "first_price": 3300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4930,
+      "resale_net": 1226
     },
     {
       "id": "21041334",
@@ -1210,7 +1266,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10839,
+      "resale_net": 6201
     },
     {
       "id": "20725052",
@@ -1251,7 +1309,9 @@
       "first_price": 4499,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7926,
+      "resale_net": 2835
     },
     {
       "id": "20955769",
@@ -1295,7 +1355,9 @@
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10611,
+      "resale_net": 2236
     },
     {
       "id": "20542091",
@@ -1334,7 +1396,9 @@
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13375,
+      "resale_net": 3298
     },
     {
       "id": "78323790",
@@ -1375,7 +1439,9 @@
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13375,
+      "resale_net": 3298
     },
     {
       "id": "21033250",
@@ -1415,7 +1481,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 13239,
+      "resale_net": 2097
     },
     {
       "id": "20223972",
@@ -1460,7 +1528,9 @@
       "first_price": 12900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 32351,
+      "resale_net": 17416
     },
     {
       "id": "21163783",
@@ -1504,7 +1574,9 @@
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4390,
+      "resale_net": 1369
     },
     {
       "id": "21095605",
@@ -1544,7 +1616,9 @@
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 6644,
+      "resale_net": 1618
     },
     {
       "id": "21056703",
@@ -1582,7 +1656,9 @@
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 7029,
+      "resale_net": 1989
     },
     {
       "id": "20043614",
@@ -1621,7 +1697,9 @@
       "first_price": 4800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8587,
+      "resale_net": 3150
     },
     {
       "id": "20938002",
@@ -1661,7 +1739,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 7848,
+      "resale_net": 1175
     },
     {
       "id": "79033980",
@@ -1704,7 +1784,9 @@
       "first_price": 8280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 13700,
+      "resale_net": 4361
     },
     {
       "id": "20877480",
@@ -1744,7 +1826,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 11818,
+      "resale_net": 726
     },
     {
       "id": "20623893",
@@ -1785,7 +1869,9 @@
       "first_price": 11480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 22894,
+      "resale_net": 9809
     },
     {
       "id": "20179705",
@@ -1825,7 +1911,9 @@
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 18159,
+      "resale_net": 617
     },
     {
       "id": "20818171",
@@ -1864,7 +1952,9 @@
       "first_price": 5590,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8502,
+      "resale_net": 2223
     },
     {
       "id": "21043176",
@@ -1904,7 +1994,9 @@
       "first_price": 6480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 8560,
+      "resale_net": 1327
     },
     {
       "id": "20470901",
@@ -1948,7 +2040,9 @@
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12575,
+      "resale_net": 4431
     },
     {
       "id": "20504230",
@@ -1994,7 +2088,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13255,
+      "resale_net": 4252
     },
     {
       "id": "20961001",
@@ -2035,7 +2131,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13116,
+      "resale_net": 2513
     },
     {
       "id": "20597678",
@@ -2076,7 +2174,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7468,
+      "resale_net": 3162
     },
     {
       "id": "20862205",
@@ -2120,7 +2220,9 @@
       "first_price": 7700,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 12066,
+      "resale_net": 3405
     },
     {
       "id": "21118221",
@@ -2160,7 +2262,9 @@
       "first_price": 2499,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 3928,
+      "resale_net": 1117
     },
     {
       "id": "20753673",
@@ -2200,7 +2304,9 @@
       "first_price": 4398,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 6558,
+      "resale_net": 1623
     },
     {
       "id": "20082037",
@@ -2240,7 +2346,9 @@
       "first_price": 4599,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 8276,
+      "resale_net": 3065
     },
     {
       "id": "21090742",
@@ -2285,7 +2393,9 @@
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6607,
+      "resale_net": 1047
     },
     {
       "id": "20613017",
@@ -2323,7 +2433,9 @@
       "first_price": 6680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 8543,
+      "resale_net": 1096
     },
     {
       "id": "20710388",
@@ -2363,7 +2475,9 @@
       "first_price": 12900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 13253,
+      "resale_net": -1014
     },
     {
       "id": "20325073",
@@ -2404,7 +2518,9 @@
       "first_price": 16480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 17488,
+      "resale_net": -758
     },
     {
       "id": "20640098",
@@ -2447,7 +2563,9 @@
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6311,
+      "resale_net": 1297
     },
     {
       "id": "20567017",
@@ -2492,7 +2610,9 @@
       "first_price": 7000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 14698,
+      "resale_net": 6694
     },
     {
       "id": "21090401",
@@ -2536,7 +2656,9 @@
       "first_price": 15000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 41586,
+      "resale_net": 24080
     },
     {
       "id": "21010913",
@@ -2583,7 +2705,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4929,
+      "resale_net": 712
     },
     {
       "id": "20579280",
@@ -2621,7 +2745,9 @@
       "first_price": 5500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 7187,
+      "resale_net": 1050
     },
     {
       "id": "20604146",
@@ -2665,7 +2791,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11403,
+      "resale_net": 4605
     },
     {
       "id": "20738630",
@@ -2709,7 +2837,9 @@
       "first_price": 5990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10294,
+      "resale_net": 3524
     },
     {
       "id": "20666289",
@@ -2752,7 +2882,9 @@
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11906,
+      "resale_net": 3785
     },
     {
       "id": "20258022",
@@ -2793,7 +2925,9 @@
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11031,
+      "resale_net": 2213
     },
     {
       "id": "20453145",
@@ -2837,7 +2971,9 @@
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12641,
+      "resale_net": -620
     },
     {
       "id": "21028429",
@@ -2883,7 +3019,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 14817,
+      "resale_net": 1458
     },
     {
       "id": "20732341",
@@ -2923,7 +3061,9 @@
       "first_price": 13900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 16126,
+      "resale_net": 689
     },
     {
       "id": "20887760",
@@ -2964,7 +3104,9 @@
       "first_price": 27500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 28556,
+      "resale_net": -1868
     },
     {
       "id": "77143949",
@@ -3004,7 +3146,9 @@
       "first_price": 2090,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3624,
+      "resale_net": 1261
     },
     {
       "id": "20642181",
@@ -3047,7 +3191,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10986,
+      "resale_net": 6343
     },
     {
       "id": "20115653",
@@ -3085,7 +3231,9 @@
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7171,
+      "resale_net": 2340
     },
     {
       "id": "79224832",
@@ -3130,7 +3278,9 @@
       "first_price": 4799,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7328,
+      "resale_net": 1937
     },
     {
       "id": "78705551",
@@ -3174,7 +3324,9 @@
       "first_price": 7750,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9522,
+      "resale_net": 896
     },
     {
       "id": "20355078",
@@ -3212,7 +3364,9 @@
       "first_price": 3480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9487,
+      "resale_net": 5431
     },
     {
       "id": "78696428",
@@ -3256,7 +3410,9 @@
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 8718,
+      "resale_net": 409
     },
     {
       "id": "21122129",
@@ -3296,7 +3452,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9511,
+      "resale_net": 640
     },
     {
       "id": "20825204",
@@ -3341,7 +3499,9 @@
       "first_price": 9850,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11014,
+      "resale_net": 89
     },
     {
       "id": "78804328",
@@ -3385,7 +3545,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 19439,
+      "resale_net": 8080
     },
     {
       "id": "21117282",
@@ -3426,7 +3588,9 @@
       "first_price": 10990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12444,
+      "resale_net": 249
     },
     {
       "id": "20921212",
@@ -3464,7 +3628,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 19749,
+      "resale_net": 6218
     },
     {
       "id": "21062205",
@@ -3505,7 +3671,9 @@
       "first_price": 14980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 18363,
+      "resale_net": 1692
     },
     {
       "id": "78915965",
@@ -3548,7 +3716,9 @@
       "first_price": 16000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 17279,
+      "resale_net": -446
     },
     {
       "id": "20109761",
@@ -3588,7 +3758,9 @@
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 7486,
+      "resale_net": 1039
     },
     {
       "id": "20642739",
@@ -3632,7 +3804,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6962,
+      "resale_net": 320
     },
     {
       "id": "77244326",
@@ -3674,7 +3848,9 @@
       "first_price": 7688,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 9127,
+      "resale_net": 581
     },
     {
       "id": "20590288",
@@ -3717,7 +3893,9 @@
       "first_price": 8480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 9342,
+      "resale_net": -59
     },
     {
       "id": "20512112",
@@ -3755,7 +3933,9 @@
       "first_price": 10500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 10358,
+      "resale_net": -1240
     },
     {
       "id": "20120055",
@@ -3795,7 +3975,9 @@
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 13563,
+      "resale_net": 270
     },
     {
       "id": "20633322",
@@ -3839,7 +4021,9 @@
       "first_price": 2580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4494,
+      "resale_net": 1576
     },
     {
       "id": "21111017",
@@ -3877,7 +4061,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13923,
+      "resale_net": 7037
     },
     {
       "id": "20913284",
@@ -3915,7 +4101,9 @@
       "first_price": 5998,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11743,
+      "resale_net": 4914
     },
     {
       "id": "78353174",
@@ -3955,7 +4143,9 @@
       "first_price": 6599,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 8824,
+      "resale_net": 1454
     },
     {
       "id": "21062814",
@@ -3993,7 +4183,9 @@
       "first_price": 13000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 20129,
+      "resale_net": 5514
     },
     {
       "id": "20016273",
@@ -4031,7 +4223,9 @@
       "first_price": 2450,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3813,
+      "resale_net": 1058
     },
     {
       "id": "21083161",
@@ -4076,7 +4270,9 @@
       "first_price": 5198,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6884,
+      "resale_net": 1081
     },
     {
       "id": "21062484",
@@ -4116,7 +4312,9 @@
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7246,
+      "resale_net": 1129
     },
     {
       "id": "20680677",
@@ -4154,7 +4352,9 @@
       "first_price": 6500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9752,
+      "resale_net": 2456
     },
     {
       "id": "20265825",
@@ -4192,7 +4392,9 @@
       "first_price": 7700,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 8965,
+      "resale_net": 412
     },
     {
       "id": "77910692",
@@ -4234,7 +4436,9 @@
       "first_price": 7990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9437,
+      "resale_net": 557
     },
     {
       "id": "21099689",
@@ -4275,7 +4479,9 @@
       "first_price": 8000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 8045,
+      "resale_net": -797
     },
     {
       "id": "20649705",
@@ -4318,7 +4524,9 @@
       "first_price": 10980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 11118,
+      "resale_net": -1020
     },
     {
       "id": "21076039",
@@ -4357,7 +4565,9 @@
       "first_price": 13000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 15823,
+      "resale_net": 1359
     },
     {
       "id": "20998425",
@@ -4397,7 +4607,9 @@
       "first_price": 25000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 28275,
+      "resale_net": 535
     },
     {
       "id": "78999084",
@@ -4435,7 +4647,9 @@
       "first_price": 1500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7801,
+      "resale_net": 5923
     },
     {
       "id": "78993826",
@@ -4475,7 +4689,9 @@
       "first_price": 1850,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3288,
+      "resale_net": 1193
     },
     {
       "id": "20483952",
@@ -4515,7 +4731,9 @@
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3936,
+      "resale_net": 1145
     },
     {
       "id": "20589346",
@@ -4558,7 +4776,9 @@
       "first_price": 3580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5391,
+      "resale_net": 1372
     },
     {
       "id": "78465110",
@@ -4603,7 +4823,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9999,
+      "resale_net": 5390
     },
     {
       "id": "20779510",
@@ -4641,7 +4863,9 @@
       "first_price": 5800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8972,
+      "resale_net": 2452
     },
     {
       "id": "20741437",
@@ -4682,7 +4906,9 @@
       "first_price": 8720,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10429,
+      "resale_net": 734
     },
     {
       "id": "20638676",
@@ -4720,7 +4946,9 @@
       "first_price": 8990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.3
+      "premium": 1.3,
+      "market_value": 10232,
+      "resale_net": 255
     },
     {
       "id": "79001557",
@@ -4758,7 +4986,9 @@
       "first_price": 8990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.3
+      "premium": 1.3,
+      "market_value": 10232,
+      "resale_net": 255
     },
     {
       "id": "20615173",
@@ -4801,7 +5031,9 @@
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9810,
+      "resale_net": -998
     },
     {
       "id": "20710944",
@@ -4845,7 +5077,9 @@
       "first_price": 9990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11333,
+      "resale_net": 247
     },
     {
       "id": "21023948",
@@ -4886,7 +5120,9 @@
       "first_price": 14980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13773,
+      "resale_net": -2738
     },
     {
       "id": "78674406",
@@ -4926,7 +5162,9 @@
       "first_price": 2250,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3249,
+      "resale_net": 728
     },
     {
       "id": "20637022",
@@ -4971,7 +5209,9 @@
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5618,
+      "resale_net": 842
     },
     {
       "id": "78463662",
@@ -5009,7 +5249,9 @@
       "first_price": 4290,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11790,
+      "resale_net": 6787
     },
     {
       "id": "20135460",
@@ -5049,7 +5291,9 @@
       "first_price": 4390,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6510,
+      "resale_net": 1585
     },
     {
       "id": "21111238",
@@ -5089,7 +5333,9 @@
       "first_price": 5799,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7792,
+      "resale_net": 1314
     },
     {
       "id": "78875428",
@@ -5129,7 +5375,9 @@
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.32
+      "premium": 1.32,
+      "market_value": 8181,
+      "resale_net": -537
     },
     {
       "id": "20559231",
@@ -5173,7 +5421,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 20545,
+      "resale_net": 9682
     },
     {
       "id": "79141006",
@@ -5217,7 +5467,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 20545,
+      "resale_net": 9682
     },
     {
       "id": "20855725",
@@ -5261,7 +5513,9 @@
       "first_price": 11100,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12833,
+      "resale_net": 507
     },
     {
       "id": "20480094",
@@ -5304,7 +5558,9 @@
       "first_price": 11100,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11308,
+      "resale_net": -965
     },
     {
       "id": "20800341",
@@ -5349,7 +5605,9 @@
       "first_price": 14800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 27440,
+      "resale_net": 10644
     },
     {
       "id": "21026397",
@@ -5394,7 +5652,9 @@
       "first_price": 3600,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5759,
+      "resale_net": 1705
     },
     {
       "id": "20551064",
@@ -5438,7 +5698,9 @@
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11531,
+      "resale_net": 5799
     },
     {
       "id": "21036563",
@@ -5478,7 +5740,9 @@
       "first_price": 7790,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8699,
+      "resale_net": 59
     },
     {
       "id": "78209023",
@@ -5521,7 +5785,9 @@
       "first_price": 10680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12651,
+      "resale_net": 781
     },
     {
       "id": "20926912",
@@ -5565,7 +5831,9 @@
       "first_price": 11500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 15845,
+      "resale_net": 2985
     },
     {
       "id": "20933882",
@@ -5603,7 +5871,9 @@
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3870,
+      "resale_net": 1616
     },
     {
       "id": "20704676",
@@ -5643,7 +5913,9 @@
       "first_price": 3080,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4173,
+      "resale_net": 731
     },
     {
       "id": "21018139",
@@ -5683,7 +5955,9 @@
       "first_price": 4180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5090,
+      "resale_net": 439
     },
     {
       "id": "20014649",
@@ -5723,7 +5997,9 @@
       "first_price": 4880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6648,
+      "resale_net": 1194
     },
     {
       "id": "20215127",
@@ -5761,7 +6037,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9788,
+      "resale_net": 3047
     },
     {
       "id": "20722723",
@@ -5799,7 +6077,9 @@
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 20401,
+      "resale_net": 11983
     },
     {
       "id": "20898240",
@@ -5844,7 +6124,9 @@
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8379,
+      "resale_net": -346
     },
     {
       "id": "21029729",
@@ -5884,7 +6166,9 @@
       "first_price": 8680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 9172,
+      "resale_net": -437
     },
     {
       "id": "20852911",
@@ -5924,7 +6208,9 @@
       "first_price": 17800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 17823,
+      "resale_net": -1847
     },
     {
       "id": "77374425",
@@ -5964,7 +6250,9 @@
       "first_price": 18880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 20972,
+      "resale_net": 36
     },
     {
       "id": "20197336",
@@ -6002,7 +6290,9 @@
       "first_price": 2999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3951,
+      "resale_net": 604
     },
     {
       "id": "20779931",
@@ -6046,7 +6336,9 @@
       "first_price": 3200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9301,
+      "resale_net": 5551
     },
     {
       "id": "20251382",
@@ -6084,7 +6376,9 @@
       "first_price": 7680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 7926,
+      "resale_net": -569
     },
     {
       "id": "20406265",
@@ -6122,7 +6416,9 @@
       "first_price": 8380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.22
+      "premium": 1.22,
+      "market_value": 12061,
+      "resale_net": 2672
     },
     {
       "id": "21077081",
@@ -6166,7 +6462,9 @@
       "first_price": 8400,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12620,
+      "resale_net": 3190
     },
     {
       "id": "79061556",
@@ -6209,7 +6507,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10790,
+      "resale_net": 269
     },
     {
       "id": "21078466",
@@ -6250,7 +6550,9 @@
       "first_price": 13500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 15750,
+      "resale_net": 754
     },
     {
       "id": "20091018",
@@ -6288,7 +6590,9 @@
       "first_price": 1800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3815,
+      "resale_net": 1755
     },
     {
       "id": "20283329",
@@ -6328,7 +6632,9 @@
       "first_price": 2000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3260,
+      "resale_net": 1006
     },
     {
       "id": "21003380",
@@ -6366,7 +6672,9 @@
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6687,
+      "resale_net": 3585
     },
     {
       "id": "20686791",
@@ -6406,7 +6714,9 @@
       "first_price": 3080,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 3657,
+      "resale_net": 233
     },
     {
       "id": "20654227",
@@ -6444,7 +6754,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12020,
+      "resale_net": 7555
     },
     {
       "id": "20579125",
@@ -6482,7 +6794,9 @@
       "first_price": 6000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 6290,
+      "resale_net": -350
     },
     {
       "id": "78907749",
@@ -6526,7 +6840,9 @@
       "first_price": 7680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12277,
+      "resale_net": 3630
     },
     {
       "id": "21048296",
@@ -6567,7 +6883,9 @@
       "first_price": 9750,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10706,
+      "resale_net": -101
     },
     {
       "id": "20943977",
@@ -6607,7 +6925,9 @@
       "first_price": 9800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 10116,
+      "resale_net": -724
     },
     {
       "id": "20870577",
@@ -6645,7 +6965,9 @@
       "first_price": 16000,
       "drop": 3500,
       "drop_pct": 22,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 24486,
+      "resale_net": 10254
     },
     {
       "id": "20798652",
@@ -6689,7 +7011,9 @@
       "first_price": 14980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 31319,
+      "resale_net": 14194
     },
     {
       "id": "20877455",
@@ -6729,7 +7053,9 @@
       "first_price": 1680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2560,
+      "resale_net": 673
     },
     {
       "id": "20893736",
@@ -6773,7 +7099,9 @@
       "first_price": 2580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 7720,
+      "resale_net": 4689
     },
     {
       "id": "21050907",
@@ -6813,7 +7141,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5665,
+      "resale_net": 1422
     },
     {
       "id": "20940696",
@@ -6853,7 +7183,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5665,
+      "resale_net": 1208
     },
     {
       "id": "20672447",
@@ -6893,7 +7225,9 @@
       "first_price": 5190,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6126,
+      "resale_net": 358
     },
     {
       "id": "20391355",
@@ -6933,7 +7267,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6999,
+      "resale_net": -715
     },
     {
       "id": "78765490",
@@ -6976,7 +7312,9 @@
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13556,
+      "resale_net": 5078
     },
     {
       "id": "78504111",
@@ -7016,7 +7354,9 @@
       "first_price": 19800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 12965,
+      "resale_net": -8675
     },
     {
       "id": "20739177",
@@ -7054,7 +7394,9 @@
       "first_price": 2500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6345,
+      "resale_net": 3448
     },
     {
       "id": "21095694",
@@ -7092,7 +7434,9 @@
       "first_price": 3480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5400,
+      "resale_net": 1487
     },
     {
       "id": "20967345",
@@ -7132,7 +7476,9 @@
       "first_price": 3900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4320,
+      "resale_net": -4
     },
     {
       "id": "20552762",
@@ -7173,7 +7519,9 @@
       "first_price": 6380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6751,
+      "resale_net": -312
     },
     {
       "id": "20657217",
@@ -7213,7 +7561,9 @@
       "first_price": 6999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7427,
+      "resale_net": -322
     },
     {
       "id": "20339707",
@@ -7253,7 +7603,9 @@
       "first_price": 7280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7831,
+      "resale_net": -233
     },
     {
       "id": "78483844",
@@ -7293,7 +7645,9 @@
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 13347,
+      "resale_net": -4026
     },
     {
       "id": "20718984",
@@ -7333,7 +7687,9 @@
       "first_price": 39800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 16955,
+      "resale_net": -26224
     },
     {
       "id": "20600796",
@@ -7375,7 +7731,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4520,
+      "resale_net": 1173
     },
     {
       "id": "21112452",
@@ -7413,7 +7771,9 @@
       "first_price": 6500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9532,
+      "resale_net": 2243
     },
     {
       "id": "20578973",
@@ -7454,7 +7814,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9985,
+      "resale_net": 1097
     },
     {
       "id": "21035401",
@@ -7492,7 +7854,9 @@
       "first_price": 11880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 11990,
+      "resale_net": -1141
     },
     {
       "id": "20916129",
@@ -7532,7 +7896,9 @@
       "first_price": 3100,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4590,
+      "resale_net": 1112
     },
     {
       "id": "20320415",
@@ -7572,7 +7938,9 @@
       "first_price": 3190,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3826,
+      "resale_net": 279
     },
     {
       "id": "20178387",
@@ -7616,7 +7984,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6048,
+      "resale_net": 1578
     },
     {
       "id": "20993190",
@@ -7656,7 +8026,9 @@
       "first_price": 4580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4664,
+      "resale_net": -400
     },
     {
       "id": "20830167",
@@ -7696,7 +8068,9 @@
       "first_price": 5500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5797,
+      "resale_net": -291
     },
     {
       "id": "79210878",
@@ -7734,7 +8108,9 @@
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6461,
+      "resale_net": -485
     },
     {
       "id": "20964406",
@@ -7777,7 +8153,9 @@
       "first_price": 6290,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 15077,
+      "resale_net": 7819
     },
     {
       "id": "20910722",
@@ -7817,7 +8195,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6545,
+      "resale_net": -1153
     },
     {
       "id": "20428186",
@@ -7855,7 +8235,9 @@
       "first_price": 7780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7105,
+      "resale_net": -1468
     },
     {
       "id": "20793783",
@@ -7895,7 +8277,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7258,
+      "resale_net": -1535
     },
     {
       "id": "21035890",
@@ -7935,7 +8319,9 @@
       "first_price": 8800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 9107,
+      "resale_net": -628
     },
     {
       "id": "20840421",
@@ -7973,7 +8359,9 @@
       "first_price": 9499,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 8012,
+      "resale_net": -2432
     },
     {
       "id": "20699024",
@@ -8011,7 +8399,9 @@
       "first_price": 12900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 10314,
+      "resale_net": -3850
     },
     {
       "id": "20510018",
@@ -8049,7 +8439,9 @@
       "first_price": 12999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 11795,
+      "resale_net": -2527
     },
     {
       "id": "75288542",
@@ -8088,7 +8480,9 @@
       "first_price": 13200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13797,
+      "resale_net": -810
     },
     {
       "id": "20442034",
@@ -8126,7 +8520,9 @@
       "first_price": 14500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 12237,
+      "resale_net": -3706
     },
     {
       "id": "20983178",
@@ -8166,7 +8562,9 @@
       "first_price": 15480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 16748,
+      "resale_net": -402
     },
     {
       "id": "20905295",
@@ -8204,7 +8602,9 @@
       "first_price": 2780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8661,
+      "resale_net": 5383
     },
     {
       "id": "20905265",
@@ -8242,7 +8642,9 @@
       "first_price": 3420,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7178,
+      "resale_net": 3267
     },
     {
       "id": "21039603",
@@ -8280,7 +8682,9 @@
       "first_price": 3680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4270,
+      "resale_net": 183
     },
     {
       "id": "21100457",
@@ -8321,7 +8725,9 @@
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4435,
+      "resale_net": -300
     },
     {
       "id": "20398184",
@@ -8359,7 +8765,9 @@
       "first_price": 5800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 5894,
+      "resale_net": -518
     },
     {
       "id": "20877358",
@@ -8397,7 +8805,9 @@
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7203,
+      "resale_net": 231
     },
     {
       "id": "21087495",
@@ -8435,7 +8845,9 @@
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6786,
+      "resale_net": -1455
     },
     {
       "id": "21032439",
@@ -8475,7 +8887,9 @@
       "first_price": 7899,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9929,
+      "resale_net": 1130
     },
     {
       "id": "20868666",
@@ -8515,7 +8929,9 @@
       "first_price": 8500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11734,
+      "resale_net": 2228
     },
     {
       "id": "78689990",
@@ -8553,7 +8969,9 @@
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 10609,
+      "resale_net": -3458
     },
     {
       "id": "20775263",
@@ -8591,7 +9009,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 11544,
+      "resale_net": -2749
     },
     {
       "id": "21014737",
@@ -8632,7 +9052,9 @@
       "first_price": 14300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 14971,
+      "resale_net": -854
     },
     {
       "id": "76400758",
@@ -8670,7 +9092,9 @@
       "first_price": 25000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 20829,
+      "resale_net": -6650
     },
     {
       "id": "21074366",
@@ -8710,7 +9134,9 @@
       "first_price": 49800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.3
+      "premium": 1.3,
+      "market_value": 30322,
+      "resale_net": -24025
     },
     {
       "id": "78838664",
@@ -8748,7 +9174,9 @@
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12098,
+      "resale_net": 9556
     },
     {
       "id": "21087425",
@@ -8788,7 +9216,9 @@
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3634,
+      "resale_net": 639
     },
     {
       "id": "20042303",
@@ -8826,7 +9256,9 @@
       "first_price": 2780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4883,
+      "resale_net": 1737
     },
     {
       "id": "77434800",
@@ -8869,7 +9301,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6107,
+      "resale_net": 1635
     },
     {
       "id": "77549087",
@@ -8907,7 +9341,9 @@
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9140,
+      "resale_net": -1644
     },
     {
       "id": "20871461",
@@ -8945,7 +9381,9 @@
       "first_price": 10500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8929,
+      "resale_net": -2619
     },
     {
       "id": "21052672",
@@ -8983,7 +9421,9 @@
       "first_price": 11180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9275,
+      "resale_net": -3012
     },
     {
       "id": "20998454",
@@ -9021,7 +9461,9 @@
       "first_price": 11800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11373,
+      "resale_net": -1651
     },
     {
       "id": "77063044",
@@ -9059,7 +9501,9 @@
       "first_price": 11850,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10993,
+      "resale_net": -2071
     },
     {
       "id": "76159494",
@@ -9099,7 +9543,9 @@
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11937,
+      "resale_net": -1299
     },
     {
       "id": "20353813",
@@ -9139,7 +9585,9 @@
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10696,
+      "resale_net": -3374
     },
     {
       "id": "20602644",
@@ -9179,7 +9627,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12772,
+      "resale_net": -1564
     },
     {
       "id": "20960261",
@@ -9217,7 +9667,9 @@
       "first_price": 13900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11302,
+      "resale_net": -3967
     },
     {
       "id": "21119276",
@@ -9257,7 +9709,9 @@
       "first_price": 14300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 13050,
+      "resale_net": -2708
     },
     {
       "id": "78419001",
@@ -9298,7 +9752,9 @@
       "first_price": 14800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11674,
+      "resale_net": -4571
     },
     {
       "id": "20392396",
@@ -9338,7 +9794,9 @@
       "first_price": 29800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 16725,
+      "resale_net": -15746
     },
     {
       "id": "20898216",
@@ -9376,7 +9834,9 @@
       "first_price": 3150,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3178,
+      "resale_net": -304
     },
     {
       "id": "21069386",
@@ -9414,7 +9874,9 @@
       "first_price": 3380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8528,
+      "resale_net": 4613
     },
     {
       "id": "20747325",
@@ -9454,7 +9916,9 @@
       "first_price": 4298,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4572,
+      "resale_net": -187
     },
     {
       "id": "79161848",
@@ -9494,7 +9958,9 @@
       "first_price": 4750,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4515,
+      "resale_net": -726
     },
     {
       "id": "21065135",
@@ -9535,7 +10001,9 @@
       "first_price": 8000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 6570,
+      "resale_net": -2220
     },
     {
       "id": "20879260",
@@ -9573,7 +10041,9 @@
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 11404,
+      "resale_net": -2691
     },
     {
       "id": "21087548",
@@ -9613,7 +10083,9 @@
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 17538,
+      "resale_net": 18
     },
     {
       "id": "20826565",
@@ -9655,7 +10127,9 @@
       "first_price": 21000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 21941,
+      "resale_net": -1297
     },
     {
       "id": "20949529",
@@ -9693,7 +10167,9 @@
       "first_price": 2650,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3258,
+      "resale_net": 308
     },
     {
       "id": "21039899",
@@ -9731,7 +10207,9 @@
       "first_price": 6499,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6154,
+      "resale_net": -1015
     },
     {
       "id": "21039901",
@@ -9769,7 +10247,9 @@
       "first_price": 6799,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6154,
+      "resale_net": -1336
     },
     {
       "id": "20346936",
@@ -9807,7 +10287,9 @@
       "first_price": 8480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7673,
+      "resale_net": -1669
     },
     {
       "id": "20966081",
@@ -9845,7 +10327,9 @@
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 10054,
+      "resale_net": -3116
     },
     {
       "id": "20756550",
@@ -9885,7 +10369,9 @@
       "first_price": 19800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 12793,
+      "resale_net": -8841
     },
     {
       "id": "78802357",
@@ -9923,7 +10409,9 @@
       "first_price": 42500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 27236,
+      "resale_net": -19192
     },
     {
       "id": "20193171",
@@ -9961,7 +10449,9 @@
       "first_price": 1680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2784,
+      "resale_net": 889
     },
     {
       "id": "20460626",
@@ -9999,7 +10489,9 @@
       "first_price": 2300,
       "drop": 200,
       "drop_pct": 9,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4095,
+      "resale_net": 1705
     },
     {
       "id": "78948569",
@@ -10037,7 +10529,9 @@
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3851,
+      "resale_net": 1063
     },
     {
       "id": "20799236",
@@ -10077,7 +10571,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3468,
+      "resale_net": 158
     },
     {
       "id": "20177779",
@@ -10115,7 +10611,9 @@
       "first_price": 3150,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4721,
+      "resale_net": 1185
     },
     {
       "id": "21105313",
@@ -10155,7 +10653,9 @@
       "first_price": 3200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4122,
+      "resale_net": 554
     },
     {
       "id": "21059337",
@@ -10195,7 +10695,9 @@
       "first_price": 3380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3957,
+      "resale_net": 202
     },
     {
       "id": "20864508",
@@ -10235,7 +10737,9 @@
       "first_price": 3500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4303,
+      "resale_net": 407
     },
     {
       "id": "20527703",
@@ -10273,7 +10777,9 @@
       "first_price": 5680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 5486,
+      "resale_net": -784
     },
     {
       "id": "20179661",
@@ -10311,7 +10817,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8272,
+      "resale_net": 1584
     },
     {
       "id": "20927759",
@@ -10349,7 +10857,9 @@
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8804,
+      "resale_net": -1113
     },
     {
       "id": "20753613",
@@ -10387,7 +10897,9 @@
       "first_price": 8999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 6274,
+      "resale_net": -3575
     },
     {
       "id": "20456645",
@@ -10425,7 +10937,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10741,
+      "resale_net": -314
     },
     {
       "id": "20892243",
@@ -10463,7 +10977,9 @@
       "first_price": 11000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 9535,
+      "resale_net": -2569
     },
     {
       "id": "79147265",
@@ -10502,7 +11018,9 @@
       "first_price": 14880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 14988,
+      "resale_net": -1458
     },
     {
       "id": "20348997",
@@ -10540,7 +11058,9 @@
       "first_price": 1180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3920,
+      "resale_net": 2520
     },
     {
       "id": "79111549",
@@ -10578,7 +11098,9 @@
       "first_price": 2580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6914,
+      "resale_net": 3911
     },
     {
       "id": "20194033",
@@ -10618,7 +11140,9 @@
       "first_price": 4490,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4586,
+      "resale_net": -379
     },
     {
       "id": "21110055",
@@ -10656,7 +11180,9 @@
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4892,
+      "resale_net": -929
     },
     {
       "id": "20803438",
@@ -10696,7 +11222,9 @@
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5435,
+      "resale_net": -940
     },
     {
       "id": "20536151",
@@ -10736,7 +11264,9 @@
       "first_price": 5899,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 7152,
+      "resale_net": 590
     },
     {
       "id": "20914132",
@@ -10776,7 +11306,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5833,
+      "resale_net": -770
     },
     {
       "id": "20553743",
@@ -10816,7 +11348,9 @@
       "first_price": 6200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5633,
+      "resale_net": -1198
     },
     {
       "id": "20848759",
@@ -10854,7 +11388,9 @@
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9148,
+      "resale_net": -1637
     },
     {
       "id": "20800353",
@@ -10892,7 +11428,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8991,
+      "resale_net": -2002
     },
     {
       "id": "20151841",
@@ -10930,7 +11468,9 @@
       "first_price": 11300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 11188,
+      "resale_net": -1295
     },
     {
       "id": "20637028",
@@ -10968,7 +11508,9 @@
       "first_price": 11300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 11188,
+      "resale_net": -1295
     },
     {
       "id": "21056284",
@@ -11006,7 +11548,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 11687,
+      "resale_net": -1562
     },
     {
       "id": "21090982",
@@ -11046,7 +11590,9 @@
       "first_price": 12300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11016,
+      "resale_net": -2531
     },
     {
       "id": "20933300",
@@ -11086,7 +11632,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11791,
+      "resale_net": -2510
     },
     {
       "id": "78879589",
@@ -11125,7 +11673,9 @@
       "first_price": 15600,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 15931,
+      "resale_net": -1319
     },
     {
       "id": "21051878",
@@ -11165,7 +11715,9 @@
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10921,
+      "resale_net": -6367
     },
     {
       "id": "79001102",
@@ -11205,7 +11757,9 @@
       "first_price": 27800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 25829,
+      "resale_net": -4821
     },
     {
       "id": "21087426",
@@ -11245,7 +11799,9 @@
       "first_price": 1480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 1929,
+      "resale_net": 278
     },
     {
       "id": "20976777",
@@ -11283,7 +11839,9 @@
       "first_price": 1680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4226,
+      "resale_net": 2280
     },
     {
       "id": "20721040",
@@ -11321,7 +11879,9 @@
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3161,
+      "resale_net": 397
     },
     {
       "id": "21077210",
@@ -11359,7 +11919,9 @@
       "first_price": 2490,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5260,
+      "resale_net": 2412
     },
     {
       "id": "20355672",
@@ -11399,7 +11961,9 @@
       "first_price": 2810,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3489,
+      "resale_net": 360
     },
     {
       "id": "21100729",
@@ -11439,7 +12003,9 @@
       "first_price": 3300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3641,
+      "resale_net": -17
     },
     {
       "id": "21006797",
@@ -11477,7 +12043,9 @@
       "first_price": 4780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4751,
+      "resale_net": -530
     },
     {
       "id": "20900850",
@@ -11517,7 +12085,9 @@
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5119,
+      "resale_net": -389
     },
     {
       "id": "20239148",
@@ -11557,7 +12127,9 @@
       "first_price": 7999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9929,
+      "resale_net": 1023
     },
     {
       "id": "21039755",
@@ -11597,7 +12169,9 @@
       "first_price": 9900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9734,
+      "resale_net": -1200
     },
     {
       "id": "20983917",
@@ -11639,7 +12213,9 @@
       "first_price": 10800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8746,
+      "resale_net": -3116
     },
     {
       "id": "20418009",
@@ -11677,7 +12253,9 @@
       "first_price": 10900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9478,
+      "resale_net": -2517
     },
     {
       "id": "73772402",
@@ -11719,7 +12297,9 @@
       "first_price": 13000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 16336,
+      "resale_net": 1854
     },
     {
       "id": "21046691",
@@ -11757,7 +12337,9 @@
       "first_price": 13800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 11757,
+      "resale_net": -3420
     },
     {
       "id": "21028472",
@@ -11795,7 +12377,9 @@
       "first_price": 13800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 11757,
+      "resale_net": -3420
     },
     {
       "id": "77400170",
@@ -11835,7 +12419,9 @@
       "first_price": 2290,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2673,
+      "resale_net": 129
     },
     {
       "id": "20483964",
@@ -11875,7 +12461,9 @@
       "first_price": 5750,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5978,
+      "resale_net": -384
     },
     {
       "id": "20128483",
@@ -11913,7 +12501,9 @@
       "first_price": 6699,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 5865,
+      "resale_net": -1508
     },
     {
       "id": "77033045",
@@ -11951,7 +12541,9 @@
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7282,
+      "resale_net": -976
     },
     {
       "id": "21056058",
@@ -11989,7 +12581,9 @@
       "first_price": 7780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6398,
+      "resale_net": -2151
     },
     {
       "id": "21048437",
@@ -12029,7 +12623,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8188,
+      "resale_net": -637
     },
     {
       "id": "20871351",
@@ -12067,7 +12663,9 @@
       "first_price": 8280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8751,
+      "resale_net": -415
     },
     {
       "id": "20289435",
@@ -12107,7 +12705,9 @@
       "first_price": 8780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9487,
+      "resale_net": -240
     },
     {
       "id": "20577395",
@@ -12146,7 +12746,9 @@
       "first_price": 9720,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10172,
+      "resale_net": -584
     },
     {
       "id": "20642110",
@@ -12186,7 +12788,9 @@
       "first_price": 33800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 15279,
+      "resale_net": -21422
     },
     {
       "id": "20803675",
@@ -12226,7 +12830,9 @@
       "first_price": 59800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.18
+      "premium": 1.18,
+      "market_value": 36653,
+      "resale_net": -28616
     },
     {
       "id": "20562808",
@@ -12264,7 +12870,9 @@
       "first_price": 2800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3545,
+      "resale_net": 425
     },
     {
       "id": "20614753",
@@ -12302,7 +12910,9 @@
       "first_price": 7598,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 7340,
+      "resale_net": -1047
     },
     {
       "id": "21079235",
@@ -12340,7 +12950,9 @@
       "first_price": 8280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7352,
+      "resale_net": -1765
     },
     {
       "id": "21071325",
@@ -12380,7 +12992,9 @@
       "first_price": 11990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9702,
+      "resale_net": -3467
     },
     {
       "id": "20986747",
@@ -12420,7 +13034,9 @@
       "first_price": 22000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 27079,
+      "resale_net": 2591
     },
     {
       "id": "78640141",
@@ -12460,7 +13076,9 @@
       "first_price": 27900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 25358,
+      "resale_net": -5383
     },
     {
       "id": "20664948",
@@ -12502,7 +13120,9 @@
       "first_price": 8780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9847,
+      "resale_net": 108
     },
     {
       "id": "20690863",
@@ -12540,7 +13160,9 @@
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8961,
+      "resale_net": -961
     },
     {
       "id": "20051736",
@@ -12578,7 +13200,9 @@
       "first_price": 9880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 8149,
+      "resale_net": -2708
     },
     {
       "id": "79081005",
@@ -12620,7 +13244,9 @@
       "first_price": 9950,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9733,
+      "resale_net": -1254
     },
     {
       "id": "78323650",
@@ -12659,7 +13285,9 @@
       "first_price": 12180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9257,
+      "resale_net": -4100
     },
     {
       "id": "21095839",
@@ -12699,7 +13327,9 @@
       "first_price": 16300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12362,
+      "resale_net": -5512
     },
     {
       "id": "20988596",
@@ -12739,7 +13369,9 @@
       "first_price": 27800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 20944,
+      "resale_net": -9535
     },
     {
       "id": "20953601",
@@ -12779,7 +13411,9 @@
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3052,
+      "resale_net": 292
     },
     {
       "id": "79235046",
@@ -12819,7 +13453,9 @@
       "first_price": 3080,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3901,
+      "resale_net": 469
     },
     {
       "id": "21103663",
@@ -12859,7 +13495,9 @@
       "first_price": 3200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3128,
+      "resale_net": -405
     },
     {
       "id": "21126031",
@@ -12897,7 +13535,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9129,
+      "resale_net": 4765
     },
     {
       "id": "20949088",
@@ -12937,7 +13577,9 @@
       "first_price": 3799,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3689,
+      "resale_net": -505
     },
     {
       "id": "21040001",
@@ -12977,7 +13619,9 @@
       "first_price": 4690,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4748,
+      "resale_net": -436
     },
     {
       "id": "20774750",
@@ -13017,7 +13661,9 @@
       "first_price": 4780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6114,
+      "resale_net": 785
     },
     {
       "id": "20557566",
@@ -13057,7 +13703,9 @@
       "first_price": 5850,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4380,
+      "resale_net": -2033
     },
     {
       "id": "20907007",
@@ -13097,7 +13745,9 @@
       "first_price": 6299,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5661,
+      "resale_net": -1277
     },
     {
       "id": "20927415",
@@ -13137,7 +13787,9 @@
       "first_price": 6540,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5526,
+      "resale_net": -1665
     },
     {
       "id": "20827522",
@@ -13177,7 +13829,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6501,
+      "resale_net": -1195
     },
     {
       "id": "20657169",
@@ -13217,7 +13871,9 @@
       "first_price": 8520,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9094,
+      "resale_net": -341
     },
     {
       "id": "21033193",
@@ -13257,7 +13913,9 @@
       "first_price": 9380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 7451,
+      "resale_net": -2846
     },
     {
       "id": "78284256",
@@ -13298,7 +13956,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8838,
+      "resale_net": -1615
     },
     {
       "id": "20789853",
@@ -13336,7 +13996,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7670,
+      "resale_net": -3277
     },
     {
       "id": "21120411",
@@ -13374,7 +14036,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7562,
+      "resale_net": -3381
     },
     {
       "id": "20685172",
@@ -13412,7 +14076,9 @@
       "first_price": 10480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7674,
+      "resale_net": -3808
     },
     {
       "id": "20396589",
@@ -13450,7 +14116,9 @@
       "first_price": 10780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7673,
+      "resale_net": -4130
     },
     {
       "id": "20919329",
@@ -13488,7 +14156,9 @@
       "first_price": 1500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3716,
+      "resale_net": 1981
     },
     {
       "id": "21051305",
@@ -13528,7 +14198,9 @@
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2863,
+      "resale_net": -105
     },
     {
       "id": "20964283",
@@ -13566,7 +14238,9 @@
       "first_price": 3480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4118,
+      "resale_net": 250
     },
     {
       "id": "78950844",
@@ -13604,7 +14278,9 @@
       "first_price": 5399,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 5391,
+      "resale_net": -575
     },
     {
       "id": "20945625",
@@ -13644,7 +14320,9 @@
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6350,
+      "resale_net": -592
     },
     {
       "id": "79153115",
@@ -13684,7 +14362,9 @@
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10006,
+      "resale_net": -274
     },
     {
       "id": "78455128",
@@ -13722,7 +14402,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6881,
+      "resale_net": -3503
     },
     {
       "id": "20905007",
@@ -13762,7 +14444,9 @@
       "first_price": 9850,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7748,
+      "resale_net": -3063
     },
     {
       "id": "21020860",
@@ -13802,7 +14486,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7245,
+      "resale_net": -5849
     },
     {
       "id": "20882466",
@@ -13842,7 +14528,9 @@
       "first_price": 12480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10410,
+      "resale_net": -3308
     },
     {
       "id": "20881161",
@@ -13882,7 +14570,9 @@
       "first_price": 23800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 14493,
+      "resale_net": -11480
     },
     {
       "id": "21017617",
@@ -13920,7 +14610,9 @@
       "first_price": 3100,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3430,
+      "resale_net": -7
     },
     {
       "id": "20559664",
@@ -13960,7 +14652,9 @@
       "first_price": 3990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4770,
+      "resale_net": 334
     },
     {
       "id": "20693467",
@@ -14001,7 +14695,9 @@
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4294,
+      "resale_net": -650
     },
     {
       "id": "20477240",
@@ -14039,7 +14735,9 @@
       "first_price": 5699,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4444,
+      "resale_net": -1809
     },
     {
       "id": "20221598",
@@ -14077,7 +14775,9 @@
       "first_price": 5999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4969,
+      "resale_net": -1624
     },
     {
       "id": "79230207",
@@ -14115,7 +14815,9 @@
       "first_price": 6790,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5283,
+      "resale_net": -2167
     },
     {
       "id": "21113569",
@@ -14153,7 +14855,9 @@
       "first_price": 6799,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4786,
+      "resale_net": -2656
     },
     {
       "id": "20767460",
@@ -14193,7 +14897,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7956,
+      "resale_net": 209
     },
     {
       "id": "20192752",
@@ -14233,7 +14939,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6847,
+      "resale_net": -1931
     },
     {
       "id": "20212800",
@@ -14271,7 +14979,9 @@
       "first_price": 8680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6971,
+      "resale_net": -2561
     },
     {
       "id": "20327004",
@@ -14309,7 +15019,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12123,
+      "resale_net": -2190
     },
     {
       "id": "20535006",
@@ -14347,7 +15059,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9159,
+      "resale_net": -5050
     },
     {
       "id": "78991888",
@@ -14385,7 +15099,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9159,
+      "resale_net": -5050
     },
     {
       "id": "20895562",
@@ -14423,7 +15139,9 @@
       "first_price": 14490,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 10390,
+      "resale_net": -5478
     },
     {
       "id": "79209372",
@@ -14463,7 +15181,9 @@
       "first_price": 17000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12250,
+      "resale_net": -6369
     },
     {
       "id": "20183687",
@@ -14503,7 +15223,9 @@
       "first_price": 42400,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.2
+      "premium": 1.2,
+      "market_value": 25983,
+      "resale_net": -20294
     },
     {
       "id": "20816603",
@@ -14543,7 +15265,9 @@
       "first_price": 2180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2389,
+      "resale_net": -27
     },
     {
       "id": "20955440",
@@ -14583,7 +15307,9 @@
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3134,
+      "resale_net": 371
     },
     {
       "id": "20493889",
@@ -14623,7 +15349,9 @@
       "first_price": 3298,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3604,
+      "resale_net": -51
     },
     {
       "id": "20289488",
@@ -14663,7 +15391,9 @@
       "first_price": 4180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4508,
+      "resale_net": -122
     },
     {
       "id": "20683509",
@@ -14703,7 +15433,9 @@
       "first_price": 5380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4833,
+      "resale_net": -1093
     },
     {
       "id": "78915011",
@@ -14741,7 +15473,9 @@
       "first_price": 8180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7703,
+      "resale_net": -1319
     },
     {
       "id": "20776504",
@@ -14784,7 +15518,9 @@
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10737,
+      "resale_net": 432
     },
     {
       "id": "20602623",
@@ -14824,7 +15560,9 @@
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9919,
+      "resale_net": -1107
     },
     {
       "id": "20805699",
@@ -14862,7 +15600,9 @@
       "first_price": 11290,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7287,
+      "resale_net": -5048
     },
     {
       "id": "77443977",
@@ -14900,7 +15640,9 @@
       "first_price": 14000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13684,
+      "resale_net": -1775
     },
     {
       "id": "20962933",
@@ -14938,7 +15680,9 @@
       "first_price": 14590,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 10729,
+      "resale_net": -5258
     },
     {
       "id": "78673217",
@@ -14978,7 +15722,9 @@
       "first_price": 25000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 19390,
+      "resale_net": -8039
     },
     {
       "id": "20236468",
@@ -15018,7 +15764,9 @@
       "first_price": 25800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 15730,
+      "resale_net": -12427
     },
     {
       "id": "20848053",
@@ -15056,7 +15804,9 @@
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2956,
+      "resale_net": 734
     },
     {
       "id": "20184588",
@@ -15094,7 +15844,9 @@
       "first_price": 2380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5298,
+      "resale_net": 2566
     },
     {
       "id": "20880603",
@@ -15132,7 +15884,9 @@
       "first_price": 2380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2628,
+      "resale_net": -11
     },
     {
       "id": "20691214",
@@ -15170,7 +15924,9 @@
       "first_price": 6699,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5565,
+      "resale_net": -1798
     },
     {
       "id": "21085986",
@@ -15210,7 +15966,9 @@
       "first_price": 6880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6040,
+      "resale_net": -1533
     },
     {
       "id": "21065770",
@@ -15248,7 +16006,9 @@
       "first_price": 10800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7643,
+      "resale_net": -4181
     },
     {
       "id": "20644132",
@@ -15286,7 +16046,9 @@
       "first_price": 10980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7644,
+      "resale_net": -4372
     },
     {
       "id": "20695694",
@@ -15324,7 +16086,9 @@
       "first_price": 11480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7634,
+      "resale_net": -4917
     },
     {
       "id": "20765865",
@@ -15365,7 +16129,9 @@
       "first_price": 13800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13031,
+      "resale_net": -2191
     },
     {
       "id": "21010176",
@@ -15405,7 +16171,9 @@
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3203,
+      "resale_net": 223
     },
     {
       "id": "21114184",
@@ -15446,7 +16214,9 @@
       "first_price": 3580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3816,
+      "resale_net": -148
     },
     {
       "id": "21073828",
@@ -15486,7 +16256,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3896,
+      "resale_net": -285
     },
     {
       "id": "20866734",
@@ -15524,7 +16296,9 @@
       "first_price": 7498,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6618,
+      "resale_net": -1636
     },
     {
       "id": "20302543",
@@ -15564,7 +16338,9 @@
       "first_price": 9180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8548,
+      "resale_net": -1574
     },
     {
       "id": "20828233",
@@ -15607,7 +16383,9 @@
       "first_price": 9400,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.15
+      "premium": 1.15,
+      "market_value": 10116,
+      "resale_net": -296
     },
     {
       "id": "20927845",
@@ -15645,7 +16423,9 @@
       "first_price": 10480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7646,
+      "resale_net": -3835
     },
     {
       "id": "20316251",
@@ -15683,7 +16463,9 @@
       "first_price": 11180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7936,
+      "resale_net": -4304
     },
     {
       "id": "21031874",
@@ -15723,7 +16505,9 @@
       "first_price": 12480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8156,
+      "resale_net": -5483
     },
     {
       "id": "20628611",
@@ -15761,7 +16545,9 @@
       "first_price": 13180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10709,
+      "resale_net": -3768
     },
     {
       "id": "20895072",
@@ -15801,7 +16587,9 @@
       "first_price": 13480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8120,
+      "resale_net": -6588
     },
     {
       "id": "79221884",
@@ -15839,7 +16627,9 @@
       "first_price": 1450,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6369,
+      "resale_net": 4595
     },
     {
       "id": "79094566",
@@ -15879,7 +16669,9 @@
       "first_price": 2000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2271,
+      "resale_net": 52
     },
     {
       "id": "20331123",
@@ -15917,7 +16709,9 @@
       "first_price": 3680,
       "drop": 100,
       "drop_pct": 3,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5771,
+      "resale_net": 1738
     },
     {
       "id": "78255982",
@@ -15957,7 +16751,9 @@
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4294,
+      "resale_net": 99
     },
     {
       "id": "20596697",
@@ -15995,7 +16791,9 @@
       "first_price": 4700,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4397,
+      "resale_net": -786
     },
     {
       "id": "20177011",
@@ -16035,7 +16833,9 @@
       "first_price": 4999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4408,
+      "resale_net": -1095
     },
     {
       "id": "20042952",
@@ -16075,7 +16875,9 @@
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4428,
+      "resale_net": -1591
     },
     {
       "id": "20773578",
@@ -16116,7 +16918,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4740,
+      "resale_net": -1824
     },
     {
       "id": "20636809",
@@ -16154,7 +16958,9 @@
       "first_price": 7350,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5161,
+      "resale_net": -2884
     },
     {
       "id": "20536481",
@@ -16194,7 +17000,9 @@
       "first_price": 10480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7430,
+      "resale_net": -4044
     },
     {
       "id": "20025425",
@@ -16233,7 +17041,9 @@
       "first_price": 12988,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11886,
+      "resale_net": -2427
     },
     {
       "id": "20086461",
@@ -16273,7 +17083,9 @@
       "first_price": 15980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10899,
+      "resale_net": -6581
     },
     {
       "id": "21105014",
@@ -16311,7 +17123,9 @@
       "first_price": 19500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 12356,
+      "resale_net": -8941
     },
     {
       "id": "20839246",
@@ -16351,7 +17165,9 @@
       "first_price": 21980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 16157,
+      "resale_net": -7927
     },
     {
       "id": "79092813",
@@ -16391,7 +17207,9 @@
       "first_price": 79990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 43606,
+      "resale_net": -43510
     },
     {
       "id": "20084046",
@@ -16431,7 +17249,9 @@
       "first_price": 1760,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 1938,
+      "resale_net": -13
     },
     {
       "id": "20746219",
@@ -16471,7 +17291,9 @@
       "first_price": 3880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3213,
+      "resale_net": -1051
     },
     {
       "id": "21071056",
@@ -16514,7 +17336,9 @@
       "first_price": 6480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5446,
+      "resale_net": -1678
     },
     {
       "id": "20918481",
@@ -16554,7 +17378,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5663,
+      "resale_net": -2004
     },
     {
       "id": "20904272",
@@ -16594,7 +17420,9 @@
       "first_price": 7899,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7822,
+      "resale_net": -904
     },
     {
       "id": "21062869",
@@ -16632,7 +17460,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5752,
+      "resale_net": -2988
     },
     {
       "id": "21109353",
@@ -16672,7 +17502,9 @@
       "first_price": 8490,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6527,
+      "resale_net": -2786
     },
     {
       "id": "21015068",
@@ -16710,7 +17542,9 @@
       "first_price": 13480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13231,
+      "resale_net": -1656
     },
     {
       "id": "21077262",
@@ -16752,7 +17586,9 @@
       "first_price": 16500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 14819,
+      "resale_net": -3355
     },
     {
       "id": "76290616",
@@ -16794,7 +17630,9 @@
       "first_price": 3680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4366,
+      "resale_net": 276
     },
     {
       "id": "20978616",
@@ -16832,7 +17670,9 @@
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4768,
+      "resale_net": -1262
     },
     {
       "id": "78517875",
@@ -16873,7 +17713,9 @@
       "first_price": 5600,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6727,
+      "resale_net": 500
     },
     {
       "id": "20692270",
@@ -16911,7 +17753,9 @@
       "first_price": 6680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5621,
+      "resale_net": -1723
     },
     {
       "id": "21071326",
@@ -16951,7 +17795,9 @@
       "first_price": 6999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5711,
+      "resale_net": -1978
     },
     {
       "id": "20691054",
@@ -16991,7 +17837,9 @@
       "first_price": 10800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9296,
+      "resale_net": -2585
     },
     {
       "id": "77544445",
@@ -17029,7 +17877,9 @@
       "first_price": 11800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6360,
+      "resale_net": -6489
     },
     {
       "id": "20584556",
@@ -17067,7 +17917,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 9337,
+      "resale_net": -3830
     },
     {
       "id": "20948528",
@@ -17107,7 +17959,9 @@
       "first_price": 15780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 13792,
+      "resale_net": -3575
     },
     {
       "id": "20767618",
@@ -17147,7 +18001,9 @@
       "first_price": 2180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2650,
+      "resale_net": 225
     },
     {
       "id": "20266228",
@@ -17187,7 +18043,9 @@
       "first_price": 2900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2897,
+      "resale_net": -307
     },
     {
       "id": "20482455",
@@ -17225,7 +18083,9 @@
       "first_price": 2950,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2772,
+      "resale_net": -482
     },
     {
       "id": "20240763",
@@ -17263,7 +18123,9 @@
       "first_price": 4880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4617,
+      "resale_net": -766
     },
     {
       "id": "79225769",
@@ -17303,7 +18165,9 @@
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3687,
+      "resale_net": -2092
     },
     {
       "id": "21095500",
@@ -17341,7 +18205,9 @@
       "first_price": 6599,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5484,
+      "resale_net": -1769
     },
     {
       "id": "20659139",
@@ -17379,7 +18245,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6461,
+      "resale_net": -1234
     },
     {
       "id": "20674659",
@@ -17422,7 +18290,9 @@
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10110,
+      "resale_net": -173
     },
     {
       "id": "78813061",
@@ -17461,7 +18331,9 @@
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 12097,
+      "resale_net": -1145
     },
     {
       "id": "21005123",
@@ -17497,7 +18369,9 @@
       "first_price": 13500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 14369,
+      "resale_net": -579
     },
     {
       "id": "20340248",
@@ -17537,7 +18411,9 @@
       "first_price": 13880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11783,
+      "resale_net": -3481
     },
     {
       "id": "20058868",
@@ -17575,7 +18451,9 @@
       "first_price": 980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4125,
+      "resale_net": 2932
     },
     {
       "id": "21041627",
@@ -17613,7 +18491,9 @@
       "first_price": 980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2579,
+      "resale_net": 1440
     },
     {
       "id": "20993647",
@@ -17651,7 +18531,9 @@
       "first_price": 7990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6523,
+      "resale_net": -2255
     },
     {
       "id": "20912604",
@@ -17691,7 +18573,9 @@
       "first_price": 8380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7039,
+      "resale_net": -2174
     },
     {
       "id": "20413035",
@@ -17729,7 +18613,9 @@
       "first_price": 8580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 7010,
+      "resale_net": -2416
     },
     {
       "id": "20459488",
@@ -17767,7 +18653,9 @@
       "first_price": 11800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10383,
+      "resale_net": -2606
     },
     {
       "id": "78089441",
@@ -17806,7 +18694,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6668,
+      "resale_net": -7454
     },
     {
       "id": "20372302",
@@ -17844,7 +18734,9 @@
       "first_price": 2599,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2735,
+      "resale_net": -142
     },
     {
       "id": "20953500",
@@ -17882,7 +18774,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2988,
+      "resale_net": -305
     },
     {
       "id": "78898846",
@@ -17920,7 +18814,9 @@
       "first_price": 3580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3828,
+      "resale_net": -137
     },
     {
       "id": "20584898",
@@ -17961,7 +18857,9 @@
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4096,
+      "resale_net": -627
     },
     {
       "id": "20785920",
@@ -17999,7 +18897,9 @@
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3780,
+      "resale_net": -1146
     },
     {
       "id": "21066526",
@@ -18040,7 +18940,9 @@
       "first_price": 4699,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4791,
+      "resale_net": -405
     },
     {
       "id": "20779939",
@@ -18078,7 +18980,9 @@
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5193,
+      "resale_net": -1387
     },
     {
       "id": "20834543",
@@ -18116,7 +19020,9 @@
       "first_price": 7180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4758,
+      "resale_net": -3091
     },
     {
       "id": "20720586",
@@ -18156,7 +19062,9 @@
       "first_price": 7580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5405,
+      "resale_net": -2895
     },
     {
       "id": "20476798",
@@ -18194,7 +19102,9 @@
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5259,
+      "resale_net": -3357
     },
     {
       "id": "20957393",
@@ -18232,7 +19142,9 @@
       "first_price": 7950,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 5806,
+      "resale_net": -2904
     },
     {
       "id": "78205879",
@@ -18272,7 +19184,9 @@
       "first_price": 9498,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7366,
+      "resale_net": -3055
     },
     {
       "id": "21035949",
@@ -18312,7 +19226,9 @@
       "first_price": 9498,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7366,
+      "resale_net": -3055
     },
     {
       "id": "78046494",
@@ -18351,7 +19267,9 @@
       "first_price": 10588,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10026,
+      "resale_net": -1654
     },
     {
       "id": "20421493",
@@ -18389,7 +19307,9 @@
       "first_price": 14900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11251,
+      "resale_net": -5086
     },
     {
       "id": "20546339",
@@ -18427,7 +19347,9 @@
       "first_price": 14900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11251,
+      "resale_net": -5086
     },
     {
       "id": "20664908",
@@ -18466,7 +19388,9 @@
       "first_price": 16800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10741,
+      "resale_net": -7611
     },
     {
       "id": "72070994",
@@ -18506,7 +19430,9 @@
       "first_price": 17900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11876,
+      "resale_net": -7693
     },
     {
       "id": "20127183",
@@ -18547,7 +19473,9 @@
       "first_price": 56800,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 53316,
+      "resale_net": -9326
     },
     {
       "id": "20161975",
@@ -18585,7 +19513,9 @@
       "first_price": 3990,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3915,
+      "resale_net": -491
     },
     {
       "id": "21099870",
@@ -18623,7 +19553,9 @@
       "first_price": 6899,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5484,
+      "resale_net": -2090
     },
     {
       "id": "20440702",
@@ -18661,7 +19593,9 @@
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6982,
+      "resale_net": -1801
     },
     {
       "id": "21029674",
@@ -18699,7 +19633,9 @@
       "first_price": 8490,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6173,
+      "resale_net": -3127
     },
     {
       "id": "20988568",
@@ -18739,7 +19675,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8356,
+      "resale_net": -2080
     },
     {
       "id": "21036161",
@@ -18780,7 +19718,9 @@
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3788,
+      "resale_net": -603
     },
     {
       "id": "79225874",
@@ -18820,7 +19760,9 @@
       "first_price": 5099,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4795,
+      "resale_net": -829
     },
     {
       "id": "20777723",
@@ -18861,7 +19803,9 @@
       "first_price": 5900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4367,
+      "resale_net": -2099
     },
     {
       "id": "20483256",
@@ -18901,7 +19845,9 @@
       "first_price": 9580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7205,
+      "resale_net": -3298
     },
     {
       "id": "20595992",
@@ -18939,7 +19885,9 @@
       "first_price": 10500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.12
+      "premium": 1.12,
+      "market_value": 6914,
+      "resale_net": -4563
     },
     {
       "id": "20475364",
@@ -18979,7 +19927,9 @@
       "first_price": 11500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6683,
+      "resale_net": -5856
     },
     {
       "id": "20259578",
@@ -19017,7 +19967,9 @@
       "first_price": 13780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10336,
+      "resale_net": -4770
     },
     {
       "id": "20851627",
@@ -19057,7 +20009,9 @@
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4085,
+      "resale_net": -852
     },
     {
       "id": "78340102",
@@ -19095,7 +20049,9 @@
       "first_price": 4650,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4881,
+      "resale_net": -265
     },
     {
       "id": "20870506",
@@ -19133,7 +20089,9 @@
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5192,
+      "resale_net": -1709
     },
     {
       "id": "20996638",
@@ -19171,7 +20129,9 @@
       "first_price": 6780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5643,
+      "resale_net": -1809
     },
     {
       "id": "79172540",
@@ -19211,7 +20171,9 @@
       "first_price": 6899,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6137,
+      "resale_net": -1460
     },
     {
       "id": "20381380",
@@ -19252,7 +20214,9 @@
       "first_price": 7499,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6405,
+      "resale_net": -1843
     },
     {
       "id": "20727930",
@@ -19290,7 +20254,9 @@
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6128,
+      "resale_net": -2518
     },
     {
       "id": "20968102",
@@ -19330,7 +20296,9 @@
       "first_price": 8200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7242,
+      "resale_net": -1785
     },
     {
       "id": "79163258",
@@ -19369,7 +20337,9 @@
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8054,
+      "resale_net": -2157
     },
     {
       "id": "79196514",
@@ -19409,7 +20379,9 @@
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8268,
+      "resale_net": -5910
     },
     {
       "id": "20845716",
@@ -19447,7 +20419,9 @@
       "first_price": 3290,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3206,
+      "resale_net": -427
     },
     {
       "id": "20981552",
@@ -19487,7 +20461,9 @@
       "first_price": 3890,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2912,
+      "resale_net": -1352
     },
     {
       "id": "20778039",
@@ -19527,7 +20503,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6580,
+      "resale_net": -1119
     },
     {
       "id": "21086005",
@@ -19565,7 +20543,9 @@
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5726,
+      "resale_net": -2178
     },
     {
       "id": "20656523",
@@ -19606,7 +20586,9 @@
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8824,
+      "resale_net": -1949
     },
     {
       "id": "20509597",
@@ -19644,7 +20626,9 @@
       "first_price": 10999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7551,
+      "resale_net": -4482
     },
     {
       "id": "77937031",
@@ -19683,7 +20667,9 @@
       "first_price": 12170,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 11278,
+      "resale_net": -2139
     },
     {
       "id": "20630015",
@@ -19721,7 +20707,9 @@
       "first_price": 14000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10867,
+      "resale_net": -4493
     },
     {
       "id": "21104540",
@@ -19759,7 +20747,9 @@
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2904,
+      "resale_net": -65
     },
     {
       "id": "21108456",
@@ -19797,7 +20787,9 @@
       "first_price": 6799,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 5258,
+      "resale_net": -2201
     },
     {
       "id": "78781798",
@@ -19835,7 +20827,9 @@
       "first_price": 6899,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.1
+      "premium": 1.1,
+      "market_value": 5258,
+      "resale_net": -2308
     },
     {
       "id": "20967751",
@@ -19873,7 +20867,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4233,
+      "resale_net": -3384
     },
     {
       "id": "20374933",
@@ -19912,7 +20908,9 @@
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10009,
+      "resale_net": -3181
     },
     {
       "id": "20210003",
@@ -19951,7 +20949,9 @@
       "first_price": 12600,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 10804,
+      "resale_net": -3056
     },
     {
       "id": "20765463",
@@ -19991,7 +20991,9 @@
       "first_price": 2080,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2288,
+      "resale_net": -18
     },
     {
       "id": "21064655",
@@ -20029,7 +21031,9 @@
       "first_price": 3999,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3602,
+      "resale_net": -803
     },
     {
       "id": "20723811",
@@ -20067,7 +21071,9 @@
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3584,
+      "resale_net": -1121
     },
     {
       "id": "20877301",
@@ -20105,7 +21111,9 @@
       "first_price": 5790,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4912,
+      "resale_net": -1455
     },
     {
       "id": "77169370",
@@ -20147,7 +21155,9 @@
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6171,
+      "resale_net": -765
     },
     {
       "id": "78268504",
@@ -20185,7 +21195,9 @@
       "first_price": 6399,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5098,
+      "resale_net": -1927
     },
     {
       "id": "21115058",
@@ -20225,7 +21237,9 @@
       "first_price": 7680,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5681,
+      "resale_net": -2735
     },
     {
       "id": "21010108",
@@ -20265,7 +21279,9 @@
       "first_price": 8580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 5066,
+      "resale_net": -4292
     },
     {
       "id": "20659152",
@@ -20306,7 +21322,9 @@
       "first_price": 4300,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3278,
+      "resale_net": -1438
     },
     {
       "id": "20339558",
@@ -20344,7 +21362,9 @@
       "first_price": 4380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3216,
+      "resale_net": -1583
     },
     {
       "id": "21033292",
@@ -20384,7 +21404,9 @@
       "first_price": 4790,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4194,
+      "resale_net": -1078
     },
     {
       "id": "20039197",
@@ -20424,7 +21446,9 @@
       "first_price": 15900,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8171,
+      "resale_net": -9128
     },
     {
       "id": "21005654",
@@ -20462,7 +21486,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2645,
+      "resale_net": -636
     },
     {
       "id": "20305087",
@@ -20502,7 +21528,9 @@
       "first_price": 5880,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4099,
+      "resale_net": -2336
     },
     {
       "id": "20589579",
@@ -20542,7 +21570,9 @@
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 6618,
+      "resale_net": -3757
     },
     {
       "id": "20965651",
@@ -20580,7 +21610,9 @@
       "first_price": 3280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3121,
+      "resale_net": -498
     },
     {
       "id": "21028316",
@@ -20620,7 +21652,9 @@
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3909,
+      "resale_net": -3696
     },
     {
       "id": "20375153",
@@ -20659,7 +21693,9 @@
       "first_price": 9000,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 7994,
+      "resale_net": -1916
     },
     {
       "id": "20785838",
@@ -20699,7 +21735,9 @@
       "first_price": 3290,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2567,
+      "resale_net": -1043
     },
     {
       "id": "21139971",
@@ -20737,7 +21775,9 @@
       "first_price": 4199,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3748,
+      "resale_net": -876
     },
     {
       "id": "20922333",
@@ -20777,7 +21817,9 @@
       "first_price": 4490,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3828,
+      "resale_net": -1110
     },
     {
       "id": "79011105",
@@ -20816,7 +21858,9 @@
       "first_price": 11500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 8206,
+      "resale_net": -4386
     },
     {
       "id": "20800349",
@@ -20856,7 +21900,9 @@
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3099,
+      "resale_net": -2873
     },
     {
       "id": "20723776",
@@ -20896,7 +21942,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2513,
+      "resale_net": -764
     },
     {
       "id": "78154548",
@@ -20934,7 +21982,9 @@
       "first_price": 3180,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2736,
+      "resale_net": -762
     },
     {
       "id": "20996757",
@@ -20975,7 +22025,9 @@
       "first_price": 4580,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3658,
+      "resale_net": -1371
     },
     {
       "id": "20705314",
@@ -21015,7 +22067,9 @@
       "first_price": 4699,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 4178,
+      "resale_net": -996
     },
     {
       "id": "20255979",
@@ -21053,7 +22107,9 @@
       "first_price": 5380,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.08
+      "premium": 1.08,
+      "market_value": 5062,
+      "resale_net": -872
     },
     {
       "id": "20562001",
@@ -21091,7 +22147,9 @@
       "first_price": 3280,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2925,
+      "resale_net": -687
     },
     {
       "id": "20869403",
@@ -21131,7 +22189,9 @@
       "first_price": 1930,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 1376,
+      "resale_net": -737
     },
     {
       "id": "20383137",
@@ -21171,7 +22231,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2565,
+      "resale_net": -713
     },
     {
       "id": "78770523",
@@ -21209,7 +22271,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 3218,
+      "resale_net": -83
     },
     {
       "id": "75391318",
@@ -21249,7 +22313,9 @@
       "first_price": 4500,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2251,
+      "resale_net": -2643
     },
     {
       "id": "21098814",
@@ -21287,7 +22353,9 @@
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2632,
+      "resale_net": -649
     },
     {
       "id": "21029183",
@@ -21327,7 +22395,9 @@
       "first_price": 4780,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2990,
+      "resale_net": -2229
     },
     {
       "id": "20703566",
@@ -21365,7 +22435,9 @@
       "first_price": 3299,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 2905,
+      "resale_net": -727
     },
     {
       "id": "20879064",
@@ -21405,7 +22477,9 @@
       "first_price": 1790,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 1260,
+      "resale_net": -699
     },
     {
       "id": "20013953",
@@ -21445,7 +22519,9 @@
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0,
-      "premium": 1.0
+      "premium": 1.0,
+      "market_value": 1448,
+      "resale_net": -721
     }
   ]
 }

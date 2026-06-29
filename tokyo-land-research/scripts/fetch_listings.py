@@ -807,6 +807,24 @@ def apply_detail(r, html, with_elev=True):
         r["mgmt_adj"] = max(-5, min(3, adj))
         if re.match(r"^1階(?!\d)", g("所在階").lstrip()):
             notes.append("1階住戸（防犯・眺望でマイナス、専用庭の利点も）")
+    # 建替え余地（戦略③）：容積率×土地面積で建てられる延床を概算。床増しの余地は土地活用の価値。
+    if r["kind"] in ("戸建", "土地") and r.get("land"):
+        pcts = re.findall(r"(\d+)\s*[%％]", g("容積率", "建ぺい率"))
+        if pcts:
+            vr = int(pcts[-1])                     # 「建ぺい率/容積率 60%/160%」の最後＝容積率
+            if 50 <= vr <= 1300:
+                floor = round(r["land"] * vr / 100)
+                r["build_floor"] = floor
+                cur = r.get("bld") or 0
+                if not cur or floor > cur * 1.15:
+                    notes.append(f"容積率{vr}%＝土地{r['land']:.0f}㎡で延床約{floor}㎡まで建築可（建替えで床増し/賃貸併用の余地）")
+    # 売り急ぎ・相続シグナル（指値が通りやすい＝割安取得チャンスの可能性）。相続は申告期限10ヶ月で急ぐことが多い。
+    urg = [k for k in ("相続", "売り急ぎ", "早期売却", "即金", "価格応談", "価格相談", "任意売却", "お早めに")
+           if k in body_t]
+    if urg:
+        if "売り急ぎ" not in r["tags"]:
+            r["tags"].append("売り急ぎ")
+        notes.append("売り急ぎ/相続のサイン（" + "・".join(urg[:3]) + "）＝指値が通りやすい可能性（要確認）")
     # 標高（C）：低地は浸水・液状化リスクの目安（国土地理院API）
     if with_elev:
         el = gsi_elevation("東京都" + r["loc"])
@@ -922,6 +940,17 @@ def enrich(r):
     score += r.get("mgmt_adj", 0)         # 管理・修繕の健全性（詳細取得済みマンションのみ）
 
     r["score"] = max(0, min(100, score))
+
+    # 手取り試算：今の相場で売却したら往復コスト差引でいくら残るか（＝買値以上で出せるかの目安）。
+    # 相場価値=買値×相場比（割安なら買値<相場価値）。取得諸費用≈7%・売却諸費用≈3.5%で控除。
+    # ※将来の値上がりは見込まない“今すぐ相場で売却”の保守的試算。値上がり率はAPI導入後に加味予定。
+    if ratio and unit and size:
+        mval = round(r["price"] * ratio)
+        r["market_value"] = mval
+        r["resale_net"] = round(mval - r["price"] - r["price"] * 0.07 - mval * 0.035)
+    else:
+        r["market_value"] = None
+        r["resale_net"] = None
     r["grade"] = ("高" if r["score"] >= 78 else "中高" if r["score"] >= 62
                   else "中" if r["score"] >= 48 else "低")
 
@@ -991,7 +1020,7 @@ def render(rows, errors):
     cards = []
     trs = []
     for r in rows:
-        tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"] if t != "新築")
+        tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"] if t not in ("新築", "売り急ぎ"))
         is_ms = r["kind"] == "マンション"
         area = []
         if is_ms:
@@ -1066,6 +1095,8 @@ def render(rows, errors):
             badges.append('<span class="bdg b-mgmt">🏢管理良好</span>')
         elif r.get("mgmt_adj", 0) <= -3:
             badges.append('<span class="bdg b-warn">⚠積立不足</span>')
+        if "売り急ぎ" in r["tags"]:
+            badges.append('<span class="bdg b-urgent">🏃売り急ぎ?（指値余地）</span>')
         if spot_kind == "鉄道":
             badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
         elif spot_kind == "波":
@@ -1090,9 +1121,19 @@ def render(rows, errors):
                        if r.get("reason") else "")
         # 実質コストはJS側で計算（フル/簡易リノベ切替・総額並べ替えに対応）。空なら非表示
         cost_html = '<div class="cost"></div>'
+        rn = r.get("resale_net")
+        if rn is not None:
+            _col = "#0b7a55" if rn >= 0 else "#b42318"
+            _sg = "+" if rn >= 0 else "−"
+            net_html = (f'<div class="netline">💰 相場で今売却した時の手取り目安 '
+                        f'<b style="color:{_col}">{_sg}{abs(rn):,}万</b>'
+                        f'<span class="brk">＝相場価値{r["market_value"]:,} − 買値{r["price"]:,} − 往復コスト(取得約7%/売却約3.5%)</span></div>')
+        else:
+            net_html = ""
         cards.append(
             f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
+            f'data-net="{rn or 0}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
             f'data-walk="{walk if walk is not None else 999}" data-tsubo="{r["tsubo"] or 0}" '
             f'data-dev="{dev}" data-watch="{1 if watch else 0}" '
@@ -1120,6 +1161,7 @@ def render(rows, errors):
             f'{f"<div class=tags>{tags}</div>" if tags else ""}'
             f'{reason_html}'
             f'{cost_html}'
+            f'{net_html}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<div class="viewrow">'
             f'<button class="view mark" data-id="{r["id"]}" type="button">📌気になる</button>'
@@ -1132,6 +1174,7 @@ def render(rows, errors):
         dev_ic = {"波": "🌊", "鉄道": "🚇", "再開発": "🏗"}.get(spot_kind, "")
         trs.append(
             f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
+            f'data-net="{rn or 0}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
             f'data-tsubo="{r["tsubo"] or 0}" data-dev="{dev}" data-watch="{1 if watch else 0}" '
@@ -1296,11 +1339,16 @@ def render(rows, errors):
                         key=lambda x: -x["score"])[:12]
     drops = sorted([r for r in rows if r.get("drop", 0) > 0],
                    key=lambda x: -x.get("drop_pct", 0))[:10]
-    if new_honmei or drops:
+    urgent = sorted([r for r in rows if "売り急ぎ" in r.get("tags", [])],
+                    key=lambda x: -x["score"])[:10]
+    if new_honmei or drops or urgent:
         dparts = []
         if new_honmei:
             dparts.append('<div class="wsub">🆕 新着の本命（今日初観測・スコア70+ または ウォッチ該当）'
                           + f'{len(new_honmei)}件</div>' + "".join(_digrow(r, "🆕") for r in new_honmei))
+        if urgent:
+            dparts.append('<div class="wsub">🏃 売り急ぎ/相続サイン（指値が通りやすい可能性）'
+                          + f'{len(urgent)}件</div>' + "".join(_digrow(r, "🏃") for r in urgent))
         if drops:
             dparts.append('<div class="wsub">📉 値下げ（指値・売り急ぎの可能性）'
                           + f'{len(drops)}件</div>' + "".join(_digrow(r, "📉") for r in drops))
@@ -1378,6 +1426,9 @@ TEMPLATE = """<!DOCTYPE html>
   .b-aff{{background:#fce7f1;color:#c01a6b;border:1px solid #f6bcd6}}
   .b-prime{{background:#f3ecda;color:#8a6d1f;border:1px solid #e0cf9b}}
   .b-mgmt{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
+  .b-urgent{{background:#fdeede;color:#b5630a;border:1px solid #f4cf9f}}
+  .netline{{font-size:.82rem;color:#2c3744;background:#f3f7f4;border:1px solid #d8e6dd;border-radius:8px;padding:6px 10px;margin:6px 0}}
+  .netline .brk{{display:block;color:var(--muted);font-size:.74rem;margin-top:1px}}
   .profline{{font-size:.84rem;color:#1b2430;background:#fff;border:1px solid #f1d9a0;border-radius:9px;padding:8px 11px;margin:4px 0 8px;line-height:1.7}}
   .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
   .b-wave{{background:#e0f3f8;color:#0e7d92;border:1px solid #bce4ee}}
@@ -1526,7 +1577,7 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
-  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="aff">📌好み順（似てる）</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="aff">📌好み順（似てる）</option><option value="net">手取り(相場売却)順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
@@ -1563,6 +1614,7 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="dbody">
 <p class="lead">スコアは目安。最後は<b>「10〜30年後に、誰が・いくらで買ってくれるか（出口）」</b>を物件ごとに具体で考えます。値持ちを左右する主な観点：</p>
 <ul>
+<li><b>💰手取り目安（相場で今売却）</b>：各カードに「相場価値 − 買値 − 往復コスト(取得約7%/売却約3.5%)」を表示。<b>プラス＝割安クッションが往復コストを上回る</b>。満額のプレミアム物件はマイナス＝<b>その分の値上がりが必要</b>＝出口は将来の値上がり頼み、と読む。並びの「手取り順」で比較可。<br>※大きなプラスは“相場比が過大（訳あり）”のこともあるので🔎見立てと併読。</li>
 <li><b>流動性（売りやすさ）</b>：駅近 × 実需サイズ（専有50〜80㎡）× 人気/名門エリア＝<b>いつでも買い手がいる</b>。スコアの駅近・出口ティア・規模・🏛値持ちが代理指標。</li>
 <li><b>管理・修繕の健全性（マンション）</b>：修繕積立金の積立不足は将来の一時金・値崩れに直結。<b>総戸数が多いほど管理が安定</b>（小規模は1戸あたり負担が重い）。🔎見立てで「積立金低め」を警告。</li>
 <li><b>建替え事業性（戦略④）</b>：<b>容積に余裕</b>（消化率が低い）・敷地権割合・合意のしやすさ＝建替えで等価交換の含み益。都心・駅近・低層ほど有利。各カードに建替え目安年。</li>
@@ -1603,6 +1655,7 @@ TEMPLATE = """<!DOCTYPE html>
 <li><b>駅遠・狭小・極小ワンルーム</b>：実需が薄く価格が出にくい。賃貸・転売の出口を具体に描けるかが鍵。</li>
 <li><b>難が見当たらず割安</b>：指値・設備更新で“詰める”領域。掲載が長い物件は値下げ余地があることも（＝大家が売り急ぐ／こだわらないサイン）。</li>
 <li><b>📉値下げ／⏳滞留バッジ</b>：当ツールが毎日価格を記録し、<b>値下げ額・観測日数</b>を自動算出。値下げ＝指値が通りやすい・売り急ぎのサイン、滞留が長い＝買い手不在で交渉余地。<b>「値下げ率順」「滞留日数順」で並べ替え可能</b>。</li>
+<li><b>🏃売り急ぎ?（指値余地）バッジ</b>：詳細ページのPR/備考に<b>相続・売り急ぎ・早期売却・即金・価格応談</b>等の語を検知。<b>相続は申告期限（10ヶ月）で1年以内に売り急ぐ</b>ことが多く、<b>相場価値より安く出る＝割安取得チャンス</b>。今日のダイジェストにも一覧表示。※業者表現のこともあるので必ず現地・売却理由を確認。</li>
 </ul>
 <p class="lead">※観測日数は「当ツールが最初に見た日」起点（SUUMOの掲載開始日ではない）。日が経つほど精度が上がります。「大家が売り急いでいるか」の最良の代理指標です。</p>
 </div></details>
