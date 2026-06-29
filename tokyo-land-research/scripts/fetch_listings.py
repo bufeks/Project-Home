@@ -1104,8 +1104,6 @@ def render(rows, errors):
     watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
     pins = WATCHLIST.get("pins", [])
     wparts = []
-    # 📌 気になる物件は localStorage に一本化（pinsは初回シードにのみ使用）。JSで動的表示
-    wparts.append('<div id="pinclicks"></div>')
     # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
     # 住みたいエリアは無条件表示しない（⭐タグと「注目エリア」タブで条件付きで見る）。
     hits = [r for r in rows if r.get("watch_kind") == "building"]   # rowsはスコア降順
@@ -1364,6 +1362,9 @@ TEMPLATE = """<!DOCTYPE html>
 
 <details{watch_open}><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
 <div class="dbody">{watch}</div></details>
+
+<details><summary>📌 気になる物件（自分で📌した物件）</summary>
+<div class="dbody"><div id="pinclicks"></div></div></details>
 
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
