@@ -3,6 +3,58 @@
   "count": 538,
   "rows": [
     {
+      "id": "21010913",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区千駄ヶ谷４-5-15",
+      "price": 3780,
+      "land": null,
+      "bld": 31.33,
+      "plan": "",
+      "walk": 2,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21010913/",
+      "tags": [
+        "旧耐震"
+      ],
+      "name": "ストークメイジュ",
+      "year": 1978,
+      "struct": "SRC",
+      "tier": "S",
+      "unit_disp": "121万/㎡",
+      "use": "実需",
+      "tsubo": 121,
+      "ratio": 1.95,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 100,
+      "grade": "高",
+      "watch": "北参道（渋谷区）",
+      "watch_kind": "area",
+      "comment": "相場より約49%安い（相場比1.95倍） / 駅徒歩2分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
+      "reason": "用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕） / 北西向き（採光面でマイナス材） / 修繕積立金が低め（将来の値上げ・一時金リスク） / 名門アドレスで下値が堅く“売る時に買値以上”を狙える値持ちエリア（満額でも資産が落ちにくい）",
+      "elev": 28.5,
+      "onsite": [
+        "用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕）",
+        "北西向き（採光面でマイナス材）",
+        "修繕積立金が低め（将来の値上げ・一時金リスク）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 3780,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 1.17,
+      "market_value": 7362,
+      "resale_net": 3060,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
+    },
+    {
       "id": "77481832",
       "source": "SUUMO戸建",
       "kind": "戸建",
@@ -45,7 +97,8 @@
       "market_value": 8882,
       "resale_net": 3756,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21090742",
@@ -94,7 +147,8 @@
       "market_value": 9152,
       "resale_net": 3503,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21083161",
@@ -143,7 +197,8 @@
       "market_value": 9939,
       "resale_net": 4029,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20960363",
@@ -187,7 +242,8 @@
       "market_value": 8748,
       "resale_net": 2792,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20657665",
@@ -231,7 +287,8 @@
       "market_value": 8692,
       "resale_net": 2738,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20938002",
@@ -275,7 +332,8 @@
       "market_value": 9752,
       "resale_net": 3012,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "79154560",
@@ -319,7 +377,8 @@
       "market_value": 11346,
       "resale_net": 3480,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21122129",
@@ -363,7 +422,8 @@
       "market_value": 11936,
       "resale_net": 2980,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20841828",
@@ -408,7 +468,8 @@
       "market_value": 13333,
       "resale_net": 3579,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20962875",
@@ -452,7 +513,8 @@
       "market_value": 18021,
       "resale_net": 4550,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21087402",
@@ -496,7 +558,8 @@
       "market_value": 18447,
       "resale_net": 4105,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20937933",
@@ -545,7 +608,8 @@
       "market_value": 19871,
       "resale_net": 5287,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20990507",
@@ -594,7 +658,8 @@
       "market_value": 21419,
       "resale_net": 4833,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21094608",
@@ -639,7 +704,8 @@
       "market_value": 46439,
       "resale_net": 14854,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20537114",
@@ -684,7 +750,8 @@
       "market_value": 43222,
       "resale_net": 11749,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "79208669",
@@ -734,7 +801,8 @@
       "market_value": 13963,
       "resale_net": 4925,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20877480",
@@ -778,7 +846,8 @@
       "market_value": 12777,
       "resale_net": 1651,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20197336",
@@ -820,7 +889,8 @@
       "market_value": 5210,
       "resale_net": 1819,
       "premium_src": "実取引",
-      "cagr": 5.2
+      "cagr": 5.2,
+      "thin_liq": false
     },
     {
       "id": "20863877",
@@ -865,7 +935,8 @@
       "market_value": 20765,
       "resale_net": 9552,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "21033250",
@@ -909,7 +980,8 @@
       "market_value": 15820,
       "resale_net": 4588,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20295578",
@@ -953,7 +1025,8 @@
       "market_value": 8748,
       "resale_net": 2257,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20579214",
@@ -997,7 +1070,8 @@
       "market_value": 8748,
       "resale_net": 2257,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20049224",
@@ -1046,7 +1120,8 @@
       "market_value": 9502,
       "resale_net": 4356,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20499528",
@@ -1090,7 +1165,8 @@
       "market_value": 7900,
       "resale_net": 2498,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20715426",
@@ -1139,7 +1215,8 @@
       "market_value": 35045,
       "resale_net": 5998,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20846318",
@@ -1181,7 +1258,8 @@
       "market_value": 12661,
       "resale_net": 1529,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20732341",
@@ -1225,7 +1303,8 @@
       "market_value": 17435,
       "resale_net": 1952,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20725052",
@@ -1270,7 +1349,8 @@
       "market_value": 9068,
       "resale_net": 3937,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79095575",
@@ -1314,7 +1394,8 @@
       "market_value": 6988,
       "resale_net": 1415,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21028429",
@@ -1364,7 +1445,8 @@
       "market_value": 16062,
       "resale_net": 2660,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20683509",
@@ -1408,7 +1490,8 @@
       "market_value": 7609,
       "resale_net": 1586,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20830167",
@@ -1452,7 +1535,8 @@
       "market_value": 8504,
       "resale_net": 2321,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20453145",
@@ -1500,7 +1584,8 @@
       "market_value": 13703,
       "resale_net": 405,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "77400170",
@@ -1544,7 +1629,8 @@
       "market_value": 4365,
       "resale_net": 1762,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20579280",
@@ -1586,95 +1672,8 @@
       "market_value": 8587,
       "resale_net": 2401,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
-    },
-    {
-      "id": "20542091",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷３-8-2",
-      "price": 8980,
-      "land": 55.27,
-      "bld": 68.48,
-      "plan": "3LDK",
-      "walk": 8,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20542091/",
-      "tags": [],
-      "struct": "木造",
-      "tier": "S",
-      "unit_disp": "537万/坪",
-      "use": "実需",
-      "tsubo": 537,
-      "ratio": 1.49,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 91,
-      "grade": "高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約33%安い（相場比1.49倍） / 駅徒歩8分 / 出口S / 将来性★★★",
-      "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "elev": 38.9,
-      "onsite": [],
-      "detailed": true,
-      "days": 6,
-      "first_price": 8980,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 13375,
-      "resale_net": 3298,
-      "premium_src": "—",
-      "cagr": 5.6
-    },
-    {
-      "id": "78323790",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷３",
-      "price": 8980,
-      "land": 55.27,
-      "bld": 68.48,
-      "plan": "3LDK",
-      "walk": 8,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_78323790/",
-      "tags": [],
-      "struct": "木造",
-      "tier": "S",
-      "unit_disp": "537万/坪",
-      "use": "実需",
-      "tsubo": 537,
-      "ratio": 1.49,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 91,
-      "grade": "高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約33%安い（相場比1.49倍） / 駅徒歩8分 / 出口S / 将来性★★★",
-      "reason": "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意） / 目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "elev": 33.5,
-      "onsite": [
-        "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 8980,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 13375,
-      "resale_net": 3298,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20710388",
@@ -1718,7 +1717,8 @@
       "market_value": 13933,
       "resale_net": -358,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20816603",
@@ -1762,7 +1762,8 @@
       "market_value": 3859,
       "resale_net": 1391,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "21041334",
@@ -1808,7 +1809,8 @@
       "market_value": 10839,
       "resale_net": 6201,
       "premium_src": "—",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20613017",
@@ -1850,7 +1852,8 @@
       "market_value": 9236,
       "resale_net": 1765,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20710944",
@@ -1898,7 +1901,8 @@
       "market_value": 14037,
       "resale_net": 2856,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20179705",
@@ -1941,8 +1945,9 @@
       "premium": 1.18,
       "market_value": 18159,
       "resale_net": 617,
-      "premium_src": "目安",
-      "cagr": 5.6
+      "premium_src": "目安+実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20771979",
@@ -1987,7 +1992,8 @@
       "market_value": 4871,
       "resale_net": 1170,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21090982",
@@ -2031,7 +2037,8 @@
       "market_value": 14497,
       "resale_net": 829,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78915965",
@@ -2078,7 +2085,8 @@
       "market_value": 17884,
       "resale_net": 138,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20597678",
@@ -2123,7 +2131,8 @@
       "market_value": 7468,
       "resale_net": 3162,
       "premium_src": "—",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "21095605",
@@ -2167,7 +2176,8 @@
       "market_value": 6644,
       "resale_net": 1618,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21056703",
@@ -2209,7 +2219,8 @@
       "market_value": 7029,
       "resale_net": 1989,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20767460",
@@ -2253,7 +2264,8 @@
       "market_value": 13740,
       "resale_net": 5790,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "78696428",
@@ -2301,52 +2313,8 @@
       "market_value": 9165,
       "resale_net": 841,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
-    },
-    {
-      "id": "20325073",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷２",
-      "price": 16480,
-      "land": 62.84,
-      "bld": 138.07,
-      "plan": "3LDK",
-      "walk": 3,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20325073/",
-      "tags": [],
-      "struct": "木造",
-      "tier": "S",
-      "unit_disp": "867万/坪",
-      "use": "実需",
-      "tsubo": 867,
-      "ratio": 1.06,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 87,
-      "grade": "高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約6%安い（相場比1.06倍） / 駅徒歩3分 / 出口S / 将来性★★★",
-      "reason": "接道良好（前面道路 約25.27m・公道想定）＝再建築の見込み（最終は役所で確認） / 価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "elev": 40.5,
-      "onsite": [
-        "接道良好（前面道路 約25.27m・公道想定）＝再建築の見込み（最終は役所で確認）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 16480,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 17488,
-      "resale_net": -758,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20998425",
@@ -2390,7 +2358,8 @@
       "market_value": 33195,
       "resale_net": 5283,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20043614",
@@ -2433,7 +2402,8 @@
       "market_value": 7797,
       "resale_net": 2388,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20553743",
@@ -2477,58 +2447,8 @@
       "market_value": 8263,
       "resale_net": 1340,
       "premium_src": "実取引",
-      "cagr": 4.6
-    },
-    {
-      "id": "21010913",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区千駄ヶ谷４-5-15",
-      "price": 3780,
-      "land": null,
-      "bld": 31.33,
-      "plan": "",
-      "walk": 2,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21010913/",
-      "tags": [
-        "旧耐震"
-      ],
-      "name": "ストークメイジュ",
-      "year": 1978,
-      "struct": "SRC",
-      "tier": "S",
-      "unit_disp": "121万/㎡",
-      "use": "実需",
-      "tsubo": 121,
-      "ratio": 1.3,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 85,
-      "grade": "高",
-      "watch": "北参道（渋谷区）",
-      "watch_kind": "area",
-      "comment": "相場より約23%安い（相場比1.3倍） / 駅徒歩2分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
-      "reason": "用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕） / 北西向き（採光面でマイナス材） / 修繕積立金が低め（将来の値上げ・一時金リスク） / 旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え目安は築50〜60年＝2028年頃〜（現状築48年・あと2年前後）。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
-      "elev": 28.5,
-      "onsite": [
-        "用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕）",
-        "北西向き（採光面でマイナス材）",
-        "修繕積立金が低め（将来の値上げ・一時金リスク）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 3780,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 4929,
-      "resale_net": 712,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20579125",
@@ -2570,7 +2490,8 @@
       "market_value": 7517,
       "resale_net": 834,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21043176",
@@ -2614,7 +2535,8 @@
       "market_value": 8560,
       "resale_net": 1327,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20416461",
@@ -2663,7 +2585,8 @@
       "market_value": 11107,
       "resale_net": 2276,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21071325",
@@ -2707,7 +2630,8 @@
       "market_value": 14009,
       "resale_net": 689,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20699024",
@@ -2749,7 +2673,8 @@
       "market_value": 12817,
       "resale_net": -1435,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20887760",
@@ -2794,7 +2719,8 @@
       "market_value": 28556,
       "resale_net": -1868,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20753673",
@@ -2838,7 +2764,8 @@
       "market_value": 6558,
       "resale_net": 1623,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20082037",
@@ -2882,7 +2809,8 @@
       "market_value": 8276,
       "resale_net": 3065,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20483964",
@@ -2926,7 +2854,8 @@
       "market_value": 8739,
       "resale_net": 2281,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21099689",
@@ -2971,7 +2900,8 @@
       "market_value": 8457,
       "resale_net": -399,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78999084",
@@ -3013,7 +2943,8 @@
       "market_value": 5299,
       "resale_net": 3509,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "78674406",
@@ -3057,7 +2988,8 @@
       "market_value": 4310,
       "resale_net": 1752,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21118221",
@@ -3101,7 +3033,8 @@
       "market_value": 3928,
       "resale_net": 1117,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20642181",
@@ -3148,7 +3081,8 @@
       "market_value": 6628,
       "resale_net": 2137,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20177011",
@@ -3192,7 +3126,8 @@
       "market_value": 6730,
       "resale_net": 1146,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20120055",
@@ -3236,7 +3171,8 @@
       "market_value": 14399,
       "resale_net": 1076,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78504111",
@@ -3280,7 +3216,8 @@
       "market_value": 16111,
       "resale_net": -5639,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20109761",
@@ -3324,7 +3261,8 @@
       "market_value": 7486,
       "resale_net": 1039,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20604146",
@@ -3372,7 +3310,8 @@
       "market_value": 10799,
       "resale_net": 4022,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20258022",
@@ -3417,7 +3356,8 @@
       "market_value": 10568,
       "resale_net": 1767,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20590288",
@@ -3464,7 +3404,8 @@
       "market_value": 9342,
       "resale_net": -59,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21118055",
@@ -3509,7 +3450,8 @@
       "market_value": 12423,
       "resale_net": 2358,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21096129",
@@ -3554,7 +3496,8 @@
       "market_value": 10493,
       "resale_net": -553,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20512112",
@@ -3596,7 +3539,8 @@
       "market_value": 10358,
       "resale_net": -1240,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20223972",
@@ -3645,7 +3589,8 @@
       "market_value": 19411,
       "resale_net": 4929,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20704676",
@@ -3689,7 +3634,8 @@
       "market_value": 4503,
       "resale_net": 1050,
       "premium_src": "実取引",
-      "cagr": 4.0
+      "cagr": 4.0,
+      "thin_liq": false
     },
     {
       "id": "21103663",
@@ -3733,7 +3679,8 @@
       "market_value": 4054,
       "resale_net": 488,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "79202565",
@@ -3780,7 +3727,8 @@
       "market_value": 4520,
       "resale_net": 103,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78465110",
@@ -3829,7 +3777,8 @@
       "market_value": 6803,
       "resale_net": 2306,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "79172540",
@@ -3873,7 +3822,51 @@
       "market_value": 9724,
       "resale_net": 2002,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
+    },
+    {
+      "id": "20428186",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区千駄ヶ谷５",
+      "price": 7780,
+      "land": null,
+      "bld": 36.13,
+      "plan": "1LDK",
+      "walk": 3,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20428186/",
+      "tags": [],
+      "name": "グランドパーク代々木",
+      "year": 1998,
+      "struct": "",
+      "tier": "S",
+      "unit_disp": "215万/㎡",
+      "use": "実需",
+      "tsubo": 215,
+      "ratio": 1.09,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 81,
+      "grade": "高",
+      "watch": "北参道（渋谷区）",
+      "watch_kind": "area",
+      "comment": "相場より約8%安い（相場比1.09倍） / 駅徒歩3分 / 出口S / 将来性★★★",
+      "reason": "名門アドレスで下値が堅く“売る時に買値以上”を狙える値持ちエリア（満額でも資産が落ちにくい） / 価格は相場相応。立地・築年・管理状態で比較するゾーン",
+      "days": 6,
+      "first_price": 7780,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 1.17,
+      "market_value": 8490,
+      "resale_net": -132,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20739177",
@@ -3915,7 +3908,8 @@
       "market_value": 4846,
       "resale_net": 2001,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20818171",
@@ -3958,7 +3952,8 @@
       "market_value": 7652,
       "resale_net": 1403,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21111017",
@@ -4000,7 +3995,8 @@
       "market_value": 9151,
       "resale_net": 2432,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20961001",
@@ -4045,7 +4041,8 @@
       "market_value": 10453,
       "resale_net": -56,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20649705",
@@ -4092,7 +4089,8 @@
       "market_value": 11118,
       "resale_net": -1020,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20623893",
@@ -4137,7 +4135,8 @@
       "market_value": 16324,
       "resale_net": 3469,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20852911",
@@ -4181,7 +4180,8 @@
       "market_value": 18738,
       "resale_net": -964,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78993826",
@@ -4225,7 +4225,8 @@
       "market_value": 3439,
       "resale_net": 1339,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20953601",
@@ -4269,7 +4270,8 @@
       "market_value": 4157,
       "resale_net": 1358,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20967345",
@@ -4313,7 +4315,8 @@
       "market_value": 4981,
       "resale_net": 634,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21006797",
@@ -4355,7 +4358,8 @@
       "market_value": 5994,
       "resale_net": 670,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21087495",
@@ -4397,7 +4401,8 @@
       "market_value": 8241,
       "resale_net": -51,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20720586",
@@ -4441,7 +4446,8 @@
       "market_value": 9048,
       "resale_net": 621,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "77244326",
@@ -4487,7 +4493,98 @@
       "market_value": 9127,
       "resale_net": 581,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
+    },
+    {
+      "id": "20542091",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷３-8-2",
+      "price": 8980,
+      "land": 55.27,
+      "bld": 68.48,
+      "plan": "3LDK",
+      "walk": 8,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20542091/",
+      "tags": [],
+      "struct": "木造",
+      "tier": "S",
+      "unit_disp": "537万/坪",
+      "use": "実需",
+      "tsubo": 537,
+      "ratio": 1.11,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 79,
+      "grade": "高",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約10%安い（相場比1.11倍） / 駅徒歩8分 / 出口S / 将来性★★★",
+      "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
+      "elev": 38.9,
+      "onsite": [],
+      "detailed": true,
+      "days": 6,
+      "first_price": 8980,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 9938,
+      "resale_net": -18,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
+    },
+    {
+      "id": "78323790",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷３",
+      "price": 8980,
+      "land": 55.27,
+      "bld": 68.48,
+      "plan": "3LDK",
+      "walk": 8,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_78323790/",
+      "tags": [],
+      "struct": "木造",
+      "tier": "S",
+      "unit_disp": "537万/坪",
+      "use": "実需",
+      "tsubo": 537,
+      "ratio": 1.11,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 79,
+      "grade": "高",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約10%安い（相場比1.11倍） / 駅徒歩8分 / 出口S / 将来性★★★",
+      "reason": "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意） / 目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
+      "elev": 33.5,
+      "onsite": [
+        "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 8980,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 9938,
+      "resale_net": -18,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20638676",
@@ -4529,7 +4626,8 @@
       "market_value": 10232,
       "resale_net": 255,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "79001557",
@@ -4571,7 +4669,8 @@
       "market_value": 10232,
       "resale_net": 255,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "79050228",
@@ -4613,56 +4712,8 @@
       "market_value": 14896,
       "resale_net": 2626,
       "premium_src": "目安+実取引",
-      "cagr": 5.2
-    },
-    {
-      "id": "20637022",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷２",
-      "price": 4280,
-      "land": null,
-      "bld": 38.74,
-      "plan": "1LDK",
-      "walk": 7,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20637022/",
-      "tags": [
-        "旧耐震"
-      ],
-      "name": "コーポラス幡ヶ谷",
-      "year": 1979,
-      "struct": "SRC",
-      "tier": "S",
-      "unit_disp": "110万/㎡",
-      "use": "実需",
-      "tsubo": 110,
-      "ratio": 1.31,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 78,
-      "grade": "高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約24%安い（相場比1.31倍） / 駅徒歩7分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
-      "reason": "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕） / 旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え目安は築50〜60年＝2029年頃〜（現状築47年・あと3年前後）。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
-      "elev": 40.5,
-      "onsite": [
-        "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 4280,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 5618,
-      "resale_net": 842,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 5.2,
+      "thin_liq": false
     },
     {
       "id": "20773578",
@@ -4707,7 +4758,8 @@
       "market_value": 6092,
       "resale_net": -520,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "78353174",
@@ -4751,7 +4803,8 @@
       "market_value": 9113,
       "resale_net": 1733,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20827522",
@@ -4795,7 +4848,8 @@
       "market_value": 7756,
       "resale_net": 16,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20943977",
@@ -4839,7 +4893,8 @@
       "market_value": 10636,
       "resale_net": -222,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "77143949",
@@ -4883,7 +4938,8 @@
       "market_value": 3066,
       "resale_net": 722,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20265825",
@@ -4925,98 +4981,8 @@
       "market_value": 8965,
       "resale_net": 412,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
-    },
-    {
-      "id": "21036563",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷２",
-      "price": 7790,
-      "land": null,
-      "bld": 59.99,
-      "plan": "2LDK",
-      "walk": 6,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21036563/",
-      "tags": [
-        "旧耐震"
-      ],
-      "name": "幡ヶ谷ハウス",
-      "year": 1976,
-      "struct": "",
-      "tier": "S",
-      "unit_disp": "130万/㎡",
-      "use": "実需",
-      "tsubo": 130,
-      "ratio": 1.12,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 77,
-      "grade": "中高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約11%安い（相場比1.12倍） / 駅徒歩6分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
-      "reason": "旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え検討ゾーンの入口（築50年／目安は築50〜60年）。区分所有法改正で決議要件は緩和方向。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
-      "days": 6,
-      "first_price": 7790,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 8699,
-      "resale_net": 59,
-      "premium_src": "—",
-      "cagr": 5.6
-    },
-    {
-      "id": "78209023",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷３",
-      "price": 10680,
-      "land": null,
-      "bld": 73.98,
-      "plan": "3LDK",
-      "walk": 9,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_78209023/",
-      "tags": [],
-      "name": "ガーデンホーム幡ケ谷",
-      "year": 1997,
-      "struct": "RC",
-      "tier": "S",
-      "unit_disp": "144万/㎡",
-      "use": "実需",
-      "tsubo": 144,
-      "ratio": 1.18,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 77,
-      "grade": "中高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約15%安い（相場比1.18倍） / 駅徒歩9分 / 出口S / 将来性★★★",
-      "reason": "南西向き（採光面でマイナス材） / 目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "elev": 33.5,
-      "onsite": [
-        "南西向き（採光面でマイナス材）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 10680,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 12651,
-      "resale_net": 781,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21076039",
@@ -5059,7 +5025,8 @@
       "market_value": 15634,
       "resale_net": 1177,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21090401",
@@ -5107,7 +5074,8 @@
       "market_value": 22656,
       "resale_net": 5813,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "77374425",
@@ -5151,95 +5119,8 @@
       "market_value": 23300,
       "resale_net": 2283,
       "premium_src": "実取引",
-      "cagr": 3.8
-    },
-    {
-      "id": "21018139",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷１",
-      "price": 4180,
-      "land": null,
-      "bld": 35.1,
-      "plan": "1LDK",
-      "walk": 4,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21018139/",
-      "tags": [
-        "旧耐震"
-      ],
-      "name": "秀和幡ケ谷レジデンス",
-      "year": 1974,
-      "struct": "",
-      "tier": "S",
-      "unit_disp": "119万/㎡",
-      "use": "実需",
-      "tsubo": 119,
-      "ratio": 1.22,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 76,
-      "grade": "中高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約18%安い（相場比1.22倍） / 駅徒歩4分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
-      "reason": "旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え検討ゾーンの入口（築52年／目安は築50〜60年）。区分所有法改正で決議要件は緩和方向。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
-      "days": 6,
-      "first_price": 4180,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 5090,
-      "resale_net": 439,
-      "premium_src": "—",
-      "cagr": 5.6
-    },
-    {
-      "id": "20014649",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷３",
-      "price": 4880,
-      "land": null,
-      "bld": 48.6,
-      "plan": "2LDK",
-      "walk": 8,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20014649/",
-      "tags": [
-        "旧耐震"
-      ],
-      "name": "パールハイツ幡ヶ谷",
-      "year": 1974,
-      "struct": "",
-      "tier": "S",
-      "unit_disp": "100万/㎡",
-      "use": "実需",
-      "tsubo": 100,
-      "ratio": 1.36,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 76,
-      "grade": "中高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約26%安い（相場比1.36倍） / 駅徒歩8分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
-      "reason": "旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え検討ゾーンの入口（築52年／目安は築50〜60年）。区分所有法改正で決議要件は緩和方向",
-      "days": 6,
-      "first_price": 4880,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 6648,
-      "resale_net": 1194,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20014653",
@@ -5289,7 +5170,8 @@
       "market_value": 7206,
       "resale_net": -213,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20955769",
@@ -5337,7 +5219,8 @@
       "market_value": 8457,
       "resale_net": 157,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20615173",
@@ -5384,7 +5267,8 @@
       "market_value": 10281,
       "resale_net": -543,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20016273",
@@ -5426,7 +5310,8 @@
       "market_value": 3813,
       "resale_net": 1058,
       "premium_src": "—",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20482455",
@@ -5468,7 +5353,8 @@
       "market_value": 3950,
       "resale_net": 655,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "79224832",
@@ -5517,7 +5403,8 @@
       "market_value": 6133,
       "resale_net": 783,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20799989",
@@ -5565,7 +5452,8 @@
       "market_value": 5916,
       "resale_net": -262,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21111238",
@@ -5609,7 +5497,8 @@
       "market_value": 7379,
       "resale_net": 916,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20251382",
@@ -5651,7 +5540,8 @@
       "market_value": 7926,
       "resale_net": -569,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78875428",
@@ -5695,54 +5585,8 @@
       "market_value": 8181,
       "resale_net": -537,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
-    },
-    {
-      "id": "79061556",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷３",
-      "price": 9480,
-      "land": null,
-      "bld": 63.1,
-      "plan": "3LDK",
-      "walk": 10,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_79061556/",
-      "tags": [],
-      "name": "ガーデンホーム笹塚",
-      "year": 1998,
-      "struct": "RC",
-      "tier": "S",
-      "unit_disp": "150万/㎡",
-      "use": "実需",
-      "tsubo": 150,
-      "ratio": 1.14,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 75,
-      "grade": "中高",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約12%安い（相場比1.14倍） / 駅徒歩10分 / 出口S / 将来性★★★",
-      "reason": "南西向き（採光面でマイナス材） / 目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "elev": 33.5,
-      "onsite": [
-        "南西向き（採光面でマイナス材）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 9480,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 10790,
-      "resale_net": 269,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "78455128",
@@ -5784,7 +5628,8 @@
       "market_value": 9376,
       "resale_net": -1096,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20871461",
@@ -5826,7 +5671,8 @@
       "market_value": 10251,
       "resale_net": -1343,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21087548",
@@ -5870,7 +5716,8 @@
       "market_value": 19836,
       "resale_net": 2236,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20372302",
@@ -5912,7 +5759,8 @@
       "market_value": 3907,
       "resale_net": 989,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "21163783",
@@ -5960,7 +5808,8 @@
       "market_value": 3543,
       "resale_net": 551,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21100729",
@@ -6004,7 +5853,8 @@
       "market_value": 4788,
       "resale_net": 1089,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21039603",
@@ -6046,7 +5896,8 @@
       "market_value": 4663,
       "resale_net": 562,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20892243",
@@ -6088,7 +5939,8 @@
       "market_value": 10025,
       "resale_net": -2096,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20151841",
@@ -6130,7 +5982,8 @@
       "market_value": 11762,
       "resale_net": -741,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20637028",
@@ -6172,7 +6025,8 @@
       "market_value": 11762,
       "resale_net": -741,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20510018",
@@ -6214,7 +6068,8 @@
       "market_value": 12400,
       "resale_net": -1943,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21023948",
@@ -6259,7 +6114,8 @@
       "market_value": 12946,
       "resale_net": -3536,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20178387",
@@ -6307,7 +6163,8 @@
       "market_value": 5291,
       "resale_net": 847,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20398184",
@@ -6349,7 +6206,8 @@
       "market_value": 6196,
       "resale_net": -227,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20557566",
@@ -6393,7 +6251,8 @@
       "market_value": 5602,
       "resale_net": -854,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20722723",
@@ -6435,7 +6294,8 @@
       "market_value": 13171,
       "resale_net": 5006,
       "premium_src": "実取引",
-      "cagr": 3.6
+      "cagr": 3.6,
+      "thin_liq": false
     },
     {
       "id": "21029729",
@@ -6479,7 +6339,8 @@
       "market_value": 9172,
       "resale_net": -437,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "76159494",
@@ -6523,7 +6384,54 @@
       "market_value": 12928,
       "resale_net": -343,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
+    },
+    {
+      "id": "20325073",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷２",
+      "price": 16480,
+      "land": 62.84,
+      "bld": 138.07,
+      "plan": "3LDK",
+      "walk": 3,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20325073/",
+      "tags": [],
+      "struct": "木造",
+      "tier": "S",
+      "unit_disp": "867万/坪",
+      "use": "実需",
+      "tsubo": 867,
+      "ratio": 0.79,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 73,
+      "grade": "中高",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約27%高い（相場比0.79倍） / 駅徒歩3分 / 出口S / 将来性★★★",
+      "reason": "接道良好（前面道路 約25.27m・公道想定）＝再建築の見込み（最終は役所で確認） / 価格は相場相応。立地・築年・管理状態で比較するゾーン",
+      "elev": 40.5,
+      "onsite": [
+        "接道良好（前面道路 約25.27m・公道想定）＝再建築の見込み（最終は役所で確認）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 16480,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 12994,
+      "resale_net": -5094,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20483952",
@@ -6567,7 +6475,8 @@
       "market_value": 3361,
       "resale_net": 590,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "79111549",
@@ -6609,7 +6518,8 @@
       "market_value": 4807,
       "resale_net": 1878,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20864508",
@@ -6653,7 +6563,8 @@
       "market_value": 4708,
       "resale_net": 798,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "78463662",
@@ -6695,7 +6606,8 @@
       "market_value": 6848,
       "resale_net": 2018,
       "premium_src": "実取引",
-      "cagr": 5.5
+      "cagr": 5.5,
+      "thin_liq": false
     },
     {
       "id": "20596697",
@@ -6737,7 +6649,8 @@
       "market_value": 5192,
       "resale_net": -19,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "79225769",
@@ -6781,7 +6694,8 @@
       "market_value": 5804,
       "resale_net": -49,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21056058",
@@ -6823,7 +6737,8 @@
       "market_value": 7735,
       "resale_net": -860,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20578973",
@@ -6868,7 +6783,8 @@
       "market_value": 10924,
       "resale_net": 2003,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20536481",
@@ -6912,7 +6828,8 @@
       "market_value": 10737,
       "resale_net": -852,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21119276",
@@ -6956,7 +6873,8 @@
       "market_value": 13719,
       "resale_net": -2062,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78483844",
@@ -6999,8 +6917,9 @@
       "premium": 1.18,
       "market_value": 13347,
       "resale_net": -4026,
-      "premium_src": "目安",
-      "cagr": 5.6
+      "premium_src": "目安+実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20718984",
@@ -7044,7 +6963,8 @@
       "market_value": 16955,
       "resale_net": -26224,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21098814",
@@ -7086,7 +7006,8 @@
       "market_value": 4325,
       "resale_net": 985,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20686791",
@@ -7130,7 +7051,8 @@
       "market_value": 3657,
       "resale_net": 233,
       "premium_src": "目安+実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20654227",
@@ -7172,7 +7094,8 @@
       "market_value": 7465,
       "resale_net": 3159,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20536151",
@@ -7216,7 +7139,8 @@
       "market_value": 7593,
       "resale_net": 1015,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21065135",
@@ -7261,7 +7185,8 @@
       "market_value": 6907,
       "resale_net": -1895,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21048296",
@@ -7306,7 +7231,8 @@
       "market_value": 10706,
       "resale_net": -101,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20442034",
@@ -7348,7 +7274,8 @@
       "market_value": 12991,
       "resale_net": -2979,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20893736",
@@ -7396,7 +7323,8 @@
       "market_value": 4246,
       "resale_net": 1337,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21010176",
@@ -7440,7 +7368,8 @@
       "market_value": 4004,
       "resale_net": 996,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20042952",
@@ -7484,49 +7413,8 @@
       "market_value": 6048,
       "resale_net": -27,
       "premium_src": "実取引",
-      "cagr": 3.8
-    },
-    {
-      "id": "20428186",
-      "source": "SUUMOマンション",
-      "kind": "マンション",
-      "ward": "渋谷区",
-      "loc": "渋谷区千駄ヶ谷５",
-      "price": 7780,
-      "land": null,
-      "bld": 36.13,
-      "plan": "1LDK",
-      "walk": 3,
-      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20428186/",
-      "tags": [],
-      "name": "グランドパーク代々木",
-      "year": 1998,
-      "struct": "",
-      "tier": "S",
-      "unit_disp": "215万/㎡",
-      "use": "実需",
-      "tsubo": 215,
-      "ratio": 0.91,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 70,
-      "grade": "中高",
-      "watch": "北参道（渋谷区）",
-      "watch_kind": "area",
-      "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩3分 / 出口S / 将来性★★★",
-      "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 6,
-      "first_price": 7780,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 7105,
-      "resale_net": -1468,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20855725",
@@ -7574,7 +7462,8 @@
       "market_value": 11652,
       "resale_net": -633,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21095694",
@@ -7616,7 +7505,8 @@
       "market_value": 5189,
       "resale_net": 1284,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20640098",
@@ -7663,7 +7553,8 @@
       "market_value": 4733,
       "resale_net": -226,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20779510",
@@ -7705,7 +7596,8 @@
       "market_value": 7797,
       "resale_net": 1318,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78689990",
@@ -7747,7 +7639,8 @@
       "market_value": 10980,
       "resale_net": -3100,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20775263",
@@ -7789,7 +7682,8 @@
       "market_value": 11544,
       "resale_net": -2749,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21062205",
@@ -7834,7 +7728,8 @@
       "market_value": 13772,
       "resale_net": -2739,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21074366",
@@ -7878,7 +7773,8 @@
       "market_value": 30322,
       "resale_net": -24025,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21069386",
@@ -7920,7 +7816,8 @@
       "market_value": 5454,
       "resale_net": 1647,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21026397",
@@ -7969,7 +7866,8 @@
       "market_value": 4820,
       "resale_net": 799,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20135460",
@@ -8013,7 +7911,8 @@
       "market_value": 5521,
       "resale_net": 630,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20128483",
@@ -8055,7 +7954,8 @@
       "market_value": 6227,
       "resale_net": -1159,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20567017",
@@ -8104,7 +8004,8 @@
       "market_value": 8084,
       "resale_net": 311,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20614753",
@@ -8146,7 +8047,8 @@
       "market_value": 7792,
       "resale_net": -611,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78705551",
@@ -8194,7 +8096,8 @@
       "market_value": 6799,
       "resale_net": -1731,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21035401",
@@ -8236,7 +8139,8 @@
       "market_value": 11990,
       "resale_net": -1141,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20960261",
@@ -8278,7 +8182,8 @@
       "market_value": 11562,
       "resale_net": -3716,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78419001",
@@ -8323,7 +8228,8 @@
       "market_value": 8335,
       "resale_net": -7793,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20392396",
@@ -8367,7 +8273,8 @@
       "market_value": 16725,
       "resale_net": -15746,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78838664",
@@ -8409,7 +8316,8 @@
       "market_value": 6734,
       "resale_net": 4380,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21087425",
@@ -8453,7 +8361,8 @@
       "market_value": 3532,
       "resale_net": 541,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21126031",
@@ -8495,7 +8404,8 @@
       "market_value": 6392,
       "resale_net": 2124,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20981552",
@@ -8539,7 +8449,8 @@
       "market_value": 4279,
       "resale_net": -33,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20993190",
@@ -8583,7 +8494,8 @@
       "market_value": 4664,
       "resale_net": -400,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20672447",
@@ -8627,7 +8539,8 @@
       "market_value": 5311,
       "resale_net": -428,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "21035890",
@@ -8671,7 +8584,8 @@
       "market_value": 9107,
       "resale_net": -628,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20559231",
@@ -8719,7 +8633,8 @@
       "market_value": 13086,
       "resale_net": 2484,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "79141006",
@@ -8767,7 +8682,8 @@
       "market_value": 13086,
       "resale_net": 2484,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78284256",
@@ -8812,7 +8728,8 @@
       "market_value": 9996,
       "resale_net": -497,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20840421",
@@ -8854,7 +8771,8 @@
       "market_value": 8012,
       "resale_net": -2432,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21117282",
@@ -8899,7 +8817,8 @@
       "market_value": 8885,
       "resale_net": -3185,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20628611",
@@ -8941,7 +8860,8 @@
       "market_value": 12648,
       "resale_net": -1897,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20933882",
@@ -8983,7 +8903,8 @@
       "market_value": 3022,
       "resale_net": 798,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20949529",
@@ -9025,7 +8946,8 @@
       "market_value": 3236,
       "resale_net": 287,
       "premium_src": "実取引",
-      "cagr": 6.1
+      "cagr": 6.1,
+      "thin_liq": false
     },
     {
       "id": "20905295",
@@ -9067,7 +8989,8 @@
       "market_value": 5699,
       "resale_net": 2525,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20266228",
@@ -9111,7 +9034,8 @@
       "market_value": 3809,
       "resale_net": 573,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20779931",
@@ -9159,7 +9083,8 @@
       "market_value": 5115,
       "resale_net": 1512,
       "premium_src": "—",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20851627",
@@ -9203,7 +9128,8 @@
       "market_value": 5758,
       "resale_net": 763,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20642739",
@@ -9251,7 +9177,8 @@
       "market_value": 4971,
       "resale_net": -1602,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21113569",
@@ -9293,7 +9220,8 @@
       "market_value": 5758,
       "resale_net": -1718,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "75288542",
@@ -9336,7 +9264,8 @@
       "market_value": 13535,
       "resale_net": -1063,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "76400758",
@@ -9378,7 +9307,8 @@
       "market_value": 12497,
       "resale_net": -14690,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "79094566",
@@ -9422,7 +9352,8 @@
       "market_value": 3009,
       "resale_net": 764,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20765463",
@@ -9466,7 +9397,8 @@
       "market_value": 3182,
       "resale_net": 845,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "21003380",
@@ -9508,7 +9440,8 @@
       "market_value": 3972,
       "resale_net": 965,
       "premium_src": "実取引",
-      "cagr": 3.6
+      "cagr": 3.6,
+      "thin_liq": false
     },
     {
       "id": "20799236",
@@ -9552,7 +9485,98 @@
       "market_value": 3406,
       "resale_net": 98,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
+    },
+    {
+      "id": "21018139",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷１",
+      "price": 4180,
+      "land": null,
+      "bld": 35.1,
+      "plan": "1LDK",
+      "walk": 4,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21018139/",
+      "tags": [
+        "旧耐震"
+      ],
+      "name": "秀和幡ケ谷レジデンス",
+      "year": 1974,
+      "struct": "",
+      "tier": "S",
+      "unit_disp": "119万/㎡",
+      "use": "実需",
+      "tsubo": 119,
+      "ratio": 0.9,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 65,
+      "grade": "中高",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約11%高い（相場比0.9倍） / 駅徒歩4分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
+      "reason": "旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え検討ゾーンの入口（築52年／目安は築50〜60年）。区分所有法改正で決議要件は緩和方向。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
+      "days": 6,
+      "first_price": 4180,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 3782,
+      "resale_net": -823,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
+    },
+    {
+      "id": "20014649",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷３",
+      "price": 4880,
+      "land": null,
+      "bld": 48.6,
+      "plan": "2LDK",
+      "walk": 8,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20014649/",
+      "tags": [
+        "旧耐震"
+      ],
+      "name": "パールハイツ幡ヶ谷",
+      "year": 1974,
+      "struct": "",
+      "tier": "S",
+      "unit_disp": "100万/㎡",
+      "use": "実需",
+      "tsubo": 100,
+      "ratio": 1.01,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 65,
+      "grade": "中高",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約1%安い（相場比1.01倍） / 駅徒歩8分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
+      "reason": "旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え検討ゾーンの入口（築52年／目安は築50〜60年）。区分所有法改正で決議要件は緩和方向",
+      "days": 6,
+      "first_price": 4880,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 4940,
+      "resale_net": -454,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20913284",
@@ -9594,7 +9618,8 @@
       "market_value": 7574,
       "resale_net": 891,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20862205",
@@ -9642,7 +9667,8 @@
       "market_value": 7493,
       "resale_net": -1008,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21039755",
@@ -9686,7 +9712,8 @@
       "market_value": 10016,
       "resale_net": -928,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20353813",
@@ -9730,7 +9757,8 @@
       "market_value": 11210,
       "resale_net": -2878,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20602644",
@@ -9774,7 +9802,8 @@
       "market_value": 12619,
       "resale_net": -1711,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20535006",
@@ -9816,7 +9845,8 @@
       "market_value": 10798,
       "resale_net": -3469,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78991888",
@@ -9858,7 +9888,8 @@
       "market_value": 10798,
       "resale_net": -3469,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78802357",
@@ -9900,7 +9931,8 @@
       "market_value": 16342,
       "resale_net": -29705,
       "premium_src": "目安+実取引",
-      "cagr": 5.2
+      "cagr": 5.2,
+      "thin_liq": false
     },
     {
       "id": "20869403",
@@ -9944,7 +9976,8 @@
       "market_value": 2135,
       "resale_net": -5,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20283329",
@@ -9988,7 +10021,8 @@
       "market_value": 3048,
       "resale_net": 801,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20589346",
@@ -10035,7 +10069,8 @@
       "market_value": 4044,
       "resale_net": 72,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "77910692",
@@ -10081,7 +10116,8 @@
       "market_value": 6738,
       "resale_net": -2047,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "78915011",
@@ -10123,7 +10159,8 @@
       "market_value": 8712,
       "resale_net": -346,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20825204",
@@ -10172,7 +10209,8 @@
       "market_value": 8261,
       "resale_net": -2568,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20789853",
@@ -10214,7 +10252,8 @@
       "market_value": 8775,
       "resale_net": -2211,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20480094",
@@ -10261,7 +10300,8 @@
       "market_value": 9012,
       "resale_net": -3180,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20879260",
@@ -10303,7 +10343,8 @@
       "market_value": 11404,
       "resale_net": -2691,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20826565",
@@ -10349,7 +10390,8 @@
       "market_value": 21941,
       "resale_net": -1297,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20348997",
@@ -10391,7 +10433,8 @@
       "market_value": 2333,
       "resale_net": 989,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "21104540",
@@ -10433,7 +10476,8 @@
       "market_value": 3527,
       "resale_net": 536,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20705314",
@@ -10477,7 +10521,8 @@
       "market_value": 6038,
       "resale_net": 799,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20552762",
@@ -10522,7 +10567,8 @@
       "market_value": 6056,
       "resale_net": -983,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20339707",
@@ -10566,7 +10612,8 @@
       "market_value": 7025,
       "resale_net": -1010,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20966081",
@@ -10608,7 +10655,8 @@
       "market_value": 10054,
       "resale_net": -3116,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20798652",
@@ -10656,7 +10704,8 @@
       "market_value": 19949,
       "resale_net": 3222,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20756550",
@@ -10700,7 +10749,8 @@
       "market_value": 12793,
       "resale_net": -8841,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21087426",
@@ -10744,7 +10794,8 @@
       "market_value": 1875,
       "resale_net": 226,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20355672",
@@ -10788,7 +10839,8 @@
       "market_value": 3095,
       "resale_net": -20,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20305087",
@@ -10832,7 +10884,8 @@
       "market_value": 6452,
       "resale_net": -65,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20898240",
@@ -10881,7 +10934,8 @@
       "market_value": 6678,
       "resale_net": -1987,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20793783",
@@ -10925,7 +10979,8 @@
       "market_value": 6511,
       "resale_net": -2255,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20753613",
@@ -10967,7 +11022,8 @@
       "market_value": 6479,
       "resale_net": -3377,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "78804328",
@@ -11015,7 +11071,8 @@
       "market_value": 11663,
       "resale_net": 576,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20983917",
@@ -11061,7 +11118,8 @@
       "market_value": 9577,
       "resale_net": -2314,
       "premium_src": "実取引",
-      "cagr": 4.0
+      "cagr": 4.0,
+      "thin_liq": false
     },
     {
       "id": "21052672",
@@ -11103,7 +11161,8 @@
       "market_value": 6186,
       "resale_net": -5993,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "78323650",
@@ -11146,7 +11205,58 @@
       "market_value": 10136,
       "resale_net": -3251,
       "premium_src": "実取引",
-      "cagr": 4.0
+      "cagr": 4.0,
+      "thin_liq": false
+    },
+    {
+      "id": "20637022",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷２",
+      "price": 4280,
+      "land": null,
+      "bld": 38.74,
+      "plan": "1LDK",
+      "walk": 7,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20637022/",
+      "tags": [
+        "旧耐震"
+      ],
+      "name": "コーポラス幡ヶ谷",
+      "year": 1979,
+      "struct": "SRC",
+      "tier": "S",
+      "unit_disp": "110万/㎡",
+      "use": "実需",
+      "tsubo": 110,
+      "ratio": 0.98,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 61,
+      "grade": "中",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩7分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
+      "reason": "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕） / 旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え目安は築50〜60年＝2029年頃〜（現状築47年・あと3年前後）。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
+      "elev": 40.5,
+      "onsite": [
+        "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 4280,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 4174,
+      "resale_net": -552,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20527703",
@@ -11188,7 +11298,8 @@
       "market_value": 5486,
       "resale_net": -784,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20914132",
@@ -11232,7 +11343,53 @@
       "market_value": 5430,
       "resale_net": -1159,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
+    },
+    {
+      "id": "21036563",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷２",
+      "price": 7790,
+      "land": null,
+      "bld": 59.99,
+      "plan": "2LDK",
+      "walk": 6,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21036563/",
+      "tags": [
+        "旧耐震"
+      ],
+      "name": "幡ヶ谷ハウス",
+      "year": 1976,
+      "struct": "",
+      "tier": "S",
+      "unit_disp": "130万/㎡",
+      "use": "実需",
+      "tsubo": 130,
+      "ratio": 0.83,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 61,
+      "grade": "中",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩6分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
+      "reason": "旧耐震・築古＝住宅ローンが付きにくく管理状態の精査が必須。建替え検討ゾーンの入口（築50年／目安は築50〜60年）。区分所有法改正で決議要件は緩和方向。都心×駅近で事業性が高く、容積に余裕があれば等価交換で新築取得の含み（要・容積率/合意状況の確認）",
+      "days": 6,
+      "first_price": 7790,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 6463,
+      "resale_net": -2099,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "79033980",
@@ -11279,7 +11436,8 @@
       "market_value": 7535,
       "resale_net": -1588,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20051736",
@@ -11321,7 +11479,8 @@
       "market_value": 8651,
       "resale_net": -2223,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21120411",
@@ -11363,7 +11522,56 @@
       "market_value": 8296,
       "resale_net": -2673,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
+    },
+    {
+      "id": "78209023",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷３",
+      "price": 10680,
+      "land": null,
+      "bld": 73.98,
+      "plan": "3LDK",
+      "walk": 9,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_78209023/",
+      "tags": [],
+      "name": "ガーデンホーム幡ケ谷",
+      "year": 1997,
+      "struct": "RC",
+      "tier": "S",
+      "unit_disp": "144万/㎡",
+      "use": "実需",
+      "tsubo": 144,
+      "ratio": 0.88,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 61,
+      "grade": "中",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩9分 / 出口S / 将来性★★★",
+      "reason": "南西向き（採光面でマイナス材） / 価格は相場相応。立地・築年・管理状態で比較するゾーン",
+      "elev": 33.5,
+      "onsite": [
+        "南西向き（採光面でマイナス材）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 10680,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 9399,
+      "resale_net": -2358,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21056284",
@@ -11405,7 +11613,8 @@
       "market_value": 11687,
       "resale_net": -1562,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20921212",
@@ -11447,7 +11656,8 @@
       "market_value": 12619,
       "resale_net": -663,
       "premium_src": "実取引",
-      "cagr": 5.5
+      "cagr": 5.5,
+      "thin_liq": false
     },
     {
       "id": "21051878",
@@ -11491,7 +11701,8 @@
       "market_value": 10921,
       "resale_net": -6367,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79001102",
@@ -11535,7 +11746,8 @@
       "market_value": 25519,
       "resale_net": -5120,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79210878",
@@ -11577,7 +11789,8 @@
       "market_value": 5963,
       "resale_net": -965,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21086005",
@@ -11619,7 +11832,8 @@
       "market_value": 7448,
       "resale_net": -517,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20741437",
@@ -11664,7 +11878,8 @@
       "market_value": 7822,
       "resale_net": -1782,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20418009",
@@ -11706,7 +11921,8 @@
       "market_value": 9080,
       "resale_net": -2901,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21046691",
@@ -11748,7 +11964,8 @@
       "market_value": 11757,
       "resale_net": -3420,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21028472",
@@ -11790,7 +12007,8 @@
       "market_value": 11757,
       "resale_net": -3420,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78879589",
@@ -11833,7 +12051,8 @@
       "market_value": 15931,
       "resale_net": -1319,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20355078",
@@ -11875,7 +12094,8 @@
       "market_value": 3791,
       "resale_net": -65,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "79161848",
@@ -11919,7 +12139,8 @@
       "market_value": 3896,
       "resale_net": -1323,
       "premium_src": "実取引",
-      "cagr": 4.0
+      "cagr": 4.0,
+      "thin_liq": false
     },
     {
       "id": "20551064",
@@ -11967,7 +12188,8 @@
       "market_value": 5962,
       "resale_net": 425,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21062484",
@@ -12011,7 +12233,8 @@
       "market_value": 5464,
       "resale_net": -591,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20477240",
@@ -12053,7 +12276,8 @@
       "market_value": 4693,
       "resale_net": -1569,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20910722",
@@ -12097,7 +12321,8 @@
       "market_value": 4909,
       "resale_net": -2731,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "77033045",
@@ -12139,7 +12364,8 @@
       "market_value": 7042,
       "resale_net": -1208,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21032439",
@@ -12183,7 +12409,8 @@
       "market_value": 9095,
       "resale_net": 325,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20239148",
@@ -12227,7 +12454,8 @@
       "market_value": 9095,
       "resale_net": 218,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20868666",
@@ -12271,7 +12499,56 @@
       "market_value": 9364,
       "resale_net": -59,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
+    },
+    {
+      "id": "79061556",
+      "source": "SUUMOマンション",
+      "kind": "マンション",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷３",
+      "price": 9480,
+      "land": null,
+      "bld": 63.1,
+      "plan": "3LDK",
+      "walk": 10,
+      "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_79061556/",
+      "tags": [],
+      "name": "ガーデンホーム笹塚",
+      "year": 1998,
+      "struct": "RC",
+      "tier": "S",
+      "unit_disp": "150万/㎡",
+      "use": "実需",
+      "tsubo": 150,
+      "ratio": 0.85,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 59,
+      "grade": "中",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約18%高い（相場比0.85倍） / 駅徒歩10分 / 出口S / 将来性★★★",
+      "reason": "南西向き（採光面でマイナス材） / 価格は相場相応。立地・築年・管理状態で比較するゾーン",
+      "elev": 33.5,
+      "onsite": [
+        "南西向き（採光面でマイナス材）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 9480,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 8017,
+      "resale_net": -2407,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20316251",
@@ -12313,7 +12590,8 @@
       "market_value": 9079,
       "resale_net": -3201,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20642110",
@@ -12357,7 +12635,8 @@
       "market_value": 15279,
       "resale_net": -21422,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20803675",
@@ -12401,7 +12680,8 @@
       "market_value": 36653,
       "resale_net": -28616,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20600796",
@@ -12447,7 +12727,8 @@
       "market_value": 3661,
       "resale_net": 344,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "79235046",
@@ -12491,7 +12772,8 @@
       "market_value": 3901,
       "resale_net": 469,
       "premium_src": "—",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20777723",
@@ -12536,7 +12818,8 @@
       "market_value": 5459,
       "resale_net": -1045,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "21039899",
@@ -12578,7 +12861,8 @@
       "market_value": 5520,
       "resale_net": -1627,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21039901",
@@ -12620,7 +12904,8 @@
       "market_value": 5520,
       "resale_net": -1948,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21079235",
@@ -12662,7 +12947,8 @@
       "market_value": 6742,
       "resale_net": -2354,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20346936",
@@ -12704,7 +12990,8 @@
       "market_value": 6882,
       "resale_net": -2432,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20691054",
@@ -12748,7 +13035,8 @@
       "market_value": 10514,
       "resale_net": -1410,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20805699",
@@ -12790,7 +13078,8 @@
       "market_value": 8241,
       "resale_net": -4128,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20926912",
@@ -12838,7 +13127,8 @@
       "market_value": 10278,
       "resale_net": -2387,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "21014737",
@@ -12883,7 +13173,8 @@
       "market_value": 11977,
       "resale_net": -3743,
       "premium_src": "実取引",
-      "cagr": 6.1
+      "cagr": 6.1,
+      "thin_liq": false
     },
     {
       "id": "78640141",
@@ -12927,7 +13218,8 @@
       "market_value": 25358,
       "resale_net": -5383,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20460626",
@@ -12969,7 +13261,8 @@
       "market_value": 2815,
       "resale_net": 469,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20633322",
@@ -13017,7 +13310,8 @@
       "market_value": 2629,
       "resale_net": -224,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "79230207",
@@ -13059,7 +13353,8 @@
       "market_value": 5537,
       "resale_net": -1922,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20657217",
@@ -13103,7 +13398,8 @@
       "market_value": 6239,
       "resale_net": -1468,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20927759",
@@ -13145,7 +13441,8 @@
       "market_value": 6603,
       "resale_net": -3237,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20690863",
@@ -13187,7 +13484,8 @@
       "market_value": 8853,
       "resale_net": -1065,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "77549087",
@@ -13229,7 +13527,8 @@
       "market_value": 7285,
       "resale_net": -3435,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79081005",
@@ -13275,7 +13574,8 @@
       "market_value": 9927,
       "resale_net": -1067,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20998454",
@@ -13317,7 +13617,8 @@
       "market_value": 9064,
       "resale_net": -3879,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "77063044",
@@ -13359,7 +13660,8 @@
       "market_value": 8762,
       "resale_net": -4224,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20962933",
@@ -13401,7 +13703,8 @@
       "market_value": 11391,
       "resale_net": -4619,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21095839",
@@ -13445,7 +13748,8 @@
       "market_value": 11126,
       "resale_net": -6704,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20986747",
@@ -13489,7 +13793,8 @@
       "market_value": 24994,
       "resale_net": 579,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20988596",
@@ -13533,7 +13838,8 @@
       "market_value": 16692,
       "resale_net": -13638,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20721040",
@@ -13575,7 +13881,8 @@
       "market_value": 2845,
       "resale_net": 92,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20320415",
@@ -13619,7 +13926,8 @@
       "market_value": 3083,
       "resale_net": -438,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20949088",
@@ -13663,7 +13971,8 @@
       "market_value": 3637,
       "resale_net": -555,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20693467",
@@ -13708,7 +14017,8 @@
       "market_value": 4307,
       "resale_net": -637,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20803438",
@@ -13752,7 +14062,8 @@
       "market_value": 4984,
       "resale_net": -1375,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20221598",
@@ -13794,7 +14105,8 @@
       "market_value": 5352,
       "resale_net": -1254,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20907007",
@@ -13838,7 +14150,8 @@
       "market_value": 5593,
       "resale_net": -1343,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20927415",
@@ -13882,7 +14195,8 @@
       "market_value": 5526,
       "resale_net": -1665,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20391355",
@@ -13926,7 +14240,8 @@
       "market_value": 4206,
       "resale_net": -3410,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20657169",
@@ -13970,7 +14285,8 @@
       "market_value": 8739,
       "resale_net": -683,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "21033193",
@@ -14014,7 +14330,8 @@
       "market_value": 7451,
       "resale_net": -2846,
       "premium_src": "目安+実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20800353",
@@ -14056,7 +14373,8 @@
       "market_value": 8065,
       "resale_net": -2896,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20685172",
@@ -14098,7 +14416,8 @@
       "market_value": 7129,
       "resale_net": -4334,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20396589",
@@ -14140,7 +14459,8 @@
       "market_value": 7128,
       "resale_net": -4656,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20584556",
@@ -14182,7 +14502,8 @@
       "market_value": 10561,
       "resale_net": -2649,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20933300",
@@ -14226,7 +14547,8 @@
       "market_value": 11296,
       "resale_net": -2988,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21078466",
@@ -14271,7 +14593,8 @@
       "market_value": 11813,
       "resale_net": -3045,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79147265",
@@ -14314,7 +14637,8 @@
       "market_value": 13744,
       "resale_net": -2659,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20983178",
@@ -14358,7 +14682,8 @@
       "market_value": 13348,
       "resale_net": -3683,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21105313",
@@ -14402,7 +14727,8 @@
       "market_value": 3672,
       "resale_net": 119,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78950844",
@@ -14444,7 +14770,8 @@
       "market_value": 5391,
       "resale_net": -575,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20680677",
@@ -14486,7 +14813,8 @@
       "market_value": 6155,
       "resale_net": -1015,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20504230",
@@ -14536,7 +14864,8 @@
       "market_value": 7086,
       "resale_net": -1701,
       "premium_src": "実取引",
-      "cagr": 5.5
+      "cagr": 5.5,
+      "thin_liq": false
     },
     {
       "id": "20905007",
@@ -14580,7 +14909,8 @@
       "market_value": 7655,
       "resale_net": -3152,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21020860",
@@ -14624,7 +14954,8 @@
       "market_value": 6520,
       "resale_net": -6548,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20882466",
@@ -14668,7 +14999,8 @@
       "market_value": 10244,
       "resale_net": -3468,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78089441",
@@ -14711,7 +15043,8 @@
       "market_value": 7988,
       "resale_net": -6180,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20881161",
@@ -14755,7 +15088,8 @@
       "market_value": 14493,
       "resale_net": -11480,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20905265",
@@ -14797,7 +15131,8 @@
       "market_value": 4723,
       "resale_net": 898,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20194033",
@@ -14841,7 +15176,8 @@
       "market_value": 4109,
       "resale_net": -839,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20967751",
@@ -14883,7 +15219,8 @@
       "market_value": 6159,
       "resale_net": -1525,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20456645",
@@ -14925,7 +15262,8 @@
       "market_value": 8056,
       "resale_net": -2905,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20765865",
@@ -14970,7 +15308,8 @@
       "market_value": 13109,
       "resale_net": -2116,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20895562",
@@ -15012,7 +15351,8 @@
       "market_value": 10390,
       "resale_net": -5478,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "79209372",
@@ -15056,7 +15396,8 @@
       "market_value": 11601,
       "resale_net": -6995,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21105014",
@@ -15098,7 +15439,8 @@
       "market_value": 13117,
       "resale_net": -8207,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20183687",
@@ -15142,7 +15484,8 @@
       "market_value": 25983,
       "resale_net": -20294,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20916129",
@@ -15186,7 +15529,8 @@
       "market_value": 3245,
       "resale_net": -186,
       "premium_src": "実取引",
-      "cagr": 6.1
+      "cagr": 6.1,
+      "thin_liq": false
     },
     {
       "id": "20898216",
@@ -15228,7 +15572,8 @@
       "market_value": 2622,
       "resale_net": -840,
       "premium_src": "実取引",
-      "cagr": 4.0
+      "cagr": 4.0,
+      "thin_liq": false
     },
     {
       "id": "20747325",
@@ -15272,7 +15617,8 @@
       "market_value": 3644,
       "resale_net": -1082,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21110055",
@@ -15314,7 +15660,8 @@
       "market_value": 3263,
       "resale_net": -2501,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20289435",
@@ -15358,7 +15705,8 @@
       "market_value": 8557,
       "resale_net": -1137,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20848759",
@@ -15400,7 +15748,8 @@
       "market_value": 7620,
       "resale_net": -3111,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20602623",
@@ -15444,7 +15793,8 @@
       "market_value": 9542,
       "resale_net": -1471,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "77544445",
@@ -15486,7 +15836,8 @@
       "market_value": 7276,
       "resale_net": -5605,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "78673217",
@@ -15530,7 +15881,8 @@
       "market_value": 18576,
       "resale_net": -8824,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20236468",
@@ -15574,7 +15926,8 @@
       "market_value": 15510,
       "resale_net": -12639,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20746219",
@@ -15618,7 +15971,8 @@
       "market_value": 3213,
       "resale_net": -1051,
       "premium_src": "—",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "21100457",
@@ -15663,7 +16017,8 @@
       "market_value": 3326,
       "resale_net": -1370,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21085986",
@@ -15707,7 +16062,8 @@
       "market_value": 6040,
       "resale_net": -1533,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20470901",
@@ -15755,7 +16111,8 @@
       "market_value": 5387,
       "resale_net": -2506,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20968102",
@@ -15799,7 +16156,8 @@
       "market_value": 8191,
       "resale_net": -870,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20871351",
@@ -15841,7 +16199,8 @@
       "market_value": 7797,
       "resale_net": -1335,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20664948",
@@ -15887,7 +16246,8 @@
       "market_value": 9463,
       "resale_net": -263,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "21065770",
@@ -15929,7 +16289,8 @@
       "market_value": 7551,
       "resale_net": -4269,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20644132",
@@ -15971,7 +16332,8 @@
       "market_value": 7553,
       "resale_net": -4460,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20695694",
@@ -16013,7 +16375,8 @@
       "market_value": 7543,
       "resale_net": -5005,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20091018",
@@ -16055,55 +16418,8 @@
       "market_value": 2221,
       "resale_net": 217,
       "premium_src": "実取引",
-      "cagr": 3.4
-    },
-    {
-      "id": "78907749",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "渋谷区",
-      "loc": "渋谷区幡ヶ谷３",
-      "price": 7680,
-      "land": 56.37,
-      "bld": 91.05,
-      "plan": "1LDK",
-      "walk": 12,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_78907749/",
-      "tags": [
-        "借地権"
-      ],
-      "struct": "木造",
-      "tier": "S",
-      "unit_disp": "450万/坪",
-      "use": "実需",
-      "tsubo": 450,
-      "ratio": 0.96,
-      "dev": 3,
-      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 51,
-      "grade": "中",
-      "watch": "渋谷区（全域）",
-      "watch_kind": "area",
-      "comment": "相場より約4%高い（相場比0.96倍） / 駅徒歩12分 / 出口S / 将来性★★★ / 借地→融資/出口難",
-      "reason": "借地（土地は借り物・地代/承諾料が必要） / 前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意） / 借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "elev": 33.5,
-      "onsite": [
-        "借地（土地は借り物・地代/承諾料が必要）",
-        "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
-      ],
-      "detailed": true,
-      "days": 6,
-      "first_price": 7680,
-      "drop": 0,
-      "drop_pct": 0,
-      "premium": 1.0,
-      "market_value": 7366,
-      "resale_net": -1109,
-      "premium_src": "—",
-      "cagr": 5.6
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20192752",
@@ -16147,7 +16463,8 @@
       "market_value": 6142,
       "resale_net": -2612,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20212800",
@@ -16189,7 +16506,8 @@
       "market_value": 6490,
       "resale_net": -3025,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20483256",
@@ -16233,7 +16551,8 @@
       "market_value": 8149,
       "resale_net": -2387,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20927845",
@@ -16275,7 +16594,8 @@
       "market_value": 6858,
       "resale_net": -4596,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21031874",
@@ -16319,7 +16639,8 @@
       "market_value": 7316,
       "resale_net": -6294,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "73772402",
@@ -16365,7 +16686,8 @@
       "market_value": 13379,
       "resale_net": -999,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20895072",
@@ -16409,7 +16731,8 @@
       "market_value": 7283,
       "resale_net": -7396,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79221884",
@@ -16451,7 +16774,8 @@
       "market_value": 2536,
       "resale_net": 896,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20976777",
@@ -16493,7 +16817,8 @@
       "market_value": 2319,
       "resale_net": 440,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21017617",
@@ -16535,7 +16860,8 @@
       "market_value": 3348,
       "resale_net": -86,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20493889",
@@ -16579,7 +16905,8 @@
       "market_value": 3240,
       "resale_net": -402,
       "premium_src": "実取引",
-      "cagr": 5.5
+      "cagr": 5.5,
+      "thin_liq": false
     },
     {
       "id": "21059337",
@@ -16623,7 +16950,8 @@
       "market_value": 3351,
       "resale_net": -383,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20877358",
@@ -16665,7 +16993,8 @@
       "market_value": 5402,
       "resale_net": -1507,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21071056",
@@ -16712,7 +17041,8 @@
       "market_value": 5779,
       "resale_net": -1357,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20636809",
@@ -16754,7 +17084,8 @@
       "market_value": 5408,
       "resale_net": -2646,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21062869",
@@ -16796,7 +17127,8 @@
       "market_value": 6051,
       "resale_net": -2699,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20406265",
@@ -16838,7 +17170,8 @@
       "market_value": 7172,
       "resale_net": -2046,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20413035",
@@ -16880,7 +17213,8 @@
       "market_value": 7442,
       "resale_net": -1999,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21062814",
@@ -16922,7 +17256,8 @@
       "market_value": 10650,
       "resale_net": -3633,
       "premium_src": "実取引",
-      "cagr": 4.2
+      "cagr": 4.2,
+      "thin_liq": false
     },
     {
       "id": "20086461",
@@ -16966,7 +17301,8 @@
       "market_value": 9657,
       "resale_net": -7780,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20839246",
@@ -17010,7 +17346,8 @@
       "market_value": 15365,
       "resale_net": -8691,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "79092813",
@@ -17054,7 +17391,8 @@
       "market_value": 45220,
       "resale_net": -41952,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20877455",
@@ -17098,7 +17436,8 @@
       "market_value": 1572,
       "resale_net": -281,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20562808",
@@ -17140,7 +17479,8 @@
       "market_value": 2871,
       "resale_net": -225,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20964283",
@@ -17182,7 +17522,8 @@
       "market_value": 3541,
       "resale_net": -307,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21050907",
@@ -17226,7 +17567,8 @@
       "market_value": 3773,
       "resale_net": -404,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20940696",
@@ -17270,7 +17612,8 @@
       "market_value": 3773,
       "resale_net": -618,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21112452",
@@ -17312,7 +17655,8 @@
       "market_value": 6486,
       "resale_net": -696,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20918481",
@@ -17356,7 +17700,8 @@
       "market_value": 5595,
       "resale_net": -2069,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20834543",
@@ -17398,7 +17743,8 @@
       "market_value": 5471,
       "resale_net": -2403,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20476798",
@@ -17440,7 +17786,8 @@
       "market_value": 6048,
       "resale_net": -2595,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21109353",
@@ -17484,7 +17831,8 @@
       "market_value": 5875,
       "resale_net": -3415,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "78205879",
@@ -17528,7 +17876,8 @@
       "market_value": 7815,
       "resale_net": -2621,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21035949",
@@ -17572,7 +17921,8 @@
       "market_value": 7815,
       "resale_net": -2621,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20327004",
@@ -17614,7 +17964,8 @@
       "market_value": 11225,
       "resale_net": -3056,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21015068",
@@ -17656,7 +18007,8 @@
       "market_value": 12530,
       "resale_net": -2332,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "21077262",
@@ -17702,7 +18054,8 @@
       "market_value": 14241,
       "resale_net": -3912,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20664908",
@@ -17745,7 +18098,8 @@
       "market_value": 11933,
       "resale_net": -6461,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21051305",
@@ -17789,7 +18143,8 @@
       "market_value": 2600,
       "resale_net": -359,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20115653",
@@ -17831,7 +18186,8 @@
       "market_value": 3675,
       "resale_net": -1033,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20900850",
@@ -17875,7 +18231,8 @@
       "market_value": 4469,
       "resale_net": -1016,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78517875",
@@ -17920,7 +18277,8 @@
       "market_value": 6573,
       "resale_net": 351,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20691214",
@@ -17962,7 +18320,8 @@
       "market_value": 5136,
       "resale_net": -2212,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20666289",
@@ -18009,7 +18368,8 @@
       "market_value": 5101,
       "resale_net": -2782,
       "premium_src": "実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20866734",
@@ -18051,7 +18411,8 @@
       "market_value": 4963,
       "resale_net": -3234,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20904272",
@@ -18095,7 +18456,8 @@
       "market_value": 7165,
       "resale_net": -1538,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "79153115",
@@ -18139,7 +18501,8 @@
       "market_value": 8635,
       "resale_net": -1597,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20589579",
@@ -18183,7 +18546,8 @@
       "market_value": 8770,
       "resale_net": -1681,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "79196514",
@@ -18227,7 +18591,8 @@
       "market_value": 10956,
       "resale_net": -3316,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "77443977",
@@ -18269,7 +18634,8 @@
       "market_value": 11536,
       "resale_net": -3848,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20559664",
@@ -18313,7 +18679,8 @@
       "market_value": 4197,
       "resale_net": -219,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "21048437",
@@ -18357,7 +18724,8 @@
       "market_value": 6395,
       "resale_net": -2367,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20577395",
@@ -18400,7 +18768,8 @@
       "market_value": 7945,
       "resale_net": -2733,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20595992",
@@ -18442,7 +18811,8 @@
       "market_value": 7340,
       "resale_net": -4152,
       "premium_src": "目安+実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20919329",
@@ -18484,7 +18854,8 @@
       "market_value": 1931,
       "resale_net": 258,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20289488",
@@ -18528,7 +18899,8 @@
       "market_value": 3936,
       "resale_net": -674,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20215127",
@@ -18570,7 +18942,8 @@
       "market_value": 5926,
       "resale_net": -680,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20302543",
@@ -18614,7 +18987,8 @@
       "market_value": 8129,
       "resale_net": -1978,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20509597",
@@ -18656,7 +19030,8 @@
       "market_value": 8730,
       "resale_net": -3344,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20800341",
@@ -18705,7 +19080,8 @@
       "market_value": 13879,
       "resale_net": -2443,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20738630",
@@ -18753,7 +19129,8 @@
       "market_value": 4632,
       "resale_net": -1939,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21071326",
@@ -18797,7 +19174,8 @@
       "market_value": 4758,
       "resale_net": -2897,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20421493",
@@ -18839,7 +19217,8 @@
       "market_value": 10823,
       "resale_net": -5499,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20546339",
@@ -18881,7 +19260,8 @@
       "market_value": 10823,
       "resale_net": -5499,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20948528",
@@ -18925,7 +19305,8 @@
       "market_value": 12440,
       "resale_net": -4880,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "72070994",
@@ -18969,7 +19350,8 @@
       "market_value": 12315,
       "resale_net": -7269,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78898846",
@@ -19011,7 +19393,8 @@
       "market_value": 3870,
       "resale_net": -96,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20785920",
@@ -19053,7 +19436,8 @@
       "market_value": 3111,
       "resale_net": -1791,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20978616",
@@ -19095,7 +19479,8 @@
       "market_value": 4272,
       "resale_net": -1741,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20800349",
@@ -19139,7 +19524,8 @@
       "market_value": 4553,
       "resale_net": -1470,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20779939",
@@ -19181,7 +19567,8 @@
       "market_value": 3459,
       "resale_net": -3061,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21095500",
@@ -19223,7 +19610,8 @@
       "market_value": 4919,
       "resale_net": -2314,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20692270",
@@ -19265,7 +19653,8 @@
       "market_value": 5256,
       "resale_net": -2076,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21099870",
@@ -19307,7 +19696,8 @@
       "market_value": 4919,
       "resale_net": -2635,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20957393",
@@ -19349,7 +19739,8 @@
       "market_value": 5806,
       "resale_net": -2904,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21077081",
@@ -19397,7 +19788,8 @@
       "market_value": 6792,
       "resale_net": -2434,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "21029674",
@@ -19439,7 +19831,8 @@
       "market_value": 5537,
       "resale_net": -3741,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20828233",
@@ -19486,7 +19879,8 @@
       "market_value": 5850,
       "resale_net": -4413,
       "premium_src": "目安+実取引",
-      "cagr": 5.6
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20340248",
@@ -19530,7 +19924,8 @@
       "market_value": 10628,
       "resale_net": -4596,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20880603",
@@ -19572,7 +19967,8 @@
       "market_value": 2360,
       "resale_net": -269,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "78948569",
@@ -19614,7 +20010,8 @@
       "market_value": 2433,
       "resale_net": -306,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20945625",
@@ -19658,7 +20055,8 @@
       "market_value": 5074,
       "resale_net": -1823,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20964406",
@@ -19705,7 +20103,57 @@
       "market_value": 6625,
       "resale_net": -337,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
+    },
+    {
+      "id": "78907749",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "渋谷区",
+      "loc": "渋谷区幡ヶ谷３",
+      "price": 7680,
+      "land": 56.37,
+      "bld": 91.05,
+      "plan": "1LDK",
+      "walk": 12,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_78907749/",
+      "tags": [
+        "借地権"
+      ],
+      "struct": "木造",
+      "tier": "S",
+      "unit_disp": "450万/坪",
+      "use": "実需",
+      "tsubo": 450,
+      "ratio": 0.71,
+      "dev": 3,
+      "dev_ward_note": "渋谷駅周辺『100年に1度』の再開発（桜丘・道玄坂・二丁目西, 2027-34）",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 43,
+      "grade": "低",
+      "watch": "渋谷区（全域）",
+      "watch_kind": "area",
+      "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩12分 / 出口S / 将来性★★★ / 借地→融資/出口難",
+      "reason": "借地（土地は借り物・地代/承諾料が必要） / 前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意） / 借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
+      "elev": 33.5,
+      "onsite": [
+        "借地（土地は借り物・地代/承諾料が必要）",
+        "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 7680,
+      "drop": 0,
+      "drop_pct": 0,
+      "premium": 0.74,
+      "market_value": 5473,
+      "resale_net": -2936,
+      "premium_src": "実取引",
+      "cagr": 5.6,
+      "thin_liq": false
     },
     {
       "id": "20912604",
@@ -19749,7 +20197,8 @@
       "market_value": 6300,
       "resale_net": -2887,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20475364",
@@ -19793,7 +20242,8 @@
       "market_value": 6028,
       "resale_net": -6488,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20459488",
@@ -19835,7 +20285,8 @@
       "market_value": 9366,
       "resale_net": -3588,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20259578",
@@ -19877,7 +20328,8 @@
       "market_value": 9788,
       "resale_net": -5299,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20848053",
@@ -19919,7 +20371,8 @@
       "market_value": 2032,
       "resale_net": -158,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "21114184",
@@ -19964,7 +20417,8 @@
       "market_value": 3125,
       "resale_net": -815,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "21073828",
@@ -20008,7 +20462,8 @@
       "market_value": 3155,
       "resale_net": -1000,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "75391318",
@@ -20052,7 +20507,8 @@
       "market_value": 2796,
       "resale_net": -2117,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "21040001",
@@ -20096,7 +20552,8 @@
       "market_value": 3561,
       "resale_net": -1582,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79225874",
@@ -20140,7 +20597,8 @@
       "market_value": 4728,
       "resale_net": -893,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20381380",
@@ -20185,7 +20643,8 @@
       "market_value": 3914,
       "resale_net": -4247,
       "premium_src": "実取引",
-      "cagr": 6.1
+      "cagr": 6.1,
+      "thin_liq": false
     },
     {
       "id": "20727930",
@@ -20227,7 +20686,8 @@
       "market_value": 5497,
       "resale_net": -3127,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20993647",
@@ -20269,7 +20729,8 @@
       "market_value": 5649,
       "resale_net": -3098,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20870577",
@@ -20311,7 +20772,8 @@
       "market_value": 12053,
       "resale_net": -1744,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20084046",
@@ -20355,7 +20817,8 @@
       "market_value": 1643,
       "resale_net": -298,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20659152",
@@ -20400,7 +20863,8 @@
       "market_value": 2885,
       "resale_net": -1817,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20240763",
@@ -20442,7 +20906,8 @@
       "market_value": 4012,
       "resale_net": -1350,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20778039",
@@ -20486,7 +20951,8 @@
       "market_value": 6330,
       "resale_net": -1360,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "78765490",
@@ -20533,7 +20999,8 @@
       "market_value": 6837,
       "resale_net": -1406,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "79163258",
@@ -20576,7 +21043,8 @@
       "market_value": 6596,
       "resale_net": -3564,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20025425",
@@ -20619,7 +21087,8 @@
       "market_value": 9997,
       "resale_net": -4250,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21005123",
@@ -20659,7 +21128,8 @@
       "market_value": 13478,
       "resale_net": -1439,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "20630015",
@@ -20701,7 +21171,8 @@
       "market_value": 10291,
       "resale_net": -5049,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20058868",
@@ -20743,7 +21214,8 @@
       "market_value": 1493,
       "resale_net": 392,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "21005654",
@@ -20785,7 +21257,8 @@
       "market_value": 2561,
       "resale_net": -717,
       "premium_src": "実取引",
-      "cagr": 5.5
+      "cagr": 5.5,
+      "thin_liq": false
     },
     {
       "id": "20339558",
@@ -20827,7 +21300,8 @@
       "market_value": 2936,
       "resale_net": -1853,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20440702",
@@ -20869,7 +21343,8 @@
       "market_value": 6046,
       "resale_net": -2704,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20988568",
@@ -20913,7 +21388,8 @@
       "market_value": 7262,
       "resale_net": -3136,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20039197",
@@ -20957,7 +21433,8 @@
       "market_value": 8922,
       "resale_net": -8403,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "78770523",
@@ -20999,7 +21476,8 @@
       "market_value": 2759,
       "resale_net": -526,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20845716",
@@ -21041,7 +21519,8 @@
       "market_value": 2822,
       "resale_net": -797,
       "premium_src": "実取引",
-      "cagr": 6.1
+      "cagr": 6.1,
+      "thin_liq": false
     },
     {
       "id": "77434800",
@@ -21088,7 +21567,8 @@
       "market_value": 3290,
       "resale_net": -1084,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20584898",
@@ -21133,7 +21613,8 @@
       "market_value": 3318,
       "resale_net": -1378,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20723811",
@@ -21175,7 +21656,8 @@
       "market_value": 3656,
       "resale_net": -1052,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "78340102",
@@ -21217,7 +21699,8 @@
       "market_value": 3628,
       "resale_net": -1474,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "21108456",
@@ -21259,7 +21742,8 @@
       "market_value": 5263,
       "resale_net": -2196,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78781798",
@@ -21301,7 +21785,8 @@
       "market_value": 5263,
       "resale_net": -2303,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78046494",
@@ -21344,7 +21829,8 @@
       "market_value": 8873,
       "resale_net": -2767,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20374933",
@@ -21387,7 +21873,8 @@
       "market_value": 10009,
       "resale_net": -3181,
       "premium_src": "—",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20127183",
@@ -21432,7 +21919,8 @@
       "market_value": 49477,
       "resale_net": -13031,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21041627",
@@ -21474,7 +21962,8 @@
       "market_value": 1418,
       "resale_net": 320,
       "premium_src": "—",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "21077210",
@@ -21516,7 +22005,8 @@
       "market_value": 2676,
       "resale_net": -82,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "21036161",
@@ -21561,7 +22051,8 @@
       "market_value": 2985,
       "resale_net": -1378,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20161975",
@@ -21603,7 +22094,8 @@
       "market_value": 3316,
       "resale_net": -1069,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21033292",
@@ -21647,7 +22139,8 @@
       "market_value": 3284,
       "resale_net": -1956,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20179661",
@@ -21689,7 +22182,8 @@
       "market_value": 3643,
       "resale_net": -2883,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20870506",
@@ -21731,7 +22225,8 @@
       "market_value": 4149,
       "resale_net": -2716,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "78268504",
@@ -21773,7 +22268,8 @@
       "market_value": 4415,
       "resale_net": -2586,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20996638",
@@ -21815,7 +22311,8 @@
       "market_value": 4904,
       "resale_net": -2522,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20659139",
@@ -21857,7 +22354,8 @@
       "market_value": 5556,
       "resale_net": -2107,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21115058",
@@ -21901,7 +22399,8 @@
       "market_value": 5062,
       "resale_net": -3333,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21010108",
@@ -21945,7 +22444,8 @@
       "market_value": 5157,
       "resale_net": -4204,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20776504",
@@ -21992,7 +22492,8 @@
       "market_value": 7305,
       "resale_net": -2880,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20674659",
@@ -22039,7 +22540,8 @@
       "market_value": 6879,
       "resale_net": -3291,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "20785838",
@@ -22083,7 +22585,8 @@
       "market_value": 2469,
       "resale_net": -1138,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20953500",
@@ -22125,7 +22628,8 @@
       "market_value": 2590,
       "resale_net": -689,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20210003",
@@ -22168,7 +22672,8 @@
       "market_value": 9561,
       "resale_net": -4256,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20996757",
@@ -22213,7 +22718,8 @@
       "market_value": 2960,
       "resale_net": -2044,
       "premium_src": "実取引",
-      "cagr": 5.0
+      "cagr": 5.0,
+      "thin_liq": false
     },
     {
       "id": "20877301",
@@ -22255,7 +22761,8 @@
       "market_value": 4254,
       "resale_net": -2090,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "21028316",
@@ -22299,7 +22806,8 @@
       "market_value": 3397,
       "resale_net": -4190,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20375153",
@@ -22342,7 +22850,8 @@
       "market_value": 7994,
       "resale_net": -1916,
       "premium_src": "—",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20656523",
@@ -22387,7 +22896,8 @@
       "market_value": 8656,
       "resale_net": -2112,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "78813061",
@@ -22430,7 +22940,8 @@
       "market_value": 9896,
       "resale_net": -3269,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20177779",
@@ -22472,7 +22983,8 @@
       "market_value": 2794,
       "resale_net": -674,
       "premium_src": "実取引",
-      "cagr": 3.6
+      "cagr": 3.6,
+      "thin_liq": false
     },
     {
       "id": "78255982",
@@ -22516,7 +23028,8 @@
       "market_value": 2787,
       "resale_net": -1355,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "21064655",
@@ -22558,7 +23071,8 @@
       "market_value": 2532,
       "resale_net": -1836,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "21066526",
@@ -22603,7 +23117,8 @@
       "market_value": 3244,
       "resale_net": -1897,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20774750",
@@ -22647,7 +23162,8 @@
       "market_value": 2568,
       "resale_net": -2636,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20767618",
@@ -22691,7 +23207,8 @@
       "market_value": 1765,
       "resale_net": -629,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "20184588",
@@ -22733,7 +23250,8 @@
       "market_value": 2824,
       "resale_net": 179,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "79011105",
@@ -22776,7 +23294,8 @@
       "market_value": 7221,
       "resale_net": -5337,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20562001",
@@ -22818,7 +23337,8 @@
       "market_value": 2127,
       "resale_net": -1457,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20922333",
@@ -22862,7 +23382,8 @@
       "market_value": 3453,
       "resale_net": -1472,
       "premium_src": "実取引",
-      "cagr": 4.5
+      "cagr": 4.5,
+      "thin_liq": false
     },
     {
       "id": "77169370",
@@ -22908,7 +23429,8 @@
       "market_value": 5313,
       "resale_net": -1593,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "77937031",
@@ -22951,7 +23473,8 @@
       "market_value": 9226,
       "resale_net": -4119,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20193171",
@@ -22993,7 +23516,8 @@
       "market_value": 1479,
       "resale_net": -370,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20042303",
@@ -23035,7 +23559,8 @@
       "market_value": 2417,
       "resale_net": -642,
       "premium_src": "実取引",
-      "cagr": 4.6
+      "cagr": 4.6,
+      "thin_liq": false
     },
     {
       "id": "20723776",
@@ -23079,7 +23604,8 @@
       "market_value": 2513,
       "resale_net": -764,
       "premium_src": "—",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20383137",
@@ -23123,7 +23649,8 @@
       "market_value": 2475,
       "resale_net": -800,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     },
     {
       "id": "21139971",
@@ -23165,7 +23692,8 @@
       "market_value": 2695,
       "resale_net": -1892,
       "premium_src": "実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20955440",
@@ -23209,7 +23737,8 @@
       "market_value": 1925,
       "resale_net": -796,
       "premium_src": "実取引",
-      "cagr": 4.9
+      "cagr": 4.9,
+      "thin_liq": false
     },
     {
       "id": "76290616",
@@ -23255,7 +23784,8 @@
       "market_value": 2599,
       "resale_net": -1430,
       "premium_src": "実取引",
-      "cagr": 5.4
+      "cagr": 5.4,
+      "thin_liq": false
     },
     {
       "id": "20013953",
@@ -23299,7 +23829,8 @@
       "market_value": 1193,
       "resale_net": -967,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "78154548",
@@ -23341,7 +23872,8 @@
       "market_value": 2525,
       "resale_net": -966,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "20703566",
@@ -23383,7 +23915,8 @@
       "market_value": 2118,
       "resale_net": -1486,
       "premium_src": "実取引",
-      "cagr": 5.8
+      "cagr": 5.8,
+      "thin_liq": false
     },
     {
       "id": "20965651",
@@ -23425,7 +23958,8 @@
       "market_value": 2416,
       "resale_net": -1178,
       "premium_src": "実取引",
-      "cagr": 3.9
+      "cagr": 3.9,
+      "thin_liq": false
     },
     {
       "id": "21029183",
@@ -23469,7 +24003,8 @@
       "market_value": 2990,
       "resale_net": -2229,
       "premium_src": "—",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20879064",
@@ -23513,7 +24048,8 @@
       "market_value": 1232,
       "resale_net": -726,
       "premium_src": "実取引",
-      "cagr": 3.4
+      "cagr": 3.4,
+      "thin_liq": false
     },
     {
       "id": "20255979",
@@ -23555,7 +24091,8 @@
       "market_value": 2784,
       "resale_net": -3070,
       "premium_src": "目安+実取引",
-      "cagr": 3.8
+      "cagr": 3.8,
+      "thin_liq": false
     },
     {
       "id": "20331123",
@@ -23597,7 +24134,8 @@
       "market_value": 3133,
       "resale_net": -807,
       "premium_src": "実取引",
-      "cagr": 4.3
+      "cagr": 4.3,
+      "thin_liq": false
     }
   ]
 }

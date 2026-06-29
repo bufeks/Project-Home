@@ -157,7 +157,7 @@ PREMIUM_AREA = {
     "渋谷区": [("松濤", 1.3), ("神山町", 1.25), ("大山町", 1.25), ("上原", 1.18), ("富ヶ谷", 1.18),
             ("神宮前", 1.2), ("広尾", 1.22), ("恵比寿", 1.15), ("代官山町", 1.25), ("猿楽町", 1.22),
             ("鉢山町", 1.25), ("南平台町", 1.2), ("元代々木町", 1.15), ("代々木", 1.08)],
-    "新宿区": [("内藤町", 1.32), ("信濃町", 1.18), ("南元町", 1.18), ("若宮町", 1.18), ("市谷砂土原", 1.2),
+    "新宿区": [("内藤町", 1.32), ("南元町", 1.18), ("若宮町", 1.18), ("市谷砂土原", 1.2),
             ("四谷", 1.1), ("神楽坂", 1.12), ("市谷", 1.1)],
     "目黒区": [("青葉台", 1.2), ("東山", 1.12), ("上目黒", 1.12), ("中目黒", 1.12), ("鷹番", 1.1),
             ("八雲", 1.12), ("柿の木坂", 1.12), ("自由が丘", 1.15), ("駒場", 1.18), ("祐天寺", 1.08)],
@@ -176,12 +176,21 @@ def premium_factor(ward, loc):
     return best
 
 
+def _norm_dist(s):
+    """町名の表記揺れ吸収（NFKC＋小さいヶ→ケ）。例 '幡ヶ谷'='幡ケ谷'、'千駄ヶ谷'='千駄ケ谷'。"""
+    return unicodedata.normalize("NFKC", s or "").replace("ヶ", "ケ").strip()
+
+
 def load_market_real():
     """国交省・不動産情報ライブラリの実取引集計（scripts/fetch_market.pyが生成）。"""
     try:
-        return json.loads((DATA / "market_real.json").read_text(encoding="utf-8"))
+        m = json.loads((DATA / "market_real.json").read_text(encoding="utf-8"))
     except Exception:
         return {"wards": {}}
+    # 町名キーを正規化した索引を付与（SUUMO所在地との表記揺れ対策）
+    for w in m.get("wards", {}).values():
+        w["_dn"] = {_norm_dist(k): v for k, v in (w.get("districts_ms") or {}).items()}
+    return m
 
 
 MARKET_REAL = load_market_real()
@@ -198,7 +207,7 @@ def real_premium(ward, loc):
     w = MARKET_REAL.get("wards", {}).get(ward)
     if not w:
         return None
-    return (w.get("districts_ms") or {}).get(district_of(ward, loc))
+    return (w.get("_dn") or {}).get(_norm_dist(district_of(ward, loc)))
 
 
 def ward_cagr(ward):
@@ -909,6 +918,10 @@ def enrich(r):
         pf = 1.0
         r["premium_src"] = "—"
     r["premium"] = round(pf, 2)
+    # 実取引が薄い町＝流動性が低く出口に時間。中心区(S/A)なのに中古M実成約が年8件未満で
+    # 集計できない町を「流通が乏しい」と判定（例：信濃町＝特定組織の所有・利用が多い等）。
+    r["thin_liq"] = (is_ms and rp is None and tier in ("S", "A")
+                     and bool(MARKET_REAL.get("wards", {}).get(ward)))
     # 相場ベンチマークの補正：駅距離(B)＋マンションは築年(D)で“同条件比”に近づける
     if med:
         wf = (1.15 if (wk is not None and wk <= 3) else 1.06 if (wk is not None and wk <= 7)
@@ -1047,7 +1060,9 @@ def enrich(r):
     if "旧耐震" in r["tags"]:
         bits.append("旧耐震(1981以前)→融資/出口に注意")
     r["comment"] = " / ".join(bits)
-    r["reason"] = " / ".join(((r.get("onsite") or []) + infer_reason(r))[:4])
+    thin = (["実取引が少ない町＝流動性が薄く出口に時間（一般市場の流通が乏しい・価格は要現地確認）"]
+            if r.get("thin_liq") else [])
+    r["reason"] = " / ".join((thin + (r.get("onsite") or []) + infer_reason(r))[:4])
 
 
 # ------- HTML 出力 -------
@@ -1690,7 +1705,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="lead">スコアは目安。最後は<b>「10〜30年後に、誰が・いくらで買ってくれるか（出口）」</b>を物件ごとに具体で考えます。値持ちを左右する主な観点：</p>
 <ul>
 <li><b>💰手取り目安（相場で今売却）</b>：各カードに「相場価値 − 買値 − 往復コスト(取得約7%/売却約3.5%)」を表示。<b>プラス＝割安クッションが往復コストを上回る</b>。満額のプレミアム物件はマイナス＝<b>その分の値上がりが必要</b>＝出口は将来の値上がり頼み、と読む。並びの「手取り順」で比較可。<br>※大きなプラスは“相場比が過大（訳あり）”のこともあるので🔎見立てと併読。</li>
-<li><b>流動性（売りやすさ）</b>：駅近 × 実需サイズ（専有50〜80㎡）× 人気/名門エリア＝<b>いつでも買い手がいる</b>。スコアの駅近・出口ティア・規模・🏛値持ちが代理指標。</li>
+<li><b>流動性（売りやすさ）</b>：駅近 × 実需サイズ（専有50〜80㎡）× 人気/名門エリア＝<b>いつでも買い手がいる</b>。スコアの駅近・出口ティア・規模・🏛値持ちが代理指標。<br>　逆に<b>実取引が極端に少ない町</b>（中心区なのに中古M成約が年8件未満＝特定組織の所有・利用が多い等で一般流通が乏しい。例：信濃町）は<b>出口に時間がかかる</b>ため、該当物件の🔎見立てに注意表示します。</li>
 <li><b>管理・修繕の健全性（マンション）</b>：修繕積立金の積立不足は将来の一時金・値崩れに直結。<b>総戸数が多いほど管理が安定</b>（小規模は1戸あたり負担が重い）。🔎見立てで「積立金低め」を警告。</li>
 <li><b>建替え事業性（戦略④）</b>：<b>容積に余裕</b>（消化率が低い）・敷地権割合・合意のしやすさ＝建替えで等価交換の含み益。都心・駅近・低層ほど有利。各カードに建替え目安年。</li>
 <li><b>建てて売る成立性（戦略③）</b>：<b>再建築可・接道・用途地域/容積</b>＝土地/古家の建替え事業が成立するか。再建築不可は既定で除外。</li>
