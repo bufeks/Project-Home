@@ -1239,6 +1239,8 @@ TEMPLATE = """<!DOCTYPE html>
   .bdg{{font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 9px}}
   .b-top{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
   .b-gem{{background:#e4eefe;color:#1d5fd6;border:1px solid #c2d8fb}}
+  .b-aff{{background:#fce7f1;color:#c01a6b;border:1px solid #f6bcd6}}
+  .profline{{font-size:.84rem;color:#1b2430;background:#fff;border:1px solid #f1d9a0;border-radius:9px;padding:8px 11px;margin:4px 0 8px;line-height:1.7}}
   .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
   .b-wave{{background:#e0f3f8;color:#0e7d92;border:1px solid #bce4ee}}
   .b-dev{{background:#efe9fb;color:#6b46c1;border:1px solid #d8c9f3}}
@@ -1369,13 +1371,13 @@ TEMPLATE = """<!DOCTYPE html>
 <details{watch_open}><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
 <div class="dbody">{watch}</div></details>
 
-<details><summary>📌 気になる物件（自分で📌した物件）</summary>
-<div class="dbody"><div id="pinclicks"></div></div></details>
+<details><summary>📌 気になる物件（自分で📌した物件）— 📌から好みを学習し「似てる物件」を上位表示</summary>
+<div class="dbody"><div id="pinprofile"></div><div id="pinclicks"></div></div></details>
 
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
-  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="aff">📌好み順（似てる）</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
@@ -1602,7 +1604,58 @@ function snapCard(id){{
   var pe=c.querySelector('.price');var price=pe?pe.textContent.trim():'';
   var a=c.querySelector('.viewrow a[href]');var url=a?a.getAttribute('href'):'#';
   var ne=c.querySelector('.mn');var nm=ne?ne.textContent.trim():'';
-  return {{n:nm,loc:loc,price:price,url:url}};
+  var ds=c.dataset;
+  var f={{ward:ds.ward||'',kind:ds.kind||'',area:parseFloat(ds.area)||0,land:parseFloat(ds.land)||0,
+    walk:parseInt(ds.walk||'999',10),year:parseInt(ds.year||'0',10),tiern:parseInt(ds.tiern||'0',10),
+    ratio:parseFloat(ds.ratio)||0,price:parseInt(ds.price||'0',10),rooms:parseInt(ds.rooms||'0',10)}};
+  return {{n:nm,loc:loc,price:price,url:url,f:f}};
+}}
+// ===== 📌から好みを学習（掲載終了したスナップショットも教師データに含める） =====
+function _median(arr){{if(!arr.length)return null;var s=arr.slice().sort(function(a,b){{return a-b;}});var m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;}}
+let affProf=null;
+function pinProfile(){{
+  var fs=[];marks.forEach(function(id){{var p=pinData[id];if(p&&p.f)fs.push(p.f);}});
+  if(fs.length<2)return null;
+  var wards={{}},kinds={{}};
+  fs.forEach(function(f){{if(f.ward)wards[f.ward]=(wards[f.ward]||0)+1;if(f.kind)kinds[f.kind]=(kinds[f.kind]||0)+1;}});
+  function col(key,min){{return fs.map(function(f){{return f[key];}}).filter(function(v){{return v&&v>(min||0);}});}}
+  return {{n:fs.length,wards:wards,kinds:kinds,
+    area:_median(col('area',0)),
+    walk:_median(fs.map(function(f){{return f.walk;}}).filter(function(v){{return v>0&&v<900;}})),
+    year:_median(col('year',1900)),price:_median(col('price',0)),rooms:_median(col('rooms',0))}};
+}}
+function affinity(d,prof){{
+  if(!prof)return 0;
+  var sc=0,wt=0;
+  wt+=25; if(prof.wards[d.ward])sc+=25;                                   // 同じ区
+  wt+=15; if(prof.kinds[d.kind])sc+=15;                                   // 同じ種別
+  if(prof.area){{wt+=20;var a=parseFloat(d.area)||parseFloat(d.land)||0;if(a>0)sc+=20*Math.max(0,1-Math.abs(a-prof.area)/prof.area);}}
+  if(prof.walk!=null){{wt+=18;var w=parseInt(d.walk||'999',10);if(w>0&&w<900)sc+=18*Math.max(0,1-Math.abs(w-prof.walk)/Math.max(6,prof.walk));}}
+  if(prof.year){{wt+=12;var y=parseInt(d.year||'0',10);if(y>1900)sc+=12*Math.max(0,1-Math.abs(y-prof.year)/25);}}
+  if(prof.price){{wt+=10;var pr=parseInt(d.price||'0',10);if(pr>0)sc+=10*Math.max(0,1-Math.abs(pr-prof.price)/prof.price);}}
+  return wt?Math.round(sc/wt*100):0;
+}}
+function badgeRow(c){{var b=c.querySelector('.bd');if(!b){{b=document.createElement('div');b.className='bd';c.insertBefore(b,c.querySelector('.facts'));}}return b;}}
+function computeAffinity(){{
+  affProf=pinProfile();
+  for(var i=0;i<cards.length;i++)cards[i].dataset.aff=affProf?affinity(cards[i].dataset,affProf):0;
+  for(var j=0;j<trs.length;j++)trs[j].dataset.aff=affProf?affinity(trs[j].dataset,affProf):0;
+  document.querySelectorAll('.affbadge').forEach(function(x){{x.remove();}});
+  if(affProf){{cards.forEach(function(c){{var v=parseInt(c.dataset.aff,10);if(v>=70){{var b=document.createElement('span');b.className='bdg b-aff affbadge';b.textContent='💖好み'+v;var br=badgeRow(c);br.insertBefore(b,br.firstChild);}}}});}}
+  renderProfile(affProf);
+}}
+function renderProfile(prof){{
+  var box=document.getElementById('pinprofile');if(!box)return;
+  if(!prof){{box.innerHTML='<div class="lead">📌が2件以上たまると、エリア・面積・駅距離・築年・価格帯から<b>あなたの好み</b>を学習し、似た物件を上位に出します（並び＝「📌好み順」、カードに💖好み○バッジ）。</div>';return;}}
+  function topk(m){{return Object.keys(m).sort(function(x,y){{return m[y]-m[x];}}).slice(0,3);}}
+  var parts=[];
+  if(Object.keys(prof.wards).length)parts.push('エリア: '+topk(prof.wards).join('・'));
+  if(Object.keys(prof.kinds).length)parts.push('種別: '+topk(prof.kinds).join('・'));
+  if(prof.area)parts.push('面積: '+Math.round(prof.area)+'㎡前後');
+  if(prof.walk!=null)parts.push('駅徒歩: '+Math.round(prof.walk)+'分前後');
+  if(prof.year)parts.push('築年: '+prof.year+'年前後');
+  if(prof.price)parts.push('価格帯: '+(prof.price>=10000?(prof.price/10000).toFixed(2)+'億':prof.price+'万')+'前後');
+  box.innerHTML='<div class="wsub">🎯 あなたの📌プロフィール（'+prof.n+'件から学習）</div><div class="profline">'+parts.join(' ／ ')+'<br><span class="hs">↑この傾向に近い物件ほど 💖好み の数値が高く、「📌好み順」で上位に並びます。</span></div>';
 }}
 function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
 function renderPinClicks(){{
@@ -1625,9 +1678,9 @@ function renderPinClicks(){{
   if(changed)localStorage.setItem('pinData',JSON.stringify(pinData));
   box.innerHTML=n?'<div class="wsub">📌 気になる物件 '+n+'件</div>'+h:'<div class="lead">まだ📌はありません。一覧のカード/行の📌で登録できます。</div>';
 }}
-document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;if(marks.has(id)){{marks.delete(id);delete pinData[id];}}else{{marks.add(id);var s=snapCard(id);if(s)pinData[id]=s;}}localStorage.setItem('marks',JSON.stringify([...marks]));localStorage.setItem('pinData',JSON.stringify(pinData));renderMarks();renderPinClicks();apply();}});
+document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;if(marks.has(id)){{marks.delete(id);delete pinData[id];}}else{{marks.add(id);var s=snapCard(id);if(s)pinData[id]=s;}}localStorage.setItem('marks',JSON.stringify([...marks]));localStorage.setItem('pinData',JSON.stringify(pinData));renderMarks();renderPinClicks();computeAffinity();apply();}});
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
-renderMarks();renderPinClicks();
+renderMarks();renderPinClicks();computeAffinity();
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
 computeCosts();apply();
 </script>
