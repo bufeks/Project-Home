@@ -66,9 +66,11 @@ def update_history(rows):
         hist = {}
     today = datetime.date.today()
     tstr = today.isoformat()
+    had_history = bool(hist)                   # 初回フル実行（履歴空）では全件newにしない
     for r in rows:
         hid, p = r["id"], r["price"]
         h = hist.get(hid)
+        r["new"] = h is None and had_history   # 今日初観測＝新着
         if h is None:
             h = {"first_seen": tstr, "first_price": p, "last_price": p,
                  "last_change": tstr, "min_price": p}
@@ -1249,11 +1251,42 @@ def render(rows, errors):
     pin_meta = json.dumps({p["id"]: {"n": p.get("name", ""), "s": p.get("spec", ""),
                                      "u": p.get("url", "")}
                            for p in pins if p.get("id")}, ensure_ascii=False)
+
+    # 🆕 今日のダイジェスト：新着の本命・値下げを能動的にまとめる
+    def _digrow(r, badge):
+        gm = ('https://www.google.com/maps/search/?api=1&query='
+              + urllib.parse.quote("東京都" + r["loc"]))
+        wl = f' <span class="hs">⭐{H.escape(r["watch"])}</span>' if r.get("watch") else ""
+        dp = f' <span class="hs">-{r["drop_pct"]}%値下げ</span>' if r.get("drop", 0) > 0 else ""
+        return (f'<div class="hit">{badge} {H.escape(r["loc"])}'
+                f'<span class="hp">{fmt_price(r["price"])}</span> '
+                f'<span class="hs">スコア{r["score"]}</span>{wl}{dp} '
+                f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a> '
+                f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
+
+    new_honmei = sorted([r for r in rows if r.get("new") and (r["score"] >= 70 or r.get("watch"))],
+                        key=lambda x: -x["score"])[:12]
+    drops = sorted([r for r in rows if r.get("drop", 0) > 0],
+                   key=lambda x: -x.get("drop_pct", 0))[:10]
+    if new_honmei or drops:
+        dparts = []
+        if new_honmei:
+            dparts.append('<div class="wsub">🆕 新着の本命（今日初観測・スコア70+ または ウォッチ該当）'
+                          + f'{len(new_honmei)}件</div>' + "".join(_digrow(r, "🆕") for r in new_honmei))
+        if drops:
+            dparts.append('<div class="wsub">📉 値下げ（指値・売り急ぎの可能性）'
+                          + f'{len(drops)}件</div>' + "".join(_digrow(r, "📉") for r in drops))
+        digest_html = ('<details open><summary>🆕 今日のダイジェスト — 新着の本命・値下げ</summary>'
+                       '<div class="dbody">' + "".join(dparts) + '</div></details>')
+    else:
+        digest_html = ""
+
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
                            watch=watch_html, budget=budget, minarea=minarea,
-                           watch_open=watch_open, pinids=pin_ids, pinmeta=pin_meta)
+                           watch_open=watch_open, pinids=pin_ids, pinmeta=pin_meta,
+                           digest=digest_html)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1454,6 +1487,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
 
+{digest}
 <details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・気になる物件</summary>
 <div class="dbody">{watch}</div></details>
 
@@ -1805,9 +1839,52 @@ computeCosts();apply();
 </div></body></html>"""
 
 
+def collection_selfcheck(rows):
+    """収集件数の自己点検。前日傾向比で総数/カテゴリが急減したら警告（パース崩れ・サイト変更の早期検知）。
+    日次統計を data/collect_stats.json に蓄積（毎日の差分で異常が追える）。"""
+    jst = datetime.timezone(datetime.timedelta(hours=9))
+    today = datetime.datetime.now(jst).date().isoformat()
+    kinds = {}
+    for r in rows:
+        kinds[r["kind"]] = kinds.get(r["kind"], 0) + 1
+    stat = {"date": today, "total": len(rows),
+            "戸建": kinds.get("戸建", 0), "マンション": kinds.get("マンション", 0),
+            "土地": kinds.get("土地", 0),
+            "新築": sum(1 for r in rows if "新築" in r["tags"]),
+            "detailed": sum(1 for r in rows if r.get("detailed"))}
+    sf = DATA / "collect_stats.json"
+    try:
+        hist = json.loads(sf.read_text(encoding="utf-8")) if sf.exists() else []
+    except Exception:
+        hist = []
+    prev = [h for h in hist if h.get("date") != today]
+
+    def med(key, n=7):
+        vals = sorted(h[key] for h in prev[-n:] if isinstance(h.get(key), int))
+        return vals[len(vals) // 2] if vals else None
+
+    warnings = []
+    mt = med("total")
+    if mt and stat["total"] < mt * 0.7:
+        warnings.append(f"総件数が急減 {stat['total']}件（直近中央値{mt}）＝パース崩れ/サイト変更の可能性")
+    for k in ("戸建", "マンション", "土地"):
+        mk = med(k)
+        if mk and mk >= 5 and stat[k] < mk * 0.6:
+            warnings.append(f"{k}が急減 {stat[k]}件（直近中央値{mk}）")
+    stat["warnings"] = warnings
+    try:
+        sf.write_text(json.dumps((prev + [stat])[-60:], ensure_ascii=False, indent=1), encoding="utf-8")
+    except Exception:
+        pass
+    return stat, warnings
+
+
 def main():
     rows, errors = collect()
     update_history(rows)          # 観測日数・値下げを付与（毎日の蓄積）
+    stat, warnings = collection_selfcheck(rows)
+    for w in warnings:
+        print("  ⚠SELFCHECK", w, file=sys.stderr)
     rows.sort(key=lambda x: (-x["score"], x["price"]))
     (DATA / "listings.json").write_text(json.dumps(
         {"updated": datetime.datetime.now(
