@@ -1452,10 +1452,15 @@ def render(rows, errors):
     # 学び①：ティア別「区の相場＋実取引・値上がり率」早見表
     def _wcell(w, tier):
         wr = MARKET_REAL.get("wards", {}).get(w, {})
-        cg = wr.get("cagr_ms")
-        msr = wr.get("ms_m2_txn")
-        real = (f'<small class="rl">実取引M {msr}万/㎡'
-                + (f' ・<b class="cagrf">+{cg}%/年</b>' if cg is not None else "") + '</small>') if msr else ""
+        cg, msr, ltr = wr.get("cagr_ms"), wr.get("ms_m2_txn"), wr.get("land_tsubo_txn")
+        parts = []
+        if ltr:
+            parts.append(f"土地{round(ltr)}万/坪")
+        if msr:
+            parts.append(f"M{msr}万/㎡")
+        if cg is not None:
+            parts.append(f'<b class="cagrf">+{cg}%/年</b>')
+        real = f'<small class="rl">実取引 {" ・ ".join(parts)}</small>' if parts else ""
         return (f'<div class="mw"><span class="tier t{tier}">{tier}</span>{w}'
                 f'<b>{WARD_TSUBO.get(w,"—")}万/坪</b>{real}<small>{cnt.get(w,0)}件</small></div>')
     mt = []
@@ -1890,7 +1895,8 @@ TEMPLATE = """<!DOCTYPE html>
 
 <details><summary>📊 相場早見表 — 区別の相場＆出口ティア</summary>
 <div class="dbody">
-<p class="lead"><b>相場比＝区の相場坪単価 ÷ この物件の坪単価</b>。1.0＝相場どおり、1.2＝相場より約17%安い、2.0＝相場の半額。<b>数字が大きいほど割安</b>（カードでは「相場より◯%安い」と表示）。ただし2倍超の“激安”は再建築不可・借地・狭小など理由ありのサイン。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
+<p class="lead"><b>相場比＝区の相場坪単価 ÷ この物件の坪単価</b>。1.0＝相場どおり、1.2＝相場より約17%安い、2.0＝相場の半額。<b>数字が大きいほど割安</b>（カードでは「相場より◯%安い」と表示）。ただし2倍超の“激安”は再建築不可・借地・狭小など理由ありのサイン。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。<br>
+<b>太字の坪単価＝採点の基準値（提示価格水準）</b>。その下の<b>「実取引」＝国交省・不動産情報ライブラリの実成約</b>（土地坪単価・中古M㎡単価・年率）で<b>絶対水準を較正・裏取り</b>。実成約は提示より安く出るのが通常（公示地価より実態に近い）。</p>
 {market}
 </div></details>
 
