@@ -190,6 +190,7 @@ def load_market_real():
     # 町名キーを正規化した索引を付与（SUUMO所在地との表記揺れ対策）
     for w in m.get("wards", {}).values():
         w["_dn"] = {_norm_dist(k): v for k, v in (w.get("districts_ms") or {}).items()}
+        w["_dr"] = {_norm_dist(k): v for k, v in (w.get("districts_ms_range") or {}).items()}
     return m
 
 
@@ -214,6 +215,14 @@ def ward_cagr(ward):
     """区のマンション㎡単価の年率（実取引・%）。"""
     w = MARKET_REAL.get("wards", {}).get(ward)
     return w.get("cagr_ms") if w else None
+
+
+def seitei_range(ward, loc):
+    """町名の実成約㎡単価レンジ {p25,p50,p75,n}（マンション・実取引）。無ければNone。"""
+    w = MARKET_REAL.get("wards", {}).get(ward)
+    if not w:
+        return None
+    return (w.get("_dr") or {}).get(_norm_dist(district_of(ward, loc)))
 
 # 区ごとの「都市開発・再開発の将来性」★0-3（出口の“上振れ”期待の目安）。
 # 住宅資産価値に効く駅前/沿線再開発を中心に評価（2026年時点の調査ベース。詳細・出典は notes/redevelopment.md）。
@@ -1097,6 +1106,8 @@ def enrich(r):
     # 値持ち実測：区の中古マンション㎡単価の年率（国交省・実取引）。23区平均≈4.5%/年を基準に相対加点。
     cg = ward_cagr(ward)
     r["cagr"] = cg
+    if is_ms:
+        r["seitei"] = seitei_range(ward, r["loc"])   # 町名の実成約㎡単価レンジ
     if cg is not None:
         score += (4 if cg >= 5.5 else 3 if cg >= 4.8 else 1 if cg >= 4.0 else 0 if cg >= 3.7 else -1)
 
@@ -1297,6 +1308,17 @@ def render(rows, errors):
             net_html = ""
         cg = r.get("cagr")
         cagr_disp = f'+{cg}%/年' if cg is not None else "—"
+        sr = r.get("seitei")
+        if sr and is_ms:
+            _unit = (r["price"] / r["bld"]) if r.get("bld") else None
+            _pos = ("この物件は割安側" if _unit and _unit <= sr["p25"]
+                    else "この物件は割高側" if _unit and _unit >= sr["p75"] else "中央付近")
+            seitei_html = (f'<div class="netline">📊 この町の実成約 ㎡単価 '
+                           f'<b>{sr["p25"]}〜{sr["p75"]}万</b>（中央{sr["p50"]}・{sr["n"]}件・国交省成約）'
+                           f'<span class="brk">{H.escape(district_of(r["ward"], r["loc"]))}の実取引レンジ／'
+                           + (f'本物件{round(_unit)}万＝{_pos}' if _unit else '') + '</span></div>')
+        else:
+            seitei_html = ""
         cards.append(
             f'<article class="card" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
@@ -1330,6 +1352,7 @@ def render(rows, errors):
             f'{reason_html}'
             f'{cost_html}'
             f'{net_html}'
+            f'{seitei_html}'
             f'<div class="cmt">{H.escape(r["comment"])}</div>'
             f'<div class="viewrow">'
             f'<button class="view mark" data-id="{r["id"]}" type="button">📌気になる</button>'

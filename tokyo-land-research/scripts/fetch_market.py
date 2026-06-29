@@ -116,8 +116,9 @@ def main():
         ms_all = [u for x in recent if (u := ms_unit(x)) is not None]
         land_all = [u for x in recent if (u := land_unit(x)) is not None]
         ward_ms = med(ms_all)
-        # 町名別プレミアム（マンション、n>=8 のみ。区中央値に対する倍率）
+        # 町名別プレミアム（マンション、n>=8 のみ。区中央値に対する倍率）＋実成約レンジ(p25/中央/p75)
         dist = {}
+        dist_range = {}
         if ward_ms:
             buckets = {}
             for x in recent:
@@ -128,6 +129,9 @@ def main():
             for d, vs in buckets.items():
                 if d and len(vs) >= 8:
                     dist[d] = round(statistics.median(vs) / ward_ms, 3)
+                    q = statistics.quantiles(vs, n=4) if len(vs) >= 4 else [min(vs), statistics.median(vs), max(vs)]
+                    dist_range[d] = {"p25": round(q[0]), "p50": round(statistics.median(vs)),
+                                     "p75": round(q[2]), "n": len(vs)}
         # トレンド（マンション㎡単価のCAGR：最古→2024）
         def ms_med_of(y):
             return med([u for x in by_year.get(y, []) if (u := ms_unit(x)) is not None])
@@ -137,7 +141,7 @@ def main():
             "ms_m2_txn": ward_ms, "land_tsubo_txn": med(land_all),
             "n_ms": len(ms_all), "n_land": len(land_all),
             "cagr_ms": cg, "cagr_from": base_y,
-            "districts_ms": dist,
+            "districts_ms": dist, "districts_ms_range": dist_range,
         }
         print(f"{ward}: ㎡{ward_ms}(n{len(ms_all)}) 坪{med(land_all)}(n{len(land_all)}) "
               f"CAGR{cg}%({base_y}→) 町名{len(dist)}")
