@@ -1445,7 +1445,7 @@ TEMPLATE = """<!DOCTYPE html>
 </style></head><body><div class="wrap">
 <h1>資産価値が落ちない家さがし — 東京23区</h1>
 <p class="tagline"><b>10〜30年“住んで”、売る時に「買値以上」で手放せる家</b>を探すツール。<span class="src">SUUMO／{stamp}／{count}件／毎日更新</span></p>
-<details class="concept"><summary>💡 コンセプトと使い方 ― 「資産価値が落ちない家」とは（タップで開く）</summary>
+<details class="concept"><summary>💡 コンセプトと使い方</summary>
 <div class="dbody">
 <p><b>目的</b>：10〜30年“住んで”、売る時に<b>買値以上</b>で手放せる家を見つける。落ちない（できれば上がる）＝最高。だから安さ単体では選ばず、<b>出口（再売却）で価値が残る／上がるか</b>を最重視。<b>古い建物にはこだわらない</b>（新しくてもOK）。</p>
 <p><b>■ 出口（売って利益）の作り方は4通り、どれもアリ</b></p>
@@ -1460,10 +1460,10 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
 
-<details{watch_open}><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
+<details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・気になる物件</summary>
 <div class="dbody">{watch}</div></details>
 
-<details><summary>📌 気になる物件（自分で📌した物件）— 📌から好みを学習し「似てる物件」を上位表示</summary>
+<details><summary>📌 気になる物件 — 📌から好みを学習</summary>
 <div class="dbody"><div id="pinprofile"></div><div id="pinclicks"></div></div></details>
 
 <div class="bar">
@@ -1502,7 +1502,7 @@ TEMPLATE = """<!DOCTYPE html>
 
 <h2>値持ちの見極め（出口・相場・将来性・落とし穴）</h2>
 
-<details><summary>🛡 値持ちチェック観点 — 「売る時に困らない＝買値以上で出口」を作る視点</summary>
+<details><summary>🛡 値持ちの観点 — 出口で困らない視点</summary>
 <div class="dbody">
 <p class="lead">スコアは目安。最後は<b>「10〜30年後に、誰が・いくらで買ってくれるか（出口）」</b>を物件ごとに具体で考えます。値持ちを左右する主な観点：</p>
 <ul>
@@ -1517,19 +1517,19 @@ TEMPLATE = """<!DOCTYPE html>
 </ul>
 </div></details>
 
-<details><summary>📊 相場早見表 — 区ごとの相場（戸建坪単価・マンション㎡単価）＆出口ティア</summary>
+<details><summary>📊 相場早見表 — 区別の相場＆出口ティア</summary>
 <div class="dbody">
 <p class="lead"><b>相場比＝区の相場坪単価 ÷ この物件の坪単価</b>。1.0＝相場どおり、1.2＝相場より約17%安い、2.0＝相場の半額。<b>数字が大きいほど割安</b>（カードでは「相場より◯%安い」と表示）。ただし2倍超の“激安”は再建築不可・借地・狭小など理由ありのサイン。ティアは売却時の“出口の堅さ”（S＝都心中枢ほど下値が堅い）。（）内は今の掲載件数。</p>
 {market}
 </div></details>
 
-<details><summary>🏗 都市開発・将来性マップ — 区ごとの再開発の勢い（★高い順）</summary>
+<details><summary>🏗 将来性マップ — 区別の再開発の勢い</summary>
 <div class="dbody">
 <p class="lead">再開発が活発な区＝将来の“出口の上振れ”が期待できる。スコアにも控えめに反映（★3で+4点ほど）。<b>★は2026年時点の調査ベースの目安</b>。</p>
 {devmap}
 </div></details>
 
-<details><summary>🌊 波が来る前夜エリア — 今は割安、これから更新が進む地区</summary>
+<details><summary>🌊 波の前夜エリア — 今割安・これから更新</summary>
 <div class="dbody">
 <p class="lead">住所（丁目）単位で、<b>🏗再開発が直撃／近接</b>・<b>🚇新駅/延伸の沿線</b>・<b>🌊木造住宅が密集し東京都『不燃化特区』等で更新が進む地区</b>を判定。
 「今は古家が多く割安だが、これから波が来る」エリアを拾う（例：新宿西口北側の<b>北新宿</b>＝西新宿再開発の波及／<b>港区港南・高輪</b>＝南北線品川延伸）。物件カードにも該当メモを表示します。</p>
@@ -1537,7 +1537,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="lead" style="margin-top:10px">出典：東京都都市整備局「不燃化特区」各区の取組／各区・東京都の市街地再開発／鉄道各社・国交省の延伸事業。<b>🚇鉄道計画は構想〜事業中で時期未確定のものを含む</b>。具体の進捗・範囲は必ず公式で確認を。</p>
 </div></details>
 
-<details><summary>🔎 安い理由の読み方 — 「現地の見立て（推定）」の使い方</summary>
+<details><summary>🔎 安い理由の読み方 — 見立ての使い方</summary>
 <div class="dbody">
 <p class="lead">各カードの<b>🔎見立て(推定)</b>は、手持ちデータ（相場比・タグ・築年・駅距離・規模）から「<b>この安さの主因は何か</b>」を推定したもの。<b>断定ではなく現地確認の出発点</b>。表ビューでは価格セルにカーソルを当てると表示。</p>
 <ul>
@@ -1550,7 +1550,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="lead">※観測日数は「当ツールが最初に見た日」起点（SUUMOの掲載開始日ではない）。日が経つほど精度が上がります。「大家が売り急いでいるか」の最良の代理指標です。</p>
 </div></details>
 
-<details><summary>💎 穴場の見つけ方 — スコアの読み方と優先条件</summary>
+<details><summary>💎 穴場の見つけ方 — スコアの読み方</summary>
 <div class="dbody">
 <p><b>資産スコア（0-100）</b>＝「<b>売る時に買値以上で手放せるか＝資産が落ちないか</b>」を点数化したもの。配点：</p>
 <ul class="scorebreak">
@@ -1577,7 +1577,7 @@ TEMPLATE = """<!DOCTYPE html>
 </ul>
 </div></details>
 
-<details><summary>⚠️ 落とし穴 — 安い物件に潜むリスク（タグの意味）</summary>
+<details><summary>⚠️ 落とし穴 — タグの意味とリスク</summary>
 <div class="dbody">
 <ul>
 <li><b>再建築不可</b>（−20）：接道義務（幅員4m道路に2m以上接道）未達。今の建物を壊すと建て直せない＝<b>住宅ローンが付きにくく出口が極端に狭い</b>。現金/リフォーム前提の上級者向け。</li>
@@ -1590,7 +1590,7 @@ TEMPLATE = """<!DOCTYPE html>
 </ul>
 </div></details>
 
-<details><summary>📅 公売スケジュール（年3回）— <span id="kobaiNext">次回を計算中…</span></summary>
+<details><summary>📅 公売スケジュール — <span id="kobaiNext">次回を計算中…</span></summary>
 <div class="dbody">
 <p class="lead">税滞納差押えの<b>公売</b>（現金前提・内覧不可・契約不適合責任なし）は年3回。<b>事前に知るなら公式メルマガ登録が確実</b>。下は東京都主税局の例年パターン（日付は目安。最終は公式で確認）。</p>
 <div class="tblwrap-g"><table class="kobai">
@@ -1604,7 +1604,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="lead">⚠️ 公売・競売はローン特約が使えず<b>現金または専用ローンの事前内諾が前提</b>。本スクリーナーの売り物件（SUUMO）とは別ルートです。</p>
 </div></details>
 
-<details><summary>🔗 他サイト（キュレーション・リンク）</summary>
+<details><summary>🔗 他サイトリンク</summary>
 <div class="dbody">
 <p class="lead">cowcamo・HOME'S・at home・楽待・健美家は、SPAやアクセス制限のため自動一覧に統合できません。最新は各公式でご確認ください（cowcamoはリノベ・デザイン重視で“脱ゲテモノ”に好相性）。</p>
 <div class="grid">{curated}</div>
