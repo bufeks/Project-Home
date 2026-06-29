@@ -37,7 +37,7 @@
         "接道良好（前面道路 約5.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8680,
       "drop": 0,
       "drop_pct": 0
@@ -77,7 +77,7 @@
         "前面道路 約2.5m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -117,7 +117,7 @@
         "接道良好（前面道路 約5.4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9800,
       "drop": 0,
       "drop_pct": 0
@@ -161,7 +161,7 @@
         "前面道路 約2.6m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 26000,
       "drop": 0,
       "drop_pct": 0
@@ -201,7 +201,7 @@
         "前面道路 約3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 1,
+      "days": 2,
       "first_price": 9000,
       "drop": 0,
       "drop_pct": 0
@@ -241,7 +241,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 28000,
       "drop": 0,
       "drop_pct": 0
@@ -285,7 +285,7 @@
         "1階住戸（防犯・眺望でマイナス、専用庭の利点も）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 14800,
       "drop": 0,
       "drop_pct": 0
@@ -325,7 +325,7 @@
         "接道良好（前面道路 約8.6m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 4500,
       "drop": 0,
       "drop_pct": 0
@@ -366,7 +366,7 @@
         "標高約2.0m＝低地（浸水・液状化の可能性、ハザードマップ要確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -409,7 +409,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5580,
       "drop": 0,
       "drop_pct": 0
@@ -449,7 +449,7 @@
         "接道良好（前面道路 約8.44m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 3300,
       "drop": 0,
       "drop_pct": 0
@@ -489,7 +489,7 @@
         "接道良好（前面道路 約100.16m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 4499,
       "drop": 0,
       "drop_pct": 0
@@ -527,48 +527,8 @@
       "elev": 42.2,
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4800,
-      "drop": 0,
-      "drop_pct": 0
-    },
-    {
-      "id": "20964406",
-      "source": "SUUMO戸建",
-      "kind": "戸建",
-      "ward": "世田谷区",
-      "loc": "世田谷区上祖師谷１",
-      "price": 6290,
-      "land": 124.6,
-      "bld": 137.48,
-      "plan": "2LDK",
-      "walk": 8,
-      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_20964406/",
-      "tags": [],
-      "struct": "木造",
-      "tier": "A",
-      "unit_disp": "167万/坪",
-      "use": "実需",
-      "tsubo": 167,
-      "ratio": 2.4,
-      "dev": 2,
-      "dev_ward_note": "下北沢（小田急地下化跡『下北線路街』）、三軒茶屋（三茶のミライ）、二子玉川",
-      "spot": "",
-      "spot_kind": "",
-      "spot_note": "",
-      "score": 85,
-      "grade": "高",
-      "watch": "",
-      "watch_kind": "",
-      "comment": "相場より約58%安い（相場比2.4倍） / 駅徒歩8分 / 出口A / 将来性★★",
-      "reason": "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認） / 相場比が極端に高い＝まだ見えていない難（接道・間口・方位・嫌悪施設など）の可能性。現地確認必須",
-      "elev": 46.7,
-      "onsite": [
-        "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）"
-      ],
-      "detailed": true,
-      "days": 5,
-      "first_price": 6290,
       "drop": 0,
       "drop_pct": 0
     },
@@ -610,7 +570,7 @@
         "総戸数8戸の小規模（管理コスト割高・流動性やや低）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0
@@ -648,7 +608,7 @@
       "elev": 38.9,
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0
@@ -688,7 +648,7 @@
         "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0
@@ -728,7 +688,7 @@
         "前面道路 約3.6m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 11480,
       "drop": 0,
       "drop_pct": 0
@@ -772,7 +732,7 @@
         "接道良好（前面道路 約13.87m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7890,
       "drop": 0,
       "drop_pct": 0
@@ -817,7 +777,7 @@
         "標高約1.8m＝低地（浸水・液状化の可能性、ハザードマップ要確認）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -860,7 +820,7 @@
         "標高約4.9m＝低地（浸水・液状化の可能性、ハザードマップ要確認）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0
@@ -900,7 +860,7 @@
         "標高約1.6m＝低地（浸水・液状化の可能性、ハザードマップ要確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -938,7 +898,7 @@
       "elev": 23.1,
       "onsite": [],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 5590,
       "drop": 0,
       "drop_pct": 0
@@ -981,7 +941,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0
@@ -1021,7 +981,7 @@
         "接道良好（前面道路 約6.44m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -1058,7 +1018,7 @@
       "watch_kind": "",
       "comment": "相場より約49%安い（相場比1.97倍） / 駅徒歩10分 / 出口S / 高輪（南北線品川延伸）・将来性★★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 10980,
       "drop": 0,
       "drop_pct": 0
@@ -1102,7 +1062,7 @@
         "接道良好（前面道路 約4.3m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 12900,
       "drop": 0,
       "drop_pct": 0
@@ -1145,7 +1105,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 15000,
       "drop": 0,
       "drop_pct": 0
@@ -1185,7 +1145,7 @@
         "接道良好（前面道路 約25.27m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 16480,
       "drop": 0,
       "drop_pct": 0
@@ -1225,7 +1185,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 28000,
       "drop": 0,
       "drop_pct": 0
@@ -1267,7 +1227,7 @@
         "北西向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0
@@ -1310,7 +1270,7 @@
         "1階住戸（防犯・眺望でマイナス、専用庭の利点も）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -1352,7 +1312,7 @@
       "elev": 35.4,
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -1389,7 +1349,7 @@
       "watch_kind": "",
       "comment": "相場より約40%安い（相場比1.68倍） / 駅徒歩3分 / 出口B / 荒川・将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 5,
+      "days": 6,
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0
@@ -1432,7 +1392,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 5990,
       "drop": 0,
       "drop_pct": 0
@@ -1477,7 +1437,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6698,
       "drop": 0,
       "drop_pct": 0
@@ -1519,7 +1479,7 @@
         "借地（土地は借り物・地代/承諾料が必要）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0
@@ -1559,7 +1519,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0
@@ -1602,7 +1562,7 @@
         "北西向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0
@@ -1647,7 +1607,7 @@
         "1階住戸（防犯・眺望でマイナス、専用庭の利点も）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -1684,7 +1644,7 @@
       "watch_kind": "",
       "comment": "相場より約63%安い（相場比2.73倍） / 駅徒歩3分 / 出口B / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 5,
+      "days": 6,
       "first_price": 3480,
       "drop": 0,
       "drop_pct": 0
@@ -1726,7 +1686,7 @@
         "再建築不可（建て替え不可）＝出口が極端に狭い。現金/リフォーム前提"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -1769,7 +1729,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7750,
       "drop": 0,
       "drop_pct": 0
@@ -1806,7 +1766,7 @@
       "watch_kind": "",
       "comment": "相場より約39%安い（相場比1.65倍） / 駅徒歩6分 / 出口A / 谷中・将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 5,
+      "days": 6,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -1845,7 +1805,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -1889,7 +1849,7 @@
         "1階住戸（防犯・眺望でマイナス、専用庭の利点も）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 9850,
       "drop": 0,
       "drop_pct": 0
@@ -1929,7 +1889,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 10990,
       "drop": 0,
       "drop_pct": 0
@@ -1969,7 +1929,7 @@
         "接道良好（前面道路 約8.3m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 14980,
       "drop": 0,
       "drop_pct": 0
@@ -2012,7 +1972,7 @@
         "前面道路 約3.3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2580,
       "drop": 0,
       "drop_pct": 0
@@ -2049,7 +2009,7 @@
       "watch_kind": "",
       "comment": "相場より約57%安い（相場比2.33倍） / 駅徒歩2分 / 出口A / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -2092,7 +2052,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -2129,7 +2089,7 @@
       "reason": "駅徒歩25分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5998,
       "drop": 0,
       "drop_pct": 0
@@ -2166,7 +2126,7 @@
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2450,
       "drop": 0,
       "drop_pct": 0
@@ -2203,7 +2163,7 @@
       "watch_kind": "",
       "comment": "相場より約33%安い（相場比1.5倍） / 駅徒歩5分 / 出口A / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 6500,
       "drop": 0,
       "drop_pct": 0
@@ -2240,7 +2200,7 @@
       "watch_kind": "",
       "comment": "相場より約35%安い（相場比1.55倍） / 駅徒歩4分 / 出口S / 将来性★★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 13000,
       "drop": 0,
       "drop_pct": 0
@@ -2279,7 +2239,7 @@
         "前面道路 約3.6m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 25000,
       "drop": 0,
       "drop_pct": 0
@@ -2318,7 +2278,7 @@
         "用途地域:準工業、近隣商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 1850,
       "drop": 0,
       "drop_pct": 0
@@ -2362,7 +2322,7 @@
         "接道良好（前面道路 約7.3m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -2401,7 +2361,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4390,
       "drop": 0,
       "drop_pct": 0
@@ -2438,7 +2398,7 @@
       "watch_kind": "",
       "comment": "相場より約35%安い（相場比1.55倍） / 駅徒歩13分 / 出口A / 将来性★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 5,
+      "days": 6,
       "first_price": 5800,
       "drop": 0,
       "drop_pct": 0
@@ -2479,7 +2439,7 @@
         "接道良好（前面道路 約115.51m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7990,
       "drop": 0,
       "drop_pct": 0
@@ -2517,7 +2477,7 @@
       "elev": 27.5,
       "onsite": [],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 13000,
       "drop": 0,
       "drop_pct": 0
@@ -2554,7 +2514,7 @@
       "watch_kind": "",
       "comment": "相場より約81%安い（相場比5.2倍） / 駅徒歩6分 / 出口B / 十条・将来性★★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 1500,
       "drop": 0,
       "drop_pct": 0
@@ -2591,7 +2551,7 @@
       "watch_kind": "",
       "comment": "相場より約64%安い（相場比2.75倍） / 駅徒歩8分 / 出口A / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 4290,
       "drop": 0,
       "drop_pct": 0
@@ -2635,7 +2595,7 @@
         "用途地域:近隣商業、１種住居（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0
@@ -2677,7 +2637,7 @@
         "再建築不可（建て替え不可）＝出口が極端に狭い。現金/リフォーム前提"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8280,
       "drop": 0,
       "drop_pct": 0
@@ -2717,7 +2677,7 @@
         "前面道路 約3.6m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 1,
+      "days": 2,
       "first_price": 8720,
       "drop": 0,
       "drop_pct": 0
@@ -2759,7 +2719,7 @@
         "用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0
@@ -2802,7 +2762,7 @@
         "接道良好（前面道路 約14.03m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -2846,7 +2806,7 @@
         "前面道路 約2.3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 14800,
       "drop": 0,
       "drop_pct": 0
@@ -2886,7 +2846,7 @@
       "elev": 41.4,
       "onsite": [],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 14980,
       "drop": 0,
       "drop_pct": 0
@@ -2923,7 +2883,7 @@
       "watch_kind": "",
       "comment": "相場より約65%安い（相場比2.83倍） / 駅徒歩9分 / 出口A / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 5,
+      "days": 6,
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0
@@ -2965,7 +2925,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 11100,
       "drop": 0,
       "drop_pct": 0
@@ -3009,7 +2969,7 @@
         "南西向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -3046,7 +3006,7 @@
       "reason": "駅徒歩18分の駅遠が割安の一因 / 土地が狭小で接道・建築プランに制約が出やすい",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0
@@ -3085,7 +3045,7 @@
       "watch_kind": "",
       "comment": "相場より約42%安い（相場比1.73倍） / 駅徒歩5分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2090,
       "drop": 0,
       "drop_pct": 0
@@ -3131,7 +3091,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -3174,7 +3134,7 @@
         "前面道路 約3.68m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0
@@ -3211,7 +3171,7 @@
       "watch_kind": "",
       "comment": "相場より約39%安い（相場比1.64倍） / 駅徒歩6分 / 出口B / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -3255,7 +3215,7 @@
         "前面道路 約2m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7000,
       "drop": 0,
       "drop_pct": 0
@@ -3297,7 +3257,7 @@
         "南西向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 10680,
       "drop": 0,
       "drop_pct": 0
@@ -3336,7 +3296,7 @@
         "前面道路 約3.8m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 18880,
       "drop": 0,
       "drop_pct": 0
@@ -3373,7 +3333,7 @@
       "watch_kind": "",
       "comment": "相場より約60%安い（相場比2.5倍） / 駅徒歩5分 / 出口A / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0
@@ -3412,7 +3372,7 @@
         "私道負担/私道接道（掘削承諾・整備費・融資に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3080,
       "drop": 0,
       "drop_pct": 0
@@ -3449,7 +3409,7 @@
       "watch_kind": "",
       "comment": "相場より約69%安い（相場比3.18倍） / 駅徒歩5分 / 出口C / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 1,
+      "days": 2,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -3493,7 +3453,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0
@@ -3530,7 +3490,7 @@
       "watch_kind": "",
       "comment": "相場より約53%安い（相場比2.12倍） / 駅徒歩5分 / 出口C / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 1800,
       "drop": 0,
       "drop_pct": 0
@@ -3567,7 +3527,7 @@
       "watch_kind": "",
       "comment": "相場より約24%安い（相場比1.32倍） / 駅徒歩8分 / 出口S / 将来性★★★",
       "reason": "専有が狭い投資ワンルーム系で実需は付きにくい",
-      "days": 5,
+      "days": 6,
       "first_price": 2999,
       "drop": 0,
       "drop_pct": 0
@@ -3610,7 +3570,7 @@
         "前面道路 約1m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 3200,
       "drop": 0,
       "drop_pct": 0
@@ -3653,7 +3613,7 @@
         "前面道路 約2.9m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 8400,
       "drop": 0,
       "drop_pct": 0
@@ -3695,7 +3655,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8480,
       "drop": 0,
       "drop_pct": 0
@@ -3737,7 +3697,7 @@
         "南西向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -3780,7 +3740,7 @@
         "北向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 9990,
       "drop": 0,
       "drop_pct": 0
@@ -3817,7 +3777,7 @@
       "watch_kind": "",
       "comment": "相場より約49%安い（相場比1.96倍） / 駅徒歩6分 / 出口A / 将来性★★ / 再建築不可→流動性難",
       "reason": "掲載後 16,000→12,500万円（-3,500万・-22%）値下げ＝指値余地/売り急ぎの可能性 / 再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 16000,
       "drop": 3500,
       "drop_pct": 22
@@ -3857,7 +3817,7 @@
         "接道良好（前面道路 約199m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 13500,
       "drop": 0,
       "drop_pct": 0
@@ -3894,7 +3854,7 @@
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
       "onsite": [],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 3480,
       "drop": 0,
       "drop_pct": 0
@@ -3933,7 +3893,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -3972,7 +3932,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -4011,7 +3971,7 @@
         "接道良好（前面道路 約306m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5190,
       "drop": 0,
       "drop_pct": 0
@@ -4054,7 +4014,7 @@
         "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7680,
       "drop": 0,
       "drop_pct": 0
@@ -4097,7 +4057,7 @@
         "前面道路 約3.3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -4140,7 +4100,7 @@
         "前面道路 約2.7m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -4180,7 +4140,7 @@
         "前面道路 約3.2m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 9750,
       "drop": 0,
       "drop_pct": 0
@@ -4223,7 +4183,7 @@
         "総戸数17戸の小規模（管理コスト割高・流動性やや低）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 11100,
       "drop": 0,
       "drop_pct": 0
@@ -4260,7 +4220,7 @@
       "watch_kind": "",
       "comment": "相場より約61%安い（相場比2.54倍） / 駅徒歩9分 / 出口B / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 2500,
       "drop": 0,
       "drop_pct": 0
@@ -4299,7 +4259,7 @@
         "接道良好（前面道路 約6.2m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3900,
       "drop": 0,
       "drop_pct": 0
@@ -4338,7 +4298,7 @@
       "watch_kind": "",
       "comment": "相場より約24%安い（相場比1.32倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0
@@ -4380,7 +4340,7 @@
         "再建築不可（建て替え不可）＝出口が極端に狭い。現金/リフォーム前提"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0
@@ -4423,7 +4383,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0
@@ -4466,7 +4426,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7700,
       "drop": 0,
       "drop_pct": 0
@@ -4505,7 +4465,7 @@
       "watch_kind": "",
       "comment": "相場より約37%安い（相場比1.59倍） / 駅徒歩2分 / 出口B / 荒川・将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0
@@ -4549,7 +4509,7 @@
         "1階住戸（防犯・眺望でマイナス、専用庭の利点も）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 5198,
       "drop": 0,
       "drop_pct": 0
@@ -4589,7 +4549,7 @@
         "前面道路 約3.4m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 6380,
       "drop": 0,
       "drop_pct": 0
@@ -4630,7 +4590,7 @@
         "接道良好（前面道路 約17.4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7688,
       "drop": 0,
       "drop_pct": 0
@@ -4672,7 +4632,7 @@
         "北東向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 10980,
       "drop": 0,
       "drop_pct": 0
@@ -4710,7 +4670,7 @@
       "watch_kind": "",
       "comment": "相場より約5%安い（相場比1.05倍） / 駅徒歩3分 / 出口B",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 13200,
       "drop": 0,
       "drop_pct": 0
@@ -4749,7 +4709,7 @@
       "watch_kind": "",
       "comment": "相場より約31%安い（相場比1.44倍） / 駅徒歩3分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2250,
       "drop": 0,
       "drop_pct": 0
@@ -4786,7 +4746,7 @@
       "reason": "駅徒歩34分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2780,
       "drop": 0,
       "drop_pct": 0
@@ -4823,7 +4783,7 @@
       "reason": "駅徒歩20分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3420,
       "drop": 0,
       "drop_pct": 0
@@ -4865,7 +4825,7 @@
       "elev": 29.2,
       "onsite": [],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 3580,
       "drop": 0,
       "drop_pct": 0
@@ -4902,7 +4862,7 @@
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3680,
       "drop": 0,
       "drop_pct": 0
@@ -4946,7 +4906,7 @@
         "南西向き（採光面でマイナス材）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4499,
       "drop": 0,
       "drop_pct": 0
@@ -4990,7 +4950,7 @@
         "修繕積立金が低め（将来の値上げ・一時金リスク）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4799,
       "drop": 0,
       "drop_pct": 0
@@ -5027,8 +4987,50 @@
       "watch_kind": "",
       "comment": "相場より約3%安い（相場比1.03倍） / 駅徒歩5分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6280,
+      "drop": 0,
+      "drop_pct": 0
+    },
+    {
+      "id": "20964406",
+      "source": "SUUMO戸建",
+      "kind": "戸建",
+      "ward": "世田谷区",
+      "loc": "世田谷区上祖師谷１",
+      "price": 6290,
+      "land": 124.6,
+      "bld": 137.48,
+      "plan": "2LDK",
+      "walk": 8,
+      "url": "https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_20964406/",
+      "tags": [
+        "再建築不可"
+      ],
+      "struct": "木造",
+      "tier": "A",
+      "unit_disp": "167万/坪",
+      "use": "実需",
+      "tsubo": 167,
+      "ratio": 2.4,
+      "dev": 2,
+      "dev_ward_note": "下北沢（小田急地下化跡『下北線路街』）、三軒茶屋（三茶のミライ）、二子玉川",
+      "spot": "",
+      "spot_kind": "",
+      "spot_note": "",
+      "score": 65,
+      "grade": "中高",
+      "watch": "",
+      "watch_kind": "",
+      "comment": "相場より約58%安い（相場比2.4倍） / 駅徒歩8分 / 出口A / 将来性★★ / 再建築不可→流動性難",
+      "reason": "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認） / 再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
+      "elev": 46.7,
+      "onsite": [
+        "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）"
+      ],
+      "detailed": true,
+      "days": 6,
+      "first_price": 6290,
       "drop": 0,
       "drop_pct": 0
     },
@@ -5067,7 +5069,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -5112,7 +5114,7 @@
         "総戸数12戸の小規模（管理コスト割高・流動性やや低）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7990,
       "drop": 0,
       "drop_pct": 0
@@ -5153,7 +5155,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -5197,7 +5199,7 @@
         "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3600,
       "drop": 0,
       "drop_pct": 0
@@ -5240,7 +5242,7 @@
         "前面道路 約2.8m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -5284,7 +5286,7 @@
         "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0
@@ -5323,7 +5325,7 @@
       "watch_kind": "area",
       "comment": "相場より約11%安い（相場比1.12倍） / 駅徒歩4分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0
@@ -5362,7 +5364,7 @@
         "前面道路 約2.5m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -5399,7 +5401,7 @@
       "watch_kind": "area",
       "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩3分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7780,
       "drop": 0,
       "drop_pct": 0
@@ -5438,7 +5440,7 @@
         "接道良好（前面道路 約4.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7899,
       "drop": 0,
       "drop_pct": 0
@@ -5477,7 +5479,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -5516,7 +5518,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8500,
       "drop": 0,
       "drop_pct": 0
@@ -5556,7 +5558,7 @@
         "接道良好（前面道路 約4.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 14300,
       "drop": 0,
       "drop_pct": 0
@@ -5599,7 +5601,7 @@
         "接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 14980,
       "drop": 0,
       "drop_pct": 0
@@ -5638,7 +5640,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 15480,
       "drop": 0,
       "drop_pct": 0
@@ -5677,7 +5679,7 @@
         "前面道路 約3.3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0
@@ -5716,7 +5718,7 @@
         "前面道路 約3.6m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 39800,
       "drop": 0,
       "drop_pct": 0
@@ -5753,7 +5755,7 @@
       "watch_kind": "",
       "comment": "相場より約84%安い（相場比6.11倍） / 駅徒歩6分 / 出口B / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0
@@ -5796,7 +5798,7 @@
         "用途地域:近隣商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 2580,
       "drop": 0,
       "drop_pct": 0
@@ -5838,7 +5840,7 @@
         "借地（土地は借り物・地代/承諾料が必要）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -5878,7 +5880,7 @@
         "接道良好（前面道路 約5.8m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0
@@ -5915,7 +5917,7 @@
       "watch_kind": "area",
       "comment": "相場より約13%安い（相場比1.15倍） / 駅徒歩8分 / 出口A / 将来性★★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 4,
+      "days": 5,
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0
@@ -5952,7 +5954,7 @@
       "watch_kind": "area",
       "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩3分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0
@@ -5991,7 +5993,7 @@
       "watch_kind": "area",
       "comment": "相場より約11%安い（相場比1.12倍） / 駅徒歩6分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 7790,
       "drop": 0,
       "drop_pct": 0
@@ -6028,7 +6030,7 @@
       "watch_kind": "area",
       "comment": "相場より約43%安い（相場比1.76倍） / 駅徒歩9分 / 出口A / 将来性★★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い / 土地が狭小で接道・建築プランに制約が出やすい",
-      "days": 5,
+      "days": 6,
       "first_price": 2780,
       "drop": 0,
       "drop_pct": 0
@@ -6065,7 +6067,7 @@
       "watch_kind": "",
       "comment": "相場より約60%安い（相場比2.52倍） / 駅徒歩14分 / 出口B / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 3380,
       "drop": 0,
       "drop_pct": 0
@@ -6104,7 +6106,7 @@
       "watch_kind": "area",
       "comment": "相場より約18%安い（相場比1.22倍） / 駅徒歩4分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4180,
       "drop": 0,
       "drop_pct": 0
@@ -6143,7 +6145,7 @@
       "watch_kind": "area",
       "comment": "相場より約26%安い（相場比1.36倍） / 駅徒歩8分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4880,
       "drop": 0,
       "drop_pct": 0
@@ -6182,7 +6184,7 @@
         "接道良好（前面道路 約4.7m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -6219,7 +6221,7 @@
       "watch_kind": "area",
       "comment": "相場より約8%高い（相場比0.93倍） / 駅徒歩4分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0
@@ -6256,7 +6258,7 @@
       "watch_kind": "area",
       "comment": "相場より約8%高い（相場比0.93倍） / 駅徒歩6分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 9990,
       "drop": 0,
       "drop_pct": 0
@@ -6293,7 +6295,7 @@
       "watch_kind": "area",
       "comment": "相場より約19%高い（相場比0.84倍） / 駅徒歩4分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 10500,
       "drop": 0,
       "drop_pct": 0
@@ -6330,7 +6332,7 @@
       "watch_kind": "area",
       "comment": "相場より約18%高い（相場比0.85倍） / 駅徒歩1分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10500,
       "drop": 0,
       "drop_pct": 0
@@ -6367,7 +6369,7 @@
       "watch_kind": "area",
       "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩1分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11180,
       "drop": 0,
       "drop_pct": 0
@@ -6404,7 +6406,7 @@
       "watch_kind": "area",
       "comment": "相場より約4%高い（相場比0.96倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11800,
       "drop": 0,
       "drop_pct": 0
@@ -6441,7 +6443,7 @@
       "watch_kind": "area",
       "comment": "相場より約8%高い（相場比0.93倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11850,
       "drop": 0,
       "drop_pct": 0
@@ -6480,7 +6482,7 @@
         "接道良好（前面道路 約9.02m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0
@@ -6519,7 +6521,7 @@
         "接道良好（前面道路 約7.64m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0
@@ -6558,7 +6560,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -6595,7 +6597,7 @@
       "watch_kind": "area",
       "comment": "相場より約23%高い（相場比0.81倍） / 駅徒歩5分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 13900,
       "drop": 0,
       "drop_pct": 0
@@ -6635,7 +6637,7 @@
         "前面道路 約3.8m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 14800,
       "drop": 0,
       "drop_pct": 0
@@ -6674,7 +6676,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 19800,
       "drop": 0,
       "drop_pct": 0
@@ -6713,7 +6715,7 @@
       "watch_kind": "",
       "comment": "相場より約39%安い（相場比1.63倍） / 駅徒歩14分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2000,
       "drop": 0,
       "drop_pct": 0
@@ -6750,7 +6752,7 @@
       "watch_kind": "",
       "comment": "相場より約19%安い（相場比1.23倍） / 駅徒歩1分 / 出口B / 将来性★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 5,
+      "days": 6,
       "first_price": 2650,
       "drop": 0,
       "drop_pct": 0
@@ -6787,7 +6789,7 @@
       "watch_kind": "",
       "comment": "相場より約1%安い（相場比1.01倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 3150,
       "drop": 0,
       "drop_pct": 0
@@ -6824,7 +6826,7 @@
       "watch_kind": "",
       "comment": "相場より約33%安い（相場比1.5倍） / 駅徒歩4分 / 出口A / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い / 土地が狭小で接道・建築プランに制約が出やすい",
-      "days": 5,
+      "days": 6,
       "first_price": 3150,
       "drop": 0,
       "drop_pct": 0
@@ -6863,7 +6865,7 @@
         "接道良好（前面道路 約4.1m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4750,
       "drop": 0,
       "drop_pct": 0
@@ -6900,7 +6902,7 @@
       "watch_kind": "area",
       "comment": "相場より約4%高い（相場比0.96倍） / 駅徒歩6分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7680,
       "drop": 0,
       "drop_pct": 0
@@ -6937,7 +6939,7 @@
       "watch_kind": "area",
       "comment": "相場より約23%高い（相場比0.81倍） / 駅徒歩5分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -6976,7 +6978,7 @@
       "watch_kind": "",
       "comment": "相場より約34%安い（相場比1.52倍） / 駅徒歩5分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 1680,
       "drop": 0,
       "drop_pct": 0
@@ -7013,7 +7015,7 @@
       "watch_kind": "",
       "comment": "相場より約40%安い（相場比1.66倍） / 駅徒歩17分 / 出口C / 将来性★★",
       "reason": "駅徒歩17分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 1680,
       "drop": 0,
       "drop_pct": 0
@@ -7050,7 +7052,7 @@
       "watch_kind": "",
       "comment": "相場より約35%安い（相場比1.55倍） / 駅徒歩7分 / 出口B / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映 / 土地が狭小で接道・建築プランに制約が出やすい",
-      "days": 0,
+      "days": 1,
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0
@@ -7087,7 +7089,7 @@
       "watch_kind": "",
       "comment": "相場より約28%安い（相場比1.38倍） / 駅徒歩7分 / 出口B / 町屋・将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -7124,7 +7126,7 @@
       "watch_kind": "area",
       "comment": "相場より約5%高い（相場比0.95倍） / 駅徒歩1分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 6499,
       "drop": 0,
       "drop_pct": 0
@@ -7161,7 +7163,7 @@
       "watch_kind": "area",
       "comment": "相場より約29%安い（相場比1.4倍） / 駅徒歩8分 / 出口A / 原町・将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 1,
+      "days": 2,
       "first_price": 6500,
       "drop": 0,
       "drop_pct": 0
@@ -7198,7 +7200,7 @@
       "watch_kind": "area",
       "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩1分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 6799,
       "drop": 0,
       "drop_pct": 0
@@ -7235,7 +7237,7 @@
       "watch_kind": "area",
       "comment": "相場より約11%高い（相場比0.9倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 8480,
       "drop": 0,
       "drop_pct": 0
@@ -7274,7 +7276,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 29800,
       "drop": 0,
       "drop_pct": 0
@@ -7311,7 +7313,7 @@
       "watch_kind": "",
       "comment": "相場より約70%安い（相場比3.32倍） / 駅徒歩13分 / 出口C / 堀切・将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 1180,
       "drop": 0,
       "drop_pct": 0
@@ -7348,7 +7350,7 @@
       "watch_kind": "",
       "comment": "相場より約49%安い（相場比1.95倍） / 駅徒歩6分 / 出口C / 南小岩・将来性★★★ / 再建築不可→流動性難",
       "reason": "掲載後 2,300→2,100万円（-200万・-9%）値下げ＝指値余地/売り急ぎの可能性 / 再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 2300,
       "drop": 200,
       "drop_pct": 9
@@ -7385,7 +7387,7 @@
       "watch_kind": "",
       "comment": "相場より約63%安い（相場比2.68倍） / 駅徒歩9分 / 出口B / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 2580,
       "drop": 0,
       "drop_pct": 0
@@ -7424,7 +7426,7 @@
         "用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3500,
       "drop": 0,
       "drop_pct": 0
@@ -7461,7 +7463,7 @@
       "watch_kind": "area",
       "comment": "相場より約5%安い（相場比1.05倍） / 駅徒歩5分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0
@@ -7498,7 +7500,7 @@
       "watch_kind": "area",
       "comment": "相場より約7%安い（相場比1.08倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 5500,
       "drop": 0,
       "drop_pct": 0
@@ -7537,7 +7539,7 @@
       "watch_kind": "area",
       "comment": "相場より約18%安い（相場比1.22倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 0,
+      "days": 1,
       "first_price": 5799,
       "drop": 0,
       "drop_pct": 0
@@ -7576,7 +7578,7 @@
       "watch_kind": "",
       "comment": "相場より約6%安い（相場比1.06倍） / 駅徒歩2分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 6999,
       "drop": 0,
       "drop_pct": 0
@@ -7613,7 +7615,7 @@
       "watch_kind": "area",
       "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩6分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0
@@ -7650,7 +7652,7 @@
       "watch_kind": "area",
       "comment": "相場より約7%安い（相場比1.08倍） / 駅徒歩11分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -7689,7 +7691,7 @@
         "前面道路 約3.4m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 12300,
       "drop": 0,
       "drop_pct": 0
@@ -7726,7 +7728,7 @@
       "watch_kind": "area",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩5分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12900,
       "drop": 0,
       "drop_pct": 0
@@ -7765,7 +7767,7 @@
         "接道良好（前面道路 約7.45m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 13900,
       "drop": 0,
       "drop_pct": 0
@@ -7803,7 +7805,7 @@
       "watch_kind": "area",
       "comment": "相場より約1%安い（相場比1.01倍） / 駅徒歩11分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 14880,
       "drop": 0,
       "drop_pct": 0
@@ -7843,7 +7845,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 27500,
       "drop": 0,
       "drop_pct": 0
@@ -7880,7 +7882,7 @@
       "watch_kind": "",
       "comment": "相場より約60%安い（相場比2.52倍） / 駅徒歩9分 / 出口B / 京島・将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 1680,
       "drop": 0,
       "drop_pct": 0
@@ -7917,7 +7919,7 @@
       "watch_kind": "",
       "comment": "相場より約21%安い（相場比1.27倍） / 駅徒歩10分 / 出口B / 将来性★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 5,
+      "days": 6,
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0
@@ -7954,7 +7956,7 @@
       "watch_kind": "",
       "comment": "相場より約53%安い（相場比2.11倍） / 駅徒歩10分 / 出口B / 尾久・将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 2490,
       "drop": 0,
       "drop_pct": 0
@@ -7991,7 +7993,7 @@
       "watch_kind": "area",
       "comment": "相場より約8%高い（相場比0.93倍） / 駅徒歩2分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 2,
+      "days": 3,
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0
@@ -8030,7 +8032,7 @@
       "watch_kind": "area",
       "comment": "相場より約7%安い（相場比1.08倍） / 駅徒歩4分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 2,
+      "days": 3,
       "first_price": 7280,
       "drop": 0,
       "drop_pct": 0
@@ -8069,7 +8071,7 @@
         "接道良好（前面道路 約4.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7999,
       "drop": 0,
       "drop_pct": 0
@@ -8109,7 +8111,7 @@
         "前面道路 約3.3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 8000,
       "drop": 0,
       "drop_pct": 0
@@ -8146,7 +8148,7 @@
       "watch_kind": "area",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩6分 / 出口A / 百人町(大久保)・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0
@@ -8185,7 +8187,7 @@
         "接道良好（前面道路 約5.2m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9900,
       "drop": 0,
       "drop_pct": 0
@@ -8222,7 +8224,7 @@
       "watch_kind": "area",
       "comment": "相場より約11%高い（相場比0.9倍） / 駅徒歩7分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -8261,7 +8263,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -8300,7 +8302,7 @@
         "前面道路 約3.75m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0
@@ -8339,7 +8341,7 @@
         "接道良好（前面道路 約4.4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 27800,
       "drop": 0,
       "drop_pct": 0
@@ -8378,7 +8380,7 @@
       "watch_kind": "",
       "comment": "相場より約32%安い（相場比1.48倍） / 駅徒歩9分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3100,
       "drop": 0,
       "drop_pct": 0
@@ -8415,7 +8417,7 @@
       "watch_kind": "area",
       "comment": "相場より約1%高い（相場比0.99倍） / 駅徒歩4分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 4780,
       "drop": 0,
       "drop_pct": 0
@@ -8454,7 +8456,7 @@
       "watch_kind": "area",
       "comment": "相場より約2%安い（相場比1.02倍） / 駅徒歩5分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0
@@ -8493,7 +8495,7 @@
       "watch_kind": "area",
       "comment": "相場より約6%安い（相場比1.06倍） / 駅徒歩5分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0
@@ -8530,7 +8532,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7780,
       "drop": 0,
       "drop_pct": 0
@@ -8569,7 +8571,7 @@
         "接道良好（前面道路 約6.3m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -8606,7 +8608,7 @@
       "watch_kind": "",
       "comment": "相場より約6%安い（相場比1.06倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 8280,
       "drop": 0,
       "drop_pct": 0
@@ -8645,7 +8647,7 @@
         "接道良好（前面道路 約5.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8780,
       "drop": 0,
       "drop_pct": 0
@@ -8683,7 +8685,7 @@
       "watch_kind": "",
       "comment": "相場より約5%安い（相場比1.05倍） / 駅徒歩13分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 9720,
       "drop": 0,
       "drop_pct": 0
@@ -8720,7 +8722,7 @@
       "watch_kind": "area",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10900,
       "drop": 0,
       "drop_pct": 0
@@ -8757,7 +8759,7 @@
       "watch_kind": "area",
       "comment": "相場より約45%高い（相場比0.69倍） / 駅徒歩3分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 14500,
       "drop": 0,
       "drop_pct": 0
@@ -8796,7 +8798,7 @@
         "接道良好（前面道路 約117.79m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0
@@ -8833,7 +8835,7 @@
       "reason": "駅徒歩16分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2800,
       "drop": 0,
       "drop_pct": 0
@@ -8872,7 +8874,7 @@
       "watch_kind": "",
       "comment": "相場より約17%安い（相場比1.2倍） / 駅徒歩5分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3190,
       "drop": 0,
       "drop_pct": 0
@@ -8911,7 +8913,7 @@
       "watch_kind": "area",
       "comment": "相場より約2%安い（相場比1.02倍） / 駅徒歩1分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 4580,
       "drop": 0,
       "drop_pct": 0
@@ -8950,7 +8952,7 @@
       "watch_kind": "area",
       "comment": "相場より約5%安い（相場比1.05倍） / 駅徒歩1分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 5500,
       "drop": 0,
       "drop_pct": 0
@@ -8989,7 +8991,7 @@
       "watch_kind": "area",
       "comment": "相場より約4%高い（相場比0.96倍） / 駅徒歩3分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -9026,7 +9028,7 @@
       "watch_kind": "area",
       "comment": "相場より約3%高い（相場比0.97倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 7480,
       "drop": 0,
       "drop_pct": 0
@@ -9063,7 +9065,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩2分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 9499,
       "drop": 0,
       "drop_pct": 0
@@ -9106,7 +9108,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 11500,
       "drop": 0,
       "drop_pct": 0
@@ -9147,7 +9149,7 @@
         "接道良好（前面道路 約46m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 13000,
       "drop": 0,
       "drop_pct": 0
@@ -9186,7 +9188,7 @@
         "接道良好（前面道路 約7.2m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 22000,
       "drop": 0,
       "drop_pct": 0
@@ -9225,7 +9227,7 @@
       "watch_kind": "",
       "comment": "相場より約26%安い（相場比1.36倍） / 駅徒歩6分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0
@@ -9262,7 +9264,7 @@
       "watch_kind": "area",
       "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩8分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6680,
       "drop": 0,
       "drop_pct": 0
@@ -9299,7 +9301,7 @@
       "watch_kind": "area",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩4分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 8280,
       "drop": 0,
       "drop_pct": 0
@@ -9338,7 +9340,7 @@
         "私道負担/私道接道（掘削承諾・整備費・融資に注意）"
       ],
       "detailed": true,
-      "days": 1,
+      "days": 2,
       "first_price": 8520,
       "drop": 0,
       "drop_pct": 0
@@ -9379,7 +9381,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 10800,
       "drop": 0,
       "drop_pct": 0
@@ -9421,7 +9423,7 @@
         "接道良好（前面道路 約15.66m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 16000,
       "drop": 0,
       "drop_pct": 0
@@ -9458,7 +9460,7 @@
       "watch_kind": "area",
       "comment": "相場より約39%高い（相場比0.72倍） / 駅徒歩3分 / 出口S / 将来性★★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 25000,
       "drop": 0,
       "drop_pct": 0
@@ -9495,7 +9497,7 @@
       "watch_kind": "",
       "comment": "相場より約75%高い（相場比0.57倍） / 駅徒歩3分 / 出口S / 将来性★★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 42500,
       "drop": 0,
       "drop_pct": 0
@@ -9534,7 +9536,7 @@
       "watch_kind": "",
       "comment": "相場より約11%安い（相場比1.12倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 0,
+      "days": 1,
       "first_price": 2499,
       "drop": 0,
       "drop_pct": 0
@@ -9573,7 +9575,7 @@
         "接道良好（前面道路 約101m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3080,
       "drop": 0,
       "drop_pct": 0
@@ -9610,7 +9612,7 @@
       "watch_kind": "",
       "comment": "相場より約59%安い（相場比2.42倍） / 駅徒歩11分 / 出口B / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -9649,7 +9651,7 @@
         "接道良好（前面道路 約353m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4780,
       "drop": 0,
       "drop_pct": 0
@@ -9688,7 +9690,7 @@
       "watch_kind": "area",
       "comment": "相場より約7%安い（相場比1.07倍） / 駅徒歩3分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4790,
       "drop": 0,
       "drop_pct": 0
@@ -9727,7 +9729,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -9768,7 +9770,7 @@
         "接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8780,
       "drop": 0,
       "drop_pct": 0
@@ -9805,7 +9807,7 @@
       "watch_kind": "area",
       "comment": "相場より約0%安い（相場比1.0倍） / 駅徒歩8分 / 出口A / 北新宿(西口北側)・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 0,
+      "days": 1,
       "first_price": 8980,
       "drop": 0,
       "drop_pct": 0
@@ -9842,7 +9844,7 @@
       "watch_kind": "area",
       "comment": "相場より約59%高い（相場比0.63倍） / 駅徒歩1分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 0,
+      "days": 1,
       "first_price": 8999,
       "drop": 0,
       "drop_pct": 0
@@ -9883,7 +9885,7 @@
         "接道良好（前面道路 約75m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9950,
       "drop": 0,
       "drop_pct": 0
@@ -9922,7 +9924,7 @@
       "watch_kind": "area",
       "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩7分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -9960,7 +9962,7 @@
       "watch_kind": "",
       "comment": "相場より約32%高い（相場比0.76倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 12180,
       "drop": 0,
       "drop_pct": 0
@@ -9999,7 +10001,7 @@
         "接道良好（前面道路 約22.33m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 15800,
       "drop": 0,
       "drop_pct": 0
@@ -10038,7 +10040,7 @@
         "前面道路 約3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 16300,
       "drop": 0,
       "drop_pct": 0
@@ -10077,7 +10079,7 @@
         "前面道路 約3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 17800,
       "drop": 0,
       "drop_pct": 0
@@ -10116,7 +10118,7 @@
         "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 27800,
       "drop": 0,
       "drop_pct": 0
@@ -10153,7 +10155,7 @@
       "watch_kind": "",
       "comment": "相場より約60%安い（相場比2.48倍） / 駅徒歩10分 / 出口C / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 1500,
       "drop": 0,
       "drop_pct": 0
@@ -10190,7 +10192,7 @@
       "watch_kind": "",
       "comment": "相場より約15%安い（相場比1.18倍） / 駅徒歩13分 / 出口A / 将来性★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 5,
+      "days": 6,
       "first_price": 3480,
       "drop": 0,
       "drop_pct": 0
@@ -10229,7 +10231,7 @@
       "watch_kind": "area",
       "comment": "相場より約6%安い（相場比1.06倍） / 駅徒歩5分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 4298,
       "drop": 0,
       "drop_pct": 0
@@ -10266,7 +10268,7 @@
       "watch_kind": "",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩1分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 5680,
       "drop": 0,
       "drop_pct": 0
@@ -10305,7 +10307,7 @@
         "接道良好（前面道路 約19.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 5850,
       "drop": 0,
       "drop_pct": 0
@@ -10344,7 +10346,7 @@
         "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0
@@ -10384,7 +10386,7 @@
         "接道良好（前面道路 約4.53m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8000,
       "drop": 0,
       "drop_pct": 0
@@ -10423,7 +10425,7 @@
         "接道良好（前面道路 約5.5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0
@@ -10460,7 +10462,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -10497,7 +10499,7 @@
       "watch_kind": "area",
       "comment": "相場より約32%高い（相場比0.76倍） / 駅徒歩4分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 0,
+      "days": 1,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -10534,7 +10536,7 @@
       "watch_kind": "area",
       "comment": "相場より約37%高い（相場比0.73倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10480,
       "drop": 0,
       "drop_pct": 0
@@ -10571,7 +10573,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10780,
       "drop": 0,
       "drop_pct": 0
@@ -10610,7 +10612,7 @@
       "watch_kind": "",
       "comment": "相場より約14%安い（相場比1.16倍） / 駅徒歩3分 / 出口C / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -10647,7 +10649,7 @@
       "watch_kind": "",
       "comment": "相場より約10%安い（相場比1.11倍） / 駅徒歩10分 / 出口C / 四つ木・将来性★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 5,
+      "days": 6,
       "first_price": 3100,
       "drop": 0,
       "drop_pct": 0
@@ -10686,7 +10688,7 @@
       "watch_kind": "",
       "comment": "相場より約22%安い（相場比1.29倍） / 駅徒歩15分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 駅徒歩15分の駅遠が割安の一因",
-      "days": 2,
+      "days": 3,
       "first_price": 3200,
       "drop": 0,
       "drop_pct": 0
@@ -10725,7 +10727,7 @@
       "watch_kind": "",
       "comment": "相場より約15%安い（相場比1.17倍） / 駅徒歩6分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3380,
       "drop": 0,
       "drop_pct": 0
@@ -10764,7 +10766,7 @@
         "接道良好（前面道路 約16.93m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3990,
       "drop": 0,
       "drop_pct": 0
@@ -10804,7 +10806,7 @@
         "接道良好（前面道路 約8.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0
@@ -10843,7 +10845,7 @@
         "用途地域:近隣商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -10880,7 +10882,7 @@
       "watch_kind": "area",
       "comment": "相場より約37%高い（相場比0.73倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -10919,7 +10921,7 @@
         "前面道路 約1.2m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9800,
       "drop": 0,
       "drop_pct": 0
@@ -10958,7 +10960,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 9850,
       "drop": 0,
       "drop_pct": 0
@@ -10995,7 +10997,7 @@
       "watch_kind": "area",
       "comment": "相場より約32%高い（相場比0.76倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0
@@ -11034,7 +11036,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -11073,7 +11075,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 17000,
       "drop": 0,
       "drop_pct": 0
@@ -11112,7 +11114,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 19800,
       "drop": 0,
       "drop_pct": 0
@@ -11149,7 +11151,7 @@
       "watch_kind": "",
       "comment": "相場より約55%安い（相場比2.23倍） / 駅徒歩14分 / 出口B / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 2380,
       "drop": 0,
       "drop_pct": 0
@@ -11188,7 +11190,7 @@
       "watch_kind": "",
       "comment": "相場より約2%安い（相場比1.02倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4490,
       "drop": 0,
       "drop_pct": 0
@@ -11225,7 +11227,7 @@
       "watch_kind": "area",
       "comment": "相場より約28%高い（相場比0.78倍） / 駅徒歩4分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 5699,
       "drop": 0,
       "drop_pct": 0
@@ -11264,7 +11266,7 @@
       "watch_kind": "",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩2分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 6480,
       "drop": 0,
       "drop_pct": 0
@@ -11301,7 +11303,7 @@
       "watch_kind": "area",
       "comment": "相場より約28%高い（相場比0.78倍） / 駅徒歩4分 / 出口A / 西新宿五丁目・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 6790,
       "drop": 0,
       "drop_pct": 0
@@ -11338,7 +11340,7 @@
       "watch_kind": "area",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩5分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 1,
+      "days": 2,
       "first_price": 6799,
       "drop": 0,
       "drop_pct": 0
@@ -11377,7 +11379,7 @@
         "前面道路 約2.07m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -11414,7 +11416,7 @@
       "watch_kind": "area",
       "comment": "相場より約25%高い（相場比0.8倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 8680,
       "drop": 0,
       "drop_pct": 0
@@ -11456,7 +11458,7 @@
         "前面道路 約3.2m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0
@@ -11495,7 +11497,7 @@
         "接道良好（前面道路 約64m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -11532,7 +11534,7 @@
       "watch_kind": "area",
       "comment": "相場より約33%高い（相場比0.75倍） / 駅徒歩8分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 11000,
       "drop": 0,
       "drop_pct": 0
@@ -11569,7 +11571,7 @@
       "watch_kind": "area",
       "comment": "相場より約69%高い（相場比0.59倍） / 駅徒歩5分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 11290,
       "drop": 0,
       "drop_pct": 0
@@ -11606,7 +11608,7 @@
       "watch_kind": "area",
       "comment": "相場より約45%高い（相場比0.69倍） / 駅徒歩8分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0
@@ -11645,7 +11647,7 @@
       "watch_kind": "area",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩1分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 12900,
       "drop": 0,
       "drop_pct": 0
@@ -11682,7 +11684,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩9分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -11719,7 +11721,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩8分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -11756,7 +11758,7 @@
       "watch_kind": "area",
       "comment": "相場より約27%高い（相場比0.79倍） / 駅徒歩8分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12999,
       "drop": 0,
       "drop_pct": 0
@@ -11794,7 +11796,7 @@
       "watch_kind": "",
       "comment": "相場より約5%高い（相場比0.95倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 15600,
       "drop": 0,
       "drop_pct": 0
@@ -11833,7 +11835,7 @@
         "接道良好（前面道路 約5.5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 49800,
       "drop": 0,
       "drop_pct": 0
@@ -11872,7 +11874,7 @@
       "watch_kind": "",
       "comment": "相場より約23%安い（相場比1.3倍） / 駅徒歩6分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 1480,
       "drop": 0,
       "drop_pct": 0
@@ -11909,7 +11911,7 @@
       "watch_kind": "",
       "comment": "相場より約9%安い（相場比1.1倍） / 駅徒歩8分 / 出口B / 将来性★★",
       "reason": "目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）",
-      "days": 0,
+      "days": 1,
       "first_price": 2380,
       "drop": 0,
       "drop_pct": 0
@@ -11948,7 +11950,7 @@
       "watch_kind": "",
       "comment": "相場より約19%安い（相場比1.24倍） / 駅徒歩4分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2810,
       "drop": 0,
       "drop_pct": 0
@@ -11987,7 +11989,7 @@
       "watch_kind": "",
       "comment": "相場より約9%安い（相場比1.1倍） / 駅徒歩5分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 1,
+      "days": 2,
       "first_price": 3300,
       "drop": 0,
       "drop_pct": 0
@@ -12026,7 +12028,7 @@
       "watch_kind": "",
       "comment": "相場より約3%安い（相場比1.03倍） / 駅徒歩7分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4980,
       "drop": 0,
       "drop_pct": 0
@@ -12065,7 +12067,7 @@
       "watch_kind": "area",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩3分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0
@@ -12104,7 +12106,7 @@
       "watch_kind": "area",
       "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩5分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -12143,7 +12145,7 @@
       "watch_kind": "area",
       "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩1分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 6200,
       "drop": 0,
       "drop_pct": 0
@@ -12180,7 +12182,7 @@
       "watch_kind": "",
       "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩7分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6699,
       "drop": 0,
       "drop_pct": 0
@@ -12217,7 +12219,7 @@
       "watch_kind": "area",
       "comment": "相場より約22%高い（相場比0.82倍） / 駅徒歩7分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 11880,
       "drop": 0,
       "drop_pct": 0
@@ -12256,7 +12258,7 @@
         "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 12480,
       "drop": 0,
       "drop_pct": 0
@@ -12293,7 +12295,7 @@
       "watch_kind": "area",
       "comment": "相場より約49%高い（相場比0.67倍） / 駅徒歩4分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0
@@ -12333,7 +12335,7 @@
         "接道良好（前面道路 約4.1m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 13800,
       "drop": 0,
       "drop_pct": 0
@@ -12372,7 +12374,7 @@
         "接道良好（前面道路 約7.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 25000,
       "drop": 0,
       "drop_pct": 0
@@ -12411,7 +12413,7 @@
         "前面道路 約3.4m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 25800,
       "drop": 0,
       "drop_pct": 0
@@ -12448,7 +12450,7 @@
       "watch_kind": "",
       "comment": "相場より約77%安い（相場比4.39倍） / 駅徒歩15分 / 出口C / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い / 駅徒歩15分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 1450,
       "drop": 0,
       "drop_pct": 0
@@ -12485,7 +12487,7 @@
       "watch_kind": "",
       "comment": "相場より約33%安い（相場比1.49倍） / 駅徒歩9分 / 出口C / 南小岩・将来性★★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0
@@ -12524,7 +12526,7 @@
       "watch_kind": "",
       "comment": "相場より約15%安い（相場比1.17倍） / 駅徒歩3分 / 出口C / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2290,
       "drop": 0,
       "drop_pct": 0
@@ -12564,7 +12566,7 @@
         "接道良好（前面道路 約11m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 1,
+      "days": 2,
       "first_price": 3580,
       "drop": 0,
       "drop_pct": 0
@@ -12601,7 +12603,7 @@
       "watch_kind": "",
       "comment": "相場より約38%安い（相場比1.61倍） / 駅徒歩12分 / 出口C / 再建築不可→流動性難",
       "reason": "掲載後 3,680→3,580万円（-100万・-3%）値下げ＝指値余地/売り急ぎの可能性 / 再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 3680,
       "drop": 100,
       "drop_pct": 3
@@ -12640,7 +12642,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -12677,7 +12679,7 @@
       "watch_kind": "area",
       "comment": "相場より約33%高い（相場比0.75倍） / 駅徒歩5分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 5999,
       "drop": 0,
       "drop_pct": 0
@@ -12714,7 +12716,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩4分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6699,
       "drop": 0,
       "drop_pct": 0
@@ -12753,7 +12755,7 @@
         "接道良好（前面道路 約5.8m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 1,
+      "days": 2,
       "first_price": 8800,
       "drop": 0,
       "drop_pct": 0
@@ -12793,7 +12795,7 @@
         "前面道路 約2.5m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -12830,7 +12832,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩6分 / 出口A / 北新宿(西口北側)・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10800,
       "drop": 0,
       "drop_pct": 0
@@ -12867,7 +12869,7 @@
       "watch_kind": "area",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩6分 / 出口A / 北新宿(西口北側)・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10980,
       "drop": 0,
       "drop_pct": 0
@@ -12904,7 +12906,7 @@
       "watch_kind": "area",
       "comment": "相場より約49%高い（相場比0.67倍） / 駅徒歩6分 / 出口A / 北新宿(西口北側)・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11480,
       "drop": 0,
       "drop_pct": 0
@@ -12942,7 +12944,7 @@
       "watch_kind": "",
       "comment": "相場より約9%高い（相場比0.92倍） / 駅徒歩9分 / 出口B",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 12988,
       "drop": 0,
       "drop_pct": 0
@@ -12979,7 +12981,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 13180,
       "drop": 0,
       "drop_pct": 0
@@ -13018,7 +13020,7 @@
         "前面道路 約2.9m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 14300,
       "drop": 0,
       "drop_pct": 0
@@ -13057,7 +13059,7 @@
         "前面道路 約3.3m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0
@@ -13096,7 +13098,7 @@
         "接道良好（前面道路 約14.6m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3780,
       "drop": 0,
       "drop_pct": 0
@@ -13135,7 +13137,7 @@
       "watch_kind": "area",
       "comment": "相場より約10%安い（相場比1.11倍） / 駅徒歩10分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 4599,
       "drop": 0,
       "drop_pct": 0
@@ -13172,7 +13174,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4700,
       "drop": 0,
       "drop_pct": 0
@@ -13211,7 +13213,7 @@
       "watch_kind": "area",
       "comment": "相場より約4%安い（相場比1.04倍） / 駅徒歩8分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 5750,
       "drop": 0,
       "drop_pct": 0
@@ -13251,7 +13253,7 @@
         "前面道路 約1m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -13288,7 +13290,7 @@
       "watch_kind": "area",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 6000,
       "drop": 0,
       "drop_pct": 0
@@ -13325,7 +13327,7 @@
       "watch_kind": "area",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩6分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 7498,
       "drop": 0,
       "drop_pct": 0
@@ -13362,7 +13364,7 @@
       "watch_kind": "area",
       "comment": "相場より約15%安い（相場比1.18倍） / 駅徒歩12分 / 出口S / 将来性★★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 8380,
       "drop": 0,
       "drop_pct": 0
@@ -13401,7 +13403,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9380,
       "drop": 0,
       "drop_pct": 0
@@ -13438,7 +13440,7 @@
       "watch_kind": "area",
       "comment": "相場より約37%高い（相場比0.73倍） / 駅徒歩10分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10480,
       "drop": 0,
       "drop_pct": 0
@@ -13475,7 +13477,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩8分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11180,
       "drop": 0,
       "drop_pct": 0
@@ -13512,7 +13514,7 @@
       "watch_kind": "area",
       "comment": "相場より約19%高い（相場比0.84倍） / 駅徒歩12分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 11300,
       "drop": 0,
       "drop_pct": 0
@@ -13549,7 +13551,7 @@
       "watch_kind": "area",
       "comment": "相場より約19%高い（相場比0.84倍） / 駅徒歩12分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 11300,
       "drop": 0,
       "drop_pct": 0
@@ -13588,7 +13590,7 @@
         "前面道路 約0.04m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 12480,
       "drop": 0,
       "drop_pct": 0
@@ -13627,7 +13629,7 @@
         "前面道路 約3.8m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 4,
+      "days": 5,
       "first_price": 13480,
       "drop": 0,
       "drop_pct": 0
@@ -13666,7 +13668,7 @@
         "接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 15980,
       "drop": 0,
       "drop_pct": 0
@@ -13705,7 +13707,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 21980,
       "drop": 0,
       "drop_pct": 0
@@ -13744,7 +13746,7 @@
         "接道良好（前面道路 約12.76m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 23800,
       "drop": 0,
       "drop_pct": 0
@@ -13783,7 +13785,7 @@
         "接道良好（前面道路 約82.88m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 0,
+      "days": 1,
       "first_price": 33800,
       "drop": 0,
       "drop_pct": 0
@@ -13822,7 +13824,7 @@
         "接道良好（前面道路 約5.4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 59800,
       "drop": 0,
       "drop_pct": 0
@@ -13861,7 +13863,7 @@
         "接道良好（前面道路 約4.5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 79990,
       "drop": 0,
       "drop_pct": 0
@@ -13900,7 +13902,7 @@
         "用途地域:近隣商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 1760,
       "drop": 0,
       "drop_pct": 0
@@ -13939,7 +13941,7 @@
         "用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3880,
       "drop": 0,
       "drop_pct": 0
@@ -13979,7 +13981,7 @@
         "接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5600,
       "drop": 0,
       "drop_pct": 0
@@ -14018,7 +14020,7 @@
       "watch_kind": "area",
       "comment": "相場より約3%高い（相場比0.97倍） / 駅徒歩6分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0
@@ -14057,7 +14059,7 @@
       "watch_kind": "area",
       "comment": "相場より約3%高い（相場比0.97倍） / 駅徒歩6分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0
@@ -14094,7 +14096,7 @@
       "watch_kind": "area",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩11分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 5800,
       "drop": 0,
       "drop_pct": 0
@@ -14131,7 +14133,7 @@
       "watch_kind": "area",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩7分 / 出口A / 西新宿五丁目・将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 7350,
       "drop": 0,
       "drop_pct": 0
@@ -14168,7 +14170,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩5分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7700,
       "drop": 0,
       "drop_pct": 0
@@ -14207,7 +14209,7 @@
         "接道良好（前面道路 約4.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7899,
       "drop": 0,
       "drop_pct": 0
@@ -14244,7 +14246,7 @@
       "watch_kind": "",
       "comment": "相場より約39%高い（相場比0.72倍） / 駅徒歩6分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -14281,7 +14283,7 @@
       "watch_kind": "area",
       "comment": "相場より約49%高い（相場比0.67倍） / 駅徒歩6分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 9880,
       "drop": 0,
       "drop_pct": 0
@@ -14320,7 +14322,7 @@
       "watch_kind": "area",
       "comment": "相場より約23%高い（相場比0.81倍） / 駅徒歩7分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 11990,
       "drop": 0,
       "drop_pct": 0
@@ -14357,7 +14359,7 @@
       "watch_kind": "area",
       "comment": "相場より約18%高い（相場比0.85倍） / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -14396,7 +14398,7 @@
       "watch_kind": "",
       "comment": "相場より約19%安い（相場比1.23倍） / 駅徒歩8分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0
@@ -14437,7 +14439,7 @@
         "借地（土地は借り物・地代/承諾料が必要）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3680,
       "drop": 0,
       "drop_pct": 0
@@ -14476,7 +14478,7 @@
       "watch_kind": "area",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩3分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 3,
+      "days": 4,
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0
@@ -14513,7 +14515,7 @@
       "watch_kind": "",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩7分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0
@@ -14552,7 +14554,7 @@
       "watch_kind": "area",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩5分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -14589,7 +14591,7 @@
       "watch_kind": "",
       "comment": "相場より約19%高い（相場比0.84倍） / 駅徒歩8分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6680,
       "drop": 0,
       "drop_pct": 0
@@ -14628,7 +14630,7 @@
         "接道良好（前面道路 約10.36m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 3,
+      "days": 4,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -14665,7 +14667,7 @@
       "watch_kind": "area",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩9分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 8180,
       "drop": 0,
       "drop_pct": 0
@@ -14704,7 +14706,7 @@
         "接道良好（前面道路 約5.3m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 10800,
       "drop": 0,
       "drop_pct": 0
@@ -14742,7 +14744,7 @@
       "watch_kind": "",
       "comment": "相場より約1%安い（相場比1.01倍） / 駅徒歩21分 / 出口B",
       "reason": "駅徒歩21分の駅遠が割安の一因",
-      "days": 3,
+      "days": 4,
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0
@@ -14779,7 +14781,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩9分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -14816,7 +14818,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩6分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -14851,7 +14853,7 @@
       "watch_kind": "",
       "comment": "相場より約6%安い（相場比1.06倍） / 駅徒歩14分 / 出口C",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 13500,
       "drop": 0,
       "drop_pct": 0
@@ -14888,7 +14890,7 @@
       "watch_kind": "area",
       "comment": "相場より約59%高い（相場比0.63倍） / 駅徒歩6分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 13800,
       "drop": 0,
       "drop_pct": 0
@@ -14925,7 +14927,7 @@
       "watch_kind": "area",
       "comment": "相場より約59%高い（相場比0.63倍） / 駅徒歩7分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 13800,
       "drop": 0,
       "drop_pct": 0
@@ -14962,7 +14964,7 @@
       "watch_kind": "area",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩11分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 14000,
       "drop": 0,
       "drop_pct": 0
@@ -14999,7 +15001,7 @@
       "watch_kind": "area",
       "comment": "相場より約67%高い（相場比0.6倍） / 駅徒歩8分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 14590,
       "drop": 0,
       "drop_pct": 0
@@ -15038,7 +15040,7 @@
         "接道良好（前面道路 約7.5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 15780,
       "drop": 0,
       "drop_pct": 0
@@ -15079,7 +15081,7 @@
         "接道良好（前面道路 約4.2m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 16500,
       "drop": 0,
       "drop_pct": 0
@@ -15116,7 +15118,7 @@
       "watch_kind": "",
       "comment": "相場より約76%安い（相場比4.21倍） / 駅徒歩21分 / 出口C / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い / 駅徒歩21分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 980,
       "drop": 0,
       "drop_pct": 0
@@ -15155,7 +15157,7 @@
       "watch_kind": "",
       "comment": "相場より約7%安い（相場比1.07倍） / 駅徒歩6分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0
@@ -15192,7 +15194,7 @@
       "watch_kind": "",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩4分 / 出口C / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 2950,
       "drop": 0,
       "drop_pct": 0
@@ -15231,7 +15233,7 @@
       "watch_kind": "",
       "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩5分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 2,
+      "days": 3,
       "first_price": 3200,
       "drop": 0,
       "drop_pct": 0
@@ -15270,7 +15272,7 @@
       "watch_kind": "area",
       "comment": "相場より約3%高い（相場比0.97倍） / 駅徒歩5分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 3,
+      "days": 4,
       "first_price": 3799,
       "drop": 0,
       "drop_pct": 0
@@ -15309,7 +15311,7 @@
       "watch_kind": "area",
       "comment": "相場より約1%安い（相場比1.01倍） / 駅徒歩9分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 4690,
       "drop": 0,
       "drop_pct": 0
@@ -15346,7 +15348,7 @@
       "watch_kind": "",
       "comment": "相場より約5%高い（相場比0.95倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 0,
+      "days": 1,
       "first_price": 4880,
       "drop": 0,
       "drop_pct": 0
@@ -15385,7 +15387,7 @@
       "watch_kind": "area",
       "comment": "相場より約11%高い（相場比0.9倍） / 駅徒歩5分 / 出口A / 北新宿(西口北側)・将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 6299,
       "drop": 0,
       "drop_pct": 0
@@ -15427,7 +15429,7 @@
         "前面道路 約3.9m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6480,
       "drop": 0,
       "drop_pct": 0
@@ -15466,7 +15468,7 @@
       "watch_kind": "area",
       "comment": "相場より約18%高い（相場比0.85倍） / 駅徒歩5分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 6540,
       "drop": 0,
       "drop_pct": 0
@@ -15503,7 +15505,7 @@
       "watch_kind": "",
       "comment": "相場より約8%高い（相場比0.93倍） / 駅徒歩17分 / 出口A / 将来性★★",
       "reason": "駅徒歩17分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -15540,7 +15542,7 @@
       "watch_kind": "area",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩11分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 8990,
       "drop": 0,
       "drop_pct": 0
@@ -15577,7 +15579,7 @@
       "watch_kind": "area",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩11分 / 出口S / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 8990,
       "drop": 0,
       "drop_pct": 0
@@ -15619,7 +15621,7 @@
         "前面道路 約3.2m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0
@@ -15658,7 +15660,7 @@
       "watch_kind": "area",
       "comment": "相場より約32%高い（相場比0.76倍） / 駅徒歩4分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -15695,7 +15697,7 @@
       "watch_kind": "area",
       "comment": "相場より約85%高い（相場比0.54倍） / 駅徒歩8分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 11800,
       "drop": 0,
       "drop_pct": 0
@@ -15734,7 +15736,7 @@
       "watch_kind": "area",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩9分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 12800,
       "drop": 0,
       "drop_pct": 0
@@ -15772,7 +15774,7 @@
       "watch_kind": "",
       "comment": "相場より約96%高い（相場比0.51倍） / 駅徒歩5分 / 出口C",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -15809,7 +15811,7 @@
       "watch_kind": "",
       "comment": "相場より約62%安い（相場比2.63倍） / 駅徒歩18分 / 出口C / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い / 駅徒歩18分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 980,
       "drop": 0,
       "drop_pct": 0
@@ -15846,7 +15848,7 @@
       "reason": "駅徒歩20分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3580,
       "drop": 0,
       "drop_pct": 0
@@ -15883,7 +15885,7 @@
       "watch_kind": "area",
       "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩10分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 6599,
       "drop": 0,
       "drop_pct": 0
@@ -15920,7 +15922,7 @@
       "watch_kind": "",
       "comment": "相場より約22%高い（相場比0.82倍） / 駅徒歩14分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7990,
       "drop": 0,
       "drop_pct": 0
@@ -15959,7 +15961,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8380,
       "drop": 0,
       "drop_pct": 0
@@ -15998,7 +16000,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9180,
       "drop": 0,
       "drop_pct": 0
@@ -16036,7 +16038,7 @@
       "watch_kind": "",
       "comment": "相場より約5%高い（相場比0.95倍） / 駅徒歩14分 / 出口B",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 10588,
       "drop": 0,
       "drop_pct": 0
@@ -16077,7 +16079,7 @@
         "前面道路 約3.8m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 21000,
       "drop": 0,
       "drop_pct": 0
@@ -16117,7 +16119,7 @@
         "接道良好（前面道路 約25m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 56800,
       "drop": 0,
       "drop_pct": 0
@@ -16156,7 +16158,7 @@
       "watch_kind": "",
       "comment": "相場より約9%安い（相場比1.1倍） / 駅徒歩5分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 1,
+      "days": 2,
       "first_price": 2180,
       "drop": 0,
       "drop_pct": 0
@@ -16195,7 +16197,7 @@
       "watch_kind": "",
       "comment": "相場より約21%安い（相場比1.26倍） / 駅徒歩11分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 2480,
       "drop": 0,
       "drop_pct": 0
@@ -16232,7 +16234,7 @@
       "watch_kind": "",
       "comment": "相場より約5%安い（相場比1.05倍） / 駅徒歩10分 / 出口C / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 2599,
       "drop": 0,
       "drop_pct": 0
@@ -16269,7 +16271,7 @@
       "watch_kind": "",
       "comment": "相場より約0%安い（相場比1.0倍） / 駅徒歩8分 / 出口C / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -16308,7 +16310,7 @@
       "watch_kind": "",
       "comment": "相場より約8%安い（相場比1.09倍） / 駅徒歩9分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3298,
       "drop": 0,
       "drop_pct": 0
@@ -16347,7 +16349,7 @@
       "watch_kind": "",
       "comment": "相場より約7%安い（相場比1.08倍） / 駅徒歩10分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4180,
       "drop": 0,
       "drop_pct": 0
@@ -16387,7 +16389,7 @@
         "接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0
@@ -16426,7 +16428,7 @@
       "watch_kind": "area",
       "comment": "相場より約4%高い（相場比0.96倍） / 駅徒歩4分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4398,
       "drop": 0,
       "drop_pct": 0
@@ -16463,7 +16465,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0
@@ -16503,7 +16505,7 @@
         "前面道路 約0.15m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4699,
       "drop": 0,
       "drop_pct": 0
@@ -16542,7 +16544,7 @@
       "watch_kind": "",
       "comment": "相場より約11%高い（相場比0.9倍） / 駅徒歩1分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5380,
       "drop": 0,
       "drop_pct": 0
@@ -16581,7 +16583,7 @@
       "watch_kind": "area",
       "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩8分 / 出口S / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5780,
       "drop": 0,
       "drop_pct": 0
@@ -16618,7 +16620,7 @@
       "watch_kind": "",
       "comment": "相場より約52%高い（相場比0.66倍） / 駅徒歩9分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7180,
       "drop": 0,
       "drop_pct": 0
@@ -16655,7 +16657,7 @@
       "watch_kind": "area",
       "comment": "相場より約47%高い（相場比0.68倍） / 駅徒歩6分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7598,
       "drop": 0,
       "drop_pct": 0
@@ -16692,7 +16694,7 @@
       "watch_kind": "",
       "comment": "相場より約49%高い（相場比0.67倍） / 駅徒歩8分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0
@@ -16731,7 +16733,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9498,
       "drop": 0,
       "drop_pct": 0
@@ -16770,7 +16772,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9498,
       "drop": 0,
       "drop_pct": 0
@@ -16809,7 +16811,7 @@
       "watch_kind": "area",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩7分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 2,
+      "days": 3,
       "first_price": 9980,
       "drop": 0,
       "drop_pct": 0
@@ -16846,7 +16848,7 @@
       "watch_kind": "area",
       "comment": "相場より約89%高い（相場比0.53倍） / 駅徒歩6分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 14490,
       "drop": 0,
       "drop_pct": 0
@@ -16883,7 +16885,7 @@
       "watch_kind": "area",
       "comment": "相場より約45%高い（相場比0.69倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 14900,
       "drop": 0,
       "drop_pct": 0
@@ -16920,7 +16922,7 @@
       "watch_kind": "area",
       "comment": "相場より約45%高い（相場比0.69倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 0,
+      "days": 1,
       "first_price": 14900,
       "drop": 0,
       "drop_pct": 0
@@ -16958,7 +16960,7 @@
       "watch_kind": "",
       "comment": "相場より約56%高い（相場比0.64倍） / 駅徒歩15分 / 出口A / 将来性★★",
       "reason": "駅徒歩15分の駅遠が割安の一因",
-      "days": 0,
+      "days": 1,
       "first_price": 16800,
       "drop": 0,
       "drop_pct": 0
@@ -16997,7 +16999,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 17900,
       "drop": 0,
       "drop_pct": 0
@@ -17034,7 +17036,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 2,
+      "days": 3,
       "first_price": 19500,
       "drop": 0,
       "drop_pct": 0
@@ -17073,7 +17075,7 @@
         "前面道路 約2.5m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 27900,
       "drop": 0,
       "drop_pct": 0
@@ -17112,7 +17114,7 @@
         "前面道路 約2.7m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 42400,
       "drop": 0,
       "drop_pct": 0
@@ -17149,7 +17151,7 @@
       "watch_kind": "",
       "comment": "相場より約2%高い（相場比0.98倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 3990,
       "drop": 0,
       "drop_pct": 0
@@ -17188,7 +17190,7 @@
       "watch_kind": "area",
       "comment": "相場より約5%高い（相場比0.95倍） / 駅徒歩10分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 6599,
       "drop": 0,
       "drop_pct": 0
@@ -17225,7 +17227,7 @@
       "watch_kind": "",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩22分 / 出口A / 将来性★★",
       "reason": "駅徒歩22分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 7980,
       "drop": 0,
       "drop_pct": 0
@@ -17264,7 +17266,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -17303,7 +17305,7 @@
       "watch_kind": "area",
       "comment": "相場より約39%高い（相場比0.72倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 11980,
       "drop": 0,
       "drop_pct": 0
@@ -17340,7 +17342,7 @@
       "watch_kind": "area",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩17分 / 出口A / 将来性★★",
       "reason": "駅徒歩17分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 13480,
       "drop": 0,
       "drop_pct": 0
@@ -17379,7 +17381,7 @@
       "watch_kind": "",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩6分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3080,
       "drop": 0,
       "drop_pct": 0
@@ -17419,7 +17421,7 @@
         "接道良好（前面道路 約42.89m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3980,
       "drop": 0,
       "drop_pct": 0
@@ -17456,7 +17458,7 @@
       "watch_kind": "",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩10分 / 出口B / 将来性★★",
       "reason": "古家付き土地。解体費（木造150〜250万円目安）込みで実質コストを見る",
-      "days": 5,
+      "days": 6,
       "first_price": 5980,
       "drop": 0,
       "drop_pct": 0
@@ -17495,7 +17497,7 @@
       "watch_kind": "area",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩6分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 6880,
       "drop": 0,
       "drop_pct": 0
@@ -17532,7 +17534,7 @@
       "watch_kind": "area",
       "comment": "相場より約27%高い（相場比0.79倍） / 駅徒歩10分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 2,
+      "days": 3,
       "first_price": 6899,
       "drop": 0,
       "drop_pct": 0
@@ -17569,7 +17571,7 @@
       "watch_kind": "area",
       "comment": "相場より約37%高い（相場比0.73倍） / 駅徒歩10分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 8490,
       "drop": 0,
       "drop_pct": 0
@@ -17608,7 +17610,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9580,
       "drop": 0,
       "drop_pct": 0
@@ -17647,7 +17649,7 @@
         "前面道路 約2.18m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 11500,
       "drop": 0,
       "drop_pct": 0
@@ -17684,7 +17686,7 @@
       "watch_kind": "area",
       "comment": "相場より約25%高い（相場比0.8倍） / 駅徒歩12分 / 出口A / 目黒本町・将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 11800,
       "drop": 0,
       "drop_pct": 0
@@ -17721,7 +17723,7 @@
       "watch_kind": "area",
       "comment": "相場より約47%高い（相場比0.68倍） / 駅徒歩13分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 0,
+      "days": 1,
       "first_price": 13780,
       "drop": 0,
       "drop_pct": 0
@@ -17758,7 +17760,7 @@
       "watch_kind": "",
       "comment": "相場より約5%安い（相場比1.05倍） / 駅徒歩9分 / 出口C / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映",
-      "days": 0,
+      "days": 1,
       "first_price": 4650,
       "drop": 0,
       "drop_pct": 0
@@ -17797,7 +17799,7 @@
       "watch_kind": "",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4999,
       "drop": 0,
       "drop_pct": 0
@@ -17836,7 +17838,7 @@
       "watch_kind": "",
       "comment": "相場より約23%高い（相場比0.81倍） / 駅徒歩4分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0
@@ -17876,7 +17878,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 5900,
       "drop": 0,
       "drop_pct": 0
@@ -17913,7 +17915,7 @@
       "watch_kind": "",
       "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩11分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0
@@ -17950,7 +17952,7 @@
       "watch_kind": "",
       "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩13分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 6780,
       "drop": 0,
       "drop_pct": 0
@@ -17990,7 +17992,7 @@
         "接道良好（前面道路 約20.08m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 7499,
       "drop": 0,
       "drop_pct": 0
@@ -18029,7 +18031,7 @@
         "接道良好（前面道路 約14.71m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8200,
       "drop": 0,
       "drop_pct": 0
@@ -18067,7 +18069,7 @@
       "watch_kind": "",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩14分 / 出口B / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 9280,
       "drop": 0,
       "drop_pct": 0
@@ -18107,7 +18109,7 @@
         "前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9780,
       "drop": 0,
       "drop_pct": 0
@@ -18146,7 +18148,7 @@
       "watch_kind": "area",
       "comment": "相場より約56%高い（相場比0.64倍） / 駅徒歩4分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 10480,
       "drop": 0,
       "drop_pct": 0
@@ -18184,7 +18186,7 @@
       "watch_kind": "",
       "comment": "相場より約8%高い（相場比0.93倍） / 駅徒歩21分 / 出口B",
       "reason": "駅徒歩21分の駅遠が割安の一因",
-      "days": 3,
+      "days": 4,
       "first_price": 12170,
       "drop": 0,
       "drop_pct": 0
@@ -18221,7 +18223,7 @@
       "watch_kind": "",
       "comment": "相場より約3%高い（相場比0.97倍） / 駅徒歩10分 / 出口B / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 3290,
       "drop": 0,
       "drop_pct": 0
@@ -18258,7 +18260,7 @@
       "watch_kind": "area",
       "comment": "相場より約39%高い（相場比0.72倍） / 駅徒歩9分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 7200,
       "drop": 0,
       "drop_pct": 0
@@ -18295,7 +18297,7 @@
       "watch_kind": "area",
       "comment": "相場より約28%高い（相場比0.78倍） / 駅徒歩11分 / 出口A / 将来性★★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0
@@ -18332,7 +18334,7 @@
       "watch_kind": "area",
       "comment": "相場より約61%高い（相場比0.62倍） / 駅徒歩8分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 10999,
       "drop": 0,
       "drop_pct": 0
@@ -18370,7 +18372,7 @@
       "watch_kind": "",
       "comment": "相場より約20%高い（相場比0.83倍） / 駅徒歩15分 / 出口B",
       "reason": "駅徒歩15分の駅遠が割安の一因",
-      "days": 3,
+      "days": 4,
       "first_price": 12000,
       "drop": 0,
       "drop_pct": 0
@@ -18408,7 +18410,7 @@
       "watch_kind": "",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩14分 / 出口B",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 12600,
       "drop": 0,
       "drop_pct": 0
@@ -18445,7 +18447,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩11分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 14000,
       "drop": 0,
       "drop_pct": 0
@@ -18482,7 +18484,7 @@
       "watch_kind": "",
       "comment": "相場より約7%安い（相場比1.08倍） / 駅徒歩12分 / 出口C / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 2,
+      "days": 3,
       "first_price": 2680,
       "drop": 0,
       "drop_pct": 0
@@ -18519,7 +18521,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4280,
       "drop": 0,
       "drop_pct": 0
@@ -18556,7 +18558,7 @@
       "watch_kind": "",
       "comment": "相場より約64%高い（相場比0.61倍） / 駅徒歩15分 / 出口A / 将来性★★",
       "reason": "駅徒歩15分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -18593,7 +18595,7 @@
       "watch_kind": "",
       "comment": "相場より約52%高い（相場比0.66倍） / 駅徒歩11分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 7950,
       "drop": 0,
       "drop_pct": 0
@@ -18632,7 +18634,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩6分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 2,
+      "days": 3,
       "first_price": 8490,
       "drop": 0,
       "drop_pct": 0
@@ -18671,7 +18673,7 @@
       "watch_kind": "",
       "comment": "相場より約18%安い（相場比1.22倍） / 駅徒歩13分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 3,
+      "days": 4,
       "first_price": 2180,
       "drop": 0,
       "drop_pct": 0
@@ -18710,7 +18712,7 @@
       "watch_kind": "",
       "comment": "相場より約0%安い（相場比1.0倍） / 駅徒歩5分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 0,
+      "days": 1,
       "first_price": 2900,
       "drop": 0,
       "drop_pct": 0
@@ -18747,7 +18749,7 @@
       "reason": "駅徒歩18分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 3999,
       "drop": 0,
       "drop_pct": 0
@@ -18786,7 +18788,7 @@
       "watch_kind": "",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5280,
       "drop": 0,
       "drop_pct": 0
@@ -18823,7 +18825,7 @@
       "watch_kind": "",
       "comment": "相場より約18%高い（相場比0.85倍） / 駅徒歩20分 / 出口A / 将来性★★",
       "reason": "駅徒歩20分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 5790,
       "drop": 0,
       "drop_pct": 0
@@ -18860,7 +18862,7 @@
       "reason": "駅徒歩22分の駅遠が割安の一因",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6399,
       "drop": 0,
       "drop_pct": 0
@@ -18899,7 +18901,7 @@
       "watch_kind": "area",
       "comment": "相場より約22%高い（相場比0.82倍） / 駅徒歩8分 / 出口A / 百人町(大久保)・将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 6999,
       "drop": 0,
       "drop_pct": 0
@@ -18938,7 +18940,7 @@
         "接道良好（前面道路 約5.9m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 1,
+      "days": 2,
       "first_price": 7680,
       "drop": 0,
       "drop_pct": 0
@@ -18977,7 +18979,7 @@
         "接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 8580,
       "drop": 0,
       "drop_pct": 0
@@ -19016,7 +19018,7 @@
       "watch_kind": "area",
       "comment": "相場より約59%高い（相場比0.63倍） / 駅徒歩5分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 8680,
       "drop": 0,
       "drop_pct": 0
@@ -19058,7 +19060,7 @@
         "前面道路 約1.2m（4m未満＝セットバック/再建築の制約に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 9400,
       "drop": 0,
       "drop_pct": 0
@@ -19097,7 +19099,7 @@
         "接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 15900,
       "drop": 0,
       "drop_pct": 0
@@ -19137,7 +19139,7 @@
         "接道良好（前面道路 約20m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4300,
       "drop": 0,
       "drop_pct": 0
@@ -19174,7 +19176,7 @@
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
       "onsite": [],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4380,
       "drop": 0,
       "drop_pct": 0
@@ -19213,7 +19215,7 @@
         "接道良好（前面道路 約43m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4790,
       "drop": 0,
       "drop_pct": 0
@@ -19250,7 +19252,7 @@
       "watch_kind": "area",
       "comment": "相場より約32%高い（相場比0.76倍） / 駅徒歩15分 / 出口A / 将来性★★",
       "reason": "駅徒歩15分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 5399,
       "drop": 0,
       "drop_pct": 0
@@ -19287,7 +19289,7 @@
       "watch_kind": "area",
       "comment": "相場より約52%高い（相場比0.66倍） / 駅徒歩11分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 8580,
       "drop": 0,
       "drop_pct": 0
@@ -19324,7 +19326,7 @@
       "watch_kind": "area",
       "comment": "相場より約89%高い（相場比0.53倍） / 駅徒歩12分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 4,
+      "days": 5,
       "first_price": 10500,
       "drop": 0,
       "drop_pct": 0
@@ -19363,7 +19365,7 @@
       "watch_kind": "area",
       "comment": "相場より約3%安い（相場比1.03倍） / 駅徒歩11分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 専有が狭い投資ワンルーム系で実需は付きにくい",
-      "days": 5,
+      "days": 6,
       "first_price": 2000,
       "drop": 0,
       "drop_pct": 0
@@ -19400,7 +19402,7 @@
       "watch_kind": "",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩11分 / 出口A / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -19441,7 +19443,7 @@
         "接道良好（前面道路 約7m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6280,
       "drop": 0,
       "drop_pct": 0
@@ -19480,7 +19482,7 @@
       "watch_kind": "area",
       "comment": "相場より約61%高い（相場比0.62倍） / 駅徒歩7分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 4,
+      "days": 5,
       "first_price": 7880,
       "drop": 0,
       "drop_pct": 0
@@ -19518,7 +19520,7 @@
       "watch_kind": "",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩19分 / 出口B",
       "reason": "駅徒歩19分の駅遠が割安の一因",
-      "days": 3,
+      "days": 4,
       "first_price": 9000,
       "drop": 0,
       "drop_pct": 0
@@ -19555,7 +19557,7 @@
       "watch_kind": "",
       "comment": "相場より約5%高い（相場比0.95倍） / 駅徒歩16分 / 出口B / 将来性★★",
       "reason": "駅徒歩16分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 3280,
       "drop": 0,
       "drop_pct": 0
@@ -19594,7 +19596,7 @@
         "接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -19633,7 +19635,7 @@
       "watch_kind": "area",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩8分 / 出口A / 将来性★★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 3,
+      "days": 4,
       "first_price": 7580,
       "drop": 0,
       "drop_pct": 0
@@ -19672,7 +19674,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩8分 / 出口A / 目黒本町・将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 13880,
       "drop": 0,
       "drop_pct": 0
@@ -19709,7 +19711,7 @@
       "watch_kind": "",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩23分 / 出口A / 将来性★★",
       "reason": "駅徒歩23分の駅遠が割安の一因",
-      "days": 1,
+      "days": 2,
       "first_price": 4199,
       "drop": 0,
       "drop_pct": 0
@@ -19748,7 +19750,7 @@
       "watch_kind": "",
       "comment": "相場より約6%高い（相場比0.94倍） / 駅徒歩18分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 駅徒歩18分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 5099,
       "drop": 0,
       "drop_pct": 0
@@ -19785,7 +19787,7 @@
       "watch_kind": "",
       "comment": "相場より約45%高い（相場比0.69倍） / 駅徒歩19分 / 出口A / 将来性★★",
       "reason": "駅徒歩19分の駅遠が割安の一因",
-      "days": 0,
+      "days": 1,
       "first_price": 6799,
       "drop": 0,
       "drop_pct": 0
@@ -19822,7 +19824,7 @@
       "watch_kind": "",
       "comment": "相場より約47%高い（相場比0.68倍） / 駅徒歩19分 / 出口A / 将来性★★",
       "reason": "駅徒歩19分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 6899,
       "drop": 0,
       "drop_pct": 0
@@ -19860,7 +19862,7 @@
       "watch_kind": "",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩12分 / 出口C / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 11500,
       "drop": 0,
       "drop_pct": 0
@@ -19899,7 +19901,7 @@
       "watch_kind": "",
       "comment": "相場より約10%高い（相場比0.91倍） / 駅徒歩11分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4480,
       "drop": 0,
       "drop_pct": 0
@@ -19938,7 +19940,7 @@
       "watch_kind": "",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩15分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 駅徒歩15分の駅遠が割安の一因",
-      "days": 4,
+      "days": 5,
       "first_price": 6899,
       "drop": 0,
       "drop_pct": 0
@@ -19977,7 +19979,7 @@
       "watch_kind": "area",
       "comment": "相場より約72%高い（相場比0.58倍） / 駅徒歩10分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 12980,
       "drop": 0,
       "drop_pct": 0
@@ -20016,7 +20018,7 @@
         "私道負担/私道接道（掘削承諾・整備費・融資に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -20053,7 +20055,7 @@
       "watch_kind": "",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩11分 / 出口B / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 5,
+      "days": 6,
       "first_price": 3180,
       "drop": 0,
       "drop_pct": 0
@@ -20092,7 +20094,7 @@
       "watch_kind": "",
       "comment": "相場より約33%高い（相場比0.75倍） / 駅徒歩7分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3890,
       "drop": 0,
       "drop_pct": 0
@@ -20132,7 +20134,7 @@
         "接道良好（前面道路 約20m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4580,
       "drop": 0,
       "drop_pct": 0
@@ -20171,7 +20173,7 @@
         "接道良好（前面道路 約9.88m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -20208,7 +20210,7 @@
       "watch_kind": "",
       "comment": "相場より約12%高い（相場比0.89倍） / 駅徒歩14分 / 出口C / 将来性★★",
       "reason": "価格は相場相応。立地・築年・管理状態で比較するゾーン",
-      "days": 3,
+      "days": 4,
       "first_price": 3280,
       "drop": 0,
       "drop_pct": 0
@@ -20247,7 +20249,7 @@
       "watch_kind": "",
       "comment": "相場より約9%安い（相場比1.1倍） / 駅徒歩17分 / 出口C / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 駅徒歩17分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 2080,
       "drop": 0,
       "drop_pct": 0
@@ -20284,7 +20286,7 @@
       "watch_kind": "",
       "comment": "相場より約7%安い（相場比1.08倍） / 駅徒歩16分 / 出口C / 将来性★★ / 借地→融資/出口難",
       "reason": "借地権（土地が借り物）。地代・承諾料と融資の難しさが価格に反映 / 駅徒歩16分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -20323,7 +20325,7 @@
         "私道負担/私道接道（掘削承諾・整備費・融資に注意）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4500,
       "drop": 0,
       "drop_pct": 0
@@ -20360,7 +20362,7 @@
       "watch_kind": "",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩15分 / 出口C / 将来性★★",
       "reason": "駅徒歩15分の駅遠が割安の一因",
-      "days": 3,
+      "days": 4,
       "first_price": 2980,
       "drop": 0,
       "drop_pct": 0
@@ -20399,7 +20401,7 @@
         "接道良好（前面道路 約21.06m・公道想定）＝再建築の見込み（最終は役所で確認）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 4780,
       "drop": 0,
       "drop_pct": 0
@@ -20438,7 +20440,7 @@
       "watch_kind": "",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩12分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5880,
       "drop": 0,
       "drop_pct": 0
@@ -20477,7 +20479,7 @@
       "watch_kind": "area",
       "comment": "相場より約59%高い（相場比0.63倍） / 駅徒歩11分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 9480,
       "drop": 0,
       "drop_pct": 0
@@ -20514,7 +20516,7 @@
       "watch_kind": "",
       "comment": "相場より約14%高い（相場比0.88倍） / 駅徒歩20分 / 出口C / 将来性★★",
       "reason": "駅徒歩20分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 3299,
       "drop": 0,
       "drop_pct": 0
@@ -20553,7 +20555,7 @@
       "watch_kind": "area",
       "comment": "相場より約16%高い（相場比0.86倍） / 駅徒歩17分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 駅徒歩17分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 6980,
       "drop": 0,
       "drop_pct": 0
@@ -20592,7 +20594,7 @@
       "watch_kind": "",
       "comment": "相場より約28%高い（相場比0.78倍） / 駅徒歩7分 / 出口B / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 3290,
       "drop": 0,
       "drop_pct": 0
@@ -20631,7 +20633,7 @@
         "用途地域:近隣商業（店舗・交通量で住環境はやや劣るが容積に余裕）"
       ],
       "detailed": true,
-      "days": 5,
+      "days": 6,
       "first_price": 1980,
       "drop": 0,
       "drop_pct": 0
@@ -20668,7 +20670,7 @@
       "watch_kind": "",
       "comment": "相場より約15%高い（相場比0.87倍） / 駅徒歩12分 / 出口A / 将来性★★ / 再建築不可→流動性難",
       "reason": "再建築不可（建て替え不可）が主因。現金/リフォーム前提で出口は狭い",
-      "days": 5,
+      "days": 6,
       "first_price": 5380,
       "drop": 0,
       "drop_pct": 0
@@ -20707,7 +20709,7 @@
       "watch_kind": "",
       "comment": "相場より約75%高い（相場比0.57倍） / 駅徒歩14分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5480,
       "drop": 0,
       "drop_pct": 0
@@ -20746,7 +20748,7 @@
       "watch_kind": "area",
       "comment": "相場より約30%高い（相場比0.77倍） / 駅徒歩12分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 5899,
       "drop": 0,
       "drop_pct": 0
@@ -20785,7 +20787,7 @@
       "watch_kind": "area",
       "comment": "相場より約23%高い（相場比0.81倍） / 駅徒歩19分 / 出口A / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 駅徒歩19分の駅遠が割安の一因",
-      "days": 5,
+      "days": 6,
       "first_price": 4699,
       "drop": 0,
       "drop_pct": 0
@@ -20824,7 +20826,7 @@
       "watch_kind": "area",
       "comment": "相場より約28%高い（相場比0.78倍） / 駅徒歩13分 / 出口A / 目黒本町・将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 4490,
       "drop": 0,
       "drop_pct": 0
@@ -20863,7 +20865,7 @@
       "watch_kind": "",
       "comment": "相場より約41%高い（相場比0.71倍） / 駅徒歩6分 / 出口C / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須",
-      "days": 5,
+      "days": 6,
       "first_price": 1930,
       "drop": 0,
       "drop_pct": 0
@@ -20902,7 +20904,7 @@
       "watch_kind": "",
       "comment": "相場より約43%高い（相場比0.7倍） / 駅徒歩8分 / 出口C / 将来性★★ / 旧耐震(1981以前)→融資/出口に注意",
       "reason": "旧耐震・築古。住宅ローンが付きにくく管理状態の精査が必須 / 専有が狭い投資ワンルーム系で実需は付きにくい",
-      "days": 2,
+      "days": 3,
       "first_price": 1790,
       "drop": 0,
       "drop_pct": 0

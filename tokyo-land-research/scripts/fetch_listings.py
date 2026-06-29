@@ -687,9 +687,10 @@ def apply_detail(r, html, with_elev=True):
     notes = []
     if not r.get("struct"):
         r["struct"] = struct_of(g("構造"))
-    # 再建築不可（その他制限事項に明記されるが一覧カードには出ない＝取りこぼし是正）
-    seigen = g("制限事項")
-    if "再建築不可" in seigen or "再建築不可" in g("備考"):
+    # 再建築不可：制限事項欄だけでなく物件PR/備考のフリーテキストにも書かれるため本文全体を走査
+    body_t = text(html)
+    if (("再建築不可" in g("制限事項") or "再建築不可" in g("備考") or "再建築不可" in body_t)
+            and "再建築可" not in body_t):
         if "再建築不可" not in r["tags"]:
             r["tags"].append("再建築不可")
         notes.append("再建築不可（建て替え不可）＝出口が極端に狭い。現金/リフォーム前提")
@@ -999,7 +1000,7 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
-            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}">'
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}" data-watchlabel="{H.escape(r.get("watch", ""))}">'
             f'<div class="ctop t{r["tier"]}">'
             f'<div class="ci"><div class="price">{fmt_price(r["price"])}</div>'
             f'<div class="loc"><span class="tier t{r["tier"]}">{r["tier"]}</span>'
@@ -1038,7 +1039,7 @@ def render(rows, errors):
             f'data-drop="{r.get("drop_pct", 0)}" data-days="{days}" data-use="{r.get("use", "実需")}" '
             f'data-tier="{r["tier"]}" data-rooms="{n_rooms(r.get("plan"))}" '
             f'data-area="{r.get("bld") or 0}" data-year="{r.get("year") or 0}" '
-            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}">'
+            f'data-land="{r.get("land") or 0}" data-furuya="{1 if "古家付き" in r["tags"] else 0}" data-shin="{1 if "新築" in r["tags"] else 0}" data-id="{r["id"]}" data-tiern="{TIERN.get(r["tier"],1)}" data-watchlabel="{H.escape(r.get("watch", ""))}">'
             f'<td class="tw"><button class="mark mk-t" data-id="{r["id"]}" type="button">📌</button><span class="tier t{r["tier"]}">{r["tier"]}</span>{r["ward"]}</td>'
             f'<td class="tloc">{("⭐" + chr(32)) if watch else ""}'
             f'{name_html}'
@@ -1151,8 +1152,10 @@ def render(rows, errors):
             c = watch_cnt.get(key, 0)
             gm = ("https://www.google.com/maps/search/?api=1&query="
                   + urllib.parse.quote("東京都" + m0))
+            cnt_html = (f'<button class="wc wcbtn" data-wl="{H.escape(key)}">この一覧に{c}件 ▸</button>'
+                        if c else '<span class="wc">現在は該当なし</span>')
             items += (f'<div class="wli"><b>⭐ {label}</b>{(" — " + note) if note else ""}'
-                      f'<span class="wc">{("この一覧に" + str(c) + "件") if c else "現在は該当なし"}</span>'
+                      f'{cnt_html}'
                       f'<a href="{gm}" target="_blank" rel="noopener">🗺地図</a></div>')
         wparts.append('<div class="wsub">住みたいエリア・好きな町</div>' + items)
     if buildings:
@@ -1269,6 +1272,8 @@ TEMPLATE = """<!DOCTYPE html>
   .wli{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 10px;margin:5px 0;background:#f7f9fc;border:1px solid var(--line);border-radius:9px;font-size:.85rem}}
   .wli b{{color:var(--ink)}}
   .wc{{color:var(--accent);font-size:.78rem;background:#e7eefb;border:1px solid #c8d8f7;border-radius:999px;padding:1px 9px}}
+  .wcbtn{{cursor:pointer;font-family:inherit}}.wcbtn:hover{{filter:brightness(.96)}}
+  .wcbtn.on{{background:#2563eb;color:#fff;border-color:#2563eb}}
   .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
   .bref{{flex-basis:100%;color:#5d6b7a;font-size:.76rem;margin-top:2px}}
   .hit{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}}
@@ -1494,6 +1499,7 @@ const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
 const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdrop=el('fdrop'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
+let watchLabel='';    // 追跡リストの「◯件」クリックで特定エリアに絞る
 let presetMode='none';// none | asset | family | live | reno （プリセット）
 let renoGrade='full'; // full | simple （リノベ単価）
 const RISKY=/(再建築不可|借地権|旧耐震)/;
@@ -1554,6 +1560,7 @@ function pass(d){{
   const ms=parseInt(fscore.value||'0',10); if(ms&&parseInt(d.score,10)<ms)return false;
   if(areaMode==='watch'&&d.watch!=='1')return false;
   if(areaMode==='other'&&d.watch==='1')return false;
+  if(watchLabel&&d.watchlabel!==watchLabel)return false;
   if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(d.use==='投資')return false;
@@ -1595,6 +1602,7 @@ vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on
 let marks=new Set([].concat(JSON.parse(localStorage.getItem('marks')||'[]'),{pinids}));
 function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();apply();}});
+document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
 renderMarks();
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
 computeCosts();apply();
