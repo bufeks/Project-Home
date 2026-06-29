@@ -874,6 +874,25 @@ def pop_mesh(lat, lon):
     return None
 
 
+FLOOD_DEPTH = {1: "0.5m未満", 2: "0.5〜3m", 3: "3〜5m", 4: "5〜10m", 5: "10〜20m", 6: "20m超"}
+
+
+def hazard_of(lat, lon):
+    """災害ハザード：洪水浸水深ランク(XKT026)・土砂災害警戒区域(XKT029)・地形/液状化(XKT025)。"""
+    out = {}
+    for ft in reinfolib_gis("XKT026", lat, lon, 14):          # 洪水浸水想定（想定最大規模）
+        rk = ft.get("A31a_205")
+        if isinstance(rk, int) and rk > out.get("flood", 0):
+            out["flood"], out["river"] = rk, ft.get("A31a_202", "")
+    if reinfolib_gis("XKT029", lat, lon, 13):                 # 土砂災害警戒区域（区域内なら有）
+        out["landslide"] = True
+    for ft in reinfolib_gis("XKT025", lat, lon, 14):          # 地形分類・液状化傾向
+        out["topo"] = ft.get("topographic_classification_name_ja")
+        out["liq"] = ft.get("liquefaction_tendency_level")
+        break
+    return out
+
+
 def apply_detail(r, html, with_elev=True):
     """詳細ページから“現地シグナル”を抽出して r['onsite'] に格納（必要なら是正タグも付与）。"""
     f = detail_fields(html)
@@ -961,8 +980,11 @@ def apply_detail(r, html, with_elev=True):
             z = zoning_of(lat, lon)
             if z:
                 r["zoning"], r["far"], r["bcr"] = z["use_area"], z["far"], z["bcr"]
+                notes[:] = [n for n in notes if "用途地域" not in n]   # SUUMO抽出版を除去
                 _fa = f"・容積{z['far']}%/建ぺい{z['bcr']}%" if z["far"] else ""
-                notes.append(f"用途地域：{z['use_area']}{_fa}（国交省・都市計画）")
+                _cav = "（店舗・交通量で住環境はやや劣るが容積に余裕）" if any(
+                    x in z["use_area"] for x in ("商業", "準工", "工業")) else ""
+                notes.append(f"用途地域：{z['use_area']}{_fa}（国交省・都市計画）{_cav}")
                 time.sleep(0.25)
             # 将来推計人口（250mメッシュ・社人研）：将来需要＝値持ちの最良シグナル
             pop = pop_mesh(lat, lon)
@@ -972,6 +994,18 @@ def apply_detail(r, html, with_elev=True):
                 ag = f"・2050高齢化率{round(pop['aging'] * 100)}%" if pop.get("aging") else ""
                 notes.append(f"将来人口(社人研・地点250m) 2025→2050 {pop['chg']:+.0f}%＝{tr}{ag}")
                 time.sleep(0.25)
+            # 災害ハザード（洪水浸水深・土砂・液状化）：出口/融資/保険に影響＝値持ちの減点要因
+            hz = hazard_of(lat, lon)
+            r["hazard"] = hz
+            if hz.get("flood"):
+                notes.insert(0, f"⚠洪水浸水想定：{hz.get('river','')}氾濫で浸水深ランク{hz['flood']}"
+                                f"（約{FLOOD_DEPTH.get(hz['flood'],'')}・想定最大規模）＝出口/融資/保険に影響")
+            if hz.get("landslide"):
+                notes.insert(0, "⚠土砂災害警戒区域内（イエロー/レッドの別は要確認）")
+            _topo = hz.get("topo") or ""
+            if any(x in _topo for x in ("低地", "三角州", "干拓", "埋立", "旧河道", "海岸", "氾濫", "後背")):
+                notes.append(f"地形：{_topo}（低地系＝液状化・浸水に相対的に弱い）")
+            time.sleep(0.25)
     # 建替え余地（戦略③）：容積率×土地面積で建てられる延床を概算。API容積率優先・無ければSUUMO抽出。
     if r["kind"] in ("戸建", "土地") and r.get("land"):
         vr = r.get("far")
@@ -997,7 +1031,7 @@ def apply_detail(r, html, with_elev=True):
         if n not in seen:
             seen.add(n)
             uniq.append(n)
-    r["onsite"] = uniq[:4]
+    r["onsite"] = uniq[:6]
     r["detailed"] = True
 
 
@@ -1292,6 +1326,9 @@ def render(rows, errors):
             badges.append(f'<span class="bdg b-cagr">📈値上がりエリア +{r["cagr"]}%/年</span>')
         if r.get("pop_chg") is not None and r["pop_chg"] <= -8:
             badges.append(f'<span class="bdg b-warn">📉将来人口減 {r["pop_chg"]:+.0f}%(→2050)</span>')
+        _hz = r.get("hazard") or {}
+        if _hz.get("flood", 0) >= 3 or _hz.get("landslide"):
+            badges.append('<span class="bdg b-warn">⚠災害ハザード</span>')
         if spot_kind == "鉄道":
             badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
         elif spot_kind == "波":
