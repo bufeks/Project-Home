@@ -1268,6 +1268,17 @@ TEMPLATE = """<!DOCTYPE html>
   h1{{font-size:1.45rem;margin:.2em 0}}
   h2{{font-size:1.08rem;margin:1.2em 0 .5em;border-left:4px solid var(--accent);padding-left:10px}}
   .meta{{color:var(--muted);font-size:.85rem;margin-bottom:12px}}
+  .tagline{{font-size:.95rem;margin:2px 0 8px;line-height:1.5}}
+  .tagline .src{{color:var(--muted);font-size:.78rem;margin-left:6px;white-space:nowrap}}
+  details.concept{{margin:0 0 14px;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}}
+  details.concept>summary{{cursor:pointer;padding:10px 13px;font-weight:700;font-size:.9rem;background:#f7f9fc;list-style:none}}
+  details.concept>summary::-webkit-details-marker{{display:none}}
+  details.concept>summary::before{{content:"▸ ";color:var(--accent)}}
+  details.concept[open]>summary::before{{content:"▾ "}}
+  details.concept .dbody{{padding:6px 14px 12px}}
+  details.concept p{{margin:8px 0;font-size:.9rem;line-height:1.65}}
+  .concept-l{{margin:6px 0;padding-left:1.3em}}.concept-l li{{margin:4px 0;font-size:.9rem}}
+  .concept .note{{color:var(--muted);font-size:.82rem}}
   a{{color:var(--accent)}}
   .lead{{color:var(--muted);font-size:.9rem}}
   .scorebreak{{margin:6px 0 10px;padding-left:1.1em}}.scorebreak li{{margin:3px 0;font-size:.9rem}}
@@ -1433,12 +1444,21 @@ TEMPLATE = """<!DOCTYPE html>
   @media(min-width:720px){{.grid{{grid-template-columns:1fr 1fr}}}}
 </style></head><body><div class="wrap">
 <h1>資産価値が落ちない家さがし — 東京23区</h1>
-<p class="meta"><b>目的＝10〜30年“住んで”、売る時に買値以上で手放せる家。</b>資産価値が落ちない（できれば上がる）＝最高、が狙い。だから安さ単体では選ばず、<b>出口（再売却）で価値が残る／上がるか</b>を最重視します。<b>古い建物にこだわりません</b>（新しくてもOK）。<br>
-出口の作り方は4通りどれもアリ：<b>①そのまま住んで値持ち</b>（ヴィンテージ・人気エリア）／<b>②リノベして売る</b>／<b>③土地・古家から建て替えて売る</b>／<b>④旧耐震等を“建替え（等価交換）”まで保有して最終的に利益</b>。<br>
-SUUMO（中古戸建・マンション・土地・新築）から毎日自動収集し、<b>①値持ち（名門立地・出口の堅さ）②割安度（相場比）③駅近 ④将来性＝再開発の収益upside ⑤現地解像度</b>で採点。
-<b>プリセット</b>と<b>注目エリアタブ</b>で戦略別に絞り込み（予算上限・面積下限は初期適用・変更可）、📌した物件から好みを学習して似た物件を上位表示。<br>
-再建築不可・借地・駅徒歩16分以上は既定で除外（建てて売る／値持ちが封じられるため）。旧耐震・古家付きは<b>除外せず“素材”として表示</b>（古家＝建替えの素材で減点なし、旧耐震＝建替え目安も表示、名門立地のヴィンテージは値持ちするため過度に減点しない）。<br>
-出典：SUUMO／<b>{stamp}</b>／<b>{count}</b>件／毎日更新。<b>目安です。購入前に現地・専門家確認を。</b></p>
+<p class="tagline"><b>10〜30年“住んで”、売る時に「買値以上」で手放せる家</b>を探すツール。<span class="src">SUUMO／{stamp}／{count}件／毎日更新</span></p>
+<details class="concept"><summary>💡 コンセプトと使い方 ― 「資産価値が落ちない家」とは（タップで開く）</summary>
+<div class="dbody">
+<p><b>目的</b>：10〜30年“住んで”、売る時に<b>買値以上</b>で手放せる家を見つける。落ちない（できれば上がる）＝最高。だから安さ単体では選ばず、<b>出口（再売却）で価値が残る／上がるか</b>を最重視。<b>古い建物にはこだわらない</b>（新しくてもOK）。</p>
+<p><b>■ 出口（売って利益）の作り方は4通り、どれもアリ</b></p>
+<ol class="concept-l">
+<li><b>そのまま住んで値持ち</b> ― 名門立地・人気エリア・ヴィンテージ</li>
+<li><b>リノベして売る</b> ― 割安な中古を仕入れて価値を足す</li>
+<li><b>土地・古家から建て替えて売る</b> ― 再建築可の土地／古家が素材</li>
+<li><b>建替えまで保有して最終利益</b> ― 旧耐震等を等価交換の建替えまで持つ</li>
+</ol>
+<p><b>■ 採点の軸（資産スコア0-100）</b><br>①値持ち（名門立地・出口の堅さ）／②割安度（相場比）／③駅近／④将来性＝再開発の収益upside／⑤現地解像度。<br><b>プリセット</b>と<b>注目エリアタブ</b>で戦略別に絞り込み、📌した物件から<b>好みを学習</b>して似た物件を上位表示。</p>
+<p><b>■ 既定ルール</b><br>再建築不可・借地・駅徒歩16分以上は<b>除外</b>（建てて売る／値持ちが封じられるため）。旧耐震・古家付きは除外せず<b>“素材”として表示</b>（古家＝建替え素材で減点なし、旧耐震＝建替え目安も表示、名門立地のヴィンテージは値持ちするため過度に減点しない）。</p>
+<p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
+</div></details>
 
 <details{watch_open}><summary>⭐ あなたの追跡リスト — 住みたいエリア・気になるマンション・好きな町</summary>
 <div class="dbody">{watch}</div></details>
