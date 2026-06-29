@@ -1341,11 +1341,14 @@ def render(rows, errors):
                 f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a> '
                 f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
 
-    new_honmei = sorted([r for r in rows if r.get("new") and (r["score"] >= 70 or r.get("watch"))],
+    # ダイジェストは予算上限以内のみ（予算超え＝1億超は既定で除外）
+    budget_cap = WATCHLIST.get("budget_man") or 10 ** 9
+    drows = [r for r in rows if r["price"] <= budget_cap]
+    new_honmei = sorted([r for r in drows if r.get("new") and (r["score"] >= 70 or r.get("watch"))],
                         key=lambda x: -x["score"])[:12]
-    drops = sorted([r for r in rows if r.get("drop", 0) > 0],
+    drops = sorted([r for r in drows if r.get("drop", 0) > 0],
                    key=lambda x: -x.get("drop_pct", 0))[:10]
-    urgent = sorted([r for r in rows if "売り急ぎ" in r.get("tags", [])],
+    urgent = sorted([r for r in drows if "売り急ぎ" in r.get("tags", [])],
                     key=lambda x: -x["score"])[:10]
     if new_honmei or drops or urgent:
         dparts = []
