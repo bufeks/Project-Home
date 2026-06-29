@@ -1466,6 +1466,10 @@ TEMPLATE = """<!DOCTYPE html>
   .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
   .bref{{flex-basis:100%;color:#5d6b7a;font-size:.76rem;margin-top:2px}}
   .pspec{{flex-basis:100%;margin-top:2px;color:#3a4654}}
+  .sharerow{{background:#eef4ff;border:1px solid #cdddf6;border-radius:9px;padding:9px 11px;margin:4px 0 8px}}
+  .sharerow .shareflex{{display:flex;gap:6px;margin:5px 0 3px}}
+  .sharerow #shareurl{{flex:1;min-width:0;font-size:.78rem;padding:6px 8px;border:1px solid var(--line);border-radius:7px;background:#fff;color:#1b2430}}
+  .sharerow .sharebtn{{flex:none;background:var(--accent);color:#fff;border:0;border-radius:7px;padding:6px 12px;font-size:.82rem;font-weight:700;cursor:pointer}}
   .hit{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}}
   .hit .hk{{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}}
   .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
@@ -1581,7 +1585,7 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="dbody">{watch}</div></details>
 
 <details><summary>📌 気になる物件 — 📌から好みを学習</summary>
-<div class="dbody"><div id="pinprofile"></div><div id="pinclicks"></div></div></details>
+<div class="dbody"><div id="pinprofile"></div><div id="sharebox"></div><div id="pinclicks"></div></div></details>
 
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
@@ -1839,6 +1843,43 @@ let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
 // 📌した物件のスナップショット（掲載終了後も情報を保持するため）
 let pinData=JSON.parse(localStorage.getItem('pinData')||'{{}}');
 {{var _pm={pinmeta};for(var _k in _pm){{if(!pinData[_k])pinData[_k]={{n:_pm[_k].n,loc:_pm[_k].s,price:'',url:_pm[_k].u}};}}localStorage.setItem('pinData',JSON.stringify(pinData));}}
+// 端末間共有：URLの #share= を読み込んで📌をローカルに統合（外部サーバー不要・完全プライベート）
+(function(){{
+  var m=(location.hash||'').match(/share=([^&]+)/);
+  if(!m)return;
+  try{{
+    var b=decodeURIComponent(m[1]).replace(/-/g,'+').replace(/_/g,'/');
+    while(b.length%4)b+='=';
+    var obj=JSON.parse(decodeURIComponent(escape(atob(b))));
+    (obj.m||[]).forEach(function(id){{marks.add(id);}});
+    if(obj.d){{for(var k in obj.d){{if(!pinData[k])pinData[k]=obj.d[k];}}}}
+    localStorage.setItem('marks',JSON.stringify([...marks]));
+    localStorage.setItem('pinData',JSON.stringify(pinData));
+  }}catch(e){{}}
+  history.replaceState(null,'',location.pathname);
+}})();
+function makeShareUrl(){{
+  var d={{}};for(var k in pinData){{var v=pinData[k]||{{}};d[k]={{n:v.n||'',loc:v.loc||'',price:v.price||'',url:v.url||''}};}}
+  var payload=JSON.stringify({{m:[...marks],d:d}});
+  var b64=btoa(unescape(encodeURIComponent(payload))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  return location.origin+location.pathname+'#share='+b64;
+}}
+function renderShare(){{
+  var box=document.getElementById('sharebox');if(!box)return;
+  if(!marks.size){{box.innerHTML='';return;}}
+  var url=makeShareUrl();
+  box.innerHTML='<div class="sharerow"><b>🔗 端末間で共有・同期</b>'
+    +'<div class="shareflex"><input id="shareurl" readonly value="'+url.replace(/"/g,'&quot;')+'">'
+    +'<button id="sharecopy" class="sharebtn" type="button">コピー</button></div>'
+    +'<div class="hs">このリンクを<b>自分の別の端末や奥さん</b>に送り、開くと📌が読み込まれます（相手の📌に統合）。📌を増減したら再送で同期。外部サーバーは使わず端末内に保持。</div></div>';
+}}
+document.addEventListener('click',function(e){{
+  if(e.target&&e.target.id==='sharecopy'){{
+    var i=document.getElementById('shareurl');if(!i)return;
+    i.select();try{{navigator.clipboard.writeText(i.value);}}catch(_){{document.execCommand('copy');}}
+    e.target.textContent='コピー済✓';setTimeout(function(){{e.target.textContent='コピー';}},1500);
+  }}
+}});
 function snapCard(id){{
   var c=grid.querySelector('.card[data-id="'+id+'"]');if(!c)return null;
   var le=c.querySelector('.loc').cloneNode(true);
@@ -1920,6 +1961,7 @@ function renderPinClicks(){{
   }});
   if(changed)localStorage.setItem('pinData',JSON.stringify(pinData));
   box.innerHTML=n?'<div class="wsub">📌 気になる物件 '+n+'件</div>'+h:'<div class="lead">まだ📌はありません。一覧のカード/行の📌で登録できます。</div>';
+  renderShare();
 }}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;if(marks.has(id)){{marks.delete(id);delete pinData[id];}}else{{marks.add(id);var s=snapCard(id);if(s)pinData[id]=s;}}localStorage.setItem('marks',JSON.stringify([...marks]));localStorage.setItem('pinData',JSON.stringify(pinData));renderMarks();renderPinClicks();computeAffinity();apply();}});
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
