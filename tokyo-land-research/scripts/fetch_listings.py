@@ -175,6 +175,37 @@ def premium_factor(ward, loc):
             best = m
     return best
 
+
+def load_market_real():
+    """国交省・不動産情報ライブラリの実取引集計（scripts/fetch_market.pyが生成）。"""
+    try:
+        return json.loads((DATA / "market_real.json").read_text(encoding="utf-8"))
+    except Exception:
+        return {"wards": {}}
+
+
+MARKET_REAL = load_market_real()
+
+
+def district_of(ward, loc):
+    """所在地から町名を抽出（例: '目黒区青葉台１'→'青葉台'）。"""
+    s = loc[len(ward):] if loc.startswith(ward) else loc
+    return re.split(r"[0-9０-９]|丁目|−|-|‐|ー", s)[0].strip()
+
+
+def real_premium(ward, loc):
+    """実取引ベースの町名プレミアム倍率（区中央値比）。データが無ければNone。"""
+    w = MARKET_REAL.get("wards", {}).get(ward)
+    if not w:
+        return None
+    return (w.get("districts_ms") or {}).get(district_of(ward, loc))
+
+
+def ward_cagr(ward):
+    """区のマンション㎡単価の年率（実取引・%）。"""
+    w = MARKET_REAL.get("wards", {}).get(ward)
+    return w.get("cagr_ms") if w else None
+
 # 区ごとの「都市開発・再開発の将来性」★0-3（出口の“上振れ”期待の目安）。
 # 住宅資産価値に効く駅前/沿線再開発を中心に評価（2026年時点の調査ベース。詳細・出典は notes/redevelopment.md）。
 # ※ 中野は新北口(サンプラザ跡)が事業費高騰で計画見直し・一旦中止のため控えめ評価。
@@ -863,8 +894,21 @@ def enrich(r):
         r["unit_disp"] = f"{round(unit)}万/坪" if unit else "—"
         r["use"] = "実需"
     r["tsubo"] = round(unit) if unit else None
-    pf = premium_factor(ward, r["loc"])          # プレミアム微立地（内藤町・青葉台・松濤等）の補正
-    r["premium"] = pf
+    # 町名プレミアム：実取引(国交省)と目安ヒューリスティックを併用。
+    #  既知の名門立地(目安>1.0)は過小評価しないよう高い方を採用、それ以外は実取引をそのまま使う
+    #  （実取引は鉢山町等の発見や、割安区の<1.0補正にも効く）。
+    rh = premium_factor(ward, r["loc"])
+    rp = real_premium(ward, r["loc"])
+    if rh > 1.0:
+        pf = max(rh, rp or rh)
+        r["premium_src"] = "目安+実取引" if rp else "目安"
+    elif rp:
+        pf = rp
+        r["premium_src"] = "実取引"
+    else:
+        pf = 1.0
+        r["premium_src"] = "—"
+    r["premium"] = round(pf, 2)
     # 相場ベンチマークの補正：駅距離(B)＋マンションは築年(D)で“同条件比”に近づける
     if med:
         wf = (1.15 if (wk is not None and wk <= 3) else 1.06 if (wk is not None and wk <= 7)
@@ -944,6 +988,11 @@ def enrich(r):
     if skind == "波" and ratio and ratio >= 1.1:
         score += 1                        # 割安×“波の前夜”は本命候補として微加点
     score += r.get("mgmt_adj", 0)         # 管理・修繕の健全性（詳細取得済みマンションのみ）
+    # 値持ち実測：区の中古マンション㎡単価の年率（国交省・実取引）。23区平均≈4.5%/年を基準に相対加点。
+    cg = ward_cagr(ward)
+    r["cagr"] = cg
+    if cg is not None:
+        score += (4 if cg >= 5.5 else 3 if cg >= 4.8 else 1 if cg >= 4.0 else 0 if cg >= 3.7 else -1)
 
     r["score"] = max(0, min(100, score))
 
@@ -1103,6 +1152,8 @@ def render(rows, errors):
             badges.append('<span class="bdg b-warn">⚠積立不足</span>')
         if "売り急ぎ" in r["tags"]:
             badges.append('<span class="bdg b-urgent">🏃売り急ぎ?（指値余地）</span>')
+        if (r.get("cagr") or 0) >= 5:
+            badges.append(f'<span class="bdg b-cagr">📈値上がりエリア +{r["cagr"]}%/年</span>')
         if spot_kind == "鉄道":
             badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
         elif spot_kind == "波":
@@ -1136,8 +1187,10 @@ def render(rows, errors):
                         f'<span class="brk">＝相場価値{r["market_value"]:,} − 買値{r["price"]:,} − 往復コスト(取得約7%/売却約3.5%)</span></div>')
         else:
             net_html = ""
+        cg = r.get("cagr")
+        cagr_disp = f'+{cg}%/年' if cg is not None else "—"
         cards.append(
-            f'<article class="card" data-ward="{r["ward"]}" data-price="{r["price"]}" '
+            f'<article class="card" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
             f'data-net="{rn or 0}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
@@ -1162,6 +1215,7 @@ def render(rows, errors):
             f'<div class="f"><span>面積 / 間取</span><b>{area_s}</b></div>'
             f'<div class="f"><span>出口の堅さ</span><b>{r["tier"]}ティア</b></div>'
             f'<div class="f"><span>将来性(再開発)</span><b class="dev d{dev}">{stars}{spotfact}</b></div>'
+            f'<div class="f"><span>区の実勢(年率)</span><b class="cagrf">{cagr_disp}</b></div>'
             f'</div>'
             f'{devnote}'
             f'{f"<div class=tags>{tags}</div>" if tags else ""}'
@@ -1179,7 +1233,7 @@ def render(rows, errors):
         # 比較用の表行（同じデータ属性。フィルタ/並び替えはカードと共通）
         dev_ic = {"波": "🌊", "鉄道": "🚇", "再開発": "🏗"}.get(spot_kind, "")
         trs.append(
-            f'<tr data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
+            f'<tr data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
             f'data-net="{rn or 0}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
@@ -1208,14 +1262,19 @@ def render(rows, errors):
 
     ward_opts = "".join(f'<option value="{w}">{w}（{cnt.get(w,0)}）</option>' for w in wards)
 
-    # 学び①：ティア別「区の相場坪単価」早見表
+    # 学び①：ティア別「区の相場＋実取引・値上がり率」早見表
+    def _wcell(w, tier):
+        wr = MARKET_REAL.get("wards", {}).get(w, {})
+        cg = wr.get("cagr_ms")
+        msr = wr.get("ms_m2_txn")
+        real = (f'<small class="rl">実取引M {msr}万/㎡'
+                + (f' ・<b class="cagrf">+{cg}%/年</b>' if cg is not None else "") + '</small>') if msr else ""
+        return (f'<div class="mw"><span class="tier t{tier}">{tier}</span>{w}'
+                f'<b>{WARD_TSUBO.get(w,"—")}万/坪</b>{real}<small>{cnt.get(w,0)}件</small></div>')
     mt = []
     for tier in ["S", "A", "B", "C"]:
         ws = [w for w in WARDS if TIER.get(w, "C") == tier]
-        cells = "".join(
-            f'<div class="mw"><span class="tier t{tier}">{tier}</span>{w}'
-            f'<b>{WARD_TSUBO.get(w,"—")}万/坪</b><small>{cnt.get(w,0)}件</small></div>'
-            for w in ws)
+        cells = "".join(_wcell(w, tier) for w in ws)
         mt.append(
             f'<div class="mrow"><div class="mlabel t{tier}">{tier}'
             f'<small>{H.escape(TIER_MEMO[tier])}</small></div>'
@@ -1436,6 +1495,9 @@ TEMPLATE = """<!DOCTYPE html>
   .b-prime{{background:#f3ecda;color:#8a6d1f;border:1px solid #e0cf9b}}
   .b-mgmt{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
   .b-urgent{{background:#fdeede;color:#b5630a;border:1px solid #f4cf9f}}
+  .b-cagr{{background:#e6f7ed;color:#0a7d4f;border:1px solid #b3e6cb}}
+  .cagrf{{color:#0a7d4f}}
+  .mw .rl{{display:block;color:#5d6b7a;font-size:.7rem;margin-top:1px}}
   .netline{{font-size:.82rem;color:#2c3744;background:#f3f7f4;border:1px solid #d8e6dd;border-radius:8px;padding:6px 10px;margin:6px 0}}
   .netline .brk{{display:block;color:var(--muted);font-size:.74rem;margin-top:1px}}
   .profline{{font-size:.84rem;color:#1b2430;background:#fff;border:1px solid #f1d9a0;border-radius:9px;padding:8px 11px;margin:4px 0 8px;line-height:1.7}}
@@ -1575,7 +1637,7 @@ TEMPLATE = """<!DOCTYPE html>
 <li><b>土地・古家から建て替えて売る</b> ― 再建築可の土地／古家が素材</li>
 <li><b>建替えまで保有して最終利益</b> ― 旧耐震等を等価交換の建替えまで持つ</li>
 </ol>
-<p><b>■ 採点の軸（資産スコア0-100）</b><br>①値持ち（名門立地・出口の堅さ）／②割安度（相場比）／③駅近／④将来性＝再開発の収益upside／⑤現地解像度。<br><b>プリセット</b>と<b>注目エリアタブ</b>で戦略別に絞り込み、📌した物件から<b>好みを学習</b>して似た物件を上位表示。</p>
+<p><b>■ 採点の軸（資産スコア0-100）</b><br>①値持ち（名門立地・出口の堅さ）／②割安度（相場比）／③駅近／④将来性＝再開発の収益upside／⑤現地解像度／⑥<b>値上がり実測</b>（国交省・実取引の区㎡単価トレンド＝年率）。<br>町名プレミアムと値上がり率は<b>国交省・不動産情報ライブラリの実成約データ</b>で算出（カードに「区の実勢(年率)」を表示）。<b>プリセット</b>と<b>注目エリアタブ</b>で戦略別に絞り込み、📌から<b>好みを学習</b>して似た物件を上位表示。</p>
 <p><b>■ 既定ルール</b><br>再建築不可・借地・駅徒歩16分以上は<b>除外</b>（建てて売る／値持ちが封じられるため）。旧耐震・古家付きは除外せず<b>“素材”として表示</b>（古家＝建替え素材で減点なし、旧耐震＝建替え目安も表示、名門立地のヴィンテージは値持ちするため過度に減点しない）。</p>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
@@ -1590,7 +1652,7 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
   <span><label>種別</label><select id="fkind"><option value="">すべて</option><option value="戸建">戸建</option><option value="マンション">マンション</option><option value="土地">土地</option></select></span>
-  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="aff">📌好み順（似てる）</option><option value="net">手取り(相場売却)順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
+  <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="aff">📌好み順（似てる）</option><option value="net">手取り(相場売却)順</option><option value="cagr">値上がり率(実取引)順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>

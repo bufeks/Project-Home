@@ -1,0 +1,52 @@
+name: Update market (実取引相場)
+
+# 国交省・不動産情報ライブラリの実取引データから区の相場・町名プレミアム・値上がり率を
+# 集計し tokyo-land-research/data/market_real.json を更新する。取引データは四半期更新なので月1で十分。
+# APIキーはリポジトリSecret REINFOLIB_API_KEY から渡す（コードには保存しない）。
+# 手動実行(workflow_dispatch)も可。
+
+on:
+  schedule:
+    - cron: "30 20 1 * *"   # 毎月1日 05:30 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-market
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch real-transaction market data
+        env:
+          REINFOLIB_API_KEY: ${{ secrets.REINFOLIB_API_KEY }}
+        run: |
+          if [ -z "$REINFOLIB_API_KEY" ]; then
+            echo "REINFOLIB_API_KEY secret 未設定のためスキップ（Settings→Secrets で登録してください）"
+            exit 0
+          fi
+          python3 tokyo-land-research/scripts/fetch_market.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain tokyo-land-research/data/market_real.json)" ]; then
+            git add tokyo-land-research/data/market_real.json
+            git commit -m "chore: update market data ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No changes."
+          fi
