@@ -1113,9 +1113,9 @@ def render(rows, errors):
             url = pn.get("url", "")
             gm = "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(pn.get("name", ""))
             pi += (f'<div class="hit"><b>📌 {H.escape(pn.get("name", ""))}</b>'
-                   f'<span class="hs">{spec}</span>'
                    f'<a href="{url}" target="_blank" rel="noopener">SUUMO↗</a>'
                    f'<a href="{gm}" target="_blank" rel="noopener">🗺</a>'
+                   f'<span class="hs pspec">{spec}</span>'
                    f'{f"<span class=bref>{note}</span>" if note else ""}</div>')
         wparts.append(f'<div class="wsub">📌 気になる物件（保存済み {len(pins)}件）</div>{pi}')
     # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
@@ -1276,6 +1276,7 @@ TEMPLATE = """<!DOCTYPE html>
   .wcbtn.on{{background:#2563eb;color:#fff;border-color:#2563eb}}
   .wli a{{margin-left:auto;text-decoration:none}}.wli a+a{{margin-left:10px}}
   .bref{{flex-basis:100%;color:#5d6b7a;font-size:.76rem;margin-top:2px}}
+  .pspec{{flex-basis:100%;margin-top:2px;color:#3a4654}}
   .hit{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}}
   .hit .hk{{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}}
   .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
