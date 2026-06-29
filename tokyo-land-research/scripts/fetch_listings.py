@@ -340,16 +340,16 @@ def base_row(nid, source, kind, ward, loc, price, land, bld, plan, walk, url):
 
 
 def parse_area(htmltext):
-    """SUUMO property_unit レイアウト（中古戸建 一覧）。"""
+    """SUUMO 中古戸建 一覧。物件単位（property_unit-title）で分割し全件取得（取得率が約2倍に改善）。"""
     rows = {}
-    for b in htmltext.split('class="property_unit')[1:]:
+    for b in htmltext.split('property_unit-title')[1:]:
         ml = re.search(r'href="(/(?:chukoikkodate|ikkodate)/[^"]+/nc_(\d+)/)"', b)
         if not ml or "万円" not in b:
             continue
         nid = ml.group(2)
         if nid in rows:
             continue
-        t = text(b)
+        t = text(b[:4000])
         price = max_price(t)
         ma = re.search(r"東京都\s*([^\s]+?区[^\s]*)", t)
         if not (price and ma):
@@ -373,16 +373,17 @@ def parse_area(htmltext):
 
 
 def parse_mansion(htmltext):
-    """SUUMO 中古マンション一覧（property_unit レイアウト）。専有面積・物件名・築年も取得。"""
+    """SUUMO 中古マンション一覧。物件単位（property_unit-title）で分割し全件取得。
+    ※ class="property_unit" 分割だと1物件が複数断片に割れ取得率が半減するため title 分割にする。"""
     rows = {}
-    for b in htmltext.split('class="property_unit')[1:]:
+    for b in htmltext.split('property_unit-title')[1:]:
         ml = re.search(r'href="(/ms/chuko/[^"]+/nc_(\d+)/)"', b)
         if not ml or "万円" not in b:
             continue
         nid = ml.group(2)
         if nid in rows:
             continue
-        t = text(b[:3000])
+        t = text(b[:4000])
         price = max_price(t)
         ma = re.search(r"所在地\s*東京都\s*([^\s]+?区[^\s]*)", t)
         if not (price and ma):
@@ -393,7 +394,7 @@ def parse_mansion(htmltext):
         senyu = re.search(r"専有面積\s*([0-9.]+)", t)
         plan = re.search(r"間取り\s*(\d+[SLDK]+)", t)
         walk = re.search(r"徒歩\s*(\d+)分", t)
-        name = re.search(r"物件名\s*(.+?)\s*販売価格", t)
+        name = re.search(r"物件名\s*(.+?)\s*(?:販売価格|$)", t)
         year = re.search(r"築年月\s*(\d{4})年", t)
         r = base_row(
             nid, "SUUMOマンション", "マンション", ward, ma.group(1), price,
@@ -496,13 +497,16 @@ def watchlist_search():
             wards.add(w)
     for w in wards:
         code = WARD_CODES[WARDS.index(w)]
-        for pn in range(1, 5):           # 中古マンション 深掘り（売り物件を拾う）
-            q = [("ar", "030"), ("bs", "011"), ("ta", "13"), ("sc", code), ("po", "1"), ("pn", str(pn))]
-            try:
-                rows += parse_mansion(fetch(MS_URL + "?" + urllib.parse.urlencode(q)))
-            except Exception:
-                pass
-            time.sleep(1.0)
+        # 中古マンション 深掘り：ソート順で結果セットが変わるため po=1(価格安い順)＋po=0(おすすめ順)の
+        # 両方を取得して取りこぼしを防ぐ（例：都立大アーバンハイムは po=1 では出ず po=0 のみに出る）。
+        for po in ("1", "0"):
+            for pn in range(1, 6):
+                q = [("ar", "030"), ("bs", "011"), ("ta", "13"), ("sc", code), ("po", po), ("pn", str(pn))]
+                try:
+                    rows += parse_mansion(fetch(MS_URL + "?" + urllib.parse.urlencode(q)))
+                except Exception:
+                    pass
+                time.sleep(1.0)
         for pn in range(1, 3):           # 中古戸建
             q = [("ar", "030"), ("bs", "021"), ("ta", "13"), ("sc", code), ("po", "1"), ("pn", str(pn))]
             try:
