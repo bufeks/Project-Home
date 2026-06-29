@@ -1177,11 +1177,14 @@ def render(rows, errors):
     budget = WATCHLIST.get("budget_man") or ""
     minarea = WATCHLIST.get("min_area_m2") or ""
     pin_ids = json.dumps([p.get("id", "") for p in pins if p.get("id")], ensure_ascii=False)
+    pin_meta = json.dumps({p["id"]: {"n": p.get("name", ""), "s": p.get("spec", ""),
+                                     "u": p.get("url", "")}
+                           for p in pins if p.get("id")}, ensure_ascii=False)
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
                            watch=watch_html, budget=budget, minarea=minarea,
-                           watch_open=watch_open, pinids=pin_ids)
+                           watch_open=watch_open, pinids=pin_ids, pinmeta=pin_meta)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1267,6 +1270,9 @@ TEMPLATE = """<!DOCTYPE html>
   .hit .hk{{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}}
   .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
   .hit a{{text-decoration:none;font-weight:700}}.hit a+a{{margin-left:2px}}
+  .hit.off{{background:#f3f4f6;border-color:#d6dae0;color:#8a94a0}}
+  .hit.off .hp{{color:#8a94a0;text-decoration:line-through}}
+  .hit .gone{{background:#fde2e1;color:#b42318;border:1px solid #f3b6b1;border-radius:6px;padding:0 7px;font-size:.72rem;font-weight:700}}
   .dev.d3{{color:#0e7d92}}.dev.d2{{color:#1d5fd6}}.dev.d1{{color:#5d6b7a}}.dev.d0{{color:#9aa4b2}}
   .devnote{{margin:0 12px 7px;padding:6px 9px;border-radius:9px;font-size:.78rem;line-height:1.45}}
   .devnote.n-wave{{background:#e6f4f8;border:1px solid #bce0ea;color:#185f70}}
@@ -1547,6 +1553,7 @@ function pass(d){{
   if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(d.use==='投資')return false;
+  {{const w=parseInt(d.walk||'999',10); if(w>=16&&w<900)return false;}}  // 駅徒歩16分以上は全体で除外（駅情報なし999は残す）
   if(fshin.checked&&d.shin!=='1')return false;
   if(!fwaru.checked&&/(再建築不可|借地権)/.test(d.tags))return false;
   if(fmark.checked&&!marks.has(d.id))return false;
@@ -1584,24 +1591,41 @@ vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on
 vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
 if(!localStorage.getItem('marksSeeded')){{var _seed=JSON.parse(localStorage.getItem('marks')||'[]').concat({pinids});localStorage.setItem('marks',JSON.stringify([...new Set(_seed)]));localStorage.setItem('marksSeeded','1');}}
 let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
+// 📌した物件のスナップショット（掲載終了後も情報を保持するため）
+let pinData=JSON.parse(localStorage.getItem('pinData')||'{{}}');
+{{var _pm={pinmeta};for(var _k in _pm){{if(!pinData[_k])pinData[_k]={{n:_pm[_k].n,loc:_pm[_k].s,price:'',url:_pm[_k].u}};}}localStorage.setItem('pinData',JSON.stringify(pinData));}}
+function snapCard(id){{
+  var c=grid.querySelector('.card[data-id="'+id+'"]');if(!c)return null;
+  var le=c.querySelector('.loc').cloneNode(true);
+  le.querySelectorAll('.tier,.kindchip').forEach(function(x){{x.remove();}});
+  var loc=le.textContent.trim();
+  var pe=c.querySelector('.price');var price=pe?pe.textContent.trim():'';
+  var a=c.querySelector('.viewrow a[href]');var url=a?a.getAttribute('href'):'#';
+  var ne=c.querySelector('.mn');var nm=ne?ne.textContent.trim():'';
+  return {{n:nm,loc:loc,price:price,url:url}};
+}}
 function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
 function renderPinClicks(){{
   var box=document.getElementById('pinclicks');if(!box)return;
+  var changed=false;
   var h='',n=0;
   marks.forEach(function(id){{
-    var c=grid.querySelector('.card[data-id="'+id+'"]');if(!c)return;
-    var le=c.querySelector('.loc').cloneNode(true);
-    le.querySelectorAll('.tier,.kindchip').forEach(function(x){{x.remove();}});
-    var loc=le.textContent.trim();
-    var pe=c.querySelector('.price');var price=pe?pe.textContent:'';
-    var a=c.querySelector('.viewrow a[href]');var url=a?a.getAttribute('href'):'#';
+    var snap=snapCard(id);var live=!!snap;
+    if(live){{ if(JSON.stringify(pinData[id])!==JSON.stringify(snap)){{pinData[id]=snap;changed=true;}} }}
+    else {{ snap=pinData[id]; }}
+    if(!snap)return;  // 一度も観測できていない（古いシード等）はスキップ
+    var loc=snap.loc||snap.n||'(物件)';
+    var price=snap.price?'<span class="hp">'+snap.price+'</span>':'';
+    var url=snap.url||'#';
     var gm='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('東京都'+loc);
-    h+='<div class="hit"><b>📌</b> '+loc+'<span class="hp">'+price+'</span> <a href="'+url+'" target="_blank" rel="noopener">SUUMO↗</a> <a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
+    var gone=live?'':'<span class="gone">⚠掲載終了/売却の可能性</span>';
+    h+='<div class="hit'+(live?'':' off')+'"><b>📌</b> '+loc+price+gone+' <a href="'+url+'" target="_blank" rel="noopener">SUUMO↗</a> <a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
     n++;
   }});
+  if(changed)localStorage.setItem('pinData',JSON.stringify(pinData));
   box.innerHTML=n?'<div class="wsub">📌 気になる物件 '+n+'件</div>'+h:'<div class="lead">まだ📌はありません。一覧のカード/行の📌で登録できます。</div>';
 }}
-document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();renderPinClicks();apply();}});
+document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;if(marks.has(id)){{marks.delete(id);delete pinData[id];}}else{{marks.add(id);var s=snapCard(id);if(s)pinData[id]=s;}}localStorage.setItem('marks',JSON.stringify([...marks]));localStorage.setItem('pinData',JSON.stringify(pinData));renderMarks();renderPinClicks();apply();}});
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
 renderMarks();renderPinClicks();
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
