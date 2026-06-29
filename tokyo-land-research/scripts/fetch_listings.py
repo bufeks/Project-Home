@@ -1933,7 +1933,7 @@ function renderShare(){{
   box.innerHTML='<div class="sharerow"><b>🔗 端末間で共有・同期</b>'
     +'<div class="shareflex"><input id="shareurl" readonly value="'+url.replace(/"/g,'&quot;')+'">'
     +'<button id="sharecopy" class="sharebtn" type="button">コピー</button></div>'
-    +'<div class="hs">このリンクを<b>自分の別の端末や奥さん</b>に送り、開くと📌が読み込まれます（相手の📌に統合）。📌を増減したら再送で同期。外部サーバーは使わず端末内に保持。</div></div>';
+    +'<div class="hs">このリンクを<b>自分の別の端末や共有したい人</b>に送り、開くと📌が読み込まれます（相手の📌に統合）。📌を増減したら再送で同期。外部サーバーは使わず端末内に保持。</div></div>';
 }}
 document.addEventListener('click',function(e){{
   if(e.target&&e.target.id==='sharecopy'){{
