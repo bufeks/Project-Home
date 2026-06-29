@@ -1118,6 +1118,7 @@ def render(rows, errors):
                    f'<span class="hs pspec">{spec}</span>'
                    f'{f"<span class=bref>{note}</span>" if note else ""}</div>')
         wparts.append(f'<div class="wsub">📌 気になる物件（保存済み {len(pins)}件）</div>{pi}')
+    wparts.append('<div id="pinclicks"></div>')   # クリックで📌した物件をJSで動的表示
     # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
     # 住みたいエリアは無条件表示しない（⭐タグと「注目エリア」タブで条件付きで見る）。
     hits = [r for r in rows if r.get("watch_kind") == "building"]   # rowsはスコア降順
@@ -1385,7 +1386,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
-  <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・再建築不可/借地を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋リノベ向きマンション（旧耐震ヴィンテージも可）＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="3LDK+/専有60㎡+ or 戸建3室+・再建築不可/借地を除く＝家族向け">👨‍👩‍👧ファミリー</button><button type="button" id="pLive" title="再建築不可・借地・極小を除いた“ふつうに住める”物件（旧耐震は注意タグで表示）">🏠地雷除外</button></span>
+  <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・再建築不可/借地を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋リノベ向きマンション（旧耐震ヴィンテージも可）＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="マンション専有65㎡+&2LDK+／戸建3室+／土地50㎡+・再建築不可/借地を除く＝家族向け">👨‍👩‍👧ファミリー</button><button type="button" id="pLive" title="再建築不可・借地・極小を除いた“ふつうに住める”物件（旧耐震は注意タグで表示）">🏠地雷除外</button></span>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
   <label class="ck"><input type="checkbox" id="fmark"> 📌気になるのみ</label>
@@ -1535,7 +1536,7 @@ function preset(d){{
   }}
   if(presetMode==='family'){{
     if(RISKY.test(d.tags))return false;
-    const ok=(d.kind==='マンション'&&parseFloat(d.area||'0')>=60&&parseInt(d.rooms||'0')>=2)||(d.kind==='戸建'&&parseInt(d.rooms||'0')>=3);
+    const ok=(d.kind==='マンション'&&parseFloat(d.area||'0')>=65&&parseInt(d.rooms||'0')>=2)||(d.kind==='戸建'&&parseInt(d.rooms||'0')>=3)||(d.kind==='土地'&&parseFloat(d.land||'0')>=50);
     if(!ok)return false;
   }}
   if(presetMode==='live'){{
@@ -1599,10 +1600,28 @@ const vT=el('vTable'),vC=el('vCard');
 vT.addEventListener('click',()=>{{vT.classList.add('on');vC.classList.remove('on');el('tblwrap').classList.remove('hidden');grid.classList.add('hidden');}});
 vC.addEventListener('click',()=>{{vC.classList.add('on');vT.classList.remove('on');grid.classList.remove('hidden');el('tblwrap').classList.add('hidden');}});
 let marks=new Set([].concat(JSON.parse(localStorage.getItem('marks')||'[]'),{pinids}));
+const SERVER_PINS=new Set({pinids});
 function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on=marks.has(b.dataset.id);b.classList.toggle('on',on);b.textContent=b.classList.contains('mk-t')?'📌':'📌気になる';}});}}
-document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();apply();}});
+function renderPinClicks(){{
+  var box=document.getElementById('pinclicks');if(!box)return;
+  var h='',n=0;
+  marks.forEach(function(id){{
+    if(SERVER_PINS.has(id))return;
+    var c=grid.querySelector('.card[data-id="'+id+'"]');if(!c)return;
+    var le=c.querySelector('.loc').cloneNode(true);
+    le.querySelectorAll('.tier,.kindchip').forEach(function(x){{x.remove();}});
+    var loc=le.textContent.trim();
+    var pe=c.querySelector('.price');var price=pe?pe.textContent:'';
+    var a=c.querySelector('.viewrow a[href]');var url=a?a.getAttribute('href'):'#';
+    var gm='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('東京都'+loc);
+    h+='<div class="hit"><b>📌</b> '+loc+'<span class="hp">'+price+'</span> <a href="'+url+'" target="_blank" rel="noopener">SUUMO↗</a> <a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
+    n++;
+  }});
+  box.innerHTML=n?'<div class="wsub">📌 クリックで保存した物件 '+n+'件</div>'+h:'';
+}}
+document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;marks.has(id)?marks.delete(id):marks.add(id);localStorage.setItem('marks',JSON.stringify([...marks]));renderMarks();renderPinClicks();apply();}});
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
-renderMarks();
+renderMarks();renderPinClicks();
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
 computeCosts();apply();
 </script>
