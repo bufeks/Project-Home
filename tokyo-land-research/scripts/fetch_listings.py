@@ -20,7 +20,7 @@
 
 スコア・相場は簡易な“目安”。実際の売買判断前に必ず現地・専門家確認を。
 """
-import json, re, sys, time, gzip, html as H, urllib.parse, urllib.request, datetime, pathlib
+import json, re, sys, time, gzip, math, os, html as H, urllib.parse, urllib.request, datetime, pathlib
 import unicodedata
 
 
@@ -756,15 +756,23 @@ def detail_fields(html):
     return f
 
 
-def gsi_elevation(addr):
-    """国土地理院API（無料・鍵不要）で住所→標高(m)。失敗時はNone。"""
+def gsi_geocode(addr):
+    """国土地理院API（無料・鍵不要）で住所→(lat, lon)。失敗時はNone。"""
     try:
-        q = urllib.parse.quote(addr)
         g = json.loads(urllib.request.urlopen(
-            "https://msearch.gsi.go.jp/address-search/AddressSearch?q=" + q, timeout=15).read())
+            "https://msearch.gsi.go.jp/address-search/AddressSearch?q="
+            + urllib.parse.quote(addr), timeout=15).read())
         if not g:
             return None
         lon, lat = g[0]["geometry"]["coordinates"]
+        return float(lat), float(lon)
+    except Exception:
+        return None
+
+
+def gsi_elevation_ll(lat, lon):
+    """緯度経度→標高(m)。"""
+    try:
         e = json.loads(urllib.request.urlopen(
             "https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php"
             f"?lon={lon}&lat={lat}&outtype=JSON", timeout=15).read())
@@ -772,6 +780,80 @@ def gsi_elevation(addr):
         return float(el) if isinstance(el, (int, float)) else None
     except Exception:
         return None
+
+
+# ===== 国交省・不動産情報ライブラリ GIS（住所→緯度経度→タイル→ポリゴン内外判定） =====
+REINFOLIB_KEY = os.environ.get("REINFOLIB_API_KEY", "").strip()
+
+
+def _tile_xy(lat, lon, z):
+    n = 2 ** z
+    return (int((lon + 180) / 360 * n),
+            int((1 - math.asinh(math.tan(math.radians(lat))) / math.pi) / 2 * n))
+
+
+def _pip(lat, lon, ring):
+    """点(lon,lat)がリング内か（レイキャスト）。ringは[[lon,lat],...]。"""
+    inside = False
+    n = len(ring)
+    j = n - 1
+    for i in range(n):
+        xi, yi = ring[i][0], ring[i][1]
+        xj, yj = ring[j][0], ring[j][1]
+        if ((yi > lat) != (yj > lat)) and (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi):
+            inside = not inside
+        j = i
+    return inside
+
+
+def reinfolib_gis(eid, lat, lon, z, retries=3):
+    """指定レイヤー(eid)のGeoJSONタイルを取得し、点を含むフィーチャのpropertiesを返す。鍵が無ければ[]。"""
+    if not REINFOLIB_KEY:
+        return []
+    x, y = _tile_xy(lat, lon, z)
+    url = (f"https://www.reinfolib.mlit.go.jp/ex-api/external/{eid}"
+           f"?response_format=geojson&z={z}&x={x}&y={y}")
+    for i in range(retries):
+        try:
+            req = urllib.request.Request(
+                url, headers={"Ocp-Apim-Subscription-Key": REINFOLIB_KEY, "Accept-Encoding": "gzip"})
+            raw = urllib.request.urlopen(req, timeout=30).read()
+            try:
+                raw = gzip.decompress(raw)
+            except OSError:
+                pass
+            hits = []
+            for ft in json.loads(raw).get("features", []):
+                geom = ft.get("geometry") or {}
+                if geom.get("type") not in ("Polygon", "MultiPolygon"):
+                    continue
+                polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+                if any(rings and _pip(lat, lon, rings[0]) for rings in polys):
+                    hits.append(ft.get("properties", {}))
+            return hits
+        except Exception:
+            if i == retries - 1:
+                return []
+            time.sleep(1.5 * (i + 1))
+    return []
+
+
+def zoning_of(lat, lon):
+    """用途地域・容積率(%)・建ぺい率(%)を返す（XKT002）。容積率付きの地物を優先。"""
+    best = None
+    for ft in reinfolib_gis("XKT002", lat, lon, 14):
+        ua = ft.get("use_area_ja")
+        if not ua:
+            continue
+        far = re.search(r"(\d+)", ft.get("u_floor_area_ratio_ja", "") or "")
+        bcr = re.search(r"(\d+)", ft.get("u_building_coverage_ratio_ja", "") or "")
+        cand = {"use_area": ua,
+                "far": int(far.group(1)) if far else None,
+                "bcr": int(bcr.group(1)) if bcr else None}
+        if cand["far"]:
+            return cand
+        best = best or cand
+    return best
 
 
 def apply_detail(r, html, with_elev=True):
@@ -847,17 +929,35 @@ def apply_detail(r, html, with_elev=True):
         r["mgmt_adj"] = max(-5, min(3, adj))
         if re.match(r"^1階(?!\d)", g("所在階").lstrip()):
             notes.append("1階住戸（防犯・眺望でマイナス、専用庭の利点も）")
-    # 建替え余地（戦略③）：容積率×土地面積で建てられる延床を概算。床増しの余地は土地活用の価値。
+    # 位置情報（標高・用途地域・ハザード）。重いので with_elev の詳細パスのみ。住所→緯度経度は1回。
+    if with_elev:
+        latlon = gsi_geocode("東京都" + r["loc"])
+        if latlon:
+            lat, lon = latlon
+            el = gsi_elevation_ll(lat, lon)
+            if el is not None:
+                r["elev"] = round(el, 1)
+                if el < 5:
+                    notes.append(f"標高約{r['elev']}m＝低地（浸水・液状化の可能性、ハザードマップ要確認）")
+            # 用途地域・容積率・建ぺい率（国交省GIS・鍵がある時のみ。SUUMO抽出より正確）
+            z = zoning_of(lat, lon)
+            if z:
+                r["zoning"], r["far"], r["bcr"] = z["use_area"], z["far"], z["bcr"]
+                _fa = f"・容積{z['far']}%/建ぺい{z['bcr']}%" if z["far"] else ""
+                notes.append(f"用途地域：{z['use_area']}{_fa}（国交省・都市計画）")
+                time.sleep(0.25)
+    # 建替え余地（戦略③）：容積率×土地面積で建てられる延床を概算。API容積率優先・無ければSUUMO抽出。
     if r["kind"] in ("戸建", "土地") and r.get("land"):
-        pcts = re.findall(r"(\d+)\s*[%％]", g("容積率", "建ぺい率"))
-        if pcts:
-            vr = int(pcts[-1])                     # 「建ぺい率/容積率 60%/160%」の最後＝容積率
-            if 50 <= vr <= 1300:
-                floor = round(r["land"] * vr / 100)
-                r["build_floor"] = floor
-                cur = r.get("bld") or 0
-                if not cur or floor > cur * 1.15:
-                    notes.append(f"容積率{vr}%＝土地{r['land']:.0f}㎡で延床約{floor}㎡まで建築可（建替えで床増し/賃貸併用の余地）")
+        vr = r.get("far")
+        if not vr:
+            pcts = re.findall(r"(\d+)\s*[%％]", g("容積率", "建ぺい率"))
+            vr = int(pcts[-1]) if pcts else None
+        if vr and 50 <= vr <= 1300:
+            floor = round(r["land"] * vr / 100)
+            r["build_floor"] = floor
+            cur = r.get("bld") or 0
+            if not cur or floor > cur * 1.15:
+                notes.append(f"容積率{vr}%＝土地{r['land']:.0f}㎡で延床約{floor}㎡まで建築可（建替えで床増し/賃貸併用の余地）")
     # 売り急ぎ・相続シグナル（指値が通りやすい＝割安取得チャンスの可能性）。相続は申告期限10ヶ月で急ぐことが多い。
     urg = [k for k in ("相続", "売り急ぎ", "早期売却", "即金", "価格応談", "価格相談", "任意売却", "お早めに")
            if k in body_t]
@@ -865,13 +965,6 @@ def apply_detail(r, html, with_elev=True):
         if "売り急ぎ" not in r["tags"]:
             r["tags"].append("売り急ぎ")
         notes.append("売り急ぎ/相続のサイン（" + "・".join(urg[:3]) + "）＝指値が通りやすい可能性（要確認）")
-    # 標高（C）：低地は浸水・液状化リスクの目安（国土地理院API）
-    if with_elev:
-        el = gsi_elevation("東京都" + r["loc"])
-        if el is not None:
-            r["elev"] = round(el, 1)
-            if el < 5:
-                notes.append(f"標高約{r['elev']}m＝低地（浸水・液状化の可能性、ハザードマップ要確認）")
     # 重複除去・最大4件
     seen, uniq = set(), []
     for n in notes:

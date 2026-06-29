@@ -29,6 +29,8 @@ jobs:
           python-version: "3.11"
 
       - name: Fetch latest listings
+        env:
+          REINFOLIB_API_KEY: ${{ secrets.REINFOLIB_API_KEY }}   # 用途地域/容積率/ハザードGIS用（未設定なら自動スキップ）
         run: python3 tokyo-land-research/scripts/fetch_listings.py
 
       - name: Commit if changed
