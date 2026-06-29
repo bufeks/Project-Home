@@ -1451,7 +1451,7 @@ def render(rows, errors):
 TEMPLATE = """<!DOCTYPE html>
 <html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>都心 割安×資産性スクリーナー（東京23区・売却益狙い）</title>
+<title>資産価値が落ちない家さがし — 東京23区（買値以上で売る）</title>
 <style>
   :root{{--bg:#f5f7fa;--panel:#ffffff;--panel2:#eef2f7;--card:#ffffff;--ink:#1b2430;--muted:#5d6b7a;--line:#dce3ec;--accent:#2563eb;--accent2:#0f9d6b}}
   *{{box-sizing:border-box}}
