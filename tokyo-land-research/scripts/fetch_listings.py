@@ -1270,14 +1270,8 @@ TEMPLATE = """<!DOCTYPE html>
   .meta{{color:var(--muted);font-size:.85rem;margin-bottom:12px}}
   .tagline{{font-size:.95rem;margin:2px 0 8px;line-height:1.5}}
   .tagline .src{{color:var(--muted);font-size:.78rem;margin-left:6px;white-space:nowrap}}
-  details.concept{{margin:0 0 14px;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}}
-  details.concept>summary{{cursor:pointer;padding:10px 13px;font-weight:700;font-size:.9rem;background:#f7f9fc;list-style:none}}
-  details.concept>summary::-webkit-details-marker{{display:none}}
-  details.concept>summary::before{{content:"▸ ";color:var(--accent)}}
-  details.concept[open]>summary::before{{content:"▾ "}}
-  details.concept .dbody{{padding:6px 14px 12px}}
-  details.concept p{{margin:8px 0;font-size:.9rem;line-height:1.65}}
-  .concept-l{{margin:6px 0;padding-left:1.3em}}.concept-l li{{margin:4px 0;font-size:.9rem}}
+  details.concept p{{margin:8px 0;line-height:1.65}}
+  .concept-l{{margin:6px 0;padding-left:1.3em}}.concept-l li{{margin:4px 0}}
   .concept .note{{color:var(--muted);font-size:.82rem}}
   a{{color:var(--accent)}}
   .lead{{color:var(--muted);font-size:.9rem}}
