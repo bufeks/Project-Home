@@ -688,6 +688,8 @@ def infer_reason(r):
             rs.append("目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）")
         else:
             rs.append("価格は相場相応。立地・築年・管理状態で比較するゾーン")
+    if r.get("premium", 1.0) >= 1.1:
+        rs.insert(0, "名門アドレスで下値が堅く“売る時に買値以上”を狙える値持ちエリア（満額でも資産が落ちにくい）")
     return rs[:3]
 
 
@@ -811,12 +813,13 @@ def enrich(r):
         r["unit_disp"] = f"{round(unit)}万/坪" if unit else "—"
         r["use"] = "実需"
     r["tsubo"] = round(unit) if unit else None
+    pf = premium_factor(ward, r["loc"])          # プレミアム微立地（内藤町・青葉台・松濤等）の補正
+    r["premium"] = pf
     # 相場ベンチマークの補正：駅距離(B)＋マンションは築年(D)で“同条件比”に近づける
     if med:
         wf = (1.15 if (wk is not None and wk <= 3) else 1.06 if (wk is not None and wk <= 7)
               else 1.0 if (wk is None or wk <= 10) else 0.9 if wk <= 15 else 0.82)
         med *= wf
-        pf = premium_factor(ward, r["loc"])      # プレミアム微立地（内藤町・青葉台・松濤等）の補正
         if is_ms and r.get("year"):
             age = THIS_YEAR - r["year"]
             af = (1.12 if age <= 5 else 1.04 if age <= 15 else 1.0 if age <= 25
@@ -848,7 +851,11 @@ def enrich(r):
     else:
         s_s = (4 if size is None else 10 if size >= 60 else 8 if size >= 40
                else 5 if size >= 25 else 3 if size >= 15 else 2)
-    score = s_w + s_e + s_t + s_s
+    # 立地プレミアム＝値持ち (0-12)。本プロジェクトの核「売る時に買値以上＝資産が落ちない」を
+    # 直接評価。名門アドレス（内藤町/青葉台/松濤/番町/南青山/上原/広尾等）は満額でも下値が堅く
+    # 出口で値持ちするため、割安でなくてもスコアが落ちないよう加点する。
+    s_p = (12 if pf >= 1.28 else 9 if pf >= 1.18 else 5 if pf >= 1.10 else 2 if pf >= 1.05 else 0)
+    score = s_w + s_e + s_t + s_s + s_p
     # 注意タグの減点（資産性・流動性を下げる）
     if "再建築不可" in r["tags"]:
         score -= 20
@@ -857,11 +864,12 @@ def enrich(r):
     if "古家付き" in r["tags"]:
         score -= 2
     # マンションの築年（1981以前＝旧耐震は注意タグ扱い。古家付き同様、除外せず控えめ減点）
+    # ※プレミアム立地では出口を立地が支え値持ちするため減点を半減（リスクはタグ・見立てで明示）
     if is_ms and r.get("year"):
         if r["year"] <= 1981:
             if "旧耐震" not in r["tags"]:
                 r["tags"].append("旧耐震")
-            score -= 6
+            score -= 3 if pf > 1.0 else 6
         elif r["year"] <= 2000:
             score -= 4
 
@@ -1018,6 +1026,8 @@ def render(rows, errors):
             badges.append(f'<span class="bdg b-stale">⏳滞留{days}日</span>')
         if r["score"] >= 78:
             badges.append('<span class="bdg b-top">★高評価</span>')
+        if r.get("premium", 1.0) >= 1.1:
+            badges.append('<span class="bdg b-prime">🏛名門アドレス・値持ち</span>')
         if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
             badges.append('<span class="bdg b-gem">💎穴場候補</span>')
         if spot_kind == "鉄道":
@@ -1293,6 +1303,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-top{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
   .b-gem{{background:#e4eefe;color:#1d5fd6;border:1px solid #c2d8fb}}
   .b-aff{{background:#fce7f1;color:#c01a6b;border:1px solid #f6bcd6}}
+  .b-prime{{background:#f3ecda;color:#8a6d1f;border:1px solid #e0cf9b}}
   .profline{{font-size:.84rem;color:#1b2430;background:#fff;border:1px solid #f1d9a0;border-radius:9px;padding:8px 11px;margin:4px 0 8px;line-height:1.7}}
   .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
   .b-wave{{background:#e0f3f8;color:#0e7d92;border:1px solid #bce4ee}}
