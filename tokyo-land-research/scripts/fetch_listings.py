@@ -776,12 +776,35 @@ def apply_detail(r, html, with_elev=True):
         muki = g("向き")
         if muki and any(x in muki for x in ["北", "西"]):
             notes.append(f"{muki}向き（採光面でマイナス材）")
+        # 管理・修繕の健全性（10〜30年保有の値持ちに直結）。総戸数＋修繕積立金の十分性で評価。
+        adj = 0
         mt = re.search(r"(\d+)\s*戸", g("総戸数"))
-        if mt and int(mt.group(1)) < 20:
-            notes.append(f"総戸数{mt.group(1)}戸の小規模（管理コスト割高・流動性やや低）")
+        if mt:
+            units = int(mt.group(1))
+            r["units"] = units
+            if units >= 50:
+                adj += 2
+                notes.append(f"総戸数{units}戸の大規模＝管理・修繕が安定し流動性も高い（値持ちプラス）")
+            elif units < 20:
+                adj -= 1
+                notes.append(f"総戸数{units}戸の小規模（1戸あたり修繕負担が重く流動性やや低）")
         ms = re.search(r"([0-9,]+)\s*円", g("修繕積立金"))
-        if ms and int(ms.group(1).replace(",", "")) < 5000:
-            notes.append("修繕積立金が低め（将来の値上げ・一時金リスク）")
+        size = r.get("bld")
+        if ms and size:
+            pm2 = int(ms.group(1).replace(",", "")) / size          # 円/㎡/月
+            r["reserve_pm2"] = round(pm2)
+            age = (THIS_YEAR - r["year"]) if r.get("year") else 25
+            req = min(350, 200 + max(0, age - 15) * 3)              # 築古ほど必要額が増える目安
+            if pm2 < req * 0.6:
+                adj -= 4
+                notes.append(f"修繕積立金が不足気味（約{round(pm2)}円/㎡月・築{age}年の目安{req}）＝将来の大幅値上げ/一時金リスク")
+            elif pm2 < req * 0.85:
+                adj -= 1
+                notes.append(f"修繕積立金がやや低め（約{round(pm2)}円/㎡月）")
+            else:
+                adj += 1
+                notes.append(f"修繕積立金は十分水準（約{round(pm2)}円/㎡月）＝長期保有でも安心材料")
+        r["mgmt_adj"] = max(-5, min(3, adj))
         if re.match(r"^1階(?!\d)", g("所在階").lstrip()):
             notes.append("1階住戸（防犯・眺望でマイナス、専用庭の利点も）")
     # 標高（C）：低地は浸水・液状化リスクの目安（国土地理院API）
@@ -896,6 +919,7 @@ def enrich(r):
     score += DEV_BONUS[dev_stars]
     if skind == "波" and ratio and ratio >= 1.1:
         score += 1                        # 割安×“波の前夜”は本命候補として微加点
+    score += r.get("mgmt_adj", 0)         # 管理・修繕の健全性（詳細取得済みマンションのみ）
 
     r["score"] = max(0, min(100, score))
     r["grade"] = ("高" if r["score"] >= 78 else "中高" if r["score"] >= 62
@@ -1038,6 +1062,10 @@ def render(rows, errors):
             badges.append('<span class="bdg b-prime">🏛名門アドレス・値持ち</span>')
         if (ratio and ratio >= 1.3) and (walk is not None and walk <= 7) and not risky:
             badges.append('<span class="bdg b-gem">💎穴場候補</span>')
+        if r.get("mgmt_adj", 0) >= 2:
+            badges.append('<span class="bdg b-mgmt">🏢管理良好</span>')
+        elif r.get("mgmt_adj", 0) <= -3:
+            badges.append('<span class="bdg b-warn">⚠積立不足</span>')
         if spot_kind == "鉄道":
             badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
         elif spot_kind == "波":
@@ -1349,6 +1377,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-gem{{background:#e4eefe;color:#1d5fd6;border:1px solid #c2d8fb}}
   .b-aff{{background:#fce7f1;color:#c01a6b;border:1px solid #f6bcd6}}
   .b-prime{{background:#f3ecda;color:#8a6d1f;border:1px solid #e0cf9b}}
+  .b-mgmt{{background:#e3f6ee;color:#0b7a55;border:1px solid #b8e6d3}}
   .profline{{font-size:.84rem;color:#1b2430;background:#fff;border:1px solid #f1d9a0;border-radius:9px;padding:8px 11px;margin:4px 0 8px;line-height:1.7}}
   .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
   .b-wave{{background:#e0f3f8;color:#0e7d92;border:1px solid #bce4ee}}
