@@ -1244,6 +1244,9 @@ def render(rows, errors):
 
     cards = []
     trs = []
+    # ✨新着バッジ：通常は当日初観測の数十件。収集方式変更日などで大量(>80)に新着判定された場合は
+    # 誤検知としてバッジを抑制（翌日以降は履歴が安定し正常表示）。
+    fresh_ok = sum(1 for r in rows if r.get("new")) <= 80
     for r in rows:
         tags = "".join(f'<span class="tag">{H.escape(t)}</span>' for t in r["tags"] if t not in ("新築", "売り急ぎ"))
         is_ms = r["kind"] == "マンション"
@@ -1302,12 +1305,16 @@ def render(rows, errors):
         days = r.get("days", 0)
         dp = r.get("drop_pct", 0)
         badges = []
+        if r.get("new") and fresh_ok:
+            badges.append('<span class="bdg b-fresh">✨新着</span>')
+        if drop > 0:
+            badges.append(f'<span class="bdg b-drop">📉値下げ -{r.get("drop_pct", 0)}%</span>')
+        if "売り急ぎ" in r["tags"]:
+            badges.append('<span class="bdg b-urgent">🏃売り急ぎ?（指値余地）</span>')
         if "新築" in r["tags"]:
             badges.append(f'<span class="bdg b-new">🆕新築{("・"+H.escape(r["comp"])) if r.get("comp") else ""}</span>')
         if watch:
             badges.append(f'<span class="bdg b-watch">⭐ {H.escape(watch)}</span>')
-        if drop > 0:
-            badges.append(f'<span class="bdg b-drop">📉値下げ -{r.get("drop_pct", 0)}%</span>')
         if days >= 30:
             badges.append(f'<span class="bdg b-stale">⏳滞留{days}日</span>')
         if r["score"] >= 78:
@@ -1320,8 +1327,6 @@ def render(rows, errors):
             badges.append('<span class="bdg b-mgmt">🏢管理良好</span>')
         elif r.get("mgmt_adj", 0) <= -3:
             badges.append('<span class="bdg b-warn">⚠積立不足</span>')
-        if "売り急ぎ" in r["tags"]:
-            badges.append('<span class="bdg b-urgent">🏃売り急ぎ?（指値余地）</span>')
         if (r.get("cagr") or 0) >= 5:
             badges.append(f'<span class="bdg b-cagr">📈値上がりエリア +{r["cagr"]}%/年</span>')
         if r.get("pop_chg") is not None and r["pop_chg"] <= -8:
@@ -1580,49 +1585,11 @@ def render(rows, errors):
                                      "u": p.get("url", "")}
                            for p in pins if p.get("id")}, ensure_ascii=False)
 
-    # 🆕 今日のダイジェスト：新着の本命・値下げを能動的にまとめる
-    def _digrow(r, badge):
-        gm = ('https://www.google.com/maps/search/?api=1&query='
-              + urllib.parse.quote("東京都" + r["loc"]))
-        wl = f' <span class="hs">⭐{H.escape(r["watch"])}</span>' if r.get("watch") else ""
-        dp = f' <span class="hs">-{r["drop_pct"]}%値下げ</span>' if r.get("drop", 0) > 0 else ""
-        return (f'<div class="hit">{badge} {H.escape(r["loc"])}'
-                f'<span class="hp">{fmt_price(r["price"])}</span> '
-                f'<span class="hs">スコア{r["score"]}</span>{wl}{dp} '
-                f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a> '
-                f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
-
-    # ダイジェストは予算上限以内のみ（予算超え＝1億超は既定で除外）
-    budget_cap = WATCHLIST.get("budget_man") or 10 ** 9
-    drows = [r for r in rows if r["price"] <= budget_cap]
-    new_honmei = sorted([r for r in drows if r.get("new") and (r["score"] >= 70 or r.get("watch"))],
-                        key=lambda x: -x["score"])[:12]
-    drops = sorted([r for r in drows if r.get("drop", 0) > 0],
-                   key=lambda x: -x.get("drop_pct", 0))[:10]
-    urgent = sorted([r for r in drows if "売り急ぎ" in r.get("tags", [])],
-                    key=lambda x: -x["score"])[:10]
-    if new_honmei or drops or urgent:
-        dparts = []
-        if new_honmei:
-            dparts.append('<div class="wsub">🆕 新着の本命（今日初観測・スコア70+ または ウォッチ該当）'
-                          + f'{len(new_honmei)}件</div>' + "".join(_digrow(r, "🆕") for r in new_honmei))
-        if urgent:
-            dparts.append('<div class="wsub">🏃 売り急ぎ/相続サイン（指値が通りやすい可能性）'
-                          + f'{len(urgent)}件</div>' + "".join(_digrow(r, "🏃") for r in urgent))
-        if drops:
-            dparts.append('<div class="wsub">📉 値下げ（指値・売り急ぎの可能性）'
-                          + f'{len(drops)}件</div>' + "".join(_digrow(r, "📉") for r in drops))
-        digest_html = ('<details open><summary>🆕 今日のダイジェスト — 新着の本命・値下げ</summary>'
-                       '<div class="dbody">' + "".join(dparts) + '</div></details>')
-    else:
-        digest_html = ""
-
     return TEMPLATE.format(stamp=stamp, count=len(rows), cards="\n".join(cards),
                            rows="\n".join(trs), ward_opts=ward_opts, curated=curated,
                            err=err, market=market, devmap=devmap, spotmap=spotmap,
                            watch=watch_html, budget=budget, minarea=minarea,
-                           watch_open=watch_open, pinids=pin_ids, pinmeta=pin_meta,
-                           digest=digest_html)
+                           watch_open=watch_open, pinids=pin_ids, pinmeta=pin_meta)
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -1699,6 +1666,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-rail{{background:#e4f5ea;color:#1d7a45;border:1px solid #c0e6cd}}
   .b-onsite{{background:#f3e9fb;color:#8a3fc0;border:1px solid #e0c9f3}}
   .b-drop{{background:#fde7ea;color:#c8324a;border:1px solid #f4c2cb}}
+  .b-fresh{{background:#e7f0ff;color:#1d5fd6;border:1px solid #c2d8fb;font-weight:800}}
   .b-stale{{background:#fbf2d6;color:#8a6d10;border:1px solid #ecdc9a}}
   .t-drop{{color:#c8324a;font-weight:700;font-size:.72rem}}
   .t-stale{{color:#8a6d10;font-weight:700;font-size:.72rem}}
@@ -1846,7 +1814,6 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
 
-{digest}
 <details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・気になる物件</summary>
 <div class="dbody">{watch}</div></details>
 
@@ -1935,7 +1902,7 @@ TEMPLATE = """<!DOCTYPE html>
 <li><b>駅遠・狭小・極小ワンルーム</b>：実需が薄く価格が出にくい。賃貸・転売の出口を具体に描けるかが鍵。</li>
 <li><b>難が見当たらず割安</b>：指値・設備更新で“詰める”領域。掲載が長い物件は値下げ余地があることも（＝大家が売り急ぐ／こだわらないサイン）。</li>
 <li><b>📉値下げ／⏳滞留バッジ</b>：当ツールが毎日価格を記録し、<b>値下げ額・観測日数</b>を自動算出。値下げ＝指値が通りやすい・売り急ぎのサイン、滞留が長い＝買い手不在で交渉余地。<b>「値下げ率順」「滞留日数順」で並べ替え可能</b>。</li>
-<li><b>🏃売り急ぎ?（指値余地）バッジ</b>：詳細ページのPR/備考に<b>相続・売り急ぎ・早期売却・即金・価格応談</b>等の語を検知。<b>相続は申告期限（10ヶ月）で1年以内に売り急ぐ</b>ことが多く、<b>相場価値より安く出る＝割安取得チャンス</b>。今日のダイジェストにも一覧表示。※業者表現のこともあるので必ず現地・売却理由を確認。</li>
+<li><b>🏃売り急ぎ?（指値余地）バッジ</b>：詳細ページのPR/備考に<b>相続・売り急ぎ・早期売却・即金・価格応談</b>等の語を検知。<b>相続は申告期限（10ヶ月）で1年以内に売り急ぐ</b>ことが多く、<b>相場価値より安く出る＝割安取得チャンス</b>。※業者表現のこともあるので必ず現地・売却理由を確認。</li>
 </ul>
 <p class="lead">※観測日数は「当ツールが最初に見た日」起点（SUUMOの掲載開始日ではない）。日が経つほど精度が上がります。「大家が売り急いでいるか」の最良の代理指標です。</p>
 </div></details>
@@ -1963,6 +1930,7 @@ TEMPLATE = """<!DOCTYPE html>
 <li><b>💎穴場候補</b>バッジ＝「相場比1.3倍以上 × 駅徒歩7分以内 × 注意タグ無し」。割安なのに出口・利便が確保できている本命ゾーン。</li>
 <li><b>🏛名門アドレス・値持ち</b>バッジ＝プレミアム微立地。<b>割安でなくても“資産が落ちない”狙いの本命</b>（満額でも値持ち）。</li>
 <li><b>★高評価</b>バッジ＝スコア78以上。値持ち×割安×駅近×出口の総合点が高い。</li>
+<li><b>✨新着／📉値下げ／🏃売り急ぎ</b>バッジ＝動きのある物件を一覧で即把握。✨新着＝当ツールが今日初観測、📉値下げ＝掲載後に値下げ、🏃売り急ぎ＝相続/早期売却サイン（いずれも指値・タイミングの好機）。</li>
 <li>狙いは<b>「買値以上で売れる」＝出口S/A × 駅近 ×（割安 または 名門立地の値持ち または 再開発upside）</b>。価格の安さだけでは選ばない。</li>
 </ul>
 </div></details>
