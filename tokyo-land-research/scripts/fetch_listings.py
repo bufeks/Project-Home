@@ -1851,7 +1851,7 @@ TEMPLATE = """<!DOCTYPE html>
 <div class="dbody">{watch}</div></details>
 
 <details><summary>📌 気になる物件 — 📌から好みを学習</summary>
-<div class="dbody"><div id="pinprofile"></div><div id="syncbox"></div><div id="sharebox"></div><div id="pinclicks"></div></div></details>
+<div class="dbody"><div id="pinprofile"></div><div id="syncbox"></div><div id="pinclicks"></div></div></details>
 
 <div class="bar">
   <span><label>区</label><select id="fward"><option value="">すべて</option>{ward_opts}</select></span>
@@ -2110,46 +2110,10 @@ let marks=new Set(JSON.parse(localStorage.getItem('marks')||'[]'));
 // 📌した物件のスナップショット（掲載終了後も情報を保持するため）
 let pinData=JSON.parse(localStorage.getItem('pinData')||'{{}}');
 {{var _pm={pinmeta};for(var _k in _pm){{if(!pinData[_k])pinData[_k]={{n:_pm[_k].n,loc:_pm[_k].s,price:'',url:_pm[_k].u}};}}localStorage.setItem('pinData',JSON.stringify(pinData));}}
-// 端末間共有：URLの #share= を読み込んで📌をローカルに統合（外部サーバー不要・完全プライベート）
-(function(){{
-  var m=(location.hash||'').match(/share=([^&]+)/);
-  if(!m)return;
-  try{{
-    var b=decodeURIComponent(m[1]).replace(/-/g,'+').replace(/_/g,'/');
-    while(b.length%4)b+='=';
-    var obj=JSON.parse(decodeURIComponent(escape(atob(b))));
-    (obj.m||[]).forEach(function(id){{marks.add(id);}});
-    if(obj.d){{for(var k in obj.d){{if(!pinData[k])pinData[k]=obj.d[k];}}}}
-    localStorage.setItem('marks',JSON.stringify([...marks]));
-    localStorage.setItem('pinData',JSON.stringify(pinData));
-  }}catch(e){{}}
-  history.replaceState(null,'',location.pathname);
-}})();
-function makeShareUrl(){{
-  var d={{}};for(var k in pinData){{var v=pinData[k]||{{}};d[k]={{n:v.n||'',loc:v.loc||'',price:v.price||'',url:v.url||''}};}}
-  var payload=JSON.stringify({{m:[...marks],d:d}});
-  var b64=btoa(unescape(encodeURIComponent(payload))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-  return location.origin+location.pathname+'#share='+b64;
-}}
-function renderShare(){{
-  var box=document.getElementById('sharebox');if(!box)return;
-  if(!marks.size){{box.innerHTML='';return;}}
-  var url=makeShareUrl();
-  box.innerHTML='<div class="sharerow"><b>🔗 端末間で共有・同期</b>'
-    +'<div class="shareflex"><input id="shareurl" readonly value="'+url.replace(/"/g,'&quot;')+'">'
-    +'<button id="sharecopy" class="sharebtn" type="button">コピー</button></div>'
-    +'<div class="hs">このリンクを<b>自分の別の端末や共有したい人</b>に送り、開くと📌が読み込まれます（相手の📌に統合）。📌を増減したら再送で同期。外部サーバーは使わず端末内に保持。</div></div>';
-}}
-document.addEventListener('click',function(e){{
-  if(e.target&&e.target.id==='sharecopy'){{
-    var i=document.getElementById('shareurl');if(!i)return;
-    i.select();try{{navigator.clipboard.writeText(i.value);}}catch(_){{document.execCommand('copy');}}
-    e.target.textContent='コピー済✓';setTimeout(function(){{e.target.textContent='コピー';}},1500);
-  }}
-}});
-// ===== ☁️ Firebaseで合言葉ベースのリアルタイム自動同期 =====
+// ===== ☁️ Firebaseで📌を全端末リアルタイム自動同期（合言葉なし・ページを開くだけ） =====
 var FB="https://tokyo-home-e8438-default-rtdb.asia-southeast1.firebasedatabase.app";
-var syncCode=localStorage.getItem('syncCode')||'';
+var SYNC_GROUP="home-e8438";          // 固定の共有先＝この家の📌リスト。開くだけで自動同期
+var syncCode=SYNC_GROUP;
 var fbES=null, fbBusy=false;
 function fbPath(c){{return FB+'/pins/'+encodeURIComponent(c)+'.json';}}
 function fbApply(o){{
@@ -2180,10 +2144,9 @@ function fbListen(){{
     fbES.addEventListener('patch',onchg);
   }}catch(_){{}}
 }}
-function fbConnect(code){{
-  syncCode=code; localStorage.setItem('syncCode',code);
-  // 初回は遠隔と手元を統合（双方の📌を失わない）してから押し上げ、以後は遠隔が正
-  fetch(fbPath(code)).then(function(r){{return r.json();}}).then(function(rem){{
+function fbConnect(){{
+  // 初回は遠隔と手元を統合（既存の📌を失わない）してから押し上げ、以後は遠隔が正＝全端末で共通
+  fetch(fbPath(syncCode)).then(function(r){{return r.json();}}).then(function(rem){{
     rem=rem||{{}};
     (rem.m||[]).forEach(function(id){{marks.add(id);}});
     if(rem.d){{for(var k in rem.d){{if(!pinData[k])pinData[k]=rem.d[k];}}}}
@@ -2192,27 +2155,11 @@ function fbConnect(code){{
     renderMarks();renderPinClicks();computeAffinity();apply();
   }}).catch(function(){{}}).finally(function(){{fbPush();fbListen();renderSync();}});
 }}
-function fbStop(){{
-  syncCode=''; localStorage.removeItem('syncCode');
-  if(fbES){{try{{fbES.close();}}catch(_){{}}fbES=null;}}
-  renderSync();
-}}
 function renderSync(){{
   var box=document.getElementById('syncbox');if(!box)return;
-  if(syncCode){{
-    box.innerHTML='<div class="sharerow on"><b>☁️ 自動同期：ON</b>（合言葉 <code>'+syncCode.replace(/[<&]/g,'')+'</code>）'
-      +'<div class="shareflex"><button id="syncstop" class="sharebtn alt" type="button">停止</button></div>'
-      +'<div class="hs">同じ合言葉を入れた端末どうしで📌が<b>リアルタイム自動同期</b>。相手にこの合言葉を伝えるだけ。</div></div>';
-  }}else{{
-    box.innerHTML='<div class="sharerow"><b>☁️ 自動同期（合言葉でリアルタイム共有）</b>'
-      +'<div class="shareflex"><input id="synccode" placeholder="合言葉（例 ourhome2026）"><button id="syncgo" class="sharebtn" type="button">同期開始</button></div>'
-      +'<div class="hs">同じ合言葉を入れた端末・相手と📌が自動で双方向同期（追加/削除が即反映）。他人に推測されにくい語に。</div></div>';
-  }}
+  box.innerHTML='<div class="sharerow on"><b>☁️ 自動同期中</b>'
+    +'<div class="hs">この📌リストは<b>全端末で自動共有</b>されます（ページを開くだけ・追加/削除はリアルタイム反映）。</div></div>';
 }}
-document.addEventListener('click',function(e){{
-  if(e.target&&e.target.id==='syncgo'){{var el=document.getElementById('synccode');var c=el?(el.value||'').trim():'';if(c)fbConnect(c);}}
-  if(e.target&&e.target.id==='syncstop'){{fbStop();}}
-}});
 function snapCard(id){{
   var c=grid.querySelector('.card[data-id="'+id+'"]');if(!c)return null;
   var le=c.querySelector('.loc').cloneNode(true);
@@ -2294,12 +2241,11 @@ function renderPinClicks(){{
   }});
   if(changed)localStorage.setItem('pinData',JSON.stringify(pinData));
   box.innerHTML=n?'<div class="wsub">📌 気になる物件 '+n+'件</div>'+h:'<div class="lead">まだ📌はありません。一覧のカード/行の📌で登録できます。</div>';
-  renderShare();
 }}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;if(marks.has(id)){{marks.delete(id);delete pinData[id];}}else{{marks.add(id);var s=snapCard(id);if(s)pinData[id]=s;}}localStorage.setItem('marks',JSON.stringify([...marks]));localStorage.setItem('pinData',JSON.stringify(pinData));renderMarks();renderPinClicks();computeAffinity();apply();fbPush();}});
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
 renderMarks();renderPinClicks();computeAffinity();
-renderSync(); if(syncCode){{fbConnect(syncCode);}}   // 自動同期の復帰
+renderSync(); fbConnect();   // 開くだけで全端末・自動同期
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
 computeCosts();apply();
 </script>
