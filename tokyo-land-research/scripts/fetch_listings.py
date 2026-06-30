@@ -1680,6 +1680,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-watch{{background:#fdf3d4;color:#8a6a00;border:1px solid #ecdc92}}
   /* 追跡リスト */
   .wsub{{font-weight:700;font-size:.9rem;margin:8px 0 4px;color:#a07b00}}
+  .wsub.gonesub{{color:#8a94a0;margin-top:14px;border-top:1px dashed #d6dae0;padding-top:9px}}
   .wli{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 10px;margin:5px 0;background:#f7f9fc;border:1px solid var(--line);border-radius:9px;font-size:.85rem}}
   .wli b{{color:var(--ink)}}
   .wc{{color:var(--accent);font-size:.78rem;background:#e7eefb;border:1px solid #c8d8f7;border-radius:999px;padding:1px 9px}}
@@ -2197,7 +2198,7 @@ function renderMarks(){{document.querySelectorAll('.mark').forEach(b=>{{const on
 function renderPinClicks(){{
   var box=document.getElementById('pinclicks');if(!box)return;
   var changed=false;
-  var h='',n=0;
+  var live_h='',gone_h='',nLive=0,nGone=0;
   marks.forEach(function(id){{
     var snap=snapCard(id);var live=!!snap;
     if(live){{ if(JSON.stringify(pinData[id])!==JSON.stringify(snap)){{pinData[id]=snap;changed=true;}} }}
@@ -2207,12 +2208,19 @@ function renderPinClicks(){{
     var price=snap.price?'<span class="hp">'+snap.price+'</span>':'';
     var url=snap.url||'#';
     var gm='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('東京都'+loc);
-    var gone=live?'':'<span class="gone">⚠掲載終了/売却の可能性</span>';
-    h+='<div class="hit'+(live?'':' off')+'"><b>📌</b> '+loc+price+gone+' <a href="'+url+'" target="_blank" rel="noopener">SUUMO↗</a> <a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
-    n++;
+    if(live){{
+      live_h+='<div class="hit"><b>📌</b> '+loc+price+' <a href="'+url+'" target="_blank" rel="noopener">SUUMO↗</a> <a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
+      nLive++;
+    }}else{{
+      gone_h+='<div class="hit off"><b>📌</b> '+loc+price+'<span class="gone">⚠掲載終了/売却の可能性</span> <a href="'+url+'" target="_blank" rel="noopener">SUUMO↗</a> <a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
+      nGone++;
+    }}
   }});
   if(changed)localStorage.setItem('pinData',JSON.stringify(pinData));
-  box.innerHTML=n?'<div class="wsub">📌 気になる物件 '+n+'件</div>'+h:'<div class="lead">まだ📌はありません。一覧のカード/行の📌で登録できます。</div>';
+  if(!nLive&&!nGone){{box.innerHTML='<div class="lead">まだ📌はありません。一覧のカード/行の📌で登録できます。</div>';return;}}
+  var html=(nLive?'<div class="wsub">📌 気になる物件 '+nLive+'件</div>'+live_h:'')
+          +(nGone?'<div class="wsub gonesub">🏁 掲載終了・売却済みの可能性 '+nGone+'件（記録として保持）</div>'+gone_h:'');
+  box.innerHTML=html;
 }}
 document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)return;e.preventDefault();const id=b.dataset.id;if(marks.has(id)){{marks.delete(id);delete pinData[id];}}else{{marks.add(id);var s=snapCard(id);if(s)pinData[id]=s;}}localStorage.setItem('marks',JSON.stringify([...marks]));localStorage.setItem('pinData',JSON.stringify(pinData));renderMarks();renderPinClicks();computeAffinity();apply();fbPush();}});
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
