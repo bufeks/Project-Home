@@ -1814,7 +1814,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
 
-<details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・気になる物件</summary>
+<details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・マンション</summary>
 <div class="dbody">{watch}</div></details>
 
 <details><summary>📌 気になる物件 — 📌から好みを学習</summary>
