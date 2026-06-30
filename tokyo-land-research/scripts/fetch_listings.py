@@ -1381,7 +1381,7 @@ def render(rows, errors):
         else:
             seitei_html = ""
         cards.append(
-            f'<article class="card" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" '
+            f'<article class="card" data-new="{1 if (r.get("new") and fresh_ok) else 0}" data-urg="{1 if "売り急ぎ" in r["tags"] else 0}" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
             f'data-net="{rn or 0}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
@@ -1425,7 +1425,7 @@ def render(rows, errors):
         # 比較用の表行（同じデータ属性。フィルタ/並び替えはカードと共通）
         dev_ic = {"波": "🌊", "鉄道": "🚇", "再開発": "🏗"}.get(spot_kind, "")
         trs.append(
-            f'<tr data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
+            f'<tr data-new="{1 if (r.get("new") and fresh_ok) else 0}" data-urg="{1 if "売り急ぎ" in r["tags"] else 0}" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
             f'data-net="{rn or 0}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
@@ -1829,7 +1829,9 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
   <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・再建築不可/借地を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋リノベ向きマンション（旧耐震ヴィンテージも可）＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="マンション専有65㎡+&2LDK+／戸建3室+／土地50㎡+・再建築不可/借地を除く＝家族向け">👨‍👩‍👧ファミリー</button></span>
+  <label class="ck"><input type="checkbox" id="fnew"> ✨新着のみ</label>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
+  <label class="ck"><input type="checkbox" id="furg"> 🏃売り急ぎのみ</label>
   <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
   <label class="ck"><input type="checkbox" id="fmark"> 📌気になるのみ</label>
   <label class="ck"><input type="checkbox" id="fwaru"> ⚠️訳あり(再建築不可/借地)も表示</label>
@@ -1975,7 +1977,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdrop=el('fdrop'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdrop=el('fdrop'),fnew=el('fnew'),furg=el('furg'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let watchLabel='';    // 追跡リストの「◯件」クリックで特定エリアに絞る
 let presetMode='none';// none | asset | family | live | reno （プリセット）
@@ -2036,6 +2038,8 @@ function pass(d){{
   if(watchLabel&&d.watchlabel!==watchLabel)return false;
   if(presetMode!=='none'&&!preset(d))return false;
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
+  if(fnew.checked&&d.new!=='1')return false;
+  if(furg.checked&&d.urg!=='1')return false;
   if(d.use==='投資')return false;
   {{const w=parseInt(d.walk||'999',10); if(w>=16&&w<900)return false;}}  // 駅徒歩16分以上は全体で除外（駅情報なし999は残す）
   if(fshin.checked&&d.shin!=='1')return false;
@@ -2055,7 +2059,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fdrop,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdrop,fnew,furg,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
