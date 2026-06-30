@@ -1657,7 +1657,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-cagr{{background:#e6f7ed;color:#0a7d4f;border:1px solid #b3e6cb}}
   .cagrf{{color:#0a7d4f}}
   .mw .rl{{display:block;color:#5d6b7a;font-size:.7rem;margin-top:1px}}
-  .netline{{font-size:.82rem;color:#2c3744;background:#f3f7f4;border:1px solid #d8e6dd;border-radius:8px;padding:6px 10px;margin:6px 0}}
+  .netline{{font-size:.82rem;color:#2c3744;background:#f3f7f4;border:1px solid #d8e6dd;border-radius:9px;padding:6px 9px;margin:0 12px 7px}}
   .netline .brk{{display:block;color:var(--muted);font-size:.74rem;margin-top:1px}}
   .profline{{font-size:.84rem;color:#1b2430;background:#fff;border:1px solid #f1d9a0;border-radius:9px;padding:8px 11px;margin:4px 0 8px;line-height:1.7}}
   .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
