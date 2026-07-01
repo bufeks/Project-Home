@@ -1836,6 +1836,7 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
 
+<div id="watchalerts"></div>
 <details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・マンション</summary>
 <div class="dbody">{watch}</div></details>
 
@@ -2270,6 +2271,30 @@ document.addEventListener('click',e=>{{const b=e.target.closest('.mark');if(!b)r
 document.addEventListener('click',e=>{{const b=e.target.closest('.wcbtn');if(!b)return;e.preventDefault();const wl=b.dataset.wl;watchLabel=(watchLabel===wl)?'':wl;document.querySelectorAll('.wcbtn').forEach(x=>x.classList.toggle('on',x.dataset.wl===watchLabel&&watchLabel!==''));apply();(grid.classList.contains('hidden')?el('tblwrap'):grid).scrollIntoView({{behavior:'smooth'}});}});
 renderMarks();renderPinClicks();computeAffinity();
 renderSync(); fbConnect();   // 開くだけで全端末・自動同期
+// 🔔 ウォッチ新着（fast_watch が2時間毎に更新する data/watch_alerts.json を表示）
+(function(){{
+  var box=document.getElementById('watchalerts');if(!box)return;
+  fetch('./data/watch_alerts.json?t='+Date.now()).then(function(r){{return r.ok?r.json():[];}}).then(function(a){{
+    if(!a||!a.length){{box.innerHTML='';return;}}
+    var cut=Date.now()-3*86400000;
+    a=a.filter(function(x){{return new Date(x.ts).getTime()>=cut;}}).slice(0,20);
+    if(!a.length){{box.innerHTML='';return;}}
+    function ago(ts){{var m=Math.round((Date.now()-new Date(ts).getTime())/60000);
+      return m<60?m+'分前':m<1440?Math.round(m/60)+'時間前':Math.round(m/1440)+'日前';}}
+    var h='';
+    a.forEach(function(x){{
+      var pr=x.price>=10000?(x.price/10000).toFixed(2)+'億':x.price.toLocaleString()+'万';
+      var gm='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('東京都'+x.loc);
+      h+='<div class="hit"><b>🔔新着</b> <span class="hk">'+(x.wk==='building'?'🏢':'⭐')+x.watch+'</span> '
+        +(x.name?'<b>'+x.name.replace(/[<&]/g,'')+'</b> ':'')+x.loc.replace(/[<&]/g,'')
+        +'<span class="hp">'+pr+'</span> <span class="hs">'+ago(x.ts)+'</span> '
+        +'<a href="'+x.url+'" target="_blank" rel="noopener">SUUMO↗</a> '
+        +'<a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
+    }});
+    box.innerHTML='<details open><summary>🔔 ウォッチ新着（直近3日・2時間毎チェック） '+a.length+'件</summary>'
+      +'<div class="dbody"><p class="lead">住みたいエリア・気になるマンションに<b>新しく出た物件</b>（SUUMO掲載の最速察知）。内見一番乗りのチャンス。</p>'+h+'</div></details>';
+  }}).catch(function(){{}});
+}})();
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
 computeCosts();apply();
 </script>
