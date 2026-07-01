@@ -1842,7 +1842,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span><label>並び</label><select id="fsort"><option value="score">資産スコア順</option><option value="aff">📌好み順（似てる）</option><option value="net">手取り(相場売却)順</option><option value="cagr">値上がり率(実取引)順</option><option value="dev">将来性(再開発)順</option><option value="price">価格が安い順</option><option value="total">実質総額が安い順</option><option value="ratio">割安(相場比)順</option><option value="walk">駅が近い順</option><option value="drop">値下げ率順</option><option value="days">滞留日数順</option></select></span>
   <span><label>価格上限(万円)</label><input id="fmax" type="number" inputmode="numeric" placeholder="例 5000" value="{budget}" style="width:110px"></span>
   <span><label>面積下限(㎡)</label><input id="fminarea" type="number" inputmode="numeric" placeholder="例 45" value="{minarea}" style="width:90px"></span>
-  <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" placeholder="例 60" style="width:90px"></span>
+  <span><label>最低スコア</label><input id="fscore" type="number" inputmode="numeric" value="60" placeholder="例 60" style="width:90px"></span>
   <span class="seg seg-area"><button type="button" id="aAll" class="on">すべて</button><button type="button" id="aWatch">⭐注目エリア</button><button type="button" id="aOther">その他</button></span>
   <span class="seg seg-preset"><button type="button" id="pNone" class="on" title="フィルタなし（全件表示）">条件なし</button><button type="button" id="pAsset" title="S/A・駅7分内・割安(相場比1.0+)・再建築不可/借地を除く＝資産価値が落ちにくい本命">💎資産価値</button><button type="button" id="pReno" title="再建築可の戸建/土地（古家OK）＋リノベ向きマンション（旧耐震ヴィンテージも可）＝建替え/リノベ前提">🔨建替/リノベ</button><button type="button" id="pFamily" title="マンション専有65㎡+&2LDK+／戸建3室+／土地50㎡+・再建築不可/借地を除く＝家族向け">👨‍👩‍👧ファミリー</button></span>
   <label class="ck"><input type="checkbox" id="fnew"> ✨新着のみ</label>
