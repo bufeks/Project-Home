@@ -20,7 +20,7 @@
 
 スコア・相場は簡易な“目安”。実際の売買判断前に必ず現地・専門家確認を。
 """
-import json, re, sys, time, gzip, math, os, html as H, urllib.parse, urllib.request, datetime, pathlib
+import json, re, sys, time, gzip, math, os, html as H, urllib.parse, urllib.request, urllib.error, datetime, pathlib
 import unicodedata
 
 
@@ -338,16 +338,29 @@ KW_SOURCES = [
 ]
 
 
-def fetch(url):
-    req = urllib.request.Request(url, headers={
-        "User-Agent": UA, "Accept-Language": "ja,en;q=0.8",
-        "Accept": "text/html,*/*"})
-    d = urllib.request.urlopen(req, timeout=30).read()
-    try:
-        d = gzip.decompress(d)
-    except Exception:
-        pass
-    return d.decode("utf-8", "ignore")
+def fetch(url, retries=3):
+    """一時的な失敗(502/503/504/429/タイムアウト)は指数バックオフで再試行。"""
+    last = None
+    for i in range(retries):
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": UA, "Accept-Language": "ja,en;q=0.8",
+                "Accept": "text/html,*/*"})
+            d = urllib.request.urlopen(req, timeout=30).read()
+            try:
+                d = gzip.decompress(d)
+            except Exception:
+                pass
+            return d.decode("utf-8", "ignore")
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code not in (429, 500, 502, 503, 504):
+                raise                     # 404等の恒久エラーは即時中止
+        except Exception as e:
+            last = e                       # タイムアウト・接続断などは再試行
+        if i < retries - 1:
+            time.sleep(1.5 * (i + 1))
+    raise last
 
 
 def text(s):
@@ -1576,7 +1589,9 @@ def render(rows, errors):
     curated = "".join(
         f'<a class="cu" href="{u}" target="_blank" rel="noopener"><b>{H.escape(n)} ↗</b>'
         f'<span>{H.escape(d)}</span></a>' for n, u, d in CURATED)
-    err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(errors)) + "</p>") if errors else ""
+    # 1物件の詳細取得の一過性失敗（detail/risk）はページに出さない＝ノイズ（ログには残る）。
+    shown_err = [e for e in errors if not e.startswith(("detail ", "risk "))]
+    err = ("<p class='lead'>取得エラー: " + H.escape("; ".join(shown_err)) + "</p>") if shown_err else ""
 
     budget = WATCHLIST.get("budget_man") or ""
     minarea = WATCHLIST.get("min_area_m2") or ""
