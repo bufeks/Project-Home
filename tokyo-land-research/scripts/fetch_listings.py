@@ -1206,6 +1206,11 @@ def enrich(r):
             if nm and norm_name(nm) in norm_name(r["name"]):
                 watch = nm
                 watch_kind = "building"   # 建物一致はエリア一致より優先（無条件速報）
+                # 建物固有のスコア補正・注記（管理/既存不適格/事件など個別事情を反映）
+                if b.get("score_adj"):
+                    r["score"] = max(0, min(100, r["score"] + int(b["score_adj"])))
+                if b.get("score_note"):
+                    r["bnote"] = b["score_note"]
                 break
     r["watch"] = watch
     r["watch_kind"] = watch_kind
@@ -1230,7 +1235,8 @@ def enrich(r):
     r["comment"] = " / ".join(bits)
     thin = (["実取引が少ない町＝流動性が薄く出口に時間（一般市場の流通が乏しい・価格は要現地確認）"]
             if r.get("thin_liq") else [])
-    r["reason"] = " / ".join((thin + (r.get("onsite") or []) + infer_reason(r))[:4])
+    bn = [r["bnote"]] if r.get("bnote") else []
+    r["reason"] = " / ".join((bn + thin + (r.get("onsite") or []) + infer_reason(r))[:4])
 
 
 # ------- HTML 出力 -------
