@@ -1,0 +1,32 @@
+name: Selfcheck (整合性の自己点検)
+
+# ロジック/設定の変更時に、仕組み全体の整合性を自動検査（回帰の早期検出）。
+# データ自動コミット(listings.html/data)では走らせない＝scripts・watchlist・ワークフローの変更時のみ。
+
+on:
+  push:
+    paths:
+      - "tokyo-land-research/scripts/**"
+      - "tokyo-land-research/watchlist.json"
+      - ".github/workflows/selfcheck.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selfcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Setup Node (JS構文チェック用)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run selfcheck
+        run: python3 tokyo-land-research/scripts/selfcheck.py
