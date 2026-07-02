@@ -109,6 +109,7 @@
   .hit{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}
   .hit .hk{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}
   .hit .hp{font-weight:800;color:#1b2430}.hit .hs{color:#5d6b7a;font-size:.78rem}
+  .hit .tg{background:#eef1f5;color:#5d6b7a;border-radius:5px;padding:0 5px;font-size:.7rem;margin-left:2px}
   .hit a{text-decoration:none;font-weight:700}.hit a+a{margin-left:2px}
   .hit.off{background:#f3f4f6;border-color:#d6dae0;color:#8a94a0}
   .hit.off .hp{color:#8a94a0;text-decoration:line-through}
@@ -200,7 +201,7 @@
   @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
 </style></head><body><div class="wrap">
 <h1>資産価値が落ちない家さがし — 東京23区</h1>
-<p class="tagline"><b>10〜30年“住んで”、売る時に「買値以上」で手放せる家</b>を探すツール。<span class="src">SUUMO／2026-07-02 18:56 JST／1267件／毎日更新</span></p>
+<p class="tagline"><b>10〜30年“住んで”、売る時に「買値以上」で手放せる家</b>を探すツール。<span class="src">SUUMO／2026-07-02 19:11 JST／1267件／毎日更新</span></p>
 <details class="concept"><summary>💡 コンセプトと使い方</summary>
 <div class="dbody">
 <p><b>目的</b>：10〜30年“住んで”、売る時に<b>買値以上</b>で手放せる家を見つける。落ちない（できれば上がる）＝最高。だから安さ単体では選ばず、<b>出口（再売却）で価値が残る／上がるか</b>を最重視。<b>古い建物にはこだわらない</b>（新しくてもOK）。</p>
@@ -3202,13 +3203,24 @@ renderSync(); fbConnect();   // 開くだけで全端末・自動同期
     if(!a.length){box.innerHTML='';return;}
     function ago(ts){var m=Math.round((Date.now()-new Date(ts).getTime())/60000);
       return m<60?m+'分前':m<1440?Math.round(m/60)+'時間前':Math.round(m/1440)+'日前';}
+    function esc(s){return (s||'').replace(/[<&>"]/g,'');}
     var h='';
     a.forEach(function(x){
       var pr=x.price>=10000?(x.price/10000).toFixed(2)+'億':x.price.toLocaleString()+'万';
       var gm='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('東京都'+x.loc);
-      h+='<div class="hit"><b>🔔新着</b> <span class="hk">'+(x.wk==='building'?'🏢':'⭐')+x.watch+'</span> '
-        +(x.name?'<b>'+x.name.replace(/[<&]/g,'')+'</b> ':'')+x.loc.replace(/[<&]/g,'')
-        +'<span class="hp">'+pr+'</span> <span class="hs">'+ago(x.ts)+'</span> '
+      var info='';
+      if(x.score!=null)info+=' <span class="hs">スコア<b>'+x.score+'</b></span>';
+      if(x.ratio)info+=' <span class="hs">相場比'+x.ratio+'</span>';
+      if(x.walk!=null)info+=' <span class="hs">駅'+x.walk+'分</span>';
+      if(x.area)info+=' <span class="hs">'+Math.round(x.area)+'㎡'+(x.plan?'・'+esc(x.plan):'')+'</span>';
+      if(x.tier)info+=' <span class="hs">出口'+x.tier+'</span>';
+      if(x.cagr!=null)info+=' <span class="hs">実勢+'+x.cagr+'%/年</span>';
+      if(x.net!=null)info+=' <span class="hs">手取り'+(x.net>=0?'+':'−')+Math.abs(x.net).toLocaleString()+'万</span>';
+      var tg=(x.tags||[]).map(function(t){return '<span class="tg">'+esc(t)+'</span>';}).join('');
+      h+='<div class="hit"><b>🔔新着</b> <span class="hk">'+(x.wk==='building'?'🏢':'⭐')+esc(x.watch)+'</span> '
+        +(x.name?'<b>'+esc(x.name)+'</b> ':'')+esc(x.loc)
+        +'<span class="hp">'+pr+'</span>'+info+' '+tg
+        +' <span class="hs">'+ago(x.ts)+'</span> '
         +'<a href="'+x.url+'" target="_blank" rel="noopener">SUUMO↗</a> '
         +'<a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
     });

@@ -101,9 +101,16 @@ def main():
         wl, wk = watch_of(r)
         if not wl or r["price"] > budget:
             continue                      # ウォッチ該当かつ予算内のみ
+        fl.enrich(r)                      # 一覧と同じ採点（スコア・相場比・駅近・値上がり率など）
+        keytags = [t for t in r.get("tags", [])
+                   if t in ("旧耐震", "再建築不可", "借地権", "古家付き", "売り急ぎ", "新築")]
         alerts.insert(0, {"id": r["id"], "name": r.get("name") or "", "loc": r["loc"],
                           "price": r["price"], "url": r["url"], "watch": wl, "wk": wk,
-                          "kind": r["kind"], "ts": now.isoformat()})
+                          "kind": r["kind"], "ts": now.isoformat(),
+                          "score": r.get("score"), "ratio": r.get("ratio"), "tier": r.get("tier"),
+                          "walk": r.get("walk"), "area": r.get("bld") or r.get("land"),
+                          "plan": r.get("plan"), "year": r.get("year"), "cagr": r.get("cagr"),
+                          "net": r.get("resale_net"), "tags": keytags})
         new += 1
     cutoff = (now - datetime.timedelta(days=7)).isoformat()
     alerts = [a for a in alerts if a.get("ts", "") >= cutoff][:40]
