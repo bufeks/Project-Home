@@ -33,6 +33,18 @@ def norm_name(s):
     return s.lower()
 
 
+def building_flag(name):
+    """建物固有の懸念フラグ（watchlist.json の building_flags）。「気になる」とは独立に常時スコアへ反映。"""
+    if not name:
+        return None
+    nn = norm_name(name)
+    for bf in WATCHLIST.get("building_flags", []):
+        bn = bf.get("name", "")
+        if bn and norm_name(bn) in nn:
+            return bf
+    return None
+
+
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 DATA = ROOT / "data"
@@ -47,10 +59,11 @@ def load_watchlist():
             d = json.loads(p.read_text(encoding="utf-8"))
             return {"areas": d.get("areas", []), "buildings": d.get("buildings", []),
                     "budget_man": d.get("budget_man"), "min_area_m2": d.get("min_area_m2"),
-                    "pins": d.get("pins", [])}
+                    "pins": d.get("pins", []), "building_flags": d.get("building_flags", [])}
         except Exception:
             pass
-    return {"areas": [], "buildings": [], "budget_man": None, "min_area_m2": None, "pins": []}
+    return {"areas": [], "buildings": [], "budget_man": None, "min_area_m2": None,
+            "pins": [], "building_flags": []}
 
 
 WATCHLIST = load_watchlist()
@@ -1138,6 +1151,10 @@ def enrich(r):
             med *= 0.55
         elif "借地権" in r["tags"]:
             med *= 0.60
+        # 建物固有フラグ（既存不適格・管理問題など）＝激安の“理由”を割安と誤認しないよう相場を引き下げ
+        _bf = building_flag(r.get("name")) if is_ms else None
+        if _bf and _bf.get("med_factor"):
+            med *= float(_bf["med_factor"])
     ratio = (med / unit) if (unit and med) else None
     r["ratio"] = round(ratio, 2) if ratio else None
 
@@ -1223,6 +1240,7 @@ def enrich(r):
 
     # あなたの追跡リスト：住所がウォッチ対象エリアに一致したら⭐（matchは文字列/リスト両対応）
     watch, watch_kind = "", ""
+    r["bnote"] = ""   # 建物注記は毎回再計算（キャッシュ行の残存を防ぐ）
     for a in WATCHLIST.get("areas", []):
         m = a.get("match")
         toks = m if isinstance(m, list) else ([m] if m else [])
@@ -1245,6 +1263,13 @@ def enrich(r):
                 break
     r["watch"] = watch
     r["watch_kind"] = watch_kind
+    # 建物固有フラグ（「気になる」とは独立）：score_adj・注記を常時反映（med_factorは上で反映済み）
+    _bf = building_flag(r.get("name")) if is_ms else None
+    if _bf:
+        if _bf.get("score_adj"):
+            r["score"] = max(0, min(100, r["score"] + int(_bf["score_adj"])))
+        if _bf.get("note"):
+            r["bnote"] = _bf["note"]
 
     bits = []
     if r["ratio"]:
