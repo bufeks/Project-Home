@@ -1042,6 +1042,17 @@ def apply_detail(r, html, with_elev=True):
                 _cav = "（店舗・交通量で住環境はやや劣るが容積に余裕）" if any(
                     x in z["use_area"] for x in ("商業", "準工", "工業")) else ""
                 notes.append(f"用途地域：{z['use_area']}{_fa}（国交省・都市計画）{_cav}")
+                # 🏗デベ狙いポテンシャル：高容積の用途地域×旧耐震築古×駅近＝容積に余剰＝建替え/用地化の的
+                _high = (z.get("far") and z["far"] >= 300) or any(
+                    x in z["use_area"] for x in ("商業", "近隣商業", "準工"))
+                _age = (THIS_YEAR - r["year"]) if r.get("year") else 0
+                _w = r.get("walk")
+                if (r["kind"] == "マンション" and _high and _age >= 45
+                        and _w is not None and _w <= 7 and "再建築不可" not in r["tags"]):
+                    r["dev_target"] = True
+                    notes.append("🏗デベ狙いポテンシャル：高容積の用途地域×築古(旧耐震)×駅近＝現況が容積を"
+                                 "使い切っていない可能性。建替え(等価交換)や一棟買取の対象になりやすい"
+                                 "（要・敷地の容積消化率と地権者数の確認）")
                 time.sleep(0.25)
             # 将来推計人口（250mメッシュ・社人研）：将来需要＝値持ちの最良シグナル
             pop = pop_mesh(lat, lon)
@@ -1409,6 +1420,8 @@ def render(rows, errors):
         _hz = r.get("hazard") or {}
         if _hz.get("flood", 0) >= 3 or _hz.get("landslide"):
             badges.append('<span class="bdg b-warn">⚠災害ハザード</span>')
+        if r.get("dev_target"):
+            badges.append('<span class="bdg b-devt">🏗建替え・用地候補</span>')
         if spot_kind == "鉄道":
             badges.append('<span class="bdg b-rail">🚇新駅・延伸</span>')
         elif spot_kind == "波":
@@ -1456,7 +1469,7 @@ def render(rows, errors):
         else:
             seitei_html = ""
         cards.append(
-            f'<article class="card" data-new="{1 if (r.get("new") and fresh_ok) else 0}" data-urg="{1 if "売り急ぎ" in r["tags"] else 0}" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" '
+            f'<article class="card" data-devt="{1 if r.get("dev_target") else 0}" data-new="{1 if (r.get("new") and fresh_ok) else 0}" data-urg="{1 if "売り急ぎ" in r["tags"] else 0}" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" '
             f'data-score="{r["score"]}" data-tags="{H.escape("|".join(r["tags"]))}" '
             f'data-net="{rn or 0}" '
             f'data-kind="{r["kind"]}" data-ratio="{ratio or 0}" '
@@ -1500,7 +1513,7 @@ def render(rows, errors):
         # 比較用の表行（同じデータ属性。フィルタ/並び替えはカードと共通）
         dev_ic = {"波": "🌊", "鉄道": "🚇", "再開発": "🏗"}.get(spot_kind, "")
         trs.append(
-            f'<tr data-new="{1 if (r.get("new") and fresh_ok) else 0}" data-urg="{1 if "売り急ぎ" in r["tags"] else 0}" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
+            f'<tr data-devt="{1 if r.get("dev_target") else 0}" data-new="{1 if (r.get("new") and fresh_ok) else 0}" data-urg="{1 if "売り急ぎ" in r["tags"] else 0}" data-cagr="{cg or 0}" data-ward="{r["ward"]}" data-price="{r["price"]}" data-score="{r["score"]}" '
             f'data-net="{rn or 0}" '
             f'data-tags="{H.escape("|".join(r["tags"]))}" data-kind="{r["kind"]}" '
             f'data-ratio="{ratio or 0}" data-walk="{walk if walk is not None else 999}" '
@@ -1728,6 +1741,7 @@ TEMPLATE = """<!DOCTYPE html>
   .b-warn{{background:#fde7ec;color:#c0344f;border:1px solid #f3c2cd}}
   .b-wave{{background:#e0f3f8;color:#0e7d92;border:1px solid #bce4ee}}
   .b-dev{{background:#efe9fb;color:#6b46c1;border:1px solid #d8c9f3}}
+  .b-devt{{background:#ede7fb;color:#5b3aa8;border:1px solid #cdbdf0;font-weight:800}}
   .b-rail{{background:#e4f5ea;color:#1d7a45;border:1px solid #c0e6cd}}
   .b-onsite{{background:#f3e9fb;color:#8a3fc0;border:1px solid #e0c9f3}}
   .b-drop{{background:#fde7ea;color:#c8324a;border:1px solid #f4c2cb}}
@@ -1899,6 +1913,7 @@ TEMPLATE = """<!DOCTYPE html>
   <label class="ck"><input type="checkbox" id="fnew"> ✨新着のみ</label>
   <label class="ck"><input type="checkbox" id="fdrop"> 📉値下げのみ</label>
   <label class="ck"><input type="checkbox" id="furg"> 🏃売り急ぎのみ</label>
+  <label class="ck"><input type="checkbox" id="fdevt"> 🏗建替え候補のみ</label>
   <label class="ck"><input type="checkbox" id="fshin"> 🆕新築のみ</label>
   <label class="ck"><input type="checkbox" id="fmark"> 📌気になるのみ</label>
   <label class="ck"><input type="checkbox" id="fwaru"> ⚠️訳あり(再建築不可/借地)も表示</label>
@@ -2066,7 +2081,7 @@ TEMPLATE = """<!DOCTYPE html>
 const el=id=>document.getElementById(id);
 const grid=el('grid'), cards=[...grid.children];
 const tbody=el('tbody'), trs=[...tbody.children];
-const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdrop=el('fdrop'),fnew=el('fnew'),furg=el('furg'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
+const fward=el('fward'),fkind=el('fkind'),fsort=el('fsort'),fmax=el('fmax'),fscore=el('fscore'),fdrop=el('fdrop'),fnew=el('fnew'),furg=el('furg'),fdevt=el('fdevt'),fminarea=el('fminarea'),fshin=el('fshin'),fwaru=el('fwaru'),fmark=el('fmark');
 let areaMode='all';   // all | watch | other （注目エリア/その他タブ）
 let watchLabel='';    // 追跡リストの「◯件」クリックで特定エリアに絞る
 let presetMode='none';// none | asset | family | live | reno （プリセット）
@@ -2129,6 +2144,7 @@ function pass(d){{
   if(fdrop.checked&&parseInt(d.drop||'0',10)<=0)return false;
   if(fnew.checked&&d.new!=='1')return false;
   if(furg.checked&&d.urg!=='1')return false;
+  if(fdevt.checked&&d.devt!=='1')return false;
   if(d.use==='投資')return false;
   {{const w=parseInt(d.walk||'999',10); if(w>=16&&w<900)return false;}}  // 駅徒歩16分以上は全体で除外（駅情報なし999は残す）
   if(fshin.checked&&d.shin!=='1')return false;
@@ -2148,7 +2164,7 @@ function run(items,parent){{
   return n;
 }}
 function apply(){{run(cards,grid);el('shown').textContent=run(trs,tbody)+' 件';}}
-[fward,fkind,fmax,fscore,fdrop,fnew,furg,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
+[fward,fkind,fmax,fscore,fdrop,fnew,furg,fdevt,fminarea,fshin,fwaru,fmark].forEach(e=>e.addEventListener('input',apply));
 {{const A=el('aAll'),W=el('aWatch'),O=el('aOther');
  function setA(m,b){{areaMode=m;[A,W,O].forEach(x=>x.classList.remove('on'));b.classList.add('on');apply();}}
  A.addEventListener('click',()=>setA('all',A));W.addEventListener('click',()=>setA('watch',W));O.addEventListener('click',()=>setA('other',O));}}
