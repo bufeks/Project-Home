@@ -1567,28 +1567,7 @@ def render(rows, errors):
     watch_cnt = Counter(r["watch"] for r in rows if r.get("watch"))
     pins = WATCHLIST.get("pins", [])
     wparts = []
-    # 🚨速報：気になるマンション（建物名一致）の売り物件だけ無条件で全掲載。
-    # 住みたいエリアは無条件表示しない（⭐タグと「注目エリア」タブで条件付きで見る）。
-    hits = [r for r in rows if r.get("watch_kind") == "building"]   # rowsはスコア降順
-    # 気になるマンション速報に新着(売り物件)がある時だけ追跡リストを開く。他トグルは初期クローズ
-    watch_open = " open" if hits else ""
-    if buildings:
-        if hits:
-            hi = ""
-            for r in hits:
-                nm = (H.escape(r["name"]) + "・") if r.get("name") else ""
-                gm = ("https://www.google.com/maps/search/?api=1&query="
-                      + urllib.parse.quote("東京都" + r["loc"]))
-                hi += (f'<div class="hit"><b>🏢 {H.escape(r["watch"])}</b> '
-                       f'<span class="hk">{r["kind"]}</span> {nm}{H.escape(r["loc"])}'
-                       f'<span class="hp">{fmt_price(r["price"])}</span>'
-                       f'<span class="hs">スコア{r["score"]}</span>'
-                       f'<a href="{r["url"]}" target="_blank" rel="noopener">SUUMO↗</a>'
-                       f'<a href="{gm}" target="_blank" rel="noopener">🗺</a></div>')
-            wparts.append(f'<div class="wsub">🚨 速報：気になるマンションの売り物件 {len(hits)}件（条件無視で全掲載）</div>{hi}')
-        else:
-            wparts.append('<div class="wsub">🚨 気になるマンション速報</div>'
-                          '<p class="lead">現在、登録マンションの売り出しは見つかっていません（毎日チェック中）。</p>')
+    watch_open = ""   # 速報は上部の🔔ウォッチ新着バナーに集約。追跡リストは既定で閉じる
     if areas:
         items = ""
         for a in areas:
