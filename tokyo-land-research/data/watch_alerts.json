@@ -1,1 +1,167 @@
-[]
+[
+ {
+  "id": "21190197",
+  "name": "",
+  "loc": "目黒区東が丘１",
+  "price": 9480,
+  "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21190197/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "戸建",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "20710944",
+  "name": "ハイネス池尻",
+  "loc": "目黒区大橋２",
+  "price": 9990,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_20710944/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21001881",
+  "name": "グランドメゾン目黒南",
+  "loc": "目黒区下目黒２",
+  "price": 9980,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21001881/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21190390",
+  "name": "ニックハイム中目黒",
+  "loc": "目黒区中目黒２-7-14",
+  "price": 5799,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21190390/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "20251382",
+  "name": "ヴィークコート代々木参宮橋",
+  "loc": "渋谷区代々木４",
+  "price": 7480,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20251382/",
+  "watch": "代々木周辺（渋谷区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21164165",
+  "name": "豊栄新都心マンション",
+  "loc": "渋谷区本町３-48-21",
+  "price": 6498,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21164165/",
+  "watch": "初台（渋谷区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21191269",
+  "name": "パールハイツ笹塚",
+  "loc": "渋谷区笹塚２-4-1",
+  "price": 6480,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21191269/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21164085",
+  "name": "ガーデンアルバ幡ヶ谷",
+  "loc": "渋谷区幡ヶ谷２",
+  "price": 3980,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21164085/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21191342",
+  "name": "初台ハイツ",
+  "loc": "渋谷区本町１-7-16",
+  "price": 3980,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21191342/",
+  "watch": "初台（渋谷区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21191339",
+  "name": "",
+  "loc": "新宿区大久保２",
+  "price": 9750,
+  "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21191339/",
+  "watch": "大久保（新宿区）",
+  "wk": "area",
+  "kind": "戸建",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21185805",
+  "name": "",
+  "loc": "新宿区北新宿２",
+  "price": 5380,
+  "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21185805/",
+  "watch": "北新宿（新宿区）",
+  "wk": "area",
+  "kind": "戸建",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "21045519",
+  "name": "目白が丘マンション",
+  "loc": "新宿区下落合３",
+  "price": 6998,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21045519/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "20347968",
+  "name": "ジョリーメゾンヌベル下落合",
+  "loc": "新宿区下落合１",
+  "price": 6298,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_20347968/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "20931328",
+  "name": "ジョリーメゾンヌベル下落合",
+  "loc": "新宿区下落合１",
+  "price": 6298,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_20931328/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ },
+ {
+  "id": "78117412",
+  "name": "アークステージ高田馬場",
+  "loc": "新宿区高田馬場３",
+  "price": 4499,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_78117412/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-02T16:32:16.271613+09:00"
+ }
+]
