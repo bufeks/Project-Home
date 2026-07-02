@@ -1776,6 +1776,8 @@ TEMPLATE = """<!DOCTYPE html>
   .sharerow.on{{background:#e6f7ed;border-color:#b3e6cb}}
   .sharerow #synccode{{flex:1;min-width:0;font-size:.85rem;padding:6px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;color:#1b2430}}
   .sharerow code{{background:#fff;border:1px solid var(--line);border-radius:5px;padding:0 5px;font-weight:700}}
+  .walert{{background:#fff4f4;border:1px solid #f2c7c7;border-left:4px solid #d64545;border-radius:11px;padding:10px 13px;margin:0 0 12px}}
+  .walert .wsub{{color:#b42318;margin-top:0}}
   .hit{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 11px;margin:5px 0;background:#fff7e6;border:1px solid #f1d9a0;border-radius:9px;font-size:.85rem}}
   .hit .hk{{background:#e7eef8;color:#2563eb;border-radius:6px;padding:0 7px;font-size:.72rem}}
   .hit .hp{{font-weight:800;color:#1b2430}}.hit .hs{{color:#5d6b7a;font-size:.78rem}}
@@ -1894,7 +1896,6 @@ TEMPLATE = """<!DOCTYPE html>
 <p class="note">※ スコア・相場は簡易な目安。購入前に必ず現地・専門家確認を。</p>
 </div></details>
 
-<div id="watchalerts"></div>
 <details{watch_open}><summary>⭐ 追跡リスト — 住みたいエリア・マンション</summary>
 <div class="dbody">{watch}</div></details>
 
@@ -1921,6 +1922,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span class="pill" id="shown"></span>
 </div>
 
+<div id="watchalerts"></div>
 <div class="tblwrap" id="tblwrap">
 <table>
 <thead><tr>
@@ -2350,8 +2352,8 @@ renderSync(); fbConnect();   // 開くだけで全端末・自動同期
         +'<a href="'+x.url+'" target="_blank" rel="noopener">SUUMO↗</a> '
         +'<a href="'+gm+'" target="_blank" rel="noopener">🗺</a></div>';
     }});
-    box.innerHTML='<details open><summary>🔔 ウォッチ新着（直近3日・2時間毎チェック） '+a.length+'件</summary>'
-      +'<div class="dbody"><p class="lead">住みたいエリア・気になるマンションに<b>新しく出た物件</b>（SUUMO掲載の最速察知）。内見一番乗りのチャンス。</p>'+h+'</div></details>';
+    box.innerHTML='<div class="walert"><div class="wsub">🔔 ウォッチ新着（直近3日・2時間毎チェック） '+a.length+'件</div>'
+      +'<p class="lead" style="margin:2px 0 6px">住みたいエリア・気になるマンションに<b>新しく出た物件</b>（SUUMO掲載の最速察知）。内見一番乗りのチャンス。</p>'+h+'</div>';
   }}).catch(function(){{}});
 }})();
 (function(){{var ds=[[7,10],[10,16],[1,29]];var now=new Date();var best=null;for(var i=0;i<ds.length;i++){{for(var k=0;k<2;k++){{var y=now.getFullYear()+k;var dt=new Date(y,ds[i][0]-1,ds[i][1]);if(dt>=now){{if(!best||dt<best)best=dt;break;}}}}}}var el=document.getElementById('kobaiNext');if(el&&best){{var days=Math.ceil((best-now)/86400000);el.textContent='次回 入札開始 '+(best.getMonth()+1)+'/'+best.getDate()+'（あと'+days+'日）';}}}})();
