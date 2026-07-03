@@ -1,5 +1,49 @@
 [
  {
+  "id": "21045668",
+  "name": "ザランド代官山青葉台",
+  "loc": "目黒区青葉台３",
+  "price": 5299,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21045668/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-03T16:20:03.115431+09:00",
+  "score": 61,
+  "ratio": 1.02,
+  "tier": "A",
+  "walk": 15,
+  "area": 30.25,
+  "plan": "1DK",
+  "year": 2003,
+  "cagr": 4.5,
+  "net": -468,
+  "tags": []
+ },
+ {
+  "id": "21105055",
+  "name": "ミニカムマンション",
+  "loc": "目黒区中根２",
+  "price": 4599,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21105055/",
+  "watch": "都立大学（目黒区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-03T16:20:03.115431+09:00",
+  "score": 75,
+  "ratio": 1.33,
+  "tier": "A",
+  "walk": 5,
+  "area": 58.19,
+  "plan": "2LDK",
+  "year": 1968,
+  "cagr": 4.5,
+  "net": 997,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "20865766",
   "name": "M・Fビル",
   "loc": "目黒区上目黒３",
@@ -808,27 +852,5 @@
   "cagr": 4.6,
   "net": 1929,
   "tags": []
- },
- {
-  "id": "21190197",
-  "name": "",
-  "loc": "目黒区東が丘１",
-  "price": 9480,
-  "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21190197/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "戸建",
-  "ts": "2026-07-02T16:32:16.271613+09:00"
- },
- {
-  "id": "20710944",
-  "name": "ハイネス池尻",
-  "loc": "目黒区大橋２",
-  "price": 9990,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_20710944/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-02T16:32:16.271613+09:00"
  }
 ]
