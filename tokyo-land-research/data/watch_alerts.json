@@ -1,5 +1,26 @@
 [
  {
+  "id": "20854091",
+  "name": "Dクラディアイヴァン代々木参宮橋",
+  "loc": "渋谷区代々木３",
+  "price": 7098,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_20854091/",
+  "watch": "代々木周辺（渋谷区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-05T16:25:14.846268+09:00",
+  "score": 84,
+  "ratio": 1.14,
+  "tier": "S",
+  "walk": 5,
+  "area": 37.05,
+  "plan": "1LDK",
+  "year": 2003,
+  "cagr": 5.6,
+  "net": 182,
+  "tags": []
+ },
+ {
   "id": "20414493",
   "name": "フィールｉ松濤",
   "loc": "渋谷区松濤２",
@@ -834,27 +855,6 @@
   "year": null,
   "cagr": 5.6,
   "net": 5265,
-  "tags": []
- },
- {
-  "id": "79157362",
-  "name": "豊栄新都心マンション",
-  "loc": "渋谷区本町３",
-  "price": 6498,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_79157362/",
-  "watch": "初台（渋谷区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-03T11:56:05.564547+09:00",
-  "score": 94,
-  "ratio": 1.39,
-  "tier": "S",
-  "walk": 5,
-  "area": 62.64,
-  "plan": "3LDK",
-  "year": null,
-  "cagr": 5.6,
-  "net": 1740,
   "tags": []
  }
 ]
