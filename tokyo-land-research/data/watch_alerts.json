@@ -1,5 +1,28 @@
 [
  {
+  "id": "21266662",
+  "name": "渋谷マンション",
+  "loc": "渋谷区鶯谷町",
+  "price": 5280,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21266662/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-12T15:32:21.649601+09:00",
+  "score": 53,
+  "ratio": 0.76,
+  "tier": "S",
+  "walk": 6,
+  "area": 35.18,
+  "plan": "1LDK",
+  "year": 1971,
+  "cagr": 5.6,
+  "net": -1785,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "21267102",
   "name": "パラスト青葉台",
   "loc": "目黒区青葉台４",
@@ -840,27 +863,6 @@
   "year": 1996,
   "cagr": 5.6,
   "net": -97,
-  "tags": []
- },
- {
-  "id": "21092818",
-  "name": "アークステージ高田馬場",
-  "loc": "新宿区高田馬場３",
-  "price": 4399,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21092818/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-09T11:57:08.809750+09:00",
-  "score": 62,
-  "ratio": 1.24,
-  "tier": "A",
-  "walk": 11,
-  "area": 51.78,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": 537,
   "tags": []
  }
 ]
