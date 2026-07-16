@@ -1,5 +1,28 @@
 [
  {
+  "id": "21292199",
+  "name": "中目黒プラムハイツ",
+  "loc": "目黒区中目黒２",
+  "price": 5498,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21292199/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-16T11:32:59.229457+09:00",
+  "score": 76,
+  "ratio": 1.35,
+  "tier": "A",
+  "walk": 8,
+  "area": 41.0,
+  "plan": "1LDK",
+  "year": 1978,
+  "cagr": 4.5,
+  "net": 1258,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "20589574",
   "name": "青葉台フラワーマンション",
   "loc": "目黒区青葉台１",
@@ -824,27 +847,6 @@
   "year": null,
   "cagr": 4.6,
   "net": -2131,
-  "tags": []
- },
- {
-  "id": "21233727",
-  "name": "日興パレス高田馬場",
-  "loc": "新宿区上落合１-3-9",
-  "price": 4690,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21233727/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-14T11:27:25.382977+09:00",
-  "score": 56,
-  "ratio": 0.95,
-  "tier": "A",
-  "walk": 9,
-  "area": 45.65,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": -723,
   "tags": []
  }
 ]
