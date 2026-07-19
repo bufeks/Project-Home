@@ -1,5 +1,26 @@
 [
  {
+  "id": "21268503",
+  "name": "日商岩井碑文谷マンション",
+  "loc": "目黒区碑文谷４",
+  "price": 7390,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21268503/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-19T11:39:52.579981+09:00",
+  "score": 68,
+  "ratio": 1.14,
+  "tier": "A",
+  "walk": 7,
+  "area": 50.11,
+  "plan": "2LDK",
+  "year": null,
+  "cagr": 4.5,
+  "net": 229,
+  "tags": []
+ },
+ {
   "id": "78930374",
   "name": "まんしょん中目黒",
   "loc": "目黒区中目黒２",
@@ -844,27 +865,6 @@
   "year": null,
   "cagr": 4.6,
   "net": 1363,
-  "tags": []
- },
- {
-  "id": "21288201",
-  "name": "早稲田ガーデンハイツ",
-  "loc": "新宿区西早稲田２-13-2",
-  "price": 3780,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21288201/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-15T11:25:15.126463+09:00",
-  "score": 87,
-  "ratio": 1.48,
-  "tier": "A",
-  "walk": 4,
-  "area": 45.41,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": 1372,
   "tags": []
  }
 ]
