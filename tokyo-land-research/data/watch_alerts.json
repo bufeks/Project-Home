@@ -1,5 +1,28 @@
 [
  {
+  "id": "21330770",
+  "name": "ジョリーメゾンヌベル下落合",
+  "loc": "新宿区下落合１",
+  "price": 5998,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21330770/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-26T15:35:53.573240+09:00",
+  "score": 57,
+  "ratio": 0.98,
+  "tier": "A",
+  "walk": 6,
+  "area": 58.05,
+  "plan": "3LDK",
+  "year": 1981,
+  "cagr": 4.6,
+  "net": -755,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "21355581",
   "name": "ストークメイジュ",
   "loc": "渋谷区千駄ヶ谷４",
@@ -845,26 +868,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "21337742",
-  "name": "エトワール恵比寿・三葉",
-  "loc": "渋谷区恵比寿１",
-  "price": 5480,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21337742/",
-  "watch": "渋谷区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-22T11:35:24.779773+09:00",
-  "score": 88,
-  "ratio": 1.05,
-  "tier": "S",
-  "walk": 3,
-  "area": 21.77,
-  "plan": "1K",
-  "year": null,
-  "cagr": 5.6,
-  "net": -314,
-  "tags": []
  }
 ]
