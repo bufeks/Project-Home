@@ -1,5 +1,26 @@
 [
  {
+  "id": "21386110",
+  "name": "フィールＭ西新宿",
+  "loc": "新宿区西新宿５-24-14",
+  "price": 4490,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21386110/",
+  "watch": "西新宿五丁目（新宿区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-07-29T15:30:21.353989+09:00",
+  "score": 76,
+  "ratio": 1.12,
+  "tier": "A",
+  "walk": 1,
+  "area": 32.0,
+  "plan": "1DK",
+  "year": null,
+  "cagr": 4.6,
+  "net": 34,
+  "tags": []
+ },
+ {
   "id": "21383432",
   "name": "中目黒コーポラス",
   "loc": "目黒区上目黒３-17-22",
@@ -840,27 +861,6 @@
   "year": null,
   "cagr": 4.5,
   "net": -649,
-  "tags": []
- },
- {
-  "id": "21359995",
-  "name": "学芸大スカイマンション",
-  "loc": "目黒区鷹番２-18-3",
-  "price": 4198,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21359995/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-26T11:44:04.542010+09:00",
-  "score": 93,
-  "ratio": 1.7,
-  "tier": "A",
-  "walk": 4,
-  "area": 37.05,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 2387,
   "tags": []
  }
 ]
