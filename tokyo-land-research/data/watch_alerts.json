@@ -1,5 +1,26 @@
 [
  {
+  "id": "21422372",
+  "name": "初台ハイツ",
+  "loc": "渋谷区本町１-7-16",
+  "price": 3980,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21422372/",
+  "watch": "初台（渋谷区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-08-03T16:24:23.754887+09:00",
+  "score": 100,
+  "ratio": 1.58,
+  "tier": "S",
+  "walk": 3,
+  "area": 40.24,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 5.6,
+  "net": 1800,
+  "tags": []
+ },
+ {
   "id": "21372879",
   "name": "日商岩井碑文谷マンション",
   "loc": "目黒区碑文谷４-23-13",
@@ -841,26 +862,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "21130588",
-  "name": "レクシオシティ代々木参宮橋",
-  "loc": "渋谷区代々木５",
-  "price": 9180,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21130588/",
-  "watch": "代々木周辺（渋谷区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-07-30T11:21:55.590517+09:00",
-  "score": 82,
-  "ratio": 1.15,
-  "tier": "S",
-  "walk": 6,
-  "area": 48.6,
-  "plan": "1LDK",
-  "year": 2003,
-  "cagr": 5.6,
-  "net": 378,
-  "tags": []
  }
 ]
