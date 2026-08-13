@@ -1,5 +1,26 @@
 [
  {
+  "id": "21438453",
+  "name": "フォレステージ西早稲田",
+  "loc": "新宿区西早稲田１",
+  "price": 6480,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21438453/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-08-13T10:54:54.051900+09:00",
+  "score": 58,
+  "ratio": 0.85,
+  "tier": "A",
+  "walk": 1,
+  "area": 45.45,
+  "plan": "2LDK",
+  "year": 1994,
+  "cagr": 4.6,
+  "net": -1641,
+  "tags": []
+ },
+ {
   "id": "21481850",
   "name": "キャッスルマンション西新宿",
   "loc": "新宿区西新宿７-22-48",
@@ -832,27 +853,6 @@
   "year": 2001,
   "cagr": 4.5,
   "net": -128,
-  "tags": []
- },
- {
-  "id": "21257272",
-  "name": "パレス三條",
-  "loc": "目黒区目黒１",
-  "price": 5699,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21257272/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-07T16:14:00.535905+09:00",
-  "score": 93,
-  "ratio": 1.8,
-  "tier": "A",
-  "walk": 5,
-  "area": 61.88,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 3792,
   "tags": []
  }
 ]
