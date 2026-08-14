@@ -1,5 +1,26 @@
 [
  {
+  "id": "21445777",
+  "name": "トキワパレス",
+  "loc": "新宿区下落合１-1-1",
+  "price": 5998,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21445777/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-08-14T10:52:49.392167+09:00",
+  "score": 78,
+  "ratio": 1.24,
+  "tier": "A",
+  "walk": 3,
+  "area": 54.35,
+  "plan": "2LDK",
+  "year": null,
+  "cagr": 4.6,
+  "net": 772,
+  "tags": []
+ },
+ {
   "id": "21438453",
   "name": "フォレステージ西早稲田",
   "loc": "新宿区西早稲田１",
@@ -833,26 +854,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "20546851",
-  "name": "ジェイパーク自由が丘",
-  "loc": "目黒区自由が丘２",
-  "price": 7280,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_20546851/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-07T16:14:00.535905+09:00",
-  "score": 73,
-  "ratio": 1.09,
-  "tier": "A",
-  "walk": 3,
-  "area": 36.38,
-  "plan": "1LDK",
-  "year": 2001,
-  "cagr": 4.5,
-  "net": -128,
-  "tags": []
  }
 ]
