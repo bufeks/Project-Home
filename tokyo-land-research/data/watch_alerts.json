@@ -718,51 +718,5 @@
   "cagr": 4.5,
   "net": 4006,
   "tags": []
- },
- {
-  "id": "21458416",
-  "name": "メゾンジャルダン",
-  "loc": "渋谷区千駄ヶ谷３",
-  "price": 2980,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21458416/",
-  "watch": "北参道（渋谷区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-08T15:51:50.557476+09:00",
-  "score": 100,
-  "ratio": 2.09,
-  "tier": "S",
-  "walk": 5,
-  "area": 28.78,
-  "plan": "",
-  "year": 1968,
-  "cagr": 5.6,
-  "net": 2821,
-  "tags": [
-   "旧耐震"
-  ]
- },
- {
-  "id": "20635998",
-  "name": "青葉台フラワーマンション",
-  "loc": "目黒区青葉台１",
-  "price": 7998,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_20635998/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-08T15:51:50.557476+09:00",
-  "score": 70,
-  "ratio": 1.2,
-  "tier": "A",
-  "walk": 9,
-  "area": 52.77,
-  "plan": "2LDK",
-  "year": 1972,
-  "cagr": 4.5,
-  "net": 719,
-  "tags": [
-   "旧耐震"
-  ]
  }
 ]
