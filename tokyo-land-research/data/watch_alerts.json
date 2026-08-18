@@ -825,26 +825,5 @@
   "cagr": 5.6,
   "net": 2134,
   "tags": []
- },
- {
-  "id": "21480007",
-  "name": "パシフィック自由ヶ丘マンション",
-  "loc": "目黒区自由が丘２",
-  "price": 4399,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21480007/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-11T10:40:56.285094+09:00",
-  "score": 87,
-  "ratio": 2.05,
-  "tier": "A",
-  "walk": 10,
-  "area": 47.41,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 3974,
-  "tags": []
  }
 ]
