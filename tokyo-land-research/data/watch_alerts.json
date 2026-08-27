@@ -776,26 +776,5 @@
   "cagr": 4.6,
   "net": 816,
   "tags": []
- },
- {
-  "id": "21518164",
-  "name": "",
-  "loc": "目黒区東が丘１",
-  "price": 9480,
-  "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21518164/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "戸建",
-  "ts": "2026-08-20T17:36:30.462486+09:00",
-  "score": 43,
-  "ratio": 0.76,
-  "tier": "A",
-  "walk": 12,
-  "area": 84.27,
-  "plan": "3LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": -3214,
-  "tags": []
  }
 ]
