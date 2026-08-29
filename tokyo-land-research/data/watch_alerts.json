@@ -778,26 +778,5 @@
   "cagr": 5.6,
   "net": 1604,
   "tags": []
- },
- {
-  "id": "21534420",
-  "name": "メゾンドール高田馬場",
-  "loc": "新宿区高田馬場２-5-24",
-  "price": 5699,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21534420/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-22T15:38:01.834438+09:00",
-  "score": 66,
-  "ratio": 1.08,
-  "tier": "A",
-  "walk": 7,
-  "area": 49.95,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": -140,
-  "tags": []
  }
 ]
