@@ -694,26 +694,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "20408829",
-  "name": "サンクタスガーデン目黒",
-  "loc": "目黒区目黒２",
-  "price": 5980,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_20408829/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-24T10:13:57.513021+09:00",
-  "score": 82,
-  "ratio": 1.81,
-  "tier": "A",
-  "walk": 12,
-  "area": 76.79,
-  "plan": "2LDK",
-  "year": 2004,
-  "cagr": 4.5,
-  "net": 4022,
-  "tags": []
  }
 ]
