@@ -1,5 +1,26 @@
 [
  {
+  "id": "21583347",
+  "name": "秀和代官山レジデンス",
+  "loc": "渋谷区猿楽町",
+  "price": 5280,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21583347/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-03T12:08:48.808830+09:00",
+  "score": 100,
+  "ratio": 1.8,
+  "tier": "S",
+  "walk": 5,
+  "area": 38.7,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 5.6,
+  "net": 3527,
+  "tags": []
+ },
+ {
   "id": "21611385",
   "name": "サンセール新宿",
   "loc": "新宿区大久保１-12-6",
@@ -822,27 +843,6 @@
   "year": null,
   "cagr": 4.6,
   "net": 816,
-  "tags": []
- },
- {
-  "id": "21576341",
-  "name": "シャトレー幡ヶ谷",
-  "loc": "渋谷区幡ヶ谷２-21-1",
-  "price": 4699,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21576341/",
-  "watch": "渋谷区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-08-29T06:06:21.875780+09:00",
-  "score": 93,
-  "ratio": 1.4,
-  "tier": "S",
-  "walk": 3,
-  "area": 40.43,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 5.6,
-  "net": 1306,
   "tags": []
  }
 ]
