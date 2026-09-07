@@ -68,7 +68,60 @@ PARAMS = {
                            #   容積が余っていても「建てられる=建てるべき」ではない（建築費が総額を押し上げる）
     "max_walk": 12,        # 駅徒歩(分)。賃貸需要の下限線
     "max_price": 12000,    # 価格上限(万円)。住宅ローンで届く現実的な上限
+    # --- 取得力（いくらまで借りられるか）---
+    "income": 800,         # 世帯年収(万円)。ペアローン/収入合算なら合算後の額を入れる
+    "ratio": 0.30,         # 返済比率。25%が安全圏、35%は審査上限で金利上昇に弱い
+    "shinsa": 3.5,         # 審査金利(%)。実行金利ではなく銀行が返済比率を測る金利。
+                           #   変動0.7%で借りても審査は3〜4%で見られる。ここが取得力を決める
+    "rent_count": 0.0,     # 賃料の年収算入率。0=算入なし（既定・保守）、0.7〜0.8=算入する銀行の想定
+    # --- 都心モード ---
+    "core_only": 0,        # 1 で都心10区（千代田/中央/港/新宿/文京/渋谷/目黒/品川/台東/豊島）に限定
 }
+
+CORE_WARDS = {"千代田区", "中央区", "港区", "新宿区", "文京区",
+              "渋谷区", "目黒区", "品川区", "台東区", "豊島区"}
+
+
+def pay_per_man(rate_pct, years):
+    """借入1万円あたりの月返済額。"""
+    r = rate_pct / 100 / 12
+    n = years * 12
+    if r == 0:
+        return 1 / n
+    return r / (1 - (1 + r) ** -n)
+
+
+def borrow_capacity(p, rent_man=0.0):
+    """年収・返済比率・審査金利から借入可能額(万円)を出す。
+
+    銀行が返済比率を測るのは実行金利ではなく**審査金利**（3〜4%）。
+    変動0.7%で借りても審査は3.5%で見られるため、ここが取得力の天井を決める。
+    賃料を年収に算入してくれるかは金融機関により、算入率も70〜80%と幅がある。
+    既定は rent_count=0（算入なし）＝最も保守的な前提。
+    """
+    income = p["income"] + rent_man * 12 * p["rent_count"]
+    monthly_allow = income * p["ratio"] / 12
+    return monthly_allow / pay_per_man(p["shinsa"], p["years"])
+
+
+def payoff_months(principal_man, rate_pct, years, extra_man):
+    """毎月 extra_man を元金に上乗せしたときの完済月数と総利息(万円)。"""
+    if principal_man <= 0:
+        return 0, 0.0
+    i = rate_pct / 100 / 12
+    m = principal_man * pay_per_man(rate_pct, years)
+    bal, months, interest = principal_man, 0, 0.0
+    limit = years * 12 + 1
+    while bal > 1e-9 and months < limit:
+        it = bal * i
+        interest += it
+        prin = m - it + max(extra_man, 0)
+        months += 1
+        if prin >= bal:
+            bal = 0
+            break
+        bal -= prin
+    return months, interest
 
 
 def yen_pay(principal_man, rate_pct, years):
@@ -123,6 +176,8 @@ def unit_area(r, p):
 def evaluate(r, market, p):
     """1物件を賃貸併用として試算。除外理由があれば ('ng', 理由) を返す。"""
     tags = r.get("tags") or []
+    if p["core_only"] and r["ward"] not in CORE_WARDS:
+        return None, "都心10区の外（--core-only 指定）"
     if r["kind"] not in ("戸建", "土地"):
         return None, "区分マンションは1階だけ貸す構造が作れない"
     if "再建築不可" in tags:
@@ -169,6 +224,15 @@ def evaluate(r, market, p):
     # --- 自宅の実質負担 ---
     real_housing = monthly + hold - net
 
+    # --- 取得力：年収でここまで届くか、頭金がいくら要るか ---
+    capacity = borrow_capacity(p, gross)
+    equity_needed = max(total_cost - capacity, 0)
+    reachable = loan <= capacity
+
+    # --- 返済加速：賃貸の手取りを全額 元金に充当したら何年で終わるか ---
+    base_mo, base_int = payoff_months(loan, p["rate"], p["years"], 0)
+    fast_mo, fast_int = payoff_months(loan, p["rate"], p["years"], max(net, 0))
+
     flags = []
     hz = r.get("hazard") or {}
     if hz.get("flood"):
@@ -190,6 +254,10 @@ def evaluate(r, market, p):
     if r["kind"] == "戸建" and bf and (r.get("bld") or 0) > bf * 1.05:
         flags.append(f"⚠現況延床{r['bld']:.0f}㎡ > 容積上の建築可能{bf}㎡＝既存不適格の疑い。"
                      "増改築・用途変更で床を減らされる可能性があり、融資審査にも響く")
+    if not reachable:
+        flags.append(f"⚠年収{p['income']}万・返済比率{p['ratio']*100:.0f}%・審査金利{p['shinsa']}%では"
+                     f"借入可能額{round(capacity):,}万円。総事業費{total_cost:,}万円に対し"
+                     f"自己資金が{round(equity_needed):,}万円必要")
     _rsn = r.get("reason") or ""
     for kw, msg in (("私道", "私道負担/私道接道あり＝掘削承諾が取れないと水道・ガスの分岐・増設工事ができず、賃貸化そのものが詰まる"),
                     ("旧耐震", "旧耐震＝賃貸募集・融資・保険のすべてで不利")):
@@ -212,6 +280,11 @@ def evaluate(r, market, p):
         "reno": reno, "costs": costs, "total_cost": total_cost,
         "loan": loan, "monthly": round(monthly, 1),
         "real_housing": round(real_housing, 1),
+        "capacity": round(capacity), "equity_needed": round(equity_needed),
+        "reachable": reachable,
+        "payoff_base_y": round(base_mo / 12, 1), "payoff_fast_y": round(fast_mo / 12, 1),
+        "years_saved": round((base_mo - fast_mo) / 12, 1),
+        "interest_saved": round(base_int - fast_int),
         "flags": flags,
     }, None
 
@@ -353,6 +426,14 @@ def render(out):
  <div class="hr"></div>
  <div class="kv"><span class="k"><b>実質の住居費</b></span>
    <span class="v"><b>{r['real_housing']}万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収{p['income']}万・審査{p['shinsa']}%）</span><span class="v">{r['capacity']:,}万円</span>
+  <span class="k">必要な自己資金</span><span class="v">{'届く' if r['reachable'] else f"{r['equity_needed']:,}万円"}</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">{r['payoff_fast_y']}年（{p['years']}年→ <b>-{r['years_saved']}年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-{r['interest_saved']:,}万円</span>
+ </div>
  <div class="flags">{''.join('<div>'+e(f)+'</div>' for f in r['flags'])}</div>
  <div class="notes">{''.join('<div>・'+e(n)+'</div>' for n in r['notes'])}</div>
 </div>""")
@@ -362,7 +443,9 @@ def render(out):
  <td class="num">{x['price']:,}</td><td class="num">{x['unit_area']}</td>
  <td class="num">{x['rent_share']}%</td><td class="num">{x['gross_rent']}</td>
  <td class="num">{x['breakeven_rent']}</td><td class="num">{x['margin']:.2f}</td>
- <td class="num">{x['monthly']}</td><td class="num">{x['real_housing']}</td></tr>""" for x in rows)
+ <td class="num">{x['monthly']}</td><td class="num">{x['real_housing']}</td>
+ <td class="num">{'—' if x['reachable'] else format(x['equity_needed'], ',')}</td>
+ <td class="num">{x['payoff_fast_y']}</td><td class="num">-{x['interest_saved']:,}</td></tr>""" for x in rows)
 
     rej = "".join(f"<tr><td>{e(k)}</td><td class='num'>{v}</td></tr>"
                   for k, v in sorted(out["rejected"].items(), key=lambda x: -x[1]))
@@ -397,7 +480,8 @@ def render(out):
 <tr><th>区</th><th>所在</th><th>種別</th><th class="num">価格<br><span style="font-weight:400">万円</span></th>
 <th class="num">賃貸戸<br>㎡</th><th class="num">床<br>比</th><th class="num">想定賃料<br>万/月</th>
 <th class="num">分岐賃料<br>万/月</th><th class="num">余裕度</th><th class="num">月返済<br>万</th>
-<th class="num">実質住居費<br>万/月</th></tr>
+<th class="num">実質住居費<br>万/月</th><th class="num">要 自己資金<br>万</th>
+<th class="num">完済<br>年</th><th class="num">利息削減<br>万</th></tr>
 {trows}</table></div>
 
 <h2>母集団から外した理由</h2>
@@ -416,6 +500,9 @@ def render(out):
 <tr><td>1階の賃料減価</td><td>−{p['ground_rate']*100:.0f}%（採光・防犯・浸水懸念）</td></tr>
 <tr><td>固都税等</td><td>総事業費の年{p['tax_rate']*100:.2f}%</td></tr>
 <tr><td>賃貸部分の床面積上限</td><td>延床の{p['max_home_share_rent']*100:.0f}%（自宅1/2以上の要件に余裕を持たせる）</td></tr>
+<tr><td>世帯年収 / 返済比率</td><td>{p['income']:,}万円 / {p['ratio']*100:.0f}%（ペアローン・収入合算なら合算後を入れる）</td></tr>
+<tr><td>審査金利</td><td>{p['shinsa']}%（実行金利ではなく銀行が返済比率を測る金利。<b>取得力の天井はここで決まる</b>）</td></tr>
+<tr><td>賃料の年収算入率</td><td>{p['rent_count']*100:.0f}%（0＝算入なし。算入する金融機関なら70〜80%で再計算）</td></tr>
 </table></div>
 
 <p class="foot">

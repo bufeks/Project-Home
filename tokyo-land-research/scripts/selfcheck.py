@@ -40,7 +40,7 @@ def main():
     print("=== selfcheck: 仕組み整合性の自己点検 ===")
 
     # 1. AST
-    for f in ("fetch_listings.py", "fetch_market.py", "fast_watch.py", "screen_hybrid.py", "selfcheck.py"):
+    for f in ("fetch_listings.py", "fetch_market.py", "fast_watch.py", "screen_hybrid.py", "loan_plan.py", "selfcheck.py"):
         try:
             ast.parse((HERE / f).read_text(encoding="utf-8"))
             check(f"AST {f}", True)

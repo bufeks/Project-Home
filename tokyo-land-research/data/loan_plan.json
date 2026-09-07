@@ -1,0 +1,156 @@
+{
+ "updated": "2026-09-07T01:30:16.048063+00:00",
+ "input": {
+  "income": 800,
+  "partner": 0,
+  "equity": 2000,
+  "target": 10800,
+  "rent": 12,
+  "reno": 550,
+  "noi": 0.77,
+  "rate": 1.0,
+  "years": 35,
+  "ratio": 0.3,
+  "shinsa": 3.5,
+  "shinsa_low": 2.0,
+  "rent_count": 0.8,
+  "biz_rate": 2.8,
+  "biz_years": 25,
+  "dscr": 1.25
+ },
+ "net_rent": 9.2,
+ "routes": [
+  {
+   "key": "solo",
+   "name": "① 自分ひとりの住宅ローン",
+   "capacity": 4839,
+   "rate": 1.0,
+   "note": "年収800万・返済比率30%・審査金利3.5%。ここが出発点",
+   "risk": "—",
+   "total": 6839,
+   "gap": 3961,
+   "reach": false
+  },
+  {
+   "key": "rent_income",
+   "name": "② ①＋賃料を年収に算入",
+   "capacity": 5536,
+   "rate": 1.0,
+   "note": "賃料12万/月の80%（年115万）を年収に加算。算入してくれる金融機関に限る",
+   "risk": "増える枠より賃貸化工事費のほうが大きくなりがち（上の判定を参照）",
+   "total": 7536,
+   "gap": 3264,
+   "reach": false
+  },
+  {
+   "key": "pair",
+   "name": "③ ペアローン・収入合算（＋賃料算入）",
+   "capacity": 0,
+   "rate": 1.0,
+   "note": "配偶者等の収入がない前提のため算出せず（--partner で指定）",
+   "risk": "離職・離婚・片方の病気で一気に破綻する。団信・持分・贈与税の設計が必須",
+   "total": 2000,
+   "gap": 8800,
+   "reach": false
+  },
+  {
+   "key": "mixed",
+   "name": "④ 世帯年収＋賃貸部分をアパートローン別枠",
+   "capacity": 6433,
+   "rate": 2.8,
+   "note": "世帯年収の住宅ローン枠（賃料は算入しない）に、賃貸部分だけ金利2.8%・25年の事業用融資を上乗せ。上乗せ枠は手取り9.2万/月をDSCR1.25で割った返済原資から逆算",
+   "risk": "総債務が増える。賃貸部分の返済は賃料が止まると即座に自宅家計を直撃",
+   "biz_part": 1594,
+   "total": 8433,
+   "gap": 2367,
+   "reach": false
+  }
+ ],
+ "verdict": {
+  "gain": 697,
+  "reno": 550,
+  "net": 147,
+  "positive": true
+ },
+ "equity_table": [
+  {
+   "equity": 0,
+   "loan": 10800,
+   "income_30": 1785,
+   "income_35": 1530,
+   "income_35_low": 1227,
+   "monthly": 30.5
+  },
+  {
+   "equity": 1000,
+   "loan": 9800,
+   "income_30": 1620,
+   "income_35": 1389,
+   "income_35_low": 1113,
+   "monthly": 27.7
+  },
+  {
+   "equity": 2000,
+   "loan": 8800,
+   "income_30": 1455,
+   "income_35": 1247,
+   "income_35_low": 999,
+   "monthly": 24.8
+  },
+  {
+   "equity": 3000,
+   "loan": 7800,
+   "income_30": 1289,
+   "income_35": 1105,
+   "income_35_low": 886,
+   "monthly": 22.0
+  },
+  {
+   "equity": 4000,
+   "loan": 6800,
+   "income_30": 1124,
+   "income_35": 964,
+   "income_35_low": 772,
+   "monthly": 19.2
+  },
+  {
+   "equity": 5000,
+   "loan": 5800,
+   "income_30": 959,
+   "income_35": 822,
+   "income_35_low": 659,
+   "monthly": 16.4
+  }
+ ],
+ "accel": [
+  {
+   "extra": 0,
+   "years": 35.0,
+   "saved_y": 0.0,
+   "interest": 1633,
+   "interest_saved": 0
+  },
+  {
+   "extra": 4.6,
+   "years": 28.7,
+   "saved_y": 6.3,
+   "interest": 1324,
+   "interest_saved": 309
+  },
+  {
+   "extra": 9.2,
+   "years": 24.2,
+   "saved_y": 10.8,
+   "interest": 1113,
+   "interest_saved": 520
+  },
+  {
+   "extra": 13.9,
+   "years": 21.1,
+   "saved_y": 13.9,
+   "interest": 961,
+   "interest_saved": 672
+  }
+ ],
+ "loan": 8800
+}

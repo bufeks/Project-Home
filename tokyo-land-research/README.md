@@ -19,14 +19,16 @@
 | [property_checklist.md](./property_checklist.md) | 物件チェックリスト（候補が出たら埋める確認項目） |
 | [risk_guide.md](./risk_guide.md) | 想定リスク一覧（法的・建築・金融・公売競売・近隣） |
 | [scoring_criteria.md](./scoring_criteria.md) | スコアリング基準（購入スコア／学習スコア） |
-| [rental_hybrid.md](./rental_hybrid.md) | **一階を貸す前提で買えるか**（賃貸併用住宅）。融資・法規・税・出口・撤退条件 |
+| [rental_hybrid.md](./rental_hybrid.md) | **一階を貸す前提で買えるか**（賃貸併用住宅）。取得力・融資・法規・税・出口・撤退条件 |
 | [candidates.csv](./candidates.csv) | 候補物件一覧（実データ＋学習用アーキタイプ） |
 | [learning_samples.md](./learning_samples.md) | 学習用サンプル（D/Eでも教材として残す物件） |
 | [index.html](./index.html) | 全内容を1ページにまとめたブラウザ閲覧用HTML |
 | [listings.html](./listings.html) | **最新物件一覧（毎日自動更新）**。SUUMOから23区の再建築不可・借地権・古家付きを取得し、区/種別/価格で絞り込み・並べ替え |
-| [hybrid.html](./hybrid.html) | **一階賃貸スクリーナー（毎日自動更新）**。最新物件に賃貸併用モデルを当て、損益分岐賃料と実質住居費を試算 |
+| [hybrid.html](./hybrid.html) | **一階賃貸スクリーナー（毎日自動更新）**。最新物件に賃貸併用モデルを当て、損益分岐賃料・実質住居費・必要頭金・完済年数を試算 |
+| [loan_plan.html](./loan_plan.html) | **取得力と返済加速のプラン**。4ルートの借入可能額・必要頭金の逆算・繰上返済シミュレーション |
 | scripts/fetch_listings.py | listings.html / data/listings.json を生成するスクレイパ |
 | scripts/screen_hybrid.py | hybrid.html / data/hybrid_candidates.json を生成する賃貸併用スクリーナー |
+| scripts/loan_plan.py | loan_plan.html / data/loan_plan.json を生成する取得力・返済加速プランナー |
 | data/listings.json | 最新物件データ（自動更新の生データ） |
 | notes/ | 調査メモ・出典 |
 
@@ -89,7 +91,11 @@
 - 検討対象：所有権・**再建築可**・延床85㎡以上（できれば3階建て）の中古戸建／建築可能延床120㎡以上の土地
 - 注意：**住宅ローンの「自宅1/2以上」要件**が設計を決める。事業用ローンでは23区の価格で1戸賃貸は返済が埋まらない。
   界壁・メーター分離の工事費と、売却時に買い手が実需・投資家の両方から外れる**出口の狭さ**が二大論点。
-- → 詳細は [rental_hybrid.md](./rental_hybrid.md)、現在の売出物件での成立性は [hybrid.html](./hybrid.html)
+- **「自分のローンでは届かないから1階を貸す」は成立しない。**賃料を年収算入しても増える借入枠（+400〜900万）は
+  賃貸化工事費（550〜1,000万）にほぼ相殺される。取得の問題は頭金・ペアローン・審査金利の低い金融機関で解く。
+  1階賃貸が効くのは取得後の**返済加速**（賃料手取りを元金充当で10年前後の短縮）。
+- → 詳細は [rental_hybrid.md](./rental_hybrid.md)、物件ごとの成立性は [hybrid.html](./hybrid.html)、
+  取得力と返済加速は [loan_plan.html](./loan_plan.html)
 
 ### 6. 将来の土地保有用
 - 検討対象：狭小地／隣地買収余地のある土地／低利用地／古家付き土地／接道改善余地のある土地
