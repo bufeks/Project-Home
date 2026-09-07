@@ -1,5 +1,26 @@
 [
  {
+  "id": "21631594",
+  "name": "早稲田ガーデンハイツ",
+  "loc": "新宿区西早稲田２",
+  "price": 3780,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21631594/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-07T12:06:51.580666+09:00",
+  "score": 87,
+  "ratio": 1.48,
+  "tier": "A",
+  "walk": 4,
+  "area": 45.41,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 4.6,
+  "net": 1372,
+  "tags": []
+ },
+ {
   "id": "21642978",
   "name": "元代々木桜苑マンション",
   "loc": "渋谷区元代々木町",
@@ -822,27 +843,6 @@
   "year": null,
   "cagr": 4.5,
   "net": 6453,
-  "tags": []
- },
- {
-  "id": "21601523",
-  "name": "ゾンネンハイム大橋",
-  "loc": "目黒区大橋２-4-18",
-  "price": 4499,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21601523/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-01T12:46:27.303298+09:00",
-  "score": 74,
-  "ratio": 1.31,
-  "tier": "A",
-  "walk": 7,
-  "area": 31.32,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 880,
   "tags": []
  }
 ]
