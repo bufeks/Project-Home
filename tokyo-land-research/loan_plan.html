@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>取得力と返済加速のプラン — 1階賃貸で都心に届くか</title>
+<style>
+:root{--bg:#f5f7fa;--card:#fff;--ink:#1b2430;--sub:#5d6b7a;--line:#e3e8ef;--accent:#2563eb;
+      --ok:#0f7b52;--warn:#b45309;--ng:#b91c1c}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+     margin:0;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 16px 80px}
+h1{font-size:1.5rem;margin:0 0 6px}
+h2{font-size:1.12rem;margin:34px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.lead{color:var(--sub);font-size:.92rem;margin:0 0 18px}
+.verdict{border-radius:12px;padding:16px 18px;margin:18px 0;border:1px solid}
+.v-ng{background:#fdeaea;border-color:#f0c0c0;color:#7d1d1d}
+.v-ok{background:#e6f4ee;border-color:#b6dfcc;color:#0b5236}
+.verdict b{font-size:1.05rem}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff;
+      border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#eef2f7;font-weight:600;color:var(--sub);font-size:.82rem}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hit td{background:#eaf6f0}
+.tag{display:inline-block;font-size:.72rem;padding:2px 7px;border-radius:999px}
+.t-ok{background:#e6f4ee;color:var(--ok)}.t-ng{background:#fdeaea;color:var(--ng)}
+.risk{color:var(--warn);font-size:.82rem}
+.scroll{overflow-x:auto}
+.foot{color:var(--sub);font-size:.82rem;margin-top:26px}
+a{color:var(--accent)}
+@media (prefers-color-scheme:dark){
+ :root{--bg:#11161d;--card:#1a212b;--ink:#e6ecf3;--sub:#93a1b1;--line:#2b3644;--accent:#7aa7ff}
+ th{background:#222b36} tr.hit td{background:#143126}
+ .v-ng{background:#3a1a1a;border-color:#5c2b2b;color:#f0b0b0}
+ .v-ok{background:#123a2b;border-color:#1e5c44;color:#8fe0bb}
+}
+</style></head><body><div class="wrap">
+<h1>1階を貸せば都心に届くか、そしてローンは早く終わるか</h1>
+<p class="lead">
+ 世帯の前提：本人年収 800万円、
+ 自己資金 2,000万円、目標の総事業費 10,800万円、
+ 1階の想定賃料 12万円/月（手取り 9.2万円）。
+ 考え方は <a href="./rental_hybrid.md">rental_hybrid.md</a>、
+ 物件ごとの試算は <a href="./hybrid.html">hybrid.html</a>。
+</p>
+
+<div class="verdict v-ok"><b>賃料を年収に算入すると借入可能額は +697万円。賃貸化工事費 550万円を引いて、正味 +147万円。</b><br>工事費を上回るので、取得力はわずかに増える。ただし増えるのは数百万円規模であって、エリアを一段上げられる額ではない。</div>
+
+<h2>問1：借りられる額は増えるか（4ルートの取得力）</h2>
+<div class="scroll"><table>
+<tr><th>ルート</th><th class="num">借入可能<br>万円</th><th class="num">＋自己資金<br>万円</th>
+    <th class="num">目標10,800万に</th><th>前提</th></tr>
+<tr class="">
+ <td>① 自分ひとりの住宅ローン<div class="risk">—</div></td>
+ <td class="num">4,839</td>
+ <td class="num">6,839</td>
+ <td class="num"><span class="tag t-ng">-3,961万</span></td>
+ <td>年収800万・返済比率30%・審査金利3.5%。ここが出発点</td></tr><tr class="">
+ <td>② ①＋賃料を年収に算入<div class="risk">増える枠より賃貸化工事費のほうが大きくなりがち（上の判定を参照）</div></td>
+ <td class="num">5,536</td>
+ <td class="num">7,536</td>
+ <td class="num"><span class="tag t-ng">-3,264万</span></td>
+ <td>賃料12万/月の80%（年115万）を年収に加算。算入してくれる金融機関に限る</td></tr><tr class="">
+ <td>③ ペアローン・収入合算（＋賃料算入）<div class="risk">離職・離婚・片方の病気で一気に破綻する。団信・持分・贈与税の設計が必須</div></td>
+ <td class="num">0</td>
+ <td class="num">2,000</td>
+ <td class="num"><span class="tag t-ng">-8,800万</span></td>
+ <td>配偶者等の収入がない前提のため算出せず（--partner で指定）</td></tr><tr class="">
+ <td>④ 世帯年収＋賃貸部分をアパートローン別枠<div class="risk">総債務が増える。賃貸部分の返済は賃料が止まると即座に自宅家計を直撃</div></td>
+ <td class="num">6,433</td>
+ <td class="num">8,433</td>
+ <td class="num"><span class="tag t-ng">-2,367万</span></td>
+ <td>世帯年収の住宅ローン枠（賃料は算入しない）に、賃貸部分だけ金利2.8%・25年の事業用融資を上乗せ。上乗せ枠は手取り9.2万/月をDSCR1.25で割った返済原資から逆算</td></tr></table></div>
+<p class="lead">
+ 借入可能額は<b>実行金利ではなく審査金利（3.5%）で決まる</b>。
+ 変動0.7%で借りるつもりでも、返済比率は3〜4%で測られる。ここが取得力の天井。
+</p>
+
+<h2>目標 10,800万円に必要な頭金と年収</h2>
+<div class="scroll"><table>
+<tr><th class="num">自己資金<br>万円</th><th class="num">借入<br>万円</th>
+    <th class="num">月返済<br>（1.0%）万</th>
+    <th class="num">必要年収<br>比率30%</th><th class="num">必要年収<br>比率35%</th>
+    <th class="num">必要年収<br>比率35%・審査2.0%</th></tr>
+<tr><td class="num">0</td><td class="num">10,800</td>
+ <td class="num">30.5</td><td class="num">1,785</td>
+ <td class="num">1,530</td><td class="num">1,227</td></tr><tr><td class="num">1,000</td><td class="num">9,800</td>
+ <td class="num">27.7</td><td class="num">1,620</td>
+ <td class="num">1,389</td><td class="num">1,113</td></tr><tr><td class="num">2,000</td><td class="num">8,800</td>
+ <td class="num">24.8</td><td class="num">1,455</td>
+ <td class="num">1,247</td><td class="num">999</td></tr><tr><td class="num">3,000</td><td class="num">7,800</td>
+ <td class="num">22.0</td><td class="num">1,289</td>
+ <td class="num">1,105</td><td class="num">886</td></tr><tr><td class="num">4,000</td><td class="num">6,800</td>
+ <td class="num">19.2</td><td class="num">1,124</td>
+ <td class="num">964</td><td class="num">772</td></tr><tr><td class="num">5,000</td><td class="num">5,800</td>
+ <td class="num">16.4</td><td class="num">959</td>
+ <td class="num">822</td><td class="num">659</td></tr></table></div>
+<p class="lead">
+ 返済比率35%は審査上の上限であって安全圏ではない。金利が上がると即座に苦しくなる。
+ 審査金利は金融機関により差があり、固定金利型では実行金利に近い値で見る先もある。
+ <b>この表の一番効く列は「審査金利」</b>＝取扱行を複数当たる価値がここにある。
+</p>
+
+<h2>問2：ローンは早く終わるか（賃料手取りを元金に充当）</h2>
+<div class="scroll"><table>
+<tr><th>使い方</th><th class="num">月の上乗せ<br>万円</th><th class="num">完済<br>年</th>
+    <th class="num">短縮<br>年</th><th class="num">総利息<br>万円</th><th class="num">利息削減<br>万円</th></tr>
+<tr class="">
+ <td>返済のみ（賃料を使わない）</td>
+ <td class="num">0</td><td class="num">35.0</td>
+ <td class="num">—</td>
+ <td class="num">1,633</td>
+ <td class="num">—</td></tr><tr class="">
+ <td>賃料手取りの50% を元金充当</td>
+ <td class="num">4.6</td><td class="num">28.7</td>
+ <td class="num">-6.3</td>
+ <td class="num">1,324</td>
+ <td class="num">-309</td></tr><tr class="hit">
+ <td>賃料手取りの100% を元金充当</td>
+ <td class="num">9.2</td><td class="num">24.2</td>
+ <td class="num">-10.8</td>
+ <td class="num">1,113</td>
+ <td class="num">-520</td></tr><tr class="">
+ <td>賃料手取りの150% を元金充当</td>
+ <td class="num">13.9</td><td class="num">21.1</td>
+ <td class="num">-13.9</td>
+ <td class="num">961</td>
+ <td class="num">-672</td></tr></table></div>
+<p class="lead">
+ 借入 8,800万円・金利1.0%・35年が前提。
+ <b>ここが賃貸併用の本当の効き目。</b>取得力はほとんど増えないが、返済期間は明確に縮む。
+ 繰上返済は「期間短縮型」を選ぶこと（返済額軽減型では利息削減が小さくなる）。
+ ただし<b>手取りを全額つぎ込む前に、修繕・空室・原状回復の備えを先に積む</b>。
+ 1戸しかない賃貸は、空けば収入がゼロになる。
+</p>
+
+<h2>この計算の使い方</h2>
+<p class="lead">
+ 数字を自分の条件に置き換えて再実行する。<br>
+ <code>python3 scripts/loan_plan.py --income 800 --partner 0 --equity 2000 --target 10800 --rent 12</code><br>
+ 賃料を年収に算入してくれる金融機関が見つかったら <code>--rent-count 0.8</code>、
+ 審査金利が低い先なら <code>--shinsa 3.0</code> を指定して、判断がどこで反転するかを見る。
+</p>
+
+<p class="foot">
+ 生成 2026-09-07T01:30。本ページは学習・比較のための試算であり、
+ 投資勧誘でも税務・法務の助言でもない。金利・審査基準・賃料はすべて仮定値であり、
+ 実際の借入可能額は金融機関の審査によってのみ確定する。事前審査で確認すること。
+</p>
+</div></body></html>

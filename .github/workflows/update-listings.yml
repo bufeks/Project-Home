@@ -33,12 +33,18 @@ jobs:
           REINFOLIB_API_KEY: ${{ secrets.REINFOLIB_API_KEY }}   # 用途地域/容積率/ハザードGIS用（未設定なら自動スキップ）
         run: python3 tokyo-land-research/scripts/fetch_listings.py
 
+      - name: Re-run rental-hybrid screener
+        # 1階賃貸（賃貸併用）の成立性を最新の listings.json で再試算 → hybrid.html
+        run: |
+          python3 tokyo-land-research/scripts/screen_hybrid.py
+          python3 tokyo-land-research/scripts/loan_plan.py
+
       - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain tokyo-land-research/listings.html tokyo-land-research/data)" ]; then
-            git add tokyo-land-research/listings.html tokyo-land-research/data
+          if [ -n "$(git status --porcelain tokyo-land-research/listings.html tokyo-land-research/hybrid.html tokyo-land-research/loan_plan.html tokyo-land-research/data)" ]; then
+            git add tokyo-land-research/listings.html tokyo-land-research/hybrid.html tokyo-land-research/loan_plan.html tokyo-land-research/data
             git commit -m "chore: update listings ($(date -u +%Y-%m-%d))"
             git push
           else
