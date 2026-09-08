@@ -50,22 +50,15 @@ a{color:var(--accent)}
  .b-ng{background:#3a1a1a;color:#f08a8a}.b-mut{background:#252d38;color:var(--sub)}
 }
 </style></head><body><div class="wrap">
-<h1>一階を貸す前提で買えるか — 賃貸併用スクリーナー</h1>
+<h1>一階を<b>住居</b>として貸す前提で買えるか — 賃貸併用スクリーナー <a href="./hybrid_tenant.html" style="font-size:.6em;font-weight:400">→ 店舗テナント版</a></h1>
 <p class="lead">
  母集団 1273件（2026-09-07 時点のSUUMO自動取得）から、
- 1階に独立住戸を切り出せる戸建・土地を抽出し、<b>住宅ローンで買って1階を貸したときの実質住居費</b>を試算。
+ 1階に独立した住戸を切り出せる戸建・土地を抽出し、<b>買って1階を貸したときの実質住居費</b>を試算。
  判定基準・法規・税の整理は <a href="./rental_hybrid.md">rental_hybrid.md</a>、
+ 取得力と返済加速は <a href="./loan_plan.html">loan_plan.html</a>、
  物件そのものの値持ち評価は <a href="./listings.html">listings.html</a>。
 </p>
-<div class="note">
- <b>この表の読み方。</b>
- 「余裕度」＝想定賃料 ÷ 損益分岐賃料。1.0を割ると、賃貸部分は返済を賄えず自宅側の持ち出しになる。
- 「実質の住居費」＝月返済＋固都税等−賃貸の手取り。これを<b>いま払っている家賃と比べる</b>のが唯一の使い方。
- 想定賃料は区の実取引㎡単価からの<b>推定値</b>（賃料の一次データではない）。
- 必ずSUUMO賃貸で同一エリア・同面積の<b>実募集</b>3件以上に置き換えて再計算すること。
- 事業用ローン（金利2.8%・25年想定）に置き換えると月返済は約1.6倍になり、
- 1戸賃貸ではまず成立しない。そこが「事業として買う」ことの分岐点。
-</div>
+<div class="note"><b>この表の読み方。</b>「余裕度」＝想定賃料 ÷ 損益分岐賃料。1.0を割ると、賃貸部分は返済を賄えず自宅側の持ち出しになる。「実質の住居費」＝月返済＋固都税等−賃貸の手取り。これを<b>いま払っている家賃と比べる</b>のが唯一の使い方。想定賃料は区の実取引㎡単価からの<b>推定値</b>（賃料の一次データではない）。必ずSUUMO賃貸で同一エリア・同面積の<b>実募集</b>3件以上に置き換えて再計算すること。1階を店舗テナントに貸す前提なら <code>--use tenant</code> で再計算する。</div>
 
 <h2>候補 31件（余裕度順）</h2>
 <div class="grid"><div class="card">
@@ -74,7 +67,7 @@ a{color:var(--accent)}
  <div class="big">2,450万円</div>
  <div><span class="badge b-ok">賃貸部分が自走（余裕度1.92）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">25.3㎡（延床の29%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">25.3㎡（延床の29%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">6.0万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">3.1万円/月</span>
  </div>
@@ -106,7 +99,7 @@ a{color:var(--accent)}
  <div class="big">3,080万円</div>
  <div><span class="badge b-ok">賃貸部分が自走（余裕度1.45）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口C</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">36.5㎡（延床の42%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">36.5㎡（延床の42%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">8.2万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">5.7万円/月</span>
  </div>
@@ -136,9 +129,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_20864508/" target="_blank" rel="noopener">葛飾区立石１</a></h3>
  <div class="meta">戸建・木造 6K／土地65㎡ / 延床94㎡／駅徒歩10分</div>
  <div class="big">3,500万円</div>
- <div><span class="badge b-ok">賃貸部分が自走（余裕度1.40）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span></div>
+ <div><span class="badge b-ok">賃貸部分が自走（余裕度1.40）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span><span class="badge b-mut">商業</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">33.0㎡（延床の35%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">33.0㎡（延床の35%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">7.4万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">5.3万円/月</span>
  </div>
@@ -170,7 +163,7 @@ a{color:var(--accent)}
  <div class="big">4,180万円</div>
  <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.24）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口B</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">45㎡（延床の30%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の30%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">14.1万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">11.4万円/月</span>
  </div>
@@ -202,7 +195,7 @@ a{color:var(--accent)}
  <div class="big">3,980万円</div>
  <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.14）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口C</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">39.1㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">39.1㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">8.8万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">7.8万円/月</span>
  </div>
@@ -234,7 +227,7 @@ a{color:var(--accent)}
  <div class="big">4,990万円</div>
  <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.12）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">45㎡（延床の41%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の41%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.0万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">8.9万円/月</span>
  </div>
@@ -266,7 +259,7 @@ a{color:var(--accent)}
  <div class="big">4,600万円</div>
  <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.11）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span><span class="badge b-mut">売り急ぎ</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">44.9㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">44.9㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.0万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">9.0万円/月</span>
  </div>
@@ -298,7 +291,7 @@ a{color:var(--accent)}
  <div class="big">9,580万円</div>
  <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.11）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">27.5㎡（延床の22%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">27.5㎡（延床の22%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.3万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">9.3万円/月</span>
  </div>
@@ -330,7 +323,7 @@ a{color:var(--accent)}
  <div class="big">4,890万円</div>
  <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.04）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">44.5㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">44.5㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">9.9万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">9.5万円/月</span>
  </div>
@@ -360,9 +353,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_78284256/" target="_blank" rel="noopener">目黒区下目黒２</a></h3>
  <div class="meta">戸建・木造 3LDK／土地54㎡ / 延床108㎡／駅徒歩9分</div>
  <div class="big">9,480万円</div>
- <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span></div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span><span class="badge b-mut">準工業</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">27.3㎡（延床の25%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">27.3㎡（延床の25%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.3万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">10.4万円/月</span>
  </div>
@@ -392,9 +385,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21554514/" target="_blank" rel="noopener">荒川区南千住５</a></h3>
  <div class="meta">土地・ ／土地72㎡ / 建築可215㎡／駅徒歩4分</div>
  <div class="big">5,480万円</div>
- <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口B</span></div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口B</span><span class="badge b-mut">準工業</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">36.5㎡（延床の24%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">36.5㎡（延床の24%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.6万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">10.6万円/月</span>
  </div>
@@ -424,9 +417,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_shinagawa/nc_21449679/" target="_blank" rel="noopener">品川区南大井１</a></h3>
  <div class="meta">土地・ ／土地73㎡ / 建築可218㎡／駅徒歩4分</div>
  <div class="big">8,380万円</div>
- <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span></div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span><span class="badge b-mut">準工業</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">37.1㎡（延床の25%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">37.1㎡（延床の25%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">13.8万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">13.9万円/月</span>
  </div>
@@ -458,7 +451,7 @@ a{color:var(--accent)}
  <div class="big">9,450万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.96）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">33.3㎡（延床の32%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">33.3㎡（延床の32%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">12.5万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">13.0万円/月</span>
  </div>
@@ -488,9 +481,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21306082/" target="_blank" rel="noopener">荒川区西日暮里１</a></h3>
  <div class="meta">土地・ ／土地50㎡ / 建築可149㎡／駅徒歩4分</div>
  <div class="big">6,180万円</div>
- <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.93）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口B</span><span class="badge b-mut">古家付き</span></div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.93）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口B</span><span class="badge b-mut">準工業</span><span class="badge b-mut">古家付き</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">25.3㎡（延床の17%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">25.3㎡（延床の17%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">7.3万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">7.9万円/月</span>
  </div>
@@ -522,7 +515,7 @@ a{color:var(--accent)}
  <div class="big">9,580万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.90）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">32.2㎡（延床の29%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">32.2㎡（延床の29%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.9万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">12.1万円/月</span>
  </div>
@@ -554,7 +547,7 @@ a{color:var(--accent)}
  <div class="big">9,800万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.90）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">45㎡（延床の30%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の30%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">16.8万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">18.7万円/月</span>
  </div>
@@ -586,7 +579,7 @@ a{color:var(--accent)}
  <div class="big">7,480万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.89）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">29.2㎡（延床の34%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">29.2㎡（延床の34%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">9.8万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">11.0万円/月</span>
  </div>
@@ -618,7 +611,7 @@ a{color:var(--accent)}
  <div class="big">8,780万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.86）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">43.8㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">43.8㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">14.8万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">17.1万円/月</span>
  </div>
@@ -650,7 +643,7 @@ a{color:var(--accent)}
  <div class="big">11,000万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.85）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口S</span><span class="badge b-mut">第１種低層住居専用地域</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">33.7㎡（延床の33%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">33.7㎡（延床の33%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">13.5万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">15.7万円/月</span>
  </div>
@@ -682,7 +675,7 @@ a{color:var(--accent)}
  <div class="big">9,990万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.84）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口S</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">27.0㎡（延床の30%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">27.0㎡（延床の30%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.8万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">12.8万円/月</span>
  </div>
@@ -714,7 +707,7 @@ a{color:var(--accent)}
  <div class="big">9,500万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.82）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">27.9㎡（延床の31%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">27.9㎡（延床の31%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.6万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">12.8万円/月</span>
  </div>
@@ -746,7 +739,7 @@ a{color:var(--accent)}
  <div class="big">9,580万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.82）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">32.2㎡（延床の32%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">32.2㎡（延床の32%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.9万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">13.3万円/月</span>
  </div>
@@ -776,9 +769,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_ota/nc_21630986/" target="_blank" rel="noopener">大田区山王３</a></h3>
  <div class="meta">土地・ ／土地121㎡ / 建築可328㎡／駅徒歩10分</div>
  <div class="big">8,680万円</div>
- <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.81）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口B</span></div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.81）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口B</span><span class="badge b-mut">商業</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">45㎡（延床の30%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の30%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">14.0万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">17.2万円/月</span>
  </div>
@@ -810,7 +803,7 @@ a{color:var(--accent)}
  <div class="big">11,980万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.72）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">28.3㎡（延床の29%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">28.3㎡（延床の29%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.6万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">14.9万円/月</span>
  </div>
@@ -842,7 +835,7 @@ a{color:var(--accent)}
  <div class="big">8,980万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.70）</span><span class="badge b-mut">値持ち低</span><span class="badge b-mut">出口C</span><span class="badge b-mut">新築</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">42.8㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">42.8㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">12.2万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">17.5万円/月</span>
  </div>
@@ -874,7 +867,7 @@ a{color:var(--accent)}
  <div class="big">9,500万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.70）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">38.4㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">38.4㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">13.0万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">18.5万円/月</span>
  </div>
@@ -906,7 +899,7 @@ a{color:var(--accent)}
  <div class="big">11,980万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.66）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span><span class="badge b-mut">売り急ぎ</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">26.4㎡（延床の29%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">26.4㎡（延床の29%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">9.9万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">15.1万円/月</span>
  </div>
@@ -938,7 +931,7 @@ a{color:var(--accent)}
  <div class="big">8,580万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.65）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口C</span><span class="badge b-mut">古家付き</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">40.3㎡（延床の33%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">40.3㎡（延床の33%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">11.5万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">17.6万円/月</span>
  </div>
@@ -970,7 +963,7 @@ a{color:var(--accent)}
  <div class="big">11,000万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.62）</span><span class="badge b-mut">値持ち低</span><span class="badge b-mut">出口B</span><span class="badge b-mut">新築</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">41.4㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">41.4㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">13.4万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">21.4万円/月</span>
  </div>
@@ -1000,9 +993,9 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_katsushika/nc_20578973/" target="_blank" rel="noopener">葛飾区立石８</a></h3>
  <div class="meta">土地・ ／土地150㎡ / 建築可300㎡／駅徒歩9分</div>
  <div class="big">7,980万円</div>
- <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.62）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span></div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.62）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span><span class="badge b-mut">工業</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">45㎡（延床の30%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の30%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">10.1万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">16.3万円/月</span>
  </div>
@@ -1034,7 +1027,7 @@ a{color:var(--accent)}
  <div class="big">12,000万円</div>
  <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.61）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口B</span><span class="badge b-mut">新築</span></div>
  <div class="kv">
-  <span class="k">1階 賃貸戸（想定）</span><span class="v">44.0㎡（延床の45%）</span>
+  <span class="k">1階 住戸（想定）</span><span class="v">44.0㎡（延床の45%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">14.2万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">23.4万円/月</span>
  </div>
@@ -1301,8 +1294,7 @@ a{color:var(--accent)}
 <tr><td>空室・滞納 / 管理 / 修繕 / 保険雑費</td>
     <td>10% / 5% / 6% / 2%
         （手取り率 77%）</td></tr>
-<tr><td>1階の賃料減価</td><td>−7%（採光・防犯・浸水懸念）</td></tr>
-<tr><td>固都税等</td><td>総事業費の年0.35%</td></tr>
+<tr><td>1階の賃料減価</td><td>−7%（採光・防犯・浸水懸念）</td></tr><tr><td>固都税等</td><td>総事業費の年0.35%</td></tr>
 <tr><td>賃貸部分の床面積上限</td><td>延床の45%（自宅1/2以上の要件に余裕を持たせる）</td></tr>
 <tr><td>世帯年収 / 返済比率</td><td>800万円 / 30%（ペアローン・収入合算なら合算後を入れる）</td></tr>
 <tr><td>審査金利</td><td>3.5%（実行金利ではなく銀行が返済比率を測る金利。<b>取得力の天井はここで決まる</b>）</td></tr>
@@ -1310,7 +1302,7 @@ a{color:var(--accent)}
 </table></div>
 
 <p class="foot">
- 生成 2026-09-07T01:30／データ 2026-09-07T07:59。
+ 生成 2026-09-08T12:57／データ 2026-09-07T07:59。
  本ページは学習・比較のための試算であり、投資勧誘でも税務・法務・建築の助言でもない。
  賃料・工事費・融資条件はすべて仮定値。実行前に不動産業者・建築士・金融機関・税理士の確認を。
 </p>
