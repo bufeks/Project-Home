@@ -19,6 +19,7 @@
 | [property_checklist.md](./property_checklist.md) | 物件チェックリスト（候補が出たら埋める確認項目） |
 | [risk_guide.md](./risk_guide.md) | 想定リスク一覧（法的・建築・金融・公売競売・近隣） |
 | [scoring_criteria.md](./scoring_criteria.md) | スコアリング基準（購入スコア／学習スコア） |
+| [land_strategy.md](./land_strategy.md) | **都心に土地を持つ 5〜10年の設計図**。待つコスト・ネガティブレバレッジ・5つの経路・段階設計 |
 | [rental_hybrid.md](./rental_hybrid.md) | **一階を貸す前提で買えるか**（賃貸併用住宅／店舗テナント併用）。取得力・融資・法規・税・出口・撤退条件 |
 | [candidates.csv](./candidates.csv) | 候補物件一覧（実データ＋学習用アーキタイプ） |
 | [learning_samples.md](./learning_samples.md) | 学習用サンプル（D/Eでも教材として残す物件） |
@@ -27,9 +28,11 @@
 | [hybrid.html](./hybrid.html) | **一階賃貸スクリーナー（毎日自動更新）**。1階を**住居**として貸す前提で、損益分岐賃料・実質住居費・必要頭金・完済年数を試算 |
 | [hybrid_tenant.html](./hybrid_tenant.html) | **一階テナントスクリーナー（毎日自動更新）**。1階を**店舗テナント**として貸す前提。用途地域・事業用ローン・空室・固都税がまとめて切り替わる |
 | [loan_plan.html](./loan_plan.html) | **取得力と返済加速のプラン**。4ルートの借入可能額・必要頭金の逆算・繰上返済シミュレーション |
+| [land_path.html](./land_path.html) | **都心の土地までの経路シミュレータ（毎日自動更新）**。待つコスト・経路比較・都心で土地を最も安く持てる売り物 |
 | scripts/fetch_listings.py | listings.html / data/listings.json を生成するスクレイパ |
 | scripts/screen_hybrid.py | hybrid.html / data/hybrid_candidates.json を生成する賃貸併用スクリーナー |
 | scripts/loan_plan.py | loan_plan.html / data/loan_plan.json を生成する取得力・返済加速プランナー |
+| scripts/land_path.py | land_path.html / data/land_path.json を生成する経路シミュレータ |
 | data/listings.json | 最新物件データ（自動更新の生データ） |
 | notes/ | 調査メモ・出典 |
 
@@ -40,6 +43,11 @@
 > 個別物件URLはID入替で消えるため、検索ページURLをアンカーにして都度たどり直すこと。価格・在庫は流動的。
 
 ---
+
+> 🎯 **ゴールが「都心に土地を持つこと」なら、下表の評価は変わる。**
+> 再建築不可は「住む」ゴールでは判定Dだが、「土地を持つ」ゴールでは
+> **土地の所有権が完全に手に入り、坪単価が相場の3〜5割**という別の顔になる。
+> 経路の設計は [land_strategy.md](./land_strategy.md)、数字は [land_path.html](./land_path.html)。
 
 ## A. 制度・ルート比較表
 
