@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-08T13:20:36.450257+00:00",
- "source_updated": "2026-09-07T07:59:56.734448+09:00",
+ "updated": "2026-09-08T21:50:24.027369+00:00",
+ "source_updated": "2026-09-08T08:44:27.379891+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -227,20 +227,6 @@
    "grade": "低"
   },
   {
-   "ward": "豊島区",
-   "loc": "豊島区長崎３",
-   "price": 4480,
-   "land": 35.77,
-   "tsubo_unit": 414,
-   "walk": 9,
-   "kind": "土地",
-   "url": "https://suumo.jp/tochi/tokyo/sc_toshima/nc_21532448/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 0.83,
-   "grade": "中"
-  },
-  {
    "ward": "新宿区",
    "loc": "新宿区赤城下町",
    "price": 4500,
@@ -389,6 +375,20 @@
    "tags": [],
    "rebuild_ng": false,
    "ratio": 0.96,
+   "grade": "中高"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区西早稲田３",
+   "price": 5880,
+   "land": 40.49,
+   "tsubo_unit": 480,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.03,
    "grade": "中高"
   }
  ],
