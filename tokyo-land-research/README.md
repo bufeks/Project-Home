@@ -19,6 +19,7 @@
 | [property_checklist.md](./property_checklist.md) | 物件チェックリスト（候補が出たら埋める確認項目） |
 | [risk_guide.md](./risk_guide.md) | 想定リスク一覧（法的・建築・金融・公売競売・近隣） |
 | [scoring_criteria.md](./scoring_criteria.md) | スコアリング基準（購入スコア／学習スコア） |
+| [next_steps.md](./next_steps.md) | **これからの進め方（共有用の1ページ）**。わかったこと3つ・Phase 1〜4・判断の分かれ目・やってはいけないこと |
 | [land_strategy.md](./land_strategy.md) | **都心に土地を持つ 5〜10年の設計図**。待つコスト・ネガティブレバレッジ・5つの経路・住むか住まないか・段階設計 |
 | [subsidies.md](./subsidies.md) | **制度・補助金・制度の隙間**。公庫／不燃化特区／耐震／空き家／省エネ／税制と、申請の順番・やってはいけないこと |
 | [rental_hybrid.md](./rental_hybrid.md) | **一階を貸す前提で買えるか**（賃貸併用住宅／店舗テナント併用）。取得力・融資・法規・税・出口・撤退条件 |
