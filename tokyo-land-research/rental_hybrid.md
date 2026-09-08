@@ -711,6 +711,14 @@ python3 scripts/screen_hybrid.py --rate 2.8 --years 25
 #     これが「事業として買う」と成立しないことの実測。
 ```
 
+**自分は住まず全部貸す前提で計算する**（住宅ローンが使えない代わりに全床が収益）：
+
+```bash
+python3 scripts/screen_hybrid.py --use rentout --own-rent 15
+```
+
+→ 判断の分かれ目は [land_strategy.md](./land_strategy.md) 4bis、制度は [subsidies.md](./subsidies.md)。
+
 **1階を店舗テナントにする前提で計算する**（用途地域・事業用ローン・空室・固都税・工事費がまとめて切り替わる）：
 
 ```bash

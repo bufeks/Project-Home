@@ -38,6 +38,7 @@ jobs:
         run: |
           python3 tokyo-land-research/scripts/screen_hybrid.py
           python3 tokyo-land-research/scripts/screen_hybrid.py --use tenant
+          python3 tokyo-land-research/scripts/screen_hybrid.py --use rentout
           python3 tokyo-land-research/scripts/loan_plan.py
           python3 tokyo-land-research/scripts/land_path.py
 
@@ -45,8 +46,8 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain tokyo-land-research/listings.html tokyo-land-research/hybrid.html tokyo-land-research/hybrid_tenant.html tokyo-land-research/loan_plan.html tokyo-land-research/land_path.html tokyo-land-research/data)" ]; then
-            git add tokyo-land-research/listings.html tokyo-land-research/hybrid.html tokyo-land-research/hybrid_tenant.html tokyo-land-research/loan_plan.html tokyo-land-research/land_path.html tokyo-land-research/data
+          if [ -n "$(git status --porcelain tokyo-land-research/listings.html tokyo-land-research/hybrid.html tokyo-land-research/hybrid_tenant.html tokyo-land-research/hybrid_rentout.html tokyo-land-research/loan_plan.html tokyo-land-research/land_path.html tokyo-land-research/data)" ]; then
+            git add tokyo-land-research/listings.html tokyo-land-research/hybrid.html tokyo-land-research/hybrid_tenant.html tokyo-land-research/hybrid_rentout.html tokyo-land-research/loan_plan.html tokyo-land-research/land_path.html tokyo-land-research/data
             git commit -m "chore: update listings ($(date -u +%Y-%m-%d))"
             git push
           else

@@ -19,7 +19,8 @@
 | [property_checklist.md](./property_checklist.md) | 物件チェックリスト（候補が出たら埋める確認項目） |
 | [risk_guide.md](./risk_guide.md) | 想定リスク一覧（法的・建築・金融・公売競売・近隣） |
 | [scoring_criteria.md](./scoring_criteria.md) | スコアリング基準（購入スコア／学習スコア） |
-| [land_strategy.md](./land_strategy.md) | **都心に土地を持つ 5〜10年の設計図**。待つコスト・ネガティブレバレッジ・5つの経路・段階設計 |
+| [land_strategy.md](./land_strategy.md) | **都心に土地を持つ 5〜10年の設計図**。待つコスト・ネガティブレバレッジ・5つの経路・住むか住まないか・段階設計 |
+| [subsidies.md](./subsidies.md) | **制度・補助金・制度の隙間**。公庫／不燃化特区／耐震／空き家／省エネ／税制と、申請の順番・やってはいけないこと |
 | [rental_hybrid.md](./rental_hybrid.md) | **一階を貸す前提で買えるか**（賃貸併用住宅／店舗テナント併用）。取得力・融資・法規・税・出口・撤退条件 |
 | [candidates.csv](./candidates.csv) | 候補物件一覧（実データ＋学習用アーキタイプ） |
 | [learning_samples.md](./learning_samples.md) | 学習用サンプル（D/Eでも教材として残す物件） |
@@ -27,6 +28,7 @@
 | [listings.html](./listings.html) | **最新物件一覧（毎日自動更新）**。SUUMOから23区の再建築不可・借地権・古家付きを取得し、区/種別/価格で絞り込み・並べ替え |
 | [hybrid.html](./hybrid.html) | **一階賃貸スクリーナー（毎日自動更新）**。1階を**住居**として貸す前提で、損益分岐賃料・実質住居費・必要頭金・完済年数を試算 |
 | [hybrid_tenant.html](./hybrid_tenant.html) | **一階テナントスクリーナー（毎日自動更新）**。1階を**店舗テナント**として貸す前提。用途地域・事業用ローン・空室・固都税がまとめて切り替わる |
+| [hybrid_rentout.html](./hybrid_rentout.html) | **住まず全部貸すスクリーナー（毎日自動更新）**。住宅ローンが使えない代わりに全床が収益。実需物件では回らないことの確認用 |
 | [loan_plan.html](./loan_plan.html) | **取得力と返済加速のプラン**。4ルートの借入可能額・必要頭金の逆算・繰上返済シミュレーション |
 | [land_path.html](./land_path.html) | **都心の土地までの経路シミュレータ（毎日自動更新）**。待つコスト・経路比較・都心で土地を最も安く持てる売り物 |
 | scripts/fetch_listings.py | listings.html / data/listings.json を生成するスクレイパ |

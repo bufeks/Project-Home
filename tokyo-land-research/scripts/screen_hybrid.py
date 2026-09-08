@@ -39,7 +39,7 @@ LISTINGS = os.path.join(BASE, "data", "listings.json")
 MARKET = os.path.join(BASE, "data", "market_real.json")
 def out_paths(use):
     """住居として貸す版と店舗テナント版で出力先を分ける（両方を並べて比べられるように）。"""
-    sfx = "_tenant" if use == "tenant" else ""
+    sfx = {"tenant": "_tenant", "rentout": "_rentout"}.get(use, "")
     return (os.path.join(BASE, "data", "hybrid_candidates%s.json" % sfx),
             os.path.join(BASE, "hybrid%s.html" % sfx))
 
@@ -82,6 +82,7 @@ PARAMS = {
     "core_only": 0,        # 1 で都心10区（千代田/中央/港/新宿/文京/渋谷/目黒/品川/台東/豊島）に限定
     # --- 1階の使い方：住居として貸すか、店舗テナントとして貸すか ---
     "use": "resi",         # "resi"=1階を住居として貸す / "tenant"=1階を店舗テナントとして貸す
+                           # "rentout"=自分は住まず全部貸す（住宅ローンが使えない代わりに全床が収益）
                            #   tenant にすると用途地域・融資・空室・固都税・工事費の前提がまとめて切り替わる
     "biz_rate": 2.8,       # 店舗部分に付く事業用ローンの金利(%)。住宅ローンは非住宅部分に使えない
     "biz_years": 25,       # 同・返済期間(年)
@@ -91,6 +92,12 @@ PARAMS = {
     "tax_rate_tenant": 0.0045,  # 店舗を含む併用住宅の固都税率。住宅用地特例の枠が住宅戸数で決まり、
                                 #   店舗は戸数に数えないぶん住居賃貸より重くなる
     "min_unit_tenant": 15,     # 店舗区画の最低面積(㎡)。小さすぎると業種が限られる
+    # --- 自分は住まず全部貸す（rentout）---
+    "reno_rentout": 300,   # 賃貸に出すための原状回復・設備更新(万円)。自宅仕様にしない分だけ軽い
+    "vacancy_rentout": 0.12,  # 1棟貸し（ファミリー）の空室・滞納率。入替は長いが在居期間も長い
+    "size_exp": 0.33,      # 面積が大きいほど㎡賃料は下がる。25㎡を基準に (25/面積)^size_exp を掛ける
+                           #   例: 86㎡ → 0.67倍。単身向けの㎡単価をそのまま1棟に掛けると過大評価になる
+    "own_rent": 15,        # いま自分が払っている家賃(万円/月)。住まない場合はこれを払い続ける
 }
 
 # 用途地域ごとの「他人に貸す店舗テナント」の可否と、住居賃料に対する店舗賃料の倍率。
@@ -248,7 +255,9 @@ def evaluate(r, market, p):
     if r["kind"] not in ("戸建", "土地"):
         return None, "区分マンションは1階だけ貸す構造が作れない"
     if "再建築不可" in tags:
-        return None, "再建築不可＝住宅ローンが付かず賃貸併用の前提が崩れる"
+        return None, ("再建築不可＝融資が付かず現金前提になる（土地を持つ目的なら land_path.html を見ること）"
+                      if p["use"] == "rentout"
+                      else "再建築不可＝住宅ローンが付かず賃貸併用の前提が崩れる")
     if "借地権" in tags:
         return None, "借地権＝融資と転貸承諾の二重ハードル"
     if (r.get("price") or 0) > p["max_price"]:
@@ -261,16 +270,24 @@ def evaluate(r, market, p):
         return None, "建築可能延床が不足（容積不明を含む）"
 
     tenant = p["use"] == "tenant"
+    rentout = p["use"] == "rentout"
     zname, z_exact = zoning_of(r)
     z_ok, z_mult, z_note = tenant_zoning(zname) if tenant else (None, 1.0, "")
     if tenant and z_ok is False:
         return None, f"用途地域（{zname}）で店舗テナントが建てられない"
 
-    area, total_floor = unit_area(r, p)
-    min_unit = p["min_unit_tenant"] if tenant else p["min_unit"]
-    if not area or area < min_unit:
-        return None, ("1階に独立した店舗区画を切り出せる面積が取れない" if tenant
-                      else "1階に独立住戸を切り出せる面積が取れない")
+    if rentout:
+        # 自分は住まないので1階を切り出す必要がない。全床が賃貸。
+        _, total_floor = unit_area(r, p)
+        if not total_floor:
+            return None, "延床・建築可能床が取れない"
+        area = total_floor
+    else:
+        area, total_floor = unit_area(r, p)
+        min_unit = p["min_unit_tenant"] if tenant else p["min_unit"]
+        if not area or area < min_unit:
+            return None, ("1階に独立した店舗区画を切り出せる面積が取れない" if tenant
+                          else "1階に独立住戸を切り出せる面積が取れない")
 
     rpm2, yld = rent_per_m2(r["ward"], market)
     if not rpm2:
@@ -283,7 +300,9 @@ def evaluate(r, market, p):
     price = r["price"]
     # --- 総事業費 ---
     if r["kind"] == "戸建":
-        reno = p["reno_tenant"] if tenant else p["reno_man"]
+        reno = (p["reno_tenant"] if tenant
+                else p["reno_rentout"] if rentout
+                else p["reno_man"])
     else:
         reno = round(total_floor * p["build_m2_man"] * (1 + p["build_extra"]))
     costs = round(price * p["cost_ratio"])
@@ -295,7 +314,13 @@ def evaluate(r, market, p):
     #   自己資金は全体に按分して充当する。
     equity = min(p["equity"], total_cost)
     loan = max(total_cost - equity, 0)
-    if tenant:
+    if rentout:
+        # 自分が住まない＝住宅ローンは使えない。全額が事業用ローン。
+        biz_loan = loan
+        home_loan = 0.0
+        monthly_home = 0.0
+        monthly_biz = monthly = yen_pay(loan, p["biz_rate"], p["biz_years"])
+    elif tenant:
         biz_loan = loan * rent_share
         home_loan = loan - biz_loan
         monthly_home = yen_pay(home_loan, p["rate"], p["years"])
@@ -308,7 +333,13 @@ def evaluate(r, market, p):
         monthly_home = monthly = yen_pay(loan, p["rate"], p["years"])
 
     # --- 賃料と手取り ---
-    if tenant:
+    if rentout:
+        # 1棟まるごと貸す。面積が大きいほど㎡単価は下がるので size_exp で補正する。
+        size_adj = (25.0 / max(area, 25.0)) ** p["size_exp"]
+        gross = rpm2 * area * size_adj / 10000
+        vac = p["vacancy_rentout"]
+        tax_rate = p["tax_rate"]   # 住宅として貸す限り住宅用地特例は効く（自己居住は要件ではない）
+    elif tenant:
         # 1階は店舗にとって減価要因ではなく前提。用途地域と駅距離で倍率を決める。
         gross = rpm2 * area * z_mult * walk_adj / 10000
         vac = p["vacancy_tenant"]
@@ -323,12 +354,18 @@ def evaluate(r, market, p):
 
     # --- 損益分岐賃料：賃貸（店舗）部分に紐づく返済を賄うのに要る賃料 ---
     #   tenant では店舗部分の返済＝事業用ローンの返済そのものを使う（按分ではない）。
-    share_pay = monthly_biz if tenant else monthly * rent_share
+    share_pay = monthly_biz if (tenant or rentout) else monthly * rent_share
     be = (share_pay + hold * rent_share) / noi_ratio
     margin = gross / be if be > 0 else 0
 
     # --- 自宅の実質負担 ---
-    real_housing = monthly + hold - net
+    if rentout:
+        # 物件のキャッシュフロー（＋なら手残り）。自分の住居費は今の家賃を払い続ける。
+        cashflow = net - monthly
+        real_housing = p["own_rent"] - cashflow
+    else:
+        cashflow = net - monthly * rent_share
+        real_housing = monthly + hold - net
 
     # --- 取得力：年収でここまで届くか、頭金がいくら要るか ---
     capacity = borrow_capacity(p, gross)
@@ -371,7 +408,13 @@ def evaluate(r, market, p):
     if (r.get("elev") is not None) and r["elev"] < 3:
         flags.append(f"⚠標高{r['elev']}m＝低地。1階{'店舗は在庫・厨房設備ごと' if tenant else '住戸は'}"
                      "内水氾濫に弱い")
-    if rent_share > 0.5:
+    if rentout:
+        flags.append("自分は住まない＝住宅ローンも住宅ローン控除も使えない。全額が事業用ローン。"
+                     "一方で経費は按分せず全額計上でき、自宅1/2ルールからも自由")
+        flags.append("住宅として貸す限り固定資産税の住宅用地特例は効く（自己居住は要件ではない）。"
+                     "戸建て貸家なら不動産取得税の1,200万円控除も要件を満たせば使える")
+        flags.append("⚠自分の住まいの家賃は別途かかり続ける。この物件の手残りと相殺して考えること")
+    elif rent_share > 0.5:
         flags.append("⚠賃貸部分が延床の50%超＝住宅ローンの『自宅1/2以上』要件を満たさない"
                      "（自宅部分にも住宅ローンが使えなくなる）")
     elif rent_share > 0.45:
@@ -418,7 +461,8 @@ def evaluate(r, market, p):
         "breakeven_rent": round(be, 1), "margin": round(margin, 2),
         "reno": reno, "costs": costs, "total_cost": total_cost,
         "loan": loan, "monthly": round(monthly, 1),
-        "real_housing": round(real_housing, 1),
+        "real_housing": round(real_housing, 1), "cashflow": round(cashflow, 1),
+        "gross_yield": round(gross * 12 / total_cost * 100, 2),
         "capacity": round(capacity), "equity_needed": round(equity_needed),
         "reachable": reachable,
         "payoff_base_y": round(base_mo / 12, 1), "payoff_fast_y": round(fast_mo / 12, 1),
@@ -537,15 +581,23 @@ def render(out):
     p, rows = out["params"], out["rows"]
     e = html.escape
     tenant = p["use"] == "tenant"
-    U = "店舗テナント" if tenant else "住戸"
+    rentout = p["use"] == "rentout"
+    U = "店舗テナント" if tenant else "貸家（1棟）" if rentout else "住戸"
     cards = []
     for r in rows:
         mult_note = f"・住居比x{r['z_mult']}" if tenant and r.get("z_mult") else ""
         reno_label = "テナント化工事" if tenant else "賃貸化工事"
+        housing_label = ("家計の住居費（いまの家賃−物件CF）" if rentout else "実質の住居費")
+        unit_label = ("貸家（全床・想定）" if rentout else "1階 %s（想定）" % U)
         payoff_label = ("事業用ローンの完済（賃料手取りを元金充当）" if tenant
                         else "完済（賃料手取りを元金充当）")
-        payoff_base = p["biz_years"] if tenant else p["years"]
-        if tenant:
+        payoff_base = p["biz_years"] if (tenant or rentout) else p["years"]
+        yield_row = (_kv("表面利回り", "%s%%" % r["gross_yield"])
+                     + _kv("物件のキャッシュフロー", "%+.1f万円/月" % r["cashflow"])) if rentout else ""
+        if rentout:
+            pay_label = f"（事業用 {p['biz_rate']}%・{p['biz_years']}年）"
+            split_rows = ""
+        elif tenant:
             pay_label = " 合計"
             split_rows = (
                 _kv("└ 自宅分 住宅ローン %s%%・%s年" % (p["rate"], p["years"]),
@@ -573,7 +625,7 @@ def render(out):
  <div class="big">{r['price']:,}万円</div>
  <div>{''.join(badges)}</div>
  <div class="kv">
-  <span class="k">1階 {U}（想定）</span><span class="v">{r['unit_area']}㎡（延床の{r['rent_share']}%）</span>
+  <span class="k">{unit_label}</span><span class="v">{r['unit_area']}㎡（延床の{r['rent_share']}%）</span>
   <span class="k">想定賃料（相場推定{mult_note}）</span><span class="v">{r['gross_rent']}万円/月</span>
   <span class="k">損益分岐賃料</span><span class="v">{r['breakeven_rent']}万円/月</span>
  </div>
@@ -585,9 +637,10 @@ def render(out):
   <span class="k">借入（自己資金{p['equity']}万円控除後）</span><span class="v">{r['loan']:,}万円</span>
 {split_rows}  <span class="k">月返済{pay_label}</span><span class="v">{r['monthly']}万円</span>
   <span class="k">賃貸の手取り</span><span class="v">+{r['net_rent']}万円</span>
+{yield_row}
  </div>
  <div class="hr"></div>
- <div class="kv"><span class="k"><b>実質の住居費</b></span>
+ <div class="kv"><span class="k"><b>{housing_label}</b></span>
    <span class="v"><b>{r['real_housing']}万円/月</b></span></div>
  <div class="hr"></div>
  <div class="kv">
@@ -613,7 +666,12 @@ def render(out):
     rej = "".join(f"<tr><td>{e(k)}</td><td class='num'>{v}</td></tr>"
                   for k, v in sorted(out["rejected"].items(), key=lambda x: -x[1]))
 
-    vac_pct = (p["vacancy_tenant"] if tenant else p["vacancy"]) * 100
+    lead_what = ("全床を貸せる戸建・土地を抽出し、<b>自分は住まず全部貸したときの収益と家計負担</b>を試算。"
+                 if rentout else
+                 "1階に独立した%s を切り出せる戸建・土地を抽出し、"
+                 "<b>買って1階を貸したときの実質住居費</b>を試算。" % U)
+    vac_pct = (p["vacancy_tenant"] if tenant else
+               p["vacancy_rentout"] if rentout else p["vacancy"]) * 100
     noi_pct = 100 - vac_pct - (p["mgmt"] + p["repair"] + p["misc"]) * 100
     if tenant:
         title = "一階テナント（店舗併用住宅）成立性スクリーナー — 東京23区"
@@ -644,10 +702,39 @@ def render(out):
             '想定賃料は住居賃料からの<b>推定値</b>。'
             '実際の店舗募集を<b>坪単価</b>で3件以上拾い、同エリアの住居の坪単価と比べて倍率を置き換えること。'
             '<b>損益分岐はおおむね「住居の1.7倍」</b>——それを超えないとテナント化は住居として貸すより不利になる。')
+    elif rentout:
+        title = "全部貸す（自分は住まない）成立性スクリーナー — 東京23区"
+        h1 = ('自分は<b>住まず全部貸す</b>前提で買えるか — 収益性スクリーナー'
+              ' <a href="./hybrid.html" style="font-size:.6em;font-weight:400">→ 住んで1階を貸す版</a>')
+        unit_th = "貸家<br>延床"
+        reno_row = ('<tr><td>賃貸化工事（中古戸建）</td><td>%s万円'
+                    '（原状回復・設備更新。自宅仕様にしない分だけ軽い）</td></tr>'
+                    % format(p["reno_rentout"], ","))
+        use_rows = (
+            '<tr><td>融資</td><td>全額が<b>事業用ローン %s%% / %s年</b>。'
+            '自分が住まない＝住宅ローンも住宅ローン控除も使えない</td></tr>'
+            '<tr><td>賃料の面積補正</td><td>25㎡を基準に (25/延床)^%s。'
+            '面積が大きいほど㎡単価は下がる（86㎡で約0.67倍）。'
+            '単身向けの㎡単価をそのまま1棟に掛けると過大評価になる</td></tr>'
+            '<tr><td>固都税等</td><td>総事業費の年%.2f%%。'
+            '<b>住宅として貸す限り住宅用地特例は効く</b>（自己居住は要件ではない）</td></tr>'
+            '<tr><td>いまの家賃</td><td>%s万円/月。'
+            '住まない場合はこれを払い続けるので、物件の手残りと相殺して家計負担を出している</td></tr>'
+            % (p["biz_rate"], p["biz_years"], p["size_exp"], p["tax_rate"] * 100, p["own_rent"]))
+        note = (
+            '<b>この表の読み方。</b>'
+            '「余裕度」＝想定賃料 ÷ 損益分岐賃料。1.0を割ると事業用ローンの返済を賃料で賄えない。'
+            '<b>ここに並ぶのは実需（住むための家）の価格で売られている物件</b>なので、'
+            '利回りは構造的に出にくい。実際、表面利回りの中央値は3%前後にとどまる。'
+            '<b>「住まない」戦略を本気で取るなら、見に行くべきは収益物件の市場</b>'
+            '（健美家・楽待など → <a href="./watchlist.md">watchlist.md</a>）であって、この一覧ではない。'
+            'この画面の役目は「実需物件を買って全部貸すと回らない」ことを確認することにある。'
+            '判断の分かれ目は<a href="./land_strategy.md">land_strategy.md</a> 4bis。')
     else:
         title = "一階賃貸（賃貸併用）成立性スクリーナー — 東京23区"
         h1 = ('一階を<b>住居</b>として貸す前提で買えるか — 賃貸併用スクリーナー'
-              ' <a href="./hybrid_tenant.html" style="font-size:.6em;font-weight:400">→ 店舗テナント版</a>')
+              ' <a href="./hybrid_tenant.html" style="font-size:.6em;font-weight:400">→ 店舗テナント版</a>'
+              ' <a href="./hybrid_rentout.html" style="font-size:.6em;font-weight:400">→ 住まず全部貸す版</a>')
         unit_th = "賃貸戸"
         reno_row = ('<tr><td>賃貸化工事（中古戸建）</td><td>%s万円'
                     '（玄関分離・水回り新設・界壁・メーター分離・内装）</td></tr>'
@@ -672,7 +759,7 @@ def render(out):
 <h1>{h1}</h1>
 <p class="lead">
  母集団 {out['screened']}件（{e(str(out['source_updated'])[:10])} 時点のSUUMO自動取得）から、
- 1階に独立した{U}を切り出せる戸建・土地を抽出し、<b>買って1階を貸したときの実質住居費</b>を試算。
+ {lead_what}
  判定基準・法規・税の整理は <a href="./rental_hybrid.md">rental_hybrid.md</a>、
  取得力と返済加速は <a href="./loan_plan.html">loan_plan.html</a>、
  物件そのものの値持ち評価は <a href="./listings.html">listings.html</a>。
