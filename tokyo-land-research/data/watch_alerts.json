@@ -1,5 +1,26 @@
 [
  {
+  "id": "21613869",
+  "name": "ジェイパーク笹塚",
+  "loc": "渋谷区笹塚３-30-10",
+  "price": 4498,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21613869/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-09T12:17:59.254345+09:00",
+  "score": 59,
+  "ratio": 0.98,
+  "tier": "S",
+  "walk": 8,
+  "area": 34.23,
+  "plan": "1LDK",
+  "year": 1996,
+  "cagr": 5.6,
+  "net": -577,
+  "tags": []
+ },
+ {
   "id": "21662835",
   "name": "パラスト西原",
   "loc": "渋谷区西原１-21-16",
@@ -818,27 +839,6 @@
   "year": 1984,
   "cagr": 4.6,
   "net": -1104,
-  "tags": []
- },
- {
-  "id": "20550410",
-  "name": "パレス三條",
-  "loc": "目黒区目黒１",
-  "price": 5499,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_20550410/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-04T17:29:49.738521+09:00",
-  "score": 93,
-  "ratio": 1.86,
-  "tier": "A",
-  "walk": 5,
-  "area": 61.88,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 4006,
   "tags": []
  }
 ]
