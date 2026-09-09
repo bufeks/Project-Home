@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-08T21:50:24.027369+00:00",
- "source_updated": "2026-09-08T08:44:27.379891+09:00",
+ "updated": "2026-09-08T23:58:03.099403+00:00",
+ "source_updated": "2026-09-09T08:36:33.500368+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -21,7 +21,7 @@
   "ltv": 0.7,
   "noi_ratio": 0.75
  },
- "target": 3080,
+ "target": 3100,
  "core": [
   {
    "ward": "豊島区",
@@ -86,20 +86,6 @@
  ],
  "candidates": [
   {
-   "ward": "豊島区",
-   "loc": "豊島区高松２",
-   "price": 3080,
-   "land": 34.49,
-   "tsubo_unit": 295,
-   "walk": 9,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_20704676/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.46,
-   "grade": "高"
-  },
-  {
    "ward": "目黒区",
    "loc": "目黒区中央町１",
    "price": 3100,
@@ -163,22 +149,6 @@
    "rebuild_ng": false,
    "ratio": 1.08,
    "grade": "中高"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区市谷柳町",
-   "price": 4280,
-   "land": 65.05,
-   "tsubo_unit": 218,
-   "walk": 3,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21580119/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 1.66,
-   "grade": "高"
   },
   {
    "ward": "新宿区",
@@ -385,33 +355,63 @@
    "tsubo_unit": 480,
    "walk": 6,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 1.03,
    "grade": "中高"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区上原２",
+   "price": 6000,
+   "land": 51.47,
+   "tsubo_unit": 385,
+   "walk": 8,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20567017/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.35,
+   "grade": "中高"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区西落合２",
+   "price": 6280,
+   "land": 40.5,
+   "tsubo_unit": 513,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21284792/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 0.81,
+   "grade": "中"
   }
  ],
  "escape": [
   {
    "year": 0,
-   "price": 3080
+   "price": 3100
   },
   {
    "year": 3,
-   "price": 3515
+   "price": 3538
   },
   {
    "year": 5,
-   "price": 3838
+   "price": 3863
   },
   {
    "year": 7,
-   "price": 4191
+   "price": 4219
   },
   {
    "year": 10,
-   "price": 4783
+   "price": 4814
   }
  ],
  "route_a": [
@@ -425,7 +425,7 @@
    }
   },
   {
-   "price": 3080,
+   "price": 3100,
    "years": {
     "200": null,
     "300": null,
