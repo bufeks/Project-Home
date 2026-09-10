@@ -1,5 +1,26 @@
 [
  {
+  "id": "21196381",
+  "name": "渋谷マンション",
+  "loc": "渋谷区鶯谷町7-1",
+  "price": 5999,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21196381/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-10T12:17:34.932013+09:00",
+  "score": 67,
+  "ratio": 0.93,
+  "tier": "S",
+  "walk": 6,
+  "area": 35.18,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 5.6,
+  "net": -1052,
+  "tags": []
+ },
+ {
   "id": "21637433",
   "name": "メイゾン牛込",
   "loc": "新宿区二十騎町2-12",
@@ -818,27 +839,6 @@
   "year": null,
   "cagr": 4.5,
   "net": 4919,
-  "tags": []
- },
- {
-  "id": "21637267",
-  "name": "エトワール恵比寿・三葉",
-  "loc": "渋谷区恵比寿１",
-  "price": 4800,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21637267/",
-  "watch": "渋谷区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-05T12:08:49.304564+09:00",
-  "score": 93,
-  "ratio": 1.2,
-  "tier": "S",
-  "walk": 3,
-  "area": 21.77,
-  "plan": "1K",
-  "year": null,
-  "cagr": 5.6,
-  "net": 414,
   "tags": []
  }
 ]
