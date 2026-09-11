@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-10T23:40:50.930937+00:00",
- "source_updated": "2026-09-11T08:17:05.398716+09:00",
+ "updated": "2026-09-11T23:39:15.860154+00:00",
+ "source_updated": "2026-09-12T08:20:53.360910+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -101,22 +101,6 @@
    "rebuild_ng": true,
    "ratio": 0.89,
    "grade": "低"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区早稲田南町",
-   "price": 3200,
-   "land": 55.78,
-   "tsubo_unit": 190,
-   "walk": 6,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20779931/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 1.6,
-   "grade": "中高"
   },
   {
    "ward": "新宿区",
@@ -289,6 +273,22 @@
    "grade": "中"
   },
   {
+   "ward": "文京区",
+   "loc": "文京区千駄木５",
+   "price": 4980,
+   "land": 59.89,
+   "tsubo_unit": 275,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21578418/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.91,
+   "grade": "低"
+  },
+  {
    "ward": "新宿区",
    "loc": "新宿区舟町",
    "price": 5380,
@@ -303,20 +303,6 @@
    ],
    "rebuild_ng": true,
    "ratio": 3.74,
-   "grade": "高"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区新宿７",
-   "price": 5560,
-   "land": 50.99,
-   "tsubo_unit": 360,
-   "walk": 7,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21307337/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.38,
    "grade": "高"
   },
   {
@@ -341,7 +327,7 @@
    "tsubo_unit": 480,
    "walk": 6,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 1.03,
@@ -390,6 +376,23 @@
    "rebuild_ng": false,
    "ratio": 0.77,
    "grade": "中"
+  },
+  {
+   "ward": "目黒区",
+   "loc": "目黒区中根２",
+   "price": 6580,
+   "land": 130.9,
+   "tsubo_unit": 166,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21389068/",
+   "tags": [
+    "再建築不可",
+    "売り急ぎ"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.6,
+   "grade": "中高"
   }
  ],
  "escape": [
