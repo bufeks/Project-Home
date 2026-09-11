@@ -1,5 +1,28 @@
 [
  {
+  "id": "21679525",
+  "name": "常盤松葵マンション",
+  "loc": "渋谷区渋谷４-３－１７",
+  "price": 5790,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21679525/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-11T17:36:51.852473+09:00",
+  "score": 90,
+  "ratio": 1.54,
+  "tier": "S",
+  "walk": 8,
+  "area": 43.2,
+  "plan": "1DK",
+  "year": 1968,
+  "cagr": 5.6,
+  "net": 2396,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "21678600",
   "name": "原宿第２コーポ",
   "loc": "渋谷区千駄ヶ谷３",
@@ -822,27 +845,6 @@
   "year": null,
   "cagr": 5.6,
   "net": 4271,
-  "tags": []
- },
- {
-  "id": "21633882",
-  "name": "菱和パレス学芸大学",
-  "loc": "目黒区五本木２",
-  "price": 5490,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21633882/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-06T12:08:37.097989+09:00",
-  "score": 50,
-  "ratio": 0.89,
-  "tier": "A",
-  "walk": 5,
-  "area": 34.1,
-  "plan": "1LDK",
-  "year": 1995,
-  "cagr": 4.5,
-  "net": -1171,
   "tags": []
  }
 ]
