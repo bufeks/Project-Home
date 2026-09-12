@@ -1,5 +1,26 @@
 [
  {
+  "id": "21676502",
+  "name": "哲学堂マンション 新宿区西落合２丁目",
+  "loc": "新宿区西落合２-7-25",
+  "price": 2690,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21676502/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-12T17:23:12.002068+09:00",
+  "score": 85,
+  "ratio": 1.67,
+  "tier": "A",
+  "walk": 8,
+  "area": 45.98,
+  "plan": "2LDK",
+  "year": null,
+  "cagr": 4.6,
+  "net": 1448,
+  "tags": []
+ },
+ {
   "id": "21679525",
   "name": "常盤松葵マンション",
   "loc": "渋谷区渋谷４-３－１７",
@@ -824,27 +845,6 @@
   "year": 1982,
   "cagr": 5.6,
   "net": 1746,
-  "tags": []
- },
- {
-  "id": "21641288",
-  "name": "パラスト西原",
-  "loc": "渋谷区西原１-21-16",
-  "price": 4980,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21641288/",
-  "watch": "渋谷区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-06T12:08:37.097989+09:00",
-  "score": 100,
-  "ratio": 2.0,
-  "tier": "S",
-  "walk": 2,
-  "area": 42.0,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 5.6,
-  "net": 4271,
   "tags": []
  }
 ]
