@@ -1,0 +1,729 @@
+{
+ "updated": "2026-09-12T23:26:23.323987+00:00",
+ "source_updated": "2026-09-13T08:08:04.737485+09:00",
+ "input": {
+  "equity": 1000,
+  "save": 300,
+  "income": 800,
+  "target": 0,
+  "growth": 4.5,
+  "years": 10,
+  "b_price": 2450,
+  "b_loan": 2572,
+  "b_net": 4.4,
+  "b_growth": 4.5,
+  "rate": 1.0,
+  "years_loan": 35,
+  "biz_rate": 2.8,
+  "biz_years": 25,
+  "biz_rate_bad": 3.5,
+  "biz_years_bad": 20,
+  "ltv": 0.7,
+  "noi_ratio": 0.75
+ },
+ "target": 3100,
+ "core": [
+  {
+   "ward": "豊島区",
+   "tsubo": 302.2,
+   "m2": 91.41564169424463,
+   "cagr": 4.0
+  },
+  {
+   "ward": "品川区",
+   "tsubo": 330.6,
+   "m2": 100.00665501031527,
+   "cagr": 4.3
+  },
+  {
+   "ward": "新宿区",
+   "tsubo": 360.6,
+   "m2": 109.08166907658708,
+   "cagr": 4.6
+  },
+  {
+   "ward": "目黒区",
+   "tsubo": 383.5,
+   "m2": 116.00892981384122,
+   "cagr": 4.5
+  },
+  {
+   "ward": "台東区",
+   "tsubo": 411.1,
+   "m2": 124.35794275481128,
+   "cagr": 5.5
+  },
+  {
+   "ward": "文京区",
+   "tsubo": 439.4,
+   "m2": 132.91870602399433,
+   "cagr": 4.5
+  },
+  {
+   "ward": "渋谷区",
+   "tsubo": 537.6,
+   "m2": 162.6242520675907,
+   "cagr": 5.6
+  },
+  {
+   "ward": "中央区",
+   "tsubo": 680.0,
+   "m2": 205.7003188354942,
+   "cagr": 5.4
+  },
+  {
+   "ward": "港区",
+   "tsubo": 881.5,
+   "m2": 266.6541633139531,
+   "cagr": 5.2
+  },
+  {
+   "ward": "千代田区",
+   "tsubo": 1239.7,
+   "m2": 375.00983126523846,
+   "cagr": 4.2
+  }
+ ],
+ "candidates": [
+  {
+   "ward": "目黒区",
+   "loc": "目黒区中央町１",
+   "price": 3100,
+   "land": 38.29,
+   "tsubo_unit": 268,
+   "walk": 14,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21427437/",
+   "tags": [
+    "再建築不可",
+    "売り急ぎ"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.89,
+   "grade": "低"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区若葉３",
+   "price": 3880,
+   "land": 50.39,
+   "tsubo_unit": 255,
+   "walk": 9,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20725052/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.29,
+   "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区若松町22-12",
+   "price": 3980,
+   "land": 60.73,
+   "tsubo_unit": 217,
+   "walk": 2,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21333058/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.67,
+   "grade": "高"
+  },
+  {
+   "ward": "豊島区",
+   "loc": "豊島区西巣鴨４",
+   "price": 3980,
+   "land": 34.16,
+   "tsubo_unit": 385,
+   "walk": 2,
+   "kind": "土地",
+   "url": "https://suumo.jp/tochi/tokyo/sc_toshima/nc_21428546/",
+   "tags": [
+    "古家付き"
+   ],
+   "rebuild_ng": false,
+   "ratio": 1.08,
+   "grade": "中高"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区西落合２",
+   "price": 4280,
+   "land": 26.6,
+   "tsubo_unit": 532,
+   "walk": 7,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21143921/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 0.78,
+   "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区上落合３",
+   "price": 4280,
+   "land": 48.17,
+   "tsubo_unit": 294,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21365930/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.77,
+   "grade": "低"
+  },
+  {
+   "ward": "文京区",
+   "loc": "文京区千石３",
+   "price": 4290,
+   "land": 50.22,
+   "tsubo_unit": 282,
+   "walk": 9,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21514030/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.0,
+   "grade": "低"
+  },
+  {
+   "ward": "豊島区",
+   "loc": "豊島区長崎４",
+   "price": 4750,
+   "land": 35.2,
+   "tsubo_unit": 446,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_79161848/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 0.82,
+   "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区上落合２",
+   "price": 4800,
+   "land": 68.22,
+   "tsubo_unit": 233,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21372140/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.98,
+   "grade": "中"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区初台２",
+   "price": 4980,
+   "land": 47.65,
+   "tsubo_unit": 345,
+   "walk": 9,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20551064/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.2,
+   "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区北新宿２",
+   "price": 4980,
+   "land": 31.46,
+   "tsubo_unit": 523,
+   "walk": 10,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21203259/",
+   "tags": [
+    "売り急ぎ"
+   ],
+   "rebuild_ng": false,
+   "ratio": 0.98,
+   "grade": "中"
+  },
+  {
+   "ward": "文京区",
+   "loc": "文京区千駄木５",
+   "price": 4980,
+   "land": 59.89,
+   "tsubo_unit": 275,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21578418/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.91,
+   "grade": "低"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区舟町",
+   "price": 5380,
+   "land": 178.6,
+   "tsubo_unit": 100,
+   "walk": 3,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21390227/",
+   "tags": [
+    "再建築不可",
+    "売り急ぎ"
+   ],
+   "rebuild_ng": true,
+   "ratio": 3.74,
+   "grade": "高"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区赤城下町",
+   "price": 5850,
+   "land": 26.27,
+   "tsubo_unit": 736,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20557566/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 0.96,
+   "grade": "中高"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区西早稲田３",
+   "price": 5880,
+   "land": 40.49,
+   "tsubo_unit": 480,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.03,
+   "grade": "中高"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区上原２",
+   "price": 6000,
+   "land": 51.47,
+   "tsubo_unit": 385,
+   "walk": 8,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20567017/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.35,
+   "grade": "中高"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区笹塚１",
+   "price": 6180,
+   "land": 89.21,
+   "tsubo_unit": 229,
+   "walk": 5,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21689813/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.53,
+   "grade": "高"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区西落合２",
+   "price": 6280,
+   "land": 40.5,
+   "tsubo_unit": 513,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21284792/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 0.81,
+   "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区中落合１",
+   "price": 6480,
+   "land": 40.03,
+   "tsubo_unit": 535,
+   "walk": 8,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21236261/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 0.77,
+   "grade": "中"
+  },
+  {
+   "ward": "目黒区",
+   "loc": "目黒区中根２",
+   "price": 6580,
+   "land": 130.9,
+   "tsubo_unit": 166,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21389068/",
+   "tags": [
+    "再建築不可",
+    "売り急ぎ"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.6,
+   "grade": "中高"
+  }
+ ],
+ "escape": [
+  {
+   "year": 0,
+   "price": 3100
+  },
+  {
+   "year": 3,
+   "price": 3538
+  },
+  {
+   "year": 5,
+   "price": 3863
+  },
+  {
+   "year": 7,
+   "price": 4219
+  },
+  {
+   "year": 10,
+   "price": 4814
+  }
+ ],
+ "route_a": [
+  {
+   "price": 3000,
+   "years": {
+    "200": null,
+    "300": null,
+    "500": 6,
+    "800": 4
+   }
+  },
+  {
+   "price": 3100,
+   "years": {
+    "200": null,
+    "300": null,
+    "500": 7,
+    "800": 4
+   }
+  },
+  {
+   "price": 5000,
+   "years": {
+    "200": null,
+    "300": null,
+    "500": null,
+    "800": 8
+   }
+  },
+  {
+   "price": 8000,
+   "years": {
+    "200": null,
+    "300": null,
+    "500": null,
+    "800": null
+   }
+  },
+  {
+   "price": 12000,
+   "years": {
+    "200": null,
+    "300": null,
+    "500": null,
+    "800": null
+   }
+  }
+ ],
+ "route_b": [
+  {
+   "year": 5,
+   "value": 3053,
+   "balance": 1987,
+   "equity": 1066,
+   "saved": 1500,
+   "total": 2566
+  },
+  {
+   "year": 7,
+   "value": 3334,
+   "balance": 1744,
+   "equity": 1590,
+   "saved": 2100,
+   "total": 3690
+  },
+  {
+   "year": 10,
+   "value": 3805,
+   "balance": 1371,
+   "equity": 2433,
+   "saved": 3000,
+   "total": 5433
+  },
+  {
+   "year": 15,
+   "value": 4741,
+   "balance": 725,
+   "equity": 4017,
+   "saved": 4500,
+   "total": 8517
+  }
+ ],
+ "route_e": [
+  {
+   "price": 5000,
+   "cases": [
+    {
+     "equity_ratio": 0.2,
+     "equity": 1000,
+     "loan": 4000,
+     "annual": 223
+    },
+    {
+     "equity_ratio": 0.3,
+     "equity": 1500,
+     "loan": 3500,
+     "annual": 195
+    },
+    {
+     "equity_ratio": 0.4,
+     "equity": 2000,
+     "loan": 3000,
+     "annual": 167
+    },
+    {
+     "equity_ratio": 1.0,
+     "equity": 5000,
+     "loan": 0,
+     "annual": 0
+    }
+   ]
+  },
+  {
+   "price": 8000,
+   "cases": [
+    {
+     "equity_ratio": 0.2,
+     "equity": 1600,
+     "loan": 6400,
+     "annual": 356
+    },
+    {
+     "equity_ratio": 0.3,
+     "equity": 2400,
+     "loan": 5600,
+     "annual": 312
+    },
+    {
+     "equity_ratio": 0.4,
+     "equity": 3200,
+     "loan": 4800,
+     "annual": 267
+    },
+    {
+     "equity_ratio": 1.0,
+     "equity": 8000,
+     "loan": 0,
+     "annual": 0
+    }
+   ]
+  },
+  {
+   "price": 12000,
+   "cases": [
+    {
+     "equity_ratio": 0.2,
+     "equity": 2400,
+     "loan": 9600,
+     "annual": 534
+    },
+    {
+     "equity_ratio": 0.3,
+     "equity": 3600,
+     "loan": 8400,
+     "annual": 468
+    },
+    {
+     "equity_ratio": 0.4,
+     "equity": 4800,
+     "loan": 7200,
+     "annual": 401
+    },
+    {
+     "equity_ratio": 1.0,
+     "equity": 12000,
+     "loan": 0,
+     "annual": 0
+    }
+   ]
+  }
+ ],
+ "leverage": [
+  {
+   "gross": 3.5,
+   "noi": 2.62,
+   "cases": [
+    {
+     "rate": 2.8,
+     "years": 25,
+     "debt": 3.9,
+     "ok": false
+    },
+    {
+     "rate": 3.5,
+     "years": 20,
+     "debt": 4.87,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "gross": 4.0,
+   "noi": 3.0,
+   "cases": [
+    {
+     "rate": 2.8,
+     "years": 25,
+     "debt": 3.9,
+     "ok": false
+    },
+    {
+     "rate": 3.5,
+     "years": 20,
+     "debt": 4.87,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "gross": 4.5,
+   "noi": 3.38,
+   "cases": [
+    {
+     "rate": 2.8,
+     "years": 25,
+     "debt": 3.9,
+     "ok": false
+    },
+    {
+     "rate": 3.5,
+     "years": 20,
+     "debt": 4.87,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "gross": 5.0,
+   "noi": 3.75,
+   "cases": [
+    {
+     "rate": 2.8,
+     "years": 25,
+     "debt": 3.9,
+     "ok": false
+    },
+    {
+     "rate": 3.5,
+     "years": 20,
+     "debt": 4.87,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "gross": 6.0,
+   "noi": 4.5,
+   "cases": [
+    {
+     "rate": 2.8,
+     "years": 25,
+     "debt": 3.9,
+     "ok": true
+    },
+    {
+     "rate": 3.5,
+     "years": 20,
+     "debt": 4.87,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "gross": 7.0,
+   "noi": 5.25,
+   "cases": [
+    {
+     "rate": 2.8,
+     "years": 25,
+     "debt": 3.9,
+     "ok": true
+    },
+    {
+     "rate": 3.5,
+     "years": 20,
+     "debt": 4.87,
+     "ok": true
+    }
+   ]
+  }
+ ],
+ "loan_constants": [
+  {
+   "rate": 1.0,
+   "years": 35,
+   "k": 3.39
+  },
+  {
+   "rate": 2.0,
+   "years": 30,
+   "k": 4.44
+  },
+  {
+   "rate": 2.8,
+   "years": 25,
+   "k": 5.57
+  },
+  {
+   "rate": 3.5,
+   "years": 20,
+   "k": 6.96
+  },
+  {
+   "rate": 4.5,
+   "years": 20,
+   "k": 7.59
+  }
+ ]
+}

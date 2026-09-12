@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>都心に土地を持つまでの経路 — 5〜10年の設計図</title>
+<style>
+:root{--bg:#f5f7fa;--card:#fff;--ink:#1b2430;--sub:#5d6b7a;--line:#e3e8ef;--accent:#2563eb;
+      --ok:#0f7b52;--warn:#b45309;--ng:#b91c1c}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+     margin:0;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 80px}
+h1{font-size:1.5rem;margin:0 0 6px}
+h2{font-size:1.12rem;margin:36px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:1rem;margin:22px 0 8px}
+.lead{color:var(--sub);font-size:.92rem;margin:0 0 18px}
+.verdict{border-radius:12px;padding:16px 18px;margin:18px 0;border:1px solid;
+         background:#fdeaea;border-color:#f0c0c0;color:#7d1d1d}
+.verdict.ok{background:#e6f4ee;border-color:#b6dfcc;color:#0b5236}
+table{border-collapse:collapse;width:100%;font-size:.87rem;background:#fff;
+      border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#eef2f7;font-weight:600;color:var(--sub);font-size:.8rem}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ng{color:var(--ng);font-weight:600}.ok{color:var(--ok);font-weight:600}
+.warn{color:var(--warn)}
+.tag{display:inline-block;font-size:.72rem;padding:1px 6px;border-radius:999px;
+     background:#eef1f5;color:var(--sub);margin-right:3px}
+.tag.r{background:#fdeaea;color:var(--ng)}
+.scroll{overflow-x:auto}
+.foot{color:var(--sub);font-size:.82rem;margin-top:28px}
+a{color:var(--accent)}
+@media (prefers-color-scheme:dark){
+ :root{--bg:#11161d;--card:#1a212b;--ink:#e6ecf3;--sub:#93a1b1;--line:#2b3644;--accent:#7aa7ff}
+ th{background:#222b36}
+ .verdict{background:#3a1a1a;border-color:#5c2b2b;color:#f0b0b0}
+ .verdict.ok{background:#123a2b;border-color:#1e5c44;color:#8fe0bb}
+ .tag{background:#252d38}.tag.r{background:#3a1a1a;color:#f08a8a}
+}
+</style></head><body><div class="wrap">
+<h1>都心に土地を持つまでの経路</h1>
+<p class="lead">
+ 前提：自己資金 1,000万円／年間貯蓄 300万円／世帯年収 800万円／
+ 都心の地価上昇率 年4.5%（実取引ベースの実績は4.0〜5.6%）。
+ 目標に置いた都心の土地＝<b>3,100万円</b>（現在の最安到達可能物件）。
+ 考え方は <a href="./land_strategy.md">land_strategy.md</a>、
+ 1階賃貸の型は <a href="./rental_hybrid.md">rental_hybrid.md</a>、
+ 物件一覧は <a href="./listings.html">listings.html</a>。
+</p>
+
+<div class="verdict">
+ <b>待つコストは年 171万円。</b>
+ 目標の土地は 10年で 3,100万 → 4,814万（+1,714万）に逃げる。<br>
+ <b>そして貯蓄だけで追いつく経路は、現実的な貯蓄ペースではほぼ存在しない（下表）。</b>
+ つまり「貯めてから買う」は選択肢ではなく、<b>レバレッジ（融資）を使う経路を設計するしかない</b>。
+</div>
+
+<h2>ルートA：貯蓄だけで現金到達できるか</h2>
+<div class="scroll"><table>
+<tr><th class="num">目標価格</th><th class="num">年200万貯蓄</th><th class="num">年300万</th>
+    <th class="num">年500万</th><th class="num">年800万</th></tr>
+<tr><td class="num">3,000万</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ok">6年</td><td class="num ok">4年</td></tr><tr><td class="num">3,100万</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ok">7年</td><td class="num ok">4年</td></tr><tr><td class="num">5,000万</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ok">8年</td></tr><tr><td class="num">8,000万</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ng">届かない</td></tr><tr><td class="num">12,000万</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ng">届かない</td><td class="num ng">届かない</td></tr></table></div>
+<p class="lead">自己資金 1,000万円スタート、地価上昇 年4.5%。
+「届かない」は30年以内に価格に追いつかないという意味。</p>
+
+<h2>ルートB：外周区で回る1棟を持ち、賃料を繰上返済に回して育てる</h2>
+<p class="lead">
+ 物件価格 2,450万／借入 2,572万（1.0%・35年）／
+ 賃貸の手取り 月4.4万円を全額 元金に充当／エリアの地価上昇 年4.5%。
+ 数字は <a href="./hybrid.html">hybrid.html</a> の外周区候補の実データに基づく既定値。
+</p>
+<div class="scroll"><table>
+<tr><th class="num">時点</th><th class="num">物件価値<br>万</th><th class="num">ローン残<br>万</th>
+    <th class="num">エクイティ<br>万</th><th class="num">その間の貯蓄<br>万</th><th class="num">合計<br>万</th></tr>
+<tr><td class="num">5年後</td><td class="num">3,053</td><td class="num">1,987</td><td class="num ok">1,066</td><td class="num">1,500</td><td class="num"><b>2,566</b></td></tr><tr><td class="num">7年後</td><td class="num">3,334</td><td class="num">1,744</td><td class="num ok">1,590</td><td class="num">2,100</td><td class="num"><b>3,690</b></td></tr><tr><td class="num">10年後</td><td class="num">3,805</td><td class="num">1,371</td><td class="num ok">2,433</td><td class="num">3,000</td><td class="num"><b>5,433</b></td></tr><tr><td class="num">15年後</td><td class="num">4,741</td><td class="num">725</td><td class="num ok">4,017</td><td class="num">4,500</td><td class="num"><b>8,517</b></td></tr></table></div>
+<p class="lead">
+ <b>この経路が作るのは現金だけではない。</b>①自己資金 ②賃貸業の決算実績（＝法人・事業用融資の与信）
+ ③住居費の削減、の3つを同時に作る。5〜10年後に都心を取りに行くときに効くのは、現金より②と③。
+</p>
+
+<h2>都心は「利回りで買う」場所ではない — ネガティブレバレッジの検証</h2>
+<div class="scroll"><table>
+<tr><th class="num">表面利回り</th><th class="num">NOI利回り<br>（75%換算）</th>
+    <th class="num">年返済<br>2.8%/25年</th><th>判定</th>
+    <th class="num">年返済<br>3.5%/20年</th><th>判定</th></tr>
+<tr><td class="num">3.5%</td><td class="num">2.62%</td><td class="num">3.9%</td><td class="ng">回らない</td><td class="num">4.87%</td><td class="ng">回らない</td></tr><tr><td class="num">4.0%</td><td class="num">3.0%</td><td class="num">3.9%</td><td class="ng">回らない</td><td class="num">4.87%</td><td class="ng">回らない</td></tr><tr><td class="num">4.5%</td><td class="num">3.38%</td><td class="num">3.9%</td><td class="ng">回らない</td><td class="num">4.87%</td><td class="ng">回らない</td></tr><tr><td class="num">5.0%</td><td class="num">3.75%</td><td class="num">3.9%</td><td class="ng">回らない</td><td class="num">4.87%</td><td class="ng">回らない</td></tr><tr><td class="num">6.0%</td><td class="num">4.5%</td><td class="num">3.9%</td><td class="ok">回る</td><td class="num">4.87%</td><td class="ng">回らない</td></tr><tr><td class="num">7.0%</td><td class="num">5.25%</td><td class="num">3.9%</td><td class="ok">回る</td><td class="num">4.87%</td><td class="ok">回る</td></tr></table></div>
+<p class="lead">
+ 借入比率 70% での年返済（＝借入比率×ローン定数）と、NOI利回りの比較。
+ <b>都心の表面利回りは概ね3.5〜4.5%、外周区は5〜6%。</b>
+ 都心は借入を厚くすると回らない＝<b>自己資金比率を上げるか、外周区で稼いで取りに行くしかない</b>。
+</p>
+<div class="scroll"><table style="max-width:420px">
+<tr><th>ローン条件</th><th class="num">ローン定数（年返済÷借入）</th></tr><tr><td>1.0% / 35年</td><td class="num">3.39%</td></tr><tr><td>2.0% / 30年</td><td class="num">4.44%</td></tr><tr><td>2.8% / 25年</td><td class="num">5.57%</td></tr><tr><td>3.5% / 20年</td><td class="num">6.96%</td></tr><tr><td>4.5% / 20年</td><td class="num">7.59%</td></tr></table></div>
+
+<h2>ルートE：都心を取りに行くときに要る自己資金</h2>
+<div class="scroll"><table>
+<tr><th class="num">物件価格</th><th>自己資金比率</th><th class="num">自己資金<br>万</th>
+    <th class="num">借入<br>万</th><th class="num">年返済<br>万（2.8%/25年）</th></tr>
+<tr><td class="num" rowspan="4">5,000万</td><td>20%</td><td class="num">1,000</td><td class="num">4,000</td><td class="num">223</td></tr><tr><td>30%</td><td class="num">1,500</td><td class="num">3,500</td><td class="num">195</td></tr><tr><td>40%</td><td class="num">2,000</td><td class="num">3,000</td><td class="num">167</td></tr><tr><td>現金</td><td class="num">5,000</td><td class="num">0</td><td class="num">0</td></tr><tr><td class="num" rowspan="4">8,000万</td><td>20%</td><td class="num">1,600</td><td class="num">6,400</td><td class="num">356</td></tr><tr><td>30%</td><td class="num">2,400</td><td class="num">5,600</td><td class="num">312</td></tr><tr><td>40%</td><td class="num">3,200</td><td class="num">4,800</td><td class="num">267</td></tr><tr><td>現金</td><td class="num">8,000</td><td class="num">0</td><td class="num">0</td></tr><tr><td class="num" rowspan="4">12,000万</td><td>20%</td><td class="num">2,400</td><td class="num">9,600</td><td class="num">534</td></tr><tr><td>30%</td><td class="num">3,600</td><td class="num">8,400</td><td class="num">468</td></tr><tr><td>40%</td><td class="num">4,800</td><td class="num">7,200</td><td class="num">401</td></tr><tr><td>現金</td><td class="num">12,000</td><td class="num">0</td><td class="num">0</td></tr></table></div>
+<p class="lead">
+ 土地だけ（収益を生まない更地）には事業用融資が出にくい。
+ <b>都心の土地を融資で取るなら「収益建物ごと買う」か「建てる計画とセットで買う」</b>。
+ 現金なら制約はないが、上のルートAのとおり貯蓄だけでは届かない。
+</p>
+
+<h2>都心10区の土地相場と、5年後・10年後</h2>
+<div class="scroll"><table>
+<tr><th>区</th><th class="num">坪単価<br>万</th><th class="num">㎡単価<br>万</th>
+    <th class="num">年率</th><th class="num">5年後 坪<br>万</th><th class="num">10年後 坪<br>万</th></tr>
+<tr><td>豊島区</td><td class="num">302</td><td class="num">91</td><td class="num">4.0%</td><td class="num">368</td><td class="num">447</td></tr><tr><td>品川区</td><td class="num">331</td><td class="num">100</td><td class="num">4.3%</td><td class="num">408</td><td class="num">504</td></tr><tr><td>新宿区</td><td class="num">361</td><td class="num">109</td><td class="num">4.6%</td><td class="num">452</td><td class="num">565</td></tr><tr><td>目黒区</td><td class="num">384</td><td class="num">116</td><td class="num">4.5%</td><td class="num">478</td><td class="num">596</td></tr><tr><td>台東区</td><td class="num">411</td><td class="num">124</td><td class="num">5.5%</td><td class="num">537</td><td class="num">702</td></tr><tr><td>文京区</td><td class="num">439</td><td class="num">133</td><td class="num">4.5%</td><td class="num">548</td><td class="num">682</td></tr><tr><td>渋谷区</td><td class="num">538</td><td class="num">163</td><td class="num">5.6%</td><td class="num">706</td><td class="num">927</td></tr><tr><td>中央区</td><td class="num">680</td><td class="num">206</td><td class="num">5.4%</td><td class="num">885</td><td class="num">1,151</td></tr><tr><td>港区</td><td class="num">882</td><td class="num">267</td><td class="num">5.2%</td><td class="num">1,136</td><td class="num">1,463</td></tr><tr><td>千代田区</td><td class="num">1,240</td><td class="num">375</td><td class="num">4.2%</td><td class="num">1,523</td><td class="num">1,871</td></tr></table></div>
+<p class="lead">実取引ベース（国交省）。年率はマンション成約のCAGR＝そのエリアの値動きの代理指標。</p>
+
+<h2>いま都心で「土地の所有権」を最も安く手に入れられる売り物</h2>
+<div class="scroll"><table>
+<tr><th>区</th><th>所在</th><th class="num">価格<br>万</th><th class="num">土地<br>㎡</th>
+    <th class="num">坪</th><th class="num">坪単価<br>万</th><th class="num">駅</th></tr>
+<tr><td>目黒区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21427437/" target="_blank" rel="noopener">目黒区中央町１</a><br><span class="tag r">再建築不可</span><span class="tag">売り急ぎ</span></td><td class="num">3,100</td><td class="num">38.3</td><td class="num">11.6</td><td class="num">268</td><td class="num">14分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20725052/" target="_blank" rel="noopener">新宿区若葉３</a><br><span class="tag r">再建築不可</span></td><td class="num">3,880</td><td class="num">50.4</td><td class="num">15.2</td><td class="num">255</td><td class="num">9分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21333058/" target="_blank" rel="noopener">新宿区若松町22-12</a><br><span class="tag r">再建築不可</span></td><td class="num">3,980</td><td class="num">60.7</td><td class="num">18.4</td><td class="num">217</td><td class="num">2分</td></tr><tr><td>豊島区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_toshima/nc_21428546/" target="_blank" rel="noopener">豊島区西巣鴨４</a><br><span class="tag">古家付き</span></td><td class="num">3,980</td><td class="num">34.2</td><td class="num">10.3</td><td class="num">385</td><td class="num">2分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21143921/" target="_blank" rel="noopener">新宿区西落合２</a><br></td><td class="num">4,280</td><td class="num">26.6</td><td class="num">8.0</td><td class="num">532</td><td class="num">7分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21365930/" target="_blank" rel="noopener">新宿区上落合３</a><br><span class="tag r">再建築不可</span></td><td class="num">4,280</td><td class="num">48.2</td><td class="num">14.6</td><td class="num">294</td><td class="num">4分</td></tr><tr><td>文京区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21514030/" target="_blank" rel="noopener">文京区千石３</a><br><span class="tag r">再建築不可</span></td><td class="num">4,290</td><td class="num">50.2</td><td class="num">15.2</td><td class="num">282</td><td class="num">9分</td></tr><tr><td>豊島区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_79161848/" target="_blank" rel="noopener">豊島区長崎４</a><br></td><td class="num">4,750</td><td class="num">35.2</td><td class="num">10.6</td><td class="num">446</td><td class="num">4分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21372140/" target="_blank" rel="noopener">新宿区上落合２</a><br><span class="tag r">再建築不可</span></td><td class="num">4,800</td><td class="num">68.2</td><td class="num">20.6</td><td class="num">233</td><td class="num">4分</td></tr><tr><td>渋谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20551064/" target="_blank" rel="noopener">渋谷区初台２</a><br><span class="tag r">再建築不可</span></td><td class="num">4,980</td><td class="num">47.6</td><td class="num">14.4</td><td class="num">345</td><td class="num">9分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21203259/" target="_blank" rel="noopener">新宿区北新宿２</a><br><span class="tag">売り急ぎ</span></td><td class="num">4,980</td><td class="num">31.5</td><td class="num">9.5</td><td class="num">523</td><td class="num">10分</td></tr><tr><td>文京区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21578418/" target="_blank" rel="noopener">文京区千駄木５</a><br><span class="tag r">再建築不可</span></td><td class="num">4,980</td><td class="num">59.9</td><td class="num">18.1</td><td class="num">275</td><td class="num">6分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21390227/" target="_blank" rel="noopener">新宿区舟町</a><br><span class="tag r">再建築不可</span><span class="tag">売り急ぎ</span></td><td class="num">5,380</td><td class="num">178.6</td><td class="num">54.0</td><td class="num">100</td><td class="num">3分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20557566/" target="_blank" rel="noopener">新宿区赤城下町</a><br></td><td class="num">5,850</td><td class="num">26.3</td><td class="num">7.9</td><td class="num">736</td><td class="num">4分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/" target="_blank" rel="noopener">新宿区西早稲田３</a><br></td><td class="num">5,880</td><td class="num">40.5</td><td class="num">12.2</td><td class="num">480</td><td class="num">6分</td></tr><tr><td>渋谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20567017/" target="_blank" rel="noopener">渋谷区上原２</a><br><span class="tag r">再建築不可</span></td><td class="num">6,000</td><td class="num">51.5</td><td class="num">15.6</td><td class="num">385</td><td class="num">8分</td></tr><tr><td>渋谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21689813/" target="_blank" rel="noopener">渋谷区笹塚１</a><br><span class="tag r">再建築不可</span></td><td class="num">6,180</td><td class="num">89.2</td><td class="num">27.0</td><td class="num">229</td><td class="num">5分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21284792/" target="_blank" rel="noopener">新宿区西落合２</a><br></td><td class="num">6,280</td><td class="num">40.5</td><td class="num">12.3</td><td class="num">513</td><td class="num">6分</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21236261/" target="_blank" rel="noopener">新宿区中落合１</a><br></td><td class="num">6,480</td><td class="num">40.0</td><td class="num">12.1</td><td class="num">535</td><td class="num">8分</td></tr><tr><td>目黒区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21389068/" target="_blank" rel="noopener">目黒区中根２</a><br><span class="tag r">再建築不可</span><span class="tag">売り急ぎ</span></td><td class="num">6,580</td><td class="num">130.9</td><td class="num">39.6</td><td class="num">166</td><td class="num">4分</td></tr></table></div>
+<p class="lead">
+ 借地権は除外（土地が自分のものにならないためゴールに反する）。
+ <span class="tag r">再建築不可</span> は<b>建物が建てられないだけで、土地の所有権は完全に手に入る</b>。
+ 坪単価が相場の3〜5割で買える一方、融資が付かず現金が要り、出口も狭い。
+ <b>ゴールが「持つこと」で時間が5〜10年あるなら、評価はこれまでと変わる</b>
+ （接道改善・隣地買収の交渉時間が取れる）。判断の枠組みは
+ <a href="./risk_guide.md">risk_guide.md</a> と <a href="./property_checklist.md">property_checklist.md</a>。
+</p>
+
+<p class="foot">
+ 生成 2026-09-12T23:26／物件データ 2026-09-13T08:08。
+ 本ページは学習・比較のための試算であり、投資勧誘でも税務・法務・建築の助言でもない。
+ 地価上昇率は過去実績であって将来を保証しない。金利・賃料・融資条件はすべて仮定値。
+ 実行前に不動産業者・建築士・金融機関・税理士の確認を。
+</p>
+</div></body></html>
