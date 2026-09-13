@@ -1,5 +1,26 @@
 [
  {
+  "id": "21646546",
+  "name": "パールハイツ笹塚",
+  "loc": "渋谷区笹塚２",
+  "price": 4680,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21646546/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-13T12:24:20.220740+09:00",
+  "score": 96,
+  "ratio": 1.41,
+  "tier": "S",
+  "walk": 5,
+  "area": 43.82,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 5.6,
+  "net": 1380,
+  "tags": []
+ },
+ {
   "id": "21676502",
   "name": "哲学堂マンション 新宿区西落合２丁目",
   "loc": "新宿区西落合２-7-25",
@@ -824,27 +845,6 @@
   "year": null,
   "cagr": 4.6,
   "net": 1372,
-  "tags": []
- },
- {
-  "id": "21642978",
-  "name": "元代々木桜苑マンション",
-  "loc": "渋谷区元代々木町",
-  "price": 5690,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21642978/",
-  "watch": "代々木公園周辺（渋谷区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-06T12:08:37.097989+09:00",
-  "score": 91,
-  "ratio": 1.43,
-  "tier": "S",
-  "walk": 6,
-  "area": 38.1,
-  "plan": "",
-  "year": 1982,
-  "cagr": 5.6,
-  "net": 1746,
   "tags": []
  }
 ]
