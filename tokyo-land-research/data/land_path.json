@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-13T23:15:39.859252+00:00",
- "source_updated": "2026-09-14T08:07:54.563703+09:00",
+ "updated": "2026-09-15T00:37:02.676329+00:00",
+ "source_updated": "2026-09-15T09:09:01.981496+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -21,7 +21,7 @@
   "ltv": 0.7,
   "noi_ratio": 0.75
  },
- "target": 3100,
+ "target": 2800,
  "core": [
   {
    "ward": "豊島区",
@@ -85,6 +85,20 @@
   }
  ],
  "candidates": [
+  {
+   "ward": "豊島区",
+   "loc": "豊島区高松２",
+   "price": 2800,
+   "land": 34.49,
+   "tsubo_unit": 268,
+   "walk": 9,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_20704676/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.61,
+   "grade": "高"
+  },
   {
    "ward": "目黒区",
    "loc": "目黒区中央町１",
@@ -259,20 +273,18 @@
    "grade": "中"
   },
   {
-   "ward": "文京区",
-   "loc": "文京区千駄木５",
-   "price": 4980,
-   "land": 59.89,
-   "tsubo_unit": 275,
-   "walk": 6,
+   "ward": "新宿区",
+   "loc": "新宿区新宿７",
+   "price": 5560,
+   "land": 50.99,
+   "tsubo_unit": 360,
+   "walk": 7,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21578418/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 0.91,
-   "grade": "低"
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21307337/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.38,
+   "grade": "高"
   },
   {
    "ward": "新宿区",
@@ -296,7 +308,7 @@
    "tsubo_unit": 480,
    "walk": 6,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 1.03,
@@ -378,60 +390,46 @@
    "rebuild_ng": true,
    "ratio": 1.6,
    "grade": "中高"
-  },
-  {
-   "ward": "目黒区",
-   "loc": "目黒区下目黒５",
-   "price": 6980,
-   "land": 53.57,
-   "tsubo_unit": 431,
-   "walk": 17,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_20968102/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.17,
-   "grade": "中高"
   }
  ],
  "escape": [
   {
    "year": 0,
-   "price": 3100
+   "price": 2800
   },
   {
    "year": 3,
-   "price": 3538
+   "price": 3195
   },
   {
    "year": 5,
-   "price": 3863
+   "price": 3489
   },
   {
    "year": 7,
-   "price": 4219
+   "price": 3810
   },
   {
    "year": 10,
-   "price": 4814
+   "price": 4348
   }
  ],
  "route_a": [
+  {
+   "price": 2800,
+   "years": {
+    "200": null,
+    "300": 14,
+    "500": 5,
+    "800": 3
+   }
+  },
   {
    "price": 3000,
    "years": {
     "200": null,
     "300": null,
     "500": 6,
-    "800": 4
-   }
-  },
-  {
-   "price": 3100,
-   "years": {
-    "200": null,
-    "300": null,
-    "500": 7,
     "800": 4
    }
   },
