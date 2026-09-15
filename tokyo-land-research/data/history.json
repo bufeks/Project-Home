@@ -18,10 +18,10 @@
  "20043614": {
   "first_seen": "2026-06-23",
   "first_price": 4800,
-  "last_price": 4800,
-  "last_change": "2026-06-23",
-  "min_price": 4800,
-  "last_seen": "2026-09-08"
+  "last_price": 4600,
+  "last_change": "2026-09-15",
+  "min_price": 4600,
+  "last_seen": "2026-09-15"
  },
  "20597678": {
   "first_seen": "2026-06-23",
@@ -413,7 +413,7 @@
   "last_price": 4180,
   "last_change": "2026-09-02",
   "min_price": 4180,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "20845716": {
   "first_seen": "2026-06-23",
@@ -877,7 +877,7 @@
   "last_price": 4780,
   "last_change": "2026-09-07",
   "min_price": 4780,
-  "last_seen": "2026-09-11"
+  "last_seen": "2026-09-15"
  },
  "20391355": {
   "first_seen": "2026-06-23",
@@ -1106,10 +1106,10 @@
  "21029823": {
   "first_seen": "2026-06-23",
   "first_price": 5499,
-  "last_price": 5499,
-  "last_change": "2026-06-23",
-  "min_price": 5499,
-  "last_seen": "2026-09-01"
+  "last_price": 5299,
+  "last_change": "2026-09-15",
+  "min_price": 5299,
+  "last_seen": "2026-09-15"
  },
  "21043176": {
   "first_seen": "2026-06-23",
@@ -1757,7 +1757,7 @@
   "last_price": 5880,
   "last_change": "2026-08-30",
   "min_price": 5880,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "20910722": {
   "first_seen": "2026-06-24",
@@ -2669,7 +2669,7 @@
   "last_price": 5999,
   "last_change": "2026-08-23",
   "min_price": 5999,
-  "last_seen": "2026-09-05"
+  "last_seen": "2026-09-15"
  },
  "78376750": {
   "first_seen": "2026-06-29",
@@ -2885,7 +2885,7 @@
   "last_price": 4480,
   "last_change": "2026-08-07",
   "min_price": 4480,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21176529": {
   "first_seen": "2026-06-29",
@@ -3957,7 +3957,7 @@
   "last_price": 15480,
   "last_change": "2026-09-05",
   "min_price": 15480,
-  "last_seen": "2026-09-11"
+  "last_seen": "2026-09-15"
  },
  "20958160": {
   "first_seen": "2026-06-29",
@@ -4021,7 +4021,7 @@
   "last_price": 74800,
   "last_change": "2026-06-29",
   "min_price": 74800,
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-15"
  },
  "20544000": {
   "first_seen": "2026-06-29",
@@ -4781,7 +4781,7 @@
   "last_price": 6299,
   "last_change": "2026-06-29",
   "min_price": 6299,
-  "last_seen": "2026-09-10"
+  "last_seen": "2026-09-15"
  },
  "20908865": {
   "first_seen": "2026-06-29",
@@ -5517,7 +5517,7 @@
   "last_price": 6690,
   "last_change": "2026-09-11",
   "min_price": 6690,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "79106595": {
   "first_seen": "2026-06-30",
@@ -6029,7 +6029,7 @@
   "last_price": 3980,
   "last_change": "2026-07-10",
   "min_price": 3980,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "20538985": {
   "first_seen": "2026-07-02",
@@ -6485,7 +6485,7 @@
   "last_price": 5498,
   "last_change": "2026-09-11",
   "min_price": 5498,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "20979876": {
   "first_seen": "2026-07-04",
@@ -6781,7 +6781,7 @@
   "last_price": 3188,
   "last_change": "2026-09-02",
   "min_price": 3188,
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-15"
  },
  "20970805": {
   "first_seen": "2026-07-06",
@@ -7245,7 +7245,7 @@
   "last_price": 6280,
   "last_change": "2026-08-14",
   "min_price": 6280,
-  "last_seen": "2026-09-10"
+  "last_seen": "2026-09-15"
  },
  "21247119": {
   "first_seen": "2026-07-09",
@@ -7458,10 +7458,10 @@
  "21196695": {
   "first_seen": "2026-07-10",
   "first_price": 20880,
-  "last_price": 17990,
-  "last_change": "2026-08-09",
-  "min_price": 17990,
-  "last_seen": "2026-08-09"
+  "last_price": 15990,
+  "last_change": "2026-09-15",
+  "min_price": 15990,
+  "last_seen": "2026-09-15"
  },
  "20714314": {
   "first_seen": "2026-07-10",
@@ -8301,7 +8301,7 @@
   "last_price": 8999,
   "last_change": "2026-09-05",
   "min_price": 8999,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21045666": {
   "first_seen": "2026-07-16",
@@ -8954,10 +8954,10 @@
  "20443081": {
   "first_seen": "2026-07-20",
   "first_price": 6599,
-  "last_price": 6499,
-  "last_change": "2026-08-10",
-  "min_price": 6499,
-  "last_seen": "2026-08-13"
+  "last_price": 6299,
+  "last_change": "2026-09-15",
+  "min_price": 6299,
+  "last_seen": "2026-09-15"
  },
  "21328368": {
   "first_seen": "2026-07-20",
@@ -9981,7 +9981,7 @@
   "last_price": 15980,
   "last_change": "2026-08-24",
   "min_price": 15980,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21178566": {
   "first_seen": "2026-07-25",
@@ -10341,7 +10341,7 @@
   "last_price": 36000,
   "last_change": "2026-07-27",
   "min_price": 36000,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21375047": {
   "first_seen": "2026-07-27",
@@ -11317,7 +11317,7 @@
   "last_price": 3999,
   "last_change": "2026-07-30",
   "min_price": 3999,
-  "last_seen": "2026-09-08"
+  "last_seen": "2026-09-15"
  },
  "21350611": {
   "first_seen": "2026-07-30",
@@ -11522,9 +11522,9 @@
  "21394592": {
   "first_seen": "2026-07-31",
   "first_price": 10780,
-  "last_price": 10780,
-  "last_change": "2026-07-31",
-  "min_price": 10780,
+  "last_price": 9980,
+  "last_change": "2026-09-15",
+  "min_price": 9980,
   "last_seen": "2026-09-15"
  },
  "21362437": {
@@ -11570,9 +11570,9 @@
  "21387246": {
   "first_seen": "2026-07-31",
   "first_price": 5498,
-  "last_price": 5498,
-  "last_change": "2026-07-31",
-  "min_price": 5498,
+  "last_price": 5298,
+  "last_change": "2026-09-15",
+  "min_price": 5298,
   "last_seen": "2026-09-15"
  },
  "21241965": {
@@ -11650,10 +11650,10 @@
  "21404548": {
   "first_seen": "2026-07-31",
   "first_price": 11880,
-  "last_price": 11480,
-  "last_change": "2026-08-07",
-  "min_price": 11480,
-  "last_seen": "2026-09-06"
+  "last_price": 10980,
+  "last_change": "2026-09-15",
+  "min_price": 10980,
+  "last_seen": "2026-09-15"
  },
  "21384539": {
   "first_seen": "2026-07-31",
@@ -12282,9 +12282,9 @@
  "21414092": {
   "first_seen": "2026-08-02",
   "first_price": 4880,
-  "last_price": 4780,
-  "last_change": "2026-08-29",
-  "min_price": 4780,
+  "last_price": 4680,
+  "last_change": "2026-09-15",
+  "min_price": 4680,
   "last_seen": "2026-09-15"
  },
  "21163474": {
@@ -12986,9 +12986,9 @@
  "21378189": {
   "first_seen": "2026-08-04",
   "first_price": 11490,
-  "last_price": 10790,
-  "last_change": "2026-09-04",
-  "min_price": 10790,
+  "last_price": 10500,
+  "last_change": "2026-09-15",
+  "min_price": 10500,
   "last_seen": "2026-09-15"
  },
  "20551006": {
@@ -13229,7 +13229,7 @@
   "last_price": 1480,
   "last_change": "2026-08-04",
   "min_price": 1480,
-  "last_seen": "2026-09-11"
+  "last_seen": "2026-09-15"
  },
  "21410981": {
   "first_seen": "2026-08-04",
@@ -13333,7 +13333,7 @@
   "last_price": 5180,
   "last_change": "2026-08-04",
   "min_price": 5180,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "20877999": {
   "first_seen": "2026-08-04",
@@ -14781,7 +14781,7 @@
   "last_price": 15980,
   "last_change": "2026-08-08",
   "min_price": 15980,
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-15"
  },
  "21414298": {
   "first_seen": "2026-08-08",
@@ -16637,7 +16637,7 @@
   "last_price": 10480,
   "last_change": "2026-09-09",
   "min_price": 10480,
-  "last_seen": "2026-09-10"
+  "last_seen": "2026-09-15"
  },
  "21458108": {
   "first_seen": "2026-08-14",
@@ -17034,9 +17034,9 @@
  "21136133": {
   "first_seen": "2026-08-17",
   "first_price": 6280,
-  "last_price": 6280,
-  "last_change": "2026-08-17",
-  "min_price": 6280,
+  "last_price": 6080,
+  "last_change": "2026-09-15",
+  "min_price": 6080,
   "last_seen": "2026-09-15"
  },
  "21480186": {
@@ -17797,7 +17797,7 @@
   "last_price": 5798,
   "last_change": "2026-08-19",
   "min_price": 5798,
-  "last_seen": "2026-08-30"
+  "last_seen": "2026-09-15"
  },
  "21447146": {
   "first_seen": "2026-08-19",
@@ -18373,7 +18373,7 @@
   "last_price": 10800,
   "last_change": "2026-09-01",
   "min_price": 10800,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21527375": {
   "first_seen": "2026-08-21",
@@ -18429,7 +18429,7 @@
   "last_price": 9299,
   "last_change": "2026-08-21",
   "min_price": 9299,
-  "last_seen": "2026-09-01"
+  "last_seen": "2026-09-15"
  },
  "21525541": {
   "first_seen": "2026-08-21",
@@ -18482,9 +18482,9 @@
  "20025600": {
   "first_seen": "2026-08-21",
   "first_price": 12880,
-  "last_price": 12880,
-  "last_change": "2026-09-11",
-  "min_price": 12880,
+  "last_price": 12480,
+  "last_change": "2026-09-15",
+  "min_price": 12480,
   "last_seen": "2026-09-15"
  },
  "21524914": {
@@ -18786,10 +18786,10 @@
  "21541588": {
   "first_seen": "2026-08-23",
   "first_price": 12699,
-  "last_price": 12199,
-  "last_change": "2026-08-24",
-  "min_price": 12199,
-  "last_seen": "2026-09-01"
+  "last_price": 11999,
+  "last_change": "2026-09-15",
+  "min_price": 11999,
+  "last_seen": "2026-09-15"
  },
  "21501505": {
   "first_seen": "2026-08-23",
@@ -18970,10 +18970,10 @@
  "21460245": {
   "first_seen": "2026-08-24",
   "first_price": 7799,
-  "last_price": 7799,
-  "last_change": "2026-08-24",
-  "min_price": 7799,
-  "last_seen": "2026-09-01"
+  "last_price": 7499,
+  "last_change": "2026-09-15",
+  "min_price": 7499,
+  "last_seen": "2026-09-15"
  },
  "21553019": {
   "first_seen": "2026-08-24",
@@ -19173,7 +19173,7 @@
   "last_price": 4280,
   "last_change": "2026-08-24",
   "min_price": 4280,
-  "last_seen": "2026-09-11"
+  "last_seen": "2026-09-15"
  },
  "21506340": {
   "first_seen": "2026-08-24",
@@ -20165,7 +20165,7 @@
   "last_price": 4950,
   "last_change": "2026-08-27",
   "min_price": 4950,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21571533": {
   "first_seen": "2026-08-28",
@@ -20322,10 +20322,10 @@
  "21192115": {
   "first_seen": "2026-08-28",
   "first_price": 5480,
-  "last_price": 5480,
-  "last_change": "2026-08-28",
-  "min_price": 5480,
-  "last_seen": "2026-08-28"
+  "last_price": 5180,
+  "last_change": "2026-09-15",
+  "min_price": 5180,
+  "last_seen": "2026-09-15"
  },
  "21566053": {
   "first_seen": "2026-08-28",
@@ -23005,7 +23005,7 @@
   "last_price": 5880,
   "last_change": "2026-09-03",
   "min_price": 5880,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21521126": {
   "first_seen": "2026-09-03",
@@ -23981,7 +23981,7 @@
   "last_price": 11800,
   "last_change": "2026-09-05",
   "min_price": 11800,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21253922": {
   "first_seen": "2026-09-05",
@@ -24021,7 +24021,7 @@
   "last_price": 14580,
   "last_change": "2026-09-06",
   "min_price": 14580,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21647343": {
   "first_seen": "2026-09-06",
@@ -24234,10 +24234,10 @@
  "20025217": {
   "first_seen": "2026-09-06",
   "first_price": 9298,
-  "last_price": 9298,
-  "last_change": "2026-09-06",
-  "min_price": 9298,
-  "last_seen": "2026-09-08"
+  "last_price": 9198,
+  "last_change": "2026-09-15",
+  "min_price": 9198,
+  "last_seen": "2026-09-15"
  },
  "20954873": {
   "first_seen": "2026-09-06",
@@ -25133,7 +25133,7 @@
   "last_price": 7499,
   "last_change": "2026-09-08",
   "min_price": 7499,
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-15"
  },
  "20881313": {
   "first_seen": "2026-09-08",
@@ -25229,7 +25229,7 @@
   "last_price": 10980,
   "last_change": "2026-09-08",
   "min_price": 10980,
-  "last_seen": "2026-09-08"
+  "last_seen": "2026-09-15"
  },
  "21662670": {
   "first_seen": "2026-09-08",
@@ -25525,7 +25525,7 @@
   "last_price": 13000,
   "last_change": "2026-09-10",
   "min_price": 13000,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21652338": {
   "first_seen": "2026-09-10",
@@ -25597,7 +25597,7 @@
   "last_price": 4380,
   "last_change": "2026-09-10",
   "min_price": 4380,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21458654": {
   "first_seen": "2026-09-10",
@@ -25869,7 +25869,7 @@
   "last_price": 8480,
   "last_change": "2026-09-11",
   "min_price": 8480,
-  "last_seen": "2026-09-11"
+  "last_seen": "2026-09-15"
  },
  "21630018": {
   "first_seen": "2026-09-11",
@@ -26181,7 +26181,7 @@
   "last_price": 6199,
   "last_change": "2026-09-12",
   "min_price": 6199,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21697530": {
   "first_seen": "2026-09-12",
@@ -26269,7 +26269,7 @@
   "last_price": 10480,
   "last_change": "2026-09-12",
   "min_price": 10480,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21646793": {
   "first_seen": "2026-09-12",
@@ -26685,7 +26685,7 @@
   "last_price": 18000,
   "last_change": "2026-09-13",
   "min_price": 18000,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21651579": {
   "first_seen": "2026-09-13",
@@ -26861,7 +26861,7 @@
   "last_price": 6299,
   "last_change": "2026-09-13",
   "min_price": 6299,
-  "last_seen": "2026-09-13"
+  "last_seen": "2026-09-15"
  },
  "21634533": {
   "first_seen": "2026-09-13",
@@ -27413,6 +27413,182 @@
   "last_price": 8000,
   "last_change": "2026-09-15",
   "min_price": 8000,
+  "last_seen": "2026-09-15"
+ },
+ "21712282": {
+  "first_seen": "2026-09-15",
+  "first_price": 8500,
+  "last_price": 8500,
+  "last_change": "2026-09-15",
+  "min_price": 8500,
+  "last_seen": "2026-09-15"
+ },
+ "21664414": {
+  "first_seen": "2026-09-15",
+  "first_price": 9680,
+  "last_price": 9680,
+  "last_change": "2026-09-15",
+  "min_price": 9680,
+  "last_seen": "2026-09-15"
+ },
+ "21712688": {
+  "first_seen": "2026-09-15",
+  "first_price": 6880,
+  "last_price": 6880,
+  "last_change": "2026-09-15",
+  "min_price": 6880,
+  "last_seen": "2026-09-15"
+ },
+ "21650564": {
+  "first_seen": "2026-09-15",
+  "first_price": 11990,
+  "last_price": 11990,
+  "last_change": "2026-09-15",
+  "min_price": 11990,
+  "last_seen": "2026-09-15"
+ },
+ "21720640": {
+  "first_seen": "2026-09-15",
+  "first_price": 6880,
+  "last_price": 6880,
+  "last_change": "2026-09-15",
+  "min_price": 6880,
+  "last_seen": "2026-09-15"
+ },
+ "21618474": {
+  "first_seen": "2026-09-15",
+  "first_price": 9083,
+  "last_price": 9083,
+  "last_change": "2026-09-15",
+  "min_price": 9083,
+  "last_seen": "2026-09-15"
+ },
+ "21665935": {
+  "first_seen": "2026-09-15",
+  "first_price": 9800,
+  "last_price": 9800,
+  "last_change": "2026-09-15",
+  "min_price": 9800,
+  "last_seen": "2026-09-15"
+ },
+ "21699909": {
+  "first_seen": "2026-09-15",
+  "first_price": 8980,
+  "last_price": 8980,
+  "last_change": "2026-09-15",
+  "min_price": 8980,
+  "last_seen": "2026-09-15"
+ },
+ "21714902": {
+  "first_seen": "2026-09-15",
+  "first_price": 9998,
+  "last_price": 9998,
+  "last_change": "2026-09-15",
+  "min_price": 9998,
+  "last_seen": "2026-09-15"
+ },
+ "21680734": {
+  "first_seen": "2026-09-15",
+  "first_price": 23480,
+  "last_price": 23480,
+  "last_change": "2026-09-15",
+  "min_price": 23480,
+  "last_seen": "2026-09-15"
+ },
+ "21543817": {
+  "first_seen": "2026-09-15",
+  "first_price": 8298,
+  "last_price": 8298,
+  "last_change": "2026-09-15",
+  "min_price": 8298,
+  "last_seen": "2026-09-15"
+ },
+ "21657537": {
+  "first_seen": "2026-09-15",
+  "first_price": 9880,
+  "last_price": 9880,
+  "last_change": "2026-09-15",
+  "min_price": 9880,
+  "last_seen": "2026-09-15"
+ },
+ "21682655": {
+  "first_seen": "2026-09-15",
+  "first_price": 6990,
+  "last_price": 6990,
+  "last_change": "2026-09-15",
+  "min_price": 6990,
+  "last_seen": "2026-09-15"
+ },
+ "21669453": {
+  "first_seen": "2026-09-15",
+  "first_price": 4699,
+  "last_price": 4699,
+  "last_change": "2026-09-15",
+  "min_price": 4699,
+  "last_seen": "2026-09-15"
+ },
+ "21667133": {
+  "first_seen": "2026-09-15",
+  "first_price": 29800,
+  "last_price": 29800,
+  "last_change": "2026-09-15",
+  "min_price": 29800,
+  "last_seen": "2026-09-15"
+ },
+ "21607901": {
+  "first_seen": "2026-09-15",
+  "first_price": 2880,
+  "last_price": 2880,
+  "last_change": "2026-09-15",
+  "min_price": 2880,
+  "last_seen": "2026-09-15"
+ },
+ "21652855": {
+  "first_seen": "2026-09-15",
+  "first_price": 6699,
+  "last_price": 6699,
+  "last_change": "2026-09-15",
+  "min_price": 6699,
+  "last_seen": "2026-09-15"
+ },
+ "20810157": {
+  "first_seen": "2026-09-15",
+  "first_price": 8199,
+  "last_price": 8199,
+  "last_change": "2026-09-15",
+  "min_price": 8199,
+  "last_seen": "2026-09-15"
+ },
+ "21063451": {
+  "first_seen": "2026-09-15",
+  "first_price": 7799,
+  "last_price": 7799,
+  "last_change": "2026-09-15",
+  "min_price": 7799,
+  "last_seen": "2026-09-15"
+ },
+ "21664415": {
+  "first_seen": "2026-09-15",
+  "first_price": 13500,
+  "last_price": 13500,
+  "last_change": "2026-09-15",
+  "min_price": 13500,
+  "last_seen": "2026-09-15"
+ },
+ "21712273": {
+  "first_seen": "2026-09-15",
+  "first_price": 4480,
+  "last_price": 4480,
+  "last_change": "2026-09-15",
+  "min_price": 4480,
+  "last_seen": "2026-09-15"
+ },
+ "21667348": {
+  "first_seen": "2026-09-15",
+  "first_price": 9980,
+  "last_price": 9980,
+  "last_change": "2026-09-15",
+  "min_price": 9980,
   "last_seen": "2026-09-15"
  }
 }
