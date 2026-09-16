@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-15T00:37:02.676329+00:00",
- "source_updated": "2026-09-15T09:09:01.981496+09:00",
+ "updated": "2026-09-16T00:02:29.219696+00:00",
+ "source_updated": "2026-09-16T08:53:47.461603+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -308,7 +308,7 @@
    "tsubo_unit": 480,
    "walk": 6,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 1.03,
