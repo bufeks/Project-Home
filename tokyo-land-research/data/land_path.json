@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-16T00:02:29.219696+00:00",
- "source_updated": "2026-09-16T08:53:47.461603+09:00",
+ "updated": "2026-09-17T00:26:44.072169+00:00",
+ "source_updated": "2026-09-17T08:59:10.396568+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -98,6 +98,22 @@
    "rebuild_ng": false,
    "ratio": 1.61,
    "grade": "高"
+  },
+  {
+   "ward": "品川区",
+   "loc": "品川区豊町１",
+   "price": 3000,
+   "land": 49.25,
+   "tsubo_unit": 201,
+   "walk": 11,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinagawa/nc_21713059/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.9,
+   "grade": "低"
   },
   {
    "ward": "目黒区",
@@ -373,23 +389,6 @@
    "rebuild_ng": false,
    "ratio": 0.77,
    "grade": "中"
-  },
-  {
-   "ward": "目黒区",
-   "loc": "目黒区中根２",
-   "price": 6580,
-   "land": 130.9,
-   "tsubo_unit": 166,
-   "walk": 4,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21389068/",
-   "tags": [
-    "再建築不可",
-    "売り急ぎ"
-   ],
-   "rebuild_ng": true,
-   "ratio": 1.6,
-   "grade": "中高"
   }
  ],
  "escape": [
