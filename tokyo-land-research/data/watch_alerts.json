@@ -1,5 +1,28 @@
 [
  {
+  "id": "21737411",
+  "name": "トダカ高田馬場コーポ",
+  "loc": "新宿区下落合１-8-1",
+  "price": 3180,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21737411/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-18T17:47:14.670282+09:00",
+  "score": 54,
+  "ratio": 1.07,
+  "tier": "A",
+  "walk": 9,
+  "area": 39.59,
+  "plan": "1LDK",
+  "year": 1971,
+  "cagr": 4.6,
+  "net": -124,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "21730868",
   "name": "モナーク北新宿",
   "loc": "新宿区北新宿３-6-5",
@@ -818,27 +841,6 @@
   "year": null,
   "cagr": 5.6,
   "net": 1380,
-  "tags": []
- },
- {
-  "id": "21676502",
-  "name": "哲学堂マンション 新宿区西落合２丁目",
-  "loc": "新宿区西落合２-7-25",
-  "price": 2690,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21676502/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-12T17:23:12.002068+09:00",
-  "score": 85,
-  "ratio": 1.67,
-  "tier": "A",
-  "walk": 8,
-  "area": 45.98,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": 1448,
   "tags": []
  }
 ]
