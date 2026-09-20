@@ -52,7 +52,7 @@ a{color:var(--accent)}
 </style></head><body><div class="wrap">
 <h1>一階を<b>住居</b>として貸す前提で買えるか — 賃貸併用スクリーナー <a href="./hybrid_tenant.html" style="font-size:.6em;font-weight:400">→ 店舗テナント版</a> <a href="./hybrid_rentout.html" style="font-size:.6em;font-weight:400">→ 住まず全部貸す版</a></h1>
 <p class="lead">
- 母集団 345件（2026-09-20 時点のSUUMO自動取得）から、
+ 母集団 1237件（2026-09-21 時点のSUUMO自動取得）から、
  1階に独立した住戸 を切り出せる戸建・土地を抽出し、<b>買って1階を貸したときの実質住居費</b>を試算。
  判定基準・法規・税の整理は <a href="./rental_hybrid.md">rental_hybrid.md</a>、
  取得力と返済加速は <a href="./loan_plan.html">loan_plan.html</a>、
@@ -60,8 +60,107 @@ a{color:var(--accent)}
 </p>
 <div class="note"><b>この表の読み方。</b>「余裕度」＝想定賃料 ÷ 損益分岐賃料。1.0を割ると、賃貸部分は返済を賄えず自宅側の持ち出しになる。「実質の住居費」＝月返済＋固都税等−賃貸の手取り。これを<b>いま払っている家賃と比べる</b>のが唯一の使い方。想定賃料は区の実取引㎡単価からの<b>推定値</b>（賃料の一次データではない）。必ずSUUMO賃貸で同一エリア・同面積の<b>実募集</b>3件以上に置き換えて再計算すること。1階を店舗テナントに貸す前提なら <code>--use tenant</code> で再計算する。</div>
 
-<h2>候補 8件（余裕度順）</h2>
+<h2>候補 33件（余裕度順）</h2>
 <div class="grid"><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_21630406/" target="_blank" rel="noopener">葛飾区西水元３-3</a></h3>
+ <div class="meta">戸建・木造 5LLDDKK／土地156㎡ / 延床161㎡／駅徒歩7分</div>
+ <div class="big">4,299万円</div>
+ <div><span class="badge b-ok">賃貸部分が自走（余裕度1.94）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口C</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の28%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.1万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">5.2万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">301万円</span>
+  <span class="k">総事業費</span><span class="v">5,150万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">4,550万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">12.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.4万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>7.0万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">届く</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">20.8年（35年→ <b>-14.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-354万円</span>
+ </div>
+ <div class="flags"></div>
+ <div class="notes"><div>・接道良好（前面道路 約35.37m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率150%＝土地156㎡で延床約235㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・相場比が極端に高い＝まだ見えていない難（接道・間口・方位・嫌悪施設など）の可能性。現地確認必須</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_itabashi/nc_20460482/" target="_blank" rel="noopener">板橋区東坂下１</a></h3>
+ <div class="meta">戸建・木造 4LDK／土地52㎡ / 延床109㎡／駅徒歩12分</div>
+ <div class="big">3,980万円</div>
+ <div><span class="badge b-ok">賃貸部分が自走（余裕度1.76）</span><span class="badge b-mut">値持ち低</span><span class="badge b-mut">出口B</span><span class="badge b-mut">工業専用</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">26.5㎡（延床の24%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">7.4万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">4.2万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">279万円</span>
+  <span class="k">総事業費</span><span class="v">4,809万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">4,209万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">11.9万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+5.4万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>7.9万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">届く</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">22.8年（35年→ <b>-12.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-282万円</span>
+ </div>
+ <div class="flags"></div>
+ <div class="notes"><div>・掲載後 4,280→3,980万円（-300万・-7%）値下げ＝指値余地/売り急ぎの可能性</div><div>・観測83日の滞留＝買い手がついていない（指値の余地）</div><div>・用途地域:工業専用（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21605782/" target="_blank" rel="noopener">新宿区四谷４</a></h3>
+ <div class="meta">戸建・木造 6LDK／土地174㎡ / 延床174㎡／駅徒歩7分</div>
+ <div class="big">12,000万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.26）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口A</span><span class="badge b-mut">商業地域</span><span class="badge b-mut">売り急ぎ</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の26%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">16.9万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">13.5万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">840万円</span>
+  <span class="k">総事業費</span><span class="v">13,390万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">12,790万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">36.1万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+12.0万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>28.0万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">8,551万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">25.1年（35年→ <b>-9.9年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-700万円</span>
+ </div>
+ <div class="flags"><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費13,390万円に対し自己資金が8,551万円必要</div></div>
+ <div class="notes"><div>・前面道路 約3m（4m未満＝セットバック/再建築の制約に注意）</div><div>・用途地域：商業地域・容積400%/建ぺい80%（国交省・都市計画）（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・将来人口(社人研・地点250m) 2025→2050 +10%＝増加・2050高齢化率14%</div><div>・容積率400%＝土地174㎡で延床約696㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
+</div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_kita/nc_21652277/" target="_blank" rel="noopener">北区岸町２</a></h3>
  <div class="meta">土地・ ／土地126㎡ / 建築可202㎡／駅徒歩8分</div>
  <div class="big">4,180万円</div>
@@ -94,6 +193,204 @@ a{color:var(--accent)}
  </div>
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費9,918万円に対し自己資金が5,079万円必要</div></div>
  <div class="notes"><div>・接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率160%＝土地126㎡で延床約202㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・相場比が極端に高い＝まだ見えていない難（接道・間口・方位・嫌悪施設など）の可能性。現地確認必須</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_21674523/" target="_blank" rel="noopener">葛飾区東水元５-30</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地91㎡ / 延床104㎡／駅徒歩6分</div>
+ <div class="big">4,620万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.17）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の43%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.1万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">8.7万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">323万円</span>
+  <span class="k">総事業費</span><span class="v">5,493万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">4,893万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">13.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.1万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>8.3万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">654万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">21.8年（35年→ <b>-13.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-357万円</span>
+ </div>
+ <div class="flags"><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費5,493万円に対し自己資金が654万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率200%＝土地91㎡で延床約183㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_adachi/nc_21572918/" target="_blank" rel="noopener">足立区花畑７</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地114㎡ / 延床91㎡／駅徒歩6分</div>
+ <div class="big">3,999万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.16）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口C</span><span class="badge b-mut">売り急ぎ</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">40.8㎡（延床の45%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">9.1万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">7.8万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">280万円</span>
+  <span class="k">総事業費</span><span class="v">4,829万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">4,229万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">11.9万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+6.3万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>7.0万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">届く</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">21.5年（35年→ <b>-13.5年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-314万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率240%＝土地114㎡で延床約275㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・売り急ぎ/相続のサイン（お早めに）＝指値が通りやすい可能性（要確認）</div><div>・相場比が極端に高い＝まだ見えていない難（接道・間口・方位・嫌悪施設など）の可能性。現地確認必須</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_21687185/" target="_blank" rel="noopener">葛飾区水元５</a></h3>
+ <div class="meta">戸建・木造 2LDK／土地91㎡ / 延床94㎡／駅徒歩8分</div>
+ <div class="big">4,280万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.14）</span><span class="badge b-mut">値持ち低</span><span class="badge b-mut">出口C</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">42.3㎡（延床の45%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">9.5万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">8.3万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">300万円</span>
+  <span class="k">総事業費</span><span class="v">5,130万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">4,530万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">12.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+6.7万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>7.6万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">届く</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">21.6年（35年→ <b>-13.4年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-332万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率150%＝土地91㎡で延床約136㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_adachi/nc_21590256/" target="_blank" rel="noopener">足立区古千谷本町２</a></h3>
+ <div class="meta">戸建・木造 2LDK／土地110㎡ / 延床100㎡／駅徒歩9分</div>
+ <div class="big">4,600万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.11）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口C</span><span class="badge b-mut">売り急ぎ</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">44.9㎡（延床の45%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.0万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">9.0万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">322万円</span>
+  <span class="k">総事業費</span><span class="v">5,472万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">4,872万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">13.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.0万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>8.4万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">633万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">21.8年（35年→ <b>-13.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-351万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費5,472万円に対し自己資金が633万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約7m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率150%＝土地110㎡で延床約165㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・売り急ぎ/相続のサイン（相続）＝指値が通りやすい可能性（要確認）</div><div>・目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21465673/" target="_blank" rel="noopener">新宿区中落合３</a></h3>
+ <div class="meta">戸建・RC 4LDK／土地54㎡ / 延床122㎡／駅徒歩7分</div>
+ <div class="big">9,580万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.11）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">27.5㎡（延床の22%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.3万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">9.3万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">671万円</span>
+  <span class="k">総事業費</span><span class="v">10,801万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,201万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">28.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.2万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>24.7万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,962万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">26.9年（35年→ <b>-8.1年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-455万円</span>
+ </div>
+ <div class="flags"><div>⚠現況延床122㎡ &gt; 容積上の建築可能108㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,801万円に対し自己資金が5,962万円必要</div></div>
+ <div class="notes"><div>・観測36日の滞留＝買い手がついていない（指値の余地）</div><div>・接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_78284256/" target="_blank" rel="noopener">目黒区下目黒２</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地54㎡ / 延床108㎡／駅徒歩9分</div>
+ <div class="big">9,480万円</div>
+ <div><span class="badge b-warn">ほぼ収支トントン（余裕度1.00）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span><span class="badge b-mut">準工業</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">27.3㎡（延床の25%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.3万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">10.4万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">664万円</span>
+  <span class="k">総事業費</span><span class="v">10,694万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,094万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">28.5万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.2万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>24.4万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,855万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">26.9年（35年→ <b>-8.1年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-450万円</span>
+ </div>
+ <div class="flags"><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,694万円に対し自己資金が5,855万円必要</div></div>
+ <div class="notes"><div>・観測89日の滞留＝買い手がついていない（指値の余地）</div><div>・用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・前面道路 約2.5m（4m未満＝セットバック/再建築の制約に注意）</div><div>・容積率240%＝土地54㎡で延床約129㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
 </div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21554514/" target="_blank" rel="noopener">荒川区南千住５</a></h3>
  <div class="meta">土地・ ／土地72㎡ / 建築可215㎡／駅徒歩4分</div>
@@ -128,6 +425,72 @@ a{color:var(--accent)}
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費11,309万円に対し自己資金が6,470万円必要</div></div>
  <div class="notes"><div>・用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・容積率300%＝土地72㎡で延床約215㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）</div></div>
 </div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21426250/" target="_blank" rel="noopener">新宿区西落合１</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地65㎡ / 延床105㎡／駅徒歩10分</div>
+ <div class="big">9,450万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.96）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">33.3㎡（延床の32%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">12.5万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">13.0万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">662万円</span>
+  <span class="k">総事業費</span><span class="v">10,662万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,062万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">28.4万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+8.6万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>22.9万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,823万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">25.8年（35年→ <b>-9.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-517万円</span>
+ </div>
+ <div class="flags"><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,662万円に対し自己資金が5,823万円必要</div></div>
+ <div class="notes"><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21597462/" target="_blank" rel="noopener">新宿区中落合３</a></h3>
+ <div class="meta">戸建・RC 4LDK／土地93㎡ / 延床98㎡／駅徒歩6分</div>
+ <div class="big">9,000万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.94）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">44.0㎡（延床の45%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">16.5万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">17.5万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">630万円</span>
+  <span class="k">総事業費</span><span class="v">10,180万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">9,580万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">27.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+11.4万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>18.6万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,341万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">23.3年（35年→ <b>-11.7年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-615万円</span>
+ </div>
+ <div class="flags"><div>⚠現況延床98㎡ &gt; 容積上の建築可能93㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,180万円に対し自己資金が5,341万円必要</div></div>
+ <div class="notes"><div>・前面道路 約3m（4m未満＝セットバック/再建築の制約に注意）</div><div>・目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）</div></div>
+</div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21306082/" target="_blank" rel="noopener">荒川区西日暮里１</a></h3>
  <div class="meta">土地・ ／土地50㎡ / 建築可149㎡／駅徒歩4分</div>
  <div class="big">6,180万円</div>
@@ -159,7 +522,73 @@ a{color:var(--accent)}
   <span class="k">利息の削減額</span><span class="v">-349万円</span>
  </div>
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費12,022万円に対し自己資金が7,183万円必要</div></div>
- <div class="notes"><div>・観測63日の滞留＝買い手がついていない（指値の余地）</div><div>・用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）</div><div>・容積率300%＝土地50㎡で延床約149㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
+ <div class="notes"><div>・観測64日の滞留＝買い手がついていない（指値の余地）</div><div>・用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）</div><div>・容積率300%＝土地50㎡で延床約149㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21706320/" target="_blank" rel="noopener">新宿区西落合１</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地66㎡ / 延床95㎡／駅徒歩9分</div>
+ <div class="big">8,980万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.92）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span><span class="badge b-mut">準工業</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">33.7㎡（延床の35%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">12.7万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">13.8万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">629万円</span>
+  <span class="k">総事業費</span><span class="v">10,159万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">9,559万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">27.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+8.7万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>21.2万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,320万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">25.3年（35年→ <b>-9.7年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-511万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,159万円に対し自己資金が5,320万円必要</div></div>
+ <div class="notes"><div>・用途地域:準工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・容積率200%＝土地66㎡で延床約132㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_21536484/" target="_blank" rel="noopener">世田谷区梅丘２</a></h3>
+ <div class="meta">戸建・木造 4LDK／土地63㎡ / 延床110㎡／駅徒歩7分</div>
+ <div class="big">9,580万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.90）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">32.2㎡（延床の29%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.9万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">12.1万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">671万円</span>
+  <span class="k">総事業費</span><span class="v">10,801万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,201万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">28.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.4万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>24.5万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,962万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">26.8年（35年→ <b>-8.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-464万円</span>
+ </div>
+ <div class="flags"><div>⚠現況延床110㎡ &gt; 容積上の建築可能95㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,801万円に対し自己資金が5,962万円必要</div></div>
+ <div class="notes"><div>・前面道路 約3.9m（4m未満＝セットバック/再建築の制約に注意）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
 </div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_suginami/nc_20585347/" target="_blank" rel="noopener">杉並区井草５</a></h3>
  <div class="meta">土地・ ／土地193㎡ / 建築可193㎡／駅徒歩5分</div>
@@ -197,7 +626,7 @@ a{color:var(--accent)}
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_shinagawa/nc_20863877/" target="_blank" rel="noopener">品川区戸越２</a></h3>
  <div class="meta">土地・ ／土地142㎡ / 建築可283㎡／駅徒歩6分</div>
  <div class="big">9,800万円</div>
- <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.90）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口A</span><span class="badge b-mut">第１種住居地域</span></div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.90）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口A</span></div>
  <div class="kv">
   <span class="k">1階 住戸（想定）</span><span class="v">45㎡（延床の30%）</span>
   <span class="k">想定賃料（相場推定）</span><span class="v">16.8万円/月</span>
@@ -225,7 +654,205 @@ a{color:var(--accent)}
   <span class="k">利息の削減額</span><span class="v">-713万円</span>
  </div>
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費15,931万円に対し自己資金が11,092万円必要</div></div>
- <div class="notes"><div>・観測88日の滞留＝買い手がついていない（指値の余地）</div><div>・接道良好（前面道路 約5.4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・用途地域：第１種住居地域・容積200%/建ぺい60%（国交省・都市計画）</div><div>・将来人口(社人研・地点250m) 2025→2050 -1%＝ほぼ横ばい・2050高齢化率16%</div></div>
+ <div class="notes"><div>・観測89日の滞留＝買い手がついていない（指値の余地）</div><div>・接道良好（前面道路 約5.4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率200%＝土地142㎡で延床約283㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・相場比が極端に高い＝まだ見えていない難（接道・間口・方位・嫌悪施設など）の可能性。現地確認必須</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21616700/" target="_blank" rel="noopener">新宿区西落合２</a></h3>
+ <div class="meta">戸建・木造 4LDK／土地74㎡ / 延床94㎡／駅徒歩7分</div>
+ <div class="big">9,280万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.88）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">37.6㎡（延床の40%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">14.1万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">16.0万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">650万円</span>
+  <span class="k">総事業費</span><span class="v">10,480万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">9,880万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">27.9万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+9.7万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>21.3万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,641万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">24.8年（35年→ <b>-10.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-556万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,480万円に対し自己資金が5,641万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約11.73m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率160%＝土地74㎡で延床約118㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21657040/" target="_blank" rel="noopener">新宿区西落合３</a></h3>
+ <div class="meta">戸建・RC 3LDK／土地70㎡ / 延床91㎡／駅徒歩5分</div>
+ <div class="big">8,980万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.87）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">35.6㎡（延床の39%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">13.4万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">15.3万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">629万円</span>
+  <span class="k">総事業費</span><span class="v">10,159万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">9,559万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">27.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+9.1万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>20.8万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,320万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">25.0年（35年→ <b>-10.0年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-529万円</span>
+ </div>
+ <div class="flags"><div>⚠現況延床91㎡ &gt; 容積上の建築可能70㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,159万円に対し自己資金が5,320万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約6m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21588770/" target="_blank" rel="noopener">渋谷区西原３</a></h3>
+ <div class="meta">戸建・RC 1LDK／土地66㎡ / 延床102㎡／駅徒歩5分</div>
+ <div class="big">11,000万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.85）</span><span class="badge b-mut">値持ち高</span><span class="badge b-mut">出口S</span><span class="badge b-mut">第１種低層住居専用地域</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">33.7㎡（延床の33%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">13.5万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">15.7万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">770万円</span>
+  <span class="k">総事業費</span><span class="v">12,320万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">11,720万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">33.1万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+9.2万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>27.5万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">7,481万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">26.3年（35年→ <b>-8.7年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-562万円</span>
+ </div>
+ <div class="flags"><div>第１種低層住居専用地域＝住宅の賃貸は可だが店舗貸しは原則不可（兼用住宅の要件内のみ）</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費12,320万円に対し自己資金が7,481万円必要</div></div>
+ <div class="notes"><div>・前面道路 約3.6m（4m未満＝セットバック/再建築の制約に注意）</div><div>・用途地域：第１種低層住居専用地域・容積150%/建ぺい60%（国交省・都市計画）</div><div>・将来人口(社人研・地点250m) 2025→2050 +17%＝増加・2050高齢化率14%</div><div>・目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21410308/" target="_blank" rel="noopener">渋谷区本町３</a></h3>
+ <div class="meta">戸建・木造 2LDK／土地53㎡ / 延床91㎡／駅徒歩4分</div>
+ <div class="big">9,990万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.84）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口S</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">27.0㎡（延床の30%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.8万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">12.8万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">699万円</span>
+  <span class="k">総事業費</span><span class="v">11,239万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,639万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">30.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.3万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>26.0万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">6,400万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">27.2年（35年→ <b>-7.8年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-464万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠現況延床91㎡ &gt; 容積上の建築可能85㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費11,239万円に対し自己資金が6,400万円必要</div></div>
+ <div class="notes"><div>・掲載後 12,500→9,990万円（-2,510万・-20%）値下げ＝指値余地/売り急ぎの可能性</div><div>・観測43日の滞留＝買い手がついていない（指値の余地）</div><div>・前面道路 約3.45m（4m未満＝セットバック/再建築の制約に注意）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/ikkodate/tokyo/sc_nakano/nc_21391458/" target="_blank" rel="noopener">中野区鷺宮４-13-6</a></h3>
+ <div class="meta">戸建・木造 2LDK／土地86㎡ / 延床102㎡／駅徒歩7分</div>
+ <div class="big">9,680万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.82）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span><span class="badge b-mut">新築</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">43.9㎡（延床の43%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">14.8万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">18.0万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">678万円</span>
+  <span class="k">総事業費</span><span class="v">10,908万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,308万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">29.1万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+10.0万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>22.3万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">6,069万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">24.8年（35年→ <b>-10.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-577万円</span>
+ </div>
+ <div class="flags"><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,908万円に対し自己資金が6,069万円必要</div></div>
+ <div class="notes"><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21549901/" target="_blank" rel="noopener">目黒区目黒本町６</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地55㎡ / 延床89㎡／駅徒歩10分</div>
+ <div class="big">9,500万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.82）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">27.9㎡（延床の31%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.6万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">12.8万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">665万円</span>
+  <span class="k">総事業費</span><span class="v">10,715万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,115万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">28.6万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.2万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>24.5万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,876万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">27.0年（35年→ <b>-8.0年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-450万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,715万円に対し自己資金が5,876万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約6.48m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
 </div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_ota/nc_21630986/" target="_blank" rel="noopener">大田区山王３</a></h3>
  <div class="meta">土地・ ／土地121㎡ / 建築可328㎡／駅徒歩10分</div>
@@ -260,6 +887,171 @@ a{color:var(--accent)}
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費14,733万円に対し自己資金が9,894万円必要</div></div>
  <div class="notes"><div>・用途地域:商業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・接道良好（前面道路 約4.5m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率270%＝土地121㎡で延床約328㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・目立つ難は見当たらず相場より割安。指値や設備更新で詰める領域（要現地確認）</div></div>
 </div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21650932/" target="_blank" rel="noopener">目黒区八雲１</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地53㎡ / 延床93㎡／駅徒歩6分</div>
+ <div class="big">10,580万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.77）</span><span class="badge b-mut">値持ち中高</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">27.1㎡（延床の29%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.3万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">13.4万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">741万円</span>
+  <span class="k">総事業費</span><span class="v">11,871万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">11,271万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">31.8万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+6.9万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>28.4万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">7,032万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">27.8年（35年→ <b>-7.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-448万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠現況延床93㎡ &gt; 容積上の建築可能80㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費11,871万円に対し自己資金が7,032万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約5.4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・名門アドレスで下値が堅く“売る時に買値以上”を狙える値持ちエリア（満額でも資産が落ちにくい）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21641719/" target="_blank" rel="noopener">目黒区目黒本町６</a></h3>
+ <div class="meta">戸建・木造 2LDK／土地64㎡ / 延床100㎡／駅徒歩8分</div>
+ <div class="big">11,980万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.73）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">32.7㎡（延床の33%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">12.4万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">16.9万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">839万円</span>
+  <span class="k">総事業費</span><span class="v">13,369万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">12,769万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">36.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+8.3万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>31.7万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">8,530万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">27.5年（35年→ <b>-7.5年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-530万円</span>
+ </div>
+ <div class="flags"><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費13,369万円に対し自己資金が8,530万円必要</div></div>
+ <div class="notes"><div>・接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21656690/" target="_blank" rel="noopener">新宿区大久保２</a></h3>
+ <div class="meta">戸建・木造 3LDK／土地55㎡ / 延床99㎡／駅徒歩10分</div>
+ <div class="big">11,980万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.72）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">28.3㎡（延床の29%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">10.6万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">14.9万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">839万円</span>
+  <span class="k">総事業費</span><span class="v">13,369万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">12,769万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">36.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+7.1万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>32.9万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">8,530万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">28.4年（35年→ <b>-6.6年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-469万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠現況延床99㎡ &gt; 容積上の建築可能89㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費13,369万円に対し自己資金が8,530万円必要</div></div>
+ <div class="notes"><div>・前面道路 約3.3m（4m未満＝セットバック/再建築の制約に注意）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_20133704/" target="_blank" rel="noopener">世田谷区若林２</a></h3>
+ <div class="meta">戸建・木造 1LDK／土地95㎡ / 延床85㎡／駅徒歩12分</div>
+ <div class="big">9,500万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.70）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">38.4㎡（延床の45%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">13.0万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">18.5万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">665万円</span>
+  <span class="k">総事業費</span><span class="v">10,715万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">10,115万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">28.6万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+8.6万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>23.1万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">5,876万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">25.8年（35年→ <b>-9.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-514万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費10,715万円に対し自己資金が5,876万円必要</div></div>
+ <div class="notes"><div>・観測83日の滞留＝買い手がついていない（指値の余地）</div><div>・前面道路 約3.7m（4m未満＝セットバック/再建築の制約に注意）</div><div>・容積率150%＝土地95㎡で延床約142㎡まで建築可（建替えで床増し/賃貸併用の余地）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21031874/" target="_blank" rel="noopener">新宿区高田馬場３</a></h3>
+ <div class="meta">戸建・木造 2LDK／土地52㎡ / 延床91㎡／駅徒歩8分</div>
+ <div class="big">11,980万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.66）</span><span class="badge b-mut">値持ち中</span><span class="badge b-mut">出口A</span><span class="badge b-mut">売り急ぎ</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">26.4㎡（延床の29%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">9.9万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">15.1万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">839万円</span>
+  <span class="k">総事業費</span><span class="v">13,369万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">12,769万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">36.0万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+6.5万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>33.4万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">8,530万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">28.8年（35年→ <b>-6.2年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-438万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠現況延床91㎡ &gt; 容積上の建築可能83㎡＝既存不適格の疑い。増改築・用途変更で床を減らされる可能性があり、融資審査にも響く</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費13,369万円に対し自己資金が8,530万円必要</div></div>
+ <div class="notes"><div>・掲載後 12,480→11,980万円（-500万・-4%）値下げ＝指値余地/売り急ぎの可能性</div><div>・観測88日の滞留＝買い手がついていない（指値の余地）</div><div>・前面道路 約0.04m（4m未満＝セットバック/再建築の制約に注意）</div><div>・売り急ぎ/相続のサイン（相続）＝指値が通りやすい可能性（要確認）</div></div>
+</div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_nerima/nc_20664948/" target="_blank" rel="noopener">練馬区早宮２</a></h3>
  <div class="meta">土地・ ／土地121㎡ / 建築可121㎡／駅徒歩8分</div>
  <div class="big">8,580万円</div>
@@ -291,7 +1083,40 @@ a{color:var(--accent)}
   <span class="k">利息の削減額</span><span class="v">-494万円</span>
  </div>
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費13,573万円に対し自己資金が8,734万円必要</div></div>
- <div class="notes"><div>・掲載後 8,780→8,580万円（-200万・-2%）値下げ＝指値余地/売り急ぎの可能性</div><div>・観測88日の滞留＝買い手がついていない（指値の余地）</div><div>・接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率100%＝土地121㎡で延床約121㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
+ <div class="notes"><div>・掲載後 8,780→8,580万円（-200万・-2%）値下げ＝指値余地/売り急ぎの可能性</div><div>・観測89日の滞留＝買い手がついていない（指値の余地）</div><div>・接道良好（前面道路 約5m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率100%＝土地121㎡で延床約121㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
+</div><div class="card">
+ <h3><a href="https://suumo.jp/ikkodate/tokyo/sc_suginami/nc_20894480/" target="_blank" rel="noopener">杉並区阿佐谷北３</a></h3>
+ <div class="meta">戸建・木造 1LDK／土地84㎡ / 延床92㎡／駅徒歩12分</div>
+ <div class="big">11,000万円</div>
+ <div><span class="badge b-ng">賃料では返済を賄えない（余裕度0.62）</span><span class="badge b-mut">値持ち低</span><span class="badge b-mut">出口B</span><span class="badge b-mut">新築</span></div>
+ <div class="kv">
+  <span class="k">1階 住戸（想定）</span><span class="v">41.4㎡（延床の45%）</span>
+  <span class="k">想定賃料（相場推定）</span><span class="v">13.4万円/月</span>
+  <span class="k">損益分岐賃料</span><span class="v">21.4万円/月</span>
+ </div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">賃貸化工事</span><span class="v">550万円</span>
+  <span class="k">諸費用</span><span class="v">770万円</span>
+  <span class="k">総事業費</span><span class="v">12,320万円</span>
+  <span class="k">借入（自己資金600万円控除後）</span><span class="v">11,720万円</span>
+  <span class="k">月返済（1.0%・35年）</span><span class="v">33.1万円</span>
+  <span class="k">賃貸の手取り</span><span class="v">+8.7万円</span>
+
+ </div>
+ <div class="hr"></div>
+ <div class="kv"><span class="k"><b>実質の住居費</b></span>
+   <span class="v"><b>28.0万円/月</b></span></div>
+ <div class="hr"></div>
+ <div class="kv">
+  <span class="k">借入可能額（年収800万・審査3.5%）</span><span class="v">4,839万円</span>
+  <span class="k">必要な自己資金</span><span class="v">7,481万円</span>
+  <span class="k">完済（賃料手取りを元金充当）</span>
+  <span class="v">26.7年（35年→ <b>-8.3年</b>）</span>
+  <span class="k">利息の削減額</span><span class="v">-540万円</span>
+ </div>
+ <div class="flags"><div>木造・延床100㎡未満＝界壁/遮音工事後の自宅側が狭くなりやすい</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費12,320万円に対し自己資金が7,481万円必要</div></div>
+ <div class="notes"><div>・観測57日の滞留＝買い手がついていない（指値の余地）</div><div>・価格は相場相応。立地・築年・管理状態で比較するゾーン</div></div>
 </div><div class="card">
  <h3><a href="https://suumo.jp/tochi/tokyo/sc_katsushika/nc_20578973/" target="_blank" rel="noopener">葛飾区立石８</a></h3>
  <div class="meta">土地・ ／土地150㎡ / 建築可300㎡／駅徒歩9分</div>
@@ -324,7 +1149,7 @@ a{color:var(--accent)}
   <span class="k">利息の削減額</span><span class="v">-447万円</span>
  </div>
  <div class="flags"><div>土地＝建築費が総額の過半。設計段階から『長屋(200㎡未満)』で規制を軽くできるか要検討</div><div>⚠年収800万・返済比率30%・審査金利3.5%では借入可能額4,839万円。総事業費13,984万円に対し自己資金が9,145万円必要</div></div>
- <div class="notes"><div>・観測88日の滞留＝買い手がついていない（指値の余地）</div><div>・用途地域:工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率200%＝土地150㎡で延床約300㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
+ <div class="notes"><div>・観測89日の滞留＝買い手がついていない（指値の余地）</div><div>・用途地域:工業（店舗・交通量で住環境はやや劣るが容積に余裕）</div><div>・接道良好（前面道路 約4m・公道想定）＝再建築の見込み（最終は役所で確認）</div><div>・容積率200%＝土地150㎡で延床約300㎡まで建築可（建替えで床増し/賃貸併用の余地）</div></div>
 </div></div>
 
 <h2>一覧表</h2>
@@ -334,28 +1159,119 @@ a{color:var(--accent)}
 <th class="num">分岐賃料<br>万/月</th><th class="num">余裕度</th><th class="num">月返済<br>万</th>
 <th class="num">実質住居費<br>万/月</th><th class="num">要 自己資金<br>万</th>
 <th class="num">完済<br>年</th><th class="num">利息削減<br>万</th></tr>
-<tr><td>北区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_kita/nc_21652277/" target="_blank"
+<tr><td>葛飾区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_21630406/" target="_blank"
+ rel="noopener">葛飾区西水元３-3</a></td><td>戸建</td>
+ <td class="num">4,299</td><td class="num">45</td>
+ <td class="num">28%</td><td class="num">10.1</td>
+ <td class="num">5.2</td><td class="num">1.94</td>
+ <td class="num">12.8</td><td class="num">7.0</td>
+ <td class="num">—</td>
+ <td class="num">20.8</td><td class="num">-354</td></tr><tr><td>板橋区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_itabashi/nc_20460482/" target="_blank"
+ rel="noopener">板橋区東坂下１</a></td><td>戸建</td>
+ <td class="num">3,980</td><td class="num">26.5</td>
+ <td class="num">24%</td><td class="num">7.4</td>
+ <td class="num">4.2</td><td class="num">1.76</td>
+ <td class="num">11.9</td><td class="num">7.9</td>
+ <td class="num">—</td>
+ <td class="num">22.8</td><td class="num">-282</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21605782/" target="_blank"
+ rel="noopener">新宿区四谷４</a></td><td>戸建</td>
+ <td class="num">12,000</td><td class="num">45</td>
+ <td class="num">26%</td><td class="num">16.9</td>
+ <td class="num">13.5</td><td class="num">1.26</td>
+ <td class="num">36.1</td><td class="num">28.0</td>
+ <td class="num">8,551</td>
+ <td class="num">25.1</td><td class="num">-700</td></tr><tr><td>北区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_kita/nc_21652277/" target="_blank"
  rel="noopener">北区岸町２</a></td><td>土地</td>
  <td class="num">4,180</td><td class="num">45</td>
  <td class="num">30%</td><td class="num">14.1</td>
  <td class="num">11.4</td><td class="num">1.24</td>
  <td class="num">26.3</td><td class="num">19.2</td>
  <td class="num">5,079</td>
- <td class="num">24.2</td><td class="num">-558</td></tr><tr><td>荒川区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21554514/" target="_blank"
+ <td class="num">24.2</td><td class="num">-558</td></tr><tr><td>葛飾区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_21674523/" target="_blank"
+ rel="noopener">葛飾区東水元５-30</a></td><td>戸建</td>
+ <td class="num">4,620</td><td class="num">45</td>
+ <td class="num">43%</td><td class="num">10.1</td>
+ <td class="num">8.7</td><td class="num">1.17</td>
+ <td class="num">13.8</td><td class="num">8.3</td>
+ <td class="num">654</td>
+ <td class="num">21.8</td><td class="num">-357</td></tr><tr><td>足立区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_adachi/nc_21572918/" target="_blank"
+ rel="noopener">足立区花畑７</a></td><td>戸建</td>
+ <td class="num">3,999</td><td class="num">40.8</td>
+ <td class="num">45%</td><td class="num">9.1</td>
+ <td class="num">7.8</td><td class="num">1.16</td>
+ <td class="num">11.9</td><td class="num">7.0</td>
+ <td class="num">—</td>
+ <td class="num">21.5</td><td class="num">-314</td></tr><tr><td>葛飾区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_katsushika/nc_21687185/" target="_blank"
+ rel="noopener">葛飾区水元５</a></td><td>戸建</td>
+ <td class="num">4,280</td><td class="num">42.3</td>
+ <td class="num">45%</td><td class="num">9.5</td>
+ <td class="num">8.3</td><td class="num">1.14</td>
+ <td class="num">12.8</td><td class="num">7.6</td>
+ <td class="num">—</td>
+ <td class="num">21.6</td><td class="num">-332</td></tr><tr><td>足立区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_adachi/nc_21590256/" target="_blank"
+ rel="noopener">足立区古千谷本町２</a></td><td>戸建</td>
+ <td class="num">4,600</td><td class="num">44.9</td>
+ <td class="num">45%</td><td class="num">10.0</td>
+ <td class="num">9.0</td><td class="num">1.11</td>
+ <td class="num">13.8</td><td class="num">8.4</td>
+ <td class="num">633</td>
+ <td class="num">21.8</td><td class="num">-351</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21465673/" target="_blank"
+ rel="noopener">新宿区中落合３</a></td><td>戸建</td>
+ <td class="num">9,580</td><td class="num">27.5</td>
+ <td class="num">22%</td><td class="num">10.3</td>
+ <td class="num">9.3</td><td class="num">1.11</td>
+ <td class="num">28.8</td><td class="num">24.7</td>
+ <td class="num">5,962</td>
+ <td class="num">26.9</td><td class="num">-455</td></tr><tr><td>目黒区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_78284256/" target="_blank"
+ rel="noopener">目黒区下目黒２</a></td><td>戸建</td>
+ <td class="num">9,480</td><td class="num">27.3</td>
+ <td class="num">25%</td><td class="num">10.3</td>
+ <td class="num">10.4</td><td class="num">1.00</td>
+ <td class="num">28.5</td><td class="num">24.4</td>
+ <td class="num">5,855</td>
+ <td class="num">26.9</td><td class="num">-450</td></tr><tr><td>荒川区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21554514/" target="_blank"
  rel="noopener">荒川区南千住５</a></td><td>土地</td>
  <td class="num">5,480</td><td class="num">36.5</td>
  <td class="num">24%</td><td class="num">10.6</td>
  <td class="num">10.6</td><td class="num">1.00</td>
  <td class="num">30.2</td><td class="num">26.2</td>
  <td class="num">6,470</td>
- <td class="num">27.2</td><td class="num">-465</td></tr><tr><td>荒川区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21306082/" target="_blank"
+ <td class="num">27.2</td><td class="num">-465</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21426250/" target="_blank"
+ rel="noopener">新宿区西落合１</a></td><td>戸建</td>
+ <td class="num">9,450</td><td class="num">33.3</td>
+ <td class="num">32%</td><td class="num">12.5</td>
+ <td class="num">13.0</td><td class="num">0.96</td>
+ <td class="num">28.4</td><td class="num">22.9</td>
+ <td class="num">5,823</td>
+ <td class="num">25.8</td><td class="num">-517</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21597462/" target="_blank"
+ rel="noopener">新宿区中落合３</a></td><td>戸建</td>
+ <td class="num">9,000</td><td class="num">44.0</td>
+ <td class="num">45%</td><td class="num">16.5</td>
+ <td class="num">17.5</td><td class="num">0.94</td>
+ <td class="num">27.0</td><td class="num">18.6</td>
+ <td class="num">5,341</td>
+ <td class="num">23.3</td><td class="num">-615</td></tr><tr><td>荒川区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_arakawa/nc_21306082/" target="_blank"
  rel="noopener">荒川区西日暮里１</a></td><td>土地</td>
  <td class="num">6,180</td><td class="num">25.3</td>
  <td class="num">17%</td><td class="num">7.3</td>
  <td class="num">7.9</td><td class="num">0.93</td>
  <td class="num">32.2</td><td class="num">30.7</td>
  <td class="num">7,183</td>
- <td class="num">29.5</td><td class="num">-349</td></tr><tr><td>杉並区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_suginami/nc_20585347/" target="_blank"
+ <td class="num">29.5</td><td class="num">-349</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21706320/" target="_blank"
+ rel="noopener">新宿区西落合１</a></td><td>戸建</td>
+ <td class="num">8,980</td><td class="num">33.7</td>
+ <td class="num">35%</td><td class="num">12.7</td>
+ <td class="num">13.8</td><td class="num">0.92</td>
+ <td class="num">27.0</td><td class="num">21.2</td>
+ <td class="num">5,320</td>
+ <td class="num">25.3</td><td class="num">-511</td></tr><tr><td>世田谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_21536484/" target="_blank"
+ rel="noopener">世田谷区梅丘２</a></td><td>戸建</td>
+ <td class="num">9,580</td><td class="num">32.2</td>
+ <td class="num">29%</td><td class="num">10.9</td>
+ <td class="num">12.1</td><td class="num">0.90</td>
+ <td class="num">28.8</td><td class="num">24.5</td>
+ <td class="num">5,962</td>
+ <td class="num">26.8</td><td class="num">-464</td></tr><tr><td>杉並区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_suginami/nc_20585347/" target="_blank"
  rel="noopener">杉並区井草５</a></td><td>土地</td>
  <td class="num">7,850</td><td class="num">45</td>
  <td class="num">30%</td><td class="num">14.5</td>
@@ -369,21 +1285,105 @@ a{color:var(--accent)}
  <td class="num">18.7</td><td class="num">0.90</td>
  <td class="num">43.3</td><td class="num">36.4</td>
  <td class="num">11,092</td>
- <td class="num">26.6</td><td class="num">-713</td></tr><tr><td>大田区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_ota/nc_21630986/" target="_blank"
+ <td class="num">26.6</td><td class="num">-713</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21616700/" target="_blank"
+ rel="noopener">新宿区西落合２</a></td><td>戸建</td>
+ <td class="num">9,280</td><td class="num">37.6</td>
+ <td class="num">40%</td><td class="num">14.1</td>
+ <td class="num">16.0</td><td class="num">0.88</td>
+ <td class="num">27.9</td><td class="num">21.3</td>
+ <td class="num">5,641</td>
+ <td class="num">24.8</td><td class="num">-556</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21657040/" target="_blank"
+ rel="noopener">新宿区西落合３</a></td><td>戸建</td>
+ <td class="num">8,980</td><td class="num">35.6</td>
+ <td class="num">39%</td><td class="num">13.4</td>
+ <td class="num">15.3</td><td class="num">0.87</td>
+ <td class="num">27.0</td><td class="num">20.8</td>
+ <td class="num">5,320</td>
+ <td class="num">25.0</td><td class="num">-529</td></tr><tr><td>渋谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21588770/" target="_blank"
+ rel="noopener">渋谷区西原３</a></td><td>戸建</td>
+ <td class="num">11,000</td><td class="num">33.7</td>
+ <td class="num">33%</td><td class="num">13.5</td>
+ <td class="num">15.7</td><td class="num">0.85</td>
+ <td class="num">33.1</td><td class="num">27.5</td>
+ <td class="num">7,481</td>
+ <td class="num">26.3</td><td class="num">-562</td></tr><tr><td>渋谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21410308/" target="_blank"
+ rel="noopener">渋谷区本町３</a></td><td>戸建</td>
+ <td class="num">9,990</td><td class="num">27.0</td>
+ <td class="num">30%</td><td class="num">10.8</td>
+ <td class="num">12.8</td><td class="num">0.84</td>
+ <td class="num">30.0</td><td class="num">26.0</td>
+ <td class="num">6,400</td>
+ <td class="num">27.2</td><td class="num">-464</td></tr><tr><td>中野区</td><td><a href="https://suumo.jp/ikkodate/tokyo/sc_nakano/nc_21391458/" target="_blank"
+ rel="noopener">中野区鷺宮４-13-6</a></td><td>戸建</td>
+ <td class="num">9,680</td><td class="num">43.9</td>
+ <td class="num">43%</td><td class="num">14.8</td>
+ <td class="num">18.0</td><td class="num">0.82</td>
+ <td class="num">29.1</td><td class="num">22.3</td>
+ <td class="num">6,069</td>
+ <td class="num">24.8</td><td class="num">-577</td></tr><tr><td>目黒区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21549901/" target="_blank"
+ rel="noopener">目黒区目黒本町６</a></td><td>戸建</td>
+ <td class="num">9,500</td><td class="num">27.9</td>
+ <td class="num">31%</td><td class="num">10.6</td>
+ <td class="num">12.8</td><td class="num">0.82</td>
+ <td class="num">28.6</td><td class="num">24.5</td>
+ <td class="num">5,876</td>
+ <td class="num">27.0</td><td class="num">-450</td></tr><tr><td>大田区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_ota/nc_21630986/" target="_blank"
  rel="noopener">大田区山王３</a></td><td>土地</td>
  <td class="num">8,680</td><td class="num">45</td>
  <td class="num">30%</td><td class="num">14.0</td>
  <td class="num">17.2</td><td class="num">0.81</td>
  <td class="num">39.9</td><td class="num">34.7</td>
  <td class="num">9,894</td>
- <td class="num">27.2</td><td class="num">-605</td></tr><tr><td>練馬区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_nerima/nc_20664948/" target="_blank"
+ <td class="num">27.2</td><td class="num">-605</td></tr><tr><td>目黒区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21650932/" target="_blank"
+ rel="noopener">目黒区八雲１</a></td><td>戸建</td>
+ <td class="num">10,580</td><td class="num">27.1</td>
+ <td class="num">29%</td><td class="num">10.3</td>
+ <td class="num">13.4</td><td class="num">0.77</td>
+ <td class="num">31.8</td><td class="num">28.4</td>
+ <td class="num">7,032</td>
+ <td class="num">27.8</td><td class="num">-448</td></tr><tr><td>目黒区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21641719/" target="_blank"
+ rel="noopener">目黒区目黒本町６</a></td><td>戸建</td>
+ <td class="num">11,980</td><td class="num">32.7</td>
+ <td class="num">33%</td><td class="num">12.4</td>
+ <td class="num">16.9</td><td class="num">0.73</td>
+ <td class="num">36.0</td><td class="num">31.7</td>
+ <td class="num">8,530</td>
+ <td class="num">27.5</td><td class="num">-530</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21656690/" target="_blank"
+ rel="noopener">新宿区大久保２</a></td><td>戸建</td>
+ <td class="num">11,980</td><td class="num">28.3</td>
+ <td class="num">29%</td><td class="num">10.6</td>
+ <td class="num">14.9</td><td class="num">0.72</td>
+ <td class="num">36.0</td><td class="num">32.9</td>
+ <td class="num">8,530</td>
+ <td class="num">28.4</td><td class="num">-469</td></tr><tr><td>世田谷区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_setagaya/nc_20133704/" target="_blank"
+ rel="noopener">世田谷区若林２</a></td><td>戸建</td>
+ <td class="num">9,500</td><td class="num">38.4</td>
+ <td class="num">45%</td><td class="num">13.0</td>
+ <td class="num">18.5</td><td class="num">0.70</td>
+ <td class="num">28.6</td><td class="num">23.1</td>
+ <td class="num">5,876</td>
+ <td class="num">25.8</td><td class="num">-514</td></tr><tr><td>新宿区</td><td><a href="https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21031874/" target="_blank"
+ rel="noopener">新宿区高田馬場３</a></td><td>戸建</td>
+ <td class="num">11,980</td><td class="num">26.4</td>
+ <td class="num">29%</td><td class="num">9.9</td>
+ <td class="num">15.1</td><td class="num">0.66</td>
+ <td class="num">36.0</td><td class="num">33.4</td>
+ <td class="num">8,530</td>
+ <td class="num">28.8</td><td class="num">-438</td></tr><tr><td>練馬区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_nerima/nc_20664948/" target="_blank"
  rel="noopener">練馬区早宮２</a></td><td>土地</td>
  <td class="num">8,580</td><td class="num">40.3</td>
  <td class="num">33%</td><td class="num">11.5</td>
  <td class="num">17.6</td><td class="num">0.65</td>
  <td class="num">36.6</td><td class="num">33.1</td>
  <td class="num">8,734</td>
- <td class="num">28.2</td><td class="num">-494</td></tr><tr><td>葛飾区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_katsushika/nc_20578973/" target="_blank"
+ <td class="num">28.2</td><td class="num">-494</td></tr><tr><td>杉並区</td><td><a href="https://suumo.jp/ikkodate/tokyo/sc_suginami/nc_20894480/" target="_blank"
+ rel="noopener">杉並区阿佐谷北３</a></td><td>戸建</td>
+ <td class="num">11,000</td><td class="num">41.4</td>
+ <td class="num">45%</td><td class="num">13.4</td>
+ <td class="num">21.4</td><td class="num">0.62</td>
+ <td class="num">33.1</td><td class="num">28.0</td>
+ <td class="num">7,481</td>
+ <td class="num">26.7</td><td class="num">-540</td></tr><tr><td>葛飾区</td><td><a href="https://suumo.jp/tochi/tokyo/sc_katsushika/nc_20578973/" target="_blank"
  rel="noopener">葛飾区立石８</a></td><td>土地</td>
  <td class="num">7,980</td><td class="num">45</td>
  <td class="num">30%</td><td class="num">10.1</td>
@@ -393,7 +1393,7 @@ a{color:var(--accent)}
  <td class="num">29.0</td><td class="num">-447</td></tr></table></div>
 
 <h2>母集団から外した理由</h2>
-<div class="scroll"><table><tr><th>除外理由</th><th class="num">件数</th></tr><tr><td>区分マンションは1階だけ貸す構造が作れない</td><td class='num'>251</td></tr><tr><td>再建築不可＝住宅ローンが付かず賃貸併用の前提が崩れる</td><td class='num'>28</td></tr><tr><td>価格が住宅ローンの現実的上限超</td><td class='num'>25</td></tr><tr><td>駅徒歩が遠く単身賃貸の需要が細る</td><td class='num'>19</td></tr><tr><td>建築可能延床が不足（容積不明を含む）</td><td class='num'>6</td></tr><tr><td>借地権＝融資と転貸承諾の二重ハードル</td><td class='num'>5</td></tr><tr><td>延床が小さく、1階を割くと自宅が成立しない</td><td class='num'>3</td></tr></table></div>
+<div class="scroll"><table><tr><th>除外理由</th><th class="num">件数</th></tr><tr><td>区分マンションは1階だけ貸す構造が作れない</td><td class='num'>867</td></tr><tr><td>価格が住宅ローンの現実的上限超</td><td class='num'>117</td></tr><tr><td>駅徒歩が遠く単身賃貸の需要が細る</td><td class='num'>68</td></tr><tr><td>延床が小さく、1階を割くと自宅が成立しない</td><td class='num'>60</td></tr><tr><td>再建築不可＝住宅ローンが付かず賃貸併用の前提が崩れる</td><td class='num'>52</td></tr><tr><td>借地権＝融資と転貸承諾の二重ハードル</td><td class='num'>31</td></tr><tr><td>建築可能延床が不足（容積不明を含む）</td><td class='num'>8</td></tr><tr><td>1階に独立住戸を切り出せる面積が取れない</td><td class='num'>1</td></tr></table></div>
 
 <h2>試算に使った前提</h2>
 <div class="scroll"><table><tr><th>項目</th><th>値</th></tr>
@@ -413,7 +1413,7 @@ a{color:var(--accent)}
 </table></div>
 
 <p class="foot">
- 生成 2026-09-19T23:15／データ 2026-09-20T08:03。
+ 生成 2026-09-20T23:53／データ 2026-09-21T08:21。
  本ページは学習・比較のための試算であり、投資勧誘でも税務・法務・建築の助言でもない。
  賃料・工事費・融資条件はすべて仮定値。実行前に不動産業者・建築士・金融機関・税理士の確認を。
 </p>
