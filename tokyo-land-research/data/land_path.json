@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-20T23:52:50.578268+00:00",
- "source_updated": "2026-09-21T08:21:16.633583+09:00",
+ "updated": "2026-09-22T00:24:07.003540+00:00",
+ "source_updated": "2026-09-22T09:17:20.065324+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -98,6 +98,22 @@
    "rebuild_ng": false,
    "ratio": 1.61,
    "grade": "高"
+  },
+  {
+   "ward": "文京区",
+   "loc": "文京区千石４",
+   "price": 2980,
+   "land": null,
+   "tsubo_unit": null,
+   "walk": 5,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21755310/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": null,
+   "grade": "低"
   },
   {
    "ward": "品川区",
@@ -246,15 +262,15 @@
    "ward": "文京区",
    "loc": "文京区千石４",
    "price": 4580,
-   "land": 26.21,
-   "tsubo_unit": 578,
+   "land": 41.61,
+   "tsubo_unit": 364,
    "walk": 5,
    "kind": "戸建",
    "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21675286/",
    "tags": [],
    "rebuild_ng": false,
-   "ratio": 0.94,
-   "grade": "中高"
+   "ratio": 1.49,
+   "grade": "高"
   },
   {
    "ward": "豊島区",
@@ -373,22 +389,6 @@
    "rebuild_ng": false,
    "ratio": 1.03,
    "grade": "中高"
-  },
-  {
-   "ward": "渋谷区",
-   "loc": "渋谷区笹塚１",
-   "price": 6180,
-   "land": 89.21,
-   "tsubo_unit": 229,
-   "walk": 5,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21689813/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 1.53,
-   "grade": "高"
   }
  ],
  "escape": [
