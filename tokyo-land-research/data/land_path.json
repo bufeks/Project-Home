@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-22T00:24:07.003540+00:00",
- "source_updated": "2026-09-22T09:17:20.065324+09:00",
+ "updated": "2026-09-23T00:04:15.594077+00:00",
+ "source_updated": "2026-09-23T08:47:04.146268+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -214,6 +214,22 @@
   },
   {
    "ward": "新宿区",
+   "loc": "新宿区若葉１",
+   "price": 3980,
+   "land": 33.04,
+   "tsubo_unit": 398,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21719731/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.87,
+   "grade": "低"
+  },
+  {
+   "ward": "新宿区",
    "loc": "新宿区西落合２",
    "price": 4280,
    "land": 26.6,
@@ -374,20 +390,6 @@
    "tags": [],
    "rebuild_ng": false,
    "ratio": 0.96,
-   "grade": "中高"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区西早稲田３",
-   "price": 5880,
-   "land": 40.49,
-   "tsubo_unit": 480,
-   "walk": 6,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.03,
    "grade": "中高"
   }
  ],
