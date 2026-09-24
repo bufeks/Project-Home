@@ -1,5 +1,49 @@
 [
  {
+  "id": "21737399",
+  "name": "トダカ高田馬場コーポ",
+  "loc": "新宿区下落合１",
+  "price": 3180,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21737399/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-24T12:21:23.709399+09:00",
+  "score": 63,
+  "ratio": 1.13,
+  "tier": "A",
+  "walk": 7,
+  "area": 39.59,
+  "plan": "1LDK",
+  "year": 1971,
+  "cagr": 4.6,
+  "net": 73,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
+  "id": "21754884",
+  "name": "セーシェル恵比寿",
+  "loc": "渋谷区恵比寿１",
+  "price": 5980,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21754884/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-09-24T12:21:23.709399+09:00",
+  "score": 100,
+  "ratio": 2.21,
+  "tier": "S",
+  "walk": 7,
+  "area": 54.19,
+  "plan": "1LDK",
+  "year": 2003,
+  "cagr": 5.6,
+  "net": 6335,
+  "tags": []
+ },
+ {
   "id": "21763070",
   "name": "都立大アーバンハイム",
   "loc": "目黒区平町１-26-3",
@@ -810,47 +854,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "21730868",
-  "name": "モナーク北新宿",
-  "loc": "新宿区北新宿３-6-5",
-  "price": 3200,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21730868/",
-  "watch": "北新宿（新宿区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-18T12:23:47.246822+09:00",
-  "score": 80,
-  "ratio": 1.34,
-  "tier": "A",
-  "walk": 4,
-  "area": 31.5,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": 715,
-  "tags": []
- },
- {
-  "id": "21729087",
-  "name": "都立大アーバンハイム",
-  "loc": "目黒区平町１-26-3",
-  "price": 4599,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21729087/",
-  "watch": "都立大学（目黒区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-18T12:23:47.246822+09:00",
-  "score": 96,
-  "ratio": 2.59,
-  "tier": "A",
-  "walk": 2,
-  "area": 63.72,
-  "plan": "2LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 6560,
-  "tags": []
  }
 ]
