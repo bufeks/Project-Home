@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-24T00:06:29.681372+00:00",
- "source_updated": "2026-09-24T08:55:01.627688+09:00",
+ "updated": "2026-09-25T00:23:07.520934+00:00",
+ "source_updated": "2026-09-25T09:08:14.133688+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -21,7 +21,7 @@
   "ltv": 0.7,
   "noi_ratio": 0.75
  },
- "target": 2800,
+ "target": 2150,
  "core": [
   {
    "ward": "豊島区",
@@ -85,6 +85,20 @@
   }
  ],
  "candidates": [
+  {
+   "ward": "品川区",
+   "loc": "品川区南大井１",
+   "price": 2150,
+   "land": 31.53,
+   "tsubo_unit": 225,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinagawa/nc_21457418/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.63,
+   "grade": "高"
+  },
   {
    "ward": "豊島区",
    "loc": "豊島区高松２",
@@ -213,6 +227,23 @@
    "grade": "中高"
   },
   {
+   "ward": "豊島区",
+   "loc": "豊島区目白４-31-24",
+   "price": 3980,
+   "land": 78.31,
+   "tsubo_unit": 168,
+   "walk": 8,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21634954/",
+   "tags": [
+    "再建築不可",
+    "売り急ぎ"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.5,
+   "grade": "中高"
+  },
+  {
    "ward": "新宿区",
    "loc": "新宿区若葉１",
    "price": 3980,
@@ -303,6 +334,22 @@
    "grade": "高"
   },
   {
+   "ward": "渋谷区",
+   "loc": "渋谷区本町１",
+   "price": 4800,
+   "land": 49.17,
+   "tsubo_unit": 323,
+   "walk": 5,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21731941/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.03,
+   "grade": "中高"
+  },
+  {
    "ward": "新宿区",
    "loc": "新宿区上落合２",
    "price": 4800,
@@ -316,6 +363,22 @@
    ],
    "rebuild_ng": true,
    "ratio": 0.98,
+   "grade": "中"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区初台２",
+   "price": 4980,
+   "land": 47.65,
+   "tsubo_unit": 345,
+   "walk": 9,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20551064/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.2,
    "grade": "中"
   },
   {
@@ -333,96 +396,38 @@
    "rebuild_ng": false,
    "ratio": 0.98,
    "grade": "中"
-  },
-  {
-   "ward": "渋谷区",
-   "loc": "渋谷区上原２",
-   "price": 5000,
-   "land": 30.7,
-   "tsubo_unit": 538,
-   "walk": 10,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21701691/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 0.96,
-   "grade": "中"
-  },
-  {
-   "ward": "目黒区",
-   "loc": "目黒区上目黒３",
-   "price": 5200,
-   "land": 40.82,
-   "tsubo_unit": 421,
-   "walk": 10,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21567607/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.45,
-   "grade": "高"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区新宿７",
-   "price": 5560,
-   "land": 50.99,
-   "tsubo_unit": 360,
-   "walk": 7,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21307337/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.38,
-   "grade": "高"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区赤城下町",
-   "price": 5850,
-   "land": 26.27,
-   "tsubo_unit": 736,
-   "walk": 4,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20557566/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 0.96,
-   "grade": "中高"
   }
  ],
  "escape": [
   {
    "year": 0,
-   "price": 2800
+   "price": 2150
   },
   {
    "year": 3,
-   "price": 3195
+   "price": 2454
   },
   {
    "year": 5,
-   "price": 3489
+   "price": 2679
   },
   {
    "year": 7,
-   "price": 3810
+   "price": 2926
   },
   {
    "year": 10,
-   "price": 4348
+   "price": 3339
   }
  ],
  "route_a": [
   {
-   "price": 2800,
+   "price": 2150,
    "years": {
     "200": null,
-    "300": 14,
-    "500": 5,
-    "800": 3
+    "300": 6,
+    "500": 3,
+    "800": 2
    }
   },
   {
