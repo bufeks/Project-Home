@@ -829,28 +829,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "21350090",
-  "name": "秀和都立大レジデンス",
-  "loc": "目黒区中根２",
-  "price": 3499,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21350090/",
-  "watch": "都立大学（目黒区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-19T17:33:31.152323+09:00",
-  "score": 64,
-  "ratio": 1.25,
-  "tier": "A",
-  "walk": 8,
-  "area": 44.09,
-  "plan": "1LDK",
-  "year": 1968,
-  "cagr": 4.5,
-  "net": 487,
-  "tags": [
-   "旧耐震"
-  ]
  }
 ]
