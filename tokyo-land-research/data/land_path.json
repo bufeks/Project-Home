@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-26T00:23:23.872872+00:00",
- "source_updated": "2026-09-26T09:22:56.872957+09:00",
+ "updated": "2026-09-26T23:56:11.926940+00:00",
+ "source_updated": "2026-09-27T08:47:59.169553+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -117,8 +117,8 @@
    "ward": "文京区",
    "loc": "文京区千石４",
    "price": 2980,
-   "land": null,
-   "tsubo_unit": null,
+   "land": 25.89,
+   "tsubo_unit": 381,
    "walk": 5,
    "kind": "戸建",
    "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21755310/",
@@ -126,7 +126,7 @@
     "再建築不可"
    ],
    "rebuild_ng": true,
-   "ratio": null,
+   "ratio": 0.78,
    "grade": "低"
   },
   {
@@ -212,22 +212,6 @@
   },
   {
    "ward": "豊島区",
-   "loc": "豊島区西巣鴨４",
-   "price": 3980,
-   "land": 34.16,
-   "tsubo_unit": 385,
-   "walk": 2,
-   "kind": "土地",
-   "url": "https://suumo.jp/tochi/tokyo/sc_toshima/nc_21428546/",
-   "tags": [
-    "古家付き"
-   ],
-   "rebuild_ng": false,
-   "ratio": 1.08,
-   "grade": "中高"
-  },
-  {
-   "ward": "豊島区",
    "loc": "豊島区目白４-31-24",
    "price": 3980,
    "land": 78.31,
@@ -284,7 +268,7 @@
    "tsubo_unit": 399,
    "walk": 4,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21737677/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21727223/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 0.92,
@@ -394,6 +378,22 @@
    ],
    "rebuild_ng": true,
    "ratio": 0.98,
+   "grade": "中"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区初台２",
+   "price": 4980,
+   "land": 47.65,
+   "tsubo_unit": 345,
+   "walk": 9,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_20551064/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.2,
    "grade": "中"
   }
  ],
