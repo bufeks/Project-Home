@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-26T23:56:11.926940+00:00",
- "source_updated": "2026-09-27T08:47:59.169553+09:00",
+ "updated": "2026-09-28T00:19:52.581929+00:00",
+ "source_updated": "2026-09-28T09:00:12.156642+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -250,9 +250,9 @@
    "price": 3980,
    "land": 50.22,
    "tsubo_unit": 262,
-   "walk": 10,
+   "walk": 9,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21571608/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21514030/",
    "tags": [
     "再建築不可"
    ],
@@ -302,22 +302,6 @@
    ],
    "rebuild_ng": true,
    "ratio": 0.77,
-   "grade": "低"
-  },
-  {
-   "ward": "文京区",
-   "loc": "文京区千石３",
-   "price": 4290,
-   "land": 50.22,
-   "tsubo_unit": 282,
-   "walk": 9,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21514030/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 1.0,
    "grade": "低"
   },
   {
@@ -394,6 +378,22 @@
    ],
    "rebuild_ng": true,
    "ratio": 1.2,
+   "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区北新宿２",
+   "price": 4980,
+   "land": 31.46,
+   "tsubo_unit": 523,
+   "walk": 10,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21203259/",
+   "tags": [
+    "売り急ぎ"
+   ],
+   "rebuild_ng": false,
+   "ratio": 0.98,
    "grade": "中"
   }
  ],
