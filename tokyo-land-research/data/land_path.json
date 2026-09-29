@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-28T00:19:52.581929+00:00",
- "source_updated": "2026-09-28T09:00:12.156642+09:00",
+ "updated": "2026-09-29T01:19:41.527051+00:00",
+ "source_updated": "2026-09-29T10:08:04.342596+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -155,28 +155,11 @@
    "kind": "戸建",
    "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21427437/",
    "tags": [
-    "再建築不可",
-    "売り急ぎ"
+    "再建築不可"
    ],
    "rebuild_ng": true,
    "ratio": 0.89,
    "grade": "低"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区若葉３",
-   "price": 3880,
-   "land": 50.39,
-   "tsubo_unit": 255,
-   "walk": 9,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20725052/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 1.29,
-   "grade": "中"
   },
   {
    "ward": "新宿区",
@@ -268,7 +251,7 @@
    "tsubo_unit": 399,
    "walk": 4,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21727223/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21737677/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 0.92,
@@ -349,22 +332,6 @@
    "grade": "中高"
   },
   {
-   "ward": "新宿区",
-   "loc": "新宿区上落合２",
-   "price": 4800,
-   "land": 68.22,
-   "tsubo_unit": 233,
-   "walk": 4,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21372140/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 0.98,
-   "grade": "中"
-  },
-  {
    "ward": "渋谷区",
    "loc": "渋谷区初台２",
    "price": 4980,
@@ -395,6 +362,36 @@
    "rebuild_ng": false,
    "ratio": 0.98,
    "grade": "中"
+  },
+  {
+   "ward": "渋谷区",
+   "loc": "渋谷区上原２",
+   "price": 5000,
+   "land": 30.7,
+   "tsubo_unit": 538,
+   "walk": 10,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21701691/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 0.96,
+   "grade": "中"
+  },
+  {
+   "ward": "目黒区",
+   "loc": "目黒区上目黒３",
+   "price": 5200,
+   "land": 40.82,
+   "tsubo_unit": 421,
+   "walk": 10,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_meguro/nc_21567607/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.45,
+   "grade": "高"
   }
  ],
  "escape": [
