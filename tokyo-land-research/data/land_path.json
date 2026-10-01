@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-30T00:44:13.468889+00:00",
- "source_updated": "2026-09-30T09:22:50.946137+09:00",
+ "updated": "2026-10-01T00:59:52.267987+00:00",
+ "source_updated": "2026-10-01T09:48:01.940398+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -235,7 +235,7 @@
    "tsubo_unit": 399,
    "walk": 4,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21727223/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21737677/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 0.92,
@@ -379,17 +379,17 @@
   },
   {
    "ward": "新宿区",
-   "loc": "新宿区新宿７",
-   "price": 5560,
-   "land": 50.99,
-   "tsubo_unit": 360,
-   "walk": 7,
+   "loc": "新宿区赤城下町",
+   "price": 5850,
+   "land": 26.27,
+   "tsubo_unit": 736,
+   "walk": 4,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_21307337/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20557566/",
    "tags": [],
    "rebuild_ng": false,
-   "ratio": 1.38,
-   "grade": "高"
+   "ratio": 0.96,
+   "grade": "中高"
   }
  ],
  "escape": [
