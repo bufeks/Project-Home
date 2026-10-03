@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-02T00:59:59.646442+00:00",
- "source_updated": "2026-10-02T09:52:55.689942+09:00",
+ "updated": "2026-10-03T00:50:28.040893+00:00",
+ "source_updated": "2026-10-03T09:35:43.443805+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -256,6 +256,22 @@
    "grade": "中"
   },
   {
+   "ward": "品川区",
+   "loc": "品川区旗の台３",
+   "price": 4280,
+   "land": null,
+   "tsubo_unit": null,
+   "walk": 4,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinagawa/nc_21795977/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": null,
+   "grade": "低"
+  },
+  {
    "ward": "新宿区",
    "loc": "新宿区上落合３",
    "price": 4280,
@@ -376,20 +392,6 @@
    "rebuild_ng": false,
    "ratio": 1.45,
    "grade": "高"
-  },
-  {
-   "ward": "新宿区",
-   "loc": "新宿区西早稲田３",
-   "price": 5880,
-   "land": 40.49,
-   "tsubo_unit": 480,
-   "walk": 6,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20552762/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.03,
-   "grade": "中高"
   }
  ],
  "escape": [
