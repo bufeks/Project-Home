@@ -1,5 +1,26 @@
 [
  {
+  "id": "21793259",
+  "name": "メゾン・ド・エビス",
+  "loc": "渋谷区恵比寿西２",
+  "price": 5280,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21793259/",
+  "watch": "渋谷区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-03T18:47:34.112155+09:00",
+  "score": 100,
+  "ratio": 1.79,
+  "tier": "S",
+  "walk": 4,
+  "area": 40.79,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 5.6,
+  "net": 3467,
+  "tags": []
+ },
+ {
   "id": "21795640",
   "name": "新宿セントビラ永谷",
   "loc": "新宿区西新宿４",
@@ -830,27 +851,6 @@
   "year": null,
   "cagr": 4.5,
   "net": 4919,
-  "tags": []
- },
- {
-  "id": "21817630",
-  "name": "秀和都立大レジデンス",
-  "loc": "目黒区中根２-5-6",
-  "price": 3499,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21817630/",
-  "watch": "都立大学（目黒区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-09-30T13:11:29.566606+09:00",
-  "score": 82,
-  "ratio": 1.74,
-  "tier": "A",
-  "walk": 8,
-  "area": 44.09,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.5,
-  "net": 2132,
   "tags": []
  }
 ]
