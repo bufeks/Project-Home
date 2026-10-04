@@ -120,6 +120,10 @@ ZONING_TENANT = {
     "田園住居地域":          (False, 0,   "農産物直売所等に限られ、一般の店舗テナントは不可"),
 }
 
+# 住宅そのものが建てられない用途地域（建築基準法 別表第2）。
+# 賃貸併用の前提（自宅＋賃貸住戸）が成り立たないので、resi 側でも警告する。
+NO_HOUSING_ZONES = ("工業専用",)
+
 CORE_WARDS = {"千代田区", "中央区", "港区", "新宿区", "文京区",
               "渋谷区", "目黒区", "品川区", "台東区", "豊島区"}
 
@@ -232,19 +236,55 @@ def zoning_of(r):
     return None, False
 
 
-def tenant_zoning(zname):
-    """用途地域名から (テナント可否, 賃料倍率, 注記) を引く。未知なら (None, 1.3, "") 。"""
-    if not zname:
+def _zone_norm(s):
+    """用途地域名を照合用に正規化する（「第」「地域」を落とし、全角数字を半角に）。"""
+    return (s.replace("第", "").replace("１", "1").replace("２", "2")
+             .replace("地域", "").strip())
+
+
+# 正規化キーを長い順に並べる。短いキーが長いキーの部分文字列になっている組
+# （「商業」⊂「近隣商業」、「工業」⊂「工業専用」）があるため、長い方から当てないと
+# 近隣商業地域が商業地域として、工業専用地域が工業地域として引かれる。
+_ZONING_TENANT_NORM = sorted(
+    ((_zone_norm(key), val) for key, val in ZONING_TENANT.items()),
+    key=lambda kv: -len(kv[0]),
+)
+
+
+def _tenant_zoning_one(zname):
+    """単一の用途地域名を引く。未知なら (None, 1.3, "")。"""
+    z = _zone_norm(zname)
+    if not z:
         return None, 1.3, ""
-    for key, (ok, mult, note) in ZONING_TENANT.items():
-        if key in zname or key.replace("第１種", "１種").replace("第２種", "２種") in zname:
+    # 完全名・表記ゆれ（「近隣商業地域」「近隣商業」など）
+    for key, (ok, mult, note) in _ZONING_TENANT_NORM:
+        if key in z:
             return ok, mult, note
-    # 略記（「近隣商業」「準工業」「商業」「１種低層」など）への当たり
-    for key, (ok, mult, note) in ZONING_TENANT.items():
-        short = key.replace("第１種", "１種").replace("第２種", "２種").replace("地域", "")
-        if short and short in zname:
+    # 略記（「1種低層」→「1種低層住居専用」のように、こちらが前方一致で短い場合）
+    for key, (ok, mult, note) in _ZONING_TENANT_NORM:
+        if key.startswith(z):
             return ok, mult, note
     return None, 1.3, ""
+
+
+def tenant_zoning(zname):
+    """用途地域名から (テナント可否, 賃料倍率, 注記) を引く。未知なら (None, 1.3, "") 。
+
+    SUUMO 抽出の表記は「近隣商業、１種低層」のように複数地域が並ぶことがあり、
+    どちらが敷地の主たる用途地域かは確定できない。スクリーナーは
+    「通してはいけない物件を通さない」側に振るので、**最も制限の厳しい方**を採る。
+    """
+    if not zname:
+        return None, 1.3, ""
+    parts = [x for x in re.split(r"[、,・／/]", zname) if x.strip()]
+    if len(parts) <= 1:
+        return _tenant_zoning_one(zname)
+    results = [_tenant_zoning_one(x) for x in parts]
+    known = [r for r in results if r[0] is not None]
+    if not known:
+        return None, 1.3, ""
+    # 不可の地域は倍率0なので、倍率の最小を採れば自動的にそちらが選ばれる
+    return min(known, key=lambda r: r[1])
 
 
 def evaluate(r, market, p):
@@ -387,6 +427,13 @@ def evaluate(r, market, p):
         fast_mo, fast_int = payoff_months(loan, p["rate"], p["years"], max(net, 0))
 
     flags = []
+    if not tenant and zname and any(z in zname for z in NO_HOUSING_ZONES):
+        flags.append(
+            f"⚠用途地域{zname}＝住宅そのものが建てられない"
+            f"{'（掲載文からの推定。敷地が複数地域にまたがる可能性）' if not z_exact else ''}。"
+            "賃貸併用として建て替える前提も住宅ローンの前提も崩れる。"
+            "既存建物が建っていても既存不適格の疑いがあるので、役所（建築指導課）で用途地域を"
+            "確定させるまでこの余裕度は使えない")
     if tenant:
         if z_ok is None:
             flags.append("⚠用途地域が未確認＝店舗テナントの可否・規模・業種制限がまだ判定できない。"
