@@ -1,5 +1,51 @@
 [
  {
+  "id": "21442228",
+  "name": "【金子ハイツ】",
+  "loc": "新宿区百人町２-20-2",
+  "price": 4999,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21442228/",
+  "watch": "大久保（新宿区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-08T21:52:48.162775+09:00",
+  "score": 53,
+  "ratio": 0.72,
+  "tier": "A",
+  "walk": 2,
+  "area": 40.16,
+  "plan": "1LDK",
+  "year": 1979,
+  "cagr": 4.6,
+  "net": -1874,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
+  "id": "21884420",
+  "name": "西早稲田ハイツ",
+  "loc": "新宿区西早稲田１",
+  "price": 4780,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21884420/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-08T21:52:48.162775+09:00",
+  "score": 45,
+  "ratio": 0.86,
+  "tier": "A",
+  "walk": 10,
+  "area": 49.09,
+  "plan": "2LDK",
+  "year": 1979,
+  "cagr": 4.6,
+  "net": -1137,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "21833984",
   "name": "メイゾン牛込",
   "loc": "新宿区二十騎町2-12",
@@ -813,50 +859,6 @@
   "year": 1987,
   "cagr": 4.6,
   "net": 619,
-  "tags": []
- },
- {
-  "id": "21861195",
-  "name": "ホワイトレジデンス",
-  "loc": "新宿区市谷本村町",
-  "price": 4690,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21861195/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-05T13:17:03.573127+09:00",
-  "score": 94,
-  "ratio": 1.4,
-  "tier": "A",
-  "walk": 4,
-  "area": 37.37,
-  "plan": "1LDK",
-  "year": 1969,
-  "cagr": 4.6,
-  "net": 1332,
-  "tags": [
-   "旧耐震"
-  ]
- },
- {
-  "id": "21861479",
-  "name": "コージーコート西落合",
-  "loc": "新宿区西落合１-5-10",
-  "price": 4280,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21861479/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-05T13:17:03.573127+09:00",
-  "score": 60,
-  "ratio": 0.9,
-  "tier": "A",
-  "walk": 3,
-  "area": 34.33,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": -865,
   "tags": []
  }
 ]
