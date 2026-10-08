@@ -1,5 +1,26 @@
 [
  {
+  "id": "21833984",
+  "name": "メイゾン牛込",
+  "loc": "新宿区二十騎町2-12",
+  "price": 4380,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21833984/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-08T13:42:58.201055+09:00",
+  "score": 87,
+  "ratio": 1.44,
+  "tier": "A",
+  "walk": 5,
+  "area": 44.94,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 4.6,
+  "net": 1415,
+  "tags": []
+ },
+ {
   "id": "21875340",
   "name": "サンクタスガーデン目黒",
   "loc": "目黒区目黒２-13-32",
@@ -836,27 +857,6 @@
   "year": null,
   "cagr": 4.6,
   "net": -865,
-  "tags": []
- },
- {
-  "id": "21857050",
-  "name": "サンハイム大久保",
-  "loc": "新宿区大久保１-15-17",
-  "price": 5499,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21857050/",
-  "watch": "大久保（新宿区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-04T20:50:14.850607+09:00",
-  "score": 91,
-  "ratio": 1.55,
-  "tier": "A",
-  "walk": 4,
-  "area": 61.86,
-  "plan": "3LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": 2342,
   "tags": []
  }
 ]
