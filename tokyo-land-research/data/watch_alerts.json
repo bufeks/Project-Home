@@ -1,5 +1,26 @@
 [
  {
+  "id": "21701691",
+  "name": "",
+  "loc": "渋谷区上原２",
+  "price": 3500,
+  "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21701691/",
+  "watch": "代々木公園周辺（渋谷区）",
+  "wk": "area",
+  "kind": "戸建",
+  "ts": "2026-10-09T21:38:36.236951+09:00",
+  "score": 100,
+  "ratio": 2.5,
+  "tier": "S",
+  "walk": 10,
+  "area": 41.07,
+  "plan": "2DK",
+  "year": null,
+  "cagr": 5.6,
+  "net": 4715,
+  "tags": []
+ },
+ {
   "id": "21894087",
   "name": "ライオンズマンション余丁町",
   "loc": "新宿区余丁町6-26",
@@ -835,28 +856,5 @@
   "cagr": 4.5,
   "net": 1553,
   "tags": []
- },
- {
-  "id": "21827519",
-  "name": "市谷台マンション",
-  "loc": "新宿区市谷薬王寺町",
-  "price": 2480,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21827519/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-05T22:43:20.848499+09:00",
-  "score": 91,
-  "ratio": 2.34,
-  "tier": "A",
-  "walk": 6,
-  "area": 41.55,
-  "plan": "1LDK",
-  "year": 1964,
-  "cagr": 4.6,
-  "net": 2938,
-  "tags": [
-   "旧耐震"
-  ]
  }
 ]
