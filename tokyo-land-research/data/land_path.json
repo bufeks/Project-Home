@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-08T01:32:35.332014+00:00",
- "source_updated": "2026-10-08T10:07:22.055414+09:00",
+ "updated": "2026-10-09T01:31:54.360836+00:00",
+ "source_updated": "2026-10-09T10:19:08.418939+09:00",
  "input": {
   "equity": 1000,
   "save": 300,
@@ -146,22 +146,6 @@
    "grade": "低"
   },
   {
-   "ward": "品川区",
-   "loc": "品川区豊町１",
-   "price": 3000,
-   "land": 49.25,
-   "tsubo_unit": 201,
-   "walk": 11,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinagawa/nc_21713059/",
-   "tags": [
-    "再建築不可"
-   ],
-   "rebuild_ng": true,
-   "ratio": 0.9,
-   "grade": "低"
-  },
-  {
    "ward": "目黒区",
    "loc": "目黒区中央町１",
    "price": 3100,
@@ -267,7 +251,7 @@
    "tsubo_unit": 399,
    "walk": 4,
    "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21737677/",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_toshima/nc_21727223/",
    "tags": [],
    "rebuild_ng": false,
    "ratio": 0.92,
@@ -321,6 +305,22 @@
   },
   {
    "ward": "文京区",
+   "loc": "文京区千駄木５",
+   "price": 4480,
+   "land": 59.89,
+   "tsubo_unit": 247,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_bunkyo/nc_21598551/",
+   "tags": [
+    "再建築不可"
+   ],
+   "rebuild_ng": true,
+   "ratio": 1.01,
+   "grade": "低"
+  },
+  {
+   "ward": "文京区",
    "loc": "文京区千石４",
    "price": 4580,
    "land": 41.61,
@@ -331,20 +331,6 @@
    "tags": [],
    "rebuild_ng": false,
    "ratio": 1.49,
-   "grade": "高"
-  },
-  {
-   "ward": "渋谷区",
-   "loc": "渋谷区本町１",
-   "price": 4800,
-   "land": 49.14,
-   "tsubo_unit": 323,
-   "walk": 5,
-   "kind": "戸建",
-   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shibuya/nc_21744252/",
-   "tags": [],
-   "rebuild_ng": false,
-   "ratio": 1.88,
    "grade": "高"
   },
   {
@@ -394,6 +380,20 @@
    "rebuild_ng": false,
    "ratio": 0.98,
    "grade": "中"
+  },
+  {
+   "ward": "新宿区",
+   "loc": "新宿区西早稲田３",
+   "price": 5880,
+   "land": 40.49,
+   "tsubo_unit": 480,
+   "walk": 6,
+   "kind": "戸建",
+   "url": "https://suumo.jp/chukoikkodate/tokyo/sc_shinjuku/nc_20227093/",
+   "tags": [],
+   "rebuild_ng": false,
+   "ratio": 1.03,
+   "grade": "中高"
   }
  ],
  "escape": [
