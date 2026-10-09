@@ -1,5 +1,47 @@
 [
  {
+  "id": "21894087",
+  "name": "ライオンズマンション余丁町",
+  "loc": "新宿区余丁町6-26",
+  "price": 5280,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21894087/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-09T13:46:14.473922+09:00",
+  "score": 51,
+  "ratio": 0.89,
+  "tier": "A",
+  "walk": 6,
+  "area": 44.55,
+  "plan": "1LDK",
+  "year": 1984,
+  "cagr": 4.6,
+  "net": -1109,
+  "tags": []
+ },
+ {
+  "id": "21894085",
+  "name": "サンセゾン若松町",
+  "loc": "新宿区若松町17-8",
+  "price": 4480,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21894085/",
+  "watch": "新宿区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-09T13:46:14.473922+09:00",
+  "score": 67,
+  "ratio": 1.11,
+  "tier": "A",
+  "walk": 7,
+  "area": 35.87,
+  "plan": "1LDK",
+  "year": 1984,
+  "cagr": 4.6,
+  "net": 21,
+  "tags": []
+ },
+ {
   "id": "21442228",
   "name": "【金子ハイツ】",
   "loc": "新宿区百人町２-20-2",
@@ -816,49 +858,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "21862798",
-  "name": "常盤松葵マンション",
-  "loc": "渋谷区渋谷４",
-  "price": 5498,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shibuya/nc_21862798/",
-  "watch": "渋谷区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-05T13:17:03.573127+09:00",
-  "score": 71,
-  "ratio": 1.22,
-  "tier": "S",
-  "walk": 14,
-  "area": 36.31,
-  "plan": "1DK",
-  "year": 1968,
-  "cagr": 5.6,
-  "net": 616,
-  "tags": [
-   "旧耐震"
-  ]
- },
- {
-  "id": "21852045",
-  "name": "マンションヴィップ北新宿",
-  "loc": "新宿区北新宿４",
-  "price": 5380,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21852045/",
-  "watch": "北新宿（新宿区）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-05T13:17:03.573127+09:00",
-  "score": 67,
-  "ratio": 1.23,
-  "tier": "A",
-  "walk": 9,
-  "area": 64.3,
-  "plan": "3LDK",
-  "year": 1987,
-  "cagr": 4.6,
-  "net": 619,
-  "tags": []
  }
 ]
