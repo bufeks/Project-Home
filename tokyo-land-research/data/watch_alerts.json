@@ -1,5 +1,26 @@
 [
  {
+  "id": "21896708",
+  "name": "パラスト青葉台",
+  "loc": "目黒区青葉台４",
+  "price": 4998,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21896708/",
+  "watch": "目黒区（全域）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-11T21:10:33.933258+09:00",
+  "score": 87,
+  "ratio": 1.51,
+  "tier": "A",
+  "walk": 6,
+  "area": 35.88,
+  "plan": "1LDK",
+  "year": null,
+  "cagr": 4.5,
+  "net": 1919,
+  "tags": []
+ },
+ {
   "id": "21908442",
   "name": "サンハイム大久保",
   "loc": "新宿区大久保１",
@@ -833,26 +854,5 @@
   "tags": [
    "旧耐震"
   ]
- },
- {
-  "id": "21366747",
-  "name": "菱和パレス学芸大学",
-  "loc": "目黒区五本木２",
-  "price": 5490,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21366747/",
-  "watch": "目黒区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-06T21:49:27.431098+09:00",
-  "score": 50,
-  "ratio": 0.89,
-  "tier": "A",
-  "walk": 5,
-  "area": 34.1,
-  "plan": "1LDK",
-  "year": 1995,
-  "cagr": 4.5,
-  "net": -1171,
-  "tags": []
  }
 ]
