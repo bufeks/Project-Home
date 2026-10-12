@@ -1,5 +1,28 @@
 [
  {
+  "id": "21924215",
+  "name": "セントラルシャトー",
+  "loc": "目黒区中央町２",
+  "price": 4480,
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_meguro/nc_21924215/",
+  "watch": "都立大学（目黒区）",
+  "wk": "area",
+  "kind": "マンション",
+  "ts": "2026-10-12T23:32:00.835868+09:00",
+  "score": 58,
+  "ratio": 1.18,
+  "tier": "A",
+  "walk": 10,
+  "area": 50.21,
+  "plan": "1LDK",
+  "year": 1979,
+  "cagr": 4.5,
+  "net": 306,
+  "tags": [
+   "旧耐震"
+  ]
+ },
+ {
   "id": "21095425",
   "name": "戸山ハイツ２７号棟",
   "loc": "新宿区戸山２-27",
@@ -832,27 +855,6 @@
   "year": null,
   "cagr": 4.6,
   "net": 1452,
-  "tags": []
- },
- {
-  "id": "21875746",
-  "name": "トダカ高田馬場コーポ",
-  "loc": "新宿区下落合１-8-1",
-  "price": 3180,
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_shinjuku/nc_21875746/",
-  "watch": "新宿区（全域）",
-  "wk": "area",
-  "kind": "マンション",
-  "ts": "2026-10-07T13:32:17.079552+09:00",
-  "score": 77,
-  "ratio": 1.48,
-  "tier": "A",
-  "walk": 9,
-  "area": 39.59,
-  "plan": "1LDK",
-  "year": null,
-  "cagr": 4.6,
-  "net": 1152,
   "tags": []
  }
 ]
